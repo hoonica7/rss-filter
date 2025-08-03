@@ -10,6 +10,7 @@ import os
 import time
 import json
 import google.generativeai as genai
+import datetime
 
 # ANSI 색상 코드 정의
 COLOR_GREEN = '\033[92m'
@@ -21,7 +22,7 @@ COLOR_END = '\033[0m'
 
 # ✅ 설정: 필터 기준 (여기만 수정하면 됨)
 WHITELIST = ["condensed matter", "solid state", "ARPES", "photoemission", "band structure", "Fermi surface", "Brillouin zone", "spin-orbit", "quantum oscillation", "quantum Hall", "Landau level", "topological", "topology", "Weyl", "Dirac", "Chern", "Berry phase", "Kondo", "Mott", "Hubbard", "Heisenberg model", "spin liquid", "spin ice", "skyrmion", "nematic", "stripe order", "charge density wave", "CDW", "spin density wave", "SDW", "magnetism", "magnetic order", "antiferromagnetic", "ferromagnetic", "superconductivity", "superconductor", "Meissner", "quasiparticle", "phonon", "magnon", "exciton", "polariton", "crystal field", "lattice", "moiré", "twisted bilayer", "graphene", "2D material", "van der Waals", "correlated electrons", "quantum critical", "metal-insulator", "quantum phase transition", "susceptibility", "neutron scattering", "x-ray diffraction", "STM", "STS", "Kagome", "photon"]
-BLACKLIST = ["archeologist", "mummy", "cancer", "tumor", "immune", "immunology", "inflammation", "antibody", "cytokine", "gene", "tissue", "genome", "genetic", "transcriptome", "rna", "mrna", "mirna", "crisper", "mutation", "cell", "mouse", "zebrafish", "neuron", "neural", "brain", "synapse", "microbiome", "gut", "pathogen", "bacteria", "virus", "viral", "infection", "epidemiology", "clinical", "therapy", "therapeutic", "disease", "patient", "biopsy", "in vivo", "in vitro", "drug", "pharmacology", "oncology"]
+BLACKLIST = ["lava", "protein", "archeologist", "mummy", "cancer", "tumor", "immune", "immunology", "inflammation", "antibody", "cytokine", "gene", "tissue", "genome", "genetic", "transcriptome", "rna", "mrna", "mirna", "crisper", "mutation", "cell", "mouse", "zebrafish", "neuron", "neural", "brain", "synapse", "microbiome", "gut", "pathogen", "bacteria", "virus", "viral", "infection", "epidemiology", "clinical", "therapy", "therapeutic", "disease", "patient", "biopsy", "in vivo", "in vitro", "drug", "pharmacology", "oncology"]
 
 # ✅ 여러 저널 URL 설정
 JOURNAL_URLS = {
@@ -226,6 +227,64 @@ def create_email_body_file(email_body_content):
     except Exception as e:
         print(f"Error creating email body file: {e}", file=sys.stderr)
 
+# --- 새로 추가된 부분 ---
+def create_index_html(journal_urls, rss_base_filename):
+    """
+    각 저널의 필터링된 RSS 피드 링크를 보여주는 index.html 페이지를 생성합니다.
+    """
+    print("--- HTML 페이지 생성 중: index.html ---", file=sys.stderr)
+    html_content = f"""
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>필터링된 논문 RSS 피드</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {{
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }}
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+    <div class="bg-white rounded-xl shadow-2xl p-8 max-w-lg w-full text-center">
+        <h1 class="text-3xl font-bold text-gray-800 mb-2">필터링된 논문 RSS 피드</h1>
+        <p class="text-gray-600 mb-8">
+            선택한 저널들의 ARPES 및 강상관계 물질 관련 논문들만 필터링한 RSS 피드입니다.
+            아래 링크를 클릭하여 Reeder 앱 등에서 구독하세요.
+        </p>
+        <div class="space-y-4">
+"""
+
+    for journal_name in journal_urls.keys():
+        safe_journal_name = journal_name.replace(" ", "_").replace("/", "_")
+        filename = f"{rss_base_filename}_{safe_journal_name}.xml"
+        html_content += f"""
+            <a href="{filename}" target="_blank" class="block w-full px-6 py-4 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition duration-300">
+                {journal_name} RSS 피드 보기
+            </a>
+"""
+
+    html_content += """
+        </div>
+        <p class="mt-8 text-sm text-gray-500">
+            마지막 업데이트: """ + datetime.datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S') + """ UTC
+        </p>
+    </div>
+</body>
+</html>
+"""
+    try:
+        with open('index.html', 'w', encoding='utf-8') as f:
+            f.write(html_content)
+        print("--- HTML 페이지 생성 완료: index.html ---", file=sys.stderr)
+    except Exception as e:
+        print(f"HTML 페이지 생성 중 오류 발생: {e}", file=sys.stderr)
+# --- 새로 추가된 부분 끝 ---
+
 if __name__ == '__main__':
     OUTPUT_FILE_BASE = "filtered_feed"
     
@@ -246,6 +305,9 @@ if __name__ == '__main__':
             # 이메일 리스트에 추가
             all_passed_entries.extend(passed_entries)
             all_removed_entries.extend(removed_entries)
+
+        # ✅ 새로 추가된 HTML 페이지 생성 함수 호출
+        create_index_html(JOURNAL_URLS, OUTPUT_FILE_BASE)
 
         # 모든 저널의 결과를 모아 하나의 이메일 본문 생성
         email_content = ""
