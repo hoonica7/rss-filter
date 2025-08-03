@@ -17,6 +17,7 @@
 # 12. **(추가됨)** index.html에 필터링 결과 페이지로 이동하는 버튼을 추가합니다.
 # 13. **(추가됨)** 이메일 본문에서 제거된 논문의 필터링 방식(키워드 또는 Gemini)을 구분하여 표시합니다.
 # 14. **(추가됨)** 'Filter 결과' 버튼을 누르면 이메일 본문 형식 그대로 개별 논문 링크를 클릭할 수 있는 HTML 페이지가 열립니다.
+# 15. **(추가됨)** index.html의 마지막 업데이트 시간을 텍사스 시간과 한국 시간으로 나누어 표시합니다.
 #
 
 import feedparser
@@ -354,6 +355,16 @@ def create_index_html(journal_urls, rss_base_filename):
     각 저널의 필터링된 RSS 피드 링크를 보여주는 index.html 페이지를 생성합니다.
     """
     print("--- HTML 페이지 생성 중: index.html ---", file=sys.stderr)
+    
+    # 현재 UTC 시간을 가져와서 한국 시간(KST)과 휴스턴 시간(CDT)으로 변환합니다.
+    # KST는 UTC+9, CDT는 UTC-5 입니다.
+    now_utc = datetime.datetime.utcnow()
+    now_korea = now_utc + datetime.timedelta(hours=9)
+    now_texas = now_utc - datetime.timedelta(hours=5)
+
+    korea_time_str = now_korea.strftime('%Y-%m-%d %H:%M:%S') + " (한국, KST)"
+    texas_time_str = now_texas.strftime('%Y-%m-%d %H:%M:%S') + " (휴스턴, CDT)"
+
     html_content = f"""
 <!DOCTYPE html>
 <html lang="ko">
@@ -393,9 +404,10 @@ def create_index_html(journal_urls, rss_base_filename):
                 Filter 결과
             </a>
         </div>
-        <p class="mt-8 text-sm text-gray-500">
-            마지막 업데이트: """ + datetime.datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S') + """ UTC
-        </p>
+        <div class="mt-8 text-sm text-gray-500">
+            <p>마지막 업데이트 (한국): """ + korea_time_str + """</p>
+            <p>마지막 업데이트 (휴스턴): """ + texas_time_str + """</p>
+        </div>
     </div>
 </body>
 </html>
