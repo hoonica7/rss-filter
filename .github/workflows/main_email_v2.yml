@@ -47,7 +47,7 @@ jobs:
           # 🚨 GitHub Actions 실행 링크 환경 변수 추가
           GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          python filter_rss_v3_NatSci.py
+          python filter_rss_v4.py
       
       - name: Upload artifacts for next steps
         uses: actions/upload-artifact@v4
