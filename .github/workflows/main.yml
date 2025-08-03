@@ -2,24 +2,25 @@ name: Filter RSS Feed
 
 on:
   schedule:
-    # 매일 UTC 0시에 실행 (한국 시간 오전 9시)
-    - cron: '0 0 * * *'
+    # 휴스턴 시간 오전 8시(CDT)에 실행 -> UTC 기준 13시
+    - cron: '0 13 * * *'
   workflow_dispatch:
 
 jobs:
   filter-and-deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # 이 권한은 GitHub Pages에 파일을 커밋하기 위해 필요합니다.
+      contents: write
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Set up Python with caching
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
+          cache: 'pip' # 👈 이 줄을 추가하여 의존성 캐싱을 활성화합니다.
 
       - name: Install dependencies
         run: |
@@ -30,18 +31,11 @@ jobs:
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: |
-          python filter_rss_v2.py
+          python filter_rss.py
 
-      - name: Commit and push changes
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Automated: Update filtered RSS feed"
-          # GitHub Pages에 배포할 파일만 커밋합니다.
-          file_pattern: 'filtered_feed.xml'
-          
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./ # 루트 디렉터리의 파일을 배포합니다.
-          publish_branch: gh-pages # GitHub Pages를 위한 브랜치입니다.
+          publish_dir: ./
+          publish_branch: gh-pages
