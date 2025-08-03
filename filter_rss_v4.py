@@ -47,8 +47,8 @@ GENERAL_WHITELIST = ["condensed matter", "solid state", "ARPES", "photoemission"
 GENERAL_BLACKLIST = ["congress", "forest", "climate", "lava", "protein", "archeologist", "mummy", "cancer", "tumor", "immune", "immunology", "inflammation", "antibody", "cytokine", "gene", "tissue", "genome", "genetic", "transcriptome", "rna", "mrna", "mirna", "crisper", "mutation", "cell", "mouse", "zebrafish", "neuron", "neural", "brain", "synapse", "microbiome", "gut", "pathogen", "bacteria", "virus", "viral", "infection", "epidemiology", "clinical", "therapy", "therapeutic", "disease", "patient", "biopsy", "in vivo", "in vitro", "drug", "pharmacology", "oncology"]
 
 # arXiv 및 PRB 저널 필터 기준 설정 (보다 엄격한 필터링을 위해)
-ARXIV_PRB_WHITELIST = ["ARPES", "Berry phase", "Kondo", "Mott", "Hubbard", "moiré", "twisted", "graphene", "Kagome", "CsV3Sb5", "V3Sb5", "Ti3Sb5", "magneto"]
-ARXIV_PRB_BLACKLIST = ["congress", "forest", "climate", "lava", "protein", "archeologist", "mummy", "cancer", "tumor", "immune", "immunology", "inflammation", "antibody", "cytokine", "gene", "tissue", "genome", "genetic", "transcriptome", "rna", "mrna", "mirna", "crisper", "mutation", "cell", "mouse", "zebrafish", "neuron", "neural", "brain", "synapse", "microbiome", "gut", "pathogen", "bacteria", "virus", "viral", "infection", "epidemiology", "clinical", "therapy", "therapeutic", "disease", "patient", "biopsy", "in vivo", "in vitro", "drug", "pharmacology", "oncology", "quantum computing", "quantum information", "quantum optics", "machine learning"]
+ARXIV_PRB_WHITELIST = ["ARPES", "Berry phase", "Kondo", "Mott", "Hubbard", "moiré", "twisted", "graphene", "Kagome", "CsV3Sb5", "V3Sb5", "Ti3Sb5", "magneto", "Luttinger", "NbSe3", "TaSe3", "Spin-charge", "Spin charge separation"]
+ARXIV_PRB_BLACKLIST = ["congress", "forest", "climate", "lava", "protein", "archeologist", "mummy", "cancer", "tumor", "immune", "immunology", "inflammation", "antibody", "cytokine", "gene", "tissue", "genome", "genetic", "transcriptome", "rna", "mrna", "mirna", "crisper", "mutation", "cell", "mouse", "zebrafish", "neuron", "neural", "brain", "synapse", "microbiome", "gut", "pathogen", "bacteria", "virus", "viral", "infection", "epidemiology", "clinical", "therapy", "therapeutic", "disease", "patient", "biopsy", "in vivo", "in vitro", "drug", "pharmacology", "oncology"]
 
 # 여러 저널 URL 설정
 JOURNAL_URLS = {
@@ -100,7 +100,7 @@ def filter_rss_for_journal(journal_name, feed_url):
         blacklist = ARXIV_PRB_BLACKLIST
         gemini_prompt = """
         I have a list of scientific articles. For each article, please classify if it is a research paper in condensed matter physics.
-        Unconditionally include articles if they are directly related to experimental techniques such as ARPES, neutron scattering, or x-ray scattering. Include theoretical articles only if they are related to me, a postdoc at ARPES lab studying Kagome and topological materials.
+        Unconditionally include articles if they are directly related to Kagome, Luttinger liquid, or experimental techniques such as ARPES, neutron scattering, or x-ray scattering. Include theoretical articles only if they are related to me, a postdoc at ARPES lab studying Kagome and topological materials.
         You MUST provide the output as a JSON array of objects. Do not include any text, conversation, or explanations before or after the JSON array.
         Each object in the JSON array should have a "title" and a "decision" key. The decision should be "YES" if it meets the criteria, or "NO" if it does not.
         Here is the list of articles:
