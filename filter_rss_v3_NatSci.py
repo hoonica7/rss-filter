@@ -356,14 +356,14 @@ def create_index_html(journal_urls, rss_base_filename):
     """
     print("--- HTML 페이지 생성 중: index.html ---", file=sys.stderr)
     
-    # 현재 UTC 시간을 가져와서 한국 시간(KST)과 텍사스 시간(CDT)으로 변환합니다.
+    # 현재 UTC 시간을 가져와서 한국 시간(KST)과 휴스턴 시간(CDT)으로 변환합니다.
     # KST는 UTC+9, CDT는 UTC-5 입니다.
     now_utc = datetime.datetime.utcnow()
     now_korea = now_utc + datetime.timedelta(hours=9)
     now_texas = now_utc - datetime.timedelta(hours=5)
 
     korea_time_str = now_korea.strftime('%Y-%m-%d %H:%M:%S') + " (한국, KST)"
-    texas_time_str = now_texas.strftime('%Y-%m-%d %H:%M:%S') + " (텍사스, CDT)"
+    texas_time_str = now_texas.strftime('%Y-%m-%d %H:%M:%S') + " (휴스턴, CDT)"
 
     html_content = f"""
 <!DOCTYPE html>
@@ -406,7 +406,7 @@ def create_index_html(journal_urls, rss_base_filename):
         </div>
         <div class="mt-8 text-sm text-gray-500">
             <p>마지막 업데이트 (한국): """ + korea_time_str + """</p>
-            <p>마지막 업데이트 (텍사스): """ + texas_time_str + """</p>
+            <p>마지막 업데이트 (휴스턴): """ + texas_time_str + """</p>
         </div>
     </div>
 </body>
