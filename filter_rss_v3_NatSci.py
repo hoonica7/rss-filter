@@ -92,7 +92,7 @@ def filter_rss_for_journal(journal_name, feed_url):
             gemini_pending_entries.append(entry)
 
     if current_model and gemini_pending_entries:
-        print(f"🤖 {COLOR_GREEN}Batch processing{COLOR_END} {len(gemini_pending_entries)} items from {journal_name} with Gemini...", file=sys.stderr)
+        print(f"� {COLOR_GREEN}Batch processing{COLOR_END} {len(gemini_pending_entries)} items from {journal_name} with Gemini...", file=sys.stderr)
         
         items_to_review = []
         for entry in gemini_pending_entries:
@@ -110,12 +110,13 @@ def filter_rss_for_journal(journal_name, feed_url):
         {json.dumps(items_to_review, indent=2)}
         """
             
-        retries = 3
+        # ✅ 수정: for 루프를 while 루프로 변경하여 동적인 재시도 로직을 구현
+        max_attempts = 3
         api_success = False
-        for i in range(retries):
+        attempt = 0
+        while attempt < max_attempts and not api_success:
             try:
-                # ✅ 수정된 부분: 현재 사용 중인 모델을 명시적으로 출력
-                print(f"🤖 Attempt {i+1}/{retries} using model: {current_model.model_name}", file=sys.stderr)
+                print(f"🤖 Attempt {attempt+1}/{max_attempts} using model: {current_model.model_name}", file=sys.stderr)
 
                 response = current_model.generate_content(
                     prompt,
@@ -125,7 +126,6 @@ def filter_rss_for_journal(journal_name, feed_url):
                 )
                 gemini_decisions = json.loads(response.text)
                 
-                # ✅ 수정된 부분: 응답에 문제가 있으면 예외를 발생시켜 API 재시도
                 if not isinstance(gemini_decisions, list):
                     raise TypeError("Gemini response is not a list.")
                 
@@ -147,27 +147,25 @@ def filter_rss_for_journal(journal_name, feed_url):
                             removed_entries_for_email.append(original_entry)
                             print(f"🤖❌ {title}", file=sys.stderr)
                 api_success = True
-                break
             except Exception as e:
-                # ✅ 수정된 부분: 에러 타입을 명시적으로 확인하고 로그 출력
                 error_type = type(e).__name__
-                print(f"🤖 {COLOR_RED}Gemini Batch Error{COLOR_END} for {journal_name} ({error_type}, Attempt {i+1}/{retries}): {e}", file=sys.stderr)
+                print(f"🤖 {COLOR_RED}Gemini Batch Error{COLOR_END} for {journal_name} ({error_type}, Attempt {attempt+1}/{max_attempts}): {e}", file=sys.stderr)
 
                 if isinstance(e, exceptions.ResourceExhausted) and current_model.model_name == primary_model:
                     print(f"🚨 {COLOR_ORANGE}Quota exceeded. Switching to fallback model: {fallback_model}{COLOR_END}", file=sys.stderr)
                     try:
                         current_model = genai.GenerativeModel(fallback_model)
-                        retries += 1 # fallback 시도 횟수 추가
+                        max_attempts += 1  # 백업 모델로 재시도 기회 1회 추가
                     except Exception as fallback_e:
                         print(f"Error switching to fallback model: {fallback_e}", file=sys.stderr)
                         current_model = None
                 
-                if i < retries - 1 and current_model:
+                attempt += 1
+                if not api_success and attempt < max_attempts:
+                    print("Retrying in 5 seconds...", file=sys.stderr)
                     time.sleep(5)
-                else:
-                    break
         
-        # ✅ 수정된 부분: 최종 API 호출이 실패했을 때 오류를 발생시켜 메인 로직으로 전달
+        # 최종 API 호출이 실패했을 때 오류를 발생시켜 메인 로직으로 전달
         if not api_success:
             print(f"🤖 Final Gemini batch API call for {journal_name} failed. All pending items will be removed.", file=sys.stderr)
             removed_links.update(entry.link for entry in gemini_pending_entries)
@@ -374,3 +372,4 @@ if __name__ == '__main__':
     finally:
         # 오류 여부에 관계없이, 이메일 내용 파일을 항상 생성합니다.
         create_email_body_file(email_content)
+�
