@@ -1,0 +1,54 @@
+name: Filter RSS Feed
+
+on:
+  schedule:
+    # 휴스턴 시간 오전 8시(CDT)에 실행 -> UTC 기준 13시
+    - cron: '0 13 * * *'
+  workflow_dispatch:
+
+jobs:
+  filter-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python with caching
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install feedparser lxml requests google-generativeai
+
+      - name: Run Python script to filter RSS and prepare email body
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: |
+          python filter_rss.py
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          publish_branch: gh-pages
+
+      - name: Send email with results
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: '[Filtered RSS] New Paper Updates'
+          to: ${{ secrets.MAIL_TO }}
+          from: ${{ secrets.MAIL_FROM }}
+          body: file://filtered_titles.txt
+          content_type: text/plain
