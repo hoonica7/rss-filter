@@ -1,7 +1,17 @@
-## If quota error occurs, next day (next action workflow) starts from the failed journal
-## Sends email, too.
-## Filtering multiple journals at once.
-## Filtering items based on whitelist & blacklist, and then batch filter remainings at once using gemini (to reduce RPM of Gemini API)
+#
+# 이 스크립트는 여러 과학 저널의 RSS 피드를 필터링하여,
+# 특정 키워드에 맞는 논문만 골라내고 Gemini API를 사용하여 추가 검증을 수행합니다.
+#
+# 주요 기능:
+# 1. 여러 저널 RSS 피드 일괄 처리.
+# 2. WHITELIST 및 BLACKLIST 키워드를 사용한 1차 필터링.
+# 3. 1차 필터링에 걸리지 않은 항목을 Gemini API를 통해 2차 필터링 (배치 처리로 API 호출 최소화).
+# 4. Gemini API 할당량 오류 발생 시, 백업 모델로 자동 전환 후 재시도.
+# 5. 실행 중 오류가 발생한 경우, 오류가 발생한 저널 이름을 상태 파일에 기록하여 다음 실행 시 해당 지점부터 다시 시작.
+# 6. 모든 저널을 성공적으로 처리한 경우, 상태 파일에 'SUCCESS'를 기록하여 다음 실행 시 처음부터 시작.
+# 7. 필터링된 결과와 제거된 결과를 담은 이메일 본문 파일 생성.
+# 8. 필터링된 RSS 피드를 위한 index.html 페이지와 개별 .xml 파일 생성.
+#
 
 import feedparser
 import lxml.etree as ET
@@ -13,7 +23,6 @@ import time
 import json
 import google.generativeai as genai
 import datetime
-# ✅ 추가: Gemini API 에러 타입 핸들링을 위해 exceptions 모듈 임포트
 import google.api_core.exceptions as exceptions
 
 # ANSI 색상 코드 정의
@@ -24,12 +33,11 @@ COLOR_ORANGE = '\033[38;5;208m'
 COLOR_BLUE = '\033[94m'
 COLOR_END = '\033[0m'
 
-# ✅ 설정: 필터 기준 (여기만 수정하면 됨)
+# 필터 기준 설정 (여기만 수정하면 됨)
 WHITELIST = ["condensed matter", "solid state", "ARPES", "photoemission", "band structure", "Fermi surface", "Brillouin zone", "spin-orbit", "quantum oscillation", "quantum Hall", "Landau level", "topological", "topology", "Weyl", "Dirac", "Chern", "Berry phase", "Kondo", "Mott", "Hubbard", "Heisenberg model", "spin liquid", "spin ice", "skyrmion", "nematic", "stripe order", "charge density wave", "CDW", "spin density wave", "SDW", "magnetism", "magnetic order", "antiferromagnetic", "ferromagnetic", "superconductivity", "superconductor", "Meissner", "quasiparticle", "phonon", "magnon", "exciton", "polariton", "crystal field", "lattice", "moiré", "twisted bilayer", "graphene", "2D material", "van der Waals", "correlated electrons", "quantum critical", "metal-insulator", "quantum phase transition", "susceptibility", "neutron scattering", "x-ray diffraction", "STM", "STS", "Kagome", "photon"]
-# ✅ 수정: 블랙리스트 항목 업데이트
 BLACKLIST = ["congress", "forest", "climate", "lava", "protein", "archeologist", "mummy", "cancer", "tumor", "immune", "immunology", "inflammation", "antibody", "cytokine", "gene", "tissue", "genome", "genetic", "transcriptome", "rna", "mrna", "mirna", "crisper", "mutation", "cell", "mouse", "zebrafish", "neuron", "neural", "brain", "synapse", "microbiome", "gut", "pathogen", "bacteria", "virus", "viral", "infection", "epidemiology", "clinical", "therapy", "therapeutic", "disease", "patient", "biopsy", "in vivo", "in vitro", "drug", "pharmacology", "oncology"]
 
-# ✅ 여러 저널 URL 설정
+# 여러 저널 URL 설정
 JOURNAL_URLS = {
     "Nature": "https://www.nature.com/nature.rss",
     "Nature_Physics": "https://feeds.nature.com/nphys/rss/current",
@@ -40,12 +48,11 @@ JOURNAL_URLS = {
     "Science_Advances": "https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=sciadv"
 }
 
-# ✅ Gemini 모델 초기화
-# ✅ 수정: 주 모델과 대체 모델을 서로 변경
+# Gemini 모델 초기화
 primary_model = 'gemini-2.0-flash'
 fallback_model = 'gemini-1.5-flash-latest'
 current_model = None
-using_primary_model = True # ✅ 추가: 현재 주 모델을 사용하는지 여부를 추적하는 플래그
+using_primary_model = True
 try:
     GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
     if GOOGLE_API_KEY:
@@ -56,7 +63,7 @@ try:
         print("GOOGLE_API_KEY not found. Gemini filter will be skipped.", file=sys.stderr)
 except Exception as e:
     print(f"Error configuring Gemini API: {e}", file=sys.stderr)
-    using_primary_model = False # ✅ 오류 발생 시 플래그 설정
+    using_primary_model = False
 
 def filter_rss_for_journal(journal_name, feed_url):
     """
@@ -84,7 +91,7 @@ def filter_rss_for_journal(journal_name, feed_url):
         is_in_blacklist = any(b.lower() in content for b in BLACKLIST)
         is_in_whitelist = any(w.lower() in content for w in WHITELIST)
 
-        if is_in_blacklist: # blacklist 먼저.
+        if is_in_blacklist:
             removed_links.add(entry.link)
             removed_entries_for_email.append(entry)
             print(f"  ❌ {title}", file=sys.stderr)
@@ -105,7 +112,6 @@ def filter_rss_for_journal(journal_name, feed_url):
                 "summary": entry.get('summary', '')
             })
 
-        # ✅ 수정된 프롬프트: JSON 형식 응답을 더 명확하게 지시
         prompt = f"""
         I have a list of scientific articles. For each article, please classify if it is related to "condensed matter physics".
         You MUST provide the output as a JSON array of objects. Do not include any text, conversation, or explanations before or after the JSON array.
@@ -113,8 +119,7 @@ def filter_rss_for_journal(journal_name, feed_url):
         Here is the list of articles:
         {json.dumps(items_to_review, indent=2)}
         """
-            
-        # ✅ 수정: for 루프를 while 루프로 변경하여 동적인 재시도 로직을 구현
+        
         max_attempts = 3
         api_success = False
         attempt = 0
@@ -155,13 +160,12 @@ def filter_rss_for_journal(journal_name, feed_url):
                 error_type = type(e).__name__
                 print(f"🤖 {COLOR_RED}Gemini Batch Error{COLOR_END} for {journal_name} ({error_type}, Attempt {attempt+1}/{max_attempts}): {e}", file=sys.stderr)
                 
-                # ✅ 수정: 모델 이름 비교 대신 플래그 변수 사용
                 if isinstance(e, exceptions.ResourceExhausted) and using_primary_model:
                     print(f"🚨 {COLOR_ORANGE}Quota exceeded. Switching to fallback model: {fallback_model}{COLOR_END}", file=sys.stderr)
                     try:
                         current_model = genai.GenerativeModel(fallback_model)
-                        using_primary_model = False # ✅ 플래그를 False로 변경
-                        max_attempts += 1  # 백업 모델로 재시도 기회 1회 추가
+                        using_primary_model = False
+                        max_attempts += 1
                     except Exception as fallback_e:
                         print(f"Error switching to fallback model: {fallback_e}", file=sys.stderr)
                         current_model = None
@@ -171,12 +175,10 @@ def filter_rss_for_journal(journal_name, feed_url):
                     print("Retrying in 5 seconds...", file=sys.stderr)
                     time.sleep(5)
         
-        # 최종 API 호출이 실패했을 때 오류를 발생시켜 메인 로직으로 전달
         if not api_success:
             print(f"🤖 Final Gemini batch API call for {journal_name} failed. All pending items will be removed.", file=sys.stderr)
             removed_links.update(entry.link for entry in gemini_pending_entries)
             removed_entries_for_email.extend(gemini_pending_entries)
-            # 메인 루프에서 오류를 잡을 수 있도록 명시적으로 예외를 발생시킴
             raise RuntimeError(f"Gemini API call failed for journal: {journal_name}")
             
     print(f"Total passed links for {journal_name}: {len(passed_links)}", file=sys.stderr)
@@ -305,69 +307,60 @@ if __name__ == '__main__':
     all_passed_entries = []
     all_removed_entries = []
 
-    # Get the list of journals to process
     journals_to_process = list(JOURNAL_URLS.items())
     start_index = 0
     if os.path.exists(STATE_FILE):
         with open(STATE_FILE, 'r') as f:
             last_failed_journal = f.read().strip()
-            # ✅ 수정: 메시지에 색상 추가하여 강조
-            print(f"{COLOR_GREEN}Found state file. Continuing from journal: {last_failed_journal}{COLOR_END}", file=sys.stderr)
-            
+        
+        if last_failed_journal == 'SUCCESS':
+            print(f"{COLOR_GREEN}Previous workflow run was successful. Starting from the beginning.{COLOR_END}", file=sys.stderr)
+            start_index = 0
+        elif last_failed_journal:
+            print(f"{COLOR_RED}Found state file. Continuing from journal: {last_failed_journal}{COLOR_END}", file=sys.stderr)
             try:
-                # Find the index of the last failed journal to resume from
                 journal_names = list(JOURNAL_URLS.keys())
                 start_index = journal_names.index(last_failed_journal)
             except ValueError:
                 print(f"Last failed journal '{last_failed_journal}' not found in JOURNAL_URLS. Starting from the beginning.", file=sys.stderr)
-                # If the journal name in the file is invalid, start from scratch
                 start_index = 0
+        else:
+            print(f"{COLOR_GREEN}Found an empty state file. Starting from the beginning.{COLOR_END}", file=sys.stderr)
+            start_index = 0
             
     try:
-        # Loop through journals from the determined start index
         for journal_name, feed_url in journals_to_process[start_index:]:
-            # --- 필터링 로직 실행 ---
             try:
                 filtered_xml, passed_entries, removed_entries = filter_rss_for_journal(journal_name, feed_url)
                 
-                # 필터링된 XML 파일 쓰기
                 output_filename = f"{OUTPUT_FILE_BASE}_{journal_name}.xml"
                 with open(output_filename, 'wb') as f:
                     f.write(filtered_xml)
                 print(f"Successfully wrote filtered RSS feed to {output_filename}", file=sys.stderr)
 
-                # 이메일 리스트에 추가
                 all_passed_entries.extend(passed_entries)
                 all_removed_entries.extend(removed_entries)
 
             except Exception as e:
-                # Catch the error and save the failed journal name before exiting
                 print(f"An error occurred while processing journal '{journal_name}': {e}", file=sys.stderr)
                 with open(STATE_FILE, 'w') as f:
                     f.write(journal_name)
-                # Re-raise the exception to stop the workflow
                 raise
 
-        # All journals processed successfully. Clean up the state file.
-        # ✅ 수정: 파일 삭제가 아닌, 내용을 비우는 방식으로 변경
         try:
-            # 성공했을 때는 상태 파일의 내용을 비워서 다음번 캐시를 성공 상태로 업데이트합니다.
             if os.path.exists(STATE_FILE):
                 with open(STATE_FILE, 'w') as f:
-                    f.write('')
-                print("Successfully processed all journals and reset the state file.", file=sys.stderr)
+                    f.write('SUCCESS')
+                print("Successfully processed all journals and updated the state file with 'SUCCESS'.", file=sys.stderr)
             else:
-                # 파일이 없을 경우 새로 생성하여 캐시에 포함되도록 합니다.
                 with open(STATE_FILE, 'w') as f:
-                    f.write('')
-                print("Successfully processed all journals. Creating a new, empty state file for caching.", file=sys.stderr)
+                    f.write('SUCCESS')
+                print("Successfully processed all journals. Creating a new state file with 'SUCCESS'.", file=sys.stderr)
         except OSError as e:
             print(f"Warning: Could not create/reset state file '{STATE_FILE}': {e}", file=sys.stderr)
             
-        # HTML 페이지 생성
         create_index_html(JOURNAL_URLS, OUTPUT_FILE_BASE)
 
-        # 모든 저널의 결과를 모아 하나의 이메일 본문 생성
         email_content = ""
         email_content += "--- PASSED PAPERS ---\n\n"
         if not all_passed_entries:
@@ -388,5 +381,4 @@ if __name__ == '__main__':
         email_content = f"An error occurred while running the filter script:\n{e}\nPlease check the workflow logs for more details."
 
     finally:
-        # 오류 여부에 관계없이, 이메일 내용 파일을 항상 생성합니다.
         create_email_body_file(email_content)
