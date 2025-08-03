@@ -1,20 +1,67 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss version="2.0">
-    <channel>
-        <title>Publishing : Nature Communications subject feeds</title>
-        <link>https://www.nature.com/subjects/publishing/ncomms</link>
-        <description>Latest news and research from Nature.com on the topic of Publishing</description>
-        <ttl>60</ttl>
-        <pubDate>Sun, 3 Aug 2025 21:31:49 +0000</pubDate>
-        <lastBuildDate>Sun, 3 Aug 2025 21:31:49 +0000</lastBuildDate>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:prism="http://prismstandard.org/namespaces/basic/2.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns="http://purl.org/rss/1.0/" xmlns:admin="http://webns.net/mvcb/">
+    <channel rdf:about="http://feeds.nature.com/ncomms/rss/current">
+        <title>Nature Communications</title>
+        <description>&lt;p&gt;&lt;em&gt;Nature Communications&lt;/em&gt;&amp;nbsp;is an open access, multidisciplinary journal dedicated to publishing high-quality research in all areas of the biological, health, physical, chemical and Earth sciences. Papers published by the journal aim to represent important advances of significance to specialists within each field.&lt;/p&gt;
+
+&lt;p&gt;We are committed to providing an efficient service for both authors and readers. Our&amp;nbsp;team of independent editors make rapid and fair publication decisions. Prompt dissemination of accepted papers to a&amp;nbsp;wide readership and beyond is achieved through a programme of continuous online publication.&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/p&gt;
+</description>
+        <link>http://feeds.nature.com/ncomms/rss/current</link>
+        <admin:generatorAgent rdf:resource="https://www.nature.com/"/>
+        <admin:errorReportsTo rdf:resource="mailto:feedback@nature.com"/>
+        <dc:publisher>Nature Publishing Group</dc:publisher>
+        <dc:language>en</dc:language>
+        <dc:rights>© 2025 Macmillan Publishers Limited, part of Springer Nature. All rights reserved.</dc:rights>
+        <prism:publicationName>Nature Communications</prism:publicationName>
         
-            <item>
-                <title>Research on scalable graphene faces a reproducibility gap</title>
-                <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
-                <link>https://www.nature.com/articles/s41467-023-36891-5</link>
-                <description/>
-                <guid>https://www.nature.com/articles/s41467-023-36891-5</guid>
-            </item>
         
-            </channel>
-</rss>
+        <prism:copyright>© 2025 Macmillan Publishers Limited, part of Springer Nature. All rights reserved.</prism:copyright>
+        <prism:rightsAgent>permissions@nature.com</prism:rightsAgent>
+        <image rdf:resource="https://www.nature.com/uploads/product/ncomms/rss.png"/>
+        <items>
+            <rdf:Seq>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-62367-9"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-62481-8"/>
+                
+                    </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="https://www.nature.com/uploads/product/ncomms/rss.png">
+        <title>Nature Communications</title>
+        <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
+        <link>http://feeds.nature.com/ncomms/rss/current</link>
+    </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-62367-9">
+            <title>Melanin-like nanofibers with highly ordered structures achieve ultrahigh specific electromagnetic interference shielding efficiency</title>
+            <link>https://www.nature.com/articles/s41467-025-62367-9</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 03 August 2025; &lt;a href="https://www.nature.com/articles/s41467-025-62367-9"&gt;doi:10.1038/s41467-025-62367-9&lt;/a&gt;&lt;/p&gt;Lightweight electromagnetic shielding materials are of interest, though it is challenging to balance performance and processability with conventional materials. Here, the authors report, an ordered melanin-like polymer, using π–π stacking, for a microwave shielding material.</content:encoded>
+            <dc:title>Melanin-like nanofibers with highly ordered structures achieve ultrahigh specific electromagnetic interference shielding efficiency</dc:title>
+            <dc:creator>Peng Chen</dc:creator><dc:creator>Shibo He</dc:creator><dc:creator>Tianyou Wang</dc:creator><dc:creator>Chencan Wang</dc:creator><dc:creator>Junru Tao</dc:creator><dc:creator>Yiwen Li</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-62367-9</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-08-03; | doi:10.1038/s41467-025-62367-9</dc:source>
+            <dc:date>2025-08-03</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-62367-9</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-62367-9</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-62481-8">
+            <title>Reconfigurable non-Abelian integrated photonics</title>
+            <link>https://www.nature.com/articles/s41467-025-62481-8</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 02 August 2025; &lt;a href="https://www.nature.com/articles/s41467-025-62481-8"&gt;doi:10.1038/s41467-025-62481-8&lt;/a&gt;&lt;/p&gt;Non-Abelian integrated photonics exploits the non-Abelian holonomy principle, giving rise to robust and broadband on-chip photonic devices. Here, authors propose a reconfigurable non-Abelian photonic chip where the non-Abelian functionality can be reprogrammed by employing the thermal-optic effect.</content:encoded>
+            <dc:title>Reconfigurable non-Abelian integrated photonics</dc:title>
+            <dc:creator>Shijie Sun</dc:creator><dc:creator>Xibin Wang</dc:creator><dc:creator>Shangrong Li</dc:creator><dc:creator>Daming Zhang</dc:creator><dc:creator>Qi-Dai Chen</dc:creator><dc:creator>Xu-Lin Zhang</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-62481-8</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-08-02; | doi:10.1038/s41467-025-62481-8</dc:source>
+            <dc:date>2025-08-02</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-62481-8</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-62481-8</prism:url>
+        </item>
+    
+        </rdf:RDF>
