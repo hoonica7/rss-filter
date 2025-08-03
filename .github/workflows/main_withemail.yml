@@ -1,8 +1,8 @@
-name: Filter RSS Feed + Email
+name: Filter RSS Feed everyday + Email on Saturday
 
 on:
   schedule:
-    # 휴스턴 시간 오전 8시(CDT)에 실행 -> UTC 기준 13시
+    # 매일 휴스턴 시간 오전 8시(CDT)에 실행 -> UTC 기준 13시
     - cron: '0 13 * * *'
   workflow_dispatch:
 
@@ -33,18 +33,27 @@ jobs:
         run: |
           python filter_rss_v3_NatSci.py
       
-      - name: Upload email body file for next step
+      - name: Upload artifacts for next steps
         uses: actions/upload-artifact@v4
         with:
-          name: email-body
-          path: filtered_titles.txt
+          name: filtered-files
+          path: |
+            filtered_titles.txt
+            filtered_feed_*.xml
           
-      - name: Download email body file
+      - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
-          name: email-body
-          
+          name: filtered-files
+      
+      # 이메일 발송 여부를 결정하는 스텝
+      - name: Check if today is Saturday
+        id: check_day
+        run: echo "is_saturday=$(date +%u)" >> $GITHUB_OUTPUT
+      
       - name: Send email with results
+        # 오늘이 토요일인 경우(date +%u == 6)에만 이메일을 발송합니다.
+        if: steps.check_day.outputs.is_saturday == '6'
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
