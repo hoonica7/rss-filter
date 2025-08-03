@@ -32,7 +32,12 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: |
           python filter_rss.py
-
+      - name: Upload email content file
+        uses: actions/upload-artifact@v4
+        with:
+          name: email-summary
+          path: filtered_titles.txt
+    
       - name: Send email with results
         uses: dawidd6/action-send-mail@v3
         with:
