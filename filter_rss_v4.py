@@ -100,7 +100,7 @@ def filter_rss_for_journal(journal_name, feed_url):
         blacklist = ARXIV_PRB_BLACKLIST
         gemini_prompt = """
         I have a list of scientific articles. For each article, please classify if it is a research paper in condensed matter physics.
-        Unconditionally include articles if they are directly related to experimental techniques such as ARPES, neutron scattering, or x-ray scattering. Include theoretical articles only if they are related to me, a postdoc at ARPES lab studying Kagome and topological materials.
+        Unconditionally include articles if they are directly related to Kagome, Luttinger liquid, or experimental techniques such as ARPES, neutron scattering, or x-ray scattering. Include theoretical articles only if they are related to me, a postdoc at ARPES lab studying Kagome and topological materials.
         You MUST provide the output as a JSON array of objects. Do not include any text, conversation, or explanations before or after the JSON array.
         Each object in the JSON array should have a "title" and a "decision" key. The decision should be "YES" if it meets the criteria, or "NO" if it does not.
         Here is the list of articles:
