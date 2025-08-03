@@ -7,6 +7,15 @@ import os
 import time
 import google.generativeai as genai
 
+# ANSI 색상 코드 정의 (더 이상 사용하지 않지만 정의는 유지)
+
+COLOR_GREEN = '\033[92m'
+COLOR_RED = '\033[91m'
+COLOR_YELLOW = '\033[93m'
+COLOR_ORANGE = '\033[38;5;208m'
+COLOR_BLUE = '\033[94m'
+COLOR_END = '\033[0m'
+
 # ✅ 설정: 필터 기준 (여기만 수정하면 됨)
 WHITELIST = ["condensed matter", "solid state", "ARPES", "photoemission", "band structure", "Fermi surface", "Brillouin zone", "spin-orbit", "quantum oscillation", "quantum Hall", "Landau level", "topological", "topology", "Weyl", "Dirac", "Chern", "Berry phase", "Kondo", "Mott", "Hubbard", "Heisenberg model", "Ising", "spin liquid", "spin ice", "skyrmion", "nematic", "stripe order", "charge density wave", "CDW", "spin density wave", "SDW", "magnetism", "magnetic order", "antiferromagnetic", "ferromagnetic", "superconductivity", "superconductor", "Meissner", "vortex", "quasiparticle", "phonon", "magnon", "exciton", "polariton", "crystal field", "lattice", "strain", "valley", "moiré", "twisted bilayer", "graphene", "2D material", "van der Waals", "thin film", "interface", "correlated electrons", "quantum critical", "metal-insulator", "quantum phase transition", "resistivity", "transport", "susceptibility", "neutron scattering", "x-ray diffraction", "STM", "STS", "Kagome"]
 BLACKLIST = ["cancer", "tumor", "immune", "immunology", "inflammation", "antibody", "cytokine", "gene expression", "genome", "genetic", "transcriptome", "rna", "mrna", "mirna", "crisper", "mutation", "cell line", "mouse model", "zebrafish", "neuron", "neural", "brain", "synapse", "microbiome", "gut", "pathogen", "bacteria", "virus", "viral", "infection", "epidemiology", "clinical", "therapy", "therapeutic", "disease", "patient", "biopsy", "in vivo", "in vitro", "drug", "pharmacology", "oncology"]
@@ -63,7 +72,7 @@ Summary: {entry.get('summary', '')}
                     print(f"🤖❌ Gemini filtered: {title}", file=sys.stderr)
                     return False
             except Exception as e:
-                print(f"🤖 Gemini Error for '{title}' (Attempt {i+1}/{retries}): {e}", file=sys.stderr)
+                print(f"🤖 Gemini Error for '{title}' {COLOR_RED}(Attempt {i+1}/{retries}){COLOR_END}: {e}", file=sys.stderr)
                 if i < retries - 1:
                     time.sleep(5)
                 else:
