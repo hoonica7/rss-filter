@@ -1,4 +1,4 @@
-name: Filter RSS Feed + Email
+name: Filter RSS Feed
 
 on:
   schedule:
@@ -27,17 +27,23 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run Python script to filter RSS and prepare email body
+      - name: Run Python script to filter RSS and create files
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: |
-          python filter_rss.py
-      - name: Upload email content file
+          python filtered_rss.py
+      
+      - name: Upload email body file for next step
         uses: actions/upload-artifact@v4
         with:
-          name: email-summary
+          name: email-body
           path: filtered_titles.txt
-    
+          
+      - name: Download email body file
+        uses: actions/download-artifact@v4
+        with:
+          name: email-body
+          
       - name: Send email with results
         uses: dawidd6/action-send-mail@v3
         with:
@@ -49,7 +55,6 @@ jobs:
           to: ${{ secrets.MAIL_TO }}
           from: ${{ secrets.MAIL_FROM }}
           body: file://filtered_titles.txt
-          # content_type: text/plain <-- 이 줄은 삭제된 상태입니다.
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
