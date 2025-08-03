@@ -1,3 +1,5 @@
+## Filtering items one by one
+
 import feedparser
 import lxml.etree as ET
 import requests
