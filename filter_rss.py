@@ -42,7 +42,7 @@ def passes_filter(entry):
         return True
 
     if is_in_blacklist:
-        print(f"🔤❌ Keyword failed: {title}", file=sys.stderr)
+        print(f"🔤❌ Keyword filtered: {title}", file=sys.stderr)
         return False
 
     # 2차 Gemini 필터링
@@ -60,7 +60,7 @@ Summary: {entry.get('summary', '')}
                     print(f"🤖✅ Gemini passed: {title}", file=sys.stderr)
                     return True
                 else:
-                    print(f"🤖❌ Gemini failed: {title}", file=sys.stderr)
+                    print(f"🤖❌ Gemini filtered: {title}", file=sys.stderr)
                     return False
             except Exception as e:
                 print(f"🤖 Gemini Error for '{title}' (Attempt {i+1}/{retries}): {e}", file=sys.stderr)
