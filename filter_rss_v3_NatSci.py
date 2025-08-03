@@ -16,7 +16,7 @@
 # 11. **(추가됨)** 이메일 본문에 필터링 방식(키워드 또는 Gemini)에 따른 이모티콘을 추가합니다.
 # 12. **(추가됨)** index.html에 필터링 결과 페이지로 이동하는 버튼을 추가합니다.
 # 13. **(추가됨)** 이메일 본문에서 제거된 논문의 필터링 방식(키워드 또는 Gemini)을 구분하여 표시합니다.
-# 14. **(추가됨)** 'Filter 결과' 버튼을 누르면 개별 논문 링크를 클릭할 수 있는 HTML 페이지가 열립니다.
+# 14. **(추가됨)** 'Filter 결과' 버튼을 누르면 이메일 본문 형식 그대로 개별 논문 링크를 클릭할 수 있는 HTML 페이지가 열립니다.
 #
 
 import feedparser
@@ -30,6 +30,7 @@ import json
 import google.generativeai as genai
 import datetime
 import google.api_core.exceptions as exceptions
+import re
 
 # ANSI 색상 코드 정의
 COLOR_GREEN = '\033[92m'
@@ -258,18 +259,20 @@ def create_email_body_file(email_body_content):
     except Exception as e:
         print(f"Error creating email body file: {e}", file=sys.stderr)
 
-def create_filtered_results_html(all_passed_entries):
+def create_results_html_file(email_body_content):
     """
-    필터링된 모든 논문의 링크를 포함하는 HTML 파일을 생성합니다.
+    이메일 본문과 동일한 형식으로 클릭 가능한 링크를 포함하는 HTML 파일을 생성합니다.
     """
     print("--- HTML 결과 페이지 생성 중: filtered_results.html ---", file=sys.stderr)
+
+    # HTML 템플릿 시작 부분
     html_content = f"""
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filtered Papers</title>
+    <title>필터링된 논문 결과</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
@@ -284,31 +287,60 @@ def create_filtered_results_html(all_passed_entries):
         <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">필터링된 논문 결과</h1>
         <div class="space-y-4">
 """
-    if not all_passed_entries:
-        html_content += '<p class="text-gray-600 text-center">필터링된 논문이 없습니다.</p>'
-    else:
-        for entry in all_passed_entries:
-            title = entry.get('title', '제목 없음')
-            link = entry.get('link', '#')
-            
-            # <a> 태그를 사용하여 제목에 하이퍼링크를 추가합니다.
-            html_content += f"""
-            <div class="p-4 bg-gray-50 rounded-lg shadow-sm hover:bg-gray-100 transition duration-300">
-                <a href="{link}" target="_blank" class="text-blue-600 hover:text-blue-800 text-lg font-medium leading-snug block">
-                    {title}
-                </a>
-                <p class="text-sm text-gray-500 mt-1">
-                    <a href="{link}" target="_blank" class="hover:underline">{link}</a>
-                </p>
-            </div>
-"""
+    
+    # 이메일 본문 내용을 HTML 형식으로 변환
+    email_lines = email_body_content.strip().split('\n')
+    for line in email_lines:
+        line = line.strip()
+        if not line:
+            continue
+        
+        # 저널 구분자 처리
+        if line.startswith("---"):
+            journal_name = line.replace("---", "").strip()
+            html_content += f'<h2 class="text-xl font-bold text-indigo-700 mt-6 mb-2">{journal_name}</h2>'
+        # 섹션 제목 처리 (PASSED PAPERS:, REMOVED PAPERS:)
+        elif line.endswith(":"):
+            html_content += f'<p class="text-lg font-semibold text-gray-800 mt-4">{line}</p>'
+        # 논문 링크 라인 처리
+        else:
+            # 정규 표현식을 사용하여 이모티콘, 제목, 링크를 추출
+            match = re.match(r'^(.*?)\s(.+)\s\((http[s]?://.+)\)$', line)
+            if match:
+                emoticon = match.group(1).strip()
+                title = match.group(2).strip()
+                link = match.group(3).strip()
 
+                # 클릭 가능한 링크로 변환
+                html_content += f"""
+                <div class="p-3 bg-gray-50 rounded-lg shadow-sm hover:bg-gray-100 transition duration-300">
+                    <p class="text-gray-700 text-base font-medium leading-snug">
+                        {emoticon} <a href="{link}" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline">{title}</a>
+                    </p>
+                </div>
+"""
+            # 기타 텍스트 (예: 'No papers found...')
+            else:
+                # GitHub Actions 링크 처리
+                if 'Check GitHub Actions run for details' in line:
+                    action_url = line.split(":\n")[-1].strip()
+                    html_content += f"""
+                    <div class="mt-8 text-sm text-gray-500">
+                        <p>Check GitHub Actions run for details:</p>
+                        <a href="{action_url}" target="_blank" class="text-indigo-600 hover:underline">{action_url}</a>
+                    </div>
+                    """
+                else:
+                    html_content += f'<p class="text-gray-600 ml-6">{line}</p>'
+    
+    # HTML 템플릿 끝 부분
     html_content += """
         </div>
     </div>
 </body>
 </html>
 """
+
     try:
         with open('filtered_results.html', 'w', encoding='utf-8') as f:
             f.write(html_content)
@@ -381,7 +413,6 @@ if __name__ == '__main__':
     STATE_FILE = "last_failed_journal.txt"
     
     email_content = ""
-    all_passed_entries = []
     
     journals_to_process = list(JOURNAL_URLS.items())
     start_index = 0
@@ -415,10 +446,6 @@ if __name__ == '__main__':
                 with open(output_filename, 'wb') as f:
                     f.write(filtered_xml)
                 print(f"Successfully wrote filtered RSS feed to {output_filename}", file=sys.stderr)
-
-                # 모든 통과된 논문 엔트리를 모아서 나중에 HTML 결과 페이지를 만듭니다.
-                all_passed_entries.extend(keyword_passed_entries)
-                all_passed_entries.extend(gemini_passed_entries)
 
                 # 저널별로 이메일 내용 추가
                 email_content += f"--- {journal_name} ---\n\n"
@@ -469,8 +496,7 @@ if __name__ == '__main__':
             print(f"Warning: Could not create/reset state file '{STATE_FILE}': {e}", file=sys.stderr)
             
         create_index_html(JOURNAL_URLS, OUTPUT_FILE_BASE)
-        # 모든 저널 처리 후, 필터링된 모든 논문 목록을 포함하는 HTML 파일을 생성합니다.
-        create_filtered_results_html(all_passed_entries)
+        create_results_html_file(email_content)
 
     finally:
         # GitHub Actions 링크를 구성합니다.
