@@ -40,8 +40,8 @@ JOURNAL_URLS = {
 }
 
 # ✅ Gemini 모델 초기화
-primary_model = 'gemini-1.5-flash-latest'
-fallback_model = 'gemini-1.0-pro'
+primary_model = 'gemini-2.0-flash-latest'
+fallback_model = 'gemini-1.5-flash-latest'
 current_model = None
 using_primary_model = True # ✅ 추가: 현재 주 모델을 사용하는지 여부를 추적하는 플래그
 try:
