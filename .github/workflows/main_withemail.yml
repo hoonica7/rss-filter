@@ -16,6 +16,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # ➡️ last_failed_journal.txt 캐시 복원
+      - name: Restore last failed journal state
+        id: cache-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: last_failed_journal.txt
+          key: ${{ runner.os }}-last-failed-journal
+          restore-keys: |
+            ${{ runner.os }}-last-failed-journal
+
       - name: Set up Python with caching
         uses: actions/setup-python@v5
         with:
@@ -40,7 +50,7 @@ jobs:
           path: |
             filtered_titles.txt
             filtered_feed_*.xml
-          
+      
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
@@ -64,6 +74,15 @@ jobs:
           to: ${{ secrets.MAIL_TO }}
           from: ${{ secrets.MAIL_FROM }}
           body: file://filtered_titles.txt
+
+      # ➡️ last_failed_journal.txt 캐시 저장
+      # 스크립트가 성공하거나 실패하더라도 캐시를 저장하도록 if 조건을 추가
+      - name: Save last failed journal state
+        if: success() || failure()
+        uses: actions/cache/save@v4
+        with:
+          path: last_failed_journal.txt
+          key: ${{ runner.os }}-last-failed-journal
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
