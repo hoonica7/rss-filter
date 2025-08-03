@@ -1,3 +1,5 @@
+## Filtering items based on whitelist & blacklist, and then batch filter remainings at once using gemini (to reduce RPM of Gemini API)
+
 import feedparser
 import lxml.etree as ET
 import requests
