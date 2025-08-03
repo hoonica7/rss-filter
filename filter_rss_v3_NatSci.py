@@ -11,8 +11,16 @@ import time
 import json
 import google.generativeai as genai
 
+# ANSI 색상 코드 정의
+COLOR_GREEN = '\033[92m'
+COLOR_RED = '\033[91m'
+COLOR_YELLOW = '\033[93m'
+COLOR_ORANGE = '\033[38;5;208m'
+COLOR_BLUE = '\033[94m'
+COLOR_END = '\033[0m'
+
 # ✅ 설정: 필터 기준 (여기만 수정하면 됨)
-WHITELIST = ["scientists","researchers","condensed matter", "solid state", "ARPES", "photoemission", "band structure", "Fermi surface", "Brillouin zone", "spin-orbit", "quantum oscillation", "quantum Hall", "Landau level", "topological", "topology", "Weyl", "Dirac", "Chern", "Berry phase", "Kondo", "Mott", "Hubbard", "Heisenberg model", "Ising", "spin liquid", "spin ice", "skyrmion", "nematic", "stripe order", "charge density wave", "CDW", "spin density wave", "SDW", "magnetism", "magnetic order", "antiferromagnetic", "ferromagnetic", "superconductivity", "superconductor", "Meissner", "vortex", "quasiparticle", "phonon", "magnon", "exciton", "polariton", "crystal field", "lattice", "strain", "valley", "moiré", "twisted bilayer", "graphene", "2D material", "van der Waals", "thin film", "interface", "correlated electrons", "quantum critical", "metal-insulator", "quantum phase transition", "resistivity", "transport", "susceptibility", "neutron scattering", "x-ray diffraction", "STM", "STS", "Kagome"]
+WHITELIST = ["condensed matter", "solid state", "ARPES", "photoemission", "band structure", "Fermi surface", "Brillouin zone", "spin-orbit", "quantum oscillation", "quantum Hall", "Landau level", "topological", "topology", "Weyl", "Dirac", "Chern", "Berry phase", "Kondo", "Mott", "Hubbard", "Heisenberg model", "Ising", "spin liquid", "spin ice", "skyrmion", "nematic", "stripe order", "charge density wave", "CDW", "spin density wave", "SDW", "magnetism", "magnetic order", "antiferromagnetic", "ferromagnetic", "superconductivity", "superconductor", "Meissner", "vortex", "quasiparticle", "phonon", "magnon", "exciton", "polariton", "crystal field", "lattice", "strain", "valley", "moiré", "twisted bilayer", "graphene", "2D material", "van der Waals", "thin film", "interface", "correlated electrons", "quantum critical", "metal-insulator", "quantum phase transition", "resistivity", "transport", "susceptibility", "neutron scattering", "x-ray diffraction", "STM", "STS", "Kagome"]
 BLACKLIST = ["cancer", "tumor", "immune", "immunology", "inflammation", "antibody", "cytokine", "gene expression", "genome", "genetic", "transcriptome", "rna", "mrna", "mirna", "crisper", "mutation", "cell", "mouse", "zebrafish", "neuron", "neural", "brain", "synapse", "microbiome", "gut", "pathogen", "bacteria", "virus", "viral", "infection", "epidemiology", "clinical", "therapy", "therapeutic", "disease", "patient", "biopsy", "in vivo", "in vitro", "drug", "pharmacology", "oncology"]
 
 # ✅ 여러 저널 URL 설정
@@ -78,7 +86,7 @@ def filter_rss_for_journal(journal_name, feed_url):
             gemini_pending_entries.append(entry)
 
     if gemini_model and gemini_pending_entries:
-        print(f"🤖 Batch processing {len(gemini_pending_entries)} items from {journal_name} with Gemini...", file=sys.stderr)
+        print(f"🤖 {COLOR_GREEN}Batch processing{COLOR_END} {len(gemini_pending_entries)} items from {journal_name} with Gemini...", file=sys.stderr)
         
         items_to_review = []
         for entry in gemini_pending_entries:
@@ -121,7 +129,7 @@ Here is the list of articles:
                 api_success = True
                 break
             except Exception as e:
-                print(f"🤖 Gemini Batch Error for {journal_name} (Attempt {i+1}/{retries}): {e}", file=sys.stderr)
+                print(f"🤖 {COLOR_RED}Gemini Batch Error{COLOR_END} for {journal_name} (Attempt {i+1}/{retries}): {e}", file=sys.stderr)
                 if i < retries - 1:
                     time.sleep(5)
         
@@ -220,14 +228,14 @@ if __name__ == '__main__':
             email_content += 'No new papers found matching your filters.\n\n'
         else:
             for entry in all_passed_entries:
-                email_content += f"{entry.get('title', 'No title')} (Link: {entry.get('link', 'No link')})\n"
+                email_content += f"‣ {entry.get('title', 'No title')} ({entry.get('link', 'No link')})\n"
         
         email_content += "\n\n--- REMOVED PAPERS ---\n\n"
         if not all_removed_entries:
             email_content += 'No papers were filtered out.\n'
         else:
             for entry in all_removed_entries:
-                email_content += f"{entry.get('title', 'No title')} (Link: {entry.get('link', 'No link')})\n"
+                email_content += f"‣ {entry.get('title', 'No title')} ({entry.get('link', 'No link')})\n"
 
     except Exception as e:
         print(f"An error occurred: {e}", file=sys.stderr)
