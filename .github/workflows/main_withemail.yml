@@ -31,7 +31,7 @@ jobs:
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: |
-          python filtered_rss.py
+          python filter_rss_v2.py
       
       - name: Upload email body file for next step
         uses: actions/upload-artifact@v4
