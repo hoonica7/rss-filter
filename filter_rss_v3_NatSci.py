@@ -54,7 +54,7 @@ def filter_rss_for_journal(journal_name, feed_url):
     주어진 RSS 피드 URL의 내용을 필터링하고 결과를 반환합니다.
     """
     target_url = feed_url.strip('<> ')
-    print(f"Processing journal: {journal_name}, URL: {target_url}", file=sys.stderr)
+    print(f"{COLOR_GREEN}Processing journal: {journal_name}, URL: {target_url}{COLOR_END}", file=sys.stderr)
 
     response = requests.get(target_url)
     raw_xml = response.content
@@ -77,11 +77,11 @@ def filter_rss_for_journal(journal_name, feed_url):
         if is_in_blacklist: # blacklist 먼저.
             removed_links.add(entry.link)
             removed_entries_for_email.append(entry)
-            print(f"❌ Keyword filtered from {journal_name}: {title}", file=sys.stderr)
+            print(f"❌ {title}", file=sys.stderr)
         elif is_in_whitelist:
             passed_links.add(entry.link)
             passed_entries_for_email.append(entry)
-            print(f"✅ Keyword passed from {journal_name}: {title}", file=sys.stderr)
+            print(f"✅ {title}", file=sys.stderr)
         else:
             gemini_pending_entries.append(entry)
 
@@ -121,11 +121,11 @@ Here is the list of articles:
                         if decision == 'YES':
                             passed_links.add(original_entry.link)
                             passed_entries_for_email.append(original_entry)
-                            print(f"🤖✅ Gemini passed from {journal_name}: {title}", file=sys.stderr)
+                            print(f"🤖✅ {title}", file=sys.stderr)
                         else:
                             removed_links.add(original_entry.link)
                             removed_entries_for_email.append(original_entry)
-                            print(f"🤖❌ Gemini filtered from {journal_name}: {title}", file=sys.stderr)
+                            print(f"🤖❌ {title}", file=sys.stderr)
                 api_success = True
                 break
             except Exception as e:
@@ -134,9 +134,9 @@ Here is the list of articles:
                     time.sleep(5)
         
         if not api_success:
-            print(f"🤖 Final Gemini batch API call for {journal_name} failed. All pending items will be removed.", file=sys.stderr)
-            removed_links.update(entry.link for entry in gemini_pending_entries)
-            removed_entries_for_email.extend(gemini_pending_entries)
+            print(f"🤖 Final Gemini batch API call for {journal_name} failed. All pending items will be passed.", file=sys.stderr)
+            passed_links.update(entry.link for entry in gemini_pending_entries)
+            passed_entries_for_email.extend(gemini_pending_entries)
             
     print(f"Total passed links for {journal_name}: {len(passed_links)}", file=sys.stderr)
     print(f"Total removed links for {journal_name}: {len(removed_links)}", file=sys.stderr)
