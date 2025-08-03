@@ -59,8 +59,8 @@ JOURNAL_URLS = {
     "npj_QuantumMaterials": "https://www.nature.com/npjquantmats.rss",
     "Science": "https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=science",
     "Science_Advances": "https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=sciadv",
-    "PRL_Recent": "https://feeds.aps.org/recent/prl.xml",
-    "PRB_Recent": "https://feeds.aps.org/recent/prb.xml",
+    "PRL_Recent": "https://feeds.aps.org/rss/recent/prl.xml",
+    "PRB_Recent": "https://feeds.aps.org/rss/recent/prb.xml",
     "arXiv_CondMat": "https://rss.arxiv.org/rss/cond-mat",
 }
 
