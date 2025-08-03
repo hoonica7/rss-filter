@@ -48,7 +48,7 @@ GENERAL_BLACKLIST = ["congress", "forest", "climate", "lava", "protein", "archeo
 
 # arXiv 및 PRB 저널 필터 기준 설정 (보다 엄격한 필터링을 위해)
 ARXIV_PRB_WHITELIST = ["ARPES", "Berry phase", "Kondo", "Mott", "Hubbard", "moiré", "twisted", "graphene", "Kagome", "CsV3Sb5", "V3Sb5", "Ti3Sb5", "magneto"]
-ARXIV_PRB_BLACKLIST = ["congress", "forest", "climate", "lava", "protein", "archeologist", "mummy", "cancer", "tumor", "immune", "immunology", "inflammation", "antibody", "cytokine", "gene", "tissue", "genome", "genetic", "transcriptome", "rna", "mrna", "mirna", "crisper", "mutation", "cell", "mouse", "zebrafish", "neuron", "neural", "brain", "synapse", "microbiome", "gut", "pathogen", "bacteria", "virus", "viral", "infection", "epidemiology", "clinical", "therapy", "therapeutic", "disease", "patient", "biopsy", "in vivo", "in vitro", "drug", "pharmacology", "oncology", "quantum computing", "quantum information", "quantum optics", "machine learning"]
+ARXIV_PRB_BLACKLIST = ["congress", "forest", "climate", "lava", "protein", "archeologist", "mummy", "cancer", "tumor", "immune", "immunology", "inflammation", "antibody", "cytokine", "gene", "tissue", "genome", "genetic", "transcriptome", "rna", "mrna", "mirna", "crisper", "mutation", "cell", "mouse", "zebrafish", "neuron", "neural", "brain", "synapse", "microbiome", "gut", "pathogen", "bacteria", "virus", "viral", "infection", "epidemiology", "clinical", "therapy", "therapeutic", "disease", "patient", "biopsy", "in vivo", "in vitro", "drug", "pharmacology", "oncology"]
 
 # 여러 저널 URL 설정
 JOURNAL_URLS = {
