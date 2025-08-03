@@ -20,8 +20,8 @@ COLOR_BLUE = '\033[94m'
 COLOR_END = '\033[0m'
 
 # ✅ 설정: 필터 기준 (여기만 수정하면 됨)
-WHITELIST = ["condensed matter", "solid state", "ARPES", "photoemission", "band structure", "Fermi surface", "Brillouin zone", "spin-orbit", "quantum oscillation", "quantum Hall", "Landau level", "topological", "topology", "Weyl", "Dirac", "Chern", "Berry phase", "Kondo", "Mott", "Hubbard", "Heisenberg model", "Ising", "spin liquid", "spin ice", "skyrmion", "nematic", "stripe order", "charge density wave", "CDW", "spin density wave", "SDW", "magnetism", "magnetic order", "antiferromagnetic", "ferromagnetic", "superconductivity", "superconductor", "Meissner", "vortex", "quasiparticle", "phonon", "magnon", "exciton", "polariton", "crystal field", "lattice", "strain", "valley", "moiré", "twisted bilayer", "graphene", "2D material", "van der Waals", "thin film", "interface", "correlated electrons", "quantum critical", "metal-insulator", "quantum phase transition", "resistivity", "transport", "susceptibility", "neutron scattering", "x-ray diffraction", "STM", "STS", "Kagome", "photon"]
-BLACKLIST = ["cancer", "tumor", "immune", "immunology", "inflammation", "antibody", "cytokine", "gene expression", "genome", "genetic", "transcriptome", "rna", "mrna", "mirna", "crisper", "mutation", "cell", "mouse", "zebrafish", "neuron", "neural", "brain", "synapse", "microbiome", "gut", "pathogen", "bacteria", "virus", "viral", "infection", "epidemiology", "clinical", "therapy", "therapeutic", "disease", "patient", "biopsy", "in vivo", "in vitro", "drug", "pharmacology", "oncology"]
+WHITELIST = ["condensed matter", "solid state", "ARPES", "photoemission", "band structure", "Fermi surface", "Brillouin zone", "spin-orbit", "quantum oscillation", "quantum Hall", "Landau level", "topological", "topology", "Weyl", "Dirac", "Chern", "Berry phase", "Kondo", "Mott", "Hubbard", "Heisenberg model", "spin liquid", "spin ice", "skyrmion", "nematic", "stripe order", "charge density wave", "CDW", "spin density wave", "SDW", "magnetism", "magnetic order", "antiferromagnetic", "ferromagnetic", "superconductivity", "superconductor", "Meissner", "quasiparticle", "phonon", "magnon", "exciton", "polariton", "crystal field", "lattice", "moiré", "twisted bilayer", "graphene", "2D material", "van der Waals", "correlated electrons", "quantum critical", "metal-insulator", "quantum phase transition", "susceptibility", "neutron scattering", "x-ray diffraction", "STM", "STS", "Kagome", "photon"]
+BLACKLIST = ["archeologist","mummy","cancer", "tumor", "immune", "immunology", "inflammation", "antibody", "cytokine", "gene","tissue, "genome", "genetic", "transcriptome", "rna", "mrna", "mirna", "crisper", "mutation", "cell", "mouse", "zebrafish", "neuron", "neural", "brain", "synapse", "microbiome", "gut", "pathogen", "bacteria", "virus", "viral", "infection", "epidemiology", "clinical", "therapy", "therapeutic", "disease", "patient", "biopsy", "in vivo", "in vitro", "drug", "pharmacology", "oncology"]
 
 # ✅ 여러 저널 URL 설정
 JOURNAL_URLS = {
@@ -72,20 +72,19 @@ def filter_rss_for_journal(journal_name, feed_url):
         summary = entry.get('summary', '').lower()
         content = f"{title} {summary}"
 
-        # is_in_blacklist = any(b.lower() in content for b in BLACKLIST)
-        # is_in_whitelist = any(w.lower() in content for w in WHITELIST)
+        is_in_blacklist = any(b.lower() in content for b in BLACKLIST)
+        is_in_whitelist = any(w.lower() in content for w in WHITELIST)
 
-        # if is_in_blacklist: # blacklist 먼저.
-        #     removed_links.add(entry.link)
-        #     removed_entries_for_email.append(entry)
-        #     print(f"❌ {title}", file=sys.stderr)
-        # elif is_in_whitelist:
-        #     passed_links.add(entry.link)
-        #     passed_entries_for_email.append(entry)
-        #     print(f"✅ {title}", file=sys.stderr)
-        # else:
-            # gemini_pending_entries.append(entry)
-        gemini_pending_entries.append(entry)
+        if is_in_blacklist: # blacklist 먼저.
+            removed_links.add(entry.link)
+            removed_entries_for_email.append(entry)
+            print(f"❌ {title}", file=sys.stderr)
+        elif is_in_whitelist:
+            passed_links.add(entry.link)
+            passed_entries_for_email.append(entry)
+            print(f"✅ {title}", file=sys.stderr)
+        else:
+            gemini_pending_entries.append(entry)
 
     if current_model and gemini_pending_entries:
         print(f"🤖 {COLOR_GREEN}Batch processing{COLOR_END} {len(gemini_pending_entries)} items from {journal_name} with Gemini...", file=sys.stderr)
@@ -99,7 +98,7 @@ def filter_rss_for_journal(journal_name, feed_url):
 
         # ✅ 수정된 프롬프트: JSON 형식 응답을 더 명확하게 지시
         prompt = f"""
-        I have a list of scientific articles. For each article, please classify if it is related to "condensed matter physics" or "research ethics/researcher life" or editoral articles.
+        I have a list of scientific articles. For each article, please classify if it is related to "condensed matter physics".
         You MUST provide the output as a JSON array of objects. Do not include any text, conversation, or explanations before or after the JSON array.
         Each object in the JSON array should have a "title" and a "decision" key. The decision should be "YES" if it is related to the specified fields, or "NO" if it is not.
         Here is the list of articles:
