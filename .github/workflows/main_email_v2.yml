@@ -1,0 +1,121 @@
+name: Filter RSS Feed everyday + Email on Saturday + Email when error
+
+on:
+  schedule:
+    # 매일 휴스턴 시간 오전 8시(CDT)에 실행 -> UTC 기준 13시
+    - cron: '0 13 * * *'
+  workflow_dispatch:
+
+jobs:
+  filter-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ➡️ last_failed_journal.txt 캐시 복원
+      - name: Restore last failed journal state
+        id: cache-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: last_failed_journal.txt
+          key: ${{ runner.os }}-last-failed-journal
+          restore-keys: |
+            ${{ runner.os }}-last-failed-journal
+
+      - name: Set up Python with caching
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Python script to filter RSS and create files
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          # 🚨 GitHub Actions 실행 링크 환경 변수 추가
+          GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          python filter_rss_v3_NatSci.py
+      
+      - name: Upload artifacts for next steps
+        uses: actions/upload-artifact@v4
+        with:
+          name: filtered-files
+          path: |
+            filtered_titles.txt
+            filtered_feed_*.xml
+      
+      # ➡️ last_failed_journal.txt 캐시 저장
+      # 스크립트가 성공하거나 실패하더라도 캐시를 저장하도록 if 조건을 추가
+      - name: Save last failed journal state
+        if: always() # 항상 캐시를 저장하도록 변경
+        uses: actions/cache/save@v4
+        with:
+          path: last_failed_journal.txt
+          key: ${{ runner.os }}-last-failed-journal
+
+      - name: Deploy to GitHub Pages
+        if: success() # 성공했을 때만 배포
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          publish_branch: gh-pages
+
+      - name: Download artifacts
+        if: success()
+        uses: actions/download-artifact@v4
+        with:
+          name: filtered-files
+      
+      # 이메일 발송 여부를 결정하는 스텝 (성공 시)
+      - name: Check if today is Saturday
+        if: success()
+        id: check_day
+        run: echo "is_saturday=$(date +%u)" >> $GITHUB_OUTPUT
+      
+      - name: Send email with results
+        # 오늘이 토요일인 경우(date +%u == 6)에만 이메일을 발송합니다.
+        if: success() && steps.check_day.outputs.is_saturday == '6'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: '[NatSci RSS] New Paper Updates'
+          to: ${{ secrets.MAIL_TO }}
+          from: ${{ secrets.MAIL_FROM }}
+          body: file://filtered_titles.txt
+
+  # 오류 발생 시 즉시 이메일 알림을 위한 별도 Job
+  failure-notification:
+    runs-on: ubuntu-latest
+    needs: filter-and-deploy
+    if: failure()
+
+    steps:
+      - name: Download error log artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: filtered-files
+
+      - name: Send email with error report
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: '[NatSci RSS] Action Failed!'
+          to: ${{ secrets.MAIL_TO }}
+          from: ${{ secrets.MAIL_FROM }}
+          body: file://filtered_titles.txt
