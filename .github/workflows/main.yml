@@ -30,7 +30,7 @@ jobs:
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: |
-          python filter_rss.py
+          python filter_rss_v2.py
 
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
