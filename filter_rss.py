@@ -1,0 +1,157 @@
+import feedparser
+import lxml.etree as ET
+import requests
+from io import BytesIO
+import sys
+import os
+import time
+import google.generativeai as genai
+
+# ✅ 설정: 필터 기준 (여기만 수정하면 됨)
+WHITELIST = ["condensed matter", "solid state", "ARPES", "photoemission", "band structure", "Fermi surface", "Brillouin zone", "spin-orbit", "quantum oscillation", "quantum Hall", "Landau level", "topological", "topology", "Weyl", "Dirac", "Chern", "Berry phase", "Kondo", "Mott", "Hubbard", "Heisenberg model", "Ising", "spin liquid", "spin ice", "skyrmion", "nematic", "stripe order", "charge density wave", "CDW", "spin density wave", "SDW", "magnetism", "magnetic order", "antiferromagnetic", "ferromagnetic", "superconductivity", "superconductor", "Meissner", "vortex", "quasiparticle", "phonon", "magnon", "exciton", "polariton", "crystal field", "lattice", "strain", "valley", "moiré", "twisted bilayer", "graphene", "2D material", "van der Waals", "thin film", "interface", "correlated electrons", "quantum critical", "metal-insulator", "quantum phase transition", "resistivity", "transport", "susceptibility", "neutron scattering", "x-ray diffraction", "STM", "STS", "Kagome"]
+BLACKLIST = ["cancer", "tumor", "immune", "immunology", "inflammation", "antibody", "cytokine", "gene expression", "genome", "genetic", "transcriptome", "rna", "mrna", "mirna", "crisper", "mutation", "cell line", "mouse model", "zebrafish", "neuron", "neural", "brain", "synapse", "microbiome", "gut", "pathogen", "bacteria", "virus", "viral", "infection", "epidemiology", "clinical", "therapy", "therapeutic", "disease", "patient", "biopsy", "in vivo", "in vitro", "drug", "pharmacology", "oncology"]
+
+# ✅ Gemini 모델 초기화
+try:
+    GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+    if GOOGLE_API_KEY:
+        genai.configure(api_key=GOOGLE_API_KEY)
+        gemini_model = genai.GenerativeModel('gemini-1.5-flash-latest')
+        print("Gemini API configured successfully using gemini-1.5-flash-latest.", file=sys.stderr)
+    else:
+        print("GOOGLE_API_KEY not found. Gemini filter will be skipped.", file=sys.stderr)
+        gemini_model = None
+except Exception as e:
+    print(f"Error configuring Gemini API: {e}", file=sys.stderr)
+    gemini_model = None
+
+def passes_filter(entry):
+    """
+    주어진 RSS 항목이 필터 기준을 통과하고 Gemini 필터를 통과하는지 확인합니다.
+    """
+    title = entry.get('title', '').lower()
+    summary = entry.get('summary', '').lower()
+    content = f"{title} {summary}"
+
+    # 1차 키워드 필터링
+    is_in_whitelist = any(w.lower() in content for w in WHITELIST)
+    is_in_blacklist = any(b.lower() in content for b in BLACKLIST)
+
+    if is_in_whitelist:
+        print(f"🔤✅ Keyword passed: {title}", file=sys.stderr)
+        return True
+
+    if is_in_blacklist:
+        print(f"🔤❌ Keyword failed: {title}", file=sys.stderr)
+        return False
+
+    # 2차 Gemini 필터링
+    if gemini_model:
+        prompt = f"""Is this scientific article related to physics or research ethics, researcher life? Answer YES or NO.
+Title: {entry.get('title', '')}
+Summary: {entry.get('summary', '')}
+"""
+        retries = 3
+        for i in range(retries):
+            try:
+                response = gemini_model.generate_content(prompt)
+                gemini_decision = response.text.strip().upper()
+                if gemini_decision == 'YES':
+                    print(f"🤖✅ Gemini passed: {title}", file=sys.stderr)
+                    return True
+                else:
+                    print(f"🤖❌ Gemini failed: {title}", file=sys.stderr)
+                    return False
+            except Exception as e:
+                print(f"🤖 Gemini Error for '{title}' (Attempt {i+1}/{retries}): {e}", file=sys.stderr)
+                if i < retries - 1:
+                    time.sleep(5)
+                else:
+                    return False # 최종 실패 시 해당 항목은 제거
+            finally:
+                time.sleep(1)
+
+    else:
+        # Gemini API 설정 실패 시 키워드 필터 결과만 사용
+        return True
+
+def filter_rss(feed_url):
+    """
+    주어진 RSS 피드 URL의 내용을 필터링하여 수정된 XML을 반환합니다.
+    """
+    target_url = feed_url.strip('<> ')
+    print(f"Target URL: {target_url}", file=sys.stderr)
+
+    try:
+        response = requests.get(target_url)
+        raw_xml = response.content
+        parsed_feed = feedparser.parse(raw_xml)
+
+        passed_links = {entry.link for entry in parsed_feed.entries if passes_filter(entry)}
+        removed_links = {entry.link for entry in parsed_feed.entries if not passes_filter(entry)}
+        print(f"Passed links count: {len(passed_links)}", file=sys.stderr)
+        print(f"Removed links count: {len(removed_links)}", file=sys.stderr)
+
+        root = ET.fromstring(raw_xml)
+
+        namespaces = {
+            'atom': 'http://www.w3.org/2005/Atom',
+            'rdf': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
+            'rss1': 'http://purl.org/rss/1.0/',
+            'dc': 'http://purl.org/dc/elements/1.1/',
+            'content': 'http://purl.org/rss/1.0/modules/content/'
+        }
+
+        if root.tag == 'rss':
+            channel = root.find('channel')
+            if channel is not None:
+                for item in list(channel.findall('item')):
+                    link_el = item.find('link')
+                    if link_el is not None and link_el.text not in passed_links:
+                        channel.remove(item)
+        elif root.tag == '{http://www.w3.org/2005/Atom}feed':
+            for entry in list(root.findall('atom:entry', namespaces=namespaces)):
+                link_el = entry.find('atom:link', namespaces=namespaces)
+                if link_el is not None:
+                    link_href = link_el.get('href')
+                    if link_href is not None and link_href not in passed_links:
+                        root.remove(entry)
+        elif root.tag == '{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF':
+            for item in list(root.findall('rss1:item', namespaces=namespaces)):
+                item_link = item.get(f"{{{namespaces['rdf']}}}about")
+                if item_link is not None and item_link not in passed_links:
+                    root.remove(item)
+
+            for channel in root.findall('rss1:channel', namespaces=namespaces):
+                items = channel.find('rss1:items', namespaces=namespaces)
+                if items is not None:
+                    rdf_seq = items.find('rdf:Seq', namespaces=namespaces)
+                    if rdf_seq is not None:
+                        for li in list(rdf_seq.findall('rdf:li', namespaces=namespaces)):
+                            link_resource = li.get(f"{{{namespaces['rdf']}}}resource")
+                            if link_resource in removed_links:
+                                rdf_seq.remove(li)
+        else:
+            print(f"Warning: Unknown feed type: {root.tag}", file=sys.stderr)
+
+        buffer = BytesIO()
+        tree = ET.ElementTree(root)
+        tree.write(buffer, encoding='utf-8', xml_declaration=True, pretty_print=True)
+        return buffer.getvalue()
+
+    except Exception as e:
+        print(f"Error in filter_rss: {e}", file=sys.stderr)
+        raise
+
+if __name__ == '__main__':
+    # RSS 피드 URL을 직접 지정하거나 환경 변수에서 가져옵니다.
+    FEED_URL = "https://feeds.nature.com/nphys/rss/current"
+    OUTPUT_FILE = "filtered_feed.xml"
+
+    try:
+        filtered_xml = filter_rss(FEED_URL)
+        with open(OUTPUT_FILE, 'wb') as f:
+            f.write(filtered_xml)
+        print(f"Successfully wrote filtered RSS feed to {OUTPUT_FILE}", file=sys.stderr)
+    except Exception as e:
+        print(f"An error occurred: {e}", file=sys.stderr)
