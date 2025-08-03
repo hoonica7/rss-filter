@@ -165,59 +165,55 @@ Here is the list of articles:
     buffer = BytesIO()
     tree = ET.ElementTree(root)
     tree.write(buffer, encoding='utf-8', xml_declaration=True, pretty_print=True)
-    return buffer.getvalue(), passed_entries_for_email, removed_entries_for_email # ✅ 이 부분에서 3개의 값을 반환하도록 수정했습니다.
+    return buffer.getvalue(), passed_entries_for_email, removed_entries_for_email
 
-def create_email_body_file(passed_entries, removed_entries):
+def create_email_body_content(passed_entries, removed_entries):
     """
-    이메일 본문 파일을 생성하는 함수
+    이메일 본문 내용을 문자열로 반환하는 함수
     """
-    try:
-        with open('filtered_titles.txt', 'w', encoding='utf-8') as f:
-            f.write("--- PASSED PAPERS ---\n\n")
-            if not passed_entries:
-                f.write('No new papers found matching your filters.\n\n')
-            else:
-                for entry in passed_entries:
-                    f.write(f"{entry.get('title', 'No title')} (Link: {entry.get('link', 'No link')})\n")
-            
-            f.write("\n\n--- REMOVED PAPERS ---\n\n")
-            if not removed_entries:
-                f.write('No papers were filtered out.\n')
-            else:
-                for entry in removed_entries:
-                    f.write(f"{entry.get('title', 'No title')} (Link: {entry.get('link', 'No link')})\n")
-        print("Successfully created filtered_titles.txt for email.", file=sys.stderr)
-        return True
-    except Exception as e:
-        print(f"Error creating email body file: {e}", file=sys.stderr)
-        return False
+    email_body = ""
+    email_body += "--- PASSED PAPERS ---\n\n"
+    if not passed_entries:
+        email_body += 'No new papers found matching your filters.\n\n'
+    else:
+        for entry in passed_entries:
+            email_body += f"{entry.get('title', 'No title')} (Link: {entry.get('link', 'No link')})\n"
+    
+    email_body += "\n\n--- REMOVED PAPERS ---\n\n"
+    if not removed_entries:
+        email_body += 'No papers were filtered out.\n'
+    else:
+        for entry in removed_entries:
+            email_body += f"{entry.get('title', 'No title')} (Link: {entry.get('link', 'No link')})\n"
+    
+    return email_body
 
 if __name__ == '__main__':
     FEED_URL = "https://feeds.nature.com/nphys/rss/current"
     OUTPUT_FILE = "filtered_feed.xml"
+    EMAIL_BODY_FILE = "filtered_titles.txt"
 
-    # 이메일 전송용 텍스트 파일을 미리 생성합니다.
-    try:
-        with open('filtered_titles.txt', 'w', encoding='utf-8') as f:
-            f.write('The filter script is currently running. Please check the workflow logs for status.\n')
-    except Exception as file_error:
-        print(f"Error creating placeholder email file: {file_error}", file=sys.stderr)
-        sys.exit(1)
-
+    # 오류 시 사용할 기본 이메일 내용
+    email_content = ""
+    
     try:
         # --- 필터링 로직 실행 ---
-        filtered_xml, passed_entries, removed_entries = filter_rss(FEED_URL) # ✅ 반환값을 3개로 받도록 수정했습니다.
+        filtered_xml, passed_entries, removed_entries = filter_rss(FEED_URL)
         
         # 필터링된 XML 파일 쓰기
         with open(OUTPUT_FILE, 'wb') as f:
             f.write(filtered_xml)
         print(f"Successfully wrote filtered RSS feed to {OUTPUT_FILE}", file=sys.stderr)
 
-        # 이메일 내용 파일 쓰기
-        create_email_body_file(passed_entries, removed_entries)
+        # 이메일 내용 생성
+        email_content = create_email_body_content(passed_entries, removed_entries)
 
     except Exception as e:
-        # 오류 발생 시, 이메일 파일에 오류 메시지를 씁니다.
-        with open('filtered_titles.txt', 'w', encoding='utf-8') as f:
-            f.write(f"An error occurred while running the filter script:\n{e}\nPlease check the workflow logs for more details.")
-        print(f"An error occurred: {e}. Wrote error message to email file.", file=sys.stderr)
+        print(f"An error occurred: {e}", file=sys.stderr)
+        email_content = f"An error occurred while running the filter script:\n{e}\nPlease check the workflow logs for more details."
+
+    finally:
+        # 오류 여부에 관계없이, 이메일 내용 파일을 항상 생성합니다.
+        with open(EMAIL_BODY_FILE, 'w', encoding='utf-8') as f:
+            f.write(email_content)
+        print(f"Successfully created {EMAIL_BODY_FILE} for email.", file=sys.stderr)
