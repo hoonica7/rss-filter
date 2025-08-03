@@ -147,7 +147,7 @@ def filter_rss_for_journal(journal_name, feed_url):
                 error_message = str(e)
                 print(f"🤖 {COLOR_RED}Gemini Batch Error{COLOR_END} for {journal_name} (Attempt {i+1}/{retries}): {error_message}", file=sys.stderr)
                 
-                # 429 에러 발생 시 fallback 모델로 전환
+                # 에러 발생 시 fallback 모델로 전환
                 if isinstance(e, exceptions.ResourceExhausted) and current_model.model_name == primary_model:
                     print(f"🚨 {COLOR_ORANGE}Quota exceeded. Switching to fallback model: {fallback_model}{COLOR_END}", file=sys.stderr)
                     try:
@@ -158,7 +158,7 @@ def filter_rss_for_journal(journal_name, feed_url):
                         current_model = None
                 
                 if i < retries - 1 and current_model:
-                    time.sleep(5)
+                    time.sleep(60)
                 else:
                     break
         
@@ -302,7 +302,7 @@ if __name__ == '__main__':
     if os.path.exists(STATE_FILE):
         with open(STATE_FILE, 'r') as f:
             last_failed_journal = f.read().strip()
-            print(f"Found state file. Continuing from journal: {last_failed_journal}", file=sys.stderr)
+            print(f"{COLOR_GREEN}Found state file. Continuing from journal: {last_failed_journal}{COLOR_END}", file=sys.stderr)
             
             try:
                 # Find the index of the last failed journal to resume from
