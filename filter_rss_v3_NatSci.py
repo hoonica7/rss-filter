@@ -43,6 +43,7 @@ JOURNAL_URLS = {
 primary_model = 'gemini-1.5-flash-latest'
 fallback_model = 'gemini-1.0-pro'
 current_model = None
+using_primary_model = True # ✅ 추가: 현재 주 모델을 사용하는지 여부를 추적하는 플래그
 try:
     GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
     if GOOGLE_API_KEY:
@@ -53,12 +54,13 @@ try:
         print("GOOGLE_API_KEY not found. Gemini filter will be skipped.", file=sys.stderr)
 except Exception as e:
     print(f"Error configuring Gemini API: {e}", file=sys.stderr)
+    using_primary_model = False # ✅ 오류 발생 시 플래그 설정
 
 def filter_rss_for_journal(journal_name, feed_url):
     """
     주어진 RSS 피드 URL의 내용을 필터링하고 결과를 반환합니다.
     """
-    global current_model
+    global current_model, using_primary_model
     target_url = feed_url.strip('<> ')
     print(f"{COLOR_GREEN}Processing journal: {journal_name}, URL: {target_url}{COLOR_END}", file=sys.stderr)
 
@@ -92,7 +94,7 @@ def filter_rss_for_journal(journal_name, feed_url):
             gemini_pending_entries.append(entry)
 
     if current_model and gemini_pending_entries:
-        print(f"� {COLOR_GREEN}Batch processing{COLOR_END} {len(gemini_pending_entries)} items from {journal_name} with Gemini...", file=sys.stderr)
+        print(f"🤖 {COLOR_GREEN}Batch processing{COLOR_END} {len(gemini_pending_entries)} items from {journal_name} with Gemini...", file=sys.stderr)
         
         items_to_review = []
         for entry in gemini_pending_entries:
@@ -150,11 +152,13 @@ def filter_rss_for_journal(journal_name, feed_url):
             except Exception as e:
                 error_type = type(e).__name__
                 print(f"🤖 {COLOR_RED}Gemini Batch Error{COLOR_END} for {journal_name} ({error_type}, Attempt {attempt+1}/{max_attempts}): {e}", file=sys.stderr)
-
-                if isinstance(e, exceptions.ResourceExhausted) and current_model.model_name == primary_model:
+                
+                # ✅ 수정: 모델 이름 비교 대신 플래그 변수 사용
+                if isinstance(e, exceptions.ResourceExhausted) and using_primary_model:
                     print(f"🚨 {COLOR_ORANGE}Quota exceeded. Switching to fallback model: {fallback_model}{COLOR_END}", file=sys.stderr)
                     try:
                         current_model = genai.GenerativeModel(fallback_model)
+                        using_primary_model = False # ✅ 플래그를 False로 변경
                         max_attempts += 1  # 백업 모델로 재시도 기회 1회 추가
                     except Exception as fallback_e:
                         print(f"Error switching to fallback model: {fallback_e}", file=sys.stderr)
