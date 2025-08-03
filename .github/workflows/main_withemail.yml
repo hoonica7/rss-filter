@@ -31,7 +31,7 @@ jobs:
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: |
-          python filter_rss_v2.py
+          python filter_rss_v3_NatSci.py
       
       - name: Upload email body file for next step
         uses: actions/upload-artifact@v4
@@ -51,7 +51,7 @@ jobs:
           server_port: 465
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: '[Filtered RSS] New Paper Updates'
+          subject: '[NatSci RSS] New Paper Updates'
           to: ${{ secrets.MAIL_TO }}
           from: ${{ secrets.MAIL_FROM }}
           body: file://filtered_titles.txt
