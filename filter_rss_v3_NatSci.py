@@ -372,4 +372,3 @@ if __name__ == '__main__':
     finally:
         # 오류 여부에 관계없이, 이메일 내용 파일을 항상 생성합니다.
         create_email_body_file(email_content)
-�
