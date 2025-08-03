@@ -24,8 +24,8 @@ try:
     GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
     if GOOGLE_API_KEY:
         genai.configure(api_key=GOOGLE_API_KEY)
-        gemini_model = genai.GenerativeModel('gemini-2.5-flash-latest')
-        print("Gemini API configured successfully using gemini-2.5-flash-latest.", file=sys.stderr)
+        gemini_model = genai.GenerativeModel('gemini-1.5-flash-latest')
+        print("Gemini API configured successfully using gemini-1.5-flash-latest.", file=sys.stderr)
     else:
         print("GOOGLE_API_KEY not found. Gemini filter will be skipped.", file=sys.stderr)
         gemini_model = None
