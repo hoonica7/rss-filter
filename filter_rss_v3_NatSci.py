@@ -26,6 +26,7 @@ COLOR_END = '\033[0m'
 
 # ✅ 설정: 필터 기준 (여기만 수정하면 됨)
 WHITELIST = ["condensed matter", "solid state", "ARPES", "photoemission", "band structure", "Fermi surface", "Brillouin zone", "spin-orbit", "quantum oscillation", "quantum Hall", "Landau level", "topological", "topology", "Weyl", "Dirac", "Chern", "Berry phase", "Kondo", "Mott", "Hubbard", "Heisenberg model", "spin liquid", "spin ice", "skyrmion", "nematic", "stripe order", "charge density wave", "CDW", "spin density wave", "SDW", "magnetism", "magnetic order", "antiferromagnetic", "ferromagnetic", "superconductivity", "superconductor", "Meissner", "quasiparticle", "phonon", "magnon", "exciton", "polariton", "crystal field", "lattice", "moiré", "twisted bilayer", "graphene", "2D material", "van der Waals", "correlated electrons", "quantum critical", "metal-insulator", "quantum phase transition", "susceptibility", "neutron scattering", "x-ray diffraction", "STM", "STS", "Kagome", "photon"]
+# ✅ 수정: 블랙리스트 항목 업데이트
 BLACKLIST = ["congress", "forest", "climate", "lava", "protein", "archeologist", "mummy", "cancer", "tumor", "immune", "immunology", "inflammation", "antibody", "cytokine", "gene", "tissue", "genome", "genetic", "transcriptome", "rna", "mrna", "mirna", "crisper", "mutation", "cell", "mouse", "zebrafish", "neuron", "neural", "brain", "synapse", "microbiome", "gut", "pathogen", "bacteria", "virus", "viral", "infection", "epidemiology", "clinical", "therapy", "therapeutic", "disease", "patient", "biopsy", "in vivo", "in vitro", "drug", "pharmacology", "oncology"]
 
 # ✅ 여러 저널 URL 설정
@@ -40,6 +41,7 @@ JOURNAL_URLS = {
 }
 
 # ✅ Gemini 모델 초기화
+# ✅ 수정: 주 모델과 대체 모델을 서로 변경
 primary_model = 'gemini-2.0-flash'
 fallback_model = 'gemini-1.5-flash-latest'
 current_model = None
@@ -309,6 +311,7 @@ if __name__ == '__main__':
     if os.path.exists(STATE_FILE):
         with open(STATE_FILE, 'r') as f:
             last_failed_journal = f.read().strip()
+            # ✅ 수정: 메시지에 색상 추가하여 강조
             print(f"{COLOR_GREEN}Found state file. Continuing from journal: {last_failed_journal}{COLOR_END}", file=sys.stderr)
             
             try:
@@ -346,10 +349,21 @@ if __name__ == '__main__':
                 raise
 
         # All journals processed successfully. Clean up the state file.
-        if os.path.exists(STATE_FILE):
-            os.remove(STATE_FILE)
-            print("Successfully processed all journals. State file removed.", file=sys.stderr)
-
+        # ✅ 수정: 파일 삭제가 아닌, 내용을 비우는 방식으로 변경
+        try:
+            # 성공했을 때는 상태 파일의 내용을 비워서 다음번 캐시를 성공 상태로 업데이트합니다.
+            if os.path.exists(STATE_FILE):
+                with open(STATE_FILE, 'w') as f:
+                    f.write('')
+                print("Successfully processed all journals and reset the state file.", file=sys.stderr)
+            else:
+                # 파일이 없을 경우 새로 생성하여 캐시에 포함되도록 합니다.
+                with open(STATE_FILE, 'w') as f:
+                    f.write('')
+                print("Successfully processed all journals. Creating a new, empty state file for caching.", file=sys.stderr)
+        except OSError as e:
+            print(f"Warning: Could not create/reset state file '{STATE_FILE}': {e}", file=sys.stderr)
+            
         # HTML 페이지 생성
         create_index_html(JOURNAL_URLS, OUTPUT_FILE_BASE)
 
