@@ -1,3 +1,5 @@
+## Filtering items based on whitelist & blacklist, and then batch filter remainings at once using gemini (to reduce RPM of Gemini API)
+
 import feedparser
 import lxml.etree as ET
 import requests
@@ -60,9 +62,11 @@ def filter_rss(feed_url):
 
             if is_in_whitelist:
                 passed_links.add(entry.link)
+                passed_entries_for_email.append(entry)
                 print(f"✅ {COLOR_GREEN}Keyword passed{COLOR_END}: {title}", file=sys.stderr)
             elif is_in_blacklist:
                 removed_links.add(entry.link)
+                removed_entries_for_email.append(entry)
                 print(f"❌ {COLOR_RED}Keyword filtered{COLOR_END}: {title}", file=sys.stderr)
             else:
                 gemini_pending_entries.append(entry)
@@ -79,7 +83,7 @@ def filter_rss(feed_url):
                 })
 
             prompt = f"""
-I have a list of scientific articles. For each article, please classify if it is related to "condensed matter physics" or "research ethics/researcher life".
+I have a list of scientific articles. For each article, please classify if it is related to "condensed matter physics" or "research ethics/researcher life" or editoral articles.
 Provide the output as a JSON array of objects. Each object should have a "title" and a "decision" key. The decision should be "YES" if it is related to the specified fields, or "NO" if it is not.
 Here is the list of articles:
 {json.dumps(items_to_review, indent=2)}
@@ -103,9 +107,11 @@ Here is the list of articles:
                         if original_entry:
                             if decision == 'YES':
                                 passed_links.add(original_entry.link)
+                                passed_entries_for_email.append(original_entry)
                                 print(f"🤖✅ {COLOR_GREEN}Gemini passed{COLOR_END} : {title}", file=sys.stderr)
                             else:
                                 removed_links.add(original_entry.link)
+                                removed_entries_for_email.append(original_entry)
                                 print(f"🤖❌ {COLOR_RED}Gemini filtered{COLOR_END} : {title}", file=sys.stderr)
                     api_success = True
                     break
@@ -117,10 +123,29 @@ Here is the list of articles:
             if not api_success:
                 print("🤖 Final Gemini batch API call failed. All pending items will be removed.", file=sys.stderr)
                 removed_links.update(entry.link for entry in gemini_pending_entries)
-        
+                removed_entries_for_email.extend(gemini_pending_entries) # 이메일 목록에도 추가
+                
         print(f"Total passed links: {len(passed_links)}", file=sys.stderr)
         print(f"Total removed links: {len(removed_links)}", file=sys.stderr)
-
+        
+        # 3차 작업: 이메일 전송용 텍스트 파일 생성
+        with open('filtered_titles.txt', 'w', encoding='utf-8') as f:
+            f.write("--- PASSED PAPERS ---\n\n")
+            if not passed_entries_for_email:
+                f.write('No new papers found matching your filters.\n\n')
+            else:
+                for entry in passed_entries_for_email:
+                    f.write(f"{entry.get('title', 'No title')} (Link: {entry.get('link', 'No link')})\n")
+            
+            f.write("\n\n--- REMOVED PAPERS ---\n\n")
+            if not removed_entries_for_email:
+                f.write('No papers were filtered out.\n')
+            else:
+                for entry in removed_entries_for_email:
+                    f.write(f"{entry.get('title', 'No title')} (Link: {entry.get('link', 'No link')})\n")
+            
+            print("Successfully created filtered_titles.txt for email.", file=sys.stderr)
+            
         # XML 파싱 및 필터링
         root = ET.fromstring(raw_xml)
         namespaces = {
