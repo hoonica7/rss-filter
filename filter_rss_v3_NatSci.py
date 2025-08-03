@@ -20,9 +20,9 @@ JOURNAL_URLS = {
     "Nature": "https://www.nature.com/nature.rss",
     "Nature_Physics": "https://feeds.nature.com/nphys/rss/current",
     "Nature_Materials": "https://feeds.nature.com/nmat/rss/current",
-    "Nature_Communications": "https://www.nature.com/subjects/publishing/ncomms.rss"
-    "npj_QuantumMaterials": "https://www.nature.com/npjquantmats.rss"
-    "Science": "https://www.science.org/rss/science_current.xml"
+    "Nature_Communications": "https://www.nature.com/subjects/publishing/ncomms.rss",
+    "npj_QuantumMaterials": "https://www.nature.com/npjquantmats.rss",
+    "Science": "https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=science",
     "Science_Advances": "https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=sciadv"
     # 여기에 다른 저널을 추가할 수 있습니다. 예: "phys_rev_lett": "http://feeds.aps.org/rss/recent/prl.xml"
 }
