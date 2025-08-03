@@ -53,14 +53,20 @@ jobs:
             filtered_titles.txt
             filtered_feed_*.xml
       
-      # ➡️ last_failed_journal.txt 캐시 저장
-      # 스크립트가 성공하거나 실패하더라도 캐시를 저장하도록 if 조건을 추가
-      - name: Save last failed journal state
-        if: always() # 항상 캐시를 저장하도록 변경
+      # 캐시 저장
+      - name: Cache last_failed_journal state
         uses: actions/cache/save@v4
+        if: always()
         with:
           path: last_failed_journal.txt
-          key: ${{ runner.os }}-last-failed-journal
+          # 각 실행마다 고유한 캐시 키를 사용합니다.
+          # 이렇게 하면 캐시 저장 충돌을 피할 수 있습니다.
+          key: ${{ runner.os }}-${{ github.run_id }}
+          # restore-keys를 사용하여 이전 실행에서 저장된 캐시를 복원할 수 있도록 합니다.
+          # 이렇게 하면 최신 캐시가 없더라도 가장 최근의 캐시를 가져올 수 있습니다.
+          restore-keys: |
+            ${{ runner.os }}-last-failed-journal
+
 
       - name: Deploy to GitHub Pages
         if: success() # 성공했을 때만 배포
