@@ -1,3 +1,5 @@
+## If quota error occurs, next day (next action workflow) starts from the failed journal
+## Sends email, too.
 ## Filtering multiple journals at once.
 ## Filtering items based on whitelist & blacklist, and then batch filter remainings at once using gemini (to reduce RPM of Gemini API)
 
@@ -227,7 +229,6 @@ def create_email_body_file(email_body_content):
     except Exception as e:
         print(f"Error creating email body file: {e}", file=sys.stderr)
 
-# --- 새로 추가된 부분 ---
 def create_index_html(journal_urls, rss_base_filename):
     """
     각 저널의 필터링된 RSS 피드 링크를 보여주는 index.html 페이지를 생성합니다.
@@ -283,30 +284,63 @@ def create_index_html(journal_urls, rss_base_filename):
         print("--- HTML 페이지 생성 완료: index.html ---", file=sys.stderr)
     except Exception as e:
         print(f"HTML 페이지 생성 중 오류 발생: {e}", file=sys.stderr)
-# --- 새로 추가된 부분 끝 ---
+
 
 if __name__ == '__main__':
     OUTPUT_FILE_BASE = "filtered_feed"
+    STATE_FILE = "last_failed_journal.txt"
     
     all_passed_entries = []
     all_removed_entries = []
 
-    try:
-        for journal_name, feed_url in JOURNAL_URLS.items():
-            # --- 필터링 로직 실행 ---
-            filtered_xml, passed_entries, removed_entries = filter_rss_for_journal(journal_name, feed_url)
+    # Get the list of journals to process
+    journals_to_process = list(JOURNAL_URLS.items())
+    start_index = 0
+    if os.path.exists(STATE_FILE):
+        with open(STATE_FILE, 'r') as f:
+            last_failed_journal = f.read().strip()
+            print(f"Found state file. Continuing from journal: {last_failed_journal}", file=sys.stderr)
             
-            # 필터링된 XML 파일 쓰기
-            output_filename = f"{OUTPUT_FILE_BASE}_{journal_name}.xml"
-            with open(output_filename, 'wb') as f:
-                f.write(filtered_xml)
-            print(f"Successfully wrote filtered RSS feed to {output_filename}", file=sys.stderr)
+            try:
+                # Find the index of the last failed journal to resume from
+                journal_names = list(JOURNAL_URLS.keys())
+                start_index = journal_names.index(last_failed_journal)
+            except ValueError:
+                print(f"Last failed journal '{last_failed_journal}' not found in JOURNAL_URLS. Starting from the beginning.", file=sys.stderr)
+                # If the journal name in the file is invalid, start from scratch
+                start_index = 0
+            
+    try:
+        # Loop through journals from the determined start index
+        for journal_name, feed_url in journals_to_process[start_index:]:
+            # --- 필터링 로직 실행 ---
+            try:
+                filtered_xml, passed_entries, removed_entries = filter_rss_for_journal(journal_name, feed_url)
+                
+                # 필터링된 XML 파일 쓰기
+                output_filename = f"{OUTPUT_FILE_BASE}_{journal_name}.xml"
+                with open(output_filename, 'wb') as f:
+                    f.write(filtered_xml)
+                print(f"Successfully wrote filtered RSS feed to {output_filename}", file=sys.stderr)
 
-            # 이메일 리스트에 추가
-            all_passed_entries.extend(passed_entries)
-            all_removed_entries.extend(removed_entries)
+                # 이메일 리스트에 추가
+                all_passed_entries.extend(passed_entries)
+                all_removed_entries.extend(removed_entries)
 
-        # ✅ 새로 추가된 HTML 페이지 생성 함수 호출
+            except Exception as e:
+                # Catch the error and save the failed journal name before exiting
+                print(f"An error occurred while processing journal '{journal_name}': {e}", file=sys.stderr)
+                with open(STATE_FILE, 'w') as f:
+                    f.write(journal_name)
+                # Re-raise the exception to stop the workflow
+                raise
+
+        # All journals processed successfully. Clean up the state file.
+        if os.path.exists(STATE_FILE):
+            os.remove(STATE_FILE)
+            print("Successfully processed all journals. State file removed.", file=sys.stderr)
+
+        # HTML 페이지 생성
         create_index_html(JOURNAL_URLS, OUTPUT_FILE_BASE)
 
         # 모든 저널의 결과를 모아 하나의 이메일 본문 생성
