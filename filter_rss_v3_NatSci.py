@@ -84,7 +84,8 @@ def filter_rss_for_journal(journal_name, feed_url):
         #     passed_entries_for_email.append(entry)
         #     print(f"✅ {title}", file=sys.stderr)
         # else:
-            gemini_pending_entries.append(entry)
+            # gemini_pending_entries.append(entry)
+        gemini_pending_entries.append(entry)
 
     if current_model and gemini_pending_entries:
         print(f"🤖 {COLOR_GREEN}Batch processing{COLOR_END} {len(gemini_pending_entries)} items from {journal_name} with Gemini...", file=sys.stderr)
