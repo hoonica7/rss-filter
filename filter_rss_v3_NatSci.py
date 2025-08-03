@@ -72,19 +72,20 @@ def filter_rss_for_journal(journal_name, feed_url):
         summary = entry.get('summary', '').lower()
         content = f"{title} {summary}"
 
-        is_in_blacklist = any(b.lower() in content for b in BLACKLIST)
-        is_in_whitelist = any(w.lower() in content for w in WHITELIST)
+        # is_in_blacklist = any(b.lower() in content for b in BLACKLIST)
+        # is_in_whitelist = any(w.lower() in content for w in WHITELIST)
 
-        if is_in_blacklist: # blacklist 먼저.
-            removed_links.add(entry.link)
-            removed_entries_for_email.append(entry)
-            print(f"❌ {title}", file=sys.stderr)
-        elif is_in_whitelist:
-            passed_links.add(entry.link)
-            passed_entries_for_email.append(entry)
-            print(f"✅ {title}", file=sys.stderr)
-        else:
-            gemini_pending_entries.append(entry)
+        # if is_in_blacklist: # blacklist 먼저.
+        #     removed_links.add(entry.link)
+        #     removed_entries_for_email.append(entry)
+        #     print(f"❌ {title}", file=sys.stderr)
+        # elif is_in_whitelist:
+        #     passed_links.add(entry.link)
+        #     passed_entries_for_email.append(entry)
+        #     print(f"✅ {title}", file=sys.stderr)
+        # else:
+            # gemini_pending_entries.append(entry)
+        gemini_pending_entries.append(entry)
 
     if current_model and gemini_pending_entries:
         print(f"🤖 {COLOR_GREEN}Batch processing{COLOR_END} {len(gemini_pending_entries)} items from {journal_name} with Gemini...", file=sys.stderr)

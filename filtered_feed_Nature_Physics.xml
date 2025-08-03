@@ -18,11 +18,17 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02965-y"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02944-3"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02985-8"/>
                 
-                    </rdf:Seq>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02964-z"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02967-w"/>
+                
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -30,6 +36,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-02965-y">
+            <title>Capillary interactions drive the self-organization of bacterial colonies</title>
+            <link>https://www.nature.com/articles/s41567-025-02965-y</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 28 July 2025; &lt;a href="https://www.nature.com/articles/s41567-025-02965-y"&gt;doi:10.1038/s41567-025-02965-y&lt;/a&gt;&lt;/p&gt;Bacteria tend to live in thin layers of water on surfaces. Now the capillary forces in these layers are shown to help organize the bacteria into dense packs.</content:encoded>
+            <dc:title>Capillary interactions drive the self-organization of bacterial colonies</dc:title>
+            <dc:creator>Matthew E. Black</dc:creator><dc:creator>Chenyi Fei</dc:creator><dc:creator>Ricard Alert</dc:creator><dc:creator>Ned S. Wingreen</dc:creator><dc:creator>Joshua W. Shaevitz</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-02965-y</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-07-28; | doi:10.1038/s41567-025-02965-y</dc:source>
+            <dc:date>2025-07-28</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-02965-y</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-02965-y</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-02944-3">
             <title>Predicting topological entanglement entropy in a Rydberg analogue simulator</title>
@@ -61,4 +82,34 @@
             <prism:url>https://www.nature.com/articles/s41567-025-02985-8</prism:url>
         </item>
     
-        </rdf:RDF>
+        <item rdf:about="https://www.nature.com/articles/s41567-025-02964-z">
+            <title>Elastic properties of force-transmitting linkages determine multistable mechanosensitive behaviour of cell adhesion</title>
+            <link>https://www.nature.com/articles/s41567-025-02964-z</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 18 July 2025; &lt;a href="https://www.nature.com/articles/s41567-025-02964-z"&gt;doi:10.1038/s41567-025-02964-z&lt;/a&gt;&lt;/p&gt;The cytoskeleton and extracellular matrix are linked by molecular clutches that enable cells to sense their environment. Now it is shown that the elastic properties of the clutches underpin stiffness sensing.</content:encoded>
+            <dc:title>Elastic properties of force-transmitting linkages determine multistable mechanosensitive behaviour of cell adhesion</dc:title>
+            <dc:creator>Ping Liu</dc:creator><dc:creator>Qiuyu Wang</dc:creator><dc:creator>Xin Dai</dc:creator><dc:creator>Lingxuan Pei</dc:creator><dc:creator>Junfan Wang</dc:creator><dc:creator>Weiyi Zhao</dc:creator><dc:creator>Heath E. Johnson</dc:creator><dc:creator>Mingxi Yao</dc:creator><dc:creator>Artem K. Efremov</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-02964-z</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-07-18; | doi:10.1038/s41567-025-02964-z</dc:source>
+            <dc:date>2025-07-18</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-02964-z</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-02964-z</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-02967-w">
+            <title>Too late to be careless</title>
+            <link>https://www.nature.com/articles/s41567-025-02967-w</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 14 July 2025; &lt;a href="https://www.nature.com/articles/s41567-025-02967-w"&gt;doi:10.1038/s41567-025-02967-w&lt;/a&gt;&lt;/p&gt;Too late to be careless</content:encoded>
+            <dc:title>Too late to be careless</dc:title>
+            <dc:creator>Mark Buchanan</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-02967-w</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-07-14; | doi:10.1038/s41567-025-02967-w</dc:source>
+            <dc:date>2025-07-14</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-02967-w</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-02967-w</prism:url>
+        </item>
+    
+</rdf:RDF>
