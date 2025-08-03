@@ -1,7 +1,7 @@
 name: Filter RSS Feed
 
 on:
-  schedule:
+  #schedule:
     # 휴스턴 시간 오전 8시(CDT)에 실행 -> UTC 기준 13시
     #- cron: '0 13 * * *' 주석처리 -> 수동
   workflow_dispatch:
