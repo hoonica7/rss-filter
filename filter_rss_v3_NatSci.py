@@ -12,7 +12,7 @@ import json
 import google.generativeai as genai
 
 # ✅ 설정: 필터 기준 (여기만 수정하면 됨)
-WHITELIST = ["condensed matter", "solid state", "ARPES", "photoemission", "band structure", "Fermi surface", "Brillouin zone", "spin-orbit", "quantum oscillation", "quantum Hall", "Landau level", "topological", "topology", "Weyl", "Dirac", "Chern", "Berry phase", "Kondo", "Mott", "Hubbard", "Heisenberg model", "Ising", "spin liquid", "spin ice", "skyrmion", "nematic", "stripe order", "charge density wave", "CDW", "spin density wave", "SDW", "magnetism", "magnetic order", "antiferromagnetic", "ferromagnetic", "superconductivity", "superconductor", "Meissner", "vortex", "quasiparticle", "phonon", "magnon", "exciton", "polariton", "crystal field", "lattice", "strain", "valley", "moiré", "twisted bilayer", "graphene", "2D material", "van der Waals", "thin film", "interface", "correlated electrons", "quantum critical", "metal-insulator", "quantum phase transition", "resistivity", "transport", "susceptibility", "neutron scattering", "x-ray diffraction", "STM", "STS", "Kagome"]
+WHITELIST = ["scientists","researchers","condensed matter", "solid state", "ARPES", "photoemission", "band structure", "Fermi surface", "Brillouin zone", "spin-orbit", "quantum oscillation", "quantum Hall", "Landau level", "topological", "topology", "Weyl", "Dirac", "Chern", "Berry phase", "Kondo", "Mott", "Hubbard", "Heisenberg model", "Ising", "spin liquid", "spin ice", "skyrmion", "nematic", "stripe order", "charge density wave", "CDW", "spin density wave", "SDW", "magnetism", "magnetic order", "antiferromagnetic", "ferromagnetic", "superconductivity", "superconductor", "Meissner", "vortex", "quasiparticle", "phonon", "magnon", "exciton", "polariton", "crystal field", "lattice", "strain", "valley", "moiré", "twisted bilayer", "graphene", "2D material", "van der Waals", "thin film", "interface", "correlated electrons", "quantum critical", "metal-insulator", "quantum phase transition", "resistivity", "transport", "susceptibility", "neutron scattering", "x-ray diffraction", "STM", "STS", "Kagome"]
 BLACKLIST = ["cancer", "tumor", "immune", "immunology", "inflammation", "antibody", "cytokine", "gene expression", "genome", "genetic", "transcriptome", "rna", "mrna", "mirna", "crisper", "mutation", "cell", "mouse", "zebrafish", "neuron", "neural", "brain", "synapse", "microbiome", "gut", "pathogen", "bacteria", "virus", "viral", "infection", "epidemiology", "clinical", "therapy", "therapeutic", "disease", "patient", "biopsy", "in vivo", "in vitro", "drug", "pharmacology", "oncology"]
 
 # ✅ 여러 저널 URL 설정
@@ -66,14 +66,14 @@ def filter_rss_for_journal(journal_name, feed_url):
         is_in_whitelist = any(w.lower() in content for w in WHITELIST)
         is_in_blacklist = any(b.lower() in content for b in BLACKLIST)
 
-        if is_in_whitelist:
-            passed_links.add(entry.link)
-            passed_entries_for_email.append(entry)
-            print(f"✅ Keyword passed from {journal_name}: {title}", file=sys.stderr)
-        elif is_in_blacklist:
+        if is_in_blacklist: # blacklist 먼저.
             removed_links.add(entry.link)
             removed_entries_for_email.append(entry)
             print(f"❌ Keyword filtered from {journal_name}: {title}", file=sys.stderr)
+        elif is_in_whitelist:
+            passed_links.add(entry.link)
+            passed_entries_for_email.append(entry)
+            print(f"✅ Keyword passed from {journal_name}: {title}", file=sys.stderr)
         else:
             gemini_pending_entries.append(entry)
 
