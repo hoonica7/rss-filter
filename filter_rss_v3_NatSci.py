@@ -21,7 +21,7 @@ COLOR_END = '\033[0m'
 
 # ✅ 설정: 필터 기준 (여기만 수정하면 됨)
 WHITELIST = ["condensed matter", "solid state", "ARPES", "photoemission", "band structure", "Fermi surface", "Brillouin zone", "spin-orbit", "quantum oscillation", "quantum Hall", "Landau level", "topological", "topology", "Weyl", "Dirac", "Chern", "Berry phase", "Kondo", "Mott", "Hubbard", "Heisenberg model", "Ising", "spin liquid", "spin ice", "skyrmion", "nematic", "stripe order", "charge density wave", "CDW", "spin density wave", "SDW", "magnetism", "magnetic order", "antiferromagnetic", "ferromagnetic", "superconductivity", "superconductor", "Meissner", "vortex", "quasiparticle", "phonon", "magnon", "exciton", "polariton", "crystal field", "lattice", "strain", "valley", "moiré", "twisted bilayer", "graphene", "2D material", "van der Waals", "thin film", "interface", "correlated electrons", "quantum critical", "metal-insulator", "quantum phase transition", "resistivity", "transport", "susceptibility", "neutron scattering", "x-ray diffraction", "STM", "STS", "Kagome"]
-BLACKLIST = ["cancer", "tumor", "immune", "immunology", "inflammation", "antibody", "cytokine", "gene expression", "genome", "genetic", "transcriptome", "rna", "mrna", "mirna", "crisper", "mutation", "cell", "mouse", "zebrafish", "neuron", "neural", "brain", "synapse", "microbiome", "gut", "pathogen", "bacteria", "virus", "viral", "infection", "epidemiology", "clinical", "therapy", "therapeutic", "disease", "patient", "biopsy", "in vivo", "in vitro", "drug", "pharmacology", "oncology"]
+BLACKLIST = ["DNA","RNA","mummy","cancer", "tumor", "immune", "immunology", "inflammation", "antibody", "cytokine", "gene expression", "genome", "genetic", "transcriptome", "rna", "mrna", "mirna", "crisper", "mutation", "cell", "mouse", "zebrafish", "neuron", "neural", "brain", "synapse", "microbiome", "gut", "pathogen", "bacteria", "virus", "viral", "infection", "epidemiology", "clinical", "therapy", "therapeutic", "disease", "patient", "biopsy", "in vivo", "in vitro", "drug", "pharmacology", "oncology"]
 
 # ✅ 여러 저널 URL 설정
 JOURNAL_URLS = {
@@ -32,27 +32,28 @@ JOURNAL_URLS = {
     "npj_QuantumMaterials": "https://www.nature.com/npjquantmats.rss",
     "Science": "https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=science",
     "Science_Advances": "https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=sciadv"
-    # 여기에 다른 저널을 추가할 수 있습니다. 예: "phys_rev_lett": "http://feeds.aps.org/rss/recent/prl.xml"
 }
 
 # ✅ Gemini 모델 초기화
+primary_model = 'gemini-1.5-flash-latest'
+fallback_model = 'gemini-1.0-pro'
+current_model = None
 try:
     GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
     if GOOGLE_API_KEY:
         genai.configure(api_key=GOOGLE_API_KEY)
-        gemini_model = genai.GenerativeModel('gemini-1.5-flash-latest')
-        print("Gemini API configured successfully using gemini-1.5-flash-latest.", file=sys.stderr)
+        current_model = genai.GenerativeModel(primary_model)
+        print(f"Gemini API configured successfully using primary model: {primary_model}", file=sys.stderr)
     else:
         print("GOOGLE_API_KEY not found. Gemini filter will be skipped.", file=sys.stderr)
-        gemini_model = None
 except Exception as e:
     print(f"Error configuring Gemini API: {e}", file=sys.stderr)
-    gemini_model = None
 
 def filter_rss_for_journal(journal_name, feed_url):
     """
     주어진 RSS 피드 URL의 내용을 필터링하고 결과를 반환합니다.
     """
+    global current_model
     target_url = feed_url.strip('<> ')
     print(f"{COLOR_GREEN}Processing journal: {journal_name}, URL: {target_url}{COLOR_END}", file=sys.stderr)
 
@@ -71,8 +72,8 @@ def filter_rss_for_journal(journal_name, feed_url):
         summary = entry.get('summary', '').lower()
         content = f"{title} {summary}"
 
-        is_in_whitelist = any(w.lower() in content for w in WHITELIST)
         is_in_blacklist = any(b.lower() in content for b in BLACKLIST)
+        is_in_whitelist = any(w.lower() in content for w in WHITELIST)
 
         if is_in_blacklist: # blacklist 먼저.
             removed_links.add(entry.link)
@@ -85,7 +86,7 @@ def filter_rss_for_journal(journal_name, feed_url):
         else:
             gemini_pending_entries.append(entry)
 
-    if gemini_model and gemini_pending_entries:
+    if current_model and gemini_pending_entries:
         print(f"🤖 {COLOR_GREEN}Batch processing{COLOR_END} {len(gemini_pending_entries)} items from {journal_name} with Gemini...", file=sys.stderr)
         
         items_to_review = []
@@ -95,17 +96,19 @@ def filter_rss_for_journal(journal_name, feed_url):
                 "summary": entry.get('summary', '')
             })
 
+        # 모든 저널에 공통된 Gemini 프롬프트 적용
         prompt = f"""
-I have a list of scientific articles. For each article, please classify if it is related to "condensed matter physics" or "research ethics/researcher life" or editoral articles.
-Provide the output as a JSON array of objects. Each object should have a "title" and a "decision" key. The decision should be "YES" if it is related to the specified fields, or "NO" if it is not.
-Here is the list of articles:
-{json.dumps(items_to_review, indent=2)}
-"""
+        I have a list of scientific articles. For each article, please classify if it is related to "condensed matter physics" or "research ethics/researcher life" or editoral articles.
+        Provide the output as a JSON array of objects. Each object should have a "title" and a "decision" key. The decision should be "YES" if it is related to the specified fields, or "NO" if it is not.
+        Here is the list of articles:
+        {json.dumps(items_to_review, indent=2)}
+        """
+            
         retries = 3
         api_success = False
         for i in range(retries):
             try:
-                response = gemini_model.generate_content(
+                response = current_model.generate_content(
                     prompt,
                     generation_config=genai.types.GenerationConfig(
                         response_mime_type="application/json"
@@ -129,14 +132,28 @@ Here is the list of articles:
                 api_success = True
                 break
             except Exception as e:
-                print(f"🤖 {COLOR_RED}Gemini Batch Error{COLOR_END} for {journal_name} (Attempt {i+1}/{retries}): {e}", file=sys.stderr)
-                if i < retries - 1:
+                error_message = str(e)
+                print(f"🤖 {COLOR_RED}Gemini Batch Error{COLOR_END} for {journal_name} (Attempt {i+1}/{retries}): {error_message}", file=sys.stderr)
+                
+                # 429 에러 발생 시 fallback 모델로 전환
+                if "429" in error_message and current_model.model_name == primary_model and i == retries - 1:
+                    print(f"🚨 {COLOR_ORANGE}Quota exceeded. Switching to fallback model: {fallback_model}{COLOR_END}", file=sys.stderr)
+                    try:
+                        current_model = genai.GenerativeModel(fallback_model)
+                        retries += 1 # fallback 시도 횟수 추가
+                    except Exception as fallback_e:
+                        print(f"Error switching to fallback model: {fallback_e}", file=sys.stderr)
+                        current_model = None
+                
+                if i < retries - 1 and current_model:
                     time.sleep(5)
+                else:
+                    break
         
         if not api_success:
-            print(f"🤖 Final Gemini batch API call for {journal_name} failed. All pending items will be passed.", file=sys.stderr)
-            passed_links.update(entry.link for entry in gemini_pending_entries)
-            passed_entries_for_email.extend(gemini_pending_entries)
+            print(f"🤖 Final Gemini batch API call for {journal_name} failed. All pending items will be removed.", file=sys.stderr)
+            removed_links.update(entry.link for entry in gemini_pending_entries)
+            removed_entries_for_email.extend(gemini_pending_entries)
             
     print(f"Total passed links for {journal_name}: {len(passed_links)}", file=sys.stderr)
     print(f"Total removed links for {journal_name}: {len(removed_links)}", file=sys.stderr)
