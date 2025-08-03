@@ -11,6 +11,11 @@
 # 6. 모든 저널을 성공적으로 처리한 경우, 상태 파일에 'SUCCESS'를 기록하여 다음 실행 시 처음부터 시작.
 # 7. 필터링된 결과와 제거된 결과를 담은 이메일 본문 파일 생성.
 # 8. 필터링된 RSS 피드를 위한 index.html 페이지와 개별 .xml 파일 생성.
+# 9. **(추가됨)** 이메일 최하단에 현재 GitHub Action 실행 링크를 자동으로 추가합니다.
+# 10. **(추가됨)** 이메일 본문의 내용을 저널별로 구분하여 표시합니다.
+# 11. **(추가됨)** 이메일 본문에 필터링 방식(키워드 또는 Gemini)에 따른 이모티콘을 추가합니다.
+# 12. **(추가됨)** index.html에 필터링 결과 페이지로 이동하는 버튼을 추가합니다.
+# 13. **(추가됨)** 이메일 본문에서 제거된 논문의 필터링 방식(키워드 또는 Gemini)을 구분하여 표시합니다.
 #
 
 import feedparser
@@ -78,11 +83,13 @@ def filter_rss_for_journal(journal_name, feed_url):
     parsed_feed = feedparser.parse(raw_xml)
     
     gemini_pending_entries = []
-    passed_links = set()
-    removed_links = set()
-    passed_entries_for_email = []
-    removed_entries_for_email = []
+    
+    keyword_passed_entries = []
+    gemini_passed_entries = []
+    keyword_removed_entries = []
+    gemini_removed_entries = []
 
+    # 모든 RSS 피드 항목을 순회하며 1차 필터링을 수행합니다.
     for entry in parsed_feed.entries:
         title = entry.get('title', '').lower()
         summary = entry.get('summary', '').lower()
@@ -91,17 +98,18 @@ def filter_rss_for_journal(journal_name, feed_url):
         is_in_blacklist = any(b.lower() in content for b in BLACKLIST)
         is_in_whitelist = any(w.lower() in content for w in WHITELIST)
 
+        # 블랙리스트에 있으면 제거하고, 화이트리스트에 있으면 통과시킵니다.
+        # 둘 다 아니면 Gemini API를 통한 2차 필터링 대상으로 분류합니다.
         if is_in_blacklist:
-            removed_links.add(entry.link)
-            removed_entries_for_email.append(entry)
+            keyword_removed_entries.append(entry)
             print(f"  ❌ {title}", file=sys.stderr)
         elif is_in_whitelist:
-            passed_links.add(entry.link)
-            passed_entries_for_email.append(entry)
+            keyword_passed_entries.append(entry)
             print(f"  ✅ {title}", file=sys.stderr)
         else:
             gemini_pending_entries.append(entry)
 
+    # Gemini API를 사용하여 1차 필터링에 걸리지 않은 항목들을 검토합니다.
     if current_model and gemini_pending_entries:
         print(f"🤖 {COLOR_GREEN}Batch processing{COLOR_END} {len(gemini_pending_entries)} items from {journal_name} with Gemini...", file=sys.stderr)
         
@@ -123,6 +131,7 @@ def filter_rss_for_journal(journal_name, feed_url):
         max_attempts = 3
         api_success = False
         attempt = 0
+        # Gemini API 호출을 최대 3번 시도하고, 할당량 오류 시 백업 모델로 전환합니다.
         while attempt < max_attempts and not api_success:
             try:
                 print(f"🤖 Attempt {attempt+1}/{max_attempts} using model: {current_model.model_name}", file=sys.stderr)
@@ -138,6 +147,7 @@ def filter_rss_for_journal(journal_name, feed_url):
                 if not isinstance(gemini_decisions, list):
                     raise TypeError("Gemini response is not a list.")
                 
+                # Gemini API의 응답을 바탕으로 각 논문을 통과 또는 제거 목록에 추가합니다.
                 for decision_item in gemini_decisions:
                     if not isinstance(decision_item, dict):
                          raise TypeError("Gemini response list contains non-dictionary items.")
@@ -148,12 +158,10 @@ def filter_rss_for_journal(journal_name, feed_url):
                     original_entry = next((e for e in gemini_pending_entries if e.get('title', '') == title), None)
                     if original_entry:
                         if decision == 'YES':
-                            passed_links.add(original_entry.link)
-                            passed_entries_for_email.append(original_entry)
+                            gemini_passed_entries.append(original_entry)
                             print(f"  🤖✅ {title}", file=sys.stderr)
                         else:
-                            removed_links.add(original_entry.link)
-                            removed_entries_for_email.append(original_entry)
+                            gemini_removed_entries.append(original_entry)
                             print(f"  🤖❌ {title}", file=sys.stderr)
                 api_success = True
             except Exception as e:
@@ -165,6 +173,7 @@ def filter_rss_for_journal(journal_name, feed_url):
                     try:
                         current_model = genai.GenerativeModel(fallback_model)
                         using_primary_model = False
+                        # 백업 모델 전환 시 재시도 횟수를 늘려줍니다.
                         max_attempts += 1
                     except Exception as fallback_e:
                         print(f"Error switching to fallback model: {fallback_e}", file=sys.stderr)
@@ -172,19 +181,22 @@ def filter_rss_for_journal(journal_name, feed_url):
                 
                 attempt += 1
                 if not api_success and attempt < max_attempts:
-                    print("Retrying in 5 seconds...", file=sys.stderr)
-                    time.sleep(5)
+                    print("Retrying in 60 seconds...", file=sys.stderr)
+                    time.sleep(60)
         
         if not api_success:
             print(f"🤖 Final Gemini batch API call for {journal_name} failed. All pending items will be removed.", file=sys.stderr)
-            removed_links.update(entry.link for entry in gemini_pending_entries)
-            removed_entries_for_email.extend(gemini_pending_entries)
+            gemini_removed_entries.extend(gemini_pending_entries)
             raise RuntimeError(f"Gemini API call failed for journal: {journal_name}")
             
-    print(f"Total passed links for {journal_name}: {len(passed_links)}", file=sys.stderr)
-    print(f"Total removed links for {journal_name}: {len(removed_links)}", file=sys.stderr)
+    print(f"Total keyword-passed links for {journal_name}: {len(keyword_passed_entries)}", file=sys.stderr)
+    print(f"Total Gemini-passed links for {journal_name}: {len(gemini_passed_entries)}", file=sys.stderr)
+    print(f"Total keyword-removed links for {journal_name}: {len(keyword_removed_entries)}", file=sys.stderr)
+    print(f"Total Gemini-removed links for {journal_name}: {len(gemini_removed_entries)}", file=sys.stderr)
             
-    # XML 파싱 및 필터링
+    # XML 파싱 및 필터링을 위해 통과된 모든 논문 링크를 모읍니다.
+    passed_links = set(entry.link for entry in keyword_passed_entries + gemini_passed_entries)
+
     root = ET.fromstring(raw_xml)
     namespaces = {
         'atom': 'http://www.w3.org/2005/Atom',
@@ -194,6 +206,7 @@ def filter_rss_for_journal(journal_name, feed_url):
         'content': 'http://purl.org/rss/1.0/modules/content/'
     }
 
+    # 피드 유형에 따라 XML 항목을 순회하며 필터링된 논문만 남깁니다.
     if root.tag == 'rss':
         channel = root.find('channel')
         if channel is not None:
@@ -219,9 +232,10 @@ def filter_rss_for_journal(journal_name, feed_url):
             if items is not None:
                 rdf_seq = items.find('rdf:Seq', namespaces=namespaces)
                 if rdf_seq is not None:
+                    # `removed_links` 대신 `passed_links`를 사용하여 리스트 항목을 제거합니다.
                     for li in list(rdf_seq.findall('rdf:li', namespaces=namespaces)):
                         link_resource = li.get(f"{{{namespaces['rdf']}}}resource")
-                        if link_resource in removed_links:
+                        if link_resource not in passed_links:
                             rdf_seq.remove(li)
     else:
         print(f"Warning: Unknown feed type for {journal_name}: {root.tag}", file=sys.stderr)
@@ -229,7 +243,7 @@ def filter_rss_for_journal(journal_name, feed_url):
     buffer = BytesIO()
     tree = ET.ElementTree(root)
     tree.write(buffer, encoding='utf-8', xml_declaration=True, pretty_print=True)
-    return buffer.getvalue(), passed_entries_for_email, removed_entries_for_email
+    return buffer.getvalue(), keyword_passed_entries, gemini_passed_entries, keyword_removed_entries, gemini_removed_entries
 
 def create_email_body_file(email_body_content):
     """
@@ -268,12 +282,12 @@ def create_index_html(journal_urls, rss_base_filename):
     <div class="bg-white rounded-xl shadow-2xl p-8 max-w-lg w-full text-center">
         <h1 class="text-3xl font-bold text-gray-800 mb-2">필터링된 논문 RSS 피드</h1>
         <p class="text-gray-600 mb-8">
-            선택한 저널들의 ARPES 및 강상관계 물질 관련 논문들만 필터링한 RSS 피드입니다.
+            선택한 저널들의 ARPES 및 Condensed matter physics 논문들만 필터링한 RSS 피드입니다.
             아래 링크를 클릭하여 Reeder 앱 등에서 구독하세요.
         </p>
         <div class="space-y-4">
 """
-
+    # 저널 목록을 순회하며 각각의 RSS 피드 링크를 생성합니다.
     for journal_name in journal_urls.keys():
         safe_journal_name = journal_name.replace(" ", "_").replace("/", "_")
         filename = f"{rss_base_filename}_{safe_journal_name}.xml"
@@ -282,8 +296,10 @@ def create_index_html(journal_urls, rss_base_filename):
                 {journal_name} RSS 피드 보기
             </a>
 """
-
     html_content += """
+            <a href="https://hoonica7.github.io/rss-filter" target="_blank" class="block w-full px-6 py-4 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition duration-300">
+                Filter 결과
+            </a>
         </div>
         <p class="mt-8 text-sm text-gray-500">
             마지막 업데이트: """ + datetime.datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S') + """ UTC
@@ -304,11 +320,11 @@ if __name__ == '__main__':
     OUTPUT_FILE_BASE = "filtered_feed"
     STATE_FILE = "last_failed_journal.txt"
     
-    all_passed_entries = []
-    all_removed_entries = []
-
+    email_content = ""
+    
     journals_to_process = list(JOURNAL_URLS.items())
     start_index = 0
+    # 상태 파일을 확인하여 마지막으로 실패한 저널부터 처리를 재개합니다.
     if os.path.exists(STATE_FILE):
         with open(STATE_FILE, 'r') as f:
             last_failed_journal = f.read().strip()
@@ -329,25 +345,53 @@ if __name__ == '__main__':
             start_index = 0
             
     try:
+        # 모든 저널을 순회하며 필터링을 수행합니다.
         for journal_name, feed_url in journals_to_process[start_index:]:
             try:
-                filtered_xml, passed_entries, removed_entries = filter_rss_for_journal(journal_name, feed_url)
+                filtered_xml, keyword_passed_entries, gemini_passed_entries, keyword_removed_entries, gemini_removed_entries = filter_rss_for_journal(journal_name, feed_url)
                 
                 output_filename = f"{OUTPUT_FILE_BASE}_{journal_name}.xml"
                 with open(output_filename, 'wb') as f:
                     f.write(filtered_xml)
                 print(f"Successfully wrote filtered RSS feed to {output_filename}", file=sys.stderr)
 
-                all_passed_entries.extend(passed_entries)
-                all_removed_entries.extend(removed_entries)
+                # 저널별로 이메일 내용 추가
+                email_content += f"--- {journal_name} ---\n\n"
+                
+                email_content += f"PASSED PAPERS:\n"
+                if not keyword_passed_entries and not gemini_passed_entries:
+                    email_content += 'No papers found matching your filters.\n\n'
+                else:
+                    # 키워드 기반으로 통과된 논문 목록을 이메일 내용에 추가합니다.
+                    for entry in keyword_passed_entries:
+                        email_content += f"✅ {entry.get('title', 'No title')} ({entry.get('link', 'No link')})\n"
+                    # Gemini 기반으로 통과된 논문 목록을 이메일 내용에 추가합니다.
+                    for entry in gemini_passed_entries:
+                        email_content += f"🤖✅ {entry.get('title', 'No title')} ({entry.get('link', 'No link')})\n"
+                    email_content += "\n"
+                
+                email_content += f"REMOVED PAPERS:\n"
+                if not keyword_removed_entries and not gemini_removed_entries:
+                    email_content += 'No papers were filtered out.\n\n'
+                else:
+                    # 키워드 기반으로 제거된 논문 목록을 이메일 내용에 추가합니다.
+                    for entry in keyword_removed_entries:
+                        email_content += f"❌ {entry.get('title', 'No title')} ({entry.get('link', 'No link')})\n"
+                    # Gemini 기반으로 제거된 논문 목록을 이메일 내용에 추가합니다.
+                    for entry in gemini_removed_entries:
+                        email_content += f"🤖❌ {entry.get('title', 'No title')} ({entry.get('link', 'No link')})\n"
+                    email_content += "\n"
 
             except Exception as e:
                 print(f"An error occurred while processing journal '{journal_name}': {e}", file=sys.stderr)
                 with open(STATE_FILE, 'w') as f:
                     f.write(journal_name)
-                raise
+                # 에러 발생 시 이메일 내용을 구성
+                email_content += f"\n\nAn error occurred while running the filter script for '{journal_name}':\n{e}\nPlease check the workflow logs for more details.\n"
+                raise # 기존 예외를 다시 발생시켜 스크립트 실행을 중단합니다.
 
         try:
+            # 모든 저널 처리가 성공적으로 완료되면 상태 파일을 'SUCCESS'로 업데이트합니다.
             if os.path.exists(STATE_FILE):
                 with open(STATE_FILE, 'w') as f:
                     f.write('SUCCESS')
@@ -361,24 +405,14 @@ if __name__ == '__main__':
             
         create_index_html(JOURNAL_URLS, OUTPUT_FILE_BASE)
 
-        email_content = ""
-        email_content += "--- PASSED PAPERS ---\n\n"
-        if not all_passed_entries:
-            email_content += 'No new papers found matching your filters.\n\n'
-        else:
-            for entry in all_passed_entries:
-                email_content += f"‣ {entry.get('title', 'No title')} ({entry.get('link', 'No link')})\n"
-        
-        email_content += "\n\n--- REMOVED PAPERS ---\n\n"
-        if not all_removed_entries:
-            email_content += 'No papers were filtered out.\n'
-        else:
-            for entry in all_removed_entries:
-                email_content += f"‣ {entry.get('title', 'No title')} ({entry.get('link', 'No link')})\n"
-
-    except Exception as e:
-        print(f"An error occurred: {e}", file=sys.stderr)
-        email_content = f"An error occurred while running the filter script:\n{e}\nPlease check the workflow logs for more details."
-
     finally:
+        # GitHub Actions 링크를 구성합니다.
+        github_server_url = os.getenv("GITHUB_SERVER_URL")
+        github_repository = os.getenv("GITHUB_REPOSITORY")
+        github_run_id = os.getenv("GITHUB_RUN_ID")
+
+        if github_server_url and github_repository and github_run_id:
+            action_url = f"{github_server_url}/{github_repository}/actions/runs/{github_run_id}"
+            email_content += f"\n\n---\n\nCheck GitHub Actions run for details:\n{action_url}\n"
+        
         create_email_body_file(email_content)
