@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:prism="http://prismstandard.org/namespaces/basic/2.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns="http://purl.org/rss/1.0/" xmlns:admin="http://webns.net/mvcb/">
+    <channel rdf:about="http://feeds.nature.com/nmat/rss/current">
+        <title>Nature Materials</title>
+        <description>Nature Materials is a multidisciplinary journal aimed at bringing together cutting-edge research across the entire spectrum of materials science and technology. Nature Materials covers all applied and fundamental aspects of the synthesis/processing, structure/composition, properties and performance of materials. Nature Materials provides a forum for the development of a common identity among materials scientists while encouraging researchers to cross established subdisciplinary lines. To achieve this, Nature Materials takes an interdisciplinary, integrated and balanced approach to all areas of materials research while fostering the exchange of ideas between scientists involved in different communities.</description>
+        <link>http://feeds.nature.com/nmat/rss/current</link>
+        <admin:generatorAgent rdf:resource="https://www.nature.com/"/>
+        <admin:errorReportsTo rdf:resource="mailto:feedback@nature.com"/>
+        <dc:publisher>Nature Publishing Group</dc:publisher>
+        <dc:language>en</dc:language>
+        <dc:rights>© 2025 Macmillan Publishers Limited, part of Springer Nature. All rights reserved.</dc:rights>
+        <prism:publicationName>Nature Materials</prism:publicationName>
+        
+        
+        <prism:copyright>© 2025 Macmillan Publishers Limited, part of Springer Nature. All rights reserved.</prism:copyright>
+        <prism:rightsAgent>permissions@nature.com</prism:rightsAgent>
+        <image rdf:resource="https://www.nature.com/uploads/product/nmat/rss.gif"/>
+        <items>
+            <rdf:Seq>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02307-6"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02280-0"/>
+                
+                    </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="https://www.nature.com/uploads/product/nmat/rss.gif">
+        <title>Nature Materials</title>
+        <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
+        <link>http://feeds.nature.com/nmat/rss/current</link>
+    </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02307-6">
+            <title>Low-noise hole spin qubits in germanium</title>
+            <link>https://www.nature.com/articles/s41563-025-02307-6</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 01 August 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02307-6"&gt;doi:10.1038/s41563-025-02307-6&lt;/a&gt;&lt;/p&gt;Noise is a key source of decoherence that hinders the scaling of quantum computers. Suppressing disorder in epitaxially strained quantum wells in germanium/silicon germanium heterostructures reduces the noise experienced by hole spin qubits.</content:encoded>
+            <dc:title>Low-noise hole spin qubits in germanium</dc:title>
+            <dc:creator>Danielle Holmes</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02307-6</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-08-01; | doi:10.1038/s41563-025-02307-6</dc:source>
+            <dc:date>2025-08-01</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02307-6</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02307-6</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02280-0">
+            <title>Flatland wakes based on leaky hyperbolic polaritons</title>
+            <link>https://www.nature.com/articles/s41563-025-02280-0</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 31 July 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02280-0"&gt;doi:10.1038/s41563-025-02280-0&lt;/a&gt;&lt;/p&gt;The authors combine the strong confinement of hyperbolic polaritons with leaky nano-waveguides to demonstrate directional in-plane emission of fast phonon polaritons and their acceleration and deceleration by tailoring waveguide dispersion.</content:encoded>
+            <dc:title>Flatland wakes based on leaky hyperbolic polaritons</dc:title>
+            <dc:creator>Na Chen</dc:creator><dc:creator>Hanchao Teng</dc:creator><dc:creator>Hai Hu</dc:creator><dc:creator>Min Liu</dc:creator><dc:creator>Chengyu Jiang</dc:creator><dc:creator>Zhuoxin Xue</dc:creator><dc:creator>Hualong Zhu</dc:creator><dc:creator>Jiayi Gui</dc:creator><dc:creator>Peining Li</dc:creator><dc:creator>Andrea Alù</dc:creator><dc:creator>Qing Dai</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02280-0</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-07-31; | doi:10.1038/s41563-025-02280-0</dc:source>
+            <dc:date>2025-07-31</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02280-0</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02280-0</prism:url>
+        </item>
+    
+        </rdf:RDF>

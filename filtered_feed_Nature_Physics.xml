@@ -22,7 +22,9 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02985-8"/>
                 
-                    </rdf:Seq>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02967-w"/>
+                
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -61,4 +63,19 @@
             <prism:url>https://www.nature.com/articles/s41567-025-02985-8</prism:url>
         </item>
     
-        </rdf:RDF>
+        <item rdf:about="https://www.nature.com/articles/s41567-025-02967-w">
+            <title>Too late to be careless</title>
+            <link>https://www.nature.com/articles/s41567-025-02967-w</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 14 July 2025; &lt;a href="https://www.nature.com/articles/s41567-025-02967-w"&gt;doi:10.1038/s41567-025-02967-w&lt;/a&gt;&lt;/p&gt;Too late to be careless</content:encoded>
+            <dc:title>Too late to be careless</dc:title>
+            <dc:creator>Mark Buchanan</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-02967-w</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-07-14; | doi:10.1038/s41567-025-02967-w</dc:source>
+            <dc:date>2025-07-14</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-02967-w</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-02967-w</prism:url>
+        </item>
+    
+</rdf:RDF>
