@@ -145,7 +145,8 @@ def filter_rss(feed_url):
 
 if __name__ == '__main__':
     # RSS 피드 URL을 직접 지정하거나 환경 변수에서 가져옵니다.
-    FEED_URL = "https://feeds.nature.com/nphys/rss/current"
+    #FEED_URL = "https://feeds.nature.com/nphys/rss/current"
+    FEED_URL = "https://techcrunch.com/feed/"
     OUTPUT_FILE = "filtered_feed.xml"
 
     try:
