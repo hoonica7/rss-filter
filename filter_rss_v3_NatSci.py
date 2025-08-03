@@ -148,7 +148,7 @@ def filter_rss_for_journal(journal_name, feed_url):
                 print(f"🤖 {COLOR_RED}Gemini Batch Error{COLOR_END} for {journal_name} (Attempt {i+1}/{retries}): {error_message}", file=sys.stderr)
                 
                 # 429 에러 발생 시 fallback 모델로 전환
-                if "429" in error_message and current_model.model_name == primary_model:
+                if isinstance(e, exceptions.ResourceExhausted) and current_model.model_name == primary_model:
                     print(f"🚨 {COLOR_ORANGE}Quota exceeded. Switching to fallback model: {fallback_model}{COLOR_END}", file=sys.stderr)
                     try:
                         current_model = genai.GenerativeModel(fallback_model)
