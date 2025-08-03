@@ -21,7 +21,7 @@ COLOR_END = '\033[0m'
 
 # ✅ 설정: 필터 기준 (여기만 수정하면 됨)
 WHITELIST = ["condensed matter", "solid state", "ARPES", "photoemission", "band structure", "Fermi surface", "Brillouin zone", "spin-orbit", "quantum oscillation", "quantum Hall", "Landau level", "topological", "topology", "Weyl", "Dirac", "Chern", "Berry phase", "Kondo", "Mott", "Hubbard", "Heisenberg model", "Ising", "spin liquid", "spin ice", "skyrmion", "nematic", "stripe order", "charge density wave", "CDW", "spin density wave", "SDW", "magnetism", "magnetic order", "antiferromagnetic", "ferromagnetic", "superconductivity", "superconductor", "Meissner", "vortex", "quasiparticle", "phonon", "magnon", "exciton", "polariton", "crystal field", "lattice", "strain", "valley", "moiré", "twisted bilayer", "graphene", "2D material", "van der Waals", "thin film", "interface", "correlated electrons", "quantum critical", "metal-insulator", "quantum phase transition", "resistivity", "transport", "susceptibility", "neutron scattering", "x-ray diffraction", "STM", "STS", "Kagome"]
-BLACKLIST = ["DNA","RNA","mummy","cancer", "tumor", "immune", "immunology", "inflammation", "antibody", "cytokine", "gene expression", "genome", "genetic", "transcriptome", "rna", "mrna", "mirna", "crisper", "mutation", "cell", "mouse", "zebrafish", "neuron", "neural", "brain", "synapse", "microbiome", "gut", "pathogen", "bacteria", "virus", "viral", "infection", "epidemiology", "clinical", "therapy", "therapeutic", "disease", "patient", "biopsy", "in vivo", "in vitro", "drug", "pharmacology", "oncology"]
+BLACKLIST = ["cancer", "tumor", "immune", "immunology", "inflammation", "antibody", "cytokine", "gene expression", "genome", "genetic", "transcriptome", "rna", "mrna", "mirna", "crisper", "mutation", "cell", "mouse", "zebrafish", "neuron", "neural", "brain", "synapse", "microbiome", "gut", "pathogen", "bacteria", "virus", "viral", "infection", "epidemiology", "clinical", "therapy", "therapeutic", "disease", "patient", "biopsy", "in vivo", "in vitro", "drug", "pharmacology", "oncology"]
 
 # ✅ 여러 저널 URL 설정
 JOURNAL_URLS = {
@@ -96,10 +96,11 @@ def filter_rss_for_journal(journal_name, feed_url):
                 "summary": entry.get('summary', '')
             })
 
-        # 모든 저널에 공통된 Gemini 프롬프트 적용
+        # ✅ 수정된 프롬프트: JSON 형식 응답을 더 명확하게 지시
         prompt = f"""
         I have a list of scientific articles. For each article, please classify if it is related to "condensed matter physics" or "research ethics/researcher life" or editoral articles.
-        Provide the output as a JSON array of objects. Each object should have a "title" and a "decision" key. The decision should be "YES" if it is related to the specified fields, or "NO" if it is not.
+        You MUST provide the output as a JSON array of objects. Do not include any text, conversation, or explanations before or after the JSON array.
+        Each object in the JSON array should have a "title" and a "decision" key. The decision should be "YES" if it is related to the specified fields, or "NO" if it is not.
         Here is the list of articles:
         {json.dumps(items_to_review, indent=2)}
         """
@@ -115,7 +116,15 @@ def filter_rss_for_journal(journal_name, feed_url):
                     )
                 )
                 gemini_decisions = json.loads(response.text)
+                
+                # ✅ 수정된 부분: 응답에 문제가 있으면 예외를 발생시켜 API 재시도
+                if not isinstance(gemini_decisions, list):
+                    raise TypeError("Gemini response is not a list.")
+                
                 for decision_item in gemini_decisions:
+                    if not isinstance(decision_item, dict):
+                         raise TypeError("Gemini response list contains non-dictionary items.")
+                    
                     title = decision_item.get('title', '')
                     decision = decision_item.get('decision', '').upper()
                     
@@ -136,7 +145,7 @@ def filter_rss_for_journal(journal_name, feed_url):
                 print(f"🤖 {COLOR_RED}Gemini Batch Error{COLOR_END} for {journal_name} (Attempt {i+1}/{retries}): {error_message}", file=sys.stderr)
                 
                 # 429 에러 발생 시 fallback 모델로 전환
-                if "429" in error_message and current_model.model_name == primary_model and i == retries - 1:
+                if "429" in error_message and current_model.model_name == primary_model:
                     print(f"🚨 {COLOR_ORANGE}Quota exceeded. Switching to fallback model: {fallback_model}{COLOR_END}", file=sys.stderr)
                     try:
                         current_model = genai.GenerativeModel(fallback_model)
