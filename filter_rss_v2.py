@@ -79,7 +79,7 @@ def filter_rss(feed_url):
                 })
 
             prompt = f"""
-I have a list of scientific articles. For each article, please classify if it is related to "condensed matter physics" or "research ethics/researcher life".
+I have a list of scientific articles. For each article, please classify if it is related to "condensed matter physics" or "research ethics/researcher life" or editoral articles.
 Provide the output as a JSON array of objects. Each object should have a "title" and a "decision" key. The decision should be "YES" if it is related to the specified fields, or "NO" if it is not.
 Here is the list of articles:
 {json.dumps(items_to_review, indent=2)}
