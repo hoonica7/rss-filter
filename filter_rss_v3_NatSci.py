@@ -26,7 +26,7 @@ COLOR_END = '\033[0m'
 
 # ✅ 설정: 필터 기준 (여기만 수정하면 됨)
 WHITELIST = ["condensed matter", "solid state", "ARPES", "photoemission", "band structure", "Fermi surface", "Brillouin zone", "spin-orbit", "quantum oscillation", "quantum Hall", "Landau level", "topological", "topology", "Weyl", "Dirac", "Chern", "Berry phase", "Kondo", "Mott", "Hubbard", "Heisenberg model", "spin liquid", "spin ice", "skyrmion", "nematic", "stripe order", "charge density wave", "CDW", "spin density wave", "SDW", "magnetism", "magnetic order", "antiferromagnetic", "ferromagnetic", "superconductivity", "superconductor", "Meissner", "quasiparticle", "phonon", "magnon", "exciton", "polariton", "crystal field", "lattice", "moiré", "twisted bilayer", "graphene", "2D material", "van der Waals", "correlated electrons", "quantum critical", "metal-insulator", "quantum phase transition", "susceptibility", "neutron scattering", "x-ray diffraction", "STM", "STS", "Kagome", "photon"]
-BLACKLIST = ["lava", "protein", "archeologist", "mummy", "cancer", "tumor", "immune", "immunology", "inflammation", "antibody", "cytokine", "gene", "tissue", "genome", "genetic", "transcriptome", "rna", "mrna", "mirna", "crisper", "mutation", "cell", "mouse", "zebrafish", "neuron", "neural", "brain", "synapse", "microbiome", "gut", "pathogen", "bacteria", "virus", "viral", "infection", "epidemiology", "clinical", "therapy", "therapeutic", "disease", "patient", "biopsy", "in vivo", "in vitro", "drug", "pharmacology", "oncology"]
+BLACKLIST = ["congress", "forest", "climate", "lava", "protein", "archeologist", "mummy", "cancer", "tumor", "immune", "immunology", "inflammation", "antibody", "cytokine", "gene", "tissue", "genome", "genetic", "transcriptome", "rna", "mrna", "mirna", "crisper", "mutation", "cell", "mouse", "zebrafish", "neuron", "neural", "brain", "synapse", "microbiome", "gut", "pathogen", "bacteria", "virus", "viral", "infection", "epidemiology", "clinical", "therapy", "therapeutic", "disease", "patient", "biopsy", "in vivo", "in vitro", "drug", "pharmacology", "oncology"]
 
 # ✅ 여러 저널 URL 설정
 JOURNAL_URLS = {
@@ -85,11 +85,11 @@ def filter_rss_for_journal(journal_name, feed_url):
         if is_in_blacklist: # blacklist 먼저.
             removed_links.add(entry.link)
             removed_entries_for_email.append(entry)
-            print(f"❌ {title}", file=sys.stderr)
+            print(f"  ❌ {title}", file=sys.stderr)
         elif is_in_whitelist:
             passed_links.add(entry.link)
             passed_entries_for_email.append(entry)
-            print(f"✅ {title}", file=sys.stderr)
+            print(f"  ✅ {title}", file=sys.stderr)
         else:
             gemini_pending_entries.append(entry)
 
@@ -143,11 +143,11 @@ def filter_rss_for_journal(journal_name, feed_url):
                         if decision == 'YES':
                             passed_links.add(original_entry.link)
                             passed_entries_for_email.append(original_entry)
-                            print(f"🤖✅ {title}", file=sys.stderr)
+                            print(f"  🤖✅ {title}", file=sys.stderr)
                         else:
                             removed_links.add(original_entry.link)
                             removed_entries_for_email.append(original_entry)
-                            print(f"🤖❌ {title}", file=sys.stderr)
+                            print(f"  🤖❌ {title}", file=sys.stderr)
                 api_success = True
             except Exception as e:
                 error_type = type(e).__name__
@@ -309,7 +309,7 @@ if __name__ == '__main__':
     if os.path.exists(STATE_FILE):
         with open(STATE_FILE, 'r') as f:
             last_failed_journal = f.read().strip()
-            print(f"Found state file. Continuing from journal: {last_failed_journal}", file=sys.stderr)
+            print(f"{COLOR_GREEN}Found state file. Continuing from journal: {last_failed_journal}{COLOR_END}", file=sys.stderr)
             
             try:
                 # Find the index of the last failed journal to resume from
