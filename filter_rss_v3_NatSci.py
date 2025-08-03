@@ -162,10 +162,13 @@ def filter_rss_for_journal(journal_name, feed_url):
                 else:
                     break
         
+        # ✅ 수정된 부분: 최종 API 호출이 실패했을 때 오류를 발생시켜 메인 로직으로 전달
         if not api_success:
             print(f"🤖 Final Gemini batch API call for {journal_name} failed. All pending items will be removed.", file=sys.stderr)
             removed_links.update(entry.link for entry in gemini_pending_entries)
             removed_entries_for_email.extend(gemini_pending_entries)
+            # 메인 루프에서 오류를 잡을 수 있도록 명시적으로 예외를 발생시킴
+            raise RuntimeError(f"Gemini API call failed for journal: {journal_name}")
             
     print(f"Total passed links for {journal_name}: {len(passed_links)}", file=sys.stderr)
     print(f"Total removed links for {journal_name}: {len(removed_links)}", file=sys.stderr)
