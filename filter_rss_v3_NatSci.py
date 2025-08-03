@@ -13,6 +13,8 @@ import time
 import json
 import google.generativeai as genai
 import datetime
+# ✅ 추가: Gemini API 에러 타입 핸들링을 위해 exceptions 모듈 임포트
+import google.api_core.exceptions as exceptions
 
 # ANSI 색상 코드 정의
 COLOR_GREEN = '\033[92m'
@@ -112,6 +114,9 @@ def filter_rss_for_journal(journal_name, feed_url):
         api_success = False
         for i in range(retries):
             try:
+                # ✅ 수정된 부분: 현재 사용 중인 모델을 명시적으로 출력
+                print(f"🤖 Attempt {i+1}/{retries} using model: {current_model.model_name}", file=sys.stderr)
+
                 response = current_model.generate_content(
                     prompt,
                     generation_config=genai.types.GenerationConfig(
@@ -144,10 +149,10 @@ def filter_rss_for_journal(journal_name, feed_url):
                 api_success = True
                 break
             except Exception as e:
-                error_message = str(e)
-                print(f"🤖 {COLOR_RED}Gemini Batch Error{COLOR_END} for {journal_name} (Attempt {i+1}/{retries}): {error_message}", file=sys.stderr)
-                
-                # 429 에러 발생 시 fallback 모델로 전환
+                # ✅ 수정된 부분: 에러 타입을 명시적으로 확인하고 로그 출력
+                error_type = type(e).__name__
+                print(f"🤖 {COLOR_RED}Gemini Batch Error{COLOR_END} for {journal_name} ({error_type}, Attempt {i+1}/{retries}): {e}", file=sys.stderr)
+
                 if isinstance(e, exceptions.ResourceExhausted) and current_model.model_name == primary_model:
                     print(f"🚨 {COLOR_ORANGE}Quota exceeded. Switching to fallback model: {fallback_model}{COLOR_END}", file=sys.stderr)
                     try:
