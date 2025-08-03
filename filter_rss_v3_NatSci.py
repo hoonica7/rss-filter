@@ -150,7 +150,7 @@ def filter_rss_for_journal(journal_name, feed_url):
                 # Gemini API의 응답을 바탕으로 각 논문을 통과 또는 제거 목록에 추가합니다.
                 for decision_item in gemini_decisions:
                     if not isinstance(decision_item, dict):
-                         raise TypeError("Gemini response list contains non-dictionary items.")
+                        raise TypeError("Gemini response list contains non-dictionary items.")
                     
                     title = decision_item.get('title', '')
                     decision = decision_item.get('decision', '').upper()
@@ -297,7 +297,7 @@ def create_index_html(journal_urls, rss_base_filename):
             </a>
 """
     html_content += """
-            <a href="https://hoonica7.github.io/rss-filter" target="_blank" class="block w-full px-6 py-4 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition duration-300">
+            <a href="filtered_titles.txt" target="_blank" class="block w-full px-6 py-4 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition duration-300">
                 Filter 결과
             </a>
         </div>
@@ -364,10 +364,10 @@ if __name__ == '__main__':
                 else:
                     # 키워드 기반으로 통과된 논문 목록을 이메일 내용에 추가합니다.
                     for entry in keyword_passed_entries:
-                        email_content += f"✅ {entry.get('title', 'No title')} ({entry.get('link', 'No link')})\n"
+                        email_content += f"  ✅ {entry.get('title', 'No title')} ({entry.get('link', 'No link')})\n"
                     # Gemini 기반으로 통과된 논문 목록을 이메일 내용에 추가합니다.
                     for entry in gemini_passed_entries:
-                        email_content += f"🤖✅ {entry.get('title', 'No title')} ({entry.get('link', 'No link')})\n"
+                        email_content += f"  🤖✅ {entry.get('title', 'No title')} ({entry.get('link', 'No link')})\n"
                     email_content += "\n"
                 
                 email_content += f"REMOVED PAPERS:\n"
@@ -376,10 +376,10 @@ if __name__ == '__main__':
                 else:
                     # 키워드 기반으로 제거된 논문 목록을 이메일 내용에 추가합니다.
                     for entry in keyword_removed_entries:
-                        email_content += f"❌ {entry.get('title', 'No title')} ({entry.get('link', 'No link')})\n"
+                        email_content += f"  ❌ {entry.get('title', 'No title')} ({entry.get('link', 'No link')})\n"
                     # Gemini 기반으로 제거된 논문 목록을 이메일 내용에 추가합니다.
                     for entry in gemini_removed_entries:
-                        email_content += f"🤖❌ {entry.get('title', 'No title')} ({entry.get('link', 'No link')})\n"
+                        email_content += f"  🤖❌ {entry.get('title', 'No title')} ({entry.get('link', 'No link')})\n"
                     email_content += "\n"
 
             except Exception as e:
