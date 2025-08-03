@@ -51,4 +51,3 @@ jobs:
           to: ${{ secrets.MAIL_TO }}
           from: ${{ secrets.MAIL_FROM }}
           body: file://filtered_titles.txt
-          content_type: text/plain
