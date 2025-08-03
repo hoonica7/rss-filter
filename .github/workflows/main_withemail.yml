@@ -33,13 +33,6 @@ jobs:
         run: |
           python filter_rss.py
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          publish_branch: gh-pages
-
       - name: Send email with results
         uses: dawidd6/action-send-mail@v3
         with:
@@ -51,3 +44,11 @@ jobs:
           to: ${{ secrets.MAIL_TO }}
           from: ${{ secrets.MAIL_FROM }}
           body: file://filtered_titles.txt
+          # content_type: text/plain <-- 이 줄은 삭제된 상태입니다.
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          publish_branch: gh-pages
