@@ -23,7 +23,9 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-62275-y"/>
                 
-                    </rdf:Seq>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-62367-9"/>
+                
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/ncomms/rss.png">
@@ -47,4 +49,19 @@
             <prism:url>https://www.nature.com/articles/s41467-025-62275-y</prism:url>
         </item>
     
-        </rdf:RDF>
+        <item rdf:about="https://www.nature.com/articles/s41467-025-62367-9">
+            <title>Melanin-like nanofibers with highly ordered structures achieve ultrahigh specific electromagnetic interference shielding efficiency</title>
+            <link>https://www.nature.com/articles/s41467-025-62367-9</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 03 August 2025; &lt;a href="https://www.nature.com/articles/s41467-025-62367-9"&gt;doi:10.1038/s41467-025-62367-9&lt;/a&gt;&lt;/p&gt;Lightweight electromagnetic shielding materials are of interest, though it is challenging to balance performance and processability with conventional materials. Here, the authors report, an ordered melanin-like polymer, using π–π stacking, for a microwave shielding material.</content:encoded>
+            <dc:title>Melanin-like nanofibers with highly ordered structures achieve ultrahigh specific electromagnetic interference shielding efficiency</dc:title>
+            <dc:creator>Peng Chen</dc:creator><dc:creator>Shibo He</dc:creator><dc:creator>Tianyou Wang</dc:creator><dc:creator>Chencan Wang</dc:creator><dc:creator>Junru Tao</dc:creator><dc:creator>Yiwen Li</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-62367-9</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-08-03; | doi:10.1038/s41467-025-62367-9</dc:source>
+            <dc:date>2025-08-03</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-62367-9</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-62367-9</prism:url>
+        </item>
+    
+</rdf:RDF>

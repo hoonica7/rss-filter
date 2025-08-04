@@ -313,50 +313,76 @@ def create_results_html_file(email_body_content):
         <div class="space-y-4">
 """
     
-    # 이메일 본문 내용을 HTML 형식으로 변환
+    # 이메일 본문 내용을 HTML 형식으로 변환하기 위한 데이터 파싱
+    journal_data = {}
+    current_journal = None
+    current_section = None
+    
     email_lines = email_body_content.strip().split('\n')
     for line in email_lines:
         line = line.strip()
         if not line:
             continue
         
-        # 저널 구분자 처리
         if line.startswith("---"):
-            journal_name = line.replace("---", "").strip()
-            html_content += f'<h2 class="text-xl font-bold text-indigo-700 mt-6 mb-2">{journal_name}</h2>'
-        # 섹션 제목 처리 (PASSED PAPERS:, REMOVED PAPERS:)
-        elif line.endswith(":"):
-            html_content += f'<p class="text-lg font-semibold text-gray-800 mt-4">{line}</p>'
-        # 논문 링크 라인 처리
+            current_journal = line.replace("---", "").strip()
+            journal_data[current_journal] = {'PASSED PAPERS:': [], 'REMOVED PAPERS:': []}
+            current_section = None
+        elif line.endswith(":") and current_journal:
+            current_section = line.strip()
         else:
-            # 정규 표현식을 사용하여 이모티콘, 제목, 링크를 추출
             match = re.match(r'^(.*?)\s(.+)\s\((http[s]?://.+)\)$', line)
-            if match:
+            if match and current_journal and current_section:
                 emoticon = match.group(1).strip()
                 title = match.group(2).strip()
                 link = match.group(3).strip()
+                journal_data[current_journal][current_section].append({
+                    'emoticon': emoticon,
+                    'title': title,
+                    'link': link
+                })
+            elif 'Check GitHub Actions run for details' in line:
+                journal_data['github_link'] = line.split(":\n")[-1].strip()
 
-                # 클릭 가능한 링크로 변환
+    # 파싱된 데이터로 HTML 생성
+    for journal_name, sections in journal_data.items():
+        if journal_name == 'github_link':
+            continue
+        html_content += f'<h2 class="text-xl font-bold text-indigo-700 mt-6 mb-2">{journal_name}</h2>'
+        
+        # 성공 논문 그룹 생성
+        if sections['PASSED PAPERS:']:
+            html_content += f'<p class="text-lg font-semibold text-gray-800 mt-4">PASSED PAPERS:</p>'
+            html_content += '<div class="bg-gray-100 rounded-lg shadow-sm p-3 mt-2 space-y-0.5">'
+            for paper in sections['PASSED PAPERS:']:
                 html_content += f"""
-                <div class="p-2 bg-gray-50 rounded-lg shadow-sm hover:bg-gray-100 transition duration-300">
-                    <p class="text-gray-700 text-sm font-medium whitespace-nowrap overflow-hidden overflow-ellipsis">
-                        {emoticon} <a href="{link}" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline">{title}</a>
-                    </p>
-                </div>
-"""
-            # 기타 텍스트 (예: 'No papers found...')
-            else:
-                # GitHub Actions 링크 처리
-                if 'Check GitHub Actions run for details' in line:
-                    action_url = line.split(":\n")[-1].strip()
-                    html_content += f"""
-                    <div class="mt-8 text-sm text-gray-500">
-                        <p>Check GitHub Actions run for details:</p>
-                        <a href="{action_url}" target="_blank" class="text-indigo-600 hover:underline">{action_url}</a>
-                    </div>
-                    """
-                else:
-                    html_content += f'<p class="text-gray-600 ml-6">{line}</p>'
+                <p class="text-gray-700 text-sm font-medium leading-tight">
+                    {paper['emoticon']} <a href="{paper['link']}" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline">{paper['title']}</a>
+                </p>
+                """
+            html_content += '</div>'
+            
+        # 실패 논문 그룹 생성
+        if sections['REMOVED PAPERS:']:
+            html_content += f'<p class="text-lg font-semibold text-gray-800 mt-4">REMOVED PAPERS:</p>'
+            html_content += '<div class="bg-gray-100 rounded-lg shadow-sm p-3 mt-2 space-y-0.5">'
+            for paper in sections['REMOVED PAPERS:']:
+                html_content += f"""
+                <p class="text-gray-700 text-sm font-medium leading-tight">
+                    {paper['emoticon']} <a href="{paper['link']}" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline">{paper['title']}</a>
+                </p>
+                """
+            html_content += '</div>'
+            
+    # 기타 텍스트 및 GitHub Actions 링크 처리
+    if 'github_link' in journal_data:
+        action_url = journal_data['github_link']
+        html_content += f"""
+        <div class="mt-8 text-sm text-gray-500">
+            <p>Check GitHub Actions run for details:</p>
+            <a href="{action_url}" target="_blank" class="text-indigo-600 hover:underline">{action_url}</a>
+        </div>
+        """
     
     # HTML 템플릿 끝 부분
     html_content += """
