@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02304-9"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02303-w"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02307-6"/>
@@ -28,7 +30,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02280-0"/>
                 
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nmat/rss.gif">
@@ -36,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02304-9">
+            <title>Reconfigurable magnetic order in 2D materials</title>
+            <link>https://www.nature.com/articles/s41563-025-02304-9</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 04 August 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02304-9"&gt;doi:10.1038/s41563-025-02304-9&lt;/a&gt;&lt;/p&gt;Layer-dependent magnetic behaviour is used to realize reconfigurable exchange bias in a 2D antiferromagnet.</content:encoded>
+            <dc:title>Reconfigurable magnetic order in 2D materials</dc:title>
+            <dc:creator>Paul Stevenson</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02304-9</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-08-04; | doi:10.1038/s41563-025-02304-9</dc:source>
+            <dc:date>2025-08-04</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02304-9</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02304-9</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02303-w">
             <title>Engineering a light-induced metastable state</title>
@@ -112,4 +129,4 @@
             <prism:url>https://www.nature.com/articles/s41563-025-02280-0</prism:url>
         </item>
     
-        </rdf:RDF>
+</rdf:RDF>
