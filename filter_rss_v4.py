@@ -308,7 +308,7 @@ def create_results_html_file(email_body_content):
     </style>
 </head>
 <body class="bg-gray-100 p-8">
-    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl p-8">
+    <div class="max-w-7xl mx-auto bg-white rounded-xl shadow-2xl p-8">
         <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">필터링된 논문 결과</h1>
         <div class="space-y-4">
 """
@@ -338,8 +338,8 @@ def create_results_html_file(email_body_content):
 
                 # 클릭 가능한 링크로 변환
                 html_content += f"""
-                <div class="p-3 bg-gray-50 rounded-lg shadow-sm hover:bg-gray-100 transition duration-300">
-                    <p class="text-gray-700 text-base font-medium leading-snug">
+                <div class="p-2 bg-gray-50 rounded-lg shadow-sm hover:bg-gray-100 transition duration-300">
+                    <p class="text-gray-700 text-sm font-medium whitespace-nowrap overflow-hidden overflow-ellipsis">
                         {emoticon} <a href="{link}" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline">{title}</a>
                     </p>
                 </div>
