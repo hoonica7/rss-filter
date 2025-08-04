@@ -19,16 +19,13 @@ jobs:
         uses: actions/checkout@v4
 
       # ➡️ last_failed_journal.txt 캐시 복원
-      # 파일 내용의 해시값을 사용하여 캐시 키를 생성합니다.
-      # 이렇게 하면 파일 내용이 바뀌었을 때만 새로운 캐시를 복원합니다.
+      # 고정된 캐시 키를 사용하여 이전 상태를 복원합니다.
       - name: Restore last failed journal state
         id: cache-restore
         uses: actions/cache/restore@v4
         with:
           path: last_failed_journal.txt
-          # 키를 고유하게 만들어 충돌을 방지하고, 파일 내용이 변경될 때만 캐시를 갱신합니다.
-          key: ${{ runner.os }}-last-failed-journal-${{ hashFiles('last_failed_journal.txt') }}
-          # 정확히 일치하는 키가 없을 경우, 이 키로 시작하는 가장 최근의 캐시를 복원합니다.
+          key: ${{ runner.os }}-last-failed-journal-v1
           restore-keys: |
             ${{ runner.os }}-last-failed-journal-
 
@@ -60,15 +57,13 @@ jobs:
             filtered_feed_*.xml
       
       # ➡️ last_failed_journal.txt 캐시 저장
-      # 이전 단계에서 사용한 키를 그대로 사용하여 캐시를 저장합니다.
-      # restore-keys 속성은 이 단계에서 필요하지 않습니다.
+      # 복원 단계에서 사용한 고정된 키를 사용하여 캐시를 저장합니다.
       - name: Cache last_failed_journal state
         uses: actions/cache/save@v4
         if: always()
         with:
           path: last_failed_journal.txt
-          # 복원 단계에서 사용한 것과 동일한 키를 사용합니다.
-          key: ${{ runner.os }}-last-failed-journal-${{ hashFiles('last_failed_journal.txt') }}
+          key: ${{ runner.os }}-last-failed-journal-v1
 
       - name: Deploy to GitHub Pages
         if: success() # 성공했을 때만 배포
