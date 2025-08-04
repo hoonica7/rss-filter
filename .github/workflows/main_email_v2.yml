@@ -2,10 +2,12 @@ name: Filter RSS Feed everyday + Email on Saturday + Email when error
 
 on:
   schedule:
-    # 매일 휴스턴 시간 오전 8시(CDT)에 실행 -> UTC 기준 13시
+    # 오전 8시 CDT = 13:00 UTC
     - cron: '0 13 * * *'
+    # 오후 7시 CDT = 00:00 UTC (다음 날 자정이지만 cron은 그대로 * * *)
+    - cron: '0 0 * * *'
   workflow_dispatch:
-
+  
 jobs:
   filter-and-deploy:
     runs-on: ubuntu-latest
