@@ -3,8 +3,10 @@ name: Filter RSS Feed everyday + Email on Saturday + Email when error
 on:
   schedule:
     # 오전 8시 CDT = 13:00 UTC
+    # 8AM Texas (CDT) = 13:00 UTC
     - cron: '0 13 * * *'
     # 오후 7시 CDT = 00:00 UTC (다음 날 자정이지만 cron은 그대로 * * *)
+    # 7PM Texas (CDT) = 00:00 UTC (technically next day midnight, but cron remains the same)
     - cron: '0 0 * * *'
   workflow_dispatch:
   
@@ -19,7 +21,7 @@ jobs:
         uses: actions/checkout@v4
 
       # ➡️ last_failed_journal.txt 캐시 복원
-      # 고정된 캐시 키를 사용하여 이전 상태를 복원합니다.
+      # Restore cache for last_failed_journal.txt using a fixed key
       - name: Restore last failed journal state
         id: cache-restore
         uses: actions/cache/restore@v4
@@ -44,6 +46,7 @@ jobs:
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           # 🚨 GitHub Actions 실행 링크 환경 변수 추가
+          # Add GitHub Actions run URL to environment variables
           GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           python filter_rss_v4.py
@@ -57,16 +60,17 @@ jobs:
             filtered_feed_*.xml
       
       # ➡️ last_failed_journal.txt 캐시 저장
-      # 복원 단계에서 사용한 고정된 키를 사용하여 캐시를 저장합니다.
+      # Save the cache with a unique key based on run_id to avoid conflicts
       - name: Cache last_failed_journal state
         uses: actions/cache/save@v4
         if: always()
         with:
           path: last_failed_journal.txt
-          key: ${{ runner.os }}-last-failed-journal-v1
+          key: ${{ runner.os }}-last-failed-journal-v1-${{ github.run_id }}
 
       - name: Deploy to GitHub Pages
         if: success() # 성공했을 때만 배포
+        # Deploy only if the workflow succeeded
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -80,6 +84,7 @@ jobs:
           name: filtered-files
       
       # 이메일 발송 여부를 결정하는 스텝 (성공 시)
+      # Step to check if email should be sent (on success only)
       - name: Check if today is Saturday
         if: success()
         id: check_day
@@ -87,6 +92,7 @@ jobs:
       
       - name: Send email with results
         # 오늘이 토요일인 경우(date +%u == 6)에만 이메일을 발송합니다.
+        # Send email only if today is Saturday (date +%u == 6)
         if: success() && steps.check_day.outputs.is_saturday == '6'
         uses: dawidd6/action-send-mail@v3
         with:
@@ -100,6 +106,7 @@ jobs:
           body: file://filtered_titles.txt
 
   # 오류 발생 시 즉시 이메일 알림을 위한 별도 Job
+  # Separate job to send email notification immediately on failure
   failure-notification:
     runs-on: ubuntu-latest
     needs: filter-and-deploy
