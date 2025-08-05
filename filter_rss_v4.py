@@ -12,14 +12,16 @@
 # 6. If all journals are processed successfully, 'SUCCESS' is written to the state file to start from the beginning on the next run.
 # 7. Generates an email body file containing the filtered and removed results.
 # 8. Creates an index.html page for the filtered RSS feeds and individual .xml files.
-# 9. **(Added)** Automatically includes the current GitHub Action run link at the bottom of the email.
-# 10. **(Added)** Separates the email body content by journal.
-# 11. **(Added)** Adds emoticons to the email body to distinguish between keyword-based and Gemini-based filtering.
-# 12. **(Added)** Adds a button to index.html to navigate to the filtered results page.
-# 13. **(Added)** In the email body, it specifies whether a removed paper was filtered by keyword or Gemini.
-# 14. **(Added)** Pressing the 'View Filtered Results' button opens an HTML page identical to the email body format, with clickable links.
-# 15. **(Added)** Displays the last update time on index.html in both Texas and Korea time.
-# 16. **(Added)** Applies separate keyword and Gemini filter rules for arXiv and PRB journals.
+# 9. (Added) Automatically includes the current GitHub Action run link at the bottom of the email.
+# 10. (Added) Separates the email body content by journal.
+# 11. (Added) Adds emoticons to the email body to distinguish between keyword-based and Gemini-based filtering.
+# 12. (Added) In the email body, it specifies whether a removed paper was filtered by keyword or Gemini.
+# 13. (Added) Pressing the 'View Filtered Results' button opens an HTML page identical to the email body format, with clickable links.
+# 14. (Added) Displays the last update time on index.html in both Texas and Korea time.
+# 15. (Added) Applies separate keyword and Gemini filter rules for arXiv and PRB journals.
+# 16. (Added) Highlights the specific keyword that triggered the filtering in the console log.
+# 17. (Added) Prints the specific keyword and its location (title or abstract) that triggered the filtering.
+# 18. (Added) Adds a 120-second timeout to the Gemini API call to prevent the script from hanging indefinitely.
 #
 
 import feedparser
@@ -35,12 +37,13 @@ import datetime
 import google.api_core.exceptions as exceptions
 import re
 
-# Define ANSI color codes
+# Define ANSI color codes for console output
 COLOR_GREEN = '\033[92m'
 COLOR_RED = '\033[91m'
 COLOR_YELLOW = '\033[93m'
 COLOR_ORANGE = '\033[38;5;208m'
 COLOR_BLUE = '\033[94m'
+COLOR_BOLD = '\033[1m'
 COLOR_END = '\033[0m'
 
 # General journal filter criteria
@@ -75,12 +78,38 @@ try:
     if GOOGLE_API_KEY:
         genai.configure(api_key=GOOGLE_API_KEY)
         current_model = genai.GenerativeModel(primary_model)
-        print(f"Gemini API configured successfully using primary model: {primary_model}", file=sys.stderr)
+        print(f"Gemini API configured successfully using primary model: {primary_model}{COLOR_END}", file=sys.stderr)
     else:
         print("GOOGLE_API_KEY not found. Gemini filter will be skipped.", file=sys.stderr)
 except Exception as e:
     print(f"Error configuring Gemini API: {e}", file=sys.stderr)
     using_primary_model = False
+
+
+def find_and_highlight_keyword(title, summary, keywords, color_code):
+    """
+    Finds the first matching keyword in the title or summary and highlights it with ANSI codes.
+    Returns the modified title string, the matched keyword, and the location of the match.
+    """
+    # Search in the title first
+    for keyword in keywords:
+        if re.search(r'\b' + re.escape(keyword) + r'\b', title, re.IGNORECASE):
+            highlighted_title = re.sub(
+                r'\b' + re.escape(keyword) + r'\b',
+                f"{color_code}{COLOR_BOLD}{keyword}{COLOR_END}",
+                title,
+                flags=re.IGNORECASE,
+                count=1
+            )
+            return highlighted_title, keyword, "Title"
+    
+    # If not found in the title, search in the summary
+    for keyword in keywords:
+        if re.search(r'\b' + re.escape(keyword) + r'\b', summary, re.IGNORECASE):
+            return title, keyword, "Abstract"
+        
+    return title, None, None
+
 
 def filter_rss_for_journal(journal_name, feed_url):
     """
@@ -125,23 +154,25 @@ def filter_rss_for_journal(journal_name, feed_url):
 
     # Iterate through all RSS feed items and perform the primary filtering.
     for entry in parsed_feed.entries:
-        title = entry.get('title', '').lower()
-        summary = entry.get('summary', '').lower()
-        content = f"{title} {summary}"
+        title = entry.get('title', '')
+        summary = entry.get('summary', '')
 
-        is_in_blacklist = any(b.lower() in content for b in blacklist)
-        is_in_whitelist = any(w.lower() in content for w in whitelist)
-
-        # Remove if in the blacklist, pass if in the whitelist.
-        # If neither, classify for secondary filtering by the Gemini API.
-        if is_in_blacklist:
+        # Check for blacklist keywords first
+        highlighted_title, matched_keyword, location = find_and_highlight_keyword(title, summary, blacklist, COLOR_RED)
+        if matched_keyword:
             keyword_removed_entries.append(entry)
-            print(f"  ❌ {title}", file=sys.stderr)
-        elif is_in_whitelist:
+            print(f"  ❌ {highlighted_title} (Filtered by keyword: '{matched_keyword}' in {location})", file=sys.stderr)
+            continue # Skip to the next entry
+
+        # Check for whitelist keywords
+        highlighted_title, matched_keyword, location = find_and_highlight_keyword(title, summary, whitelist, COLOR_GREEN)
+        if matched_keyword:
             keyword_passed_entries.append(entry)
-            print(f"  ✅ {title}", file=sys.stderr)
-        else:
-            gemini_pending_entries.append(entry)
+            print(f"  ✅ {highlighted_title} (Filtered by keyword: '{matched_keyword}' in {location})", file=sys.stderr)
+            continue # Skip to the next entry
+
+        # If neither, classify for secondary filtering by the Gemini API.
+        gemini_pending_entries.append(entry)
 
     # Use the Gemini API to review the items that didn't pass the primary filter.
     if current_model and gemini_pending_entries:
@@ -162,13 +193,14 @@ def filter_rss_for_journal(journal_name, feed_url):
         # Attempt Gemini API call up to 3 times, switching to the fallback model on quota errors.
         while attempt < max_attempts and not api_success:
             try:
-                print(f"🤖 Attempt {attempt+1}/{max_attempts} using model: {current_model.model_name}", file=sys.stderr)
+                print(f"🤖 Attempt {attempt+1}/{max_attempts} using model: {current_model.model_name}{COLOR_END}", file=sys.stderr)
 
                 response = current_model.generate_content(
                     full_prompt,
                     generation_config=genai.types.GenerationConfig(
                         response_mime_type="application/json"
-                    )
+                    ),
+                    request_options={'timeout': 120}  # Add a timeout of 120 seconds
                 )
                 gemini_decisions = json.loads(response.text)
                 
@@ -192,7 +224,7 @@ def filter_rss_for_journal(journal_name, feed_url):
                             gemini_removed_entries.append(original_entry)
                             print(f"  🤖❌ {title}", file=sys.stderr)
                 api_success = True
-            except Exception as e:
+            except (exceptions.ResourceExhausted, requests.exceptions.Timeout, requests.exceptions.RequestException) as e:
                 error_type = type(e).__name__
                 print(f"🤖 {COLOR_RED}Gemini Batch Error{COLOR_END} for {journal_name} ({error_type}, Attempt {attempt+1}/{max_attempts}): {e}", file=sys.stderr)
                 
@@ -217,10 +249,10 @@ def filter_rss_for_journal(journal_name, feed_url):
             gemini_removed_entries.extend(gemini_pending_entries)
             raise RuntimeError(f"Gemini API call failed for journal: {journal_name}")
             
-    print(f"Total keyword-passed links for {journal_name}: {len(keyword_passed_entries)}", file=sys.stderr)
-    print(f"Total Gemini-passed links for {journal_name}: {len(gemini_passed_entries)}", file=sys.stderr)
-    print(f"Total keyword-removed links for {journal_name}: {len(keyword_removed_entries)}", file=sys.stderr)
-    print(f"Total Gemini-removed links for {journal_name}: {len(gemini_removed_entries)}", file=sys.stderr)
+    print(f"Total keyword-passed links for {journal_name}: {len(keyword_passed_entries)}{COLOR_END}", file=sys.stderr)
+    print(f"Total Gemini-passed links for {journal_name}: {len(gemini_passed_entries)}{COLOR_END}", file=sys.stderr)
+    print(f"Total keyword-removed links for {journal_name}: {len(keyword_removed_entries)}{COLOR_END}", file=sys.stderr)
+    print(f"Total Gemini-removed links for {journal_name}: {len(gemini_removed_entries)}{COLOR_END}", file=sys.stderr)
             
     # Gather all passed paper links for XML parsing and filtering.
     passed_links = set(entry.link for entry in keyword_passed_entries + gemini_passed_entries)
