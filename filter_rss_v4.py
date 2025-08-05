@@ -1,24 +1,25 @@
 #
-# This script filters RSS feeds from various scientific journals,
-# selects only papers matching specific keywords, and performs additional validation using the Gemini API.
+# This script filters RSS feeds from multiple scientific journals,
+# selects papers that match specific keywords, and performs a secondary
+# verification using the Gemini API.
 #
-# Main features:
-# 1. Batch process multiple journal RSS feeds.
-# 2. First filtering based on WHITELIST and BLACKLIST keywords.
-# 3. Batch Gemini API call for entries not filtered in the first step, minimizing the number of API calls.
-# 4. Automatically switch to a backup Gemini model and retry if API quota error occurs.
-# 5. If an error occurs during execution, save the failed journal name in a state file and resume from there in the next run.
-# 6. If all journals are processed successfully, write 'SUCCESS' to the state file to start from the beginning on the next run.
-# 7. Generate an email body file with both filtered and removed entries.
-# 8. Create index.html and individual .xml files for the filtered RSS feeds.
-# 9. **(Added)** Automatically append a link to the current GitHub Action run at the bottom of the email.
-# 10. **(Added)** Separate email contents by journal.
-# 11. **(Added)** Add emojis to indicate filtering method (keyword or Gemini) in the email body.
-# 12. **(Added)** Add a button in index.html that leads to the HTML results page.
-# 13. **(Added)** Mark removed papers by filtering method (keyword or Gemini) in the email.
-# 14. **(Added)** The "Filter results" button opens an HTML page where you can click individual paper links just like the email.
-# 15. **(Added)** Show last update time in both Texas (CDT) and Korea (KST) at the bottom of index.html.
-# 16. **(Added)** Apply custom keyword and Gemini filter rules for arXiv and PRB journals.
+# Key Features:
+# 1. Batch processes multiple journal RSS feeds.
+# 2. Performs a primary filter using WHITELIST and BLACKLIST keywords.
+# 3. Executes a secondary filter on remaining items using the Gemini API (batch processing to minimize API calls).
+# 4. Automatically switches to a fallback model and retries if a Gemini API quota error occurs.
+# 5. If an error occurs during execution, the name of the failed journal is recorded in a state file to resume from that point on the next run.
+# 6. If all journals are processed successfully, 'SUCCESS' is written to the state file to start from the beginning on the next run.
+# 7. Generates an email body file containing the filtered and removed results.
+# 8. Creates an index.html page for the filtered RSS feeds and individual .xml files.
+# 9. **(Added)** Automatically includes the current GitHub Action run link at the bottom of the email.
+# 10. **(Added)** Separates the email body content by journal.
+# 11. **(Added)** Adds emoticons to the email body to distinguish between keyword-based and Gemini-based filtering.
+# 12. **(Added)** Adds a button to index.html to navigate to the filtered results page.
+# 13. **(Added)** In the email body, it specifies whether a removed paper was filtered by keyword or Gemini.
+# 14. **(Added)** Pressing the 'View Filtered Results' button opens an HTML page identical to the email body format, with clickable links.
+# 15. **(Added)** Displays the last update time on index.html in both Texas and Korea time.
+# 16. **(Added)** Applies separate keyword and Gemini filter rules for arXiv and PRB journals.
 #
 
 import feedparser
@@ -34,7 +35,7 @@ import datetime
 import google.api_core.exceptions as exceptions
 import re
 
-# ANSI color code definitions
+# Define ANSI color codes
 COLOR_GREEN = '\033[92m'
 COLOR_RED = '\033[91m'
 COLOR_YELLOW = '\033[93m'
@@ -43,14 +44,14 @@ COLOR_BLUE = '\033[94m'
 COLOR_END = '\033[0m'
 
 # General journal filter criteria
-GENERAL_WHITELIST = ["condensed matter", "solid state", "ARPES", "photoemission", "band structure", "Fermi surface", "Brillouin zone", "spin-orbit", "quantum oscillation", "quantum Hall", "Landau leve[...]
-GENERAL_BLACKLIST = ["congress", "forest", "climate", "lava", "protein", "archeologist", "mummy", "cancer", "tumor", "immune", "immunology", "inflammation", "antibody", "cytokine", "gene", "tissue", "[...]
+GENERAL_WHITELIST = ["condensed matter", "solid state", "ARPES", "photoemission", "band structure", "Fermi surface", "Brillouin zone", "spin-orbit", "quantum oscillation", "quantum Hall", "Landau level", "topological", "topology", "Weyl", "Dirac", "Chern", "Berry phase", "Kondo", "Mott", "Hubbard", "Heisenberg model", "spin liquid", "spin ice", "skyrmion", "nematic", "stripe order", "charge density wave", "CDW", "spin density wave", "SDW", "magnetism", "magnetic order", "antiferromagnetic", "ferromagnetic", "superconductivity", "superconductor", "Meissner", "quasiparticle", "phonon", "magnon", "exciton", "polariton", "crystal field", "lattice", "moiré", "twisted bilayer", "graphene", "2D material", "van der Waals", "correlated electrons", "quantum critical", "metal-insulator", "quantum phase transition", "susceptibility", "neutron scattering", "x-ray diffraction", "STM", "STS", "Kagome", "photon"]
+GENERAL_BLACKLIST = ["congress", "forest", "climate", "lava", "protein", "archeologist", "mummy", "cancer", "tumor", "immune", "immunology", "inflammation", "antibody", "cytokine", "gene", "tissue", "genome", "genetic", "transcriptome", "rna", "mrna", "mirna", "crisper", "mutation", "cell", "mouse", "zebrafish", "neuron", "neural", "brain", "synapse", "microbiome", "gut", "pathogen", "bacteria", "virus", "viral", "infection", "epidemiology", "clinical", "therapy", "therapeutic", "disease", "patient", "biopsy", "in vivo", "in vitro", "drug", "pharmacology", "oncology"]
 
-# arXiv and PRB journal filter criteria (stricter filtering)
-ARXIV_PRB_WHITELIST = ["ARPES", "angle-resolved", "Berry phase", "Kondo", "Mott", "Hubbard", "moiré", "twisted", "graphene", "Kagome", "CsV3Sb5", "V3Sb5", "Ti3Sb5", "magneto", "Luttinger", "NbSe3", "[...]
+# arXiv and PRB journal filter criteria (for stricter filtering)
+ARXIV_PRB_WHITELIST = ["ARPES", "angle-resolved", "Berry phase", "Kondo", "Mott", "Hubbard", "moiré", "twisted", "graphene", "Kagome", "CsV3Sb5", "V3Sb5", "Ti3Sb5", "magneto", "Luttinger", "NbSe3", "TaSe3", "Spin-charge", "Spin charge separation", "altermagnet", "CD-ARPES", "Circular dichroic", "Circular dichroism", "Quantum geometry", "Quantum geometric"]
 ARXIV_PRB_BLACKLIST = ["cancer"]
 
-# Journal RSS feed URLs
+# Set multiple journal URLs
 JOURNAL_URLS = {
     "Nature": "https://www.nature.com/nature.rss",
     "Nature_Physics": "https://feeds.nature.com/nphys/rss/current",
@@ -83,13 +84,198 @@ except Exception as e:
 
 def filter_rss_for_journal(journal_name, feed_url):
     """
-    Filters the given RSS feed URL based on criteria and returns the results.
-    Applies different filter rules depending on the journal.
+    Filters the content of a given RSS feed URL and returns the results.
+    Applies different filtering rules based on the journal.
     """
+    global current_model, using_primary_model
+    target_url = feed_url.strip('<> ')
+    print(f"{COLOR_GREEN}Processing journal: {journal_name}, URL: {target_url}{COLOR_END}", file=sys.stderr)
+
+    response = requests.get(target_url)
+    raw_xml = response.content
+    parsed_feed = feedparser.parse(raw_xml)
+    
+    # Dynamically set filtering criteria based on the journal.
+    if journal_name in ["PRL_Recent", "PRB_Recent", "arXiv_CondMat"]:
+        whitelist = ARXIV_PRB_WHITELIST
+        blacklist = ARXIV_PRB_BLACKLIST
+        gemini_prompt = """
+        I have a list of scientific articles. For each article, please classify if it is a research paper in condensed matter physics.
+        Unconditionally include articles if they are directly related to Kagome, Luttinger liquid, or experimental techniques such as ARPES, neutron scattering, or x-ray scattering. Include theoretical articles only if they are related to me, a postdoc at ARPES lab studying Kagome and topological materials.
+        You MUST provide the output as a JSON array of objects. Do not include any text, conversation, or explanations before or after the JSON array.
+        Each object in the JSON array should have a "title" and a "decision" key. The decision should be "YES" if it meets the criteria, or "NO" if it does not.
+        Here is the list of articles:
+        """
+    else:
+        whitelist = GENERAL_WHITELIST
+        blacklist = GENERAL_BLACKLIST
+        gemini_prompt = """
+        I have a list of scientific articles. For each article, please classify if it is related to "condensed matter physics".
+        You MUST provide the output as a JSON array of objects. Do not include any text, conversation, or explanations before or after the JSON array.
+        Each object in the JSON array should have a "title" and a "decision" key. The decision should be "YES" if it is related to the specified fields, or "NO" if it is not.
+        Here is the list of articles:
+        """
+
+    gemini_pending_entries = []
+    
+    keyword_passed_entries = []
+    gemini_passed_entries = []
+    keyword_removed_entries = []
+    gemini_removed_entries = []
+
+    # Iterate through all RSS feed items and perform the primary filtering.
+    for entry in parsed_feed.entries:
+        title = entry.get('title', '').lower()
+        summary = entry.get('summary', '').lower()
+        content = f"{title} {summary}"
+
+        is_in_blacklist = any(b.lower() in content for b in blacklist)
+        is_in_whitelist = any(w.lower() in content for w in whitelist)
+
+        # Remove if in the blacklist, pass if in the whitelist.
+        # If neither, classify for secondary filtering by the Gemini API.
+        if is_in_blacklist:
+            keyword_removed_entries.append(entry)
+            print(f"  ❌ {title}", file=sys.stderr)
+        elif is_in_whitelist:
+            keyword_passed_entries.append(entry)
+            print(f"  ✅ {title}", file=sys.stderr)
+        else:
+            gemini_pending_entries.append(entry)
+
+    # Use the Gemini API to review the items that didn't pass the primary filter.
+    if current_model and gemini_pending_entries:
+        print(f"🤖 {COLOR_GREEN}Batch processing{COLOR_END} {len(gemini_pending_entries)} items from {journal_name} with Gemini...", file=sys.stderr)
+        
+        items_to_review = []
+        for entry in gemini_pending_entries:
+            items_to_review.append({
+                "title": entry.get('title', ''),
+                "summary": entry.get('summary', '')
+            })
+
+        full_prompt = gemini_prompt + json.dumps(items_to_review, indent=2)
+        
+        max_attempts = 3
+        api_success = False
+        attempt = 0
+        # Attempt Gemini API call up to 3 times, switching to the fallback model on quota errors.
+        while attempt < max_attempts and not api_success:
+            try:
+                print(f"🤖 Attempt {attempt+1}/{max_attempts} using model: {current_model.model_name}", file=sys.stderr)
+
+                response = current_model.generate_content(
+                    full_prompt,
+                    generation_config=genai.types.GenerationConfig(
+                        response_mime_type="application/json"
+                    )
+                )
+                gemini_decisions = json.loads(response.text)
+                
+                if not isinstance(gemini_decisions, list):
+                    raise TypeError("Gemini response is not a list.")
+                
+                # Add each paper to the passed or removed list based on the Gemini API's response.
+                for decision_item in gemini_decisions:
+                    if not isinstance(decision_item, dict):
+                        raise TypeError("Gemini response list contains non-dictionary items.")
+                    
+                    title = decision_item.get('title', '')
+                    decision = decision_item.get('decision', '').upper()
+                    
+                    original_entry = next((e for e in gemini_pending_entries if e.get('title', '') == title), None)
+                    if original_entry:
+                        if decision == 'YES':
+                            gemini_passed_entries.append(original_entry)
+                            print(f"  🤖✅ {title}", file=sys.stderr)
+                        else:
+                            gemini_removed_entries.append(original_entry)
+                            print(f"  🤖❌ {title}", file=sys.stderr)
+                api_success = True
+            except Exception as e:
+                error_type = type(e).__name__
+                print(f"🤖 {COLOR_RED}Gemini Batch Error{COLOR_END} for {journal_name} ({error_type}, Attempt {attempt+1}/{max_attempts}): {e}", file=sys.stderr)
+                
+                if isinstance(e, exceptions.ResourceExhausted) and using_primary_model:
+                    print(f"🚨 {COLOR_ORANGE}Quota exceeded. Switching to fallback model: {fallback_model}{COLOR_END}", file=sys.stderr)
+                    try:
+                        current_model = genai.GenerativeModel(fallback_model)
+                        using_primary_model = False
+                        # Increase retry attempts when switching to the fallback model.
+                        max_attempts += 1
+                    except Exception as fallback_e:
+                        print(f"Error switching to fallback model: {fallback_e}", file=sys.stderr)
+                        current_model = None
+                
+                attempt += 1
+                if not api_success and attempt < max_attempts:
+                    print("Retrying in 60 seconds...", file=sys.stderr)
+                    time.sleep(60)
+        
+        if not api_success:
+            print(f"🤖 Final Gemini batch API call for {journal_name} failed. All pending items will be removed.", file=sys.stderr)
+            gemini_removed_entries.extend(gemini_pending_entries)
+            raise RuntimeError(f"Gemini API call failed for journal: {journal_name}")
+            
+    print(f"Total keyword-passed links for {journal_name}: {len(keyword_passed_entries)}", file=sys.stderr)
+    print(f"Total Gemini-passed links for {journal_name}: {len(gemini_passed_entries)}", file=sys.stderr)
+    print(f"Total keyword-removed links for {journal_name}: {len(keyword_removed_entries)}", file=sys.stderr)
+    print(f"Total Gemini-removed links for {journal_name}: {len(gemini_removed_entries)}", file=sys.stderr)
+            
+    # Gather all passed paper links for XML parsing and filtering.
+    passed_links = set(entry.link for entry in keyword_passed_entries + gemini_passed_entries)
+
+    root = ET.fromstring(raw_xml)
+    namespaces = {
+        'atom': 'http://www.w3.org/2005/Atom',
+        'rdf': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
+        'rss1': 'http://purl.org/rss/1.0/',
+        'dc': 'http://purl.org/dc/elements/1.1/',
+        'content': 'http://purl.org/rss/1.0/modules/content/'
+    }
+
+    # Iterate through the XML items based on feed type and keep only the filtered papers.
+    if root.tag == 'rss':
+        channel = root.find('channel')
+        if channel is not None:
+            for item in list(channel.findall('item')):
+                link_el = item.find('link')
+                if link_el is not None and link_el.text not in passed_links:
+                    channel.remove(item)
+    elif root.tag == '{http://www.w3.org/2005/Atom}feed':
+        for entry in list(root.findall('atom:entry', namespaces=namespaces)):
+            link_el = entry.find('atom:link', namespaces=namespaces)
+            if link_el is not None:
+                link_href = link_el.get('href')
+                if link_href is not None and link_href not in passed_links:
+                    root.remove(entry)
+    elif root.tag == '{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF':
+        for item in list(root.findall('rss1:item', namespaces=namespaces)):
+            item_link = item.get(f"{{{namespaces['rdf']}}}about")
+            if item_link is not None and item_link not in passed_links:
+                root.remove(item)
+
+        for channel in root.findall('rss1:channel', namespaces=namespaces):
+            items = channel.find('rss1:items', namespaces=namespaces)
+            if items is not None:
+                rdf_seq = items.find('rdf:Seq', namespaces=namespaces)
+                if rdf_seq is not None:
+                    # Use `passed_links` to remove list items.
+                    for li in list(rdf_seq.findall('rdf:li', namespaces=namespaces)):
+                        link_resource = li.get(f"{{{namespaces['rdf']}}}resource")
+                        if link_resource not in passed_links:
+                            rdf_seq.remove(li)
+    else:
+        print(f"Warning: Unknown feed type for {journal_name}: {root.tag}", file=sys.stderr)
+
+    buffer = BytesIO()
+    tree = ET.ElementTree(root)
+    tree.write(buffer, encoding='utf-8', xml_declaration=True, pretty_print=True)
+    return buffer.getvalue(), keyword_passed_entries, gemini_passed_entries, keyword_removed_entries, gemini_removed_entries
 
 def create_email_body_file(email_body_content):
     """
-    Creates the email body file
+    Function to create the email body file.
     """
     EMAIL_BODY_FILE = "filtered_titles.txt"
     try:
@@ -101,11 +287,11 @@ def create_email_body_file(email_body_content):
 
 def create_results_html_file(email_body_content):
     """
-    Generates a clickable HTML results page with the same format as the email body.
+    Creates an HTML file with clickable links in the same format as the email body.
     """
     print("--- Generating HTML results page: filtered_results.html ---", file=sys.stderr)
 
-    # HTML template (header)
+    # Start of the HTML template
     html_content = f"""
 <!DOCTYPE html>
 <html lang="en">
@@ -127,27 +313,31 @@ def create_results_html_file(email_body_content):
         <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Filtered Paper Results</h1>
         <div class="space-y-2">
 """
-    # Convert email body lines to HTML
+    
+    # Convert email body content to HTML format
     email_lines = email_body_content.strip().split('\n')
     for line in email_lines:
         line = line.strip()
         if not line:
             continue
-        # Journal separator
+        
+        # Process journal separator
         if line.startswith("---"):
             journal_name = line.replace("---", "").strip()
             html_content += f'<h2 class="text-xl font-bold text-indigo-700 mt-6 mb-2">{journal_name}</h2>'
-        # Section title (PASSED PAPERS:, REMOVED PAPERS:)
+        # Process section titles (PASSED PAPERS:, REMOVED PAPERS:)
         elif line.endswith(":"):
             html_content += f'<p class="text-lg font-semibold text-gray-800 mt-4">{line}</p>'
-        # Paper link line
+        # Process paper link lines
         else:
+            # Use a regular expression to extract the emoticon, title, and link
             match = re.match(r'^(.*?)\s(.+)\s\((http[s]?://.+)\)$', line)
             if match:
                 emoticon = match.group(1).strip()
                 title = match.group(2).strip()
                 link = match.group(3).strip()
-                # Make clickable link
+
+                # Convert to a clickable link
                 html_content += f"""
                 <div class="p-2 bg-gray-50 rounded-lg shadow-sm hover:bg-gray-100 transition duration-300">
                     <p class="text-gray-700 text-sm font-medium whitespace-nowrap overflow-hidden overflow-ellipsis">
@@ -155,8 +345,9 @@ def create_results_html_file(email_body_content):
                     </p>
                 </div>
 """
+            # Other text (e.g., 'No papers found...')
             else:
-                # GitHub Actions link
+                # Process GitHub Actions link
                 if 'Check GitHub Actions run for details' in line:
                     action_url = line.split(":\n")[-1].strip()
                     html_content += f"""
@@ -167,26 +358,31 @@ def create_results_html_file(email_body_content):
                     """
                 else:
                     html_content += f'<p class="text-gray-600 ml-6">{line}</p>'
+    
+    # End of the HTML template
     html_content += """
         </div>
     </div>
 </body>
 </html>
 """
+
     try:
         with open('filtered_results.html', 'w', encoding='utf-8') as f:
             f.write(html_content)
-        print("--- Finished generating HTML results page: filtered_results.html ---", file=sys.stderr)
+        print("--- HTML results page successfully generated: filtered_results.html ---", file=sys.stderr)
     except Exception as e:
-        print(f"Error while generating HTML results page: {e}", file=sys.stderr)
+        print(f"Error generating HTML results page: {e}", file=sys.stderr)
+
 
 def create_index_html(journal_urls, rss_base_filename):
     """
-    Generates index.html showing filtered RSS feed links for each journal.
+    Creates an index.html page that shows links to the filtered RSS feeds for each journal.
     """
     print("--- Generating HTML page: index.html ---", file=sys.stderr)
     
-    # Get current UTC time, convert to KST and CDT
+    # Get the current UTC time and convert it to Korea (KST) and Texas (CDT) time.
+    # KST is UTC+9, CDT is UTC-5.
     now_utc = datetime.datetime.utcnow()
     now_korea = now_utc + datetime.timedelta(hours=9)
     now_texas = now_utc - datetime.timedelta(hours=5)
@@ -214,11 +410,12 @@ def create_index_html(journal_urls, rss_base_filename):
     <div class="bg-white rounded-xl shadow-2xl p-8 max-w-lg w-full text-center">
         <h1 class="text-3xl font-bold text-gray-800 mb-2">Filtered Paper RSS Feeds</h1>
         <p class="text-gray-600 mb-8">
-            This page provides RSS feeds for selected journals filtered for ARPES and condensed matter physics papers only.
-            Click the links below to subscribe via Reeder app or other RSS readers.
+            This is an RSS feed filtered for ARPES and Condensed matter physics papers from selected journals.
+            Click the links below to subscribe in a feed reader like Reeder.
         </p>
         <div class="space-y-4">
 """
+    # Iterate through the list of journals and create an RSS feed link for each.
     for journal_name in journal_urls.keys():
         safe_journal_name = journal_name.replace(" ", "_").replace("/", "_")
         filename = f"{rss_base_filename}_{safe_journal_name}.xml"
@@ -229,15 +426,17 @@ def create_index_html(journal_urls, rss_base_filename):
 """
     html_content += """
             <a href="filtered_results.html" target="_blank" class="block w-full px-6 py-4 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition duration-300">
-                Filter Results
+                View Filtered Results
             </a>
         </div>
         <div class="mt-8 text-sm text-gray-500">
-            <p>Last update (Korea): """ + korea_time_str + """</p>
-            <p>Last update (Texas): """ + texas_time_str + """</p>
+            <p>Last Updated (Korea): """ + korea_time_str + """</p>
+            <p>Last Updated (Texas): """ + texas_time_str + """</p>
         </div>
-        <div class="mt-4 text-sm text-gray-500">
-            <a href="https://yilab.rice.edu/people/" target="_blank" class="hover:underline text-blue-700">Created by Jounghoon Hyun</a>
+        <div class="mt-8 text-center text-sm text-gray-500">
+            <a href="https://yilab.rice.edu/people/" target="_blank" class="text-gray-500 hover:text-gray-700 hover:underline">
+                Created by Jounghoon Hyun
+            </a>
         </div>
     </div>
 </body>
@@ -246,9 +445,9 @@ def create_index_html(journal_urls, rss_base_filename):
     try:
         with open('index.html', 'w', encoding='utf-8') as f:
             f.write(html_content)
-        print("--- Finished generating HTML page: index.html ---", file=sys.stderr)
+        print("--- HTML page successfully generated: index.html ---", file=sys.stderr)
     except Exception as e:
-        print(f"Error while generating HTML page: {e}", file=sys.stderr)
+        print(f"Error generating HTML page: {e}", file=sys.stderr)
 
 
 if __name__ == '__main__':
@@ -259,7 +458,7 @@ if __name__ == '__main__':
     
     journals_to_process = list(JOURNAL_URLS.items())
     start_index = 0
-    # Check state file to resume from last failed journal
+    # Check the state file to resume processing from the last failed journal.
     if os.path.exists(STATE_FILE):
         with open(STATE_FILE, 'r') as f:
             last_failed_journal = f.read().strip()
@@ -280,7 +479,7 @@ if __name__ == '__main__':
             start_index = 0
             
     try:
-        # Process all journals and filter
+        # Iterate through all journals and perform filtering.
         for journal_name, feed_url in journals_to_process[start_index:]:
             try:
                 filtered_xml, keyword_passed_entries, gemini_passed_entries, keyword_removed_entries, gemini_removed_entries = filter_rss_for_journal(journal_name, feed_url)
@@ -290,15 +489,17 @@ if __name__ == '__main__':
                     f.write(filtered_xml)
                 print(f"Successfully wrote filtered RSS feed to {output_filename}", file=sys.stderr)
 
-                # Add to email content
+                # Add email content for each journal
                 email_content += f"--- {journal_name} ---\n\n"
                 
                 email_content += f"PASSED PAPERS:\n"
                 if not keyword_passed_entries and not gemini_passed_entries:
                     email_content += 'No papers found matching your filters.\n\n'
                 else:
+                    # Add a list of keyword-passed papers to the email content.
                     for entry in keyword_passed_entries:
                         email_content += f"  ✅ {entry.get('title', 'No title')} ({entry.get('link', 'No link')})\n"
+                    # Add a list of Gemini-passed papers to the email content.
                     for entry in gemini_passed_entries:
                         email_content += f"  🤖✅ {entry.get('title', 'No title')} ({entry.get('link', 'No link')})\n"
                     email_content += "\n"
@@ -307,8 +508,10 @@ if __name__ == '__main__':
                 if not keyword_removed_entries and not gemini_removed_entries:
                     email_content += 'No papers were filtered out.\n\n'
                 else:
+                    # Add a list of keyword-removed papers to the email content.
                     for entry in keyword_removed_entries:
                         email_content += f"  ❌ {entry.get('title', 'No title')} ({entry.get('link', 'No link')})\n"
+                    # Add a list of Gemini-removed papers to the email content.
                     for entry in gemini_removed_entries:
                         email_content += f"  🤖❌ {entry.get('title', 'No title')} ({entry.get('link', 'No link')})\n"
                     email_content += "\n"
@@ -317,12 +520,12 @@ if __name__ == '__main__':
                 print(f"An error occurred while processing journal '{journal_name}': {e}", file=sys.stderr)
                 with open(STATE_FILE, 'w') as f:
                     f.write(journal_name)
-                # Compose email content for error
+                # Compose the email content in case of an error.
                 email_content += f"\n\nAn error occurred while running the filter script for '{journal_name}':\n{e}\nPlease check the workflow logs for more details.\n"
-                raise
+                raise # Re-raise the exception to stop script execution.
 
         try:
-            # Update state file to 'SUCCESS' if all journals processed
+            # If all journals were processed successfully, update the state file to 'SUCCESS'.
             if os.path.exists(STATE_FILE):
                 with open(STATE_FILE, 'w') as f:
                     f.write('SUCCESS')
@@ -338,7 +541,7 @@ if __name__ == '__main__':
         create_results_html_file(email_content)
 
     finally:
-        # Compose GitHub Actions link
+        # Construct the GitHub Actions link.
         github_server_url = os.getenv("GITHUB_SERVER_URL")
         github_repository = os.getenv("GITHUB_REPOSITORY")
         github_run_id = os.getenv("GITHUB_RUN_ID")
