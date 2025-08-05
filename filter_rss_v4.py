@@ -21,6 +21,7 @@
 # 15. (Added) Applies separate keyword and Gemini filter rules for arXiv and PRB journals.
 # 16. (Added) Highlights the specific keyword that triggered the filtering in the console log.
 # 17. (Added) Prints the specific keyword and its location (title or abstract) that triggered the filtering.
+# 18. (Added) Adds a 120-second timeout to the Gemini API call to prevent the script from hanging indefinitely.
 #
 
 import feedparser
@@ -198,7 +199,8 @@ def filter_rss_for_journal(journal_name, feed_url):
                     full_prompt,
                     generation_config=genai.types.GenerationConfig(
                         response_mime_type="application/json"
-                    )
+                    ),
+                    request_options={'timeout': 120}  # Add a timeout of 120 seconds
                 )
                 gemini_decisions = json.loads(response.text)
                 
@@ -222,7 +224,7 @@ def filter_rss_for_journal(journal_name, feed_url):
                             gemini_removed_entries.append(original_entry)
                             print(f"  🤖❌ {title}", file=sys.stderr)
                 api_success = True
-            except Exception as e:
+            except (exceptions.ResourceExhausted, requests.exceptions.Timeout, requests.exceptions.RequestException) as e:
                 error_type = type(e).__name__
                 print(f"🤖 {COLOR_RED}Gemini Batch Error{COLOR_END} for {journal_name} ({error_type}, Attempt {attempt+1}/{max_attempts}): {e}", file=sys.stderr)
                 
