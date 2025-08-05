@@ -21,7 +21,11 @@
         <items>
             <rdf:Seq>
                 
-                    </rdf:Seq>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-62773-z"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-62322-8"/>
+                
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/ncomms/rss.png">
@@ -30,4 +34,34 @@
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
     
-        </rdf:RDF>
+        <item rdf:about="https://www.nature.com/articles/s41467-025-62773-z">
+            <title>Author Correction: Topology meets time-reversal symmetry breaking in FeSe&lt;sub&gt;1−&lt;i&gt;x&lt;/i&gt;&lt;/sub&gt;Te&lt;sub&gt;&lt;i&gt;x&lt;/i&gt;&lt;/sub&gt; superconductors</title>
+            <link>https://www.nature.com/articles/s41467-025-62773-z</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 05 August 2025; &lt;a href="https://www.nature.com/articles/s41467-025-62773-z"&gt;doi:10.1038/s41467-025-62773-z&lt;/a&gt;&lt;/p&gt;Author Correction: Topology meets time-reversal symmetry breaking in FeSe&lt;sub&gt;1−&lt;i&gt;x&lt;/i&gt;&lt;/sub&gt;Te&lt;sub&gt;&lt;i&gt;x&lt;/i&gt;&lt;/sub&gt; superconductors</content:encoded>
+            <dc:title>Author Correction: Topology meets time-reversal symmetry breaking in FeSe&lt;sub&gt;1−&lt;i&gt;x&lt;/i&gt;&lt;/sub&gt;Te&lt;sub&gt;&lt;i&gt;x&lt;/i&gt;&lt;/sub&gt; superconductors</dc:title>
+            <dc:creator>Masaki Roppongi</dc:creator><dc:creator>Yipeng Cai</dc:creator><dc:creator>Koki Ogawa</dc:creator><dc:creator>Supeng Liu</dc:creator><dc:creator>Guoqiang Zhao</dc:creator><dc:creator>Mohamed Oudah</dc:creator><dc:creator>Takenori Fujii</dc:creator><dc:creator>Kumpei Imamura</dc:creator><dc:creator>Shengjie Fang</dc:creator><dc:creator>Kota Ishihara</dc:creator><dc:creator>Kenichiro Hashimoto</dc:creator><dc:creator>Kohei Matsuura</dc:creator><dc:creator>Yuta Mizukami</dc:creator><dc:creator>Mathew Pula</dc:creator><dc:creator>Cyrus Young</dc:creator><dc:creator>Igor Marković</dc:creator><dc:creator>Douglas A. Bonn</dc:creator><dc:creator>Takao Watanabe</dc:creator><dc:creator>Aichi Yamashita</dc:creator><dc:creator>Yoshikazu Mizuguchi</dc:creator><dc:creator>Graeme M. Luke</dc:creator><dc:creator>Kenji M. Kojima</dc:creator><dc:creator>Yasutomo J. Uemura</dc:creator><dc:creator>Takasada Shibauchi</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-62773-z</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-08-05; | doi:10.1038/s41467-025-62773-z</dc:source>
+            <dc:date>2025-08-05</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-62773-z</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-62773-z</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-62322-8">
+            <title>Sorting polymerization in a bichannel metal-organic framework</title>
+            <link>https://www.nature.com/articles/s41467-025-62322-8</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 05 August 2025; &lt;a href="https://www.nature.com/articles/s41467-025-62322-8"&gt;doi:10.1038/s41467-025-62322-8&lt;/a&gt;&lt;/p&gt;Accomplishing multiple synthetic tasks in parallel including substrate capture, separation, and reaction, all in one system, has remained a long-standing challenge in synthetic chemistry. Here, the authors report a sorting polymerization strategy that harnesses the multifunctional nature of a bichannel metal-organic framework.</content:encoded>
+            <dc:title>Sorting polymerization in a bichannel metal-organic framework</dc:title>
+            <dc:creator>Keat Beamsley</dc:creator><dc:creator>Nobuhiko Hosono</dc:creator><dc:creator>Takashi Uemura</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-62322-8</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-08-05; | doi:10.1038/s41467-025-62322-8</dc:source>
+            <dc:date>2025-08-05</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-62322-8</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-62322-8</prism:url>
+        </item>
+    
+</rdf:RDF>

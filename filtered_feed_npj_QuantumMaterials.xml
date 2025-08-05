@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00797-w"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00808-w"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00793-0"/>
@@ -32,8 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00799-8"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00805-z"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-025-00797-w">
+            <title>Anisotropic non-Fermi liquid and dynamical Planckian scaling of a quasi-kagome Kondo lattice system</title>
+            <link>https://www.nature.com/articles/s41535-025-00797-w</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 05 August 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00797-w"&gt;doi:10.1038/s41535-025-00797-w&lt;/a&gt;&lt;/p&gt;Anisotropic non-Fermi liquid and dynamical Planckian scaling of a quasi-kagome Kondo lattice system</content:encoded>
+            <dc:title>Anisotropic non-Fermi liquid and dynamical Planckian scaling of a quasi-kagome Kondo lattice system</dc:title>
+            <dc:creator>Shin-ichi Kimura</dc:creator><dc:creator>Muhammad Frassetia Lubis</dc:creator><dc:creator>Hiroshi Watanabe</dc:creator><dc:creator>Yasuyuki Shimura</dc:creator><dc:creator>Toshiro Takabatake</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-025-00797-w</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2025-08-05; | doi:10.1038/s41535-025-00797-w</dc:source>
+            <dc:date>2025-08-05</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-025-00797-w</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-025-00797-w</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-025-00808-w">
             <title>Time-reversal symmetry breaking, collective modes, and Raman spectrum in pair-density-wave states</title>
@@ -146,21 +161,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-025-00799-8</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-025-00799-8</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-025-00805-z">
-            <title>Berry curvature-induced transport signature for altermagnetic order</title>
-            <link>https://www.nature.com/articles/s41535-025-00805-z</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 17 July 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00805-z"&gt;doi:10.1038/s41535-025-00805-z&lt;/a&gt;&lt;/p&gt;Berry curvature-induced transport signature for altermagnetic order</content:encoded>
-            <dc:title>Berry curvature-induced transport signature for altermagnetic order</dc:title>
-            <dc:creator>T. Farajollahpour</dc:creator><dc:creator>R. Ganesh</dc:creator><dc:creator>K. V. Samokhin</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-025-00805-z</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2025-07-17; | doi:10.1038/s41535-025-00805-z</dc:source>
-            <dc:date>2025-07-17</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-025-00805-z</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-025-00805-z</prism:url>
         </item>
     
 </rdf:RDF>

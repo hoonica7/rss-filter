@@ -20,6 +20,8 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02304-9"/>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02308-5"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02303-w"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02307-6"/>
@@ -27,8 +29,6 @@
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02312-9"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02310-x"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02280-0"/>
                 
             </rdf:Seq>
         </items>
@@ -52,6 +52,21 @@
             <prism:publicationName>Nature Materials</prism:publicationName>
             <prism:doi>10.1038/s41563-025-02304-9</prism:doi>
             <prism:url>https://www.nature.com/articles/s41563-025-02304-9</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02308-5">
+            <title>Fatigue in metals and alloys</title>
+            <link>https://www.nature.com/articles/s41563-025-02308-5</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 04 August 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02308-5"&gt;doi:10.1038/s41563-025-02308-5&lt;/a&gt;&lt;/p&gt;Fatigue-induced failures remain a critical challenge to the performance and reliability of metals and alloys due to their inherently complex and unpredictable nature. This Perspective highlights emerging frontiers in fatigue research, including key mechanistic insights, material designs for improving fatigue resistance and advances in fabrication, characterization and modelling techniques.</content:encoded>
+            <dc:title>Fatigue in metals and alloys</dc:title>
+            <dc:creator>Qingsong Pan</dc:creator><dc:creator>Lei Lu</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02308-5</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-08-04; | doi:10.1038/s41563-025-02308-5</dc:source>
+            <dc:date>2025-08-04</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02308-5</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02308-5</prism:url>
         </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02303-w">
@@ -112,21 +127,6 @@
             <prism:publicationName>Nature Materials</prism:publicationName>
             <prism:doi>10.1038/s41563-025-02310-x</prism:doi>
             <prism:url>https://www.nature.com/articles/s41563-025-02310-x</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02280-0">
-            <title>Flatland wakes based on leaky hyperbolic polaritons</title>
-            <link>https://www.nature.com/articles/s41563-025-02280-0</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 31 July 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02280-0"&gt;doi:10.1038/s41563-025-02280-0&lt;/a&gt;&lt;/p&gt;The authors combine the strong confinement of hyperbolic polaritons with leaky nano-waveguides to demonstrate directional in-plane emission of fast phonon polaritons and their acceleration and deceleration by tailoring waveguide dispersion.</content:encoded>
-            <dc:title>Flatland wakes based on leaky hyperbolic polaritons</dc:title>
-            <dc:creator>Na Chen</dc:creator><dc:creator>Hanchao Teng</dc:creator><dc:creator>Hai Hu</dc:creator><dc:creator>Min Liu</dc:creator><dc:creator>Chengyu Jiang</dc:creator><dc:creator>Zhuoxin Xue</dc:creator><dc:creator>Hualong Zhu</dc:creator><dc:creator>Jiayi Gui</dc:creator><dc:creator>Peining Li</dc:creator><dc:creator>Andrea Alù</dc:creator><dc:creator>Qing Dai</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02280-0</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-07-31; | doi:10.1038/s41563-025-02280-0</dc:source>
-            <dc:date>2025-07-31</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02280-0</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02280-0</prism:url>
         </item>
     
 </rdf:RDF>
