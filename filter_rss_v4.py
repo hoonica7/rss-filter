@@ -410,9 +410,8 @@ def create_index_html(journal_urls, rss_base_filename):
     <div class="bg-white rounded-xl shadow-2xl p-8 max-w-lg w-full text-center">
         <h1 class="text-3xl font-bold text-gray-800 mb-2">Filtered Paper RSS Feeds</h1>
         <p class="text-gray-600 mb-8">
-            These RSS feeds are filtered using keywords and AI to include only ARPES and condensed matter physics papers.<br>
+            These RSS feeds are filtered using keywords and AI to include only ARPES and condensed matter physics papers, primarily experimental.<br>
             Use the links below to subscribe using a feed reader like Reeder.<br>
-            (Updated daily at 00:00 and 13:00 UTC)
         </p>
         <div class="space-y-4">
 """
@@ -433,6 +432,7 @@ def create_index_html(journal_urls, rss_base_filename):
         <div class="mt-8 text-sm text-gray-500">
             <p>Last Updated (Korea): """ + korea_time_str + """</p>
             <p>Last Updated (Texas): """ + texas_time_str + """</p>
+            <p>Updates daily at 08:00 and 19:00 CDT</p>
         </div>
         <div class="mt-8 text-center text-sm text-gray-500">
             <a href="https://yilab.rice.edu/people/" target="_blank" class="text-gray-500 hover:text-gray-700 hover:underline">
