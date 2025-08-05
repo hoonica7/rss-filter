@@ -1,24 +1,25 @@
 #
-# 이 스크립트는 여러 과학 저널의 RSS 피드를 필터링하여,
-# 특정 키워드에 맞는 논문만 골라내고 Gemini API를 사용하여 추가 검증을 수행합니다.
+# This script filters RSS feeds from multiple scientific journals,
+# selects papers that match specific keywords, and performs a secondary
+# verification using the Gemini API.
 #
-# 주요 기능:
-# 1. 여러 저널 RSS 피드 일괄 처리.
-# 2. WHITELIST 및 BLACKLIST 키워드를 사용한 1차 필터링.
-# 3. 1차 필터링에 걸리지 않은 항목을 Gemini API를 통해 2차 필터링 (배치 처리로 API 호출 최소화).
-# 4. Gemini API 할당량 오류 발생 시, 백업 모델로 자동 전환 후 재시도.
-# 5. 실행 중 오류가 발생한 경우, 오류가 발생한 저널 이름을 상태 파일에 기록하여 다음 실행 시 해당 지점부터 다시 시작.
-# 6. 모든 저널을 성공적으로 처리한 경우, 상태 파일에 'SUCCESS'를 기록하여 다음 실행 시 처음부터 시작.
-# 7. 필터링된 결과와 제거된 결과를 담은 이메일 본문 파일 생성.
-# 8. 필터링된 RSS 피드를 위한 index.html 페이지와 개별 .xml 파일 생성.
-# 9. **(추가됨)** 이메일 최하단에 현재 GitHub Action 실행 링크를 자동으로 추가합니다.
-# 10. **(추가됨)** 이메일 본문의 내용을 저널별로 구분하여 표시합니다.
-# 11. **(추가됨)** 이메일 본문에 필터링 방식(키워드 또는 Gemini)에 따른 이모티콘을 추가합니다.
-# 12. **(추가됨)** index.html에 필터링 결과 페이지로 이동하는 버튼을 추가합니다.
-# 13. **(추가됨)** 이메일 본문에서 제거된 논문의 필터링 방식(키워드 또는 Gemini)을 구분하여 표시합니다.
-# 14. **(추가됨)** 'Filter 결과' 버튼을 누르면 이메일 본문 형식 그대로 개별 논문 링크를 클릭할 수 있는 HTML 페이지가 열립니다.
-# 15. **(추가됨)** index.html의 마지막 업데이트 시간을 텍사스 시간과 한국 시간으로 나누어 표시합니다.
-# 16. **(추가됨)** arXiv와 PRB 저널에 대해 별도의 키워드 및 Gemini 필터 규칙을 적용합니다.
+# Key Features:
+# 1. Batch processes multiple journal RSS feeds.
+# 2. Performs a primary filter using WHITELIST and BLACKLIST keywords.
+# 3. Executes a secondary filter on remaining items using the Gemini API (batch processing to minimize API calls).
+# 4. Automatically switches to a fallback model and retries if a Gemini API quota error occurs.
+# 5. If an error occurs during execution, the name of the failed journal is recorded in a state file to resume from that point on the next run.
+# 6. If all journals are processed successfully, 'SUCCESS' is written to the state file to start from the beginning on the next run.
+# 7. Generates an email body file containing the filtered and removed results.
+# 8. Creates an index.html page for the filtered RSS feeds and individual .xml files.
+# 9. **(Added)** Automatically includes the current GitHub Action run link at the bottom of the email.
+# 10. **(Added)** Separates the email body content by journal.
+# 11. **(Added)** Adds emoticons to the email body to distinguish between keyword-based and Gemini-based filtering.
+# 12. **(Added)** Adds a button to index.html to navigate to the filtered results page.
+# 13. **(Added)** In the email body, it specifies whether a removed paper was filtered by keyword or Gemini.
+# 14. **(Added)** Pressing the 'View Filtered Results' button opens an HTML page identical to the email body format, with clickable links.
+# 15. **(Added)** Displays the last update time on index.html in both Texas and Korea time.
+# 16. **(Added)** Applies separate keyword and Gemini filter rules for arXiv and PRB journals.
 #
 
 import feedparser
@@ -34,7 +35,7 @@ import datetime
 import google.api_core.exceptions as exceptions
 import re
 
-# ANSI 색상 코드 정의
+# Define ANSI color codes
 COLOR_GREEN = '\033[92m'
 COLOR_RED = '\033[91m'
 COLOR_YELLOW = '\033[93m'
@@ -42,15 +43,15 @@ COLOR_ORANGE = '\033[38;5;208m'
 COLOR_BLUE = '\033[94m'
 COLOR_END = '\033[0m'
 
-# 일반 저널 필터 기준 설정
+# General journal filter criteria
 GENERAL_WHITELIST = ["condensed matter", "solid state", "ARPES", "photoemission", "band structure", "Fermi surface", "Brillouin zone", "spin-orbit", "quantum oscillation", "quantum Hall", "Landau level", "topological", "topology", "Weyl", "Dirac", "Chern", "Berry phase", "Kondo", "Mott", "Hubbard", "Heisenberg model", "spin liquid", "spin ice", "skyrmion", "nematic", "stripe order", "charge density wave", "CDW", "spin density wave", "SDW", "magnetism", "magnetic order", "antiferromagnetic", "ferromagnetic", "superconductivity", "superconductor", "Meissner", "quasiparticle", "phonon", "magnon", "exciton", "polariton", "crystal field", "lattice", "moiré", "twisted bilayer", "graphene", "2D material", "van der Waals", "correlated electrons", "quantum critical", "metal-insulator", "quantum phase transition", "susceptibility", "neutron scattering", "x-ray diffraction", "STM", "STS", "Kagome", "photon"]
 GENERAL_BLACKLIST = ["congress", "forest", "climate", "lava", "protein", "archeologist", "mummy", "cancer", "tumor", "immune", "immunology", "inflammation", "antibody", "cytokine", "gene", "tissue", "genome", "genetic", "transcriptome", "rna", "mrna", "mirna", "crisper", "mutation", "cell", "mouse", "zebrafish", "neuron", "neural", "brain", "synapse", "microbiome", "gut", "pathogen", "bacteria", "virus", "viral", "infection", "epidemiology", "clinical", "therapy", "therapeutic", "disease", "patient", "biopsy", "in vivo", "in vitro", "drug", "pharmacology", "oncology"]
 
-# arXiv 및 PRB 저널 필터 기준 설정 (보다 엄격한 필터링을 위해)
+# arXiv and PRB journal filter criteria (for stricter filtering)
 ARXIV_PRB_WHITELIST = ["ARPES", "angle-resolved", "Berry phase", "Kondo", "Mott", "Hubbard", "moiré", "twisted", "graphene", "Kagome", "CsV3Sb5", "V3Sb5", "Ti3Sb5", "magneto", "Luttinger", "NbSe3", "TaSe3", "Spin-charge", "Spin charge separation", "altermagnet", "CD-ARPES", "Circular dichroic", "Circular dichroism", "Quantum geometry", "Quantum geometric"]
 ARXIV_PRB_BLACKLIST = ["cancer"]
 
-# 여러 저널 URL 설정
+# Set multiple journal URLs
 JOURNAL_URLS = {
     "Nature": "https://www.nature.com/nature.rss",
     "Nature_Physics": "https://feeds.nature.com/nphys/rss/current",
@@ -64,7 +65,7 @@ JOURNAL_URLS = {
     "arXiv_CondMat": "https://rss.arxiv.org/rss/cond-mat",
 }
 
-# Gemini 모델 초기화
+# Initialize Gemini model
 primary_model = 'gemini-2.0-flash'
 fallback_model = 'gemini-1.5-flash-latest'
 current_model = None
@@ -83,8 +84,8 @@ except Exception as e:
 
 def filter_rss_for_journal(journal_name, feed_url):
     """
-    주어진 RSS 피드 URL의 내용을 필터링하고 결과를 반환합니다.
-    저널에 따라 다른 필터링 규칙을 적용합니다.
+    Filters the content of a given RSS feed URL and returns the results.
+    Applies different filtering rules based on the journal.
     """
     global current_model, using_primary_model
     target_url = feed_url.strip('<> ')
@@ -94,7 +95,7 @@ def filter_rss_for_journal(journal_name, feed_url):
     raw_xml = response.content
     parsed_feed = feedparser.parse(raw_xml)
     
-    # 저널에 따라 필터링 기준을 동적으로 설정합니다.
+    # Dynamically set filtering criteria based on the journal.
     if journal_name in ["PRL_Recent", "PRB_Recent", "arXiv_CondMat"]:
         whitelist = ARXIV_PRB_WHITELIST
         blacklist = ARXIV_PRB_BLACKLIST
@@ -122,7 +123,7 @@ def filter_rss_for_journal(journal_name, feed_url):
     keyword_removed_entries = []
     gemini_removed_entries = []
 
-    # 모든 RSS 피드 항목을 순회하며 1차 필터링을 수행합니다.
+    # Iterate through all RSS feed items and perform the primary filtering.
     for entry in parsed_feed.entries:
         title = entry.get('title', '').lower()
         summary = entry.get('summary', '').lower()
@@ -131,8 +132,8 @@ def filter_rss_for_journal(journal_name, feed_url):
         is_in_blacklist = any(b.lower() in content for b in blacklist)
         is_in_whitelist = any(w.lower() in content for w in whitelist)
 
-        # 블랙리스트에 있으면 제거하고, 화이트리스트에 있으면 통과시킵니다.
-        # 둘 다 아니면 Gemini API를 통한 2차 필터링 대상으로 분류합니다.
+        # Remove if in the blacklist, pass if in the whitelist.
+        # If neither, classify for secondary filtering by the Gemini API.
         if is_in_blacklist:
             keyword_removed_entries.append(entry)
             print(f"  ❌ {title}", file=sys.stderr)
@@ -142,7 +143,7 @@ def filter_rss_for_journal(journal_name, feed_url):
         else:
             gemini_pending_entries.append(entry)
 
-    # Gemini API를 사용하여 1차 필터링에 걸리지 않은 항목들을 검토합니다.
+    # Use the Gemini API to review the items that didn't pass the primary filter.
     if current_model and gemini_pending_entries:
         print(f"🤖 {COLOR_GREEN}Batch processing{COLOR_END} {len(gemini_pending_entries)} items from {journal_name} with Gemini...", file=sys.stderr)
         
@@ -158,7 +159,7 @@ def filter_rss_for_journal(journal_name, feed_url):
         max_attempts = 3
         api_success = False
         attempt = 0
-        # Gemini API 호출을 최대 3번 시도하고, 할당량 오류 시 백업 모델로 전환합니다.
+        # Attempt Gemini API call up to 3 times, switching to the fallback model on quota errors.
         while attempt < max_attempts and not api_success:
             try:
                 print(f"🤖 Attempt {attempt+1}/{max_attempts} using model: {current_model.model_name}", file=sys.stderr)
@@ -174,7 +175,7 @@ def filter_rss_for_journal(journal_name, feed_url):
                 if not isinstance(gemini_decisions, list):
                     raise TypeError("Gemini response is not a list.")
                 
-                # Gemini API의 응답을 바탕으로 각 논문을 통과 또는 제거 목록에 추가합니다.
+                # Add each paper to the passed or removed list based on the Gemini API's response.
                 for decision_item in gemini_decisions:
                     if not isinstance(decision_item, dict):
                         raise TypeError("Gemini response list contains non-dictionary items.")
@@ -200,7 +201,7 @@ def filter_rss_for_journal(journal_name, feed_url):
                     try:
                         current_model = genai.GenerativeModel(fallback_model)
                         using_primary_model = False
-                        # 백업 모델 전환 시 재시도 횟수를 늘려줍니다.
+                        # Increase retry attempts when switching to the fallback model.
                         max_attempts += 1
                     except Exception as fallback_e:
                         print(f"Error switching to fallback model: {fallback_e}", file=sys.stderr)
@@ -221,7 +222,7 @@ def filter_rss_for_journal(journal_name, feed_url):
     print(f"Total keyword-removed links for {journal_name}: {len(keyword_removed_entries)}", file=sys.stderr)
     print(f"Total Gemini-removed links for {journal_name}: {len(gemini_removed_entries)}", file=sys.stderr)
             
-    # XML 파싱 및 필터링을 위해 통과된 모든 논문 링크를 모읍니다.
+    # Gather all passed paper links for XML parsing and filtering.
     passed_links = set(entry.link for entry in keyword_passed_entries + gemini_passed_entries)
 
     root = ET.fromstring(raw_xml)
@@ -233,7 +234,7 @@ def filter_rss_for_journal(journal_name, feed_url):
         'content': 'http://purl.org/rss/1.0/modules/content/'
     }
 
-    # 피드 유형에 따라 XML 항목을 순회하며 필터링된 논문만 남깁니다.
+    # Iterate through the XML items based on feed type and keep only the filtered papers.
     if root.tag == 'rss':
         channel = root.find('channel')
         if channel is not None:
@@ -259,7 +260,7 @@ def filter_rss_for_journal(journal_name, feed_url):
             if items is not None:
                 rdf_seq = items.find('rdf:Seq', namespaces=namespaces)
                 if rdf_seq is not None:
-                    # `removed_links` 대신 `passed_links`를 사용하여 리스트 항목을 제거합니다.
+                    # Use `passed_links` to remove list items.
                     for li in list(rdf_seq.findall('rdf:li', namespaces=namespaces)):
                         link_resource = li.get(f"{{{namespaces['rdf']}}}resource")
                         if link_resource not in passed_links:
@@ -274,7 +275,7 @@ def filter_rss_for_journal(journal_name, feed_url):
 
 def create_email_body_file(email_body_content):
     """
-    이메일 본문 파일을 생성하는 함수
+    Function to create the email body file.
     """
     EMAIL_BODY_FILE = "filtered_titles.txt"
     try:
@@ -286,18 +287,18 @@ def create_email_body_file(email_body_content):
 
 def create_results_html_file(email_body_content):
     """
-    이메일 본문과 동일한 형식으로 클릭 가능한 링크를 포함하는 HTML 파일을 생성합니다.
+    Creates an HTML file with clickable links in the same format as the email body.
     """
-    print("--- HTML 결과 페이지 생성 중: filtered_results.html ---", file=sys.stderr)
+    print("--- Generating HTML results page: filtered_results.html ---", file=sys.stderr)
 
-    # HTML 템플릿 시작 부분
+    # Start of the HTML template
     html_content = f"""
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>필터링된 논문 결과</title>
+    <title>Filtered Paper Results</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
@@ -309,34 +310,34 @@ def create_results_html_file(email_body_content):
 </head>
 <body class="bg-gray-100 p-8">
     <div class="max-w-7xl mx-auto bg-white rounded-xl shadow-2xl p-8">
-        <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">필터링된 논문 결과</h1>
+        <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Filtered Paper Results</h1>
         <div class="space-y-2">
 """
     
-    # 이메일 본문 내용을 HTML 형식으로 변환
+    # Convert email body content to HTML format
     email_lines = email_body_content.strip().split('\n')
     for line in email_lines:
         line = line.strip()
         if not line:
             continue
         
-        # 저널 구분자 처리
+        # Process journal separator
         if line.startswith("---"):
             journal_name = line.replace("---", "").strip()
             html_content += f'<h2 class="text-xl font-bold text-indigo-700 mt-6 mb-2">{journal_name}</h2>'
-        # 섹션 제목 처리 (PASSED PAPERS:, REMOVED PAPERS:)
+        # Process section titles (PASSED PAPERS:, REMOVED PAPERS:)
         elif line.endswith(":"):
             html_content += f'<p class="text-lg font-semibold text-gray-800 mt-4">{line}</p>'
-        # 논문 링크 라인 처리
+        # Process paper link lines
         else:
-            # 정규 표현식을 사용하여 이모티콘, 제목, 링크를 추출
+            # Use a regular expression to extract the emoticon, title, and link
             match = re.match(r'^(.*?)\s(.+)\s\((http[s]?://.+)\)$', line)
             if match:
                 emoticon = match.group(1).strip()
                 title = match.group(2).strip()
                 link = match.group(3).strip()
 
-                # 클릭 가능한 링크로 변환
+                # Convert to a clickable link
                 html_content += f"""
                 <div class="p-2 bg-gray-50 rounded-lg shadow-sm hover:bg-gray-100 transition duration-300">
                     <p class="text-gray-700 text-sm font-medium whitespace-nowrap overflow-hidden overflow-ellipsis">
@@ -344,9 +345,9 @@ def create_results_html_file(email_body_content):
                     </p>
                 </div>
 """
-            # 기타 텍스트 (예: 'No papers found...')
+            # Other text (e.g., 'No papers found...')
             else:
-                # GitHub Actions 링크 처리
+                # Process GitHub Actions link
                 if 'Check GitHub Actions run for details' in line:
                     action_url = line.split(":\n")[-1].strip()
                     html_content += f"""
@@ -358,7 +359,7 @@ def create_results_html_file(email_body_content):
                 else:
                     html_content += f'<p class="text-gray-600 ml-6">{line}</p>'
     
-    # HTML 템플릿 끝 부분
+    # End of the HTML template
     html_content += """
         </div>
     </div>
@@ -369,33 +370,33 @@ def create_results_html_file(email_body_content):
     try:
         with open('filtered_results.html', 'w', encoding='utf-8') as f:
             f.write(html_content)
-        print("--- HTML 결과 페이지 생성 완료: filtered_results.html ---", file=sys.stderr)
+        print("--- HTML results page successfully generated: filtered_results.html ---", file=sys.stderr)
     except Exception as e:
-        print(f"HTML 결과 페이지 생성 중 오류 발생: {e}", file=sys.stderr)
+        print(f"Error generating HTML results page: {e}", file=sys.stderr)
 
 
 def create_index_html(journal_urls, rss_base_filename):
     """
-    각 저널의 필터링된 RSS 피드 링크를 보여주는 index.html 페이지를 생성합니다.
+    Creates an index.html page that shows links to the filtered RSS feeds for each journal.
     """
-    print("--- HTML 페이지 생성 중: index.html ---", file=sys.stderr)
+    print("--- Generating HTML page: index.html ---", file=sys.stderr)
     
-    # 현재 UTC 시간을 가져와서 한국 시간(KST)과 텍사스 시간(CDT)으로 변환합니다.
-    # KST는 UTC+9, CDT는 UTC-5 입니다.
+    # Get the current UTC time and convert it to Korea (KST) and Texas (CDT) time.
+    # KST is UTC+9, CDT is UTC-5.
     now_utc = datetime.datetime.utcnow()
     now_korea = now_utc + datetime.timedelta(hours=9)
     now_texas = now_utc - datetime.timedelta(hours=5)
 
-    korea_time_str = now_korea.strftime('%Y-%m-%d %H:%M:%S') + " (한국, KST)"
-    texas_time_str = now_texas.strftime('%Y-%m-%d %H:%M:%S') + " (텍사스, CDT)"
+    korea_time_str = now_korea.strftime('%Y-%m-%d %H:%M:%S') + " (Korea, KST)"
+    texas_time_str = now_texas.strftime('%Y-%m-%d %H:%M:%S') + " (Texas, CDT)"
 
     html_content = f"""
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>필터링된 논문 RSS 피드</title>
+    <title>Filtered Paper RSS Feeds</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
@@ -407,30 +408,35 @@ def create_index_html(journal_urls, rss_base_filename):
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
     <div class="bg-white rounded-xl shadow-2xl p-8 max-w-lg w-full text-center">
-        <h1 class="text-3xl font-bold text-gray-800 mb-2">필터링된 논문 RSS 피드</h1>
+        <h1 class="text-3xl font-bold text-gray-800 mb-2">Filtered Paper RSS Feeds</h1>
         <p class="text-gray-600 mb-8">
-            선택한 저널들의 ARPES 및 Condensed matter physics 논문들만 필터링한 RSS 피드입니다.
-            아래 링크를 클릭하여 Reeder 앱 등에서 구독하세요.
+            This is an RSS feed filtered for ARPES and Condensed matter physics papers from selected journals.
+            Click the links below to subscribe in a feed reader like Reeder.
         </p>
         <div class="space-y-4">
 """
-    # 저널 목록을 순회하며 각각의 RSS 피드 링크를 생성합니다.
+    # Iterate through the list of journals and create an RSS feed link for each.
     for journal_name in journal_urls.keys():
         safe_journal_name = journal_name.replace(" ", "_").replace("/", "_")
         filename = f"{rss_base_filename}_{safe_journal_name}.xml"
         html_content += f"""
             <a href="{filename}" target="_blank" class="block w-full px-6 py-4 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition duration-300">
-                {journal_name} RSS 피드 보기
+                View {journal_name} RSS Feed
             </a>
 """
     html_content += """
             <a href="filtered_results.html" target="_blank" class="block w-full px-6 py-4 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition duration-300">
-                Filter 결과
+                View Filtered Results
             </a>
         </div>
         <div class="mt-8 text-sm text-gray-500">
-            <p>마지막 업데이트 (한국): """ + korea_time_str + """</p>
-            <p>마지막 업데이트 (텍사스): """ + texas_time_str + """</p>
+            <p>Last Updated (Korea): """ + korea_time_str + """</p>
+            <p>Last Updated (Texas): """ + texas_time_str + """</p>
+        </div>
+        <div class="mt-8 text-center text-sm text-gray-500">
+            <a href="https://yilab.rice.edu/people/" target="_blank" class="text-gray-500 hover:text-gray-700 hover:underline">
+                Created by Jounghoon Hyun
+            </a>
         </div>
     </div>
 </body>
@@ -439,9 +445,9 @@ def create_index_html(journal_urls, rss_base_filename):
     try:
         with open('index.html', 'w', encoding='utf-8') as f:
             f.write(html_content)
-        print("--- HTML 페이지 생성 완료: index.html ---", file=sys.stderr)
+        print("--- HTML page successfully generated: index.html ---", file=sys.stderr)
     except Exception as e:
-        print(f"HTML 페이지 생성 중 오류 발생: {e}", file=sys.stderr)
+        print(f"Error generating HTML page: {e}", file=sys.stderr)
 
 
 if __name__ == '__main__':
@@ -452,7 +458,7 @@ if __name__ == '__main__':
     
     journals_to_process = list(JOURNAL_URLS.items())
     start_index = 0
-    # 상태 파일을 확인하여 마지막으로 실패한 저널부터 처리를 재개합니다.
+    # Check the state file to resume processing from the last failed journal.
     if os.path.exists(STATE_FILE):
         with open(STATE_FILE, 'r') as f:
             last_failed_journal = f.read().strip()
@@ -473,7 +479,7 @@ if __name__ == '__main__':
             start_index = 0
             
     try:
-        # 모든 저널을 순회하며 필터링을 수행합니다.
+        # Iterate through all journals and perform filtering.
         for journal_name, feed_url in journals_to_process[start_index:]:
             try:
                 filtered_xml, keyword_passed_entries, gemini_passed_entries, keyword_removed_entries, gemini_removed_entries = filter_rss_for_journal(journal_name, feed_url)
@@ -483,17 +489,17 @@ if __name__ == '__main__':
                     f.write(filtered_xml)
                 print(f"Successfully wrote filtered RSS feed to {output_filename}", file=sys.stderr)
 
-                # 저널별로 이메일 내용 추가
+                # Add email content for each journal
                 email_content += f"--- {journal_name} ---\n\n"
                 
                 email_content += f"PASSED PAPERS:\n"
                 if not keyword_passed_entries and not gemini_passed_entries:
                     email_content += 'No papers found matching your filters.\n\n'
                 else:
-                    # 키워드 기반으로 통과된 논문 목록을 이메일 내용에 추가합니다.
+                    # Add a list of keyword-passed papers to the email content.
                     for entry in keyword_passed_entries:
                         email_content += f"  ✅ {entry.get('title', 'No title')} ({entry.get('link', 'No link')})\n"
-                    # Gemini 기반으로 통과된 논문 목록을 이메일 내용에 추가합니다.
+                    # Add a list of Gemini-passed papers to the email content.
                     for entry in gemini_passed_entries:
                         email_content += f"  🤖✅ {entry.get('title', 'No title')} ({entry.get('link', 'No link')})\n"
                     email_content += "\n"
@@ -502,10 +508,10 @@ if __name__ == '__main__':
                 if not keyword_removed_entries and not gemini_removed_entries:
                     email_content += 'No papers were filtered out.\n\n'
                 else:
-                    # 키워드 기반으로 제거된 논문 목록을 이메일 내용에 추가합니다.
+                    # Add a list of keyword-removed papers to the email content.
                     for entry in keyword_removed_entries:
                         email_content += f"  ❌ {entry.get('title', 'No title')} ({entry.get('link', 'No link')})\n"
-                    # Gemini 기반으로 제거된 논문 목록을 이메일 내용에 추가합니다.
+                    # Add a list of Gemini-removed papers to the email content.
                     for entry in gemini_removed_entries:
                         email_content += f"  🤖❌ {entry.get('title', 'No title')} ({entry.get('link', 'No link')})\n"
                     email_content += "\n"
@@ -514,12 +520,12 @@ if __name__ == '__main__':
                 print(f"An error occurred while processing journal '{journal_name}': {e}", file=sys.stderr)
                 with open(STATE_FILE, 'w') as f:
                     f.write(journal_name)
-                # 에러 발생 시 이메일 내용을 구성
+                # Compose the email content in case of an error.
                 email_content += f"\n\nAn error occurred while running the filter script for '{journal_name}':\n{e}\nPlease check the workflow logs for more details.\n"
-                raise # 기존 예외를 다시 발생시켜 스크립트 실행을 중단합니다.
+                raise # Re-raise the exception to stop script execution.
 
         try:
-            # 모든 저널 처리가 성공적으로 완료되면 상태 파일을 'SUCCESS'로 업데이트합니다.
+            # If all journals were processed successfully, update the state file to 'SUCCESS'.
             if os.path.exists(STATE_FILE):
                 with open(STATE_FILE, 'w') as f:
                     f.write('SUCCESS')
@@ -535,7 +541,7 @@ if __name__ == '__main__':
         create_results_html_file(email_content)
 
     finally:
-        # GitHub Actions 링크를 구성합니다.
+        # Construct the GitHub Actions link.
         github_server_url = os.getenv("GITHUB_SERVER_URL")
         github_repository = os.getenv("GITHUB_REPOSITORY")
         github_run_id = os.getenv("GITHUB_RUN_ID")
