@@ -410,8 +410,9 @@ def create_index_html(journal_urls, rss_base_filename):
     <div class="bg-white rounded-xl shadow-2xl p-8 max-w-lg w-full text-center">
         <h1 class="text-3xl font-bold text-gray-800 mb-2">Filtered Paper RSS Feeds</h1>
         <p class="text-gray-600 mb-8">
-            This is an RSS feed filtered for ARPES and Condensed matter physics papers from selected journals.
-            Click the links below to subscribe in a feed reader like Reeder.
+            These RSS feeds are filtered using keywords and AI to include only ARPES and condensed matter physics papers.<br>
+            Use the links below to subscribe using a feed reader like Reeder.<br>
+            (Updated daily at 00:00 and 13:00 UTC)
         </p>
         <div class="space-y-4">
 """
@@ -421,12 +422,12 @@ def create_index_html(journal_urls, rss_base_filename):
         filename = f"{rss_base_filename}_{safe_journal_name}.xml"
         html_content += f"""
             <a href="{filename}" target="_blank" class="block w-full px-6 py-4 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition duration-300">
-                View {journal_name} RSS Feed
+                {journal_name} RSS Feed
             </a>
 """
     html_content += """
             <a href="filtered_results.html" target="_blank" class="block w-full px-6 py-4 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition duration-300">
-                View Filtered Results
+                Passed / Filtered list
             </a>
         </div>
         <div class="mt-8 text-sm text-gray-500">
