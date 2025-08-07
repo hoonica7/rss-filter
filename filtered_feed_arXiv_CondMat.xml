@@ -7,12 +7,12 @@
     <atom:link href="http://rss.arxiv.org/rss/cond-mat" rel="self" type="application/rss+xml"/>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 Aug 2025 04:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 Aug 2025 01:30:05 +0000</lastBuildDate>
     <managingEditor>rss-help@arxiv.org</managingEditor>
     <pubDate>Wed, 06 Aug 2025 00:00:00 -0400</pubDate>
     <skipDays>
-      <day>Saturday</day>
       <day>Sunday</day>
+      <day>Saturday</day>
     </skipDays>
     <item>
       <title>Quantum Geometry of Altermagnetic Magnons Probed by Light</title>
@@ -32,9 +32,9 @@ Abstract: Magnons with momentum-dependent chirality are a key signature of alter
     <item>
       <title>Dichotomy of flat bands in the van der Waals ferromagnet Fe$_5$GeTe$_2$</title>
       <link>https://arxiv.org/abs/2508.03029</link>
-      <description>arXiv:2508.03029v1 Announce Type: new 
+      <description>arXiv:2508.03029v2 Announce Type: new 
 Abstract: Quantum materials with bands of narrow bandwidth near the Fermi level represent a promising platform for exploring a diverse range of fascinating physical phenomena, as the high density of states within the small energy window often enables the emergence of many-body physics. On one hand, flat bands can arise from strong Coulomb interactions that localize atomic orbitals. On the other hand, quantum destructive interference can quench the electronic kinetic energy. Although both have a narrow bandwidth, the two types of flat bands should exhibit very distinct spectral properties arising from their distinctive origins. So far, the two types of flat bands have only been realized in very different material settings and chemical environments, preventing a direct comparison. Here, we report the observation of the two types of flat bands within the same material system--an above-room-temperature van der Waals ferromagnet, Fe$_{5-x}$GeTe$_2$, distinguishable by a switchable iron site order. The contrasting nature of the flat bands is also identified by the remarkably distinctive temperature-evolution of the spectral features, indicating that one arises from electron correlations in the Fe(1) site-disordered phase, while the other geometrical frustration in the Fe(1) site-ordered phase. Our results therefore provide a direct juxtaposition of the distinct formation mechanism of flat bands in quantum materials, and an avenue for understanding the distinctive roles flat bands play in the presence of magnetism, topology, and lattice geometrical frustration, utilizing sublattice ordering as a key control parameter.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2508.03029v1</guid>
+      <guid isPermaLink="false">oai:arXiv.org:2508.03029v2</guid>
       <category>cond-mat.str-el</category>
       <pubDate>Wed, 06 Aug 2025 00:00:00 -0400</pubDate>
       <arxiv:announce_type>new</arxiv:announce_type>
@@ -222,19 +222,6 @@ Abstract: Using molecular simulations and classical density functional theory, w
       <dc:creator>Anna Ashkinazi, Hemani Chhabra, Anouar El Moumane, Maxime M. C. Tortora, Jonathan P. K. Doye</dc:creator>
     </item>
     <item>
-      <title>Quantum Spin Hall Effect with Extended Topologically Protected Features in Altermangetic Multilayers</title>
-      <link>https://arxiv.org/abs/2508.03580</link>
-      <description>arXiv:2508.03580v1 Announce Type: new 
-Abstract: Conventional topological classification theory dictates that time-reversal symmetry confines the quantum spin Hall (QSH) effect to a $\mathbb{Z}_2$ classification, permitting only a single pair of gapless helical edge states. Here, we utilize the recently discovered altermagnetism to circumvent this fundamental constraint. We demonstrate the realization of a unique QSH phase possessing multiple pairs of gapless helical edge states in altermagnetic multilayers. This exotic QSH phase, characterized by a mirror-spin Chern number, emerges from the interplay of spin-orbit coupling and $d$-wave altermagnetic ordering. Moreover, using first-principles calculations, we identify altermagnetic Fe$_2$Se$_2$O multilayers as promising material candidates, in which the number of gapless helical edge states scales linearly with the number of layers, leading to a correspondingly large, exactly quantized, and experimentally accessible spin-Hall conductance. Our findings unveil a new mechanism for stabilizing multiple pairs of gapless helical edge states, significantly expanding the scope of QSH effects, and provide a blueprint for utilizing altermagnetism to engineer desired topological phases.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2508.03580v1</guid>
-      <category>cond-mat.mes-hall</category>
-      <category>cond-mat.mtrl-sci</category>
-      <pubDate>Wed, 06 Aug 2025 00:00:00 -0400</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
-      <dc:creator>Zhiyu Chen, Fangyang Zhan, Da-Shuai Ma, Dong-Hui Xu, Rui Wang</dc:creator>
-    </item>
-    <item>
       <title>Measurement-Induced Entanglement in Conformal Field Theory</title>
       <link>https://arxiv.org/abs/2508.02788</link>
       <description>arXiv:2508.02788v1 Announce Type: cross 
@@ -371,18 +358,6 @@ Abstract: In this study, we investigate the electronic structures of 13-11-13 an
       <dc:creator>David M T Kuo</dc:creator>
     </item>
     <item>
-      <title>A many-body marker for three-dimensional topological insulators with inversion symmetry</title>
-      <link>https://arxiv.org/abs/2505.19204</link>
-      <description>arXiv:2505.19204v3 Announce Type: replace 
-Abstract: We extend the previously defined many-body marker for two-dimensional $\mathbb{Z}_2$ topological insulators [I. Gilardoni {\it et al.}, Phys. Rev. B {\bf 106}, L161106 (2022)] to distinguish trivial, weak-, and strong-topological insulators in three dimensions, in presence of the inversion symmetry. The marker is written in term of ground-state expectation values of position operators and can be employed to detect topological phases of interacting systems beyond mean-field approximations, e.g., within quantum Monte Carlo techniques. Here, we show that the correct results of the non-interacting limit are reproduced by the many-body marker.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2505.19204v3</guid>
-      <category>cond-mat.str-el</category>
-      <pubDate>Wed, 06 Aug 2025 00:00:00 -0400</pubDate>
-      <arxiv:announce_type>replace</arxiv:announce_type>
-      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
-      <dc:creator>Federico Becca, Alberto Parola</dc:creator>
-    </item>
-    <item>
       <title>Magnetic Moir\'e Systems: a review</title>
       <link>https://arxiv.org/abs/2506.05620</link>
       <description>arXiv:2506.05620v2 Announce Type: replace 
@@ -423,6 +398,18 @@ Abstract: Exploring the intricate interplay between magnetism and charge density
       <arxiv:announce_type>replace</arxiv:announce_type>
       <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
       <dc:creator>Zi-Hao Ding, Lei Wang, Zhen-Feng Ouyang, Jingsi Qiao, Ze-Feng Gao, Wei Ji, Kai Liu, Peng-Jie Guo, Zhong-Yi Lu</dc:creator>
+    </item>
+    <item>
+      <title>Light-induced Odd-parity Magnetism in Conventional Collinear Antiferromagnets</title>
+      <link>https://arxiv.org/abs/2507.20705</link>
+      <description>arXiv:2507.20705v3 Announce Type: replace 
+Abstract: Recent studies have drawn growing attention on non-relativistic odd-parity magnetism in the wake of altermagnets. Nevertheless, odd-parity spin splitting is often believed to appear in non-collinear magnetic configurations. Here, using symmetry arguments and effective model analysis, we show that Floquet engineering offers a universal strategy for achieving odd-parity magnetism in two-dimensional (2D) collinear antiferromagnets under irradiation of periodic driving light fields such as circularly polarized light, elliptically polarized light, and bicircular light. A comprehensive classification of potential candidates for collinear monolayer or bilayer antiferromagnets is established. Strikingly, the light-induced odd-parity spin splitting can be flexibly controlled by adjusting the crystalline symmetry or the polarization state of incident light, enabling the reversal or conversion of spin-splitting. By combining first-principles calculations and Floquet theorem, we present illustrative examples of 2D collinear antiferromagnetic (AFM) materials to verify the light-induced odd-parity magnetism. Our work not only offers a powerful approach for uniquely achieving odd-parity spin-splitting with high tunability, but also expands the potential of Floquet engineering in designing unconventional compensated magnetism.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2507.20705v3</guid>
+      <category>cond-mat.mtrl-sci</category>
+      <pubDate>Wed, 06 Aug 2025 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Shengpu Huang, Zheng Qin, Fangyang Zhan, Dong-Hui Xu, Da-Shuai Ma, Rui Wang</dc:creator>
     </item>
     </channel>
 </rss>
