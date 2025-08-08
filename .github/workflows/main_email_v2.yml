@@ -4,10 +4,10 @@ on:
   schedule:
     # 오전 8시 CDT = 13:00 UTC
     # 8AM Texas (CDT) = 13:00 UTC
-    - cron: '0 13 * * *'
+    - cron: '17 13 * * *'
     # 오후 7시 CDT = 00:00 UTC (다음 날 자정이지만 cron은 그대로 * * *)
     # 7PM Texas (CDT) = 00:00 UTC (technically next day midnight, but cron remains the same)
-    - cron: '0 0 * * *'
+    - cron: '17 0 * * *'
   workflow_dispatch:
   
 jobs:
