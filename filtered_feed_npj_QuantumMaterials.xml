@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00809-9"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00797-w"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00808-w"/>
@@ -32,8 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00803-1"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00799-8"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-025-00809-9">
+            <title>Interaction of magnetic fields with spinons in a fractionalized state</title>
+            <link>https://www.nature.com/articles/s41535-025-00809-9</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 08 August 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00809-9"&gt;doi:10.1038/s41535-025-00809-9&lt;/a&gt;&lt;/p&gt;Interaction of magnetic fields with spinons in a fractionalized state</content:encoded>
+            <dc:title>Interaction of magnetic fields with spinons in a fractionalized state</dc:title>
+            <dc:creator>Yu Zhang</dc:creator><dc:creator>Hengdi Zhao</dc:creator><dc:creator>Tristan R. Cao</dc:creator><dc:creator>Rahul Nandkishore</dc:creator><dc:creator>Pedro Schlottmann</dc:creator><dc:creator>Lance De Long</dc:creator><dc:creator>Gang Cao</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-025-00809-9</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2025-08-08; | doi:10.1038/s41535-025-00809-9</dc:source>
+            <dc:date>2025-08-08</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-025-00809-9</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-025-00809-9</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-025-00797-w">
             <title>Anisotropic non-Fermi liquid and dynamical Planckian scaling of a quasi-kagome Kondo lattice system</title>
@@ -146,21 +161,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-025-00803-1</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-025-00803-1</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-025-00799-8">
-            <title>Perspective: an X-ray view of the coherent driving of materials</title>
-            <link>https://www.nature.com/articles/s41535-025-00799-8</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 19 July 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00799-8"&gt;doi:10.1038/s41535-025-00799-8&lt;/a&gt;&lt;/p&gt;Perspective: an X-ray view of the coherent driving of materials</content:encoded>
-            <dc:title>Perspective: an X-ray view of the coherent driving of materials</dc:title>
-            <dc:creator>Steven L. Johnson</dc:creator><dc:creator>Urs Staub</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-025-00799-8</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2025-07-19; | doi:10.1038/s41535-025-00799-8</dc:source>
-            <dc:date>2025-07-19</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-025-00799-8</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-025-00799-8</prism:url>
         </item>
     
 </rdf:RDF>

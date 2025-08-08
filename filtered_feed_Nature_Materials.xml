@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02311-w"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02304-9"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02308-5"/>
@@ -28,8 +30,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02312-9"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02310-x"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -38,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02311-w">
+            <title>Mitigating proton trapping in cubic perovskite oxides via ScO&lt;sub&gt;6&lt;/sub&gt; octahedral networks</title>
+            <link>https://www.nature.com/articles/s41563-025-02311-w</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 08 August 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02311-w"&gt;doi:10.1038/s41563-025-02311-w&lt;/a&gt;&lt;/p&gt;Solid-state electrolytes that operate at a temperature of 300 °C suffer from a H+ concentration–conductivity trade-off. Here heavy Sc doping of cubic perovskites is shown to bypass this trade-off, enabling a proton conductivity of 0.01 S cm−1 that arises from rapid proton diffusion along ScO6 octahedra.</content:encoded>
+            <dc:title>Mitigating proton trapping in cubic perovskite oxides via ScO&lt;sub&gt;6&lt;/sub&gt; octahedral networks</dc:title>
+            <dc:creator>Kota Tsujikawa</dc:creator><dc:creator>Junji Hyodo</dc:creator><dc:creator>Susumu Fujii</dc:creator><dc:creator>Kazuki Takahashi</dc:creator><dc:creator>Yuto Tomita</dc:creator><dc:creator>Nai Shi</dc:creator><dc:creator>Yasukazu Murakami</dc:creator><dc:creator>Shusuke Kasamatsu</dc:creator><dc:creator>Yoshihiro Yamazaki</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02311-w</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-08-08; | doi:10.1038/s41563-025-02311-w</dc:source>
+            <dc:date>2025-08-08</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02311-w</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02311-w</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02304-9">
             <title>Reconfigurable magnetic order in 2D materials</title>
@@ -112,21 +127,6 @@
             <prism:publicationName>Nature Materials</prism:publicationName>
             <prism:doi>10.1038/s41563-025-02312-9</prism:doi>
             <prism:url>https://www.nature.com/articles/s41563-025-02312-9</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02310-x">
-            <title>Defect repairing in lead bromide perovskite single crystals with biasing and bromine for X-ray photon-counting detectors</title>
-            <link>https://www.nature.com/articles/s41563-025-02310-x</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 01 August 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02310-x"&gt;doi:10.1038/s41563-025-02310-x&lt;/a&gt;&lt;/p&gt;The understanding of defects in bromide-based perovskites remains elusive. Electric biasing and introducing bromide in the precursor solution during crystal growth is shown to significantly reduce defects in formamidinium lead bromide.</content:encoded>
-            <dc:title>Defect repairing in lead bromide perovskite single crystals with biasing and bromine for X-ray photon-counting detectors</dc:title>
-            <dc:creator>Mingze Li</dc:creator><dc:creator>Shaojie Wang</dc:creator><dc:creator>Allen Wood</dc:creator><dc:creator>Jason D. Yeager</dc:creator><dc:creator>Sergei P. Stepanoff</dc:creator><dc:creator>Jackson C. Adler</dc:creator><dc:creator>Zhifang Shi</dc:creator><dc:creator>Jian Wang</dc:creator><dc:creator>Zhijun Li</dc:creator><dc:creator>Douglas E. Wolfe</dc:creator><dc:creator>Jinsong Huang</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02310-x</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-08-01; | doi:10.1038/s41563-025-02310-x</dc:source>
-            <dc:date>2025-08-01</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02310-x</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02310-x</prism:url>
         </item>
     
 </rdf:RDF>

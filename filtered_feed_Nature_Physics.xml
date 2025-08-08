@@ -18,6 +18,10 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02982-x"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02966-x"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02962-1"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02988-5"/>
@@ -30,7 +34,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03013-5"/>
                 
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -38,6 +42,36 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-02982-x">
+            <title>Stable singular fractional skyrmion spin texture from the quantum Kelvin–Helmholtz instability</title>
+            <link>https://www.nature.com/articles/s41567-025-02982-x</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 08 August 2025; &lt;a href="https://www.nature.com/articles/s41567-025-02982-x"&gt;doi:10.1038/s41567-025-02982-x&lt;/a&gt;&lt;/p&gt;The quantum Kelvin–Helmholtz instability can induce non-trivial topological excitations. Now a proof-of-principle experiment demonstrates the emergence of a stable singular fractional skyrmion spin texture originating from this quantum instability.</content:encoded>
+            <dc:title>Stable singular fractional skyrmion spin texture from the quantum Kelvin–Helmholtz instability</dc:title>
+            <dc:creator>SeungJung Huh</dc:creator><dc:creator>Wooyoung Yun</dc:creator><dc:creator>Gabin Yun</dc:creator><dc:creator>Samgyu Hwang</dc:creator><dc:creator>Kiryang Kwon</dc:creator><dc:creator>Junhyeok Hur</dc:creator><dc:creator>Seungho Lee</dc:creator><dc:creator>Hiromitsu Takeuchi</dc:creator><dc:creator>Se Kwon Kim</dc:creator><dc:creator>Jae-yoon Choi</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-02982-x</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-08-08; | doi:10.1038/s41567-025-02982-x</dc:source>
+            <dc:date>2025-08-08</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-02982-x</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-02982-x</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-02966-x">
+            <title>Multistable polar textures in geometrically frustrated nematic liquid crystals</title>
+            <link>https://www.nature.com/articles/s41567-025-02966-x</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 08 August 2025; &lt;a href="https://www.nature.com/articles/s41567-025-02966-x"&gt;doi:10.1038/s41567-025-02966-x&lt;/a&gt;&lt;/p&gt;Programmable topological dipoles could be used in stimuli-responsive materials. Now it is shown that confinement of an apolar liquid crystal results in controllable polar arrangements of elastic dipoles.</content:encoded>
+            <dc:title>Multistable polar textures in geometrically frustrated nematic liquid crystals</dc:title>
+            <dc:creator>Ufuoma I. Kara</dc:creator><dc:creator>Boyuan Chen</dc:creator><dc:creator>Simon Čopar</dc:creator><dc:creator>Shucong Li</dc:creator><dc:creator>Rajdeep Mamtani</dc:creator><dc:creator>Yang Xu</dc:creator><dc:creator>Alan H. Weible</dc:creator><dc:creator>Eric C. Boerner</dc:creator><dc:creator>Zhan Yang</dc:creator><dc:creator>Yuxing Yao</dc:creator><dc:creator>Robin L. B. Selinger</dc:creator><dc:creator>Uroš Tkalec</dc:creator><dc:creator>Xiaoguang Wang</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-02966-x</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-08-08; | doi:10.1038/s41567-025-02966-x</dc:source>
+            <dc:date>2025-08-08</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-02966-x</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-02966-x</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-02962-1">
             <title>Frustrated electron motion arising from the orbital configuration in a layered metal</title>
@@ -129,4 +163,4 @@
             <prism:url>https://www.nature.com/articles/s41567-025-03013-5</prism:url>
         </item>
     
-        </rdf:RDF>
+</rdf:RDF>
