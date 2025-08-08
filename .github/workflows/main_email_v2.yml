@@ -2,11 +2,11 @@ name: Filter RSS Feed everyday + Email on Saturday + Email when error
 
 on:
   schedule:
-    # 오전 8시 CDT = 13:00 UTC
-    # 8AM Texas (CDT) = 13:00 UTC
+    # 오전 8시 CDT = 13:00 UTC + 17분
+    # 8AM Texas (CDT) = 13:00 UTC + 17 min
     - cron: '17 13 * * *'
-    # 오후 7시 CDT = 00:00 UTC (다음 날 자정이지만 cron은 그대로 * * *)
-    # 7PM Texas (CDT) = 00:00 UTC (technically next day midnight, but cron remains the same)
+    # 오후 7시 CDT = 00:00 UTC (다음 날 자정이지만 cron은 그대로 * * *) + 17분
+    # 7PM Texas (CDT) = 00:00 UTC (technically next day midnight, but cron remains the same) + 17 min
     - cron: '17 0 * * *'
   workflow_dispatch:
   
