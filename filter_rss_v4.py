@@ -343,7 +343,7 @@ def create_results_html_file(email_body_content):
 <body class="bg-gray-100 p-8">
     <div class="mb-6">
         <a href="index.html" class="inline-flex items-center px-4 py-2 bg-indigo-600 text-white font-semibold rounded hover:bg-indigo-700 transition duration-300">
-            ← 뒤로가기
+            ← To Main
         </a>
     </div>
     <div class="max-w-7xl mx-auto bg-white rounded-xl shadow-2xl p-8">
