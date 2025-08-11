@@ -18,6 +18,10 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02997-4"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02989-4"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02982-x"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02966-x"/>
@@ -30,10 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02963-0"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02976-9"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03013-5"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,36 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-02997-4">
+            <title>Strongly interacting Hofstadter states in magic-angle twisted bilayer graphene</title>
+            <link>https://www.nature.com/articles/s41567-025-02997-4</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 11 August 2025; &lt;a href="https://www.nature.com/articles/s41567-025-02997-4"&gt;doi:10.1038/s41567-025-02997-4&lt;/a&gt;&lt;/p&gt;Interacting electrons in Hofstadter bands can form symmetry-broken topological states. These are now revealed in magic-angle twisted bilayer graphene, and their properties are influenced by non-uniform quantum geometry.</content:encoded>
+            <dc:title>Strongly interacting Hofstadter states in magic-angle twisted bilayer graphene</dc:title>
+            <dc:creator>Minhao He</dc:creator><dc:creator>Xiaoyu Wang</dc:creator><dc:creator>Jiaqi Cai</dc:creator><dc:creator>Jonah Herzog-Arbeitman</dc:creator><dc:creator>Ran Peng</dc:creator><dc:creator>Takashi Taniguchi</dc:creator><dc:creator>Kenji Watanabe</dc:creator><dc:creator>Ady Stern</dc:creator><dc:creator>B. Andrei Bernevig</dc:creator><dc:creator>Matthew Yankowitz</dc:creator><dc:creator>Oskar Vafek</dc:creator><dc:creator>Xiaodong Xu</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-02997-4</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-08-11; | doi:10.1038/s41567-025-02997-4</dc:source>
+            <dc:date>2025-08-11</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-02997-4</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-02997-4</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-02989-4">
+            <title>Optomechanical control of long-lived bulk acoustic phonons in the quantum regime</title>
+            <link>https://www.nature.com/articles/s41567-025-02989-4</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 11 August 2025; &lt;a href="https://www.nature.com/articles/s41567-025-02989-4"&gt;doi:10.1038/s41567-025-02989-4&lt;/a&gt;&lt;/p&gt;A massive phonon mode in a high-overtone bulk acoustic wave resonator has been laser cooled close to its ground state. Its robustness to decoherence establishes the potential of these devices for quantum technologies.</content:encoded>
+            <dc:title>Optomechanical control of long-lived bulk acoustic phonons in the quantum regime</dc:title>
+            <dc:creator>Hilel Hagai Diamandi</dc:creator><dc:creator>Yizhi Luo</dc:creator><dc:creator>David Mason</dc:creator><dc:creator>Tevfik Bulent Kanmaz</dc:creator><dc:creator>Sayan Ghosh</dc:creator><dc:creator>Margaret Pavlovich</dc:creator><dc:creator>Taekwan Yoon</dc:creator><dc:creator>Ryan Behunin</dc:creator><dc:creator>Shruti Puri</dc:creator><dc:creator>Jack G. E. Harris</dc:creator><dc:creator>Peter T. Rakich</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-02989-4</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-08-11; | doi:10.1038/s41567-025-02989-4</dc:source>
+            <dc:date>2025-08-11</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-02989-4</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-02989-4</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-02982-x">
             <title>Stable singular fractional skyrmion spin texture from the quantum Kelvin–Helmholtz instability</title>
@@ -131,36 +161,6 @@
             <prism:publicationName>Nature Physics</prism:publicationName>
             <prism:doi>10.1038/s41567-025-02963-0</prism:doi>
             <prism:url>https://www.nature.com/articles/s41567-025-02963-0</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-02976-9">
-            <title>High-purity quantum optomechanics at room temperature</title>
-            <link>https://www.nature.com/articles/s41567-025-02976-9</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 06 August 2025; &lt;a href="https://www.nature.com/articles/s41567-025-02976-9"&gt;doi:10.1038/s41567-025-02976-9&lt;/a&gt;&lt;/p&gt;Observing quantum effects in a mechanical oscillator requires it to be close to a pure quantum state, rather than a thermal mixture. Here a librational mode of a levitated nanoparticle is cooled close to its ground state without using cryogenics.</content:encoded>
-            <dc:title>High-purity quantum optomechanics at room temperature</dc:title>
-            <dc:creator>Lorenzo Dania</dc:creator><dc:creator>Oscar Schmitt Kremer</dc:creator><dc:creator>Johannes Piotrowski</dc:creator><dc:creator>Davide Candoli</dc:creator><dc:creator>Jayadev Vijayan</dc:creator><dc:creator>Oriol Romero-Isart</dc:creator><dc:creator>Carlos Gonzalez-Ballestero</dc:creator><dc:creator>Lukas Novotny</dc:creator><dc:creator>Martin Frimmer</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-02976-9</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-08-06; | doi:10.1038/s41567-025-02976-9</dc:source>
-            <dc:date>2025-08-06</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-02976-9</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-02976-9</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03013-5">
-            <title>Author Correction: High-efficiency optical training of itinerant two-dimensional magnets</title>
-            <link>https://www.nature.com/articles/s41567-025-03013-5</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 04 August 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03013-5"&gt;doi:10.1038/s41567-025-03013-5&lt;/a&gt;&lt;/p&gt;Author Correction: High-efficiency optical training of itinerant two-dimensional magnets</content:encoded>
-            <dc:title>Author Correction: High-efficiency optical training of itinerant two-dimensional magnets</dc:title>
-            <dc:creator>Ti Xie</dc:creator><dc:creator>Jierui Liang</dc:creator><dc:creator>Dhritiman Bhattacharya</dc:creator><dc:creator>Hasitha Suriya Arachchige</dc:creator><dc:creator>Victor M. Yakovenko</dc:creator><dc:creator>David G. Mandrus</dc:creator><dc:creator>Zi Qiang Qiu</dc:creator><dc:creator>Kai Liu</dc:creator><dc:creator>Cheng Gong</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03013-5</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-08-04; | doi:10.1038/s41567-025-03013-5</dc:source>
-            <dc:date>2025-08-04</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03013-5</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03013-5</prism:url>
         </item>
     
 </rdf:RDF>
