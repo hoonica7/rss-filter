@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02992-9"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03007-3"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02969-8"/>
@@ -25,8 +27,6 @@
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03012-6"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02997-4"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02989-4"/>
                 
             </rdf:Seq>
         </items>
@@ -36,6 +36,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-02992-9">
+            <title>Liquid dipole lattice</title>
+            <link>https://www.nature.com/articles/s41567-025-02992-9</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 12 August 2025; &lt;a href="https://www.nature.com/articles/s41567-025-02992-9"&gt;doi:10.1038/s41567-025-02992-9&lt;/a&gt;&lt;/p&gt;Geometrically confined apolar nematic liquid crystals lose rotational symmetry and form a multifunctional polar lattice of fluid elastic dipoles with controllable orientation. The lattice is of interest from a fundamental science perspective as well as having potential applications.</content:encoded>
+            <dc:title>Liquid dipole lattice</dc:title>
+            <dc:creator>Liana Lucchetti</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-02992-9</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-08-12; | doi:10.1038/s41567-025-02992-9</dc:source>
+            <dc:date>2025-08-12</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-02992-9</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-02992-9</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03007-3">
             <title>Enhanced photon avalanche</title>
@@ -95,21 +110,6 @@
             <prism:publicationName>Nature Physics</prism:publicationName>
             <prism:doi>10.1038/s41567-025-02997-4</prism:doi>
             <prism:url>https://www.nature.com/articles/s41567-025-02997-4</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-02989-4">
-            <title>Optomechanical control of long-lived bulk acoustic phonons in the quantum regime</title>
-            <link>https://www.nature.com/articles/s41567-025-02989-4</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 11 August 2025; &lt;a href="https://www.nature.com/articles/s41567-025-02989-4"&gt;doi:10.1038/s41567-025-02989-4&lt;/a&gt;&lt;/p&gt;A massive phonon mode in a high-overtone bulk acoustic wave resonator has been laser cooled close to its ground state. Its robustness to decoherence establishes the potential of these devices for quantum technologies.</content:encoded>
-            <dc:title>Optomechanical control of long-lived bulk acoustic phonons in the quantum regime</dc:title>
-            <dc:creator>Hilel Hagai Diamandi</dc:creator><dc:creator>Yizhi Luo</dc:creator><dc:creator>David Mason</dc:creator><dc:creator>Tevfik Bulent Kanmaz</dc:creator><dc:creator>Sayan Ghosh</dc:creator><dc:creator>Margaret Pavlovich</dc:creator><dc:creator>Taekwan Yoon</dc:creator><dc:creator>Ryan Behunin</dc:creator><dc:creator>Shruti Puri</dc:creator><dc:creator>Jack G. E. Harris</dc:creator><dc:creator>Peter T. Rakich</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-02989-4</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-08-11; | doi:10.1038/s41567-025-02989-4</dc:source>
-            <dc:date>2025-08-11</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-02989-4</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-02989-4</prism:url>
         </item>
     
 </rdf:RDF>
