@@ -18,17 +18,19 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09504-y"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09315-1"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09314-2"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09306-2"/>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09339-7"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09363-7"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-02253-y"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-02393-1"/>
                 
                     </rdf:Seq>
         </items>
@@ -38,6 +40,21 @@
         <url>https://www.nature.com/uploads/product/nature/rss.png</url>
         <link>http://feeds.nature.com/nature/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41586-025-09504-y">
+            <title>Publisher Correction: Liquid–liquid interfacial tension stabilized Li-metal batteries</title>
+            <link>https://www.nature.com/articles/s41586-025-09504-y</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 13 August 2025; &lt;a href="https://www.nature.com/articles/s41586-025-09504-y"&gt;doi:10.1038/s41586-025-09504-y&lt;/a&gt;&lt;/p&gt;Publisher Correction: Liquid–liquid interfacial tension stabilized Li-metal batteries</content:encoded>
+            <dc:title>Publisher Correction: Liquid–liquid interfacial tension stabilized Li-metal batteries</dc:title>
+            <dc:creator>Haijin Ji</dc:creator><dc:creator>Jingwei Xiang</dc:creator><dc:creator>Yong Li</dc:creator><dc:creator>Mengting Zheng</dc:creator><dc:creator>Lixia Yuan</dc:creator><dc:creator>Yaqi Liao</dc:creator><dc:creator>Lin Du</dc:creator><dc:creator>Zezhuo Li</dc:creator><dc:creator>Zhangyating Xie</dc:creator><dc:creator>Kai Huang</dc:creator><dc:creator>Xing Lin</dc:creator><dc:creator>Zhengkun Xie</dc:creator><dc:creator>Yue Shen</dc:creator><dc:creator>Ming Chen</dc:creator><dc:creator>Tongjiang Li</dc:creator><dc:creator>Guang Feng</dc:creator><dc:creator>Yongming Sun</dc:creator><dc:creator>Long Qie</dc:creator><dc:creator>Hui Li</dc:creator><dc:creator>Fangshu Zhang</dc:creator><dc:creator>Rui Guo</dc:creator><dc:creator>Xuning Feng</dc:creator><dc:creator>Weihua Chen</dc:creator><dc:creator>Xinping Ai</dc:creator><dc:creator>Jun Lu</dc:creator><dc:creator>Yunhui Huang</dc:creator>
+            <dc:identifier>doi:10.1038/s41586-025-09504-y</dc:identifier>
+            <dc:source>Nature, Published online: 2025-08-13; | doi:10.1038/s41586-025-09504-y</dc:source>
+            <dc:date>2025-08-13</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/s41586-025-09504-y</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41586-025-09504-y</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41586-025-09315-1">
             <title>Reply to: Inconclusive proof of ferroelectricity in peptide-VDF ribbons</title>
@@ -120,6 +137,21 @@
             <prism:url>https://www.nature.com/articles/s41586-025-09306-2</prism:url>
         </item>
     
+        <item rdf:about="https://www.nature.com/articles/s41586-025-09339-7">
+            <title>Structural basis of fast N-type inactivation in K&lt;sub&gt;v&lt;/sub&gt; channels</title>
+            <link>https://www.nature.com/articles/s41586-025-09339-7</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 06 August 2025; &lt;a href="https://www.nature.com/articles/s41586-025-09339-7"&gt;doi:10.1038/s41586-025-09339-7&lt;/a&gt;&lt;/p&gt;This paper explores how voltage-gated potassium channels can plug the pore to prevent the conductance of ions during inactivation.</content:encoded>
+            <dc:title>Structural basis of fast N-type inactivation in K&lt;sub&gt;v&lt;/sub&gt; channels</dc:title>
+            <dc:creator>Xiao-Feng Tan</dc:creator><dc:creator>Ana I. Fernández-Mariño</dc:creator><dc:creator>Yan Li</dc:creator><dc:creator>Tsg-Hui Chang</dc:creator><dc:creator>Kenton J. Swartz</dc:creator>
+            <dc:identifier>doi:10.1038/s41586-025-09339-7</dc:identifier>
+            <dc:source>Nature, Published online: 2025-08-06; | doi:10.1038/s41586-025-09339-7</dc:source>
+            <dc:date>2025-08-06</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/s41586-025-09339-7</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41586-025-09339-7</prism:url>
+        </item>
+    
         <item rdf:about="https://www.nature.com/articles/s41586-025-09363-7">
             <title>Optical control of resonances in temporally symmetry-broken metasurfaces</title>
             <link>https://www.nature.com/articles/s41586-025-09363-7</link>
@@ -148,21 +180,6 @@
             <prism:publicationName>Nature</prism:publicationName>
             <prism:doi>10.1038/d41586-025-02253-y</prism:doi>
             <prism:url>https://www.nature.com/articles/d41586-025-02253-y</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/d41586-025-02393-1">
-            <title>Highly efficient deep-blue LED devices made using hybrid copper–iodide compound</title>
-            <link>https://www.nature.com/articles/d41586-025-02393-1</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 06 August 2025; &lt;a href="https://www.nature.com/articles/d41586-025-02393-1"&gt;doi:10.1038/d41586-025-02393-1&lt;/a&gt;&lt;/p&gt;A non-toxic, robust and solution-processable copper–iodide-based hybrid semiconductor that emits deep-blue light with nearly 100% emission efficiency has been designed and used as the sole light-generating layer to make light-emitting diodes (LEDs). Sandwiching this layer between two hydrogen-bonded capping layers greatly enhances the efficiency and operational lifetime of the LEDs.</content:encoded>
-            <dc:title>Highly efficient deep-blue LED devices made using hybrid copper–iodide compound</dc:title>
-            
-            <dc:identifier>doi:10.1038/d41586-025-02393-1</dc:identifier>
-            <dc:source>Nature, Published online: 2025-08-06; | doi:10.1038/d41586-025-02393-1</dc:source>
-            <dc:date>2025-08-06</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/d41586-025-02393-1</prism:doi>
-            <prism:url>https://www.nature.com/articles/d41586-025-02393-1</prism:url>
         </item>
     
         </rdf:RDF>
