@@ -18,19 +18,19 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02961-2"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03009-1"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02974-x"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02972-z"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02975-w"/>
-                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02992-9"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03007-3"/>
                 
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -38,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-02961-2">
+            <title>Entanglement and the density matrix renormalization group in the generalized Landau paradigm</title>
+            <link>https://www.nature.com/articles/s41567-025-02961-2</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 15 August 2025; &lt;a href="https://www.nature.com/articles/s41567-025-02961-2"&gt;doi:10.1038/s41567-025-02961-2&lt;/a&gt;&lt;/p&gt;Quantum spin chains can be represented in several ways, and eigenstates in these dual models have different entanglement structures. By characterizing the dual theories, the optimal tensor network algorithm for simulating the models has been found.</content:encoded>
+            <dc:title>Entanglement and the density matrix renormalization group in the generalized Landau paradigm</dc:title>
+            <dc:creator>Laurens Lootens</dc:creator><dc:creator>Clement Delcamp</dc:creator><dc:creator>Frank Verstraete</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-02961-2</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-08-15; | doi:10.1038/s41567-025-02961-2</dc:source>
+            <dc:date>2025-08-15</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-02961-2</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-02961-2</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03009-1">
             <title>How to twist anyons</title>
@@ -84,21 +99,6 @@
             <prism:url>https://www.nature.com/articles/s41567-025-02972-z</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41567-025-02975-w">
-            <title>A mechanical quantum memory for microwave photons</title>
-            <link>https://www.nature.com/articles/s41567-025-02975-w</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 13 August 2025; &lt;a href="https://www.nature.com/articles/s41567-025-02975-w"&gt;doi:10.1038/s41567-025-02975-w&lt;/a&gt;&lt;/p&gt;Superconducting qubits, a leading platform for quantum information processing, suffer from decoherence. Interfacing them with nanomechanical oscillators allows quantum information to be stored in motional states with longer lifetimes.</content:encoded>
-            <dc:title>A mechanical quantum memory for microwave photons</dc:title>
-            <dc:creator>Alkım B. Bozkurt</dc:creator><dc:creator>Omid Golami</dc:creator><dc:creator>Yue Yu</dc:creator><dc:creator>Hao Tian</dc:creator><dc:creator>Mohammad Mirhosseini</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-02975-w</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-08-13; | doi:10.1038/s41567-025-02975-w</dc:source>
-            <dc:date>2025-08-13</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-02975-w</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-02975-w</prism:url>
-        </item>
-    
         <item rdf:about="https://www.nature.com/articles/s41567-025-02992-9">
             <title>Liquid dipole lattice</title>
             <link>https://www.nature.com/articles/s41567-025-02992-9</link>
@@ -129,4 +129,4 @@
             <prism:url>https://www.nature.com/articles/s41567-025-03007-3</prism:url>
         </item>
     
-        </rdf:RDF>
+</rdf:RDF>

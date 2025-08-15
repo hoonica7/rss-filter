@@ -18,11 +18,15 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02323-6"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02326-3"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02315-6"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02311-w"/>
                 
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nmat/rss.gif">
@@ -30,6 +34,36 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02323-6">
+            <title>A solid electrolyte with active stability</title>
+            <link>https://www.nature.com/articles/s41563-025-02323-6</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 15 August 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02323-6"&gt;doi:10.1038/s41563-025-02323-6&lt;/a&gt;&lt;/p&gt;Halide solid electrolytes are shown to be dynamically stable beyond their thermodynamic reduction potential via reversible lithiation–delithiation, reaching 0.2 V versus Li+/Li and enabling high-capacity phosphorus-based anodes.</content:encoded>
+            <dc:title>A solid electrolyte with active stability</dc:title>
+            <dc:creator>Matteo Bianchini</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02323-6</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-08-15; | doi:10.1038/s41563-025-02323-6</dc:source>
+            <dc:date>2025-08-15</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02323-6</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02323-6</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02326-3">
+            <title>Unconventional scaling of the orbital Hall effect</title>
+            <link>https://www.nature.com/articles/s41563-025-02326-3</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 15 August 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02326-3"&gt;doi:10.1038/s41563-025-02326-3&lt;/a&gt;&lt;/p&gt;Scattering in the archetypal oxide SrRuO3 is shown to enhance orbital currents. This counter-intuitive effect establishes a transformative paradigm for energy-efficient spintronic devices.</content:encoded>
+            <dc:title>Unconventional scaling of the orbital Hall effect</dc:title>
+            <dc:creator>Siyang Peng</dc:creator><dc:creator>Xuan Zheng</dc:creator><dc:creator>Sheng Li</dc:creator><dc:creator>Bin Lao</dc:creator><dc:creator>Yamin Han</dc:creator><dc:creator>Zhaoliang Liao</dc:creator><dc:creator>Hongsheng Zheng</dc:creator><dc:creator>Yumeng Yang</dc:creator><dc:creator>Tianye Yu</dc:creator><dc:creator>Peitao Liu</dc:creator><dc:creator>Yan Sun</dc:creator><dc:creator>Xing-Qiu Chen</dc:creator><dc:creator>Shouzhong Peng</dc:creator><dc:creator>Weisheng Zhao</dc:creator><dc:creator>Run-Wei Li</dc:creator><dc:creator>Zhiming Wang</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02326-3</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-08-15; | doi:10.1038/s41563-025-02326-3</dc:source>
+            <dc:date>2025-08-15</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02326-3</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02326-3</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02315-6">
             <title>Crystallographic guess-and-check</title>
@@ -61,4 +95,4 @@
             <prism:url>https://www.nature.com/articles/s41563-025-02311-w</prism:url>
         </item>
     
-        </rdf:RDF>
+</rdf:RDF>
