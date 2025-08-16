@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00800-4"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00810-2"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00806-y"/>
@@ -32,8 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00795-y"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00798-9"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-025-00800-4">
+            <title>Ferroelectric switching of quantum anomalous Hall effects in MnBi&lt;sub&gt;2&lt;/sub&gt;Te&lt;sub&gt;4&lt;/sub&gt; films</title>
+            <link>https://www.nature.com/articles/s41535-025-00800-4</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 15 August 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00800-4"&gt;doi:10.1038/s41535-025-00800-4&lt;/a&gt;&lt;/p&gt;Ferroelectric switching of quantum anomalous Hall effects in MnBi&lt;sub&gt;2&lt;/sub&gt;Te&lt;sub&gt;4&lt;/sub&gt; films</content:encoded>
+            <dc:title>Ferroelectric switching of quantum anomalous Hall effects in MnBi&lt;sub&gt;2&lt;/sub&gt;Te&lt;sub&gt;4&lt;/sub&gt; films</dc:title>
+            <dc:creator>Jiaheng Li</dc:creator><dc:creator>Quansheng Wu</dc:creator><dc:creator>Hongming Weng</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-025-00800-4</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2025-08-15; | doi:10.1038/s41535-025-00800-4</dc:source>
+            <dc:date>2025-08-15</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-025-00800-4</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-025-00800-4</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-025-00810-2">
             <title>Publisher Correction: Optical properties, plasmons, and orbital Skyrme textures in twisted TMDs</title>
@@ -146,21 +161,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-025-00795-y</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-025-00795-y</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-025-00798-9">
-            <title>Strong coupling theory of superconductivity and ferroelectric quantum criticality in metallic SrTiO&lt;sub&gt;3&lt;/sub&gt;</title>
-            <link>https://www.nature.com/articles/s41535-025-00798-9</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 23 July 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00798-9"&gt;doi:10.1038/s41535-025-00798-9&lt;/a&gt;&lt;/p&gt;Strong coupling theory of superconductivity and ferroelectric quantum criticality in metallic SrTiO&lt;sub&gt;3&lt;/sub&gt;</content:encoded>
-            <dc:title>Strong coupling theory of superconductivity and ferroelectric quantum criticality in metallic SrTiO&lt;sub&gt;3&lt;/sub&gt;</dc:title>
-            <dc:creator>Sudip Kumar Saha</dc:creator><dc:creator>M. N. Gastiasoro</dc:creator><dc:creator>Jonathan Ruhman</dc:creator><dc:creator>Avraham Klein</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-025-00798-9</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2025-07-23; | doi:10.1038/s41535-025-00798-9</dc:source>
-            <dc:date>2025-07-23</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-025-00798-9</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-025-00798-9</prism:url>
         </item>
     
 </rdf:RDF>
