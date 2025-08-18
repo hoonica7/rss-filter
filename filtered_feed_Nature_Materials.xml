@@ -18,17 +18,17 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02327-2"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02323-6"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02326-3"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02322-7"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02315-6"/>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02306-7"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02311-w"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nmat/rss.gif">
@@ -36,6 +36,21 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02327-2">
+            <title>Superconductivity in Sr-doped La&lt;sub&gt;3&lt;/sub&gt;Ni&lt;sub&gt;2&lt;/sub&gt;O&lt;sub&gt;7&lt;/sub&gt; thin films</title>
+            <link>https://www.nature.com/articles/s41563-025-02327-2</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 18 August 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02327-2"&gt;doi:10.1038/s41563-025-02327-2&lt;/a&gt;&lt;/p&gt;The authors study the effects of heterovalent doping on superconducting bilayer nickelate thin films.</content:encoded>
+            <dc:title>Superconductivity in Sr-doped La&lt;sub&gt;3&lt;/sub&gt;Ni&lt;sub&gt;2&lt;/sub&gt;O&lt;sub&gt;7&lt;/sub&gt; thin films</dc:title>
+            <dc:creator>Bo Hao</dc:creator><dc:creator>Maosen Wang</dc:creator><dc:creator>Wenjie Sun</dc:creator><dc:creator>Yang Yang</dc:creator><dc:creator>Zhangwen Mao</dc:creator><dc:creator>Shengjun Yan</dc:creator><dc:creator>Haoying Sun</dc:creator><dc:creator>Hongyi Zhang</dc:creator><dc:creator>Lu Han</dc:creator><dc:creator>Zhengbin Gu</dc:creator><dc:creator>Jian Zhou</dc:creator><dc:creator>Dianxiang Ji</dc:creator><dc:creator>Yuefeng Nie</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02327-2</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-08-18; | doi:10.1038/s41563-025-02327-2</dc:source>
+            <dc:date>2025-08-18</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02327-2</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02327-2</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02323-6">
             <title>A solid electrolyte with active stability</title>
@@ -82,34 +97,19 @@
             <prism:url>https://www.nature.com/articles/s41563-025-02322-7</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02315-6">
-            <title>Crystallographic guess-and-check</title>
-            <link>https://www.nature.com/articles/s41563-025-02315-6</link>
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02306-7">
+            <title>Scalable photonic quantum technologies</title>
+            <link>https://www.nature.com/articles/s41563-025-02306-7</link>
             <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 11 August 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02315-6"&gt;doi:10.1038/s41563-025-02315-6&lt;/a&gt;&lt;/p&gt;Machine learning is shown to help solve nanocrystalline structures from broadened powder X-ray diffraction patterns, but the underlying inference remains mathematically challenging.</content:encoded>
-            <dc:title>Crystallographic guess-and-check</dc:title>
-            <dc:creator>N. Duane Loh</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02315-6</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-08-11; | doi:10.1038/s41563-025-02315-6</dc:source>
-            <dc:date>2025-08-11</dc:date>
+                &lt;p&gt;Nature Materials, Published online: 14 August 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02306-7"&gt;doi:10.1038/s41563-025-02306-7&lt;/a&gt;&lt;/p&gt;Photonic platforms are a prominent host on which practical quantum information technology applications can be leveraged and scaled. The authors discuss the state-of-the-art capabilities and give an outlook on optical technologies towards the realization of quantum computation, communications and metrology.</content:encoded>
+            <dc:title>Scalable photonic quantum technologies</dc:title>
+            <dc:creator>Hui Wang</dc:creator><dc:creator>Timothy C. Ralph</dc:creator><dc:creator>Jelmer J. Renema</dc:creator><dc:creator>Chao-Yang Lu</dc:creator><dc:creator>Jian-Wei Pan</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02306-7</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-08-14; | doi:10.1038/s41563-025-02306-7</dc:source>
+            <dc:date>2025-08-14</dc:date>
             <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02315-6</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02315-6</prism:url>
+            <prism:doi>10.1038/s41563-025-02306-7</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02306-7</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02311-w">
-            <title>Mitigating proton trapping in cubic perovskite oxides via ScO&lt;sub&gt;6&lt;/sub&gt; octahedral networks</title>
-            <link>https://www.nature.com/articles/s41563-025-02311-w</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 08 August 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02311-w"&gt;doi:10.1038/s41563-025-02311-w&lt;/a&gt;&lt;/p&gt;Solid-state electrolytes that operate at a temperature of 300 °C suffer from a H+ concentration–conductivity trade-off. Here heavy Sc doping of cubic perovskites is shown to bypass this trade-off, enabling a proton conductivity of 0.01 S cm−1 that arises from rapid proton diffusion along ScO6 octahedra.</content:encoded>
-            <dc:title>Mitigating proton trapping in cubic perovskite oxides via ScO&lt;sub&gt;6&lt;/sub&gt; octahedral networks</dc:title>
-            <dc:creator>Kota Tsujikawa</dc:creator><dc:creator>Junji Hyodo</dc:creator><dc:creator>Susumu Fujii</dc:creator><dc:creator>Kazuki Takahashi</dc:creator><dc:creator>Yuto Tomita</dc:creator><dc:creator>Nai Shi</dc:creator><dc:creator>Yasukazu Murakami</dc:creator><dc:creator>Shusuke Kasamatsu</dc:creator><dc:creator>Yoshihiro Yamazaki</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02311-w</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-08-08; | doi:10.1038/s41563-025-02311-w</dc:source>
-            <dc:date>2025-08-08</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02311-w</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02311-w</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
