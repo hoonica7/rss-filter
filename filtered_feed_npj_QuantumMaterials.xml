@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00811-1"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00800-4"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00810-2"/>
@@ -32,8 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00793-0"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00795-y"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-025-00811-1">
+            <title>Quantum spin liquid phases in Kitaev materials</title>
+            <link>https://www.nature.com/articles/s41535-025-00811-1</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 16 August 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00811-1"&gt;doi:10.1038/s41535-025-00811-1&lt;/a&gt;&lt;/p&gt;Quantum spin liquid phases in Kitaev materials</content:encoded>
+            <dc:title>Quantum spin liquid phases in Kitaev materials</dc:title>
+            <dc:creator>Po-Hao Chou</dc:creator><dc:creator>Chung-Yu Mou</dc:creator><dc:creator>Chung-Hou Chung</dc:creator><dc:creator>Sungkit Yip</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-025-00811-1</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2025-08-16; | doi:10.1038/s41535-025-00811-1</dc:source>
+            <dc:date>2025-08-16</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-025-00811-1</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-025-00811-1</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-025-00800-4">
             <title>Ferroelectric switching of quantum anomalous Hall effects in MnBi&lt;sub&gt;2&lt;/sub&gt;Te&lt;sub&gt;4&lt;/sub&gt; films</title>
@@ -146,21 +161,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-025-00793-0</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-025-00793-0</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-025-00795-y">
-            <title>Quantum decoherence by magnetic fluctuations in a magnetic topological insulator</title>
-            <link>https://www.nature.com/articles/s41535-025-00795-y</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 23 July 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00795-y"&gt;doi:10.1038/s41535-025-00795-y&lt;/a&gt;&lt;/p&gt;Quantum decoherence by magnetic fluctuations in a magnetic topological insulator</content:encoded>
-            <dc:title>Quantum decoherence by magnetic fluctuations in a magnetic topological insulator</dc:title>
-            <dc:creator>Ruben Saatjian</dc:creator><dc:creator>Simon Dovrén</dc:creator><dc:creator>Kohtaro Yamakawa</dc:creator><dc:creator>Ryan S. Russell</dc:creator><dc:creator>James G. Analytis</dc:creator><dc:creator>John W. Harter</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-025-00795-y</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2025-07-23; | doi:10.1038/s41535-025-00795-y</dc:source>
-            <dc:date>2025-07-23</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-025-00795-y</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-025-00795-y</prism:url>
         </item>
     
 </rdf:RDF>
