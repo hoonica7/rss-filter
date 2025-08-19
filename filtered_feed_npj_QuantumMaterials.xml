@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00807-x"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00811-1"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00800-4"/>
@@ -32,8 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00808-w"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00793-0"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-025-00807-x">
+            <title>Distinct terahertz nonlinear and Raman responses in cuprate superconductors Bi&lt;sub&gt;2&lt;/sub&gt;Sr&lt;sub&gt;2&lt;/sub&gt;CaCu&lt;sub&gt;2&lt;/sub&gt;O&lt;sub&gt;8+&lt;i&gt;x&lt;/i&gt;&lt;/sub&gt;</title>
+            <link>https://www.nature.com/articles/s41535-025-00807-x</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 18 August 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00807-x"&gt;doi:10.1038/s41535-025-00807-x&lt;/a&gt;&lt;/p&gt;Distinct terahertz nonlinear and Raman responses in cuprate superconductors Bi&lt;sub&gt;2&lt;/sub&gt;Sr&lt;sub&gt;2&lt;/sub&gt;CaCu&lt;sub&gt;2&lt;/sub&gt;O&lt;sub&gt;8+&lt;i&gt;x&lt;/i&gt;&lt;/sub&gt;</content:encoded>
+            <dc:title>Distinct terahertz nonlinear and Raman responses in cuprate superconductors Bi&lt;sub&gt;2&lt;/sub&gt;Sr&lt;sub&gt;2&lt;/sub&gt;CaCu&lt;sub&gt;2&lt;/sub&gt;O&lt;sub&gt;8+&lt;i&gt;x&lt;/i&gt;&lt;/sub&gt;</dc:title>
+            <dc:creator>Kota Katsumi</dc:creator><dc:creator>Yann Gallais</dc:creator><dc:creator>Ryo Shimano</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-025-00807-x</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2025-08-18; | doi:10.1038/s41535-025-00807-x</dc:source>
+            <dc:date>2025-08-18</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-025-00807-x</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-025-00807-x</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-025-00811-1">
             <title>Quantum spin liquid phases in Kitaev materials</title>
@@ -146,21 +161,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-025-00808-w</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-025-00808-w</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-025-00793-0">
-            <title>Altermagnetism and strain induced altermagnetic transition in Cairo pentagonal monolayer</title>
-            <link>https://www.nature.com/articles/s41535-025-00793-0</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 25 July 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00793-0"&gt;doi:10.1038/s41535-025-00793-0&lt;/a&gt;&lt;/p&gt;Altermagnetism and strain induced altermagnetic transition in Cairo pentagonal monolayer</content:encoded>
-            <dc:title>Altermagnetism and strain induced altermagnetic transition in Cairo pentagonal monolayer</dc:title>
-            <dc:creator>Shuyi Li</dc:creator><dc:creator>Yu Zhang</dc:creator><dc:creator>Adrian Bahri</dc:creator><dc:creator>Xiaoliang Zhang</dc:creator><dc:creator>Chunjing Jia</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-025-00793-0</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2025-07-25; | doi:10.1038/s41535-025-00793-0</dc:source>
-            <dc:date>2025-07-25</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-025-00793-0</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-025-00793-0</prism:url>
         </item>
     
 </rdf:RDF>

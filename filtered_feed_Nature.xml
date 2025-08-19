@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-02298-z"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-02587-7"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09504-y"/>
@@ -36,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/nature/rss.png</url>
         <link>http://feeds.nature.com/nature/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/d41586-025-02298-z">
+            <title>‘Computing is a Black people’s thing’</title>
+            <link>https://www.nature.com/articles/d41586-025-02298-z</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 18 August 2025; &lt;a href="https://www.nature.com/articles/d41586-025-02298-z"&gt;doi:10.1038/d41586-025-02298-z&lt;/a&gt;&lt;/p&gt;Passionate about making smaller and more efficient semiconductors, physicist Sonia Guimarães is a relentless voice for equity in Brazilian science.</content:encoded>
+            <dc:title>‘Computing is a Black people’s thing’</dc:title>
+            <dc:creator>Meghie Rodrigues</dc:creator>
+            <dc:identifier>doi:10.1038/d41586-025-02298-z</dc:identifier>
+            <dc:source>Nature, Published online: 2025-08-18; | doi:10.1038/d41586-025-02298-z</dc:source>
+            <dc:date>2025-08-18</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/d41586-025-02298-z</prism:doi>
+            <prism:url>https://www.nature.com/articles/d41586-025-02298-z</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/d41586-025-02587-7">
             <title>Controversial quantum-computing paper gets hefty correction — but concerns linger</title>
