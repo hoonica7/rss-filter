@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00812-0"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00807-x"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00811-1"/>
@@ -32,8 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00797-w"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00808-w"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-025-00812-0">
+            <title>Designing flat bands, localized and itinerant states in TaS&lt;sub&gt;2&lt;/sub&gt; trilayer heterostructures</title>
+            <link>https://www.nature.com/articles/s41535-025-00812-0</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 19 August 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00812-0"&gt;doi:10.1038/s41535-025-00812-0&lt;/a&gt;&lt;/p&gt;Designing flat bands, localized and itinerant states in TaS&lt;sub&gt;2&lt;/sub&gt; trilayer heterostructures</content:encoded>
+            <dc:title>Designing flat bands, localized and itinerant states in TaS&lt;sub&gt;2&lt;/sub&gt; trilayer heterostructures</dc:title>
+            <dc:creator>Hyeonhu Bae</dc:creator><dc:creator>Roser Valentí</dc:creator><dc:creator>Igor I. Mazin</dc:creator><dc:creator>Binghai Yan</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-025-00812-0</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2025-08-19; | doi:10.1038/s41535-025-00812-0</dc:source>
+            <dc:date>2025-08-19</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-025-00812-0</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-025-00812-0</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-025-00807-x">
             <title>Distinct terahertz nonlinear and Raman responses in cuprate superconductors Bi&lt;sub&gt;2&lt;/sub&gt;Sr&lt;sub&gt;2&lt;/sub&gt;CaCu&lt;sub&gt;2&lt;/sub&gt;O&lt;sub&gt;8+&lt;i&gt;x&lt;/i&gt;&lt;/sub&gt;</title>
@@ -146,21 +161,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-025-00797-w</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-025-00797-w</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-025-00808-w">
-            <title>Time-reversal symmetry breaking, collective modes, and Raman spectrum in pair-density-wave states</title>
-            <link>https://www.nature.com/articles/s41535-025-00808-w</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 01 August 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00808-w"&gt;doi:10.1038/s41535-025-00808-w&lt;/a&gt;&lt;/p&gt;Time-reversal symmetry breaking, collective modes, and Raman spectrum in pair-density-wave states</content:encoded>
-            <dc:title>Time-reversal symmetry breaking, collective modes, and Raman spectrum in pair-density-wave states</dc:title>
-            <dc:creator>Yi-Ming Wu</dc:creator><dc:creator>Andrey V. Chubukov</dc:creator><dc:creator>Yuxuan Wang</dc:creator><dc:creator>Steven A. Kivelson</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-025-00808-w</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2025-08-01; | doi:10.1038/s41535-025-00808-w</dc:source>
-            <dc:date>2025-08-01</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-025-00808-w</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-025-00808-w</prism:url>
         </item>
     
 </rdf:RDF>
