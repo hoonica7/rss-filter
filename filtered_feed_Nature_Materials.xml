@@ -26,7 +26,9 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02326-3"/>
                 
-                    </rdf:Seq>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02322-7"/>
+                
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nmat/rss.gif">
@@ -95,4 +97,19 @@
             <prism:url>https://www.nature.com/articles/s41563-025-02326-3</prism:url>
         </item>
     
-        </rdf:RDF>
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02322-7">
+            <title>Direct integration of optoelectronic arrays with arbitrary non-developable structures</title>
+            <link>https://www.nature.com/articles/s41563-025-02322-7</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 14 August 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02322-7"&gt;doi:10.1038/s41563-025-02322-7&lt;/a&gt;&lt;/p&gt;A self-assembly perovskite strategy is reported that can integrate optoelectronic arrays with arbitrary non-developable structures, enabling structural manipulations of photodiode arrays with micrometre precision.</content:encoded>
+            <dc:title>Direct integration of optoelectronic arrays with arbitrary non-developable structures</dc:title>
+            <dc:creator>Meng Wang</dc:creator><dc:creator>Fengren Cao</dc:creator><dc:creator>Linxing Meng</dc:creator><dc:creator>Min Wang</dc:creator><dc:creator>Liang Li</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02322-7</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-08-14; | doi:10.1038/s41563-025-02322-7</dc:source>
+            <dc:date>2025-08-14</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02322-7</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02322-7</prism:url>
+        </item>
+    
+</rdf:RDF>

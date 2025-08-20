@@ -18,6 +18,10 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03017-1"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02971-0"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02999-2"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02998-3"/>
@@ -25,10 +29,6 @@
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02961-2"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03009-1"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02974-x"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02972-z"/>
                 
             </rdf:Seq>
         </items>
@@ -38,6 +38,36 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03017-1">
+            <title>Evasive condensate caught by fingerprints</title>
+            <link>https://www.nature.com/articles/s41567-025-03017-1</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 20 August 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03017-1"&gt;doi:10.1038/s41567-025-03017-1&lt;/a&gt;&lt;/p&gt;Like charges can pair up to make superconductors, so intuitively opposite charges should also have no trouble forming pairs. But condensates of electron–hole pairs are not common — one must search carefully for their fingerprints.</content:encoded>
+            <dc:title>Evasive condensate caught by fingerprints</dc:title>
+            <dc:creator>Harley Scammell</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03017-1</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-08-20; | doi:10.1038/s41567-025-03017-1</dc:source>
+            <dc:date>2025-08-20</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03017-1</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03017-1</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-02971-0">
+            <title>Optical signatures of interlayer electron coherence in a bilayer semiconductor</title>
+            <link>https://www.nature.com/articles/s41567-025-02971-0</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 20 August 2025; &lt;a href="https://www.nature.com/articles/s41567-025-02971-0"&gt;doi:10.1038/s41567-025-02971-0&lt;/a&gt;&lt;/p&gt;Condensates of excitons have been observed in the quantum Hall regime, but evidence for their existence at low magnetic fields remains controversial. Now evidence of coherence between optically pumped interlayer excitons in MoS2 marks a step towards confirming exciton condensation at low magnetic fields.</content:encoded>
+            <dc:title>Optical signatures of interlayer electron coherence in a bilayer semiconductor</dc:title>
+            <dc:creator>Xiaoling Liu</dc:creator><dc:creator>Nadine Leisgang</dc:creator><dc:creator>Pavel E. Dolgirev</dc:creator><dc:creator>Alexander A. Zibrov</dc:creator><dc:creator>Jiho Sung</dc:creator><dc:creator>Jue Wang</dc:creator><dc:creator>Takashi Taniguchi</dc:creator><dc:creator>Kenji Watanabe</dc:creator><dc:creator>Valentin Walther</dc:creator><dc:creator>Hongkun Park</dc:creator><dc:creator>Eugene Demler</dc:creator><dc:creator>Philip Kim</dc:creator><dc:creator>Mikhail D. Lukin</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-02971-0</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-08-20; | doi:10.1038/s41567-025-02971-0</dc:source>
+            <dc:date>2025-08-20</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-02971-0</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-02971-0</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-02999-2">
             <title>Magnon-polaritons dance around exceptional points</title>
@@ -97,36 +127,6 @@
             <prism:publicationName>Nature Physics</prism:publicationName>
             <prism:doi>10.1038/s41567-025-03009-1</prism:doi>
             <prism:url>https://www.nature.com/articles/s41567-025-03009-1</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-02974-x">
-            <title>Quantized limit of conductivity in near-ideal graphene</title>
-            <link>https://www.nature.com/articles/s41567-025-02974-x</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 13 August 2025; &lt;a href="https://www.nature.com/articles/s41567-025-02974-x"&gt;doi:10.1038/s41567-025-02974-x&lt;/a&gt;&lt;/p&gt;Transport properties near the Dirac point in graphene are expected to be determined by quantum many-body interactions between relativistic electrons. Experiments now show that the flow of charge and heat in high-quality graphene close to charge neutrality can be described within a hydrodynamic framework, with universal intrinsic electrical conductivity that is quantized to a value close to the quantum of conductance.</content:encoded>
-            <dc:title>Quantized limit of conductivity in near-ideal graphene</dc:title>
-            
-            <dc:identifier>doi:10.1038/s41567-025-02974-x</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-08-13; | doi:10.1038/s41567-025-02974-x</dc:source>
-            <dc:date>2025-08-13</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-02974-x</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-02974-x</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-02972-z">
-            <title>Universality in quantum critical flow of charge and heat in ultraclean graphene</title>
-            <link>https://www.nature.com/articles/s41567-025-02972-z</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 13 August 2025; &lt;a href="https://www.nature.com/articles/s41567-025-02972-z"&gt;doi:10.1038/s41567-025-02972-z&lt;/a&gt;&lt;/p&gt;Critical behaviour is expected in graphene when the carrier density is tuned to the Dirac point. Now, universality associated with the critical point is observed in electronic and thermal transport.</content:encoded>
-            <dc:title>Universality in quantum critical flow of charge and heat in ultraclean graphene</dc:title>
-            <dc:creator>Aniket Majumdar</dc:creator><dc:creator>Nisarg Chadha</dc:creator><dc:creator>Pritam Pal</dc:creator><dc:creator>Akash Gugnani</dc:creator><dc:creator>Bhaskar Ghawri</dc:creator><dc:creator>Kenji Watanabe</dc:creator><dc:creator>Takashi Taniguchi</dc:creator><dc:creator>Subroto Mukerjee</dc:creator><dc:creator>Arindam Ghosh</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-02972-z</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-08-13; | doi:10.1038/s41567-025-02972-z</dc:source>
-            <dc:date>2025-08-13</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-02972-z</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-02972-z</prism:url>
         </item>
     
 </rdf:RDF>
