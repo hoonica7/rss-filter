@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02336-1"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02317-4"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02327-2"/>
@@ -26,9 +28,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02326-3"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02322-7"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nmat/rss.gif">
@@ -36,6 +36,21 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02336-1">
+            <title>Uniform conjugated polymer rectangular platelets exhibiting long-range exciton diffusion</title>
+            <link>https://www.nature.com/articles/s41563-025-02336-1</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 22 August 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02336-1"&gt;doi:10.1038/s41563-025-02336-1&lt;/a&gt;&lt;/p&gt;Seeded growth methods are used to prepare highly ordered, crystalline semiconducting poly(di-n-hexylfluorene) platelet micelles, which exhibit long-range anisotropic exciton diffusion, particularly along the π–π-stacking direction.</content:encoded>
+            <dc:title>Uniform conjugated polymer rectangular platelets exhibiting long-range exciton diffusion</dc:title>
+            <dc:creator>Jiandong Cai</dc:creator><dc:creator>Xian Wei Chua</dc:creator><dc:creator>Chen Li</dc:creator><dc:creator>Jeannine Grüne</dc:creator><dc:creator>Pratyush Ghosh</dc:creator><dc:creator>Yuanfei Ding</dc:creator><dc:creator>Harvey K. MacKenzie</dc:creator><dc:creator>Huibin Qiu</dc:creator><dc:creator>Neil C. Greenham</dc:creator><dc:creator>Akshay Rao</dc:creator><dc:creator>Ian Manners</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02336-1</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-08-22; | doi:10.1038/s41563-025-02336-1</dc:source>
+            <dc:date>2025-08-22</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02336-1</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02336-1</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02317-4">
             <title>Signatures of magnetism in zigzag graphene nanoribbons embedded in a hexagonal boron nitride lattice</title>
@@ -97,19 +112,4 @@
             <prism:url>https://www.nature.com/articles/s41563-025-02326-3</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02322-7">
-            <title>Direct integration of optoelectronic arrays with arbitrary non-developable structures</title>
-            <link>https://www.nature.com/articles/s41563-025-02322-7</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 14 August 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02322-7"&gt;doi:10.1038/s41563-025-02322-7&lt;/a&gt;&lt;/p&gt;A self-assembly perovskite strategy is reported that can integrate optoelectronic arrays with arbitrary non-developable structures, enabling structural manipulations of photodiode arrays with micrometre precision.</content:encoded>
-            <dc:title>Direct integration of optoelectronic arrays with arbitrary non-developable structures</dc:title>
-            <dc:creator>Meng Wang</dc:creator><dc:creator>Fengren Cao</dc:creator><dc:creator>Linxing Meng</dc:creator><dc:creator>Min Wang</dc:creator><dc:creator>Liang Li</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02322-7</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-08-14; | doi:10.1038/s41563-025-02322-7</dc:source>
-            <dc:date>2025-08-14</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02322-7</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02322-7</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
