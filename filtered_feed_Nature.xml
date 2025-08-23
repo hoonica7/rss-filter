@@ -18,8 +18,6 @@
         <items>
             <rdf:Seq>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-02683-8"/>
-                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09386-0"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09405-0"/>
@@ -30,8 +28,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09394-0"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-02254-x"/>
-                
                     </rdf:Seq>
         </items>
     </channel>
@@ -40,21 +36,6 @@
         <url>https://www.nature.com/uploads/product/nature/rss.png</url>
         <link>http://feeds.nature.com/nature/rss/current</link>
     </image>
-    
-        <item rdf:about="https://www.nature.com/articles/d41586-025-02683-8">
-            <title>Fusion energy gets a boost from cold fusion chemistry</title>
-            <link>https://www.nature.com/articles/d41586-025-02683-8</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 20 August 2025; &lt;a href="https://www.nature.com/articles/d41586-025-02683-8"&gt;doi:10.1038/d41586-025-02683-8&lt;/a&gt;&lt;/p&gt;Chemists used an electrochemical method to enhance the rates of fusion in a desktop reactor — plus, how microbes give chocolate its taste.</content:encoded>
-            <dc:title>Fusion energy gets a boost from cold fusion chemistry</dc:title>
-            <dc:creator>Shamini Bundell</dc:creator><dc:creator>Nick Petrić Howe</dc:creator>
-            <dc:identifier>doi:10.1038/d41586-025-02683-8</dc:identifier>
-            <dc:source>Nature, Published online: 2025-08-20; | doi:10.1038/d41586-025-02683-8</dc:source>
-            <dc:date>2025-08-20</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/d41586-025-02683-8</prism:doi>
-            <prism:url>https://www.nature.com/articles/d41586-025-02683-8</prism:url>
-        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41586-025-09386-0">
             <title>Proximity screening greatly enhances electronic quality of graphene</title>
@@ -129,21 +110,6 @@
             <prism:publicationName>Nature</prism:publicationName>
             <prism:doi>10.1038/s41586-025-09394-0</prism:doi>
             <prism:url>https://www.nature.com/articles/s41586-025-09394-0</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/d41586-025-02254-x">
-            <title>Low-energy nuclear fusion boosted by electrochemistry</title>
-            <link>https://www.nature.com/articles/d41586-025-02254-x</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 20 August 2025; &lt;a href="https://www.nature.com/articles/d41586-025-02254-x"&gt;doi:10.1038/d41586-025-02254-x&lt;/a&gt;&lt;/p&gt;Electrochemistry can boost processes that trap atoms inside a metal. A reactor uses these trapped atoms, combined with an ion beam, as fuel for nuclear fusion.</content:encoded>
-            <dc:title>Low-energy nuclear fusion boosted by electrochemistry</dc:title>
-            <dc:creator>Amy McKeown-Green</dc:creator><dc:creator>Jennifer A. Dionne</dc:creator>
-            <dc:identifier>doi:10.1038/d41586-025-02254-x</dc:identifier>
-            <dc:source>Nature, Published online: 2025-08-20; | doi:10.1038/d41586-025-02254-x</dc:source>
-            <dc:date>2025-08-20</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/d41586-025-02254-x</prism:doi>
-            <prism:url>https://www.nature.com/articles/d41586-025-02254-x</prism:url>
         </item>
     
         </rdf:RDF>
