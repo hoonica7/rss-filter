@@ -7,12 +7,12 @@
     <atom:link href="http://rss.arxiv.org/rss/cond-mat" rel="self" type="application/rss+xml"/>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Aug 2025 04:00:13 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Aug 2025 01:33:57 +0000</lastBuildDate>
     <managingEditor>rss-help@arxiv.org</managingEditor>
     <pubDate>Tue, 26 Aug 2025 00:00:00 -0400</pubDate>
     <skipDays>
-      <day>Saturday</day>
       <day>Sunday</day>
+      <day>Saturday</day>
     </skipDays>
     <item>
       <title>Hunting for superconductivity in doped triangular lattice Kitaev magnets</title>
@@ -65,17 +65,16 @@ Abstract: Multicomponent Heusler alloys exhibit various magnetic properties aris
       <dc:creator>Zhenyang Xie, Yuntao Wu, Jitong Song, Yuanji Xu, Fuyang Tian</dc:creator>
     </item>
     <item>
-      <title>Phonon anharmonicity-driven charge density wave transition and ultrafast dynamics in 1T-TaS2/TaSe2</title>
-      <link>https://arxiv.org/abs/2508.16940</link>
-      <description>arXiv:2508.16940v1 Announce Type: new 
-Abstract: Charge density wave (CDW), a symmetry-breaking collective phenomenon in condensed matter systems, exhibits periodic modulations of electron density coupled with lattice distortions, where the lattice plays a critical role via electron-phonon coupling. In transition metal dichalcogenides (TMDs) 1T-TaS2/TaSe2, experiments reveal rich temperature- and pressure-dependent CDW phase behaviors, along with metastable CDW states induced by ultrafast optical excitation. Nevertheless, the underlying mechanisms governing thermal/pressure-driven transitions and particularly the microscopic evolution of CDW phases remain incompletely understood. Here, we perform first-principles anharmonic phonon calculations and machine-learning force-field molecular dynamics at finite temperatures/pressures to investigate the CDW transitions in 1T-TaS2/TaSe2. The calculated CDW transition temperature TCDW and critical pressure Pc are in quantitative agreement with experimental values. Our results demonstrate that the melting of CDW originates from phonon anharmonicity, with ionic fluctuations dominating the transition dynamics. We observe the microscopic evolution of CDW under varying temperature/pressure, revealing an ultrafast nucleation process of CDW (~3 ps). Our results emphasize the essential role of phonon anharmonicity in elucidating CDW transition mechanisms underlying, and advance fundamental understanding of CDW-related phenomena in TMDs.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2508.16940v1</guid>
-      <category>cond-mat.mtrl-sci</category>
-      <category>cond-mat.supr-con</category>
+      <title>Electrostatic gating and the interference of chiral Majoranas in thin slabs of magnetic topological insulators</title>
+      <link>https://arxiv.org/abs/2508.16968</link>
+      <description>arXiv:2508.16968v1 Announce Type: new 
+Abstract: We study the interference of chiral Majoranas in a magnetic topological insulator thin slab having a grounded section proximity coupled to a superconductor and another section under the influence of top-bottom electrostatic gating. The gated section locally widens an energy gap and mediates the coupling between the quantum anomalous Hall states of the leads and the chiral Majorana states of the proximitized sector. Local and non-local conductances offer measurable hints of the existence of transport mediated by chiral Majorana modes. Local conductances on the two leads reveal characteristic oscillatory patterns as a function of the gating strength, with peculiar correlations depending on the distance between gated and proximitized sectors. A gate tunable Majorana diode effect on nonlocal conductances emerges when the chemical potential deviates from zero. We suggest a protocol to identify chiral Majorana physics based on a sequence of electrostatic gates that allows the tuning of chiral Majorana interference.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2508.16968v1</guid>
+      <category>cond-mat.mes-hall</category>
       <pubDate>Tue, 26 Aug 2025 00:00:00 -0400</pubDate>
       <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
-      <dc:creator>Wenqian Tu, Run Lv, Dingfu Shao, Yuping Sun, Wenjian Lu</dc:creator>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>Javier Osca, Lloren\c{c} Serra</dc:creator>
     </item>
     <item>
       <title>A Single-Molecule Quantum Heat Engine</title>
@@ -102,6 +101,22 @@ Abstract: We introduce an analytic slave boson method for treating the finite $U
       <dc:creator>Liam L. H. Lau, Piers Coleman</dc:creator>
     </item>
     <item>
+      <title>Polarization-dependent chiral transport and chiral solitons in spin Kitaev models</title>
+      <link>https://arxiv.org/abs/2508.17084</link>
+      <description>arXiv:2508.17084v1 Announce Type: new 
+Abstract: Recent advances in synthetic quantum matter allow researchers to design quantum models inaccessible in traditional materials. Here, we propose protocols to engineer a new class of quantum spin models, which we call spin Kitaev models. The building blocks are basic spin-exchange interactions combined with locally selective Floquet pulses, a capability recently demonstrated in a range of experimental platforms. The resulting flip-flip and flop-flop terms lead to intriguing quantum transport dynamics beyond conventional spin models. For instance, in the absence of a magnetic field, spin excitations polarized along the $x$ and $y$ axes propagate chirally in opposite directions, producing polarization-dependent spin transport. In the large-spin limit, the spin Kitaev model maps to a nonlinear Hatano-Nelson model, where the interplay of nonlinearity and the underlying curvature yields polarization-dependent chiral solitons. A magnetic field binds two oppositely polarized chiral solitons into a chiral solitonic molecule, whose travel direction depends on its orientation. Our results, directly accessible in current experiments, open new opportunities for simulating transport in curved spaces and for applications in spintronics, information processing, and quantum sensing.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2508.17084v1</guid>
+      <category>cond-mat.quant-gas</category>
+      <category>cond-mat.mtrl-sci</category>
+      <category>cond-mat.str-el</category>
+      <category>nlin.PS</category>
+      <category>quant-ph</category>
+      <pubDate>Tue, 26 Aug 2025 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Chenwei Lv, Thomas Bilitewski, Ana Maria Rey, Qi Zhou</dc:creator>
+    </item>
+    <item>
       <title>Resonant transport and line-type resonances in tilted Dirac cone double-barrier structures</title>
       <link>https://arxiv.org/abs/2508.17220</link>
       <description>arXiv:2508.17220v1 Announce Type: new 
@@ -112,6 +127,31 @@ Abstract: We study the transport properties of Dirac fermions in a graphene-base
       <arxiv:announce_type>new</arxiv:announce_type>
       <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
       <dc:creator>M. Raggui, O. Habti, A. Kamal, E. B. Choubabi</dc:creator>
+    </item>
+    <item>
+      <title>Tunable Valley Polarization and Anomalous Hall Effect in Ferrovalley NbX2 and TaX2 (X = S, Se, Te): A First-Principles Study</title>
+      <link>https://arxiv.org/abs/2508.17240</link>
+      <description>arXiv:2508.17240v1 Announce Type: new 
+Abstract: Two-dimensional transition metal dichalcogenides lack inversion symmetry and have broken time-reversal symmetry due to the honeycomb structure and intrinsic ferromagnetism, which leads to their valley polarization. Here, we explored the electronic and magnetic properties of the novel ferrovalley materials 1H-NbS2, 1H-NbSe2, 1H-NbTe2, 1H-TaS2, 1H-TaSe2, and 1H-TaTe2 using first-principles calculations based on density functional theory. The materials are dynamically stable bipolar magnetic semiconductors. Among the magnetic semiconductors, NbSe2 showed the maximum Curie temperature of 176.25 K. For these materials, the ferromagnetic state was more favorable than the antiferromagnetic state, indicating robust ferrovalley characteristics. These ferrovalley materials showed a giant tunable valley polarization at K and K' points in the Brillouin zone without applying any external factors due to intrinsic exchange interactions of transition metal d-orbital electrons and spin-orbit coupling. TaTe2 exhibited an outstanding valley splitting of 541 meV. Reversing Bloch electrons' magnetic moment caused an alteration of valley polarization. Additionally, the application of uniaxial and biaxial strain led to the manipulation and variation of the bandgap and valley polarization. Berry curvature exhibited opposite signs and unequal magnitudes at K and K' points, which led to the anomalous valley Hall effect in these materials. NbS2, NbSe2, and NbTe2 exhibited Berry curvature at unstrained crystals, whereas Berry curvature appeared only in TaSe2 and TaTe2 with the application of strain. These ferrovalley materials exhibited distinct band gaps for spin-up and spin-down electrons, enabling the selective transport of spin-polarized electrons.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2508.17240v1</guid>
+      <category>cond-mat.mtrl-sci</category>
+      <pubDate>Tue, 26 Aug 2025 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-nd/4.0/</dc:rights>
+      <dc:creator>Samiul Islam, Sharif Mohammad Mominuzzaman, Ahmed Zubair</dc:creator>
+    </item>
+    <item>
+      <title>Phonons Drive the Topological Phase Transition in Quasi-One-Dimensional Bi$_4$I$_4$</title>
+      <link>https://arxiv.org/abs/2508.17268</link>
+      <description>arXiv:2508.17268v1 Announce Type: new 
+Abstract: Quasi-one-dimensional bismuth halides offer an exceptional platform for exploring diverse topological phases, yet the nature of the room-temperature topological phase transition in Bi$_4$I$_4$ remains unresolved. While theory predicts the high-temperature $\beta$-phase to be a strong topological insulator (TI), experiments observe a weak TI. Here we resolve this discrepancy by revealing the critical but previously overlooked role of electron-phonon coupling in driving the topological phase transition. Using our newly developed ab initio framework for phonon-induced band renormalization, we show that thermal phonons alone drive $\beta$-Bi$_4$I$_4$ from the strong TI predicted by static-lattice calculations to a weak TI above ~180 K. At temperatures where $\beta$-Bi$_4$I$_4$ is stable, it is a weak TI with calculated surface states closely match experimental results, thereby reconciling theory with experiment. Our work establishes electron-phonon renormalization as essential for determining topological phases and provides a broadly applicable approach for predicting topological materials at finite temperatures.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2508.17268v1</guid>
+      <category>cond-mat.mtrl-sci</category>
+      <category>cond-mat.str-el</category>
+      <pubDate>Tue, 26 Aug 2025 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>Wenjie Hu, Jiayi Gong, Yuhui Qiu, Lexian Yang, Jin-Jian Zhou, Yugui Yao</dc:creator>
     </item>
     <item>
       <title>Spectral Functions of an Extended Antiferromagnetic $S=1/2$ Heisenberg Model on the Triangular Lattice</title>
@@ -213,30 +253,6 @@ Abstract: We investigate the microscopic origin and spectral features of X-ray m
       <dc:creator>Norimasa Sasabe, Yuta Ishii, Yuichi Yamasaki</dc:creator>
     </item>
     <item>
-      <title>Zeeman Ladders in Frustrated XYZ Spin Chains</title>
-      <link>https://arxiv.org/abs/2508.17834</link>
-      <description>arXiv:2508.17834v1 Announce Type: new 
-Abstract: We investigate the nature of the excitations captured by the dynamical response of XYZ triangular spin-1/2 ladders. We complement experimental inelastic neutron scattering results on the compound $\text{Cs}_\text{2}\text{CoBr}_\text{4}$ with numerically exact simulations based on time-dependent matrix product state methods. Our results show that bound states of spinon excitations can arise in XYZ beyond the requirement of strong Ising anisotropies. We analyze the role of the frustrated triangular couplings on the excitations giving rise to the spin dynamical structure factor and show how the features of the bound states manifest themselves in the different polarization channels.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2508.17834v1</guid>
-      <category>cond-mat.str-el</category>
-      <pubDate>Tue, 26 Aug 2025 00:00:00 -0400</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
-      <dc:creator>Catalin-Mihai Halati, Viola Romerio, Paul Steffens, J. Ross Stewart, Andrey Zheludev, Thierry Giamarchi</dc:creator>
-    </item>
-    <item>
-      <title>Three-dimensional electronic domain correlations in 1T-TaS2</title>
-      <link>https://arxiv.org/abs/2508.17839</link>
-      <description>arXiv:2508.17839v1 Announce Type: new 
-Abstract: The interplay of nanoscale electronic domains underpins many emergent phenomena of quantum materials, including the competition between charge density waves (CDW) and superconductivity in high-Tc cuprates, or the storage of information in phase-change memory devices. Coupling to electronic domains provides an observable for pinpointing key interactions, e.g. affecting phase transitions. While the equilibrium phase diagram of 1T-TaS2 - characterized by unique transport properties and varying degrees of CDW commensurability - has been studied extensively, an understanding of how the electronic domains in the bulk behave across phase boundaries is lacking. We reveal the three-dimensional evolution of electronic domains in 1T-TaS2 using temperature-dependent X-ray diffraction and reciprocal space mapping, complemented by structure factor simulations based on the Hendricks-Teller method. With this methodology, we identify an increasing number of stacking faults near the phase transitions, and a growing fraction of dimerized layers in the commensurate phase upon cooling. We provide structural evidence that the CDW domains mediate the transport properties at phase boundaries, and that they also account for an anomalous intermediate electronic phase within the triclinic regime upon heating. As a paradigmatic material with potential in phase-change memory applications, our study underscores the importance of domain sizes and layer stacking in defining electronic behaviors of van der Waals materials.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2508.17839v1</guid>
-      <category>cond-mat.str-el</category>
-      <pubDate>Tue, 26 Aug 2025 00:00:00 -0400</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://creativecommons.org/licenses/by-nc-nd/4.0/</dc:rights>
-      <dc:creator>Corinna Burri, Henry G. Bell, Faris Dizdarevi\'c, Wenxiang Hu, Jan Ravnik, Jakub Vonka, Yasin Ekinci, Shih-Wen Huang, Simon Gerber, Nelson Hua</dc:creator>
-    </item>
-    <item>
       <title>Unveiling the landscape of Mottness and its proximity to superconductivity in 4Hb-TaS$_2$</title>
       <link>https://arxiv.org/abs/2508.17861</link>
       <description>arXiv:2508.17861v1 Announce Type: new 
@@ -247,6 +263,18 @@ Abstract: Mott physics is at the root of a plethora of many-body quantum phenome
       <arxiv:announce_type>new</arxiv:announce_type>
       <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
       <dc:creator>Ping Wu, Zhuying Wang, Yunmei Zhang, Ziyan Chen, Shuikang Yu, Wanru Ma, Min Shan, Zeyu Liang, Xiaoyu Wei, Junzhe Wang, Wanlin Cheng, Zuowei Liang, Xuechen Zhang, Tao Wu, Yoshinari Okada, Kun Jiang, Zhenyu Wang, Xianhui Chen</dc:creator>
+    </item>
+    <item>
+      <title>Antiferromagnetic Skyrmion Scattering Revealed by Direct Time-Resolved Imaging of Collective Dynamics</title>
+      <link>https://arxiv.org/abs/2508.17967</link>
+      <description>arXiv:2508.17967v1 Announce Type: new 
+Abstract: Scattering analysis offers a fundamental route to revealing particle interactions with direct implications for device technologies relying on ensembles of particles such as magnetic skyrmions. Here, we directly visualize, in real time, the nanosecond current-driven dynamics of an antiferromagnetic (AFM) skyrmion lattice using element-specific pump-probe X-ray microscopy. By tuning spin-orbit torque relative to local pinning potentials, we reveal two regimes: incoherent flow, where mobile skyrmions scatter from pinned ones, inducing recoil dynamics with 3-20 ns relaxation, and coherent flow, where the lattice translates uniformly. Quantification of the reproducible post-pulse relaxation trajectories via an inverse analyis method based on the Thiele equation yields the nanoscale AFM skyrmion-skyrmion scattering potential, which decays exponentially with a range of 30 nm, in full agreement with micromagnetic simulations. At higher current densities, the lattice exhibits coherent motion free from detectable Hall and inertial effects or dynamical deformation, enabling robust GHz operation. These findings establish a quantitative framework for AFM skyrmion interactions and demonstrate deterministic control of their collective dynamics over billions of cycles even in the incoherent flow regime, thereby paving the way for multi-skyrmion spintronic devices.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2508.17967v1</guid>
+      <category>cond-mat.mes-hall</category>
+      <pubDate>Tue, 26 Aug 2025 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Mona Bhukta, Takaaki Dohi, Kilian Leutner, Maria-Andromachi Syskaki, Fabian Kammerbauer, Duc Minh Tran, Sebastian Wintz, Markus Weigand, Robert Fr\"omter, Mathias Kl\"aui</dc:creator>
     </item>
     <item>
       <title>Dispersion interaction of two graphene sheets</title>
@@ -393,19 +421,6 @@ Abstract: We report a detailed inelastic neutron scattering (INS) and muon spin 
       <dc:creator>E. Kushwaha, S. Ghosh, J. Sannigrahi, G. Roy, M. Kumar, S. Cottrell, M. B. Stone, Y. Fang, D. T. Adroja, X. Ke, T. Basu</dc:creator>
     </item>
     <item>
-      <title>Bridging Grain Mapping and Dark Field X-ray Microscopy for Multiscale Diffraction Imaging</title>
-      <link>https://arxiv.org/abs/2508.17897</link>
-      <description>arXiv:2508.17897v1 Announce Type: cross 
-Abstract: Resolving how defects emerge and interact within the hierarchical structure of polycrystalline materials remains a core challenge in materials science. Grain-mapping methods such as three-dimensional X-ray diffraction (3DXRD) and diffraction contrast tomography (DCT) provide essential mesoscale context but lack the resolution to image lattice defects. Conversely, high-resolution methods like Dark Field X-ray Microscopy (DFXM) capture lattice distortions but not the surrounding microstructure. Here, we introduce a transferable framework that unifies these complementary approaches into a single, non-destructive workflow. Enabled by open-source software, the method translates grain orientation and position data into precise goniometer settings for DFXM imaging without dismounting or reorienting the sample. Applied to an iron polycrystal containing 1100 grains, DFXM motor positions were calculated for all grains within seconds, enabling on-the-fly targeting of specific grains. This allows reproducible zooming from the millimetre-scale aggregate to individual dislocations. We resolve three-dimensional misorientation fields across grain boundaries with 36 nm pixel size, directly capturing grain-grain interactions within their microstructural context. Finally, we show transferability from LabDCT to synchrotron and XFEL platforms, enabling new ways of studying defect interactions across scales.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2508.17897v1</guid>
-      <category>physics.app-ph</category>
-      <category>cond-mat.mtrl-sci</category>
-      <pubDate>Tue, 26 Aug 2025 00:00:00 -0400</pubDate>
-      <arxiv:announce_type>cross</arxiv:announce_type>
-      <dc:rights>http://creativecommons.org/licenses/by-nc-nd/4.0/</dc:rights>
-      <dc:creator>Aditya Shukla, Can Yildirim, James A. D. Ball, Carsten Detlefs, Adam A. W. Cretton, Marilyn Sarkis, Michela La Bella, Wolfgang Ludwig, Yubin Zhang, Nils Axel Henningsson</dc:creator>
-    </item>
-    <item>
       <title>Grain boundary-limited thermal transport in suspended thin graphite across an unexplored thickness regime</title>
       <link>https://arxiv.org/abs/2306.10704</link>
       <description>arXiv:2306.10704v2 Announce Type: replace 
@@ -496,6 +511,18 @@ Abstract: We study pseudogap behavior in a metal near an antiferromagnetic insta
       <arxiv:announce_type>replace</arxiv:announce_type>
       <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
       <dc:creator>Emmanouil K. Kokkinis, Andrey V. Chubukov</dc:creator>
+    </item>
+    <item>
+      <title>Observation of Topological Hall Effect in Synthetic Antiferromagnetic Skyrmion System</title>
+      <link>https://arxiv.org/abs/2505.15012</link>
+      <description>arXiv:2505.15012v2 Announce Type: replace 
+Abstract: Synthetic antiferromagnetic (SAF) skyrmions have emerged as promising candidates for next-generation high-speed and highly integrated spintronic devices, owing to their exceptional properties such as high driving velocity, nanoscale dimensions, and the absence of the skyrmion Hall effect. In this work, we report the observation of the topological Hall effect in both compensated and non-compensated synthetic antiferromagnetic skyrmion systems based on [Pt/Co/Ru]2 bilayers. The antiferromagnetic skyrmions are demonstrated to be robust in these synthetic antiferromagnets under zero-field. Our first principal calculations and micromagnetic simulations demonstrate that the formation of the antiferromagnetic skyrmions are due to nonuniformity of RKKY coupling associated with the proximity effect induced magnetic moments in the Pt and Ru layers. The skyrmions in the Pt and Ru layers adjacent to the Co layers lead to the observed topological Hall effect. This work not only provides insight into the effect of the magnetic proximity effect and RKKY coupling to the SAF skyrmions, but also an effective detection method for the SAF skyrmion systems, thereby laying a foundation for the practical application of antiferromagnetic skyrmions in spintronic devices.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2505.15012v2</guid>
+      <category>cond-mat.mes-hall</category>
+      <pubDate>Tue, 26 Aug 2025 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Xinbao Geng, Guanqi Li, Zhongxiang Zhang, Wenjing Hu, Wenjing Zhong, Xiaoming Xiong, Yongbing Xu, Zhendong Chen, Junlin Wang, Xiangyu Zheng, Jing Wu</dc:creator>
     </item>
     <item>
       <title>Non-ergodic one-magnon magnetization dynamics of the kagome lattice antiferromagnet</title>
