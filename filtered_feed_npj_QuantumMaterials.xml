@@ -18,6 +18,10 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00813-z"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00792-1"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00804-0"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00812-0"/>
@@ -30,10 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00810-2"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00806-y"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00809-9"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,36 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-025-00813-z">
+            <title>Spin-glass state in nickelate superconductors</title>
+            <link>https://www.nature.com/articles/s41535-025-00813-z</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 28 August 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00813-z"&gt;doi:10.1038/s41535-025-00813-z&lt;/a&gt;&lt;/p&gt;Spin-glass state in nickelate superconductors</content:encoded>
+            <dc:title>Spin-glass state in nickelate superconductors</dc:title>
+            <dc:creator>David R. Saykin</dc:creator><dc:creator>Martin Gonzalez</dc:creator><dc:creator>Jennifer Fowlie</dc:creator><dc:creator>Steven A. Kivelson</dc:creator><dc:creator>Harold Y. Hwang</dc:creator><dc:creator>Aharon Kapitulnik</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-025-00813-z</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2025-08-28; | doi:10.1038/s41535-025-00813-z</dc:source>
+            <dc:date>2025-08-28</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-025-00813-z</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-025-00813-z</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-025-00792-1">
+            <title>Origin and stability of generalized Wigner crystallinity in triangular moiré systems</title>
+            <link>https://www.nature.com/articles/s41535-025-00792-1</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 28 August 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00792-1"&gt;doi:10.1038/s41535-025-00792-1&lt;/a&gt;&lt;/p&gt;Origin and stability of generalized Wigner crystallinity in triangular moiré systems</content:encoded>
+            <dc:title>Origin and stability of generalized Wigner crystallinity in triangular moiré systems</dc:title>
+            <dc:creator>Aman Kumar</dc:creator><dc:creator>Cyprian Lewandowski</dc:creator><dc:creator>Hitesh J. Changlani</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-025-00792-1</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2025-08-28; | doi:10.1038/s41535-025-00792-1</dc:source>
+            <dc:date>2025-08-28</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-025-00792-1</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-025-00792-1</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-025-00804-0">
             <title>Gapped commensurate antiferromagnetic response in a strongly underdoped model cuprate superconductor</title>
@@ -131,36 +161,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-025-00810-2</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-025-00810-2</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-025-00806-y">
-            <title>Ramification of complex magnetism in Nd&lt;sub&gt;2&lt;/sub&gt;Ir&lt;sub&gt;2&lt;/sub&gt;O&lt;sub&gt;7&lt;/sub&gt; observed by Raman scattering spectroscopy</title>
-            <link>https://www.nature.com/articles/s41535-025-00806-y</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 13 August 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00806-y"&gt;doi:10.1038/s41535-025-00806-y&lt;/a&gt;&lt;/p&gt;Ramification of complex magnetism in Nd&lt;sub&gt;2&lt;/sub&gt;Ir&lt;sub&gt;2&lt;/sub&gt;O&lt;sub&gt;7&lt;/sub&gt; observed by Raman scattering spectroscopy</content:encoded>
-            <dc:title>Ramification of complex magnetism in Nd&lt;sub&gt;2&lt;/sub&gt;Ir&lt;sub&gt;2&lt;/sub&gt;O&lt;sub&gt;7&lt;/sub&gt; observed by Raman scattering spectroscopy</dc:title>
-            <dc:creator>Yuanyuan Xu</dc:creator><dc:creator>Yang Yang</dc:creator><dc:creator>Jérémie Teyssier</dc:creator><dc:creator>Takumi Ohtsuki</dc:creator><dc:creator>Yang Qiu</dc:creator><dc:creator>Satoru Nakatsuji</dc:creator><dc:creator>Dirk van der Marel</dc:creator><dc:creator>Natalia B. Perkins</dc:creator><dc:creator>Natalia Drichko</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-025-00806-y</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2025-08-13; | doi:10.1038/s41535-025-00806-y</dc:source>
-            <dc:date>2025-08-13</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-025-00806-y</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-025-00806-y</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-025-00809-9">
-            <title>Interaction of magnetic fields with spinons in a fractionalized state</title>
-            <link>https://www.nature.com/articles/s41535-025-00809-9</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 08 August 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00809-9"&gt;doi:10.1038/s41535-025-00809-9&lt;/a&gt;&lt;/p&gt;Interaction of magnetic fields with spinons in a fractionalized state</content:encoded>
-            <dc:title>Interaction of magnetic fields with spinons in a fractionalized state</dc:title>
-            <dc:creator>Yu Zhang</dc:creator><dc:creator>Hengdi Zhao</dc:creator><dc:creator>Tristan R. Cao</dc:creator><dc:creator>Rahul Nandkishore</dc:creator><dc:creator>Pedro Schlottmann</dc:creator><dc:creator>Lance De Long</dc:creator><dc:creator>Gang Cao</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-025-00809-9</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2025-08-08; | doi:10.1038/s41535-025-00809-9</dc:source>
-            <dc:date>2025-08-08</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-025-00809-9</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-025-00809-9</prism:url>
         </item>
     
 </rdf:RDF>
