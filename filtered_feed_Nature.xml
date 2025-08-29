@@ -28,9 +28,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09446-5"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-02638-z"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nature/rss.png">
@@ -114,19 +112,4 @@
             <prism:url>https://www.nature.com/articles/s41586-025-09446-5</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/d41586-025-02638-z">
-            <title>Einstein hated entanglement — and five other quantum myths</title>
-            <link>https://www.nature.com/articles/d41586-025-02638-z</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 26 August 2025; &lt;a href="https://www.nature.com/articles/d41586-025-02638-z"&gt;doi:10.1038/d41586-025-02638-z&lt;/a&gt;&lt;/p&gt;There’s nothing intuitive about quantum theory — six physicists debunk some of the most common misconceptions.</content:encoded>
-            <dc:title>Einstein hated entanglement — and five other quantum myths</dc:title>
-            <dc:creator>Maria Violaris</dc:creator><dc:creator>Estelle Inack</dc:creator><dc:creator>Sabine Hossenfelder</dc:creator><dc:creator>Norma G. Sanchez</dc:creator><dc:creator>Shweta Agrawal</dc:creator><dc:creator>Emily Adlam</dc:creator>
-            <dc:identifier>doi:10.1038/d41586-025-02638-z</dc:identifier>
-            <dc:source>Nature, Published online: 2025-08-26; | doi:10.1038/d41586-025-02638-z</dc:source>
-            <dc:date>2025-08-26</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/d41586-025-02638-z</prism:doi>
-            <prism:url>https://www.nature.com/articles/d41586-025-02638-z</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
