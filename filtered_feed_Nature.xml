@@ -28,6 +28,8 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09446-5"/>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-02523-9"/>
+                
                     </rdf:Seq>
         </items>
     </channel>
@@ -110,6 +112,21 @@
             <prism:publicationName>Nature</prism:publicationName>
             <prism:doi>10.1038/s41586-025-09446-5</prism:doi>
             <prism:url>https://www.nature.com/articles/s41586-025-09446-5</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/d41586-025-02523-9">
+            <title>Machine-learning model generates images using light</title>
+            <link>https://www.nature.com/articles/d41586-025-02523-9</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 27 August 2025; &lt;a href="https://www.nature.com/articles/d41586-025-02523-9"&gt;doi:10.1038/d41586-025-02523-9&lt;/a&gt;&lt;/p&gt;An optical system that induces random fluctuations in a laser beam could be faster and more efficient at generating images than conventional computers are.</content:encoded>
+            <dc:title>Machine-learning model generates images using light</dc:title>
+            <dc:creator>Daniel Brunner</dc:creator>
+            <dc:identifier>doi:10.1038/d41586-025-02523-9</dc:identifier>
+            <dc:source>Nature, Published online: 2025-08-27; | doi:10.1038/d41586-025-02523-9</dc:source>
+            <dc:date>2025-08-27</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/d41586-025-02523-9</prism:doi>
+            <prism:url>https://www.nature.com/articles/d41586-025-02523-9</prism:url>
         </item>
     
         </rdf:RDF>
