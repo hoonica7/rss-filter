@@ -1,4 +1,4 @@
-name: Filter RSS Feed everyday + Email on Saturday + Email when error
+name: Filter RSS Feed everyday + Email everyday morning + Email when error
 
 on:
   schedule:
@@ -82,13 +82,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: filtered-files
-      
-      # 이메일 발송 여부를 결정하는 스텝 (성공 시)
-      # Step to check if email should be sent (on success only)
-      - name: Check if today is Saturday
-        if: success()
-        id: check_day
-        run: echo "is_saturday=$(date +%u)" >> $GITHUB_OUTPUT
       
       - name: Send email with results
         # 매일 아침 실행때마다 이메일을 발송합니다.
