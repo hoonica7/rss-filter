@@ -93,14 +93,14 @@ jobs:
       - name: Send email with results
         # 오늘이 토요일인 경우(date +%u == 6)에만 이메일을 발송합니다.
         # Send email only if today is Saturday (date +%u == 6)
-        if: success() && steps.check_day.outputs.is_saturday == '6'
+        if: success() && github.event.schedule == '17 13 * * *'
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
           server_port: 465
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: '[NatSci RSS] New Paper Updates'
+          subject: '[hoonica RSS] New Paper Updates'
           to: ${{ secrets.MAIL_TO }}
           from: ${{ secrets.MAIL_FROM }}
           body: file://filtered_titles.txt
