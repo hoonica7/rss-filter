@@ -82,11 +82,15 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: filtered-files
-      
+
+      - name: Get UTC hour
+        id: get_hour
+        run: echo "hour=$(date -u +%H)" >> $GITHUB_OUTPUT
+
       - name: Send email with results
         # 매일 아침 실행때마다 이메일을 발송합니다.
         # Send email everyday morning.
-        if: success() && github.event.schedule == '17 13 * * *'
+        if: success() && steps.get_hour.outputs.hour > '10'
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
