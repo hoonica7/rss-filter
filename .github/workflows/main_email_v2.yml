@@ -91,8 +91,8 @@ jobs:
         run: echo "is_saturday=$(date +%u)" >> $GITHUB_OUTPUT
       
       - name: Send email with results
-        # 오늘이 토요일인 경우(date +%u == 6)에만 이메일을 발송합니다.
-        # Send email only if today is Saturday (date +%u == 6)
+        # 매일 아침 실행때마다 이메일을 발송합니다.
+        # Send email everyday morning.
         if: success() && github.event.schedule == '17 13 * * *'
         uses: dawidd6/action-send-mail@v3
         with:
