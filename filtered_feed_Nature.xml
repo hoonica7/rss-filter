@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09474-1"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-02786-2"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-02787-1"/>
@@ -25,18 +27,6 @@
                     <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-02756-8"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-02755-9"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09451-8"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09457-2"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09476-z"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09455-4"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09458-1"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09446-5"/>
                 
                     </rdf:Seq>
         </items>
@@ -46,6 +36,21 @@
         <url>https://www.nature.com/uploads/product/nature/rss.png</url>
         <link>http://feeds.nature.com/nature/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41586-025-09474-1">
+            <title>3D-printed micro ion trap technology for quantum information applications</title>
+            <link>https://www.nature.com/articles/s41586-025-09474-1</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 03 September 2025; &lt;a href="https://www.nature.com/articles/s41586-025-09474-1"&gt;doi:10.1038/s41586-025-09474-1&lt;/a&gt;&lt;/p&gt;High-resolution 3D printing technology making use of two-photon polymerization instead of traditional machining is described, allowing low-cost and scalable production of large arrays of high-quality 3D Paul traps.</content:encoded>
+            <dc:title>3D-printed micro ion trap technology for quantum information applications</dc:title>
+            <dc:creator>Shuqi Xu</dc:creator><dc:creator>Xiaoxing Xia</dc:creator><dc:creator>Qian Yu</dc:creator><dc:creator>Abhinav Parakh</dc:creator><dc:creator>Sumanta Khan</dc:creator><dc:creator>Eli Megidish</dc:creator><dc:creator>Bingran You</dc:creator><dc:creator>Boerge Hemmerling</dc:creator><dc:creator>Andrew Jayich</dc:creator><dc:creator>Kristin Beck</dc:creator><dc:creator>Juergen Biener</dc:creator><dc:creator>Hartmut Häffner</dc:creator>
+            <dc:identifier>doi:10.1038/s41586-025-09474-1</dc:identifier>
+            <dc:source>Nature, Published online: 2025-09-03; | doi:10.1038/s41586-025-09474-1</dc:source>
+            <dc:date>2025-09-03</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/s41586-025-09474-1</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41586-025-09474-1</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/d41586-025-02786-2">
             <title>Liquid-crystal specs refocus with the push of a button</title>
@@ -105,96 +110,6 @@
             <prism:publicationName>Nature</prism:publicationName>
             <prism:doi>10.1038/d41586-025-02755-9</prism:doi>
             <prism:url>https://www.nature.com/articles/d41586-025-02755-9</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41586-025-09451-8">
-            <title>Ultrabroadband on-chip photonics for full-spectrum wireless communications</title>
-            <link>https://www.nature.com/articles/s41586-025-09451-8</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 27 August 2025; &lt;a href="https://www.nature.com/articles/s41586-025-09451-8"&gt;doi:10.1038/s41586-025-09451-8&lt;/a&gt;&lt;/p&gt;Adaptive wireless communication over an unprecedented frequency range spanning over 100 GHz can be achieved by a thin-film lithium niobate photonic wireless system, which can process a large flux of information at high speed.</content:encoded>
-            <dc:title>Ultrabroadband on-chip photonics for full-spectrum wireless communications</dc:title>
-            <dc:creator>Zihan Tao</dc:creator><dc:creator>Haoyu Wang</dc:creator><dc:creator>Hanke Feng</dc:creator><dc:creator>Yijun Guo</dc:creator><dc:creator>Bitao Shen</dc:creator><dc:creator>Dan Sun</dc:creator><dc:creator>Yuansheng Tao</dc:creator><dc:creator>Changhao Han</dc:creator><dc:creator>Yandong He</dc:creator><dc:creator>John E. Bowers</dc:creator><dc:creator>Haowen Shu</dc:creator><dc:creator>Cheng Wang</dc:creator><dc:creator>Xingjun Wang</dc:creator>
-            <dc:identifier>doi:10.1038/s41586-025-09451-8</dc:identifier>
-            <dc:source>Nature, Published online: 2025-08-27; | doi:10.1038/s41586-025-09451-8</dc:source>
-            <dc:date>2025-08-27</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/s41586-025-09451-8</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41586-025-09451-8</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41586-025-09457-2">
-            <title>Electrically driven lasing from a dual-cavity perovskite device</title>
-            <link>https://www.nature.com/articles/s41586-025-09457-2</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 27 August 2025; &lt;a href="https://www.nature.com/articles/s41586-025-09457-2"&gt;doi:10.1038/s41586-025-09457-2&lt;/a&gt;&lt;/p&gt;An electrically driven perovskite laser is constructed by vertically integrating a low-threshold single-crystal perovskite microcavity sub-unit with a high-power microcavity perovskite LED sub-unit.</content:encoded>
-            <dc:title>Electrically driven lasing from a dual-cavity perovskite device</dc:title>
-            <dc:creator>Chen Zou</dc:creator><dc:creator>Zhixiang Ren</dc:creator><dc:creator>Kangshuo Hui</dc:creator><dc:creator>Zixiang Wang</dc:creator><dc:creator>Yangning Fan</dc:creator><dc:creator>Yichen Yang</dc:creator><dc:creator>Bo Yuan</dc:creator><dc:creator>Baodan Zhao</dc:creator><dc:creator>Dawei Di</dc:creator>
-            <dc:identifier>doi:10.1038/s41586-025-09457-2</dc:identifier>
-            <dc:source>Nature, Published online: 2025-08-27; | doi:10.1038/s41586-025-09457-2</dc:source>
-            <dc:date>2025-08-27</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/s41586-025-09457-2</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41586-025-09457-2</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41586-025-09476-z">
-            <title>Topological prethermal strong zero modes on superconducting processors</title>
-            <link>https://www.nature.com/articles/s41586-025-09476-z</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 27 August 2025; &lt;a href="https://www.nature.com/articles/s41586-025-09476-z"&gt;doi:10.1038/s41586-025-09476-z&lt;/a&gt;&lt;/p&gt;Stable and robust topological edge modes are observed at finite temperatures in an array of 100 programmable superconducting qubits because of emergent symmetries present in the prethermal regime of this system.</content:encoded>
-            <dc:title>Topological prethermal strong zero modes on superconducting processors</dc:title>
-            <dc:creator>Feitong Jin</dc:creator><dc:creator>Si Jiang</dc:creator><dc:creator>Xuhao Zhu</dc:creator><dc:creator>Zehang Bao</dc:creator><dc:creator>Fanhao Shen</dc:creator><dc:creator>Ke Wang</dc:creator><dc:creator>Zitian Zhu</dc:creator><dc:creator>Shibo Xu</dc:creator><dc:creator>Zixuan Song</dc:creator><dc:creator>Jiachen Chen</dc:creator><dc:creator>Ziqi Tan</dc:creator><dc:creator>Yaozu Wu</dc:creator><dc:creator>Chuanyu Zhang</dc:creator><dc:creator>Yu Gao</dc:creator><dc:creator>Ning Wang</dc:creator><dc:creator>Yiren Zou</dc:creator><dc:creator>Aosai Zhang</dc:creator><dc:creator>Tingting Li</dc:creator><dc:creator>Jiarun Zhong</dc:creator><dc:creator>Zhengyi Cui</dc:creator><dc:creator>Yihang Han</dc:creator><dc:creator>Yiyang He</dc:creator><dc:creator>Han Wang</dc:creator><dc:creator>Jia-Nan Yang</dc:creator><dc:creator>Yanzhe Wang</dc:creator><dc:creator>Jiayuan Shen</dc:creator><dc:creator>Gongyu Liu</dc:creator><dc:creator>Jinfeng Deng</dc:creator><dc:creator>Hang Dong</dc:creator><dc:creator>Pengfei Zhang</dc:creator><dc:creator>Weikang Li</dc:creator><dc:creator>Dong Yuan</dc:creator><dc:creator>Zhide Lu</dc:creator><dc:creator>Zheng-Zhi Sun</dc:creator><dc:creator>Hekang Li</dc:creator><dc:creator>Junxiang Zhang</dc:creator><dc:creator>Chao Song</dc:creator><dc:creator>Zhen Wang</dc:creator><dc:creator>Qiujiang Guo</dc:creator><dc:creator>Francisco Machado</dc:creator><dc:creator>Jack Kemp</dc:creator><dc:creator>Thomas Iadecola</dc:creator><dc:creator>Norman Y. Yao</dc:creator><dc:creator>H. Wang</dc:creator><dc:creator>Dong-Ling Deng</dc:creator>
-            <dc:identifier>doi:10.1038/s41586-025-09476-z</dc:identifier>
-            <dc:source>Nature, Published online: 2025-08-27; | doi:10.1038/s41586-025-09476-z</dc:source>
-            <dc:date>2025-08-27</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/s41586-025-09476-z</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41586-025-09476-z</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41586-025-09455-4">
-            <title>Attosecond control and measurement of chiral photoionization dynamics</title>
-            <link>https://www.nature.com/articles/s41586-025-09455-4</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 27 August 2025; &lt;a href="https://www.nature.com/articles/s41586-025-09455-4"&gt;doi:10.1038/s41586-025-09455-4&lt;/a&gt;&lt;/p&gt;By introducing chiroptical spectroscopy with attosecond pulses, attosecond coherent control over photoelectron circular dichroism is demonstrated and measurements of chiral asymmetries in the forward–backward and angle-resolved photoionization delays of chiral molecules are reported.</content:encoded>
-            <dc:title>Attosecond control and measurement of chiral photoionization dynamics</dc:title>
-            <dc:creator>Meng Han</dc:creator><dc:creator>Jia-Bao Ji</dc:creator><dc:creator>Alexander Blech</dc:creator><dc:creator>R. Esteban Goetz</dc:creator><dc:creator>Corbin Allison</dc:creator><dc:creator>Loren Greenman</dc:creator><dc:creator>Christiane P. Koch</dc:creator><dc:creator>Hans Jakob Wörner</dc:creator>
-            <dc:identifier>doi:10.1038/s41586-025-09455-4</dc:identifier>
-            <dc:source>Nature, Published online: 2025-08-27; | doi:10.1038/s41586-025-09455-4</dc:source>
-            <dc:date>2025-08-27</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/s41586-025-09455-4</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41586-025-09455-4</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41586-025-09458-1">
-            <title>Dual-scale chemical ordering for cryogenic properties in CoNiV-based alloys</title>
-            <link>https://www.nature.com/articles/s41586-025-09458-1</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 27 August 2025; &lt;a href="https://www.nature.com/articles/s41586-025-09458-1"&gt;doi:10.1038/s41586-025-09458-1&lt;/a&gt;&lt;/p&gt;Dual-scale chemical ordering in CoNiV-based alloys improves the synergy of strength and ductility at cryogenic temperatures, providing an approach for obtaining high-performance metallic materials for cryogenic applications.</content:encoded>
-            <dc:title>Dual-scale chemical ordering for cryogenic properties in CoNiV-based alloys</dc:title>
-            <dc:creator>Tiwen Lu</dc:creator><dc:creator>Binhan Sun</dc:creator><dc:creator>Yue Li</dc:creator><dc:creator>Sheng Dai</dc:creator><dc:creator>Ning Yao</dc:creator><dc:creator>Wenbo Li</dc:creator><dc:creator>Xizhen Dong</dc:creator><dc:creator>Xiyu Chen</dc:creator><dc:creator>Jiacheng Niu</dc:creator><dc:creator>Fan Ye</dc:creator><dc:creator>Alisson Kwiatkowski da Silva</dc:creator><dc:creator>Shuya Zhu</dc:creator><dc:creator>Yu Xie</dc:creator><dc:creator>Xiaofeng Yang</dc:creator><dc:creator>Sihao Deng</dc:creator><dc:creator>Jianping Tan</dc:creator><dc:creator>Zhiming Li</dc:creator><dc:creator>Dirk Ponge</dc:creator><dc:creator>Lunhua He</dc:creator><dc:creator>Xian-Cheng Zhang</dc:creator><dc:creator>Dierk Raabe</dc:creator><dc:creator>Shan-Tung Tu</dc:creator>
-            <dc:identifier>doi:10.1038/s41586-025-09458-1</dc:identifier>
-            <dc:source>Nature, Published online: 2025-08-27; | doi:10.1038/s41586-025-09458-1</dc:source>
-            <dc:date>2025-08-27</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/s41586-025-09458-1</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41586-025-09458-1</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41586-025-09446-5">
-            <title>Optical generative models</title>
-            <link>https://www.nature.com/articles/s41586-025-09446-5</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 27 August 2025; &lt;a href="https://www.nature.com/articles/s41586-025-09446-5"&gt;doi:10.1038/s41586-025-09446-5&lt;/a&gt;&lt;/p&gt;Optical generative models are demonstrated for the rapid and power-efficient creation of never-seen-before images of handwritten digits, fashion products, butterflies, human faces and Van Gogh-style artworks.</content:encoded>
-            <dc:title>Optical generative models</dc:title>
-            <dc:creator>Shiqi Chen</dc:creator><dc:creator>Yuhang Li</dc:creator><dc:creator>Yuntian Wang</dc:creator><dc:creator>Hanlong Chen</dc:creator><dc:creator>Aydogan Ozcan</dc:creator>
-            <dc:identifier>doi:10.1038/s41586-025-09446-5</dc:identifier>
-            <dc:source>Nature, Published online: 2025-08-27; | doi:10.1038/s41586-025-09446-5</dc:source>
-            <dc:date>2025-08-27</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/s41586-025-09446-5</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41586-025-09446-5</prism:url>
         </item>
     
         </rdf:RDF>
