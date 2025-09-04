@@ -7,26 +7,13 @@
     <atom:link href="http://rss.arxiv.org/rss/cond-mat" rel="self" type="application/rss+xml"/>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 Sep 2025 04:00:11 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 04 Sep 2025 01:29:29 +0000</lastBuildDate>
     <managingEditor>rss-help@arxiv.org</managingEditor>
     <pubDate>Wed, 03 Sep 2025 00:00:00 -0400</pubDate>
     <skipDays>
       <day>Sunday</day>
       <day>Saturday</day>
     </skipDays>
-    <item>
-      <title>Majorana edge modes in number-conserving models with long-range interactions</title>
-      <link>https://arxiv.org/abs/2509.00158</link>
-      <description>arXiv:2509.00158v1 Announce Type: new 
-Abstract: Topological superconductors are believed to host exotic quasiparticle excitations known as Majorana zero-modes, with much of the evidence based on BCS mean-field theory. The direct application of mean-field arguments is tenuous in finite, isolated systems relevant in some experiments. Here, we numerically study fermion number-conserving models with long-range interactions, which under periodic boundary conditions exhibit robust topological and non-topological superconductivity, tuned by the strength of interaction [1]. We find evidence that, on the topological side, Majorana edge modes appear in open chains, manifesting as the vanishing of the energy splitting between odd- and even-parity ground states with increasing system size. Additionally, off-diagonal two-point correlation functions show nonlocal, parity-dependent edge effects consistent with Majorana phenomenology. We develop a correlation-based method revealing the spatial structure of Majorana modes in this fully interacting many-body setting.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2509.00158v1</guid>
-      <category>cond-mat.str-el</category>
-      <category>cond-mat.supr-con</category>
-      <pubDate>Wed, 03 Sep 2025 00:00:00 -0400</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
-      <dc:creator>Jaden Thomas-Markarian, Kartiek Agarwal, Ivar Martin</dc:creator>
-    </item>
     <item>
       <title>Nonadiabatic Wave-Packet Dynamics: Nonadiabatic Metric, Quantum Geometry, and Analogue Gravity</title>
       <link>https://arxiv.org/abs/2509.00166</link>
@@ -88,6 +75,20 @@ Abstract: The strategy of breaking AFM ground state of alpha-Fe2O3 by doping non
       <arxiv:announce_type>new</arxiv:announce_type>
       <dc:rights>http://creativecommons.org/licenses/by-nc-sa/4.0/</dc:rights>
       <dc:creator>R. N. Bhowmik, Bipin Kumar Parida, Amit Kumar, P. D. Babu, S. M. Yusuf</dc:creator>
+    </item>
+    <item>
+      <title>Discovery of nodal-line superconductivity in chiral crystals</title>
+      <link>https://arxiv.org/abs/2509.00416</link>
+      <description>arXiv:2509.00416v1 Announce Type: new 
+Abstract: Chiral crystals, whose key feature is the structural handedness, host exotic quantum phenomena driven by the interplay of band topology, spin-orbit coupling (SOC), and electronic correlations. Due to the limited availability of suitable chiral-crystal materials, their unconventional superconductivity (SC) remains largely unexplored. Here, we report the discovery of unconventional SC in the La(Rh,Ir)Si family of materials by combining muon-spin spectroscopy, band-structure calculations, and perturbation theory. This family, characterized by a double-helix chiral structure, hosts exotic multifold fermions that are absent in other topological chiral crystals. While LaRhSi behaves as a fully-gapped superconductor, the substitution of 4$d$-Rh by 5$d$-Ir significantly enhances the SOC and leads to the emergence of topological nodal-line SC in LaIrSi. The developed model shows that the nodal-line SC arises from an isotropic SOC with a specific strength. Such an exotic mechanism expands our conventional understanding of material candidates for unconventional SC, which typically rely on a significantly anisotropic SOC to promote the triplet pairing. Our work establishes a new type of phase diagram, which provides a comprehensive roadmap for identifying and engineering unconventional SC in chiral crystals. Furthermore, it calls for renewed investigations of unconventional SC in other widely studied superconductors with a chiral structure.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2509.00416v1</guid>
+      <category>cond-mat.supr-con</category>
+      <category>cond-mat.str-el</category>
+      <pubDate>Wed, 03 Sep 2025 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <arxiv:DOI>10.1002/adma.202511385</arxiv:DOI>
+      <dc:creator>Tian Shang, Jianzhou Zhao, Lun-Hui Hu, Weikang Wu, Keqi Xia, Mukkattu O. Ajeesh, Michael Nicklas, Yang Xu, Qingfeng Zhan, Dariusz J. Gawryluk, Ming Shi, Toni Shiroka</dc:creator>
     </item>
     <item>
       <title>Shot noise as a probe for Andreev reflection in graphene-based heterojunctions</title>
@@ -224,6 +225,7 @@ Abstract: Over the last decade, researchers have been working to improve a cruci
 Abstract: The bulk photovoltaic effect (BPVE), a manifestation of broken centrosymmetry, has attracted interest as a probe of the symmetry and quantum geometry of materials, and for use in novel optoelectronic devices. Despite its bulk nature, the BPVE is typically measured with interfaces and metal contacts, raising concerns as to whether the observed signals are genuinely of bulk origin. Here, we use a contactless pump-probe microscopy method to observe the space- and time-resolved dynamics of photoexcited carriers in single-crystal, monodomain $BiFeO_{3}$. We observe asymmetric transport of carriers along the polar axis, confirming the intrinsic bulk and symmetry-driven nature of BPVE. This asymmetric transport persists for several nanoseconds after photoexcitation, which cannot be explained by the shift or phonon ballistic current BPVE mechanisms. Monte Carlo simulations show that asymmetric momentum scattering by defects under non-equilibrium conditions explains the long-lived carrier drift, while first principles calculations confirm that oxygen vacancies have an asymmetric electronic state that can cause such asymmetric scattering. Our findings highlight the critical role of defects in long-lived photoresponses.</description>
       <guid isPermaLink="false">oai:arXiv.org:2509.01729v1</guid>
       <category>cond-mat.mtrl-sci</category>
+      <category>cond-mat.mes-hall</category>
       <category>physics.app-ph</category>
       <pubDate>Wed, 03 Sep 2025 00:00:00 -0400</pubDate>
       <arxiv:announce_type>new</arxiv:announce_type>
@@ -376,14 +378,14 @@ Abstract: Covellite (CuS) is the first known natural mineral superconductor. Des
     <item>
       <title>Enhanced Terahertz Thermoelectricity via Engineered van Hove Singularities and Nernst Effect in Moir\'e Superlattices</title>
       <link>https://arxiv.org/abs/2509.02548</link>
-      <description>arXiv:2509.02548v1 Announce Type: new 
+      <description>arXiv:2509.02548v2 Announce Type: new 
 Abstract: Thermoelectric materials, long explored for energy harvesting and thermal sensing, convert heat directly into electrical signals. Extending their application to the terahertz (THz) frequency range opens opportunities for low-noise, bias-free THz detection, yet conventional thermoelectrics lack the sensitivity required for practical devices. Thermoelectric coefficients can be strongly enhanced near van Hove singularities (VHS), though these are usually difficult to access in conventional materials. Here we show that moir\'e band engineering unlocks these singularities for THz optoelectronics. Using 2D moir\'e structures as a model system, we observe strong enhancement of the THz photothermoelectric response in monolayer and bilayer graphene superlattices when the Fermi level is tuned to band singularities. Applying a relatively small magnetic field further boosts the response through the THz-driven Nernst effect, a transverse thermoelectric current driven by the THz-induced temperature gradient. Our results establish moir\'e superlattices as a versatile platform for THz thermoelectricity and highlight engineered band structures as a route to high-performance THz optoelectronic devices.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2509.02548v1</guid>
+      <guid isPermaLink="false">oai:arXiv.org:2509.02548v2</guid>
       <category>cond-mat.mes-hall</category>
       <category>cond-mat.other</category>
       <pubDate>Wed, 03 Sep 2025 00:00:00 -0400</pubDate>
       <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
       <dc:creator>L. Elesin, A. L. Shilov, S. Jana, I. Mazurenko, P. A. Pantaleon, M. Kashchenko, N. Krivovichev, V. Dremov, I. Gayduchenko, G. Goltsman, T. Taniguchi, K. Watanabe, Y. Wang, E. I. Titova, D. A. Svintsov, K. S. Novoselov, D. A. Bandurin</dc:creator>
     </item>
     <item>
