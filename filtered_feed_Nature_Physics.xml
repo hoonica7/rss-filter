@@ -18,13 +18,13 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03023-3"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03029-x"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03008-2"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02995-6"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02983-w"/>
                 
             </rdf:Seq>
         </items>
@@ -34,6 +34,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03023-3">
+            <title>Pressure induced superconductivity in hybrid Ruddlesden‒Popper La&lt;sub&gt;5&lt;/sub&gt;Ni&lt;sub&gt;3&lt;/sub&gt;O&lt;sub&gt;11&lt;/sub&gt; single crystals</title>
+            <link>https://www.nature.com/articles/s41567-025-03023-3</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 05 September 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03023-3"&gt;doi:10.1038/s41567-025-03023-3&lt;/a&gt;&lt;/p&gt;La5Ni3O11, a hybrid Ruddlesden–Popper nickelate, exhibits pressure-induced superconductivity with a high superconducting volume fraction. It offers insights into the interplay of structure and electronic order in nickelate superconductors.</content:encoded>
+            <dc:title>Pressure induced superconductivity in hybrid Ruddlesden‒Popper La&lt;sub&gt;5&lt;/sub&gt;Ni&lt;sub&gt;3&lt;/sub&gt;O&lt;sub&gt;11&lt;/sub&gt; single crystals</dc:title>
+            <dc:creator>Mengzhu Shi</dc:creator><dc:creator>Di Peng</dc:creator><dc:creator>Kaibao Fan</dc:creator><dc:creator>Zhenfang Xing</dc:creator><dc:creator>Shaohua Yang</dc:creator><dc:creator>Yuzhu Wang</dc:creator><dc:creator>Houpu Li</dc:creator><dc:creator>Rongqi Wu</dc:creator><dc:creator>Mei Du</dc:creator><dc:creator>Binghui Ge</dc:creator><dc:creator>Zhidan Zeng</dc:creator><dc:creator>Qiaoshi Zeng</dc:creator><dc:creator>Jianjun Ying</dc:creator><dc:creator>Tao Wu</dc:creator><dc:creator>Xianhui Chen</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03023-3</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-09-05; | doi:10.1038/s41567-025-03023-3</dc:source>
+            <dc:date>2025-09-05</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03023-3</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03023-3</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03029-x">
             <title>The origin of the axial Higgs is a hidden ferroaxial electronic density wave</title>
@@ -78,21 +93,6 @@
             <prism:publicationName>Nature Physics</prism:publicationName>
             <prism:doi>10.1038/s41567-025-02995-6</prism:doi>
             <prism:url>https://www.nature.com/articles/s41567-025-02995-6</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-02983-w">
-            <title>Tubulin isotypes of &lt;i&gt;C. elegans&lt;/i&gt; harness the mechanosensitivity of the lattice for microtubule luminal accessibility</title>
-            <link>https://www.nature.com/articles/s41567-025-02983-w</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 26 August 2025; &lt;a href="https://www.nature.com/articles/s41567-025-02983-w"&gt;doi:10.1038/s41567-025-02983-w&lt;/a&gt;&lt;/p&gt;Proteins interact with both the exterior and interior of microtubules. Here the relationship between microtubule building blocks and the accessibility of the microtubule interior to proteins is clarified.</content:encoded>
-            <dc:title>Tubulin isotypes of &lt;i&gt;C. elegans&lt;/i&gt; harness the mechanosensitivity of the lattice for microtubule luminal accessibility</dc:title>
-            <dc:creator>Yucheng Ye</dc:creator><dc:creator>Zheng Hao</dc:creator><dc:creator>Jingyi Luo</dc:creator><dc:creator>Wai Hei Lam</dc:creator><dc:creator>Zheng Liu</dc:creator><dc:creator>Xiang David Li</dc:creator><dc:creator>Yuanliang Zhai</dc:creator><dc:creator>Yuan Lin</dc:creator><dc:creator>Shih-Chieh Ti</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-02983-w</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-08-26; | doi:10.1038/s41567-025-02983-w</dc:source>
-            <dc:date>2025-08-26</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-02983-w</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-02983-w</prism:url>
         </item>
     
 </rdf:RDF>
