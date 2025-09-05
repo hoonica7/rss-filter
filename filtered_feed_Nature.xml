@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-02839-6"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09474-1"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-02786-2"/>
@@ -36,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/nature/rss.png</url>
         <link>http://feeds.nature.com/nature/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/d41586-025-02839-6">
+            <title>Chemists cram record nine metals into trendy 2D material</title>
+            <link>https://www.nature.com/articles/d41586-025-02839-6</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 04 September 2025; &lt;a href="https://www.nature.com/articles/d41586-025-02839-6"&gt;doi:10.1038/d41586-025-02839-6&lt;/a&gt;&lt;/p&gt;MXenes, distant cousins of graphene, reach new heights of complexity — opening the way for use in advanced batteries and more.</content:encoded>
+            <dc:title>Chemists cram record nine metals into trendy 2D material</dc:title>
+            <dc:creator>Katherine Bourzac</dc:creator>
+            <dc:identifier>doi:10.1038/d41586-025-02839-6</dc:identifier>
+            <dc:source>Nature, Published online: 2025-09-04; | doi:10.1038/d41586-025-02839-6</dc:source>
+            <dc:date>2025-09-04</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/d41586-025-02839-6</prism:doi>
+            <prism:url>https://www.nature.com/articles/d41586-025-02839-6</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41586-025-09474-1">
             <title>3D-printed micro ion trap technology for quantum information applications</title>

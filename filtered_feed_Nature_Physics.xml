@@ -18,13 +18,13 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03029-x"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03008-2"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02995-6"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-02983-w"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03005-5"/>
                 
             </rdf:Seq>
         </items>
@@ -34,6 +34,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03029-x">
+            <title>The origin of the axial Higgs is a hidden ferroaxial electronic density wave</title>
+            <link>https://www.nature.com/articles/s41567-025-03029-x</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 04 September 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03029-x"&gt;doi:10.1038/s41567-025-03029-x&lt;/a&gt;&lt;/p&gt;Experiments that probe the spontaneously broken symmetries in rare-earth tritellurides have revealed a previously hidden ferroaxial density wave arising from intertwined charge and orbital order, which is observed to produce the axial Higgs mode.</content:encoded>
+            <dc:title>The origin of the axial Higgs is a hidden ferroaxial electronic density wave</dc:title>
+            
+            <dc:identifier>doi:10.1038/s41567-025-03029-x</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-09-04; | doi:10.1038/s41567-025-03029-x</dc:source>
+            <dc:date>2025-09-04</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03029-x</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03029-x</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03008-2">
             <title>Ferroaxial density wave from intertwined charge and orbital order in rare-earth tritellurides</title>
@@ -78,21 +93,6 @@
             <prism:publicationName>Nature Physics</prism:publicationName>
             <prism:doi>10.1038/s41567-025-02983-w</prism:doi>
             <prism:url>https://www.nature.com/articles/s41567-025-02983-w</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03005-5">
-            <title>Realization of an untrusted intermediate relay architecture using a quantum dot single-photon source</title>
-            <link>https://www.nature.com/articles/s41567-025-03005-5</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 26 August 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03005-5"&gt;doi:10.1038/s41567-025-03005-5&lt;/a&gt;&lt;/p&gt;Quantum information cannot be copied, posing challenges for long-distance communication due to signal losses. Here the quantum relay architecture using a single-photon source enhances the signal-to-noise ratio of quantum information transmission.</content:encoded>
-            <dc:title>Realization of an untrusted intermediate relay architecture using a quantum dot single-photon source</dc:title>
-            <dc:creator>Mi Zou</dc:creator><dc:creator>Yu-Ming He</dc:creator><dc:creator>Yizhi Huang</dc:creator><dc:creator>Jun-Yi Zhao</dc:creator><dc:creator>Bin-Chen Li</dc:creator><dc:creator>Yong-Peng Guo</dc:creator><dc:creator>Xing Ding</dc:creator><dc:creator>Mo-Chi Xu</dc:creator><dc:creator>Run-Ze Liu</dc:creator><dc:creator>Geng-Yan Zou</dc:creator><dc:creator>Zhen Ning</dc:creator><dc:creator>Xiang You</dc:creator><dc:creator>Hui Wang</dc:creator><dc:creator>Wen-Xin Pan</dc:creator><dc:creator>Hao-Tao Zhu</dc:creator><dc:creator>Ming-Yang Zheng</dc:creator><dc:creator>Xiu-Ping Xie</dc:creator><dc:creator>Dandan Qin</dc:creator><dc:creator>Xiao Jiang</dc:creator><dc:creator>Yong-Heng Huo</dc:creator><dc:creator>Qiang Zhang</dc:creator><dc:creator>Chao-Yang Lu</dc:creator><dc:creator>Xiongfeng Ma</dc:creator><dc:creator>Teng-Yun Chen</dc:creator><dc:creator>Jian-Wei Pan</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03005-5</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-08-26; | doi:10.1038/s41567-025-03005-5</dc:source>
-            <dc:date>2025-08-26</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03005-5</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03005-5</prism:url>
         </item>
     
 </rdf:RDF>
