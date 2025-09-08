@@ -18,11 +18,11 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-02880-5"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-02839-6"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09474-1"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-02786-2"/>
                 
                     </rdf:Seq>
         </items>
@@ -32,6 +32,21 @@
         <url>https://www.nature.com/uploads/product/nature/rss.png</url>
         <link>http://feeds.nature.com/nature/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/d41586-025-02880-5">
+            <title>Daily briefing: Nine metals in two dimensions</title>
+            <link>https://www.nature.com/articles/d41586-025-02880-5</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 05 September 2025; &lt;a href="https://www.nature.com/articles/d41586-025-02880-5"&gt;doi:10.1038/d41586-025-02880-5&lt;/a&gt;&lt;/p&gt;Why scientists are excited about 2D MXenes, a distant relative of graphene. Plus, the low-down on a fiery Senate hearing with RFK Jr and a lyrical exploration of iconic pigments.</content:encoded>
+            <dc:title>Daily briefing: Nine metals in two dimensions</dc:title>
+            <dc:creator>Flora Graham</dc:creator>
+            <dc:identifier>doi:10.1038/d41586-025-02880-5</dc:identifier>
+            <dc:source>Nature, Published online: 2025-09-05; | doi:10.1038/d41586-025-02880-5</dc:source>
+            <dc:date>2025-09-05</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/d41586-025-02880-5</prism:doi>
+            <prism:url>https://www.nature.com/articles/d41586-025-02880-5</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/d41586-025-02839-6">
             <title>Chemists cram record nine metals into trendy 2D material</title>
@@ -61,21 +76,6 @@
             <prism:publicationName>Nature</prism:publicationName>
             <prism:doi>10.1038/s41586-025-09474-1</prism:doi>
             <prism:url>https://www.nature.com/articles/s41586-025-09474-1</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/d41586-025-02786-2">
-            <title>Liquid-crystal specs refocus with the push of a button</title>
-            <link>https://www.nature.com/articles/d41586-025-02786-2</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 02 September 2025; &lt;a href="https://www.nature.com/articles/d41586-025-02786-2"&gt;doi:10.1038/d41586-025-02786-2&lt;/a&gt;&lt;/p&gt;Bifocals for the touchscreen era accommodate users who mix near- and far-sightedness.</content:encoded>
-            <dc:title>Liquid-crystal specs refocus with the push of a button</dc:title>
-            
-            <dc:identifier>doi:10.1038/d41586-025-02786-2</dc:identifier>
-            <dc:source>Nature, Published online: 2025-09-02; | doi:10.1038/d41586-025-02786-2</dc:source>
-            <dc:date>2025-09-02</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/d41586-025-02786-2</prism:doi>
-            <prism:url>https://www.nature.com/articles/d41586-025-02786-2</prism:url>
         </item>
     
         </rdf:RDF>

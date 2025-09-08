@@ -18,13 +18,15 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02348-x"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02339-y"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02344-1"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02350-3"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02313-8"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nmat/rss.gif">
@@ -32,6 +34,36 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02348-x">
+            <title>Re-entrant phase behaviour of organic semiconductors</title>
+            <link>https://www.nature.com/articles/s41563-025-02348-x</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 08 September 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02348-x"&gt;doi:10.1038/s41563-025-02348-x&lt;/a&gt;&lt;/p&gt;Insights to elucidate the composition–behaviour relationship in organic photovoltaic materials are required. Here the phase behaviour of disordered polymer:small-molecule acceptor blends is studied and an extended model is invoked to understand the temperature–composition diagrams.</content:encoded>
+            <dc:title>Re-entrant phase behaviour of organic semiconductors</dc:title>
+            <dc:creator>Zhengxing Peng</dc:creator><dc:creator>Masoud Ghasemi</dc:creator><dc:creator>Jasper J. Michels</dc:creator><dc:creator>Harald Ade</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02348-x</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-09-08; | doi:10.1038/s41563-025-02348-x</dc:source>
+            <dc:date>2025-09-08</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02348-x</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02348-x</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02339-y">
+            <title>Molecular engineering of two-dimensional polyamide interphase layers for anode-free lithium metal batteries</title>
+            <link>https://www.nature.com/articles/s41563-025-02339-y</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 08 September 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02339-y"&gt;doi:10.1038/s41563-025-02339-y&lt;/a&gt;&lt;/p&gt;Two-dimensional polyamide/lithiated Nafion interphase layers assembled into ultrathin sheets show high-rate, high-capacity Li plating/stripping as well as high energy and power densities, enabling the fabrication of high-performance anode-free Li metal batteries.</content:encoded>
+            <dc:title>Molecular engineering of two-dimensional polyamide interphase layers for anode-free lithium metal batteries</dc:title>
+            <dc:creator>Shuo Wang</dc:creator><dc:creator>Yan Wang</dc:creator><dc:creator>Zhaofeng Ouyang</dc:creator><dc:creator>Shitao Geng</dc:creator><dc:creator>Qianyun Chen</dc:creator><dc:creator>Xiaoju Zhao</dc:creator><dc:creator>Bin Yuan</dc:creator><dc:creator>Xiao Zhang</dc:creator><dc:creator>Shanshan Tang</dc:creator><dc:creator>Qiuchen Xu</dc:creator><dc:creator>Peining Chen</dc:creator><dc:creator>Huisheng Peng</dc:creator><dc:creator>Hao Sun</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02339-y</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-09-08; | doi:10.1038/s41563-025-02339-y</dc:source>
+            <dc:date>2025-09-08</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02339-y</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02339-y</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02344-1">
             <title>Space-time crystals from particle-like topological solitons</title>
@@ -63,19 +95,4 @@
             <prism:url>https://www.nature.com/articles/s41563-025-02350-3</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02313-8">
-            <title>Black phosphorus nanoribbons for high-performance transistors and photodetectors</title>
-            <link>https://www.nature.com/articles/s41563-025-02313-8</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 27 August 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02313-8"&gt;doi:10.1038/s41563-025-02313-8&lt;/a&gt;&lt;/p&gt;Sonochemical exfoliation of black phosphorus crystals with a slightly enlarged lattice parameter along the armchair direction produces narrow black phosphorus nanoribbons (BPNRs) with well-defined edge chirality at a yield of up to 95%. The high performance of transistors and photodetectors fabricated with these BPNRs demonstrates the potential of BPNRs for electronic and optoelectronic applications.</content:encoded>
-            <dc:title>Black phosphorus nanoribbons for high-performance transistors and photodetectors</dc:title>
-            
-            <dc:identifier>doi:10.1038/s41563-025-02313-8</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-08-27; | doi:10.1038/s41563-025-02313-8</dc:source>
-            <dc:date>2025-08-27</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02313-8</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02313-8</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
