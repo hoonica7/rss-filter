@@ -18,15 +18,15 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03055-9"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03054-w"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03023-3"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03029-x"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03008-2"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -34,6 +34,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03055-9">
+            <title>Publisher Correction: Coherent control of magnon–polaritons using an exceptional point</title>
+            <link>https://www.nature.com/articles/s41567-025-03055-9</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 09 September 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03055-9"&gt;doi:10.1038/s41567-025-03055-9&lt;/a&gt;&lt;/p&gt;Publisher Correction: Coherent control of magnon–polaritons using an exceptional point</content:encoded>
+            <dc:title>Publisher Correction: Coherent control of magnon–polaritons using an exceptional point</dc:title>
+            <dc:creator>N. J. Lambert</dc:creator><dc:creator>A. Schumer</dc:creator><dc:creator>J. J. Longdell</dc:creator><dc:creator>S. Rotter</dc:creator><dc:creator>H. G. L. Schwefel</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03055-9</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-09-09; | doi:10.1038/s41567-025-03055-9</dc:source>
+            <dc:date>2025-09-09</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03055-9</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03055-9</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03054-w">
             <title>Publisher Correction: Optomechanical control of long-lived bulk acoustic phonons in the quantum regime</title>
@@ -80,19 +95,4 @@
             <prism:url>https://www.nature.com/articles/s41567-025-03029-x</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03008-2">
-            <title>Ferroaxial density wave from intertwined charge and orbital order in rare-earth tritellurides</title>
-            <link>https://www.nature.com/articles/s41567-025-03008-2</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 01 September 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03008-2"&gt;doi:10.1038/s41567-025-03008-2&lt;/a&gt;&lt;/p&gt;The axial Higgs mode is theoretically attributed to a hidden ferroaxial component of charge order. In rare-earth tritellurides, this ferroaxial order is now shown to be induced by intertwined orbital and charge orders.</content:encoded>
-            <dc:title>Ferroaxial density wave from intertwined charge and orbital order in rare-earth tritellurides</dc:title>
-            <dc:creator>Birender Singh</dc:creator><dc:creator>Grant McNamara</dc:creator><dc:creator>Kyung-Mo Kim</dc:creator><dc:creator>Saif Siddique</dc:creator><dc:creator>Stephen D. Funni</dc:creator><dc:creator>Weizhe Zhang</dc:creator><dc:creator>Xiangpeng Luo</dc:creator><dc:creator>Piyush Sakrikar</dc:creator><dc:creator>Eric M. Kenney</dc:creator><dc:creator>Ratnadwip Singha</dc:creator><dc:creator>Sergey Alekseev</dc:creator><dc:creator>Sayed Ali Akbar Ghorashi</dc:creator><dc:creator>Thomas J. Hicken</dc:creator><dc:creator>Christopher Baines</dc:creator><dc:creator>Hubertus Luetkens</dc:creator><dc:creator>Yiping Wang</dc:creator><dc:creator>Vincent M. Plisson</dc:creator><dc:creator>Michael Geiwitz</dc:creator><dc:creator>Connor A. Occhialini</dc:creator><dc:creator>Riccardo Comin</dc:creator><dc:creator>Michael J. Graf</dc:creator><dc:creator>Liuyan Zhao</dc:creator><dc:creator>Jennifer Cano</dc:creator><dc:creator>Rafael M. Fernandes</dc:creator><dc:creator>Judy J. Cha</dc:creator><dc:creator>Leslie M. Schoop</dc:creator><dc:creator>Kenneth S. Burch</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03008-2</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-09-01; | doi:10.1038/s41567-025-03008-2</dc:source>
-            <dc:date>2025-09-01</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03008-2</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03008-2</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
