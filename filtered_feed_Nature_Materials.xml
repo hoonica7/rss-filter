@@ -18,15 +18,17 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02349-w"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02333-4"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02335-2"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02342-3"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02348-x"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02344-1"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nmat/rss.gif">
@@ -34,6 +36,36 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02349-w">
+            <title>Towards spin-wave integrated circuits</title>
+            <link>https://www.nature.com/articles/s41563-025-02349-w</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 10 September 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02349-w"&gt;doi:10.1038/s41563-025-02349-w&lt;/a&gt;&lt;/p&gt;Borrowing from optical fibre design, ion implantation enables index-contrast guiding of spin waves, opening new opportunities in wave-based computing.</content:encoded>
+            <dc:title>Towards spin-wave integrated circuits</dc:title>
+            <dc:creator>Hossein Taghinejad</dc:creator><dc:creator>James G. Analytis</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02349-w</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-09-10; | doi:10.1038/s41563-025-02349-w</dc:source>
+            <dc:date>2025-09-10</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02349-w</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02349-w</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02333-4">
+            <title>Mikhail Eremets (1949–2024)</title>
+            <link>https://www.nature.com/articles/s41563-025-02333-4</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 10 September 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02333-4"&gt;doi:10.1038/s41563-025-02333-4&lt;/a&gt;&lt;/p&gt;Pioneer of high-pressure physics and superconductivity.</content:encoded>
+            <dc:title>Mikhail Eremets (1949–2024)</dc:title>
+            <dc:creator>Lilia Boeri</dc:creator><dc:creator>Alexander P. Drozdov</dc:creator><dc:creator>Vadim Ksenofontov</dc:creator><dc:creator>Feng Du</dc:creator><dc:creator>Vasily S. Minkov</dc:creator><dc:creator>Ulrich Pöschl</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02333-4</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-09-10; | doi:10.1038/s41563-025-02333-4</dc:source>
+            <dc:date>2025-09-10</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02333-4</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02333-4</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02335-2">
             <title>Frustration under the microscope</title>
@@ -80,19 +112,4 @@
             <prism:url>https://www.nature.com/articles/s41563-025-02348-x</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02344-1">
-            <title>Space-time crystals from particle-like topological solitons</title>
-            <link>https://www.nature.com/articles/s41563-025-02344-1</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 04 September 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02344-1"&gt;doi:10.1038/s41563-025-02344-1&lt;/a&gt;&lt;/p&gt;A continuous mesoscale space-time crystal phase is reported from a nematic liquid crystal driven by light.</content:encoded>
-            <dc:title>Space-time crystals from particle-like topological solitons</dc:title>
-            <dc:creator>Hanqing Zhao</dc:creator><dc:creator>Ivan I. Smalyukh</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02344-1</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-09-04; | doi:10.1038/s41563-025-02344-1</dc:source>
-            <dc:date>2025-09-04</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02344-1</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02344-1</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
