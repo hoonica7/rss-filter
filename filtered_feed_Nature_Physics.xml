@@ -18,15 +18,11 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03032-2"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03041-1"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03022-4"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03055-9"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03025-1"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -34,6 +30,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03032-2">
+            <title>Observation of the Yamaji effect in a cuprate superconductor</title>
+            <link>https://www.nature.com/articles/s41567-025-03032-2</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 16 September 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03032-2"&gt;doi:10.1038/s41567-025-03032-2&lt;/a&gt;&lt;/p&gt;The Yamaji effect is a modulation of the electronic transport as the angle of an applied magnetic field is changed. This has been observed in a model cuprate and sheds light on the geometry of the Fermi surface and the nature of the pseudogap.</content:encoded>
+            <dc:title>Observation of the Yamaji effect in a cuprate superconductor</dc:title>
+            <dc:creator>Mun K. Chan</dc:creator><dc:creator>Katherine A. Schreiber</dc:creator><dc:creator>Oscar E. Ayala-Valenzuela</dc:creator><dc:creator>Eric D. Bauer</dc:creator><dc:creator>Arkady Shekhter</dc:creator><dc:creator>Neil Harrison</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03032-2</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-09-16; | doi:10.1038/s41567-025-03032-2</dc:source>
+            <dc:date>2025-09-16</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03032-2</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03032-2</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03041-1">
             <title>Boron at the boundaries</title>
@@ -50,49 +61,4 @@
             <prism:url>https://www.nature.com/articles/s41567-025-03041-1</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03022-4">
-            <title>Parallelized telecom quantum networking with an ytterbium-171 atom array</title>
-            <link>https://www.nature.com/articles/s41567-025-03022-4</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 12 September 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03022-4"&gt;doi:10.1038/s41567-025-03022-4&lt;/a&gt;&lt;/p&gt;Most atom-based quantum networks emit photons at non-telecom wavelengths, requiring lossy conversion for long-distance links. A scalable approach for generating direct entanglement between atoms and telecom-band photons has now been demonstrated.</content:encoded>
-            <dc:title>Parallelized telecom quantum networking with an ytterbium-171 atom array</dc:title>
-            <dc:creator>Lintao Li</dc:creator><dc:creator>Xiye Hu</dc:creator><dc:creator>Zhubing Jia</dc:creator><dc:creator>William Huie</dc:creator><dc:creator>Won Kyu Calvin Sun</dc:creator><dc:creator>Aakash</dc:creator><dc:creator>Yuhao Dong</dc:creator><dc:creator>Narisak Hiri-O-Tuppa</dc:creator><dc:creator>Jacob P. Covey</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03022-4</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-09-12; | doi:10.1038/s41567-025-03022-4</dc:source>
-            <dc:date>2025-09-12</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03022-4</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03022-4</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03055-9">
-            <title>Publisher Correction: Coherent control of magnon–polaritons using an exceptional point</title>
-            <link>https://www.nature.com/articles/s41567-025-03055-9</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 09 September 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03055-9"&gt;doi:10.1038/s41567-025-03055-9&lt;/a&gt;&lt;/p&gt;Publisher Correction: Coherent control of magnon–polaritons using an exceptional point</content:encoded>
-            <dc:title>Publisher Correction: Coherent control of magnon–polaritons using an exceptional point</dc:title>
-            <dc:creator>N. J. Lambert</dc:creator><dc:creator>A. Schumer</dc:creator><dc:creator>J. J. Longdell</dc:creator><dc:creator>S. Rotter</dc:creator><dc:creator>H. G. L. Schwefel</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03055-9</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-09-09; | doi:10.1038/s41567-025-03055-9</dc:source>
-            <dc:date>2025-09-09</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03055-9</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03055-9</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03025-1">
-            <title>Certifying almost all quantum states with few single-qubit measurements</title>
-            <link>https://www.nature.com/articles/s41567-025-03025-1</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 08 September 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03025-1"&gt;doi:10.1038/s41567-025-03025-1&lt;/a&gt;&lt;/p&gt;The certification protocol presented here is an efficient way to verify that a many-qubit quantum state is close to a desired target state. As well as enabling the verification of near-term quantum devices, it has applications to quantum learning.</content:encoded>
-            <dc:title>Certifying almost all quantum states with few single-qubit measurements</dc:title>
-            <dc:creator>Hsin-Yuan Huang</dc:creator><dc:creator>John Preskill</dc:creator><dc:creator>Mehdi Soleimanifar</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03025-1</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-09-08; | doi:10.1038/s41567-025-03025-1</dc:source>
-            <dc:date>2025-09-08</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03025-1</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03025-1</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
