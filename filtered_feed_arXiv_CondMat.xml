@@ -7,7 +7,7 @@
     <atom:link href="http://rss.arxiv.org/rss/cond-mat" rel="self" type="application/rss+xml"/>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Sep 2025 04:00:01 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 17 Sep 2025 01:35:28 +0000</lastBuildDate>
     <managingEditor>rss-help@arxiv.org</managingEditor>
     <pubDate>Tue, 16 Sep 2025 00:00:00 -0400</pubDate>
     <skipDays>
@@ -30,9 +30,9 @@ Abstract: Broken time-reversal symmetry (TRS) in superconductors can induce not 
     <item>
       <title>Design and Optimization of Spin Dynamics in Ge Quantum Dots: g-Factor Modulation, Dephasing Sweet Spots, and Phonon-Induced Relaxation</title>
       <link>https://arxiv.org/abs/2509.10731</link>
-      <description>arXiv:2509.10731v1 Announce Type: new 
+      <description>arXiv:2509.10731v2 Announce Type: new 
 Abstract: Accurate modeling of spin dynamics in hole-based quantum dot qubits demands high-fidelity simulations that capture realistic device geometries, material interfaces, and self-consistent electrostatics. Here, we present a comprehensive three-dimensional study of gate-defined quantum dot hole spin qubits in strained Si$_{0.2}$Ge$_{0.8}$/Ge heterostructures. In contrast to prior work relying on idealized confinement or decoupled Poisson-Schr\"odinger treatments, our approach combines self-consistent electrostatics with a four-band Luttinger-Kohn Hamiltonian to resolve spin-orbit interactions, wavefunction asymmetries, and g-tensor anisotropies in realistic device structures. We quantify the impact of device size and gate bias on wavefunction localization, electric-field-induced g-factor modulation, and identify "sweet spots" in vertical electric field where g-factor sensitivity to charge noise is minimized, enhancing spin dephasing times. Spin relaxation due to phonon coupling is also modeled, revealing size-dependent T1 behavior consistent with strong Rashba-type spin-orbit coupling and a magnetic-field scaling near $B^{-8}$. This work establishes a predictive modeling framework for optimizing spin coherence in planar Ge quantum dots and provides quantitative design guidance for scalable, electrically controlled hole spin qubits in group-IV semiconductors.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2509.10731v1</guid>
+      <guid isPermaLink="false">oai:arXiv.org:2509.10731v2</guid>
       <category>cond-mat.mes-hall</category>
       <category>quant-ph</category>
       <pubDate>Tue, 16 Sep 2025 00:00:00 -0400</pubDate>
@@ -129,6 +129,7 @@ Abstract: We synthesize the high-quality Gd$_3$BWO$_9$ single crystal and invest
       <arxiv:announce_type>new</arxiv:announce_type>
       <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
       <arxiv:DOI>10.1103/7l6y-hdw5</arxiv:DOI>
+      <arxiv:journal_reference>Phys. Rev. Mater. 9, 094407 (2025)</arxiv:journal_reference>
       <dc:creator>Zhuoqun Wang, Xueling Cui, Tim Treu, Jiesen Guo, Xinyang Liu, Marvin Klinger, Christian Heil, Nvsen Ma, Xianlei Sheng, Zheng Deng, Xingye Lu, Xiancheng Wang, Wei Li, Philipp Gegenwart, Changqing Jin, Kan Zhao</dc:creator>
     </item>
     <item>
@@ -292,20 +293,6 @@ Abstract: We investigate the ground-state phases and spin-scissors dynamics of b
       <arxiv:announce_type>new</arxiv:announce_type>
       <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
       <dc:creator>Huaxin He, Fengtao Pang, Xianchao Zhang, Yongping Zhang, Chunlei Qu</dc:creator>
-    </item>
-    <item>
-      <title>On the magnetic contribution of itinerant electrons to neutron diffraction in the topological antiferromagnet CeAlGe</title>
-      <link>https://arxiv.org/abs/2509.11795</link>
-      <description>arXiv:2509.11795v1 Announce Type: new 
-Abstract: We report a neutron diffraction study of the magnetic structure of CeAlGe, a candidate topological semimetal that hosts a non-collinear, multi-$\mathbf{k}$ magnetic phase. By measuring both low- and high-momentum-transfer magnetic Bragg peaks within a single experimental setup, we refine a magnetic structure model based solely on localized Ce moments. This model, which differs from that obtained using only high-$Q$ data, quantitatively reproduces the observed intensities, including the $(000)$ zeroth-order magnetic satellites that are especially sensitive to subtle components of the modulation. While a contribution from itinerant electrons to the zeroth satellite cannot be definitively excluded, our analysis reveals no unambiguous evidence for such effects within experimental uncertainty. The refined magnetic structures exhibit topologically nontrivial winding patterns, derived from the fitted magnetic parameters, that support localized, particle-like spin textures with half-integer topological charges. These features provide a natural microscopic origin for the observed topological Hall effect, establishing CeAlGe as a model system where magnetism and topology are intimately linked.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2509.11795v1</guid>
-      <category>cond-mat.str-el</category>
-      <category>cond-mat.mtrl-sci</category>
-      <category>cond-mat.other</category>
-      <pubDate>Tue, 16 Sep 2025 00:00:00 -0400</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
-      <dc:creator>V. Pomjakushin, A. Podlesnyak, P. Puphal, S. Shin, J. S. White, E. Pomjakushina</dc:creator>
     </item>
     <item>
       <title>Radio-frequency charge detection on graphene electron-hole double quantum dots</title>
