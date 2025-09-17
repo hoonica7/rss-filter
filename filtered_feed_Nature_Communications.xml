@@ -21,6 +21,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-63409-y"/>
+                
                     </rdf:Seq>
         </items>
     </channel>
@@ -29,5 +31,20 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-63409-y">
+            <title>Magnetic microscopy for operando imaging of battery dynamics</title>
+            <link>https://www.nature.com/articles/s41467-025-63409-y</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 17 September 2025; &lt;a href="https://www.nature.com/articles/s41467-025-63409-y"&gt;doi:10.1038/s41467-025-63409-y&lt;/a&gt;&lt;/p&gt;Quantum sensing of lithium and post-lithium batteries is introduced to visualize how electrons and ions flow and react during operation. Here, authors show how this facilitates operando imaging of heterogeneous redox reactions, buried current distributions, and dendrite formation.</content:encoded>
+            <dc:title>Magnetic microscopy for operando imaging of battery dynamics</dc:title>
+            <dc:creator>Stefan Pollok</dc:creator><dc:creator>Mohamad Khoshkalam</dc:creator><dc:creator>Fardin Ghaffari-Tabrizi</dc:creator><dc:creator>Fran Kurnia</dc:creator><dc:creator>Danni Wang</dc:creator><dc:creator>Siqi Li</dc:creator><dc:creator>Dominik B. Bucher</dc:creator><dc:creator>Jennifer L. M. Rupp</dc:creator><dc:creator>Dennis V. Christensen</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-63409-y</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-09-17; | doi:10.1038/s41467-025-63409-y</dc:source>
+            <dc:date>2025-09-17</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-63409-y</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-63409-y</prism:url>
+        </item>
     
         </rdf:RDF>

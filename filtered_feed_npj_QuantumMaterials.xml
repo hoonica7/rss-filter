@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00820-0"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00813-z"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00792-1"/>
@@ -32,8 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00800-4"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00810-2"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-025-00820-0">
+            <title>Laterally extended states of interlayer excitons in reconstructed MoSe&lt;sub&gt;2&lt;/sub&gt;/WSe&lt;sub&gt;2&lt;/sub&gt; heterostructures</title>
+            <link>https://www.nature.com/articles/s41535-025-00820-0</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 16 September 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00820-0"&gt;doi:10.1038/s41535-025-00820-0&lt;/a&gt;&lt;/p&gt;Laterally extended states of interlayer excitons in reconstructed MoSe&lt;sub&gt;2&lt;/sub&gt;/WSe&lt;sub&gt;2&lt;/sub&gt; heterostructures</content:encoded>
+            <dc:title>Laterally extended states of interlayer excitons in reconstructed MoSe&lt;sub&gt;2&lt;/sub&gt;/WSe&lt;sub&gt;2&lt;/sub&gt; heterostructures</dc:title>
+            <dc:creator>Johannes Figueiredo</dc:creator><dc:creator>Marten Richter</dc:creator><dc:creator>Mirco Troue</dc:creator><dc:creator>Jonas Kiemle</dc:creator><dc:creator>Hendrik Lambers</dc:creator><dc:creator>Torsten Stiehm</dc:creator><dc:creator>Takashi Taniguchi</dc:creator><dc:creator>Kenji Watanabe</dc:creator><dc:creator>Ursula Wurstbauer</dc:creator><dc:creator>Andreas Knorr</dc:creator><dc:creator>Alexander W. Holleitner</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-025-00820-0</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2025-09-16; | doi:10.1038/s41535-025-00820-0</dc:source>
+            <dc:date>2025-09-16</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-025-00820-0</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-025-00820-0</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-025-00813-z">
             <title>Spin-glass state in nickelate superconductors</title>
@@ -146,21 +161,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-025-00800-4</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-025-00800-4</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-025-00810-2">
-            <title>Publisher Correction: Optical properties, plasmons, and orbital Skyrme textures in twisted TMDs</title>
-            <link>https://www.nature.com/articles/s41535-025-00810-2</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 13 August 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00810-2"&gt;doi:10.1038/s41535-025-00810-2&lt;/a&gt;&lt;/p&gt;Publisher Correction: Optical properties, plasmons, and orbital Skyrme textures in twisted TMDs</content:encoded>
-            <dc:title>Publisher Correction: Optical properties, plasmons, and orbital Skyrme textures in twisted TMDs</dc:title>
-            <dc:creator>Lorenzo Cavicchi</dc:creator><dc:creator>Koen J. A. Reijnders</dc:creator><dc:creator>Mikhail I. Katsnelson</dc:creator><dc:creator>Marco Polini</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-025-00810-2</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2025-08-13; | doi:10.1038/s41535-025-00810-2</dc:source>
-            <dc:date>2025-08-13</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-025-00810-2</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-025-00810-2</prism:url>
         </item>
     
 </rdf:RDF>
