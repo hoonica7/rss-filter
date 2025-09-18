@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09509-7"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09511-z"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09561-3"/>
@@ -28,8 +30,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09596-6"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-02939-3"/>
-                
                     </rdf:Seq>
         </items>
     </channel>
@@ -38,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/nature/rss.png</url>
         <link>http://feeds.nature.com/nature/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41586-025-09509-7">
+            <title>Toughened self-assembled monolayers for durable perovskite solar cells</title>
+            <link>https://www.nature.com/articles/s41586-025-09509-7</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 17 September 2025; &lt;a href="https://www.nature.com/articles/s41586-025-09509-7"&gt;doi:10.1038/s41586-025-09509-7&lt;/a&gt;&lt;/p&gt;Cross-linkable co-SAMs improve hole-selective SAM stability, preventing defects and thermal degredation in perovskite solar cells, enabling 26.92% efficiency with high heat durability, and guiding the design of more efficient and durable solar cells.</content:encoded>
+            <dc:title>Toughened self-assembled monolayers for durable perovskite solar cells</dc:title>
+            <dc:creator>Wenlin Jiang</dc:creator><dc:creator>Geping Qu</dc:creator><dc:creator>Xiaofeng Huang</dc:creator><dc:creator>Xia Chen</dc:creator><dc:creator>Linyuan Chi</dc:creator><dc:creator>Tonghui Wang</dc:creator><dc:creator>Chun-To Wong</dc:creator><dc:creator>Francis R. Lin</dc:creator><dc:creator>Chunlei Yang</dc:creator><dc:creator>Qing Jiang</dc:creator><dc:creator>Shengfan Wu</dc:creator><dc:creator>Jie Zhang</dc:creator><dc:creator>Alex K.-Y. Jen</dc:creator>
+            <dc:identifier>doi:10.1038/s41586-025-09509-7</dc:identifier>
+            <dc:source>Nature, Published online: 2025-09-17; | doi:10.1038/s41586-025-09509-7</dc:source>
+            <dc:date>2025-09-17</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/s41586-025-09509-7</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41586-025-09509-7</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41586-025-09511-z">
             <title>Atomic-scale imaging of frequency-dependent phonon anisotropy</title>
@@ -112,21 +127,6 @@
             <prism:publicationName>Nature</prism:publicationName>
             <prism:doi>10.1038/s41586-025-09596-6</prism:doi>
             <prism:url>https://www.nature.com/articles/s41586-025-09596-6</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/d41586-025-02939-3">
-            <title>Weird ‘time crystals’ are made visible at last</title>
-            <link>https://www.nature.com/articles/d41586-025-02939-3</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 15 September 2025; &lt;a href="https://www.nature.com/articles/d41586-025-02939-3"&gt;doi:10.1038/d41586-025-02939-3&lt;/a&gt;&lt;/p&gt;Time crystals, a state of matter once thought physically impossible, could soon be on a banknote.</content:encoded>
-            <dc:title>Weird ‘time crystals’ are made visible at last</dc:title>
-            <dc:creator>Elizabeth Gibney</dc:creator>
-            <dc:identifier>doi:10.1038/d41586-025-02939-3</dc:identifier>
-            <dc:source>Nature, Published online: 2025-09-15; | doi:10.1038/d41586-025-02939-3</dc:source>
-            <dc:date>2025-09-15</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/d41586-025-02939-3</prism:doi>
-            <prism:url>https://www.nature.com/articles/d41586-025-02939-3</prism:url>
         </item>
     
         </rdf:RDF>
