@@ -21,6 +21,10 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-63850-z"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-63832-1"/>
+                
                     </rdf:Seq>
         </items>
     </channel>
@@ -29,5 +33,35 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-63850-z">
+            <title>Ferroelectric-based Pockels photonic memory</title>
+            <link>https://www.nature.com/articles/s41467-025-63850-z</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 19 September 2025; &lt;a href="https://www.nature.com/articles/s41467-025-63850-z"&gt;doi:10.1038/s41467-025-63850-z&lt;/a&gt;&lt;/p&gt;Xu et al. report a Pockels photonic memory by integrating ferroelectric field-effect transistor with lithium niobate on insulator micro ring resonator. Through the manipulation of ferroelectric domains and the Pockels effect, the device achieves energy consumption at fJ/state level.</content:encoded>
+            <dc:title>Ferroelectric-based Pockels photonic memory</dc:title>
+            <dc:creator>Zefeng Xu</dc:creator><dc:creator>Chun-Kuei Chen</dc:creator><dc:creator>Hong-Lin Lin</dc:creator><dc:creator>Maheswari Sivan</dc:creator><dc:creator>Evgeny Zamburg</dc:creator><dc:creator>James Yong-Meng Lee</dc:creator><dc:creator>Suresh Venkatesan</dc:creator><dc:creator>Aaron Danner</dc:creator><dc:creator>Aaron Voon-Yew Thean</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-63850-z</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-09-19; | doi:10.1038/s41467-025-63850-z</dc:source>
+            <dc:date>2025-09-19</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-63850-z</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-63850-z</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-63832-1">
+            <title>Distinct solvation patterns of OH&lt;sup&gt;−&lt;/sup&gt; versus H&lt;sub&gt;3&lt;/sub&gt;O&lt;sup&gt;+&lt;/sup&gt; charge defects at electrified gold/water interfaces govern their properties</title>
+            <link>https://www.nature.com/articles/s41467-025-63832-1</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 19 September 2025; &lt;a href="https://www.nature.com/articles/s41467-025-63832-1"&gt;doi:10.1038/s41467-025-63832-1&lt;/a&gt;&lt;/p&gt;H3O+ and OH− mediate electrochemical processes at water/metal electrode interfaces. Here, the authors show that these ions form distinct solvation structures on electrified gold surfaces: OH+ remains in close contact with the electrode, while H3O+ resides farther away.</content:encoded>
+            <dc:title>Distinct solvation patterns of OH&lt;sup&gt;−&lt;/sup&gt; versus H&lt;sub&gt;3&lt;/sub&gt;O&lt;sup&gt;+&lt;/sup&gt; charge defects at electrified gold/water interfaces govern their properties</dc:title>
+            <dc:creator>Chanbum Park</dc:creator><dc:creator>Soumya Ghosh</dc:creator><dc:creator>Harald Forbert</dc:creator><dc:creator>Dominik Marx</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-63832-1</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-09-19; | doi:10.1038/s41467-025-63832-1</dc:source>
+            <dc:date>2025-09-19</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-63832-1</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-63832-1</prism:url>
+        </item>
     
         </rdf:RDF>

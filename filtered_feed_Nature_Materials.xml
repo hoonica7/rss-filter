@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02347-y"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02353-0"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02328-1"/>
@@ -28,8 +30,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02345-0"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02349-w"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -38,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02347-y">
+            <title>Pipe dream beam coming true</title>
+            <link>https://www.nature.com/articles/s41563-025-02347-y</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 19 September 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02347-y"&gt;doi:10.1038/s41563-025-02347-y&lt;/a&gt;&lt;/p&gt;Delayed femtosecond photoemission from a single-walled carbon nanotube enables pulsed electron beams with an unprecedented combination of pulse duration and energy spread.</content:encoded>
+            <dc:title>Pipe dream beam coming true</dc:title>
+            <dc:creator>Jom Luiten</dc:creator><dc:creator>Jim Franssen</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02347-y</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-09-19; | doi:10.1038/s41563-025-02347-y</dc:source>
+            <dc:date>2025-09-19</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02347-y</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02347-y</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02353-0">
             <title>Terahertz light confined to the nanoscale with hafnium dichalcogenides</title>
@@ -112,21 +127,6 @@
             <prism:publicationName>Nature Materials</prism:publicationName>
             <prism:doi>10.1038/s41563-025-02345-0</prism:doi>
             <prism:url>https://www.nature.com/articles/s41563-025-02345-0</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02349-w">
-            <title>Towards spin-wave integrated circuits</title>
-            <link>https://www.nature.com/articles/s41563-025-02349-w</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 10 September 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02349-w"&gt;doi:10.1038/s41563-025-02349-w&lt;/a&gt;&lt;/p&gt;Borrowing from optical fibre design, ion implantation enables index-contrast guiding of spin waves, opening new opportunities in wave-based computing.</content:encoded>
-            <dc:title>Towards spin-wave integrated circuits</dc:title>
-            <dc:creator>Hossein Taghinejad</dc:creator><dc:creator>James G. Analytis</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02349-w</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-09-10; | doi:10.1038/s41563-025-02349-w</dc:source>
-            <dc:date>2025-09-10</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02349-w</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02349-w</prism:url>
         </item>
     
 </rdf:RDF>
