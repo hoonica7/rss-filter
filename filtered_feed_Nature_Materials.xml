@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02355-y"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02347-y"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02353-0"/>
@@ -28,8 +30,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02351-2"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02345-0"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -38,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02355-y">
+            <title>Structural constraint integration in a generative model for the discovery of quantum materials</title>
+            <link>https://www.nature.com/articles/s41563-025-02355-y</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 22 September 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02355-y"&gt;doi:10.1038/s41563-025-02355-y&lt;/a&gt;&lt;/p&gt;This work presents SCIGEN, a machine learning framework integrating geometric constraints into material generation. The framework enables the discovery of stable quantum material candidates, and the authors synthesize two predicted magnetic materials.</content:encoded>
+            <dc:title>Structural constraint integration in a generative model for the discovery of quantum materials</dc:title>
+            <dc:creator>Ryotaro Okabe</dc:creator><dc:creator>Mouyang Cheng</dc:creator><dc:creator>Abhijatmedhi Chotrattanapituk</dc:creator><dc:creator>Manasi Mandal</dc:creator><dc:creator>Kiran Mak</dc:creator><dc:creator>Denisse Córdova Carrizales</dc:creator><dc:creator>Nguyen Tuan Hung</dc:creator><dc:creator>Xiang Fu</dc:creator><dc:creator>Bowen Han</dc:creator><dc:creator>Yao Wang</dc:creator><dc:creator>Weiwei Xie</dc:creator><dc:creator>Robert J. Cava</dc:creator><dc:creator>Tommi S. Jaakkola</dc:creator><dc:creator>Yongqiang Cheng</dc:creator><dc:creator>Mingda Li</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02355-y</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-09-22; | doi:10.1038/s41563-025-02355-y</dc:source>
+            <dc:date>2025-09-22</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02355-y</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02355-y</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02347-y">
             <title>Pipe dream beam coming true</title>
@@ -112,21 +127,6 @@
             <prism:publicationName>Nature Materials</prism:publicationName>
             <prism:doi>10.1038/s41563-025-02351-2</prism:doi>
             <prism:url>https://www.nature.com/articles/s41563-025-02351-2</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02345-0">
-            <title>Ultraconfined terahertz phonon polaritons in hafnium dichalcogenides</title>
-            <link>https://www.nature.com/articles/s41563-025-02345-0</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 15 September 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02345-0"&gt;doi:10.1038/s41563-025-02345-0&lt;/a&gt;&lt;/p&gt;The authors demonstrate deeply subwavelength light confinement in the terahertz spectral range by exploiting the strong light–matter coupling and hyperbolicity of phonon polaritons in hafnium-based dichalcogenides.</content:encoded>
-            <dc:title>Ultraconfined terahertz phonon polaritons in hafnium dichalcogenides</dc:title>
-            <dc:creator>Ryan A. Kowalski</dc:creator><dc:creator>Niclas S. Mueller</dc:creator><dc:creator>Gonzalo Álvarez-Pérez</dc:creator><dc:creator>Maximilian Obst</dc:creator><dc:creator>Katja Diaz-Granados</dc:creator><dc:creator>Giulia Carini</dc:creator><dc:creator>Aditha Senarath</dc:creator><dc:creator>Saurabh Dixit</dc:creator><dc:creator>Richarda Niemann</dc:creator><dc:creator>Raghunandan B. Iyer</dc:creator><dc:creator>Felix G. Kaps</dc:creator><dc:creator>Jakob Wetzel</dc:creator><dc:creator>J. Michael Klopf</dc:creator><dc:creator>Ivan I. Kravchenko</dc:creator><dc:creator>Martin Wolf</dc:creator><dc:creator>Thomas G. Folland</dc:creator><dc:creator>Lukas M. Eng</dc:creator><dc:creator>Susanne C. Kehr</dc:creator><dc:creator>Pablo Alonso-Gonzalez</dc:creator><dc:creator>Alexander Paarmann</dc:creator><dc:creator>Joshua D. Caldwell</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02345-0</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-09-15; | doi:10.1038/s41563-025-02345-0</dc:source>
-            <dc:date>2025-09-15</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02345-0</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02345-0</prism:url>
         </item>
     
 </rdf:RDF>

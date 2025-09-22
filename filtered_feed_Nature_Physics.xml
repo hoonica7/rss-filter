@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03001-9"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03024-2"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03000-w"/>
@@ -28,7 +30,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03041-1"/>
                 
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -36,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03001-9">
+            <title>Chiral phonons</title>
+            <link>https://www.nature.com/articles/s41567-025-03001-9</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 22 September 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03001-9"&gt;doi:10.1038/s41567-025-03001-9&lt;/a&gt;&lt;/p&gt;Phonons are quanta of the vibrations of the lattice in solids. They can carry angular momentum and allow an emergent chirality. This Perspective defines various types of chiral phonon and classifies the previously observed manifestations of them.</content:encoded>
+            <dc:title>Chiral phonons</dc:title>
+            <dc:creator>Dominik M. Juraschek</dc:creator><dc:creator>R. Matthias Geilhufe</dc:creator><dc:creator>Hanyu Zhu</dc:creator><dc:creator>Martina Basini</dc:creator><dc:creator>Peter Baum</dc:creator><dc:creator>Andrey Baydin</dc:creator><dc:creator>Swati Chaudhary</dc:creator><dc:creator>Michael Fechner</dc:creator><dc:creator>Benedetta Flebus</dc:creator><dc:creator>Gael Grissonnanche</dc:creator><dc:creator>Andrei I. Kirilyuk</dc:creator><dc:creator>Mikhail Lemeshko</dc:creator><dc:creator>Sebastian F. Maehrlein</dc:creator><dc:creator>Maxime Mignolet</dc:creator><dc:creator>Shuichi Murakami</dc:creator><dc:creator>Qian Niu</dc:creator><dc:creator>Ulrich Nowak</dc:creator><dc:creator>Carl P. Romao</dc:creator><dc:creator>Habib Rostami</dc:creator><dc:creator>Takuya Satoh</dc:creator><dc:creator>Nicola A. Spaldin</dc:creator><dc:creator>Hiroki Ueda</dc:creator><dc:creator>Lifa Zhang</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03001-9</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-09-22; | doi:10.1038/s41567-025-03001-9</dc:source>
+            <dc:date>2025-09-22</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03001-9</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03001-9</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03024-2">
             <title>Topological superconductivity finds its missing piece</title>
@@ -112,4 +129,4 @@
             <prism:url>https://www.nature.com/articles/s41567-025-03041-1</prism:url>
         </item>
     
-        </rdf:RDF>
+</rdf:RDF>
