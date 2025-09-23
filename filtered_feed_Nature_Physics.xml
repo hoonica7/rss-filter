@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03039-9"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03001-9"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03024-2"/>
@@ -28,9 +30,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03032-2"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03041-1"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -38,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03039-9">
+            <title>Universal anyon tunnelling in a chiral Luttinger liquid</title>
+            <link>https://www.nature.com/articles/s41567-025-03039-9</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 23 September 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03039-9"&gt;doi:10.1038/s41567-025-03039-9&lt;/a&gt;&lt;/p&gt;Measurements of anyons moving through a quantum point contact allow the extraction of their tunnelling exponent. This fully characterizes their topological order and confirms that they are well described by the Luttinger liquid theory.</content:encoded>
+            <dc:title>Universal anyon tunnelling in a chiral Luttinger liquid</dc:title>
+            <dc:creator>Ramon Guerrero-Suarez</dc:creator><dc:creator>Adithya Suresh</dc:creator><dc:creator>Tanmay Maiti</dc:creator><dc:creator>Shuang Liang</dc:creator><dc:creator>James Nakamura</dc:creator><dc:creator>Geoffrey Gardner</dc:creator><dc:creator>Claudio Chamon</dc:creator><dc:creator>Michael Manfra</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03039-9</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-09-23; | doi:10.1038/s41567-025-03039-9</dc:source>
+            <dc:date>2025-09-23</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03039-9</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03039-9</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03001-9">
             <title>Chiral phonons</title>
@@ -114,19 +129,4 @@
             <prism:url>https://www.nature.com/articles/s41567-025-03032-2</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03041-1">
-            <title>Boron at the boundaries</title>
-            <link>https://www.nature.com/articles/s41567-025-03041-1</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 12 September 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03041-1"&gt;doi:10.1038/s41567-025-03041-1&lt;/a&gt;&lt;/p&gt;Boron at the boundaries</content:encoded>
-            <dc:title>Boron at the boundaries</dc:title>
-            <dc:creator>Richard Brierley</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03041-1</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-09-12; | doi:10.1038/s41567-025-03041-1</dc:source>
-            <dc:date>2025-09-12</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03041-1</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03041-1</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>

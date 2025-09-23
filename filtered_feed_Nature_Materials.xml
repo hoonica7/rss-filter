@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02367-8"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02355-y"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02347-y"/>
@@ -28,8 +30,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02332-5"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02351-2"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -38,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02367-8">
+            <title>Stabilized perovskite phases enabling efficient perovskite/perovskite/silicon triple-junction solar cells</title>
+            <link>https://www.nature.com/articles/s41563-025-02367-8</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 23 September 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02367-8"&gt;doi:10.1038/s41563-025-02367-8&lt;/a&gt;&lt;/p&gt;To address the phase instability issue of perovskites, ammonium propionic acid is introduced to enhance the phase stability of both perovskite layers in perovskite/perovskite/silicon triple-junction solar cells, resulting in improved efficiency and reproducibility.</content:encoded>
+            <dc:title>Stabilized perovskite phases enabling efficient perovskite/perovskite/silicon triple-junction solar cells</dc:title>
+            <dc:creator>Fuzong Xu</dc:creator><dc:creator>Erkan Aydin</dc:creator><dc:creator>Ilhan Yavuz</dc:creator><dc:creator>Caner Deger</dc:creator><dc:creator>Esma Ugur</dc:creator><dc:creator>Jiang Liu</dc:creator><dc:creator>Xuechun Zhang</dc:creator><dc:creator>Arsalan Razzaq</dc:creator><dc:creator>Lujia Xu</dc:creator><dc:creator>Marco Marengo</dc:creator><dc:creator>Badri Vishal</dc:creator><dc:creator>Adi Prasetio</dc:creator><dc:creator>Anand Subbiah</dc:creator><dc:creator>Anil Pininti</dc:creator><dc:creator>Thomas Allen</dc:creator><dc:creator>Stefaan De Wolf</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02367-8</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-09-23; | doi:10.1038/s41563-025-02367-8</dc:source>
+            <dc:date>2025-09-23</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02367-8</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02367-8</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02355-y">
             <title>Structural constraint integration in a generative model for the discovery of quantum materials</title>
@@ -112,21 +127,6 @@
             <prism:publicationName>Nature Materials</prism:publicationName>
             <prism:doi>10.1038/s41563-025-02332-5</prism:doi>
             <prism:url>https://www.nature.com/articles/s41563-025-02332-5</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02351-2">
-            <title>Interstitial oxygen order and its competition with superconductivity in La&lt;sub&gt;2&lt;/sub&gt;PrNi&lt;sub&gt;2&lt;/sub&gt;O&lt;sub&gt;7+&lt;i&gt;δ&lt;/i&gt;&lt;/sub&gt;</title>
-            <link>https://www.nature.com/articles/s41563-025-02351-2</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 15 September 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02351-2"&gt;doi:10.1038/s41563-025-02351-2&lt;/a&gt;&lt;/p&gt;An electron ptychography and energy-loss spectroscopy study of La2PrNi2O7, a material that exhibits high-temperature superconductivity, is conducted.</content:encoded>
-            <dc:title>Interstitial oxygen order and its competition with superconductivity in La&lt;sub&gt;2&lt;/sub&gt;PrNi&lt;sub&gt;2&lt;/sub&gt;O&lt;sub&gt;7+&lt;i&gt;δ&lt;/i&gt;&lt;/sub&gt;</dc:title>
-            <dc:creator>Zehao Dong</dc:creator><dc:creator>Gang Wang</dc:creator><dc:creator>Ningning Wang</dc:creator><dc:creator>Wen-Han Dong</dc:creator><dc:creator>Lin Gu</dc:creator><dc:creator>Yong Xu</dc:creator><dc:creator>Jinguang Cheng</dc:creator><dc:creator>Zhen Chen</dc:creator><dc:creator>Yayu Wang</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02351-2</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-09-15; | doi:10.1038/s41563-025-02351-2</dc:source>
-            <dc:date>2025-09-15</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02351-2</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02351-2</prism:url>
         </item>
     
 </rdf:RDF>
