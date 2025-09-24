@@ -21,7 +21,9 @@
         <items>
             <rdf:Seq>
                 
-                    </rdf:Seq>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-63344-y"/>
+                
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/ncomms/rss.png">
@@ -30,4 +32,19 @@
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
     
-        </rdf:RDF>
+        <item rdf:about="https://www.nature.com/articles/s41467-025-63344-y">
+            <title>Evidence for single variant in altermagnetic RuO&lt;sub&gt;2&lt;/sub&gt;(101) thin films</title>
+            <link>https://www.nature.com/articles/s41467-025-63344-y</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 24 September 2025; &lt;a href="https://www.nature.com/articles/s41467-025-63344-y"&gt;doi:10.1038/s41467-025-63344-y&lt;/a&gt;&lt;/p&gt;Altermagnetism arises from a combination of crystal symmetry and magnetic ordering. For the altermagnetic properties to be clear, and technologically useful, the same crystal variant must be present over the entire sample. Here, He, Wen and coauthors achieve such single variant thin films in RuO2, confirming the altermagnetic properties via XMLD and transport measurements.</content:encoded>
+            <dc:title>Evidence for single variant in altermagnetic RuO&lt;sub&gt;2&lt;/sub&gt;(101) thin films</dc:title>
+            <dc:creator>Cong He</dc:creator><dc:creator>Zhenchao Wen</dc:creator><dc:creator>Jun Okabayashi</dc:creator><dc:creator>Yoshio Miura</dc:creator><dc:creator>Tianyi Ma</dc:creator><dc:creator>Tadakatsu Ohkubo</dc:creator><dc:creator>Takeshi Seki</dc:creator><dc:creator>Hiroaki Sukegawa</dc:creator><dc:creator>Seiji Mitani</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-63344-y</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-09-24; | doi:10.1038/s41467-025-63344-y</dc:source>
+            <dc:date>2025-09-24</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-63344-y</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-63344-y</prism:url>
+        </item>
+    
+</rdf:RDF>
