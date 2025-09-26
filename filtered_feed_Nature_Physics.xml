@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03031-3"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03039-9"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03001-9"/>
@@ -28,9 +30,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03027-z"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03032-2"/>
-                
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -38,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03031-3">
+            <title>Sub-picosecond topological phase transition in nonlinear exciton–polariton superlattices</title>
+            <link>https://www.nature.com/articles/s41567-025-03031-3</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 26 September 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03031-3"&gt;doi:10.1038/s41567-025-03031-3&lt;/a&gt;&lt;/p&gt;Achieving versatile, tunable, real-time topological photonic system is challenging. Now this is accomplished by designing superlattices of WS2 and a polymer embedded in a microcavity.</content:encoded>
+            <dc:title>Sub-picosecond topological phase transition in nonlinear exciton–polariton superlattices</dc:title>
+            <dc:creator>Hefei Zhao</dc:creator><dc:creator>Zheng Guan</dc:creator><dc:creator>Qiancheng Li</dc:creator><dc:creator>Shengyuan Chen</dc:creator><dc:creator>Qinyun Liu</dc:creator><dc:creator>Zeng Kai Shao</dc:creator><dc:creator>Yubo Zhang</dc:creator><dc:creator>Xiao-Xiu Zhu</dc:creator><dc:creator>Jian-Fei Liu</dc:creator><dc:creator>Bei-Bei Li</dc:creator><dc:creator>Hui Li</dc:creator><dc:creator>Shufeng Wang</dc:creator><dc:creator>Qihuang Gong</dc:creator><dc:creator>Yunan Gao</dc:creator><dc:creator>Wenjing Liu</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03031-3</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-09-26; | doi:10.1038/s41567-025-03031-3</dc:source>
+            <dc:date>2025-09-26</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03031-3</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03031-3</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03039-9">
             <title>Universal anyon tunnelling in a chiral Luttinger liquid</title>
@@ -114,19 +129,4 @@
             <prism:url>https://www.nature.com/articles/s41567-025-03027-z</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03032-2">
-            <title>Observation of the Yamaji effect in a cuprate superconductor</title>
-            <link>https://www.nature.com/articles/s41567-025-03032-2</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 16 September 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03032-2"&gt;doi:10.1038/s41567-025-03032-2&lt;/a&gt;&lt;/p&gt;The Yamaji effect is a modulation of the electronic transport as the angle of an applied magnetic field is changed. This has been observed in a model cuprate and sheds light on the geometry of the Fermi surface and the nature of the pseudogap.</content:encoded>
-            <dc:title>Observation of the Yamaji effect in a cuprate superconductor</dc:title>
-            <dc:creator>Mun K. Chan</dc:creator><dc:creator>Katherine A. Schreiber</dc:creator><dc:creator>Oscar E. Ayala-Valenzuela</dc:creator><dc:creator>Eric D. Bauer</dc:creator><dc:creator>Arkady Shekhter</dc:creator><dc:creator>Neil Harrison</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03032-2</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-09-16; | doi:10.1038/s41567-025-03032-2</dc:source>
-            <dc:date>2025-09-16</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03032-2</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03032-2</prism:url>
-        </item>
-    
-        </rdf:RDF>
+</rdf:RDF>
