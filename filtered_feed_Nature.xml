@@ -30,9 +30,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09543-5"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-02822-1"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nature/rss.png">
@@ -131,19 +129,4 @@
             <prism:url>https://www.nature.com/articles/s41586-025-09543-5</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/d41586-025-02822-1">
-            <title>Electrostatic-based transfer keeps 2D materials ultra-clean</title>
-            <link>https://www.nature.com/articles/d41586-025-02822-1</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 24 September 2025; &lt;a href="https://www.nature.com/articles/d41586-025-02822-1"&gt;doi:10.1038/d41586-025-02822-1&lt;/a&gt;&lt;/p&gt;A technique that spontaneously detaches a 2D material from the substrate on which it was grown creates high-quality nanoscale electronic devices.</content:encoded>
-            <dc:title>Electrostatic-based transfer keeps 2D materials ultra-clean</dc:title>
-            <dc:creator>Wanqing Meng</dc:creator><dc:creator>Lain-Jong Li</dc:creator>
-            <dc:identifier>doi:10.1038/d41586-025-02822-1</dc:identifier>
-            <dc:source>Nature, Published online: 2025-09-24; | doi:10.1038/d41586-025-02822-1</dc:source>
-            <dc:date>2025-09-24</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/d41586-025-02822-1</prism:doi>
-            <prism:url>https://www.nature.com/articles/d41586-025-02822-1</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
