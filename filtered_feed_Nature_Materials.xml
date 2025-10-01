@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02378-5"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02362-z"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02368-7"/>
@@ -30,10 +32,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02367-8"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02355-y"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02347-y"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +40,21 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02378-5">
+            <title>Mechanical insights from functional materials</title>
+            <link>https://www.nature.com/articles/s41563-025-02378-5</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 30 September 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02378-5"&gt;doi:10.1038/s41563-025-02378-5&lt;/a&gt;&lt;/p&gt;Our knowledge of deformation behaviour in functional materials is pushing the frontiers of mechanics, informing design strategies and enabling scalable manufacturing.</content:encoded>
+            <dc:title>Mechanical insights from functional materials</dc:title>
+            
+            <dc:identifier>doi:10.1038/s41563-025-02378-5</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-09-30; | doi:10.1038/s41563-025-02378-5</dc:source>
+            <dc:date>2025-09-30</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02378-5</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02378-5</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02362-z">
             <title>Intrinsic intermolecular photoinduced charge separation in organic radical semiconductors</title>
@@ -131,36 +144,6 @@
             <prism:publicationName>Nature Materials</prism:publicationName>
             <prism:doi>10.1038/s41563-025-02367-8</prism:doi>
             <prism:url>https://www.nature.com/articles/s41563-025-02367-8</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02355-y">
-            <title>Structural constraint integration in a generative model for the discovery of quantum materials</title>
-            <link>https://www.nature.com/articles/s41563-025-02355-y</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 22 September 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02355-y"&gt;doi:10.1038/s41563-025-02355-y&lt;/a&gt;&lt;/p&gt;This work presents SCIGEN, a machine learning framework integrating geometric constraints into material generation. The framework enables the discovery of stable quantum material candidates, and the authors synthesize two predicted magnetic materials.</content:encoded>
-            <dc:title>Structural constraint integration in a generative model for the discovery of quantum materials</dc:title>
-            <dc:creator>Ryotaro Okabe</dc:creator><dc:creator>Mouyang Cheng</dc:creator><dc:creator>Abhijatmedhi Chotrattanapituk</dc:creator><dc:creator>Manasi Mandal</dc:creator><dc:creator>Kiran Mak</dc:creator><dc:creator>Denisse Córdova Carrizales</dc:creator><dc:creator>Nguyen Tuan Hung</dc:creator><dc:creator>Xiang Fu</dc:creator><dc:creator>Bowen Han</dc:creator><dc:creator>Yao Wang</dc:creator><dc:creator>Weiwei Xie</dc:creator><dc:creator>Robert J. Cava</dc:creator><dc:creator>Tommi S. Jaakkola</dc:creator><dc:creator>Yongqiang Cheng</dc:creator><dc:creator>Mingda Li</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02355-y</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-09-22; | doi:10.1038/s41563-025-02355-y</dc:source>
-            <dc:date>2025-09-22</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02355-y</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02355-y</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02347-y">
-            <title>Pipe dream beam coming true</title>
-            <link>https://www.nature.com/articles/s41563-025-02347-y</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 19 September 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02347-y"&gt;doi:10.1038/s41563-025-02347-y&lt;/a&gt;&lt;/p&gt;Delayed femtosecond photoemission from a single-walled carbon nanotube enables pulsed electron beams with an unprecedented combination of pulse duration and energy spread.</content:encoded>
-            <dc:title>Pipe dream beam coming true</dc:title>
-            <dc:creator>Jom Luiten</dc:creator><dc:creator>Jim Franssen</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02347-y</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-09-19; | doi:10.1038/s41563-025-02347-y</dc:source>
-            <dc:date>2025-09-19</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02347-y</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02347-y</prism:url>
         </item>
     
 </rdf:RDF>
