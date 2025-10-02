@@ -7,12 +7,12 @@
     <atom:link href="http://rss.arxiv.org/rss/cond-mat" rel="self" type="application/rss+xml"/>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Oct 2025 04:00:01 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 Oct 2025 01:49:28 +0000</lastBuildDate>
     <managingEditor>rss-help@arxiv.org</managingEditor>
     <pubDate>Wed, 01 Oct 2025 00:00:00 -0400</pubDate>
     <skipDays>
-      <day>Sunday</day>
       <day>Saturday</day>
+      <day>Sunday</day>
     </skipDays>
     <item>
       <title>Metal-insulator transition in a CuO chain created by Kondo interaction</title>
@@ -28,10 +28,10 @@ Abstract: Over twenty years ago Alexei Abrikosov [A.A. Abrikosov, Metal-insulato
       <dc:creator>Todor M. Mishonov, Albert M. Varonov, Kaloian D. Lozanov</dc:creator>
     </item>
     <item>
-      <title>High-efficiency Pt75Au25-based spintronic terahertz emitters</title>
+      <title>High-efficiency Pt$_{75}$Au$_{25}$-based spintronic terahertz emitters</title>
       <link>https://arxiv.org/abs/2509.25303</link>
       <description>arXiv:2509.25303v1 Announce Type: new 
-Abstract: Spintronic terahertz emitters (STEs) generate broadband THz radiation via ultrafast spin-charge conversion in magnetic multilayers, offering spectral coverage beyond that of photoconductive antennas and nonlinear optical crystals. Here, we demonstrate a new type of STE based on PtxAu100-x alloy that achieves signifi- cantly higher THz output power than widely used Pt-based devices. Alloy composition and layer thickness tuning yield Pt75Au25 as the optimal alloy providing a 30 % increase in THz power in CoFeB/Pt75Au25 bilayer STEs compared to the optimized CoFeB/Pt reference STE. In W/CoFeB/Pt75Au25 trilayer STEs, we observe a 10 % higher THz power than in the optimized W/CoFeB/Pt trilayer. The STE efficiency is reduced upon annealing for both Pt75Au25- and Pt-based STEs due to formation of interfacial alloys. Our results establish Pt75Au25 as a promising platform for high-performance STEs, where its giant spin Hall effect significantly enhances efficiency over conventional Pt-based devices.</description>
+Abstract: Spintronic terahertz emitters (STEs) generate broadband THz radiation via ultrafast spin-charge conversion in magnetic multilayers, offering spectral coverage beyond that of photoconductive antennas and nonlinear optical crystals. Here, we demonstrate a new type of STE based on PtxAu100-x alloy that achieves significantly higher THz output power than widely used Pt-based devices. Alloy composition and layer thickness tuning yield Pt75Au25 as the optimal alloy providing a 30 % increase in THz power in CoFeB/Pt75Au25 bilayer STEs compared to the optimized CoFeB/Pt reference STE. In W/CoFeB/Pt$_{75}$Au$_{25}$ trilayer STEs, we observe a 10 % higher THz power than in the optimized W/CoFeB/Pt trilayer. The STE efficiency is reduced upon annealing for both Pt$_{75}$Au$_{25}$- and Pt-based STEs due to formation of interfacial alloys. Our results establish Pt$_{75}$Au$_{25}$ as a promising platform for high-performance STEs, where its giant spin Hall effect significantly enhances efficiency over conventional Pt-based devices.</description>
       <guid isPermaLink="false">oai:arXiv.org:2509.25303v1</guid>
       <category>cond-mat.mtrl-sci</category>
       <category>cond-mat.mes-hall</category>
@@ -66,10 +66,34 @@ Abstract: We identify and characterize a first-order dark-state phase transition
       <dc:creator>Robbe Ceulemans, Samuel E. Begg, Matthew J. Davis, Michiel Wouters</dc:creator>
     </item>
     <item>
+      <title>Schwinger boson theory for $S=1$ Kitaev quantum spin liquids</title>
+      <link>https://arxiv.org/abs/2509.25761</link>
+      <description>arXiv:2509.25761v1 Announce Type: new 
+Abstract: The Kitaev model is an exactly solvable model with a quantum spin liquid ground state. While this model was originally proposed as an $S=1/2$ spin model on a honeycomb lattice, extensions to higher-spin systems have recently attracted attention. In contrast to the $S=1/2$ case, such higher-$S$ models are not exactly solvable and remain poorly understood, particularly for spin excitations at finite temperatures. Here, we focus on the $S=1$ Kitaev model, which is proposed to host bosonic quasiparticles. We investigate this model using Schwinger boson mean-field theory, introducing bosonic spinons as fractional quasiparticles by extending bond operators to address anisotropic spin interactions. We determine the mean-field parameters that realize a quantum spin liquid in both ferromagnetic and antiferromagnetic Kitaev models. Based on this ansatz, we calculate dynamical and equal-time spin structure factors. We find that the conventional scheme based on Wick decoupling with respect to spinons yields unphysical momentum dependence: it produces strong spectral weight indicating ferromagnetic (antiferromagnetic) correlations in the antiferromagnetic (ferromagnetic) Kitaev model. To resolve this issue, we propose an alternative evaluation based on decoupling with respect to bond operators. We demonstrate that, in our scheme, such unphysical behavior disappears and the momentum dependence of the spin structure factors is consistent with the sign of the exchange constant. We also compute the temperature evolution of the dynamical spin structure factor and find that the zero-temperature continuum splits into two distinct structures as temperature increases, which can be understood in terms of the bandwidth narrowing of spinons. Finally, we clarify why the two decoupling schemes result in different momentum dependences and discuss their relationship to previous studies.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2509.25761v1</guid>
+      <category>cond-mat.str-el</category>
+      <pubDate>Wed, 01 Oct 2025 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>Daiki Sasamoto, Joji Nasu</dc:creator>
+    </item>
+    <item>
+      <title>Revealing Hidden Antiparallel Domains in Hexagonal Boron Nitride</title>
+      <link>https://arxiv.org/abs/2509.25910</link>
+      <description>arXiv:2509.25910v1 Announce Type: new 
+Abstract: Hexagonal boron nitride (hBN) supports a wide range of two-dimensional (2D) technologies, yet assessing its crystalline quality over large areas remains a fundamental challenge. Both antiparallel domains, an intrinsic outcome of epitaxy on high-symmetry substrates, and orientational domains have long evaded optical detection. Here, we show that interferometric second-harmonic generation (SHG) polarimetry provides a powerful, non-destructive probe of lattice orientation and structural integrity in chemical vapor deposition-grown hBN. This approach reveals the ubiquitous formation of antiparallel domains and quantifies their impact on crystalline order. SHG intensity also emerges as a direct optical metric of domain disorder, spanning three orders of magnitude across films produced by ten different growth routes. Correlation with Raman spectroscopy establishes a unified framework for evaluating crystalline quality. Beyond hBN, this method offers a high-throughput route to wide-area structural imaging in other non-centrosymmetric 2D materials, advancing their deployment in electronics, photonics, and quantum technologies.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2509.25910v1</guid>
+      <category>cond-mat.mtrl-sci</category>
+      <pubDate>Wed, 01 Oct 2025 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Yeri Lee, Juseung Oh, Kyung Yeol Ma, Seung Jin Lee, Eui Young Jung, Yani Wang, Kenji Watanabe, Takashi Taniguchi, Hailin Peng, Hiroki Ago, Ki Kang Kim, Hyeon Suk Shin, Sunmin Ryu</dc:creator>
+    </item>
+    <item>
       <title>Exact heat flux formula and its spectral decomposition in molecular dynamics for arbitrary many-body potentials</title>
       <link>https://arxiv.org/abs/2509.26044</link>
       <description>arXiv:2509.26044v1 Announce Type: new 
-Abstract: In this study we have derived an exact framework for the calculation of the heat flux and its spec- tral decomposition in Molecular Dynamics (MD) for arbitrary many-body potentials. This work addresses several lacks and limitations of previous approaches and allows for the accurate computa- tional study of thermal properties in a wide variety of many-body systems with MD. We have tested our modifications with Green-Kubo (GK) and Non-Equilibrium MD (NEMD) simulations for vari- ous 2D and 3D material systems using the Tersoff and Stillinger-Weber potentials as examples. The spectral decomposition of the heat current was also calculated for monolayer graphene (1LG) and MoS2 , for different system lengths. Our results show that the heat current calculated by our method is consistently in agreement with the thermostat current in NEMD, while previous implementations can estimate quite poorly the thermal conductivity both under GK and NEMD simulations, and both for 2D and 3D materials. The decomposition of the heat current also sheds light on the con- tribution of different phonon modes to thermal conductivity and its dependence on length. Our methodology is implemented in the widely used LAMMPS code specifically for the Tersoff and SW potentials, and it is readily applicable to the vast majority of many-body MD potentials.</description>
+Abstract: In this study we have derived an exact framework for the calculation of the heat flux and its spectral decomposition in Molecular Dynamics (MD) for arbitrary many-body potentials. This work addresses several lacks and limitations of previous approaches and allows for the accurate computational study of thermal properties in a wide variety of many-body systems with MD. We have tested our modifications with Green-Kubo (GK) and Non-Equilibrium MD (NEMD) simulations for various 2D and 3D material systems using the Tersoff and Stillinger-Weber potentials as examples. The spectral decomposition of the heat current was also calculated for monolayer graphene (1LG) and MoS2 , for different system lengths. Our results show that the heat current calculated by our method is consistently in agreement with the thermostat current in NEMD, while previous implementations can estimate quite poorly the thermal conductivity both under GK and NEMD simulations, and both for 2D and 3D materials. The decomposition of the heat current also sheds light on the contribution of different phonon modes to thermal conductivity and its dependence on length. Our methodology is implemented in the widely used LAMMPS code specifically for the Tersoff and SW potentials, and it is readily applicable to the vast majority of many-body MD potentials.</description>
       <guid isPermaLink="false">oai:arXiv.org:2509.26044v1</guid>
       <category>cond-mat.mtrl-sci</category>
       <pubDate>Wed, 01 Oct 2025 00:00:00 -0400</pubDate>
