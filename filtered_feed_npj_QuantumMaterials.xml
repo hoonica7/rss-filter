@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00817-9"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00818-8"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00816-w"/>
@@ -32,8 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00804-0"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00812-0"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-025-00817-9">
+            <title>Fermi surface and pseudogap in highly doped Sr&lt;sub&gt;2&lt;/sub&gt;IrO&lt;sub&gt;4&lt;/sub&gt;</title>
+            <link>https://www.nature.com/articles/s41535-025-00817-9</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 03 October 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00817-9"&gt;doi:10.1038/s41535-025-00817-9&lt;/a&gt;&lt;/p&gt;Fermi surface and pseudogap in highly doped Sr&lt;sub&gt;2&lt;/sub&gt;IrO&lt;sub&gt;4&lt;/sub&gt;</content:encoded>
+            <dc:title>Fermi surface and pseudogap in highly doped Sr&lt;sub&gt;2&lt;/sub&gt;IrO&lt;sub&gt;4&lt;/sub&gt;</dc:title>
+            <dc:creator>Y. Alexanian</dc:creator><dc:creator>A. de la Torre</dc:creator><dc:creator>S. McKeown Walker</dc:creator><dc:creator>M. Straub</dc:creator><dc:creator>G. Gatti</dc:creator><dc:creator>A. Hunter</dc:creator><dc:creator>S. Mandloi</dc:creator><dc:creator>E. Cappelli</dc:creator><dc:creator>S. Riccò</dc:creator><dc:creator>F. Y. Bruno</dc:creator><dc:creator>M. Radovic</dc:creator><dc:creator>N. C. Plumb</dc:creator><dc:creator>M. Shi</dc:creator><dc:creator>J. Osiecki</dc:creator><dc:creator>C. Polley</dc:creator><dc:creator>T. K. Kim</dc:creator><dc:creator>P. Dudin</dc:creator><dc:creator>M. Hoesch</dc:creator><dc:creator>R. S. Perry</dc:creator><dc:creator>A. Tamai</dc:creator><dc:creator>F. Baumberger</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-025-00817-9</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2025-10-03; | doi:10.1038/s41535-025-00817-9</dc:source>
+            <dc:date>2025-10-03</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-025-00817-9</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-025-00817-9</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-025-00818-8">
             <title>Chiral split magnons in metallic g-wave altermagnets: insights from many-body perturbation theory</title>
@@ -146,21 +161,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-025-00804-0</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-025-00804-0</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-025-00812-0">
-            <title>Designing flat bands, localized and itinerant states in TaS&lt;sub&gt;2&lt;/sub&gt; trilayer heterostructures</title>
-            <link>https://www.nature.com/articles/s41535-025-00812-0</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 19 August 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00812-0"&gt;doi:10.1038/s41535-025-00812-0&lt;/a&gt;&lt;/p&gt;Designing flat bands, localized and itinerant states in TaS&lt;sub&gt;2&lt;/sub&gt; trilayer heterostructures</content:encoded>
-            <dc:title>Designing flat bands, localized and itinerant states in TaS&lt;sub&gt;2&lt;/sub&gt; trilayer heterostructures</dc:title>
-            <dc:creator>Hyeonhu Bae</dc:creator><dc:creator>Roser Valentí</dc:creator><dc:creator>Igor I. Mazin</dc:creator><dc:creator>Binghai Yan</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-025-00812-0</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2025-08-19; | doi:10.1038/s41535-025-00812-0</dc:source>
-            <dc:date>2025-08-19</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-025-00812-0</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-025-00812-0</prism:url>
         </item>
     
 </rdf:RDF>

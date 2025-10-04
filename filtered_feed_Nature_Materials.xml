@@ -18,21 +18,15 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02365-w"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02360-1"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02361-0"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02378-5"/>
-                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02362-z"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02368-7"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02341-4"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02346-z"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nmat/rss.gif">
@@ -40,6 +34,21 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02365-w">
+            <title>Spectroscopic probe of spin current</title>
+            <link>https://www.nature.com/articles/s41563-025-02365-w</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 03 October 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02365-w"&gt;doi:10.1038/s41563-025-02365-w&lt;/a&gt;&lt;/p&gt;Spectroscopic probe of spin current</content:encoded>
+            <dc:title>Spectroscopic probe of spin current</dc:title>
+            <dc:creator>Daniel McNally</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02365-w</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-10-03; | doi:10.1038/s41563-025-02365-w</dc:source>
+            <dc:date>2025-10-03</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02365-w</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02365-w</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02360-1">
             <title>Large moiré superstructure of stacked incommensurate charge density waves</title>
@@ -71,21 +80,6 @@
             <prism:url>https://www.nature.com/articles/s41563-025-02361-0</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02378-5">
-            <title>Mechanical insights from functional materials</title>
-            <link>https://www.nature.com/articles/s41563-025-02378-5</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 30 September 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02378-5"&gt;doi:10.1038/s41563-025-02378-5&lt;/a&gt;&lt;/p&gt;Our knowledge of deformation behaviour in functional materials is pushing the frontiers of mechanics, informing design strategies and enabling scalable manufacturing.</content:encoded>
-            <dc:title>Mechanical insights from functional materials</dc:title>
-            
-            <dc:identifier>doi:10.1038/s41563-025-02378-5</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-09-30; | doi:10.1038/s41563-025-02378-5</dc:source>
-            <dc:date>2025-09-30</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02378-5</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02378-5</prism:url>
-        </item>
-    
         <item rdf:about="https://www.nature.com/articles/s41563-025-02362-z">
             <title>Intrinsic intermolecular photoinduced charge separation in organic radical semiconductors</title>
             <link>https://www.nature.com/articles/s41563-025-02362-z</link>
@@ -101,49 +95,4 @@
             <prism:url>https://www.nature.com/articles/s41563-025-02362-z</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02368-7">
-            <title>Suppression of PCBM dimer formation in inverted perovskite solar cells</title>
-            <link>https://www.nature.com/articles/s41563-025-02368-7</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 30 September 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02368-7"&gt;doi:10.1038/s41563-025-02368-7&lt;/a&gt;&lt;/p&gt;The authors develop a molecular dopant to avoid the dimerization of the electron-selective material phenyl-C61-butyric acid methyl ester, resulting in enhanced stability and efficiency in inverted perovskite solar cells.</content:encoded>
-            <dc:title>Suppression of PCBM dimer formation in inverted perovskite solar cells</dc:title>
-            <dc:creator>Zheng Liang</dc:creator><dc:creator>Huifen Xu</dc:creator><dc:creator>Zhenda Huang</dc:creator><dc:creator>Xia Lei</dc:creator><dc:creator>Jiajiu Ye</dc:creator><dc:creator>Yong Zhang</dc:creator><dc:creator>Peide Zhu</dc:creator><dc:creator>Boyuan Liu</dc:creator><dc:creator>Wenjing Chen</dc:creator><dc:creator>Xue Wang</dc:creator><dc:creator>Yaru Li</dc:creator><dc:creator>Yunxiao Liao</dc:creator><dc:creator>Shirui Weng</dc:creator><dc:creator>Yuli Tao</dc:creator><dc:creator>Yalan Zhang</dc:creator><dc:creator>Hui Zhang</dc:creator><dc:creator>Feng Chen</dc:creator><dc:creator>Jie Zeng</dc:creator><dc:creator>Xiangbin Cai</dc:creator><dc:creator>Sang-Uk Lee</dc:creator><dc:creator>Jiufeng Dong</dc:creator><dc:creator>Wanting Liu</dc:creator><dc:creator>Hongmin Zhou</dc:creator><dc:creator>Hongzhen Lin</dc:creator><dc:creator>Liangbao Yang</dc:creator><dc:creator>Guoning Xu</dc:creator><dc:creator>Yong Ding</dc:creator><dc:creator>Jiang Sheng</dc:creator><dc:creator>Jingbai Li</dc:creator><dc:creator>Shangfeng Yang</dc:creator><dc:creator>Baomin Xu</dc:creator><dc:creator>Zhengguo Xiao</dc:creator><dc:creator>Thomas Kirchartz</dc:creator><dc:creator>Xu Pan</dc:creator><dc:creator>Nam-Gyu Park</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02368-7</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-09-30; | doi:10.1038/s41563-025-02368-7</dc:source>
-            <dc:date>2025-09-30</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02368-7</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02368-7</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02341-4">
-            <title>Ions in solution drive action and satisfaction</title>
-            <link>https://www.nature.com/articles/s41563-025-02341-4</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 29 September 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02341-4"&gt;doi:10.1038/s41563-025-02341-4&lt;/a&gt;&lt;/p&gt;Aqueous electrochemical reactions drive conductance switching, thereby imbuing perception and sensing to neuronal emulators.</content:encoded>
-            <dc:title>Ions in solution drive action and satisfaction</dc:title>
-            <dc:creator>Yu-Hsiang Chiang</dc:creator><dc:creator>Shruti Hariyani</dc:creator><dc:creator>Sarbajit Banerjee</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02341-4</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-09-29; | doi:10.1038/s41563-025-02341-4</dc:source>
-            <dc:date>2025-09-29</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02341-4</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02341-4</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02346-z">
-            <title>Mechanically liberating polarization bubbles in van der Waals ferroelectrics</title>
-            <link>https://www.nature.com/articles/s41563-025-02346-z</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 29 September 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02346-z"&gt;doi:10.1038/s41563-025-02346-z&lt;/a&gt;&lt;/p&gt;Spherical polar topological structures are of interest as they could enable high-density memory applications; however, such texture formation requires superlattices with delicately balanced boundary conditions to form. Here it is found that these textures can form in free-standing CuInP2S6, and that mechanical force can generate high-density domains.</content:encoded>
-            <dc:title>Mechanically liberating polarization bubbles in van der Waals ferroelectrics</dc:title>
-            <dc:creator>Xingan Jiang</dc:creator><dc:creator>Tingjun Wang</dc:creator><dc:creator>Yixuan Zhang</dc:creator><dc:creator>Zunyi Deng</dc:creator><dc:creator>Xiangping Zhang</dc:creator><dc:creator>Ruixue Zhu</dc:creator><dc:creator>Jiaqian Kang</dc:creator><dc:creator>Xiangdong Yang</dc:creator><dc:creator>Xue Chen</dc:creator><dc:creator>Xiaolei Wang</dc:creator><dc:creator>Peng Gao</dc:creator><dc:creator>Houbing Huang</dc:creator><dc:creator>Xidong Duan</dc:creator><dc:creator>Sang-Wook Cheong</dc:creator><dc:creator>Xueyun Wang</dc:creator><dc:creator>Weiyou Yang</dc:creator><dc:creator>Jiawang Hong</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02346-z</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-09-29; | doi:10.1038/s41563-025-02346-z</dc:source>
-            <dc:date>2025-09-29</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02346-z</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02346-z</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
