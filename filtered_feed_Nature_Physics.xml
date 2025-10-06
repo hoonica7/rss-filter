@@ -18,15 +18,13 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03044-y"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03036-y"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03056-8"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03035-z"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03051-z"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03050-0"/>
                 
             </rdf:Seq>
         </items>
@@ -36,6 +34,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03044-y">
+            <title>How to build a long-lived qubit</title>
+            <link>https://www.nature.com/articles/s41567-025-03044-y</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 06 October 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03044-y"&gt;doi:10.1038/s41567-025-03044-y&lt;/a&gt;&lt;/p&gt;Improvements in qubit performance are essential for the development of large-scale quantum computing devices. Sustained progress requires a broad approach combining physics, materials science, and engineering mindsets.</content:encoded>
+            <dc:title>How to build a long-lived qubit</dc:title>
+            <dc:creator>Nathalie de Leon</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03044-y</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-10-06; | doi:10.1038/s41567-025-03044-y</dc:source>
+            <dc:date>2025-10-06</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03044-y</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03044-y</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03036-y">
             <title>Imaging isospin order in rhombohedral graphene reveals anisotropy in correlated states</title>
@@ -80,36 +93,6 @@
             <prism:publicationName>Nature Physics</prism:publicationName>
             <prism:doi>10.1038/s41567-025-03035-z</prism:doi>
             <prism:url>https://www.nature.com/articles/s41567-025-03035-z</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03051-z">
-            <title>Cool nanoparticles</title>
-            <link>https://www.nature.com/articles/s41567-025-03051-z</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 30 September 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03051-z"&gt;doi:10.1038/s41567-025-03051-z&lt;/a&gt;&lt;/p&gt;High-purity quantum states, essential for quantum technological applications, were achieved by cooling optically levitated silica nanoparticles.</content:encoded>
-            <dc:title>Cool nanoparticles</dc:title>
-            <dc:creator>Tania Monteiro</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03051-z</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-09-30; | doi:10.1038/s41567-025-03051-z</dc:source>
-            <dc:date>2025-09-30</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03051-z</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03051-z</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03050-0">
-            <title>From bending to lightning</title>
-            <link>https://www.nature.com/articles/s41567-025-03050-0</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 30 September 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03050-0"&gt;doi:10.1038/s41567-025-03050-0&lt;/a&gt;&lt;/p&gt;Laboratory measurements reveal that ice exhibits flexoelectricity — the generation of an electrical field upon bending. This flexoelectricity may be the microscopic mechanism for the mysterious charge separation that creates lightning in thunderstorms.</content:encoded>
-            <dc:title>From bending to lightning</dc:title>
-            <dc:creator>Yaroslav I. Sobolev</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03050-0</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-09-30; | doi:10.1038/s41567-025-03050-0</dc:source>
-            <dc:date>2025-09-30</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03050-0</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03050-0</prism:url>
         </item>
     
 </rdf:RDF>
