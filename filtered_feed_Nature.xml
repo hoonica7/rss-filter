@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-03194-2"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09452-7"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09484-z"/>
@@ -25,8 +27,6 @@
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09524-8"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-03147-9"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-02968-y"/>
                 
                     </rdf:Seq>
         </items>
@@ -36,6 +36,21 @@
         <url>https://www.nature.com/uploads/product/nature/rss.png</url>
         <link>http://feeds.nature.com/nature/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/d41586-025-03194-2">
+            <title>Groundbreaking quantum-tunnelling experiments win physics Nobel</title>
+            <link>https://www.nature.com/articles/d41586-025-03194-2</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 07 October 2025; &lt;a href="https://www.nature.com/articles/d41586-025-03194-2"&gt;doi:10.1038/d41586-025-03194-2&lt;/a&gt;&lt;/p&gt;John Clarke, Michel Devoret and John Martinis discovered quantum physics on a macroscopic scale, paving the way for quantum computing.</content:encoded>
+            <dc:title>Groundbreaking quantum-tunnelling experiments win physics Nobel</dc:title>
+            <dc:creator>Elizabeth Gibney</dc:creator><dc:creator>Davide Castelvecchi</dc:creator>
+            <dc:identifier>doi:10.1038/d41586-025-03194-2</dc:identifier>
+            <dc:source>Nature, Published online: 2025-10-07; | doi:10.1038/d41586-025-03194-2</dc:source>
+            <dc:date>2025-10-07</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/d41586-025-03194-2</prism:doi>
+            <prism:url>https://www.nature.com/articles/d41586-025-03194-2</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41586-025-09452-7">
             <title>Signal amplification in a solid-state sensor through asymmetric many-body echo</title>
@@ -95,21 +110,6 @@
             <prism:publicationName>Nature</prism:publicationName>
             <prism:doi>10.1038/d41586-025-03147-9</prism:doi>
             <prism:url>https://www.nature.com/articles/d41586-025-03147-9</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/d41586-025-02968-y">
-            <title>Quantum correlations enhance the sensitivity of room-temperature sensors</title>
-            <link>https://www.nature.com/articles/d41586-025-02968-y</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 01 October 2025; &lt;a href="https://www.nature.com/articles/d41586-025-02968-y"&gt;doi:10.1038/d41586-025-02968-y&lt;/a&gt;&lt;/p&gt;Quantum sensors based on diamond promise robustness but have limited sensitivity. Generating quantum correlations in the material might be a solution.</content:encoded>
-            <dc:title>Quantum correlations enhance the sensitivity of room-temperature sensors</dc:title>
-            <dc:creator>Maja S. Scharnagl</dc:creator><dc:creator>Klemens Hammerer</dc:creator>
-            <dc:identifier>doi:10.1038/d41586-025-02968-y</dc:identifier>
-            <dc:source>Nature, Published online: 2025-10-01; | doi:10.1038/d41586-025-02968-y</dc:source>
-            <dc:date>2025-10-01</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/d41586-025-02968-y</prism:doi>
-            <prism:url>https://www.nature.com/articles/d41586-025-02968-y</prism:url>
         </item>
     
         </rdf:RDF>

@@ -18,15 +18,15 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03057-7"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03044-y"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03036-y"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03056-8"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03035-z"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -34,6 +34,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03057-7">
+            <title>Unified theory of phonon in solids with phase diagram of non-Debye anomalies</title>
+            <link>https://www.nature.com/articles/s41567-025-03057-7</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 07 October 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03057-7"&gt;doi:10.1038/s41567-025-03057-7&lt;/a&gt;&lt;/p&gt;Van Hove singularities in crystals and the boson peak in glasses are both deviations from the Debye theory of phonons. A unified model for the vibrational density of states now shows when these two phenomena have distinct phononic origins.</content:encoded>
+            <dc:title>Unified theory of phonon in solids with phase diagram of non-Debye anomalies</dc:title>
+            <dc:creator>Gan Ding</dc:creator><dc:creator>En Ma</dc:creator><dc:creator>Feng Jiang</dc:creator><dc:creator>Jun Duan</dc:creator><dc:creator>Songlin Cai</dc:creator><dc:creator>Ning Xu</dc:creator><dc:creator>Bingyu Cui</dc:creator><dc:creator>Lanhong Dai</dc:creator><dc:creator>Minqiang Jiang</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03057-7</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-10-07; | doi:10.1038/s41567-025-03057-7</dc:source>
+            <dc:date>2025-10-07</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03057-7</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03057-7</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03044-y">
             <title>How to build a long-lived qubit</title>
@@ -80,19 +95,4 @@
             <prism:url>https://www.nature.com/articles/s41567-025-03056-8</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03035-z">
-            <title>Isospin magnetic texture and intervalley exchange interaction in rhombohedral tetralayer graphene</title>
-            <link>https://www.nature.com/articles/s41567-025-03035-z</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 02 October 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03035-z"&gt;doi:10.1038/s41567-025-03035-z&lt;/a&gt;&lt;/p&gt;Hund’s exchange interaction energy in two-dimensional materials is challenging to extract from experiments. Now, this is achieved in rhombohedral graphene, which allows an estimate of the interactions that drive the variety of correlated states in this material.</content:encoded>
-            <dc:title>Isospin magnetic texture and intervalley exchange interaction in rhombohedral tetralayer graphene</dc:title>
-            <dc:creator>Nadav Auerbach</dc:creator><dc:creator>Surajit Dutta</dc:creator><dc:creator>Matan Uzan</dc:creator><dc:creator>Yaar Vituri</dc:creator><dc:creator>Yaozhang Zhou</dc:creator><dc:creator>Alexander Y. Meltzer</dc:creator><dc:creator>Sameer Grover</dc:creator><dc:creator>Tobias Holder</dc:creator><dc:creator>Peleg Emanuel</dc:creator><dc:creator>Martin E. Huber</dc:creator><dc:creator>Yuri Myasoedov</dc:creator><dc:creator>Kenji Watanabe</dc:creator><dc:creator>Takashi Taniguchi</dc:creator><dc:creator>Yuval Oreg</dc:creator><dc:creator>Erez Berg</dc:creator><dc:creator>Eli Zeldov</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03035-z</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-10-02; | doi:10.1038/s41567-025-03035-z</dc:source>
-            <dc:date>2025-10-02</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03035-z</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03035-z</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
