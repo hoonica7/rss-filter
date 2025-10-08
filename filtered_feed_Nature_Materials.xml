@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02359-8"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02365-w"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02360-1"/>
@@ -32,6 +34,21 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02359-8">
+            <title>Relativistic Mott transition in twisted WSe&lt;sub&gt;2&lt;/sub&gt; tetralayers</title>
+            <link>https://www.nature.com/articles/s41563-025-02359-8</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 08 October 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02359-8"&gt;doi:10.1038/s41563-025-02359-8&lt;/a&gt;&lt;/p&gt;The authors present magnetotransport measurements of tetralayer WSe2, which serves as a simulator for correlated Dirac fermion physics. They tune the interactions using the twist angle and electric field, resulting in a semimetal–Mott insulator transition.</content:encoded>
+            <dc:title>Relativistic Mott transition in twisted WSe&lt;sub&gt;2&lt;/sub&gt; tetralayers</dc:title>
+            <dc:creator>Liguo Ma</dc:creator><dc:creator>Raghav Chaturvedi</dc:creator><dc:creator>Phuong X. Nguyen</dc:creator><dc:creator>Kenji Watanabe</dc:creator><dc:creator>Takashi Taniguchi</dc:creator><dc:creator>Kin Fai Mak</dc:creator><dc:creator>Jie Shan</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02359-8</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-10-08; | doi:10.1038/s41563-025-02359-8</dc:source>
+            <dc:date>2025-10-08</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02359-8</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02359-8</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02365-w">
             <title>Spectroscopic probe of spin current</title>

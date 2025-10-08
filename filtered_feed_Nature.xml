@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-03195-1"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-03194-2"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09452-7"/>
@@ -34,6 +36,21 @@
         <url>https://www.nature.com/uploads/product/nature/rss.png</url>
         <link>http://feeds.nature.com/nature/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/d41586-025-03195-1">
+            <title>Chemistry Nobel for scientists who developed massively porous ‘super sponge’ materials</title>
+            <link>https://www.nature.com/articles/d41586-025-03195-1</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 08 October 2025; &lt;a href="https://www.nature.com/articles/d41586-025-03195-1"&gt;doi:10.1038/d41586-025-03195-1&lt;/a&gt;&lt;/p&gt;Susumu Kitagawa, Richard Robson and Omar Yaghi pioneered the creation of metal-organic frameworks, which can capture and store molecules such as carbon dioxide.</content:encoded>
+            <dc:title>Chemistry Nobel for scientists who developed massively porous ‘super sponge’ materials</dc:title>
+            <dc:creator>Davide Castelvecchi</dc:creator>
+            <dc:identifier>doi:10.1038/d41586-025-03195-1</dc:identifier>
+            <dc:source>Nature, Published online: 2025-10-08; | doi:10.1038/d41586-025-03195-1</dc:source>
+            <dc:date>2025-10-08</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/d41586-025-03195-1</prism:doi>
+            <prism:url>https://www.nature.com/articles/d41586-025-03195-1</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/d41586-025-03194-2">
             <title>Groundbreaking quantum-tunnelling experiments win physics Nobel</title>
