@@ -21,6 +21,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-64078-7"/>
+                
                     </rdf:Seq>
         </items>
     </channel>
@@ -29,5 +31,20 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-64078-7">
+            <title>Digitally fabricated 3D slippery architectures for multifunctional liquid manipulation</title>
+            <link>https://www.nature.com/articles/s41467-025-64078-7</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 10 October 2025; &lt;a href="https://www.nature.com/articles/s41467-025-64078-7"&gt;doi:10.1038/s41467-025-64078-7&lt;/a&gt;&lt;/p&gt;Control of liquid-based materials is important for developing materials based on these, but topological flexibility is limited. Here, the authors report a method for digital fabrication of slippery objects with solid-liquid composite interfaces and geometric design freedom.</content:encoded>
+            <dc:title>Digitally fabricated 3D slippery architectures for multifunctional liquid manipulation</dc:title>
+            <dc:creator>Woo Young Kim</dc:creator><dc:creator>Seong Min Yoon</dc:creator><dc:creator>Seo Rim Park</dc:creator><dc:creator>Myung Seo Kim</dc:creator><dc:creator>Sang Hoon Lee</dc:creator><dc:creator>Su Hyun Choi</dc:creator><dc:creator>Seungwoo Shin</dc:creator><dc:creator>Sin Kwon</dc:creator><dc:creator>Chang Jong Kim</dc:creator><dc:creator>Kwang Min Lee</dc:creator><dc:creator>Sang-Hoon Nam</dc:creator><dc:creator>Soochan Bae</dc:creator><dc:creator>Peter M. Kang</dc:creator><dc:creator>Nicholas X. Fang</dc:creator><dc:creator>Seok Kim</dc:creator><dc:creator>Young Tae Cho</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-64078-7</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-10-10; | doi:10.1038/s41467-025-64078-7</dc:source>
+            <dc:date>2025-10-10</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-64078-7</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-64078-7</prism:url>
+        </item>
     
         </rdf:RDF>
