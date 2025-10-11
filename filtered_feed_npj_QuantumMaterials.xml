@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00801-3"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00817-9"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00818-8"/>
@@ -32,8 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00792-1"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00804-0"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-025-00801-3">
+            <title>Quantum geometry in quantum materials</title>
+            <link>https://www.nature.com/articles/s41535-025-00801-3</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 10 October 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00801-3"&gt;doi:10.1038/s41535-025-00801-3&lt;/a&gt;&lt;/p&gt;Quantum geometry in quantum materials</content:encoded>
+            <dc:title>Quantum geometry in quantum materials</dc:title>
+            <dc:creator>Jiabin Yu</dc:creator><dc:creator>B. Andrei Bernevig</dc:creator><dc:creator>Raquel Queiroz</dc:creator><dc:creator>Enrico Rossi</dc:creator><dc:creator>Päivi Törmä</dc:creator><dc:creator>Bohm-Jung Yang</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-025-00801-3</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2025-10-10; | doi:10.1038/s41535-025-00801-3</dc:source>
+            <dc:date>2025-10-10</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-025-00801-3</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-025-00801-3</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-025-00817-9">
             <title>Fermi surface and pseudogap in highly doped Sr&lt;sub&gt;2&lt;/sub&gt;IrO&lt;sub&gt;4&lt;/sub&gt;</title>
@@ -146,21 +161,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-025-00792-1</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-025-00792-1</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-025-00804-0">
-            <title>Gapped commensurate antiferromagnetic response in a strongly underdoped model cuprate superconductor</title>
-            <link>https://www.nature.com/articles/s41535-025-00804-0</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 20 August 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00804-0"&gt;doi:10.1038/s41535-025-00804-0&lt;/a&gt;&lt;/p&gt;Gapped commensurate antiferromagnetic response in a strongly underdoped model cuprate superconductor</content:encoded>
-            <dc:title>Gapped commensurate antiferromagnetic response in a strongly underdoped model cuprate superconductor</dc:title>
-            <dc:creator>Z. W. Anderson</dc:creator><dc:creator>Y. Tang</dc:creator><dc:creator>V. Nagarajan</dc:creator><dc:creator>M. K. Chan</dc:creator><dc:creator>C. J. Dorow</dc:creator><dc:creator>G. Yu</dc:creator><dc:creator>D. L. Abernathy</dc:creator><dc:creator>A. D. Christianson</dc:creator><dc:creator>L. Mangin-Thro</dc:creator><dc:creator>P. Steffens</dc:creator><dc:creator>T. Sterling</dc:creator><dc:creator>D. Reznik</dc:creator><dc:creator>D. Bounoua</dc:creator><dc:creator>Y. Sidis</dc:creator><dc:creator>P. Bourges</dc:creator><dc:creator>M. Greven</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-025-00804-0</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2025-08-20; | doi:10.1038/s41535-025-00804-0</dc:source>
-            <dc:date>2025-08-20</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-025-00804-0</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-025-00804-0</prism:url>
         </item>
     
 </rdf:RDF>

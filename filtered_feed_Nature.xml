@@ -20,6 +20,8 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-03245-8"/>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09621-8"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09516-8"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09578-8"/>
@@ -34,7 +36,9 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-03292-1"/>
                 
-                    </rdf:Seq>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09587-7"/>
+                
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nature/rss.png">
@@ -56,6 +60,21 @@
             <prism:publicationName>Nature</prism:publicationName>
             <prism:doi>10.1038/d41586-025-03245-8</prism:doi>
             <prism:url>https://www.nature.com/articles/d41586-025-03245-8</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41586-025-09621-8">
+            <title>A full-featured 2D flash chip enabled by system integration</title>
+            <link>https://www.nature.com/articles/s41586-025-09621-8</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 08 October 2025; &lt;a href="https://www.nature.com/articles/s41586-025-09621-8"&gt;doi:10.1038/s41586-025-09621-8&lt;/a&gt;&lt;/p&gt;A full-featured 2D NOR flash memory chip realized by an atomic device to chip technology combines a superior 2D electronic device as a memory core and a powerful CMOS platform to support complex instruction control.</content:encoded>
+            <dc:title>A full-featured 2D flash chip enabled by system integration</dc:title>
+            <dc:creator>Chunsen Liu</dc:creator><dc:creator>Yongbo Jiang</dc:creator><dc:creator>Boqian Shen</dc:creator><dc:creator>Shengchao Yuan</dc:creator><dc:creator>Zhenyuan Cao</dc:creator><dc:creator>Zhongyu Bi</dc:creator><dc:creator>Chong Wang</dc:creator><dc:creator>Yutong Xiang</dc:creator><dc:creator>Tanjun Wang</dc:creator><dc:creator>Haoqi Wu</dc:creator><dc:creator>Zizheng Liu</dc:creator><dc:creator>Yang Wang</dc:creator><dc:creator>Shuiyuan Wang</dc:creator><dc:creator>Peng Zhou</dc:creator>
+            <dc:identifier>doi:10.1038/s41586-025-09621-8</dc:identifier>
+            <dc:source>Nature, Published online: 2025-10-08; | doi:10.1038/s41586-025-09621-8</dc:source>
+            <dc:date>2025-10-08</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/s41586-025-09621-8</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41586-025-09621-8</prism:url>
         </item>
     
         <item rdf:about="https://www.nature.com/articles/s41586-025-09516-8">
@@ -163,4 +182,19 @@
             <prism:url>https://www.nature.com/articles/d41586-025-03292-1</prism:url>
         </item>
     
-        </rdf:RDF>
+        <item rdf:about="https://www.nature.com/articles/s41586-025-09587-7">
+            <title>Marcus kinetics control singlet and triplet oxygen evolving from superoxide</title>
+            <link>https://www.nature.com/articles/s41586-025-09587-7</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 03 October 2025; &lt;a href="https://www.nature.com/articles/s41586-025-09587-7"&gt;doi:10.1038/s41586-025-09587-7&lt;/a&gt;&lt;/p&gt;The release of triplet or singlet oxygen is governed by individual Marcus normal and inverted region behaviour.</content:encoded>
+            <dc:title>Marcus kinetics control singlet and triplet oxygen evolving from superoxide</dc:title>
+            <dc:creator>Soumyadip Mondal</dc:creator><dc:creator>Huyen T. K. Nguyen</dc:creator><dc:creator>Robert Hauschild</dc:creator><dc:creator>Stefan A. Freunberger</dc:creator>
+            <dc:identifier>doi:10.1038/s41586-025-09587-7</dc:identifier>
+            <dc:source>Nature, Published online: 2025-10-03; | doi:10.1038/s41586-025-09587-7</dc:source>
+            <dc:date>2025-10-03</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/s41586-025-09587-7</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41586-025-09587-7</prism:url>
+        </item>
+    
+</rdf:RDF>
