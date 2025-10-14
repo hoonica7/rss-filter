@@ -18,15 +18,13 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03059-5"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03057-7"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03044-y"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03036-y"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03056-8"/>
-                
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -34,6 +32,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03059-5">
+            <title>The first eight</title>
+            <link>https://www.nature.com/articles/s41567-025-03059-5</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 13 October 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03059-5"&gt;doi:10.1038/s41567-025-03059-5&lt;/a&gt;&lt;/p&gt;In our very first issue we published eight research papers, on topics ranging from condensed matter physics to atom interferometry. Two decades on, we look back at those works and hear from their authors.</content:encoded>
+            <dc:title>The first eight</dc:title>
+            <dc:creator>Bart Verberck</dc:creator><dc:creator>Elizaveta Dubrovina</dc:creator><dc:creator>Debarchan Das</dc:creator><dc:creator>Lishu Wu</dc:creator><dc:creator>Leonardo Benini</dc:creator><dc:creator>Richard Brierley</dc:creator><dc:creator>Stefanie Reichert</dc:creator><dc:creator>Sonal Mistry</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03059-5</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-10-13; | doi:10.1038/s41567-025-03059-5</dc:source>
+            <dc:date>2025-10-13</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03059-5</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03059-5</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03057-7">
             <title>Unified theory of phonon in solids with phase diagram of non-Debye anomalies</title>
@@ -65,34 +78,4 @@
             <prism:url>https://www.nature.com/articles/s41567-025-03044-y</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03036-y">
-            <title>Imaging isospin order in rhombohedral graphene reveals anisotropy in correlated states</title>
-            <link>https://www.nature.com/articles/s41567-025-03036-y</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 03 October 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03036-y"&gt;doi:10.1038/s41567-025-03036-y&lt;/a&gt;&lt;/p&gt;The microscopic magnetic textures of isospin symmetry-broken phases in rhombohedral tetralayer graphene have been directly imaged. By probing spin orientation and magnetic anisotropy at ultra-low fields, key energy scales — the spin–orbit coupling and intervalley Hund’s exchange — have been extracted, shedding new light on the phase hierarchy in strongly correlated electron systems.</content:encoded>
-            <dc:title>Imaging isospin order in rhombohedral graphene reveals anisotropy in correlated states</dc:title>
-            
-            <dc:identifier>doi:10.1038/s41567-025-03036-y</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-10-03; | doi:10.1038/s41567-025-03036-y</dc:source>
-            <dc:date>2025-10-03</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03036-y</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03036-y</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03056-8">
-            <title>Terahertz excitation of collective dynamics of polar skyrmions over a broad temperature range</title>
-            <link>https://www.nature.com/articles/s41567-025-03056-8</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 03 October 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03056-8"&gt;doi:10.1038/s41567-025-03056-8&lt;/a&gt;&lt;/p&gt;Terahertz control of polar skyrmions—topological textures of electric dipoles—is key for fast optoelectronics. Now, ultrafast excitation of polar skyrmions is achieved across two orders of magnitude of temperature in an oxide heterostructure.</content:encoded>
-            <dc:title>Terahertz excitation of collective dynamics of polar skyrmions over a broad temperature range</dc:title>
-            <dc:creator>Wei Li</dc:creator><dc:creator>Sixu Wang</dc:creator><dc:creator>Pai Peng</dc:creator><dc:creator>Haojie Han</dc:creator><dc:creator>Xinbo Wang</dc:creator><dc:creator>Jing Ma</dc:creator><dc:creator>Jianlin Luo</dc:creator><dc:creator>Jun-Ming Liu</dc:creator><dc:creator>Jing-Feng Li</dc:creator><dc:creator>Ce-Wen Nan</dc:creator><dc:creator>Qian Li</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03056-8</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-10-03; | doi:10.1038/s41567-025-03056-8</dc:source>
-            <dc:date>2025-10-03</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03056-8</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03056-8</prism:url>
-        </item>
-    
-        </rdf:RDF>
+</rdf:RDF>
