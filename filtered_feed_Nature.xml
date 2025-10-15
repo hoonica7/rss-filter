@@ -30,9 +30,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-03235-w"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-02973-1"/>
-                
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nature/rss.png">
@@ -131,19 +129,4 @@
             <prism:url>https://www.nature.com/articles/d41586-025-03235-w</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/d41586-025-02973-1">
-            <title>Sacrificial metal speeds up synthesis of nano-alloys from multiple elements</title>
-            <link>https://www.nature.com/articles/d41586-025-02973-1</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 08 October 2025; &lt;a href="https://www.nature.com/articles/d41586-025-02973-1"&gt;doi:10.1038/d41586-025-02973-1&lt;/a&gt;&lt;/p&gt;An approach for making nanoscale high-entropy alloys using liquid metal provides much-needed control over the structure and composition of these remarkable materials.</content:encoded>
-            <dc:title>Sacrificial metal speeds up synthesis of nano-alloys from multiple elements</dc:title>
-            <dc:creator>Yunqing Kang</dc:creator><dc:creator>Yusuke Yamauchi</dc:creator>
-            <dc:identifier>doi:10.1038/d41586-025-02973-1</dc:identifier>
-            <dc:source>Nature, Published online: 2025-10-08; | doi:10.1038/d41586-025-02973-1</dc:source>
-            <dc:date>2025-10-08</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/d41586-025-02973-1</prism:doi>
-            <prism:url>https://www.nature.com/articles/d41586-025-02973-1</prism:url>
-        </item>
-    
-        </rdf:RDF>
+</rdf:RDF>
