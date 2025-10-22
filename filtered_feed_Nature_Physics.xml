@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03049-7"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03063-9"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03062-w"/>
@@ -26,13 +28,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03064-8"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03033-1"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03068-4"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03045-x"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -40,6 +36,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03049-7">
+            <title>Individual solid-state nuclear spin qubits with coherence exceeding seconds</title>
+            <link>https://www.nature.com/articles/s41567-025-03049-7</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 22 October 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03049-7"&gt;doi:10.1038/s41567-025-03049-7&lt;/a&gt;&lt;/p&gt;Nuclear spins in solid-state systems can have very long coherence times, which makes them attractive for use as qubits. Now a nuclear spin qubit device has been developed with all-microwave two-qubit control that has important performance benefits.</content:encoded>
+            <dc:title>Individual solid-state nuclear spin qubits with coherence exceeding seconds</dc:title>
+            <dc:creator>James O’Sullivan</dc:creator><dc:creator>Jaime Travesedo</dc:creator><dc:creator>Louis Pallegoix</dc:creator><dc:creator>Zhiyuan W. Huang</dc:creator><dc:creator>Patrick Hogan</dc:creator><dc:creator>Alexandre S. May</dc:creator><dc:creator>Boris Yavkin</dc:creator><dc:creator>Sen Lin</dc:creator><dc:creator>Ren-Bao Liu</dc:creator><dc:creator>Thierry Chaneliere</dc:creator><dc:creator>Sylvain Bertaina</dc:creator><dc:creator>Philippe Goldner</dc:creator><dc:creator>Daniel Estève</dc:creator><dc:creator>Denis Vion</dc:creator><dc:creator>Patrick Abgrall</dc:creator><dc:creator>Patrice Bertet</dc:creator><dc:creator>Emmanuel Flurin</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03049-7</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-10-22; | doi:10.1038/s41567-025-03049-7</dc:source>
+            <dc:date>2025-10-22</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03049-7</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03049-7</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03063-9">
             <title>Reply to: Inadequacy of the Casimir force for explaining a strong attractive force in a micrometre-sized narrow-gap re-entrant cavity</title>
@@ -101,49 +112,4 @@
             <prism:url>https://www.nature.com/articles/s41567-025-03064-8</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03033-1">
-            <title>Electrons herald non-classical light</title>
-            <link>https://www.nature.com/articles/s41567-025-03033-1</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 16 October 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03033-1"&gt;doi:10.1038/s41567-025-03033-1&lt;/a&gt;&lt;/p&gt;When free electrons emit light, an entangled electron–photon state is created. Here measurements of the correlated multiparticle system have been used to produce non-classical photonic states.</content:encoded>
-            <dc:title>Electrons herald non-classical light</dc:title>
-            <dc:creator>Germaine Arend</dc:creator><dc:creator>Guanhao Huang</dc:creator><dc:creator>Armin Feist</dc:creator><dc:creator>Yujia Yang</dc:creator><dc:creator>Jan-Wilke Henke</dc:creator><dc:creator>Zheru Qiu</dc:creator><dc:creator>Hao Jeng</dc:creator><dc:creator>Arslan Sajid Raja</dc:creator><dc:creator>Rudolf Haindl</dc:creator><dc:creator>Rui Ning Wang</dc:creator><dc:creator>Tobias J. Kippenberg</dc:creator><dc:creator>Claus Ropers</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03033-1</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-10-16; | doi:10.1038/s41567-025-03033-1</dc:source>
-            <dc:date>2025-10-16</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03033-1</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03033-1</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03068-4">
-            <title>Vibrational responses of polar skyrmions</title>
-            <link>https://www.nature.com/articles/s41567-025-03068-4</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 15 October 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03068-4"&gt;doi:10.1038/s41567-025-03068-4&lt;/a&gt;&lt;/p&gt;Controlling polar skyrmions — topological textures of electric dipoles — is crucial for modern optoelectronic applications. Terahertz excitation is shown to govern ultrafast manipulation of polar skyrmions featuring signature vibrational modes.</content:encoded>
-            <dc:title>Vibrational responses of polar skyrmions</dc:title>
-            <dc:creator>C. Paillard</dc:creator><dc:creator>B. Dkhil</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03068-4</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-10-15; | doi:10.1038/s41567-025-03068-4</dc:source>
-            <dc:date>2025-10-15</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03068-4</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03068-4</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03045-x">
-            <title>Ultrafast topological control</title>
-            <link>https://www.nature.com/articles/s41567-025-03045-x</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 14 October 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03045-x"&gt;doi:10.1038/s41567-025-03045-x&lt;/a&gt;&lt;/p&gt;Exciton–polariton superlattices allow sub-picosecond switching of topological phases, paving the way for ultrafast and reconfigurable topological photonic devices.</content:encoded>
-            <dc:title>Ultrafast topological control</dc:title>
-            <dc:creator>Hyun Gyu Song</dc:creator><dc:creator>Su-Hyun Gong</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03045-x</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-10-14; | doi:10.1038/s41567-025-03045-x</dc:source>
-            <dc:date>2025-10-14</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03045-x</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03045-x</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
