@@ -18,6 +18,10 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03066-6"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03065-7"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03049-7"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03063-9"/>
@@ -26,9 +30,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03083-5"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03064-8"/>
-                
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -36,6 +38,36 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03066-6">
+            <title>Vortices revealed by synchronization</title>
+            <link>https://www.nature.com/articles/s41567-025-03066-6</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 23 October 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03066-6"&gt;doi:10.1038/s41567-025-03066-6&lt;/a&gt;&lt;/p&gt;A study shows that the nucleation of vortices in dipolar supersolids can be revealed by the onset of rotational synchronization.</content:encoded>
+            <dc:title>Vortices revealed by synchronization</dc:title>
+            <dc:creator>Yu-Kun Lu</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03066-6</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-10-23; | doi:10.1038/s41567-025-03066-6</dc:source>
+            <dc:date>2025-10-23</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03066-6</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03066-6</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03065-7">
+            <title>Synchronization in rotating supersolids</title>
+            <link>https://www.nature.com/articles/s41567-025-03065-7</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 23 October 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03065-7"&gt;doi:10.1038/s41567-025-03065-7&lt;/a&gt;&lt;/p&gt;Supersolids combine superfluid and crystal order and their response to external driving remains unclear. Now it is shown that, in a dipolar supersolid, rotation induces synchronization of the crystal motion via vortex nucleation.</content:encoded>
+            <dc:title>Synchronization in rotating supersolids</dc:title>
+            <dc:creator>Elena Poli</dc:creator><dc:creator>Andrea Litvinov</dc:creator><dc:creator>Eva Casotti</dc:creator><dc:creator>Clemens Ulm</dc:creator><dc:creator>Lauritz Klaus</dc:creator><dc:creator>Manfred J. Mark</dc:creator><dc:creator>Giacomo Lamporesi</dc:creator><dc:creator>Thomas Bland</dc:creator><dc:creator>Francesca Ferlaino</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03065-7</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-10-23; | doi:10.1038/s41567-025-03065-7</dc:source>
+            <dc:date>2025-10-23</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03065-7</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03065-7</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03049-7">
             <title>Individual solid-state nuclear spin qubits with coherence exceeding seconds</title>
@@ -97,19 +129,4 @@
             <prism:url>https://www.nature.com/articles/s41567-025-03083-5</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03064-8">
-            <title>Cavity electrodynamics of van der Waals heterostructures</title>
-            <link>https://www.nature.com/articles/s41567-025-03064-8</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 20 October 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03064-8"&gt;doi:10.1038/s41567-025-03064-8&lt;/a&gt;&lt;/p&gt;Integrating an electronic device with a cavity can cause the electrons to couple to photons strongly enough to form hybrid modes. Now, the cavity effects induced by intrinsic graphite gates are shown to modify the low-energy properties of graphene.</content:encoded>
-            <dc:title>Cavity electrodynamics of van der Waals heterostructures</dc:title>
-            <dc:creator>Gunda Kipp</dc:creator><dc:creator>Hope M. Bretscher</dc:creator><dc:creator>Benedikt Schulte</dc:creator><dc:creator>Dorothee Herrmann</dc:creator><dc:creator>Kateryna Kusyak</dc:creator><dc:creator>Matthew W. Day</dc:creator><dc:creator>Sivasruthi Kesavan</dc:creator><dc:creator>Toru Matsuyama</dc:creator><dc:creator>Xinyu Li</dc:creator><dc:creator>Sara Maria Langner</dc:creator><dc:creator>Jesse Hagelstein</dc:creator><dc:creator>Felix Sturm</dc:creator><dc:creator>Alexander M. Potts</dc:creator><dc:creator>Christian J. Eckhardt</dc:creator><dc:creator>Yunfei Huang</dc:creator><dc:creator>Kenji Watanabe</dc:creator><dc:creator>Takashi Taniguchi</dc:creator><dc:creator>Angel Rubio</dc:creator><dc:creator>Dante M. Kennes</dc:creator><dc:creator>Michael A. Sentef</dc:creator><dc:creator>Emmanuel Baudin</dc:creator><dc:creator>Guido Meier</dc:creator><dc:creator>Marios H. Michael</dc:creator><dc:creator>James W. McIver</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03064-8</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-10-20; | doi:10.1038/s41567-025-03064-8</dc:source>
-            <dc:date>2025-10-20</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03064-8</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03064-8</prism:url>
-        </item>
-    
-        </rdf:RDF>
+</rdf:RDF>
