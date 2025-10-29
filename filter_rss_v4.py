@@ -192,7 +192,7 @@ def filter_rss_for_journal(journal_name, feed_url):
         attempt = 0
         
         # We catch a specific quota error and a general exception for all other cases.
-        while attempt < max_attempts and not api_success:
+        while not api_success:
             try:
                 print(f"🤖 Attempt {attempt+1}/{max_attempts} using model: {current_model.model_name}{COLOR_END}", file=sys.stderr)
 
@@ -212,10 +212,8 @@ def filter_rss_for_journal(journal_name, feed_url):
                 for decision_item in gemini_decisions:
                     if not isinstance(decision_item, dict):
                         raise TypeError("Gemini response list contains non-dictionary items.")
-                    
                     title = decision_item.get('title', '')
                     decision = decision_item.get('decision', '').upper()
-                    
                     original_entry = next((e for e in gemini_pending_entries if e.get('title', '') == title), None)
                     if original_entry:
                         if decision == 'YES':
@@ -225,36 +223,50 @@ def filter_rss_for_journal(journal_name, feed_url):
                             gemini_removed_entries.append(original_entry)
                             print(f"  🤖❌ {title}", file=sys.stderr)
                 api_success = True
+                
             except exceptions.ResourceExhausted as e:
                 # Handle Quota Exceeded as a special case.
                 error_type = type(e).__name__
                 print(f"🤖 {COLOR_RED}Gemini Batch Error{COLOR_END} for {journal_name} ({error_type}, Attempt {attempt+1}/{max_attempts}): {e}", file=sys.stderr)
                 
                 if using_primary_model:
-                    # If the primary model fails on quota, switch to the fallback and increase attempts.
-                    print(f"🚨 {COLOR_ORANGE}Quota exceeded. Switching to fallback model: {fallback_model}{COLOR_END}", file=sys.stderr)
+                    # If the primary model fails on quota, switch to the fallback.
+                    print(f"🚨 {COLOR_ORANGE}Quota exceeded on {current_model.model_name}: {e}{COLOR_END}", file=sys.stderr)
                     try:
                         current_model = genai.GenerativeModel(fallback_model)
                         using_primary_model = False
-                        max_attempts += 1  # Give one extra attempt with the new model
                         attempt = 0 # Reset attempt count to 0 for the new model.
+                        print(f"🚨 {COLOR_ORANGE}Switching to fallback model: {current_model.model_name}{COLOR_END}", file=sys.stderr)
+                        continue
                     except Exception as fallback_e:
                         print(f"Error switching to fallback model: {fallback_e}", file=sys.stderr)
                         current_model = None
+                        break
                 else:
                     # If the fallback model also fails on quota, it's a hard stop.
                     print(f"🚨 {COLOR_ORANGE}Fallback model quota also exceeded. All pending items will be removed.{COLOR_END}", file=sys.stderr)
                     break # Exit the while loop immediately
+                    
             except Exception as e:
                 # Handle all other errors generically.
                 # This catches JSONDecodeError, Timeout, RequestException, etc.
                 error_type = type(e).__name__
-                print(f"🤖 {COLOR_RED}Gemini Batch Error{COLOR_END} for {journal_name} ({error_type}, Attempt {attempt+1}/{max_attempts}): {e}", file=sys.stderr)
+                print(f"🤖 {COLOR_RED}Gemini Batch Error on {current_model.model_name}{COLOR_END} for {journal_name} ({error_type}, Attempt {attempt+1}/{max_attempts}): {e}", file=sys.stderr)
                 attempt += 1
-                if not api_success and attempt < max_attempts:
+                if attempt >= max_attempts:
+                    if using_primary_model:
+                        # Primary model failed max_attempts → switch to fallback
+                        current_model = genai.GenerativeModel(fallback_model)
+                        using_primary = False
+                        attempt = 0
+                        print(f"🤖 {COLOR_RED}Primary failed {max_attempts} times. Switching to fallback model: {fallback_model}{COLOR_END} for {journal_name} ({error_type} : {e}", file=sys.stderr)
+                    else:
+                        # Fallback model exhausted → give up
+                        break
+                else:
                     print("Retrying in 60 seconds...", file=sys.stderr)
                     time.sleep(60)
-
+                    
         # If after all attempts, the API call was not successful, raise an error.
         if not api_success:
             print(f"🤖 Final Gemini batch API call for {journal_name} failed. All pending items will be removed.", file=sys.stderr)
