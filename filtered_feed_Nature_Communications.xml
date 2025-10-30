@@ -27,9 +27,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-64575-9"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-65528-y"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/ncomms/rss.png">
@@ -83,19 +81,4 @@
             <prism:url>https://www.nature.com/articles/s41467-025-64575-9</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41467-025-65528-y">
-            <title>Spin environment of a superconducting qubit in high magnetic fields</title>
-            <link>https://www.nature.com/articles/s41467-025-65528-y</link>
-            <content:encoded>
-                &lt;p&gt;Nature Communications, Published online: 29 October 2025; &lt;a href="https://www.nature.com/articles/s41467-025-65528-y"&gt;doi:10.1038/s41467-025-65528-y&lt;/a&gt;&lt;/p&gt;Superconducting qubits are highly sensitive to magnetic fields, limiting their integration with spin-based quantum systems. Here, the authors demonstrate a superconducting qubit that maintains coherence beyond 1T, revealing spin-1/2 impurities and magnetic freezing of flux noise.</content:encoded>
-            <dc:title>Spin environment of a superconducting qubit in high magnetic fields</dc:title>
-            <dc:creator>S. Günzler</dc:creator><dc:creator>J. Beck</dc:creator><dc:creator>D. Rieger</dc:creator><dc:creator>N. Gosling</dc:creator><dc:creator>N. Zapata</dc:creator><dc:creator>M. Field</dc:creator><dc:creator>S. Geisert</dc:creator><dc:creator>A. Bacher</dc:creator><dc:creator>J. K. Hohmann</dc:creator><dc:creator>M. Spiecker</dc:creator><dc:creator>W. Wernsdorfer</dc:creator><dc:creator>I. M. Pop</dc:creator>
-            <dc:identifier>doi:10.1038/s41467-025-65528-y</dc:identifier>
-            <dc:source>Nature Communications, Published online: 2025-10-29; | doi:10.1038/s41467-025-65528-y</dc:source>
-            <dc:date>2025-10-29</dc:date>
-            <prism:publicationName>Nature Communications</prism:publicationName>
-            <prism:doi>10.1038/s41467-025-65528-y</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41467-025-65528-y</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
