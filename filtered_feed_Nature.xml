@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-03514-6"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09629-0"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09628-1"/>
@@ -36,10 +38,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-03462-1"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09785-3"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09773-7"/>
-                
                     </rdf:Seq>
         </items>
     </channel>
@@ -48,6 +46,21 @@
         <url>https://www.nature.com/uploads/product/nature/rss.png</url>
         <link>http://feeds.nature.com/nature/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/d41586-025-03514-6">
+            <title>Artificial brains with less drain</title>
+            <link>https://www.nature.com/articles/d41586-025-03514-6</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 31 October 2025; &lt;a href="https://www.nature.com/articles/d41586-025-03514-6"&gt;doi:10.1038/d41586-025-03514-6&lt;/a&gt;&lt;/p&gt;Biologically inspired electronic neurons could boost the efficiency of artificial-intelligence systems.</content:encoded>
+            <dc:title>Artificial brains with less drain</dc:title>
+            
+            <dc:identifier>doi:10.1038/d41586-025-03514-6</dc:identifier>
+            <dc:source>Nature, Published online: 2025-10-31; | doi:10.1038/d41586-025-03514-6</dc:source>
+            <dc:date>2025-10-31</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/d41586-025-03514-6</prism:doi>
+            <prism:url>https://www.nature.com/articles/d41586-025-03514-6</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41586-025-09629-0">
             <title>Reply to: On anisotropy in cubic Cu&lt;sub&gt;2&lt;/sub&gt;O photoelectrodes</title>
@@ -182,36 +195,6 @@
             <prism:publicationName>Nature</prism:publicationName>
             <prism:doi>10.1038/d41586-025-03462-1</prism:doi>
             <prism:url>https://www.nature.com/articles/d41586-025-03462-1</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41586-025-09785-3">
-            <title>A matrix-confined molecular layer for perovskite photovoltaic modules</title>
-            <link>https://www.nature.com/articles/s41586-025-09785-3</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 27 October 2025; &lt;a href="https://www.nature.com/articles/s41586-025-09785-3"&gt;doi:10.1038/s41586-025-09785-3&lt;/a&gt;&lt;/p&gt;A matrix-confined molecular layer for perovskite photovoltaic modules</content:encoded>
-            <dc:title>A matrix-confined molecular layer for perovskite photovoltaic modules</dc:title>
-            <dc:creator>Yugang Liang</dc:creator><dc:creator>Guodong Chen</dc:creator><dc:creator>Yao Wang</dc:creator><dc:creator>Yu Zou</dc:creator><dc:creator>Menglei Feng</dc:creator><dc:creator>Yanming Wang</dc:creator><dc:creator>Bowei Li</dc:creator><dc:creator>Yuljae Cho</dc:creator><dc:creator>Yide Chang</dc:creator><dc:creator>Tianle Liu</dc:creator><dc:creator>Taiyang Zhang</dc:creator><dc:creator>Yongbing Lou</dc:creator><dc:creator>Ranran Xu</dc:creator><dc:creator>Lei Lu</dc:creator><dc:creator>Ni Zhang</dc:creator><dc:creator>Ke Meng</dc:creator><dc:creator>Chen Zhu</dc:creator><dc:creator>Chuying Ouyang</dc:creator><dc:creator>Yanfeng Miao</dc:creator><dc:creator>Yongsheng Guo</dc:creator><dc:creator>Yuetian Chen</dc:creator><dc:creator>Yixin Zhao</dc:creator>
-            <dc:identifier>doi:10.1038/s41586-025-09785-3</dc:identifier>
-            <dc:source>Nature, Published online: 2025-10-27; | doi:10.1038/s41586-025-09785-3</dc:source>
-            <dc:date>2025-10-27</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/s41586-025-09785-3</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41586-025-09785-3</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41586-025-09773-7">
-            <title>All-perovskite tandem solar cells with dipolar passivation</title>
-            <link>https://www.nature.com/articles/s41586-025-09773-7</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 27 October 2025; &lt;a href="https://www.nature.com/articles/s41586-025-09773-7"&gt;doi:10.1038/s41586-025-09773-7&lt;/a&gt;&lt;/p&gt;All-perovskite tandem solar cells with dipolar passivation</content:encoded>
-            <dc:title>All-perovskite tandem solar cells with dipolar passivation</dc:title>
-            <dc:creator>Renxing Lin</dc:creator><dc:creator>Han Gao</dc:creator><dc:creator>Jing Lou</dc:creator><dc:creator>Jian Xu</dc:creator><dc:creator>Mengran Yin</dc:creator><dc:creator>Pu Wu</dc:creator><dc:creator>Chenshuaiyu Liu</dc:creator><dc:creator>Yijia Guo</dc:creator><dc:creator>Enzuo Wang</dc:creator><dc:creator>Shuncheng Yang</dc:creator><dc:creator>Runnan Liu</dc:creator><dc:creator>Dong Zhou</dc:creator><dc:creator>Changzeng Ding</dc:creator><dc:creator>Anh Bui</dc:creator><dc:creator>Ni Yin</dc:creator><dc:creator>Daniel H. Macdonald</dc:creator><dc:creator>Changqi Ma</dc:creator><dc:creator>Qi Chen</dc:creator><dc:creator>Ke Xiao</dc:creator><dc:creator>Xin Luo</dc:creator><dc:creator>Ye Liu</dc:creator><dc:creator>Ludong Li</dc:creator><dc:creator>Yongxi Li</dc:creator><dc:creator>Chao Chang</dc:creator><dc:creator>Hairen Tan</dc:creator>
-            <dc:identifier>doi:10.1038/s41586-025-09773-7</dc:identifier>
-            <dc:source>Nature, Published online: 2025-10-27; | doi:10.1038/s41586-025-09773-7</dc:source>
-            <dc:date>2025-10-27</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/s41586-025-09773-7</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41586-025-09773-7</prism:url>
         </item>
     
         </rdf:RDF>

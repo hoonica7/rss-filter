@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00821-z"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00801-3"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00817-9"/>
@@ -25,8 +27,6 @@
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00818-8"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00813-z"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00792-1"/>
                 
             </rdf:Seq>
         </items>
@@ -36,6 +36,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-025-00821-z">
+            <title>Altermagnetism in 6H perovskites</title>
+            <link>https://www.nature.com/articles/s41535-025-00821-z</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 31 October 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00821-z"&gt;doi:10.1038/s41535-025-00821-z&lt;/a&gt;&lt;/p&gt;Altermagnetism in 6H perovskites</content:encoded>
+            <dc:title>Altermagnetism in 6H perovskites</dc:title>
+            <dc:creator>Sergey V. Streltsov</dc:creator><dc:creator>Sang-Wook Cheong</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-025-00821-z</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2025-10-31; | doi:10.1038/s41535-025-00821-z</dc:source>
+            <dc:date>2025-10-31</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-025-00821-z</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-025-00821-z</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-025-00801-3">
             <title>Quantum geometry in quantum materials</title>
@@ -95,21 +110,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-025-00813-z</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-025-00813-z</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-025-00792-1">
-            <title>Origin and stability of generalized Wigner crystallinity in triangular moiré systems</title>
-            <link>https://www.nature.com/articles/s41535-025-00792-1</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 28 August 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00792-1"&gt;doi:10.1038/s41535-025-00792-1&lt;/a&gt;&lt;/p&gt;Origin and stability of generalized Wigner crystallinity in triangular moiré systems</content:encoded>
-            <dc:title>Origin and stability of generalized Wigner crystallinity in triangular moiré systems</dc:title>
-            <dc:creator>Aman Kumar</dc:creator><dc:creator>Cyprian Lewandowski</dc:creator><dc:creator>Hitesh J. Changlani</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-025-00792-1</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2025-08-28; | doi:10.1038/s41535-025-00792-1</dc:source>
-            <dc:date>2025-08-28</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-025-00792-1</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-025-00792-1</prism:url>
         </item>
     
 </rdf:RDF>
