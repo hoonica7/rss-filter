@@ -6,10 +6,10 @@
     <description>Recent articles in Physical Review B</description>
     <syn:updatePeriod>hourly</syn:updatePeriod>
     <syn:updateFrequency>1</syn:updateFrequency>
-    <syn:updateBase>2025-11-01T01:16:44+00:00</syn:updateBase>
+    <syn:updateBase>2025-10-31T15:16:43+00:00</syn:updateBase>
     <dc:creator>rss@aps.org</dc:creator>
     <dc:publisher>assocpub@aps.org</dc:publisher>
-    <dc:date>2025-11-01T01:16:44+00:00</dc:date>
+    <dc:date>2025-10-31T15:16:43+00:00</dc:date>
     <dc:language>en</dc:language>
     <dc:rights>Copyright © 2025 the American Physical Society. Personal use only, all commercial or other reuse prohibited</dc:rights>
     <prism:copyright>Copyright © 2025 the American Physical Society</prism:copyright>
@@ -23,6 +23,7 @@
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/pf4x-cc8y"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/kmj2-rs3n"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/914y-4gp9"/>
+        <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/zsmc-pd17"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/zpw2-6djz"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/bd4p-zrmy"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/tnqm-ttj3"/>
@@ -35,7 +36,6 @@
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/5q36-wgl9"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/9yzc-rnzh"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/k9jx-1tgs"/>
-        <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/n4vy-dl5v"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/g23p-b4m5"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/zt2c-v7ly"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/1dc6-y1x8"/>
@@ -53,7 +53,8 @@
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/9tgw-l1nj"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/894x-sl81"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/8lf7-j26n"/>
-        </rdf:Seq>
+        <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/d5nh-c6gw"/>
+      </rdf:Seq>
     </items>
   </channel>
   <item rdf:about="http://link.aps.org/doi/10.1103/bdpw-856t">
@@ -209,6 +210,28 @@
     <prism:startingPage>165147</prism:startingPage>
     <dc:subject>Electronic structure and strongly correlated systems</dc:subject>
     <prism:section>Electronic structure and strongly correlated systems</prism:section>
+  </item>
+  <item rdf:about="http://link.aps.org/doi/10.1103/zsmc-pd17">
+    <title>Computational analysis of interface-driven spin-orbit coupling in molecular adsorbates on transition metal dichalcogenides</title>
+    <link>http://link.aps.org/doi/10.1103/zsmc-pd17</link>
+    <description>Author(s): Zihao Wang, Wan-Lu Li, and Shaowei Li&lt;br/&gt;&lt;p&gt;Spin-orbit coupling (SOC) lifts molecular orbital degeneracy, enabling bilevel electronic platforms suitable for next-generation digital devices. However, common light-atom molecular feedstocks exhibit weak SOC due to the absence of heavy elements. To enhance SOC without synthesizing new materials, …&lt;/p&gt;&lt;br/&gt;[Phys. Rev. B 112, L161410] Published Thu Oct 30, 2025</description>
+    <content:encoded>&lt;p&gt;Author(s): Zihao Wang, Wan-Lu Li, and Shaowei Li&lt;/p&gt;&lt;p&gt;Spin-orbit coupling (SOC) lifts molecular orbital degeneracy, enabling bilevel electronic platforms suitable for next-generation digital devices. However, common light-atom molecular feedstocks exhibit weak SOC due to the absence of heavy elements. To enhance SOC without synthesizing new materials, …&lt;/p&gt;&lt;br/&gt;&lt;p&gt;[Phys. Rev. B 112, L161410] Published Thu Oct 30, 2025&lt;/p&gt;</content:encoded>
+    <dc:title>Computational analysis of interface-driven spin-orbit coupling in molecular adsorbates on transition metal dichalcogenides</dc:title>
+    <dc:creator>Zihao Wang, Wan-Lu Li, and Shaowei Li</dc:creator>
+    <dc:date>2025-10-30T10:00:00+00:00</dc:date>
+    <dc:rights>Personal use only, all commercial or other reuse prohibited</dc:rights>
+    <dc:source>Phys. Rev. B 112, L161410 (2025)</dc:source>
+    <dc:type>article</dc:type>
+    <dc:identifier>doi:10.1103/zsmc-pd17</dc:identifier>
+    <prism:doi>10.1103/zsmc-pd17</prism:doi>
+    <prism:publicationName>Physical Review B</prism:publicationName>
+    <prism:volume>112</prism:volume>
+    <prism:number>16</prism:number>
+    <prism:publicationDate>2025-10-30T10:00:00+00:00</prism:publicationDate>
+    <prism:url>http://link.aps.org/doi/10.1103/zsmc-pd17</prism:url>
+    <prism:startingPage>L161410</prism:startingPage>
+    <dc:subject>Surface physics, nanoscale physics, low-dimensional systems</dc:subject>
+    <prism:section>Surface physics, nanoscale physics, low-dimensional systems</prism:section>
   </item>
   <item rdf:about="http://link.aps.org/doi/10.1103/zpw2-6djz">
     <title>Tunable dual type-I and type-II Weyl points in the Dirac-Weyl semimetal CaAgBi</title>
@@ -471,28 +494,6 @@
     <prism:publicationDate>2025-10-27T10:00:00+00:00</prism:publicationDate>
     <prism:url>http://link.aps.org/doi/10.1103/k9jx-1tgs</prism:url>
     <prism:startingPage>155160</prism:startingPage>
-    <dc:subject>Electronic structure and strongly correlated systems</dc:subject>
-    <prism:section>Electronic structure and strongly correlated systems</prism:section>
-  </item>
-  <item rdf:about="http://link.aps.org/doi/10.1103/n4vy-dl5v">
-    <title>Beyond one-loop calculation: Higher-order effects on Gross-Neveu-Yukawa tensorial criticality</title>
-    <link>http://link.aps.org/doi/10.1103/n4vy-dl5v</link>
-    <description>Author(s): SangEun Han and Igor F. Herbut&lt;br/&gt;&lt;p&gt;We study the Gross-Neveu-Yukawa field theory for the $\mathrm{SO}(N$) symmetric traceless rank-2 tensor order parameter coupled to Majorana fermions using the $ε$-expansion around upper critical dimensions of $3+1$ to two loops. Previously we established in the one-loop calculation that the theory d…&lt;/p&gt;&lt;br/&gt;[Phys. Rev. B 112, 155161] Published Mon Oct 27, 2025</description>
-    <content:encoded>&lt;p&gt;Author(s): SangEun Han and Igor F. Herbut&lt;/p&gt;&lt;p&gt;We study the Gross-Neveu-Yukawa field theory for the &lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;&lt;mrow&gt;&lt;mi&gt;SO&lt;/mi&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;/mrow&gt;&lt;/math&gt;) symmetric traceless rank-2 tensor order parameter coupled to Majorana fermions using the &lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;&lt;mi&gt;ε&lt;/mi&gt;&lt;/math&gt;-expansion around upper critical dimensions of &lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;&lt;mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/math&gt; to two loops. Previously we established in the one-loop calculation that the theory does not exhibit…&lt;/p&gt;&lt;br/&gt;&lt;p&gt;[Phys. Rev. B 112, 155161] Published Mon Oct 27, 2025&lt;/p&gt;</content:encoded>
-    <dc:title>Beyond one-loop calculation: Higher-order effects on Gross-Neveu-Yukawa tensorial criticality</dc:title>
-    <dc:creator>SangEun Han and Igor F. Herbut</dc:creator>
-    <dc:date>2025-10-27T10:00:00+00:00</dc:date>
-    <dc:rights>Personal use only, all commercial or other reuse prohibited</dc:rights>
-    <dc:source>Phys. Rev. B 112, 155161 (2025)</dc:source>
-    <dc:type>article</dc:type>
-    <dc:identifier>doi:10.1103/n4vy-dl5v</dc:identifier>
-    <prism:doi>10.1103/n4vy-dl5v</prism:doi>
-    <prism:publicationName>Physical Review B</prism:publicationName>
-    <prism:volume>112</prism:volume>
-    <prism:number>15</prism:number>
-    <prism:publicationDate>2025-10-27T10:00:00+00:00</prism:publicationDate>
-    <prism:url>http://link.aps.org/doi/10.1103/n4vy-dl5v</prism:url>
-    <prism:startingPage>155161</prism:startingPage>
     <dc:subject>Electronic structure and strongly correlated systems</dc:subject>
     <prism:section>Electronic structure and strongly correlated systems</prism:section>
   </item>
@@ -870,4 +871,26 @@
     <dc:subject>Electronic structure and strongly correlated systems</dc:subject>
     <prism:section>Electronic structure and strongly correlated systems</prism:section>
   </item>
-  </rdf:RDF>
+  <item rdf:about="http://link.aps.org/doi/10.1103/d5nh-c6gw">
+    <title>Unraveling the two-channel thermal transport in bilayer graphene with twist angle engineering and electron-phonon coupling</title>
+    <link>http://link.aps.org/doi/10.1103/d5nh-c6gw</link>
+    <description>Author(s): Xue Cheng, Yukai Han, Guangwu Zhang, Qiye Zheng, Ziman Wang, and Xinyu Wang&lt;br/&gt;&lt;p&gt;Twisted bilayer graphene (T-BLG) has emerged as a compelling platform for investigating novel physical phenomena through moiré superlattices. Its exceptional electrical, magnetic, optical, and topological characteristics make it particularly promising for thermal management and thermoelectric applic…&lt;/p&gt;&lt;br/&gt;[Phys. Rev. B 112, 155427] Published Thu Oct 23, 2025</description>
+    <content:encoded>&lt;p&gt;Author(s): Xue Cheng, Yukai Han, Guangwu Zhang, Qiye Zheng, Ziman Wang, and Xinyu Wang&lt;/p&gt;&lt;p&gt;Twisted bilayer graphene (T-BLG) has emerged as a compelling platform for investigating novel physical phenomena through moiré superlattices. Its exceptional electrical, magnetic, optical, and topological characteristics make it particularly promising for thermal management and thermoelectric applic…&lt;/p&gt;&lt;br/&gt;&lt;p&gt;[Phys. Rev. B 112, 155427] Published Thu Oct 23, 2025&lt;/p&gt;</content:encoded>
+    <dc:title>Unraveling the two-channel thermal transport in bilayer graphene with twist angle engineering and electron-phonon coupling</dc:title>
+    <dc:creator>Xue Cheng, Yukai Han, Guangwu Zhang, Qiye Zheng, Ziman Wang, and Xinyu Wang</dc:creator>
+    <dc:date>2025-10-23T10:00:00+00:00</dc:date>
+    <dc:rights>Personal use only, all commercial or other reuse prohibited</dc:rights>
+    <dc:source>Phys. Rev. B 112, 155427 (2025)</dc:source>
+    <dc:type>article</dc:type>
+    <dc:identifier>doi:10.1103/d5nh-c6gw</dc:identifier>
+    <prism:doi>10.1103/d5nh-c6gw</prism:doi>
+    <prism:publicationName>Physical Review B</prism:publicationName>
+    <prism:volume>112</prism:volume>
+    <prism:number>15</prism:number>
+    <prism:publicationDate>2025-10-23T10:00:00+00:00</prism:publicationDate>
+    <prism:url>http://link.aps.org/doi/10.1103/d5nh-c6gw</prism:url>
+    <prism:startingPage>155427</prism:startingPage>
+    <dc:subject>Surface physics, nanoscale physics, low-dimensional systems</dc:subject>
+    <prism:section>Surface physics, nanoscale physics, low-dimensional systems</prism:section>
+  </item>
+</rdf:RDF>
