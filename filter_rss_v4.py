@@ -36,6 +36,7 @@ import google.generativeai as genai
 import datetime
 import google.api_core.exceptions as exceptions
 import re
+import math
 
 # Define ANSI color codes for console output
 COLOR_GREEN = '\033[92m'
@@ -174,8 +175,8 @@ def filter_rss_for_journal(journal_name, feed_url):
         # If neither, classify for secondary filtering by the Gemini API.
         gemini_pending_entries.append(entry)
 
-# Use the Gemini API to review the items that didn't pass the primary filter.
-if current_model and gemini_pending_entries:
+    # Use the Gemini API to review the items that didn't pass the primary filter.
+    if current_model and gemini_pending_entries:
     total_items = len(gemini_pending_entries)
     print(f"🤖 {COLOR_GREEN}Batch processing{COLOR_END} {total_items} items from {journal_name} with Gemini...", file=sys.stderr)
 
