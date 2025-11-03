@@ -166,16 +166,14 @@ def filter_rss_for_journal(journal_name, feed_url):
         highlighted_title, matched_keyword, location = find_and_highlight_keyword(title, summary, blacklist, COLOR_RED)
         if matched_keyword:
             keyword_removed_entries.append(entry)
-            print(f"    {COLOR_RED}❌ [KEYWORD FILTER]{COLOR_END} {highlighted_title}", file=sys.stderr)
-            print(f"        {COLOR_RED}→ Filtered by keyword: '{COLOR_BOLD}{matched_keyword}{COLOR_END}' in {location}{COLOR_END}", file=sys.stderr)
+            print(f"    ❌ {highlighted_title} ('{COLOR_RED}{COLOR_BOLD}{matched_keyword}{COLOR_END}' in {location})", file=sys.stderr)
             continue # Skip to the next entry
 
         # Check for whitelist keywords
         highlighted_title, matched_keyword, location = find_and_highlight_keyword(title, summary, whitelist, COLOR_GREEN)
         if matched_keyword:
             keyword_passed_entries.append(entry)
-            print(f"    {COLOR_GREEN}✅ [KEYWORD FILTER]{COLOR_END} {highlighted_title}", file=sys.stderr)
-            print(f"        {COLOR_GREEN}→ Matched keyword: '{COLOR_BOLD}{matched_keyword}{COLOR_END}' in {location}{COLOR_END}", file=sys.stderr)
+            print(f"    ✅ {highlighted_title} ('{COLOR_GREEN}{COLOR_BOLD}{matched_keyword}{COLOR_END}' in {location})", file=sys.stderr)
             continue # Skip to the next entry
 
         # If neither, classify for secondary filtering by the Gemini API.
@@ -227,10 +225,10 @@ def filter_rss_for_journal(journal_name, feed_url):
                         if original_entry:
                             if decision == 'YES':
                                 gemini_passed_entries.append(original_entry)
-                                print(f"          {COLOR_GREEN}🤖✅ [GEMINI]{COLOR_END} {title}", file=sys.stderr)
+                                print(f"          🤖✅ {title}", file=sys.stderr)
                             else:
                                 gemini_removed_entries.append(original_entry)
-                                print(f"          {COLOR_RED}🤖❌ [GEMINI]{COLOR_END} {title}", file=sys.stderr)
+                                print(f"          🤖❌ {title}", file=sys.stderr)
                     api_success = True
 
                 except exceptions.ResourceExhausted as e:
