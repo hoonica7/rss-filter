@@ -26,7 +26,9 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02373-w"/>
                 
-                    </rdf:Seq>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02385-6"/>
+                
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nmat/rss.gif">
@@ -95,4 +97,19 @@
             <prism:url>https://www.nature.com/articles/s41563-025-02373-w</prism:url>
         </item>
     
-        </rdf:RDF>
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02385-6">
+            <title>Ligand-restricted synthesis of highly paired dual-atom catalysts</title>
+            <link>https://www.nature.com/articles/s41563-025-02385-6</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 24 October 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02385-6"&gt;doi:10.1038/s41563-025-02385-6&lt;/a&gt;&lt;/p&gt;A ligand-restricted strategy is developed to realize the synthesis of dual-atom catalysts with high pairing ratio and tunable atomic distances.</content:encoded>
+            <dc:title>Ligand-restricted synthesis of highly paired dual-atom catalysts</dc:title>
+            <dc:creator>Yanfu Ma</dc:creator><dc:creator>Shuhui Liu</dc:creator><dc:creator>Jianing Mao</dc:creator><dc:creator>Mingzi Sun</dc:creator><dc:creator>Ke Shi</dc:creator><dc:creator>Wenyi Li</dc:creator><dc:creator>Wantong Zhao</dc:creator><dc:creator>Jieqiong Shan</dc:creator><dc:creator>Yang Zhao</dc:creator><dc:creator>Zheng Jiang</dc:creator><dc:creator>Riguang Zhang</dc:creator><dc:creator>Rui Gao</dc:creator><dc:creator>Wei Liu</dc:creator><dc:creator>Bolong Huang</dc:creator><dc:creator>G. Q. Max Lu</dc:creator><dc:creator>Jian Liu</dc:creator><dc:creator>Limin Wu</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02385-6</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-10-24; | doi:10.1038/s41563-025-02385-6</dc:source>
+            <dc:date>2025-10-24</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02385-6</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02385-6</prism:url>
+        </item>
+    
+</rdf:RDF>
