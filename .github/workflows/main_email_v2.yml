@@ -3,9 +3,7 @@ name: Filter RSS Feed everyday + Email everyday morning + Email when error
 on:
   schedule:
     # 오전 8시 CDT = 13:00 UTC + 17분
-    # 8AM Texas (CDT) = 13:00 UTC + 17 min
     - cron: '17 13 * * *'
-    # 오후 7시 CDT = 00:00 UTC (다음 날 자정이지만 cron은 그대로 * * *) + 17분
     # 7PM Texas (CDT) = 00:00 UTC (technically next day midnight, but cron remains the same) + 17 min
     - cron: '17 0 * * *'
   workflow_dispatch:
@@ -20,24 +18,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # ➡️ last_failed_journal.txt 캐시 복원
-      # Restore cache for last_failed_journal.txt using a fixed key
-      - name: Restore last failed journal state
-        id: cache-restore
-        uses: actions/cache/restore@v4
+      # ➡️ last_failed_journal.txt 복원 → artifact 사용
+      # Restore last failed journal artifact for resuming
+      - name: Download last failed journal artifact
+        id: artifact-restore
+        uses: actions/download-artifact@v4
         with:
-          path: last_failed_journal.txt
-          key: ${{ runner.os }}-last-failed-journal-v1
-          restore-keys: |
-            ${{ runner.os }}-last-failed-journal-v1-
-      # Copy to a working file to avoid conflicts
+          name: last_failed_journal
+          path: ./last_failed_journal_work.txt
+        continue-on-error: true  # artifact 없으면 새로 시작
+
+      # ➡️ 작업용 파일로 복사하여 충돌 방지
+      # Copy to a working file for Python script
       - name: Prepare working state file
         run: |
-          if [ -f last_failed_journal.txt ]; then
-            cp last_failed_journal.txt last_failed_journal_work.txt
+          if [ -f last_failed_journal_work.txt ]; then
+            cp last_failed_journal_work.txt last_failed_journal.txt
           else
-            touch last_failed_journal_work.txt
-          fi      
+            touch last_failed_journal.txt
+          fi
 
       - name: Set up Python with caching
         uses: actions/setup-python@v5
@@ -59,7 +58,9 @@ jobs:
         run: |
           python filter_rss_v4.py
       
-      - name: Upload artifacts for next steps
+      # ➡️ RSS 필터링 결과 artifact 업로드
+      # Upload artifacts for next steps
+      - name: Upload artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -68,37 +69,38 @@ jobs:
             filtered_titles.txt
             filtered_feed_*.xml
       
-      # ➡️ last_failed_journal.txt 캐시 저장
-      # Save the cache
-      - name: Cache last_failed_journal state
-        uses: actions/cache/save@v4
+      # ➡️ last_failed_journal.txt 저장 → artifact 사용
+      # Save last failed journal state as artifact
+      - name: Upload last failed journal artifact
         if: always()
+        uses: actions/upload-artifact@v4
         with:
-          path: last_failed_journal.txt
-          key: ${{ runner.os }}-last-failed-journal-v1
+          name: last_failed_journal
+          path: ./last_failed_journal.txt
 
+      # ➡️ GitHub Pages 배포
       - name: Deploy to GitHub Pages
         if: success() # 성공했을 때만 배포
-        # Deploy only if the workflow succeeded
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./
           publish_branch: gh-pages
 
+      # ➡️ filtered-files artifact 다운로드
       - name: Download artifacts
         if: success()
         uses: actions/download-artifact@v4
         with:
           name: filtered-files
 
+      # ➡️ UTC 시각 가져오기
       - name: Get UTC hour
         id: get_hour
         run: echo "hour=$(date -u +%H)" >> $GITHUB_OUTPUT
 
+      # ➡️ 이메일 발송 (매일 아침)
       - name: Send email with results
-        # 매일 아침 실행때마다 이메일을 발송합니다.
-        # Send email everyday morning.
         if: success() && steps.get_hour.outputs.hour > '10'
         uses: dawidd6/action-send-mail@v3
         with:
@@ -111,7 +113,7 @@ jobs:
           from: ${{ secrets.MAIL_FROM }}
           body: file://filtered_titles.txt
 
-  # 오류 발생 시 즉시 이메일 알림을 위한 별도 Job
+  # ➡️ 오류 발생 시 즉시 이메일 알림을 위한 별도 Job
   # Separate job to send email notification immediately on failure
   failure-notification:
     runs-on: ubuntu-latest
@@ -119,11 +121,13 @@ jobs:
     if: ${{ always() && needs.filter-and-deploy.result == 'failure' }}
 
     steps:
+      # ➡️ filtered-files artifact 다운로드
       - name: Download error log artifact
         uses: actions/download-artifact@v4
         with:
           name: filtered-files
 
+      # ➡️ 오류 이메일 발송
       - name: Send email with error report
         uses: dawidd6/action-send-mail@v3
         with:
