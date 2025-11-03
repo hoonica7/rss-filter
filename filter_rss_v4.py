@@ -79,11 +79,12 @@ try:
     if GOOGLE_API_KEY:
         genai.configure(api_key=GOOGLE_API_KEY)
         current_model = genai.GenerativeModel(primary_model)
-        print(f"Gemini API configured successfully using primary model: {primary_model}{COLOR_END}", file=sys.stderr)
+        print(f"{COLOR_GREEN}{COLOR_BOLD}✓ Gemini API configured successfully{COLOR_END}", file=sys.stderr)
+        print(f"{COLOR_GREEN}  Primary model: {COLOR_BOLD}{primary_model}{COLOR_END}", file=sys.stderr)
     else:
-        print("GOOGLE_API_KEY not found. Gemini filter will be skipped.", file=sys.stderr)
+        print(f"{COLOR_YELLOW}{COLOR_BOLD}⚠️  GOOGLE_API_KEY not found. Gemini filter will be skipped.{COLOR_END}", file=sys.stderr)
 except Exception as e:
-    print(f"Error configuring Gemini API: {e}", file=sys.stderr)
+    print(f"{COLOR_RED}{COLOR_BOLD}✗ Error configuring Gemini API: {e}{COLOR_END}", file=sys.stderr)
     using_primary_model = False
 
 
@@ -119,7 +120,10 @@ def filter_rss_for_journal(journal_name, feed_url):
     """
     global current_model, using_primary_model
     target_url = feed_url.strip('<> ')
-    print(f"{COLOR_GREEN}Processing journal: {journal_name}, URL: {target_url}{COLOR_END}", file=sys.stderr)
+    print(f"\n{'='*80}", file=sys.stderr)
+    print(f"{COLOR_BOLD}{COLOR_BLUE}📚 JOURNAL: {journal_name}{COLOR_END}", file=sys.stderr)
+    print(f"{COLOR_BOLD}URL: {target_url}{COLOR_END}", file=sys.stderr)
+    print(f"{'='*80}{COLOR_END}\n", file=sys.stderr)
 
     response = requests.get(target_url)
     raw_xml = response.content
@@ -162,14 +166,16 @@ def filter_rss_for_journal(journal_name, feed_url):
         highlighted_title, matched_keyword, location = find_and_highlight_keyword(title, summary, blacklist, COLOR_RED)
         if matched_keyword:
             keyword_removed_entries.append(entry)
-            print(f"  ❌ {highlighted_title} (Filtered by keyword: '{matched_keyword}' in {location})", file=sys.stderr)
+            print(f"    {COLOR_RED}❌ [KEYWORD FILTER]{COLOR_END} {highlighted_title}", file=sys.stderr)
+            print(f"        {COLOR_RED}→ Filtered by keyword: '{COLOR_BOLD}{matched_keyword}{COLOR_END}' in {location}{COLOR_END}", file=sys.stderr)
             continue # Skip to the next entry
 
         # Check for whitelist keywords
         highlighted_title, matched_keyword, location = find_and_highlight_keyword(title, summary, whitelist, COLOR_GREEN)
         if matched_keyword:
             keyword_passed_entries.append(entry)
-            print(f"  ✅ {highlighted_title} (Filtered by keyword: '{matched_keyword}' in {location})", file=sys.stderr)
+            print(f"    {COLOR_GREEN}✅ [KEYWORD FILTER]{COLOR_END} {highlighted_title}", file=sys.stderr)
+            print(f"        {COLOR_GREEN}→ Matched keyword: '{COLOR_BOLD}{matched_keyword}{COLOR_END}' in {location}{COLOR_END}", file=sys.stderr)
             continue # Skip to the next entry
 
         # If neither, classify for secondary filtering by the Gemini API.
@@ -178,13 +184,16 @@ def filter_rss_for_journal(journal_name, feed_url):
     # Use the Gemini API to review the items that didn't pass the primary filter.
     if current_model and gemini_pending_entries:
         total_items = len(gemini_pending_entries)
-        print(f"🤖 {COLOR_GREEN}Batch processing{COLOR_END} {total_items} items from {journal_name} with Gemini...", file=sys.stderr)
+        print(f"\n  {COLOR_BOLD}{COLOR_YELLOW}🤖 GEMINI FILTER{COLOR_END}", file=sys.stderr)
+        print(f"  {COLOR_BOLD}Processing {total_items} items with Gemini API...{COLOR_END}\n", file=sys.stderr)
 
         # 📦 If the number of items exceeds 100, split them into batches of 100 and process sequentially. (Due to frequent error in arXiv over few hundreds of papers)
         batch_size = 100
+        total_batches = math.ceil(total_items / batch_size)
         for start in range(0, total_items, batch_size):
             batch_entries = gemini_pending_entries[start:start + batch_size]
-            print(f"\n📦 Processing batch {start//batch_size + 1}/{math.ceil(total_items/batch_size)} ({len(batch_entries)} items)...", file=sys.stderr)
+            batch_num = start//batch_size + 1
+            print(f"    {COLOR_BOLD}{COLOR_BLUE}📦 BATCH {batch_num}/{total_batches}{COLOR_END} ({len(batch_entries)} items)", file=sys.stderr)
 
             items_to_review = [{"title": e.get('title', ''), "summary": e.get('summary', '')} for e in batch_entries]
             full_prompt = gemini_prompt + json.dumps(items_to_review, indent=2)
@@ -195,7 +204,7 @@ def filter_rss_for_journal(journal_name, feed_url):
 
             while not api_success:
                 try:
-                    print(f"🤖 Attempt {attempt+1}/{max_attempts} using model: {current_model.model_name}{COLOR_END}", file=sys.stderr)
+                    print(f"        {COLOR_YELLOW}Attempt {attempt+1}/{max_attempts} using model: {COLOR_BOLD}{current_model.model_name}{COLOR_END}{COLOR_YELLOW}...{COLOR_END}", file=sys.stderr)
 
                     response = current_model.generate_content(
                         full_prompt,
@@ -218,56 +227,59 @@ def filter_rss_for_journal(journal_name, feed_url):
                         if original_entry:
                             if decision == 'YES':
                                 gemini_passed_entries.append(original_entry)
-                                print(f"  🤖✅ {title}", file=sys.stderr)
+                                print(f"          {COLOR_GREEN}🤖✅ [GEMINI]{COLOR_END} {title}", file=sys.stderr)
                             else:
                                 gemini_removed_entries.append(original_entry)
-                                print(f"  🤖❌ {title}", file=sys.stderr)
+                                print(f"          {COLOR_RED}🤖❌ [GEMINI]{COLOR_END} {title}", file=sys.stderr)
                     api_success = True
 
                 except exceptions.ResourceExhausted as e:
                     error_type = type(e).__name__
-                    print(f"🤖 {COLOR_RED}Gemini Batch Error{COLOR_END} for {journal_name} ({error_type}, Attempt {attempt+1}/{max_attempts}): {e}", file=sys.stderr)
+                    print(f"        {COLOR_RED}{COLOR_BOLD}⚠️  ERROR{COLOR_END} {COLOR_RED}({error_type}, Attempt {attempt+1}/{max_attempts}){COLOR_END}", file=sys.stderr)
+                    print(f"        {COLOR_RED}→ {e}{COLOR_END}", file=sys.stderr)
 
                     if using_primary_model:
-                        print(f"🚨 {COLOR_ORANGE}Quota exceeded on {current_model.model_name}: {e}{COLOR_END}", file=sys.stderr)
+                        print(f"        {COLOR_ORANGE}{COLOR_BOLD}🚨 Quota exceeded{COLOR_END} {COLOR_ORANGE}on {current_model.model_name}{COLOR_END}", file=sys.stderr)
                         try:
                             current_model = genai.GenerativeModel(fallback_model)
                             using_primary_model = False
                             attempt = 0
-                            print(f"🚨 {COLOR_ORANGE}Switching to fallback model: {current_model.model_name}{COLOR_END}", file=sys.stderr)
+                            print(f"        {COLOR_ORANGE}{COLOR_BOLD}→ Switching to fallback model: {current_model.model_name}{COLOR_END}", file=sys.stderr)
                             continue
                         except Exception as fallback_e:
-                            print(f"Error switching to fallback model: {fallback_e}", file=sys.stderr)
+                            print(f"        {COLOR_RED}→ Error switching to fallback model: {fallback_e}{COLOR_END}", file=sys.stderr)
                             current_model = None
                             break
                     else:
-                        print(f"🚨 {COLOR_ORANGE}Fallback model quota also exceeded. Stopping batch.{COLOR_END}", file=sys.stderr)
+                        print(f"        {COLOR_ORANGE}{COLOR_BOLD}🚨 Fallback model quota also exceeded. Stopping batch.{COLOR_END}", file=sys.stderr)
                         break
 
                 except Exception as e:
                     error_type = type(e).__name__
-                    print(f"🤖 {COLOR_RED}Gemini Batch Error on {current_model.model_name}{COLOR_END} for {journal_name} ({error_type}, Attempt {attempt+1}/{max_attempts}): {e}", file=sys.stderr)
+                    print(f"        {COLOR_RED}{COLOR_BOLD}⚠️  ERROR{COLOR_END} {COLOR_RED}({error_type}, Attempt {attempt+1}/{max_attempts}){COLOR_END}", file=sys.stderr)
+                    print(f"        {COLOR_RED}→ {e}{COLOR_END}", file=sys.stderr)
                     attempt += 1
                     if attempt >= max_attempts:
                         if using_primary_model:
                             current_model = genai.GenerativeModel(fallback_model)
                             using_primary_model = False
                             attempt = 0
-                            print(f"🤖 {COLOR_RED}Primary failed {max_attempts} times. Switching to fallback model: {fallback_model}{COLOR_END}", file=sys.stderr)
+                            print(f"        {COLOR_RED}{COLOR_BOLD}→ Primary failed {max_attempts} times. Switching to fallback model: {fallback_model}{COLOR_END}", file=sys.stderr)
                         else:
                             break
                     else:
-                        print("Retrying in 60 seconds...", file=sys.stderr)
+                        print(f"        {COLOR_YELLOW}→ Retrying in 60 seconds...{COLOR_END}", file=sys.stderr)
                         time.sleep(60)
 
             if not api_success:
-                print(f"🤖 Final Gemini batch API call failed for batch {start//batch_size + 1}. Items will be removed.", file=sys.stderr)
+                print(f"        {COLOR_RED}{COLOR_BOLD}⚠️  Batch {batch_num} failed. Items will be removed.{COLOR_END}", file=sys.stderr)
                 gemini_removed_entries.extend(batch_entries)
 
-    print(f"Total keyword-passed links for {journal_name}: {len(keyword_passed_entries)}{COLOR_END}", file=sys.stderr)
-    print(f"Total Gemini-passed links for {journal_name}: {len(gemini_passed_entries)}{COLOR_END}", file=sys.stderr)
-    print(f"Total keyword-removed links for {journal_name}: {len(keyword_removed_entries)}{COLOR_END}", file=sys.stderr)
-    print(f"Total Gemini-removed links for {journal_name}: {len(gemini_removed_entries)}{COLOR_END}", file=sys.stderr)
+    print(f"\n  {COLOR_BOLD}{COLOR_BLUE}📊 SUMMARY{COLOR_END}", file=sys.stderr)
+    print(f"    {COLOR_GREEN}✅ Keyword-passed: {COLOR_BOLD}{len(keyword_passed_entries)}{COLOR_END}", file=sys.stderr)
+    print(f"    {COLOR_GREEN}🤖✅ Gemini-passed: {COLOR_BOLD}{len(gemini_passed_entries)}{COLOR_END}", file=sys.stderr)
+    print(f"    {COLOR_RED}❌ Keyword-removed: {COLOR_BOLD}{len(keyword_removed_entries)}{COLOR_END}", file=sys.stderr)
+    print(f"    {COLOR_RED}🤖❌ Gemini-removed: {COLOR_BOLD}{len(gemini_removed_entries)}{COLOR_END}", file=sys.stderr)
             
     # Gather all passed paper links for XML parsing and filtering.
     passed_links = set(entry.link for entry in keyword_passed_entries + gemini_passed_entries)
@@ -313,7 +325,7 @@ def filter_rss_for_journal(journal_name, feed_url):
                         if link_resource not in passed_links:
                             rdf_seq.remove(li)
     else:
-        print(f"Warning: Unknown feed type for {journal_name}: {root.tag}", file=sys.stderr)
+        print(f"    {COLOR_YELLOW}⚠️  Warning: Unknown feed type: {root.tag}{COLOR_END}", file=sys.stderr)
 
     buffer = BytesIO()
     tree = ET.ElementTree(root)
@@ -517,18 +529,18 @@ if __name__ == '__main__':
             last_failed_journal = f.read().strip()
         
         if last_failed_journal == 'SUCCESS':
-            print(f"{COLOR_GREEN}Previous workflow run was successful. Starting from the beginning.{COLOR_END}", file=sys.stderr)
+            print(f"{COLOR_GREEN}{COLOR_BOLD}✓ Previous workflow run was successful. Starting from the beginning.{COLOR_END}\n", file=sys.stderr)
             start_index = 0
         elif last_failed_journal:
-            print(f"{COLOR_RED}Found state file. Continuing from journal: {last_failed_journal}{COLOR_END}", file=sys.stderr)
+            print(f"{COLOR_YELLOW}{COLOR_BOLD}⚠️  Found state file. Continuing from journal: {last_failed_journal}{COLOR_END}", file=sys.stderr)
             try:
                 journal_names = list(JOURNAL_URLS.keys())
                 start_index = journal_names.index(last_failed_journal)
             except ValueError:
-                print(f"Last failed journal '{last_failed_journal}' not found in JOURNAL_URLS. Starting from the beginning.", file=sys.stderr)
+                print(f"{COLOR_YELLOW}Last failed journal '{last_failed_journal}' not found in JOURNAL_URLS. Starting from the beginning.{COLOR_END}", file=sys.stderr)
                 start_index = 0
         else:
-            print(f"{COLOR_GREEN}Found an empty state file. Starting from the beginning.{COLOR_END}", file=sys.stderr)
+            print(f"{COLOR_GREEN}{COLOR_BOLD}✓ Found an empty state file. Starting from the beginning.{COLOR_END}\n", file=sys.stderr)
             start_index = 0
             
     try:
@@ -540,7 +552,7 @@ if __name__ == '__main__':
                 output_filename = f"{OUTPUT_FILE_BASE}_{journal_name}.xml"
                 with open(output_filename, 'wb') as f:
                     f.write(filtered_xml)
-                print(f"Successfully wrote filtered RSS feed to {output_filename}", file=sys.stderr)
+                print(f"{COLOR_GREEN}{COLOR_BOLD}✓ Successfully wrote filtered RSS feed to {output_filename}{COLOR_END}\n", file=sys.stderr)
 
                 # Add email content for each journal
                 email_content += f"--- {journal_name} ---\n\n"
@@ -570,7 +582,8 @@ if __name__ == '__main__':
                     email_content += "\n"
 
             except Exception as e:
-                print(f"An error occurred while processing journal '{journal_name}': {e}", file=sys.stderr)
+                print(f"\n{COLOR_RED}{COLOR_BOLD}✗ ERROR processing journal '{journal_name}':{COLOR_END}", file=sys.stderr)
+                print(f"{COLOR_RED}  → {e}{COLOR_END}", file=sys.stderr)
                 with open(STATE_FILE, 'w') as f:
                     f.write(journal_name)
                 # Compose the email content in case of an error.
@@ -582,13 +595,15 @@ if __name__ == '__main__':
             if os.path.exists(STATE_FILE):
                 with open(STATE_FILE, 'w') as f:
                     f.write('SUCCESS')
-                print("Successfully processed all journals and updated the state file with 'SUCCESS'.", file=sys.stderr)
+                print(f"\n{COLOR_GREEN}{COLOR_BOLD}✓ Successfully processed all journals{COLOR_END}", file=sys.stderr)
+                print(f"{COLOR_GREEN}  State file updated with 'SUCCESS'{COLOR_END}", file=sys.stderr)
             else:
                 with open(STATE_FILE, 'w') as f:
                     f.write('SUCCESS')
-                print("Successfully processed all journals. Creating a new state file with 'SUCCESS'.", file=sys.stderr)
+                print(f"\n{COLOR_GREEN}{COLOR_BOLD}✓ Successfully processed all journals{COLOR_END}", file=sys.stderr)
+                print(f"{COLOR_GREEN}  New state file created with 'SUCCESS'{COLOR_END}", file=sys.stderr)
         except OSError as e:
-            print(f"Warning: Could not create/reset state file '{STATE_FILE}': {e}", file=sys.stderr)
+            print(f"{COLOR_YELLOW}{COLOR_BOLD}⚠️  Warning: Could not create/reset state file '{STATE_FILE}': {e}{COLOR_END}", file=sys.stderr)
             
         create_index_html(JOURNAL_URLS, OUTPUT_FILE_BASE)
         create_results_html_file(email_content)
