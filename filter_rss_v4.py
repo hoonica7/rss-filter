@@ -504,7 +504,7 @@ def create_index_html(journal_urls, rss_base_filename):
 
 if __name__ == '__main__':
     OUTPUT_FILE_BASE = "filtered_feed"
-    STATE_FILE = "last_failed_journal.txt"
+    STATE_FILE = "last_failed_journal_work.txt"
     
     email_content = ""
     
