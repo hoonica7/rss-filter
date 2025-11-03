@@ -29,7 +29,15 @@ jobs:
           path: last_failed_journal.txt
           key: ${{ runner.os }}-last-failed-journal-v1
           restore-keys: |
-            ${{ runner.os }}-last-failed-journal-
+            ${{ runner.os }}-last-failed-journal-v1-
+      # Copy to a working file to avoid conflicts
+      - name: Prepare working state file
+        run: |
+          if [ -f last_failed_journal.txt ]; then
+            cp last_failed_journal.txt last_failed_journal_work.txt
+          else
+            touch last_failed_journal_work.txt
+          fi      
 
       - name: Set up Python with caching
         uses: actions/setup-python@v5
@@ -61,13 +69,13 @@ jobs:
             filtered_feed_*.xml
       
       # ➡️ last_failed_journal.txt 캐시 저장
-      # Save the cache with a unique key based on run_id to avoid conflicts
+      # Save the cache
       - name: Cache last_failed_journal state
         uses: actions/cache/save@v4
         if: always()
         with:
           path: last_failed_journal.txt
-          key: ${{ runner.os }}-last-failed-journal-v1-${{ github.run_id }}
+          key: ${{ runner.os }}-last-failed-journal-v1
 
       - name: Deploy to GitHub Pages
         if: success() # 성공했을 때만 배포
