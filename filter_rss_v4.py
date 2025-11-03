@@ -174,24 +174,24 @@ def filter_rss_for_journal(journal_name, feed_url):
         # If neither, classify for secondary filtering by the Gemini API.
         gemini_pending_entries.append(entry)
 
-    # Use the Gemini API to review the items that didn't pass the primary filter.
-    if current_model and gemini_pending_entries:
-        print(f"🤖 {COLOR_GREEN}Batch processing{COLOR_END} {len(gemini_pending_entries)} items from {journal_name} with Gemini...", file=sys.stderr)
-        
-        items_to_review = []
-        for entry in gemini_pending_entries:
-            items_to_review.append({
-                "title": entry.get('title', ''),
-                "summary": entry.get('summary', '')
-            })
+# Use the Gemini API to review the items that didn't pass the primary filter.
+if current_model and gemini_pending_entries:
+    total_items = len(gemini_pending_entries)
+    print(f"🤖 {COLOR_GREEN}Batch processing{COLOR_END} {total_items} items from {journal_name} with Gemini...", file=sys.stderr)
 
+    # 📦 If the number of items exceeds 100, split them into batches of 100 and process sequentially. (Due to frequent error in arXiv over few hundreds of papers)
+    batch_size = 100
+    for start in range(0, total_items, batch_size):
+        batch_entries = gemini_pending_entries[start:start + batch_size]
+        print(f"\n📦 Processing batch {start//batch_size + 1}/{math.ceil(total_items/batch_size)} ({len(batch_entries)} items)...", file=sys.stderr)
+
+        items_to_review = [{"title": e.get('title', ''), "summary": e.get('summary', '')} for e in batch_entries]
         full_prompt = gemini_prompt + json.dumps(items_to_review, indent=2)
-        
+
         max_attempts = 3
         api_success = False
         attempt = 0
-        
-        # We catch a specific quota error and a general exception for all other cases.
+
         while not api_success:
             try:
                 print(f"🤖 Attempt {attempt+1}/{max_attempts} using model: {current_model.model_name}{COLOR_END}", file=sys.stderr)
@@ -201,20 +201,19 @@ def filter_rss_for_journal(journal_name, feed_url):
                     generation_config=genai.types.GenerationConfig(
                         response_mime_type="application/json"
                     ),
-                    request_options={'timeout': 120}  # Add a timeout of 120 seconds
+                    request_options={'timeout': 120}
                 )
                 gemini_decisions = json.loads(response.text)
-                
+
                 if not isinstance(gemini_decisions, list):
                     raise TypeError("Gemini response is not a list.")
-                
-                # Add each paper to the passed or removed list based on the Gemini API's response.
+
                 for decision_item in gemini_decisions:
                     if not isinstance(decision_item, dict):
                         raise TypeError("Gemini response list contains non-dictionary items.")
                     title = decision_item.get('title', '')
                     decision = decision_item.get('decision', '').upper()
-                    original_entry = next((e for e in gemini_pending_entries if e.get('title', '') == title), None)
+                    original_entry = next((e for e in batch_entries if e.get('title', '') == title), None)
                     if original_entry:
                         if decision == 'YES':
                             gemini_passed_entries.append(original_entry)
@@ -223,19 +222,17 @@ def filter_rss_for_journal(journal_name, feed_url):
                             gemini_removed_entries.append(original_entry)
                             print(f"  🤖❌ {title}", file=sys.stderr)
                 api_success = True
-                
+
             except exceptions.ResourceExhausted as e:
-                # Handle Quota Exceeded as a special case.
                 error_type = type(e).__name__
                 print(f"🤖 {COLOR_RED}Gemini Batch Error{COLOR_END} for {journal_name} ({error_type}, Attempt {attempt+1}/{max_attempts}): {e}", file=sys.stderr)
-                
+
                 if using_primary_model:
-                    # If the primary model fails on quota, switch to the fallback.
                     print(f"🚨 {COLOR_ORANGE}Quota exceeded on {current_model.model_name}: {e}{COLOR_END}", file=sys.stderr)
                     try:
                         current_model = genai.GenerativeModel(fallback_model)
                         using_primary_model = False
-                        attempt = 0 # Reset attempt count to 0 for the new model.
+                        attempt = 0
                         print(f"🚨 {COLOR_ORANGE}Switching to fallback model: {current_model.model_name}{COLOR_END}", file=sys.stderr)
                         continue
                     except Exception as fallback_e:
@@ -243,36 +240,29 @@ def filter_rss_for_journal(journal_name, feed_url):
                         current_model = None
                         break
                 else:
-                    # If the fallback model also fails on quota, it's a hard stop.
-                    print(f"🚨 {COLOR_ORANGE}Fallback model quota also exceeded. All pending items will be removed.{COLOR_END}", file=sys.stderr)
-                    break # Exit the while loop immediately
-                    
+                    print(f"🚨 {COLOR_ORANGE}Fallback model quota also exceeded. Stopping batch.{COLOR_END}", file=sys.stderr)
+                    break
+
             except Exception as e:
-                # Handle all other errors generically.
-                # This catches JSONDecodeError, Timeout, RequestException, etc.
                 error_type = type(e).__name__
                 print(f"🤖 {COLOR_RED}Gemini Batch Error on {current_model.model_name}{COLOR_END} for {journal_name} ({error_type}, Attempt {attempt+1}/{max_attempts}): {e}", file=sys.stderr)
                 attempt += 1
                 if attempt >= max_attempts:
                     if using_primary_model:
-                        # Primary model failed max_attempts → switch to fallback
                         current_model = genai.GenerativeModel(fallback_model)
-                        using_primary = False
+                        using_primary_model = False
                         attempt = 0
-                        print(f"🤖 {COLOR_RED}Primary failed {max_attempts} times. Switching to fallback model: {fallback_model}{COLOR_END} for {journal_name} ({error_type} : {e}", file=sys.stderr)
+                        print(f"🤖 {COLOR_RED}Primary failed {max_attempts} times. Switching to fallback model: {fallback_model}{COLOR_END}", file=sys.stderr)
                     else:
-                        # Fallback model exhausted → give up
                         break
                 else:
                     print("Retrying in 60 seconds...", file=sys.stderr)
                     time.sleep(60)
-                    
-        # If after all attempts, the API call was not successful, raise an error.
+
         if not api_success:
-            print(f"🤖 Final Gemini batch API call for {journal_name} failed. All pending items will be removed.", file=sys.stderr)
-            gemini_removed_entries.extend(gemini_pending_entries)
-            raise RuntimeError(f"Gemini API call failed for journal: {journal_name}")
-            
+            print(f"🤖 Final Gemini batch API call failed for batch {start//batch_size + 1}. Items will be removed.", file=sys.stderr)
+            gemini_removed_entries.extend(batch_entries)
+
     print(f"Total keyword-passed links for {journal_name}: {len(keyword_passed_entries)}{COLOR_END}", file=sys.stderr)
     print(f"Total Gemini-passed links for {journal_name}: {len(gemini_passed_entries)}{COLOR_END}", file=sys.stderr)
     print(f"Total keyword-removed links for {journal_name}: {len(keyword_removed_entries)}{COLOR_END}", file=sys.stderr)
