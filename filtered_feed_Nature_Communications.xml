@@ -21,6 +21,10 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-64677-4"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-64663-w"/>
+                
                     </rdf:Seq>
         </items>
     </channel>
@@ -29,5 +33,35 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-64677-4">
+            <title>Full-color programmable high temperature afterglow polymers based on single-molecule emitters</title>
+            <link>https://www.nature.com/articles/s41467-025-64677-4</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 03 November 2025; &lt;a href="https://www.nature.com/articles/s41467-025-64677-4"&gt;doi:10.1038/s41467-025-64677-4&lt;/a&gt;&lt;/p&gt;‘High temperature afterglow materials are of interest, though designing luminescent single molecules is a challenge. Here the authors use a host-guest system achieving phosphorescence and tuneable afterglow. ‘</content:encoded>
+            <dc:title>Full-color programmable high temperature afterglow polymers based on single-molecule emitters</dc:title>
+            <dc:creator>Zhuoran Xu</dc:creator><dc:creator>Yufeng Huang</dc:creator><dc:creator>Siyu Sun</dc:creator><dc:creator>Liangwei Ma</dc:creator><dc:creator>Bingbing Ding</dc:creator><dc:creator>He Tian</dc:creator><dc:creator>Xiang Ma</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-64677-4</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-11-03; | doi:10.1038/s41467-025-64677-4</dc:source>
+            <dc:date>2025-11-03</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-64677-4</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-64677-4</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-64663-w">
+            <title>Chiral supramolecular assembly to enhance the magneto-optical rotation of organic materials</title>
+            <link>https://www.nature.com/articles/s41467-025-64663-w</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 03 November 2025; &lt;a href="https://www.nature.com/articles/s41467-025-64663-w"&gt;doi:10.1038/s41467-025-64663-w&lt;/a&gt;&lt;/p&gt;The relation between magnetooptical activity and chirality has previously been confused. Chiral polymer films are presented with state-of-the-art Verdet constants, revealing the role of chirality, and a strategy to enhance the magnetooptical B term.</content:encoded>
+            <dc:title>Chiral supramolecular assembly to enhance the magneto-optical rotation of organic materials</dc:title>
+            <dc:creator>Leo Delage-Laurin</dc:creator><dc:creator>David Reger</dc:creator><dc:creator>Abdusalom A. Suleymanov</dc:creator><dc:creator>Zachary Nelson</dc:creator><dc:creator>Louis Minion</dc:creator><dc:creator>Steven E. Kooi</dc:creator><dc:creator>Jochen R. Brandt</dc:creator><dc:creator>Giuliano Siligardi</dc:creator><dc:creator>Robert P. Cameron</dc:creator><dc:creator>Jessica Wade</dc:creator><dc:creator>Timothy M. Swager</dc:creator><dc:creator>Matthew J. Fuchter</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-64663-w</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-11-03; | doi:10.1038/s41467-025-64663-w</dc:source>
+            <dc:date>2025-11-03</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-64663-w</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-64663-w</prism:url>
+        </item>
     
         </rdf:RDF>
