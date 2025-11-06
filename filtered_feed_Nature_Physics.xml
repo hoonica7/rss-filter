@@ -18,6 +18,10 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03067-5"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03081-7"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03082-6"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03073-7"/>
@@ -28,10 +32,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03078-2"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03069-3"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03079-1"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -40,6 +40,36 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03067-5">
+            <title>Anisotropic mass enhancement in a two-dimensional heavy-fermion material</title>
+            <link>https://www.nature.com/articles/s41567-025-03067-5</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 06 November 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03067-5"&gt;doi:10.1038/s41567-025-03067-5&lt;/a&gt;&lt;/p&gt;In a heavy-fermion material, hybridization of conduction electrons and electrons in partially filled core-levels enhances the mass of charge carriers. Now, experiments using a two-dimensional heavy-fermion material show that the hybridization can be extremely anisotropic, with the result that the effective mass of charge carriers is direction-dependent.</content:encoded>
+            <dc:title>Anisotropic mass enhancement in a two-dimensional heavy-fermion material</dc:title>
+            
+            <dc:identifier>doi:10.1038/s41567-025-03067-5</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-11-06; | doi:10.1038/s41567-025-03067-5</dc:source>
+            <dc:date>2025-11-06</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03067-5</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03067-5</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03081-7">
+            <title>A tale of two domes in twisted trilayer graphene</title>
+            <link>https://www.nature.com/articles/s41567-025-03081-7</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 06 November 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03081-7"&gt;doi:10.1038/s41567-025-03081-7&lt;/a&gt;&lt;/p&gt;A careful investigation of superconductivity in twisted trilayer graphene reveals a two-dome structure, which may be connected to intricate patterns of symmetry breaking in the underlying metallic state.</content:encoded>
+            <dc:title>A tale of two domes in twisted trilayer graphene</dc:title>
+            <dc:creator>Étienne Lantagne-Hurtubise</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03081-7</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-11-06; | doi:10.1038/s41567-025-03081-7</dc:source>
+            <dc:date>2025-11-06</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03081-7</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03081-7</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03082-6">
             <title>Free electrons as a source of nonclassical light</title>
@@ -114,36 +144,6 @@
             <prism:publicationName>Nature Physics</prism:publicationName>
             <prism:doi>10.1038/s41567-025-03078-2</prism:doi>
             <prism:url>https://www.nature.com/articles/s41567-025-03078-2</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03069-3">
-            <title>Identifying universal spin excitations in candidate spin-1/2 kagome quantum spin liquid materials</title>
-            <link>https://www.nature.com/articles/s41567-025-03069-3</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 31 October 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03069-3"&gt;doi:10.1038/s41567-025-03069-3&lt;/a&gt;&lt;/p&gt;The hunt for a quantum spin liquid has involved many different material families and models. Now, Zn-barlowite has been found to have similar behaviour to another candidate material, herbertsmithite, hinting there may be universal physical behaviour.</content:encoded>
-            <dc:title>Identifying universal spin excitations in candidate spin-1/2 kagome quantum spin liquid materials</dc:title>
-            <dc:creator>Aaron T. Breidenbach</dc:creator><dc:creator>Arthur C. Campello</dc:creator><dc:creator>Jiajia Wen</dc:creator><dc:creator>Hong-Chen Jiang</dc:creator><dc:creator>Daniel M. Pajerowski</dc:creator><dc:creator>Rebecca W. Smaha</dc:creator><dc:creator>Young S. Lee</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03069-3</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-10-31; | doi:10.1038/s41567-025-03069-3</dc:source>
-            <dc:date>2025-10-31</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03069-3</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03069-3</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03079-1">
-            <title>Electron‒phonon‒photon excitation in steady nonlinear lasing</title>
-            <link>https://www.nature.com/articles/s41567-025-03079-1</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 31 October 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03079-1"&gt;doi:10.1038/s41567-025-03079-1&lt;/a&gt;&lt;/p&gt;Direct coupling between electrons, photons and phonons is challenging due to energy and momentum mismatches. Now, it is possible to achieve steady-state electron–phonon–photon excitation through nonlinear lasing by suppressing spontaneous emission.</content:encoded>
-            <dc:title>Electron‒phonon‒photon excitation in steady nonlinear lasing</dc:title>
-            <dc:creator>Fei Liang</dc:creator><dc:creator>Cheng He</dc:creator><dc:creator>Haohai Yu</dc:creator><dc:creator>Huaijin Zhang</dc:creator><dc:creator>Yan-Feng Chen</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03079-1</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-10-31; | doi:10.1038/s41567-025-03079-1</dc:source>
-            <dc:date>2025-10-31</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03079-1</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03079-1</prism:url>
         </item>
     
 </rdf:RDF>
