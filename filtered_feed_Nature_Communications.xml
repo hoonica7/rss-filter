@@ -21,8 +21,6 @@
         <items>
             <rdf:Seq>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-65233-w"/>
-                
                     </rdf:Seq>
         </items>
     </channel>
@@ -31,20 +29,5 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
-    
-        <item rdf:about="https://www.nature.com/articles/s41467-025-65233-w">
-            <title>Memristor-based adaptive analog-to-digital conversion for efficient and accurate compute-in-memory</title>
-            <link>https://www.nature.com/articles/s41467-025-65233-w</link>
-            <content:encoded>
-                &lt;p&gt;Nature Communications, Published online: 06 November 2025; &lt;a href="https://www.nature.com/articles/s41467-025-65233-w"&gt;doi:10.1038/s41467-025-65233-w&lt;/a&gt;&lt;/p&gt;Hong et al. report an adaptive memristor-based analog-to-digital converter which leverages the programmable nature of memristors to implement optimal, data-aware quantization boundaries directly in hardware, enabling a 15.1× improvement in energy efficiency and a 12.9× reduction in area compared to existing converters.</content:encoded>
-            <dc:title>Memristor-based adaptive analog-to-digital conversion for efficient and accurate compute-in-memory</dc:title>
-            <dc:creator>Haiqiao Hong</dc:creator><dc:creator>Zhiyuan Du</dc:creator><dc:creator>Mingrui Jiang</dc:creator><dc:creator>Ruibin Mao</dc:creator><dc:creator>Yuan Ren</dc:creator><dc:creator>Fuyi Li</dc:creator><dc:creator>Wei Mao</dc:creator><dc:creator>Muyuan Peng</dc:creator><dc:creator>Wei Zhang</dc:creator><dc:creator>Zhengwu Liu</dc:creator><dc:creator>Can Li</dc:creator><dc:creator>Ngai Wong</dc:creator>
-            <dc:identifier>doi:10.1038/s41467-025-65233-w</dc:identifier>
-            <dc:source>Nature Communications, Published online: 2025-11-06; | doi:10.1038/s41467-025-65233-w</dc:source>
-            <dc:date>2025-11-06</dc:date>
-            <prism:publicationName>Nature Communications</prism:publicationName>
-            <prism:doi>10.1038/s41467-025-65233-w</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41467-025-65233-w</prism:url>
-        </item>
     
         </rdf:RDF>
