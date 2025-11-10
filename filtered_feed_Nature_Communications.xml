@@ -21,6 +21,10 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-64878-x"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-64853-6"/>
+                
                     </rdf:Seq>
         </items>
     </channel>
@@ -29,5 +33,35 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-64878-x">
+            <title>Magnetostrictive mechanical frequency combs</title>
+            <link>https://www.nature.com/articles/s41467-025-64878-x</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 10 November 2025; &lt;a href="https://www.nature.com/articles/s41467-025-64878-x"&gt;doi:10.1038/s41467-025-64878-x&lt;/a&gt;&lt;/p&gt;Mechanical frequency combs are promising for precision measurements, sensing, and metrology blew Gigahertz. Here, authors introduce a magneto-mechanical frequency comb including its integer- and half-integer-harmonic combs via magnetostrictive effect with the teeth spacing that can be continuously tuned.</content:encoded>
+            <dc:title>Magnetostrictive mechanical frequency combs</dc:title>
+            <dc:creator>Guanqi Ye</dc:creator><dc:creator>Ruitong Sun</dc:creator><dc:creator>Junning Zhao</dc:creator><dc:creator>Fusheng Ma</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-64878-x</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-11-10; | doi:10.1038/s41467-025-64878-x</dc:source>
+            <dc:date>2025-11-10</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-64878-x</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-64878-x</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-64853-6">
+            <title>Surface-plasmon control of ultrafast energy-relaxation modes in photoexcited Au nanorods probed by time-resolved single-particle X-ray imaging</title>
+            <link>https://www.nature.com/articles/s41467-025-64853-6</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 10 November 2025; &lt;a href="https://www.nature.com/articles/s41467-025-64853-6"&gt;doi:10.1038/s41467-025-64853-6&lt;/a&gt;&lt;/p&gt;Ultrafast lasers can drive materials into states beyond equilibrium. Here, the authors use single-pulse X-ray imaging to show that surface plasmons channel energy relaxation into distinct pathways, leading to different shape deformations.</content:encoded>
+            <dc:title>Surface-plasmon control of ultrafast energy-relaxation modes in photoexcited Au nanorods probed by time-resolved single-particle X-ray imaging</dc:title>
+            <dc:creator>Eunyoung Park</dc:creator><dc:creator>Chulho Jung</dc:creator><dc:creator>Junha Hwang</dc:creator><dc:creator>Jaeyong Shin</dc:creator><dc:creator>Sung Yun Lee</dc:creator><dc:creator>Heemin Lee</dc:creator><dc:creator>Seung-Phil Heo</dc:creator><dc:creator>Daewoong Nam</dc:creator><dc:creator>Sangsoo Kim</dc:creator><dc:creator>Min Seok Kim</dc:creator><dc:creator>Kyung Sook Kim</dc:creator><dc:creator>In Tae Eom</dc:creator><dc:creator>Yungok Ihm</dc:creator><dc:creator>Do Young Noh</dc:creator><dc:creator>Changyong Song</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-64853-6</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-11-10; | doi:10.1038/s41467-025-64853-6</dc:source>
+            <dc:date>2025-11-10</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-64853-6</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-64853-6</prism:url>
+        </item>
     
         </rdf:RDF>
