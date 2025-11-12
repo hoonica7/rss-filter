@@ -18,6 +18,10 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03119-w"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03080-8"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03092-4"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03072-8"/>
@@ -25,12 +29,6 @@
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03087-1"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03067-5"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03081-7"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03082-6"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03073-7"/>
                 
             </rdf:Seq>
         </items>
@@ -40,6 +38,36 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03119-w">
+            <title>The prize at the end of the quantum tunnel</title>
+            <link>https://www.nature.com/articles/s41567-025-03119-w</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 11 November 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03119-w"&gt;doi:10.1038/s41567-025-03119-w&lt;/a&gt;&lt;/p&gt;The 2025 Nobel Prize in Physics has been awarded to John Clarke, Michel Devoret and John Martinis “for the discovery of macroscopic quantum mechanical tunnelling and energy quantisation in an electric circuit”.</content:encoded>
+            <dc:title>The prize at the end of the quantum tunnel</dc:title>
+            
+            <dc:identifier>doi:10.1038/s41567-025-03119-w</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-11-11; | doi:10.1038/s41567-025-03119-w</dc:source>
+            <dc:date>2025-11-11</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03119-w</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03119-w</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03080-8">
+            <title>Field-tunable valley coupling in a dodecagonal semiconductor quasicrystal</title>
+            <link>https://www.nature.com/articles/s41567-025-03080-8</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 11 November 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03080-8"&gt;doi:10.1038/s41567-025-03080-8&lt;/a&gt;&lt;/p&gt;Lacking translational symmetry, the momentum-space description of quasicrystals is distinct from that of fully crystalline materials. Now, a quasicrystal with two 2D layers links different momenta from the individual layers, allowing new excitons to form.</content:encoded>
+            <dc:title>Field-tunable valley coupling in a dodecagonal semiconductor quasicrystal</dc:title>
+            <dc:creator>Zhida Liu</dc:creator><dc:creator>Qiang Gao</dc:creator><dc:creator>Yanxing Li</dc:creator><dc:creator>Giovanny Espitia</dc:creator><dc:creator>Xiaohui Liu</dc:creator><dc:creator>Chuqiao Shi</dc:creator><dc:creator>Fan Zhang</dc:creator><dc:creator>Dong Seob Kim</dc:creator><dc:creator>Yue Ni</dc:creator><dc:creator>Miles Mackenzie</dc:creator><dc:creator>Hamza Abudayyeh</dc:creator><dc:creator>Kenji Watanabe</dc:creator><dc:creator>Takashi Taniguchi</dc:creator><dc:creator>Yimo Han</dc:creator><dc:creator>Mit H. Naik</dc:creator><dc:creator>Chih-Kang Shih</dc:creator><dc:creator>Eslam Khalaf</dc:creator><dc:creator>Xiaoqin Li</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03080-8</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-11-11; | doi:10.1038/s41567-025-03080-8</dc:source>
+            <dc:date>2025-11-11</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03080-8</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03080-8</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03092-4">
             <title>Quantum light steers photoelectrons</title>
@@ -99,51 +127,6 @@
             <prism:publicationName>Nature Physics</prism:publicationName>
             <prism:doi>10.1038/s41567-025-03067-5</prism:doi>
             <prism:url>https://www.nature.com/articles/s41567-025-03067-5</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03081-7">
-            <title>A tale of two domes in twisted trilayer graphene</title>
-            <link>https://www.nature.com/articles/s41567-025-03081-7</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 06 November 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03081-7"&gt;doi:10.1038/s41567-025-03081-7&lt;/a&gt;&lt;/p&gt;A careful investigation of superconductivity in twisted trilayer graphene reveals a two-dome structure, which may be connected to intricate patterns of symmetry breaking in the underlying metallic state.</content:encoded>
-            <dc:title>A tale of two domes in twisted trilayer graphene</dc:title>
-            <dc:creator>Étienne Lantagne-Hurtubise</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03081-7</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-11-06; | doi:10.1038/s41567-025-03081-7</dc:source>
-            <dc:date>2025-11-06</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03081-7</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03081-7</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03082-6">
-            <title>Free electrons as a source of nonclassical light</title>
-            <link>https://www.nature.com/articles/s41567-025-03082-6</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 03 November 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03082-6"&gt;doi:10.1038/s41567-025-03082-6&lt;/a&gt;&lt;/p&gt;Photon sources used in quantum optics are limited in ways that free electron sources may not be. Now, accelerated electrons have been shown to generate non-classical light — this opens up possibilities for quantum experiments at the nanoscale.</content:encoded>
-            <dc:title>Free electrons as a source of nonclassical light</dc:title>
-            <dc:creator>Sophie Meuret</dc:creator><dc:creator>Hugo Lourenço-Martins</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03082-6</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-11-03; | doi:10.1038/s41567-025-03082-6</dc:source>
-            <dc:date>2025-11-03</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03082-6</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03082-6</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03073-7">
-            <title>Observation of the nonlinear chiral thermoelectric Hall effect in tellurium</title>
-            <link>https://www.nature.com/articles/s41567-025-03073-7</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 03 November 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03073-7"&gt;doi:10.1038/s41567-025-03073-7&lt;/a&gt;&lt;/p&gt;Nonlinear thermoelectric transport arising from inversion-symmetry breaking has been predicted theoretically. Now, the nonlinear chiral thermoelectric Hall effect has been experimentally demonstrated for tellurium at room temperature.</content:encoded>
-            <dc:title>Observation of the nonlinear chiral thermoelectric Hall effect in tellurium</dc:title>
-            <dc:creator>Tetsuya Nomoto</dc:creator><dc:creator>Akiko Kikkawa</dc:creator><dc:creator>Kazuki Nakazawa</dc:creator><dc:creator>Terufumi Yamaguchi</dc:creator><dc:creator>Fumitaka Kagawa</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03073-7</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-11-03; | doi:10.1038/s41567-025-03073-7</dc:source>
-            <dc:date>2025-11-03</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03073-7</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03073-7</prism:url>
         </item>
     
 </rdf:RDF>
