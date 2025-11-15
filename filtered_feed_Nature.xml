@@ -18,8 +18,6 @@
         <items>
             <rdf:Seq>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-03708-y"/>
-                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09707-3"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09735-z"/>
@@ -32,8 +30,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-03583-7"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09865-4"/>
-                
                     </rdf:Seq>
         </items>
     </channel>
@@ -42,21 +38,6 @@
         <url>https://www.nature.com/uploads/product/nature/rss.png</url>
         <link>http://feeds.nature.com/nature/rss/current</link>
     </image>
-    
-        <item rdf:about="https://www.nature.com/articles/d41586-025-03708-y">
-            <title>Magnetic fibres give this robot a soft grip</title>
-            <link>https://www.nature.com/articles/d41586-025-03708-y</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 12 November 2025; &lt;a href="https://www.nature.com/articles/d41586-025-03708-y"&gt;doi:10.1038/d41586-025-03708-y&lt;/a&gt;&lt;/p&gt;Researchers have come up with a way to weave fabric from fibres that can be controlled using magnetic fields.</content:encoded>
-            <dc:title>Magnetic fibres give this robot a soft grip</dc:title>
-            <dc:creator>Nick Petrić Howe</dc:creator>
-            <dc:identifier>doi:10.1038/d41586-025-03708-y</dc:identifier>
-            <dc:source>Nature, Published online: 2025-11-12; | doi:10.1038/d41586-025-03708-y</dc:source>
-            <dc:date>2025-11-12</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/d41586-025-03708-y</prism:doi>
-            <prism:url>https://www.nature.com/articles/d41586-025-03708-y</prism:url>
-        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41586-025-09707-3">
             <title>Photoinduced twist and untwist of moiré superlattices</title>
@@ -146,21 +127,6 @@
             <prism:publicationName>Nature</prism:publicationName>
             <prism:doi>10.1038/d41586-025-03583-7</prism:doi>
             <prism:url>https://www.nature.com/articles/d41586-025-03583-7</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41586-025-09865-4">
-            <title>High performance tandem perovskite LEDs through interlayer photon recycling</title>
-            <link>https://www.nature.com/articles/s41586-025-09865-4</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 11 November 2025; &lt;a href="https://www.nature.com/articles/s41586-025-09865-4"&gt;doi:10.1038/s41586-025-09865-4&lt;/a&gt;&lt;/p&gt;High performance tandem perovskite LEDs through interlayer photon recycling</content:encoded>
-            <dc:title>High performance tandem perovskite LEDs through interlayer photon recycling</dc:title>
-            <dc:creator>You Ke</dc:creator><dc:creator>Wei Zhu</dc:creator><dc:creator>Chao Ma</dc:creator><dc:creator>Kuankuan Xiong</dc:creator><dc:creator>Wang Liu</dc:creator><dc:creator>Zhiyuan Kuang</dc:creator><dc:creator>Jianhong Wu</dc:creator><dc:creator>Dongmin Qian</dc:creator><dc:creator>Mengmeng Li</dc:creator><dc:creator>Saixue Wang</dc:creator><dc:creator>Jinpei Wang</dc:creator><dc:creator>Xiangru Tao</dc:creator><dc:creator>Shuang Xu</dc:creator><dc:creator>Lin Zhu</dc:creator><dc:creator>Qiming Peng</dc:creator><dc:creator>Nana Wang</dc:creator><dc:creator>Wei Huang</dc:creator><dc:creator>Jianpu Wang</dc:creator>
-            <dc:identifier>doi:10.1038/s41586-025-09865-4</dc:identifier>
-            <dc:source>Nature, Published online: 2025-11-11; | doi:10.1038/s41586-025-09865-4</dc:source>
-            <dc:date>2025-11-11</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/s41586-025-09865-4</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41586-025-09865-4</prism:url>
         </item>
     
         </rdf:RDF>
