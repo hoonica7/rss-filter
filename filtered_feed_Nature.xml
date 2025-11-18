@@ -28,9 +28,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09674-9"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-03644-x"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nature/rss.png">
@@ -114,19 +112,4 @@
             <prism:url>https://www.nature.com/articles/s41586-025-09674-9</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/d41586-025-03644-x">
-            <title>Material system enhances superconducting qubits</title>
-            <link>https://www.nature.com/articles/d41586-025-03644-x</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 12 November 2025; &lt;a href="https://www.nature.com/articles/d41586-025-03644-x"&gt;doi:10.1038/d41586-025-03644-x&lt;/a&gt;&lt;/p&gt;In the development of large-scale quantum processors, material improvements yield rapid progress because they can be readily translated to many devices and platforms. This work shows that, if they are built from tantalum and silicon, superconducting qubits can have millisecond-scale lifetimes and coherence times and reduced fabrication-related contamination.</content:encoded>
-            <dc:title>Material system enhances superconducting qubits</dc:title>
-            
-            <dc:identifier>doi:10.1038/d41586-025-03644-x</dc:identifier>
-            <dc:source>Nature, Published online: 2025-11-12; | doi:10.1038/d41586-025-03644-x</dc:source>
-            <dc:date>2025-11-12</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/d41586-025-03644-x</prism:doi>
-            <prism:url>https://www.nature.com/articles/d41586-025-03644-x</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
