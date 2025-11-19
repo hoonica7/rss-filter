@@ -21,6 +21,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-66301-x"/>
+                
                     </rdf:Seq>
         </items>
     </channel>
@@ -29,5 +31,20 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-66301-x">
+            <title>Magnon-polaron control in a surface magnetoacoustic wave resonator</title>
+            <link>https://www.nature.com/articles/s41467-025-66301-x</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 18 November 2025; &lt;a href="https://www.nature.com/articles/s41467-025-66301-x"&gt;doi:10.1038/s41467-025-66301-x&lt;/a&gt;&lt;/p&gt;Realizing strong magnon-phonon coupling (i.e., magnon-polaron formation) is challenging and typically involves a material or cavity that confines the magnon to a small volume. Here, by combining a YIG film with a ZnO acoustic resonator, Künstle and coauthors achieve magnetic field tuneable magnon-polarons in a virtually infinite magnetic film, and succeed in observing Rabi-like oscillations in the time domain.</content:encoded>
+            <dc:title>Magnon-polaron control in a surface magnetoacoustic wave resonator</dc:title>
+            <dc:creator>Kevin Künstle</dc:creator><dc:creator>Yannik Kunz</dc:creator><dc:creator>Tarek Moussa</dc:creator><dc:creator>Katharina Lasinger</dc:creator><dc:creator>Kei Yamamoto</dc:creator><dc:creator>Philipp Pirro</dc:creator><dc:creator>John F. Gregg</dc:creator><dc:creator>Akashdeep Kamra</dc:creator><dc:creator>Mathias Weiler</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-66301-x</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-11-18; | doi:10.1038/s41467-025-66301-x</dc:source>
+            <dc:date>2025-11-18</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-66301-x</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-66301-x</prism:url>
+        </item>
     
         </rdf:RDF>
