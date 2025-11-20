@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02410-8"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02424-2"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02421-5"/>
@@ -28,8 +30,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02420-6"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02396-3"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -38,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02410-8">
+            <title>Brightening up quantum computing</title>
+            <link>https://www.nature.com/articles/s41563-025-02410-8</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 20 November 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02410-8"&gt;doi:10.1038/s41563-025-02410-8&lt;/a&gt;&lt;/p&gt;Pascale Senellart-Mardon, CNRS research director at the Center for Nanoscience and Nanotechnology at the Université Paris-Saclay and co-founder of photonic quantum computer start-up Quandela, talks to Nature Materials about photonic quantum technologies and the challenges and opportunities of juggling academia and industry.</content:encoded>
+            <dc:title>Brightening up quantum computing</dc:title>
+            <dc:creator>Amos Martinez</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02410-8</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-11-20; | doi:10.1038/s41563-025-02410-8</dc:source>
+            <dc:date>2025-11-20</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02410-8</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02410-8</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02424-2">
             <title>A crystal that breathes</title>
@@ -112,21 +127,6 @@
             <prism:publicationName>Nature Materials</prism:publicationName>
             <prism:doi>10.1038/s41563-025-02420-6</prism:doi>
             <prism:url>https://www.nature.com/articles/s41563-025-02420-6</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02396-3">
-            <title>Electronic switching of topology in LaSbTe</title>
-            <link>https://www.nature.com/articles/s41563-025-02396-3</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 12 November 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02396-3"&gt;doi:10.1038/s41563-025-02396-3&lt;/a&gt;&lt;/p&gt;This study shows that the nodal loop topology in LaSbxTe2−x can be controlled by chemical substitution and electron doping. The reversible opening and closing of a gap larger than 400 meV in the nodal loop enables on-demand switching of topology.</content:encoded>
-            <dc:title>Electronic switching of topology in LaSbTe</dc:title>
-            <dc:creator>J. Bannies</dc:creator><dc:creator>M. Michiardi</dc:creator><dc:creator>H.-H. Kung</dc:creator><dc:creator>S. Godin</dc:creator><dc:creator>J. W. Simonson</dc:creator><dc:creator>M. Oudah</dc:creator><dc:creator>M. Zonno</dc:creator><dc:creator>S. Gorovikov</dc:creator><dc:creator>S. Zhdanovich</dc:creator><dc:creator>I. S. Elfimov</dc:creator><dc:creator>A. Damascelli</dc:creator><dc:creator>M. C. Aronson</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02396-3</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-11-12; | doi:10.1038/s41563-025-02396-3</dc:source>
-            <dc:date>2025-11-12</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02396-3</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02396-3</prism:url>
         </item>
     
 </rdf:RDF>

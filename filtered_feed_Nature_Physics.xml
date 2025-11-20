@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03071-9"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03091-5"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03112-3"/>
@@ -26,9 +28,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03093-3"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03119-w"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -36,6 +36,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03071-9">
+            <title>Photovoltage microscopy of symmetrically twisted trilayer graphene</title>
+            <link>https://www.nature.com/articles/s41567-025-03071-9</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 20 November 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03071-9"&gt;doi:10.1038/s41567-025-03071-9&lt;/a&gt;&lt;/p&gt;A proposed theoretical explanation for the electronic behaviour of moiré graphene is the coexistence of light and heavy electrons. Now local thermoelectric measurements hint that this model could be accurate.</content:encoded>
+            <dc:title>Photovoltage microscopy of symmetrically twisted trilayer graphene</dc:title>
+            <dc:creator>Sergi Batlle Porro</dc:creator><dc:creator>Dumitru Călugăru</dc:creator><dc:creator>Haoyu Hu</dc:creator><dc:creator>Roshan Krishna Kumar</dc:creator><dc:creator>Niels C. H. Hesp</dc:creator><dc:creator>Kenji Watanabe</dc:creator><dc:creator>Takashi Taniguchi</dc:creator><dc:creator>B. Andrei Bernevig</dc:creator><dc:creator>Petr Stepanov</dc:creator><dc:creator>Frank H. L. Koppens</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03071-9</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-11-20; | doi:10.1038/s41567-025-03071-9</dc:source>
+            <dc:date>2025-11-20</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03071-9</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03071-9</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03091-5">
             <title>A charge transfer mechanism for optically addressable solid-state spin pairs</title>
@@ -97,19 +112,4 @@
             <prism:url>https://www.nature.com/articles/s41567-025-03093-3</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03119-w">
-            <title>The prize at the end of the quantum tunnel</title>
-            <link>https://www.nature.com/articles/s41567-025-03119-w</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 11 November 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03119-w"&gt;doi:10.1038/s41567-025-03119-w&lt;/a&gt;&lt;/p&gt;The 2025 Nobel Prize in Physics has been awarded to John Clarke, Michel Devoret and John Martinis “for the discovery of macroscopic quantum mechanical tunnelling and energy quantisation in an electric circuit”.</content:encoded>
-            <dc:title>The prize at the end of the quantum tunnel</dc:title>
-            
-            <dc:identifier>doi:10.1038/s41567-025-03119-w</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-11-11; | doi:10.1038/s41567-025-03119-w</dc:source>
-            <dc:date>2025-11-11</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03119-w</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03119-w</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
