@@ -21,6 +21,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-65214-z"/>
+                
                     </rdf:Seq>
         </items>
     </channel>
@@ -29,5 +31,52 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-65214-z">
+            <title>SL&lt;InlineEquation ID="IEq1"&gt;
+              &lt;InlineMediaObject&gt;
+                &lt;ImageObject Color="BlackWhite" FileRef="41467_2025_65214_Article_IEq1.gif" Format="GIF" Height="19" Rendition="HTML" Resolution="72" Type="Linedraw" Width="40" /&gt;
+              &lt;/InlineMediaObject&gt;
+              &lt;EquationSource Format="TEX"&gt;$$(2,{\mathbb{C}})$$&lt;/EquationSource&gt;
+              &lt;EquationSource Format="MATHML"&gt;&lt;math&gt;
+                &lt;mrow&gt;
+                  &lt;mo&gt;(&lt;/mo&gt;
+                  &lt;mrow&gt;
+                    &lt;mn&gt;2&lt;/mn&gt;
+                    &lt;mo&gt;,&lt;/mo&gt;
+                    &lt;mi mathvariant="double-struck"&gt;C&lt;/mi&gt;
+                  &lt;/mrow&gt;
+                  &lt;mo&gt;)&lt;/mo&gt;
+                &lt;/mrow&gt;
+              &lt;/math&gt;&lt;/EquationSource&gt;
+            &lt;/InlineEquation&gt; non-Abelian gauge fields in a photonic molecule array</title>
+            <link>https://www.nature.com/articles/s41467-025-65214-z</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 19 November 2025; &lt;a href="https://www.nature.com/articles/s41467-025-65214-z"&gt;doi:10.1038/s41467-025-65214-z&lt;/a&gt;&lt;/p&gt;Artificial gauge fields offer a powerful tool for engineering the topological phase of matter. Here, the authors propose a scheme to simulate an SL $$(2,{\mathbb{C}})$$ ( 2 , C ) non-Abelian gauge field by coupled photonic molecules in synthetic space-frequency dimensions, which enables various Dirac semimetal transitions.</content:encoded>
+            <dc:title>SL&lt;InlineEquation ID="IEq1"&gt;
+              &lt;InlineMediaObject&gt;
+                &lt;ImageObject Color="BlackWhite" FileRef="41467_2025_65214_Article_IEq1.gif" Format="GIF" Height="19" Rendition="HTML" Resolution="72" Type="Linedraw" Width="40" /&gt;
+              &lt;/InlineMediaObject&gt;
+              &lt;EquationSource Format="TEX"&gt;$$(2,{\mathbb{C}})$$&lt;/EquationSource&gt;
+              &lt;EquationSource Format="MATHML"&gt;&lt;math&gt;
+                &lt;mrow&gt;
+                  &lt;mo&gt;(&lt;/mo&gt;
+                  &lt;mrow&gt;
+                    &lt;mn&gt;2&lt;/mn&gt;
+                    &lt;mo&gt;,&lt;/mo&gt;
+                    &lt;mi mathvariant="double-struck"&gt;C&lt;/mi&gt;
+                  &lt;/mrow&gt;
+                  &lt;mo&gt;)&lt;/mo&gt;
+                &lt;/mrow&gt;
+              &lt;/math&gt;&lt;/EquationSource&gt;
+            &lt;/InlineEquation&gt; non-Abelian gauge fields in a photonic molecule array</dc:title>
+            <dc:creator>Zhaohui Dong</dc:creator><dc:creator>Xianfeng Chen</dc:creator><dc:creator>Luqi Yuan</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-65214-z</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-11-19; | doi:10.1038/s41467-025-65214-z</dc:source>
+            <dc:date>2025-11-19</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-65214-z</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-65214-z</prism:url>
+        </item>
     
         </rdf:RDF>
