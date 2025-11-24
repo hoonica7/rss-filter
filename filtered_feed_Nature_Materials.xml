@@ -18,11 +18,7 @@
         <items>
             <rdf:Seq>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02432-2"/>
-                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02416-2"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02410-8"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02424-2"/>
                 
@@ -32,7 +28,9 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02413-5"/>
                 
-                    </rdf:Seq>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02405-5"/>
+                
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nmat/rss.gif">
@@ -40,21 +38,6 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02432-2">
-            <title>Tweezer arrays advance quantum computing</title>
-            <link>https://www.nature.com/articles/s41563-025-02432-2</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 21 November 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02432-2"&gt;doi:10.1038/s41563-025-02432-2&lt;/a&gt;&lt;/p&gt;Tweezer arrays advance quantum computing</content:encoded>
-            <dc:title>Tweezer arrays advance quantum computing</dc:title>
-            <dc:creator>Amos Martinez</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02432-2</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-11-21; | doi:10.1038/s41563-025-02432-2</dc:source>
-            <dc:date>2025-11-21</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02432-2</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02432-2</prism:url>
-        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02416-2">
             <title>Moiré enhanced flat band in rhombohedral graphene</title>
@@ -69,21 +52,6 @@
             <prism:publicationName>Nature Materials</prism:publicationName>
             <prism:doi>10.1038/s41563-025-02416-2</prism:doi>
             <prism:url>https://www.nature.com/articles/s41563-025-02416-2</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02410-8">
-            <title>Brightening up quantum computing</title>
-            <link>https://www.nature.com/articles/s41563-025-02410-8</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 20 November 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02410-8"&gt;doi:10.1038/s41563-025-02410-8&lt;/a&gt;&lt;/p&gt;Pascale Senellart-Mardon, CNRS research director at the Center for Nanoscience and Nanotechnology at the Université Paris-Saclay and co-founder of photonic quantum computer start-up Quandela, talks to Nature Materials about photonic quantum technologies and the challenges and opportunities of juggling academia and industry.</content:encoded>
-            <dc:title>Brightening up quantum computing</dc:title>
-            <dc:creator>Amos Martinez</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02410-8</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-11-20; | doi:10.1038/s41563-025-02410-8</dc:source>
-            <dc:date>2025-11-20</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02410-8</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02410-8</prism:url>
         </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02424-2">
@@ -146,4 +114,19 @@
             <prism:url>https://www.nature.com/articles/s41563-025-02413-5</prism:url>
         </item>
     
-        </rdf:RDF>
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02405-5">
+            <title>Scalable ruthenium core–shell hydrogen catalyst for efficient and robust proton-exchange membrane electrolyser</title>
+            <link>https://www.nature.com/articles/s41563-025-02405-5</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 14 November 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02405-5"&gt;doi:10.1038/s41563-025-02405-5&lt;/a&gt;&lt;/p&gt;Green hydrogen production often needs Pt-based electrolysers; however, their high cost and lack of scalability hinder uptake. Here a core–shell Ru-based electrolyser is demonstrated for acidic hydrogen evolution and demonstrates a low overpotential and Pt-like stability, as well as scalability to a 200 cm2 device.</content:encoded>
+            <dc:title>Scalable ruthenium core–shell hydrogen catalyst for efficient and robust proton-exchange membrane electrolyser</dc:title>
+            <dc:creator>Jinze Li</dc:creator><dc:creator>Haiyang Cheng</dc:creator><dc:creator>Yining Sun</dc:creator><dc:creator>Rongzhi Ma</dc:creator><dc:creator>Danning Li</dc:creator><dc:creator>Yanchun Xu</dc:creator><dc:creator>Jiahao Jin</dc:creator><dc:creator>Xin Liu</dc:creator><dc:creator>Mingfei Shao</dc:creator><dc:creator>Lei Wang</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02405-5</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-11-14; | doi:10.1038/s41563-025-02405-5</dc:source>
+            <dc:date>2025-11-14</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02405-5</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02405-5</prism:url>
+        </item>
+    
+</rdf:RDF>
