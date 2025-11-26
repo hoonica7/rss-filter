@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03109-y"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03100-7"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03097-z"/>
@@ -25,10 +27,6 @@
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03071-9"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03091-5"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03112-3"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03099-x"/>
                 
             </rdf:Seq>
         </items>
@@ -38,6 +36,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03109-y">
+            <title>Non-local detection of coherent Yu–Shiba–Rusinov quantum projections</title>
+            <link>https://www.nature.com/articles/s41567-025-03109-y</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 26 November 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03109-y"&gt;doi:10.1038/s41567-025-03109-y&lt;/a&gt;&lt;/p&gt;Coherently projecting a quantum state may allow it to be probed from a distance. This is now demonstrated for a Yu–Shiba–Rusinov state using a quantum corral.</content:encoded>
+            <dc:title>Non-local detection of coherent Yu–Shiba–Rusinov quantum projections</dc:title>
+            <dc:creator>Khai That Ton</dc:creator><dc:creator>Chang Xu</dc:creator><dc:creator>Ioannis Ioannidis</dc:creator><dc:creator>Lucas Schneider</dc:creator><dc:creator>Thore Posske</dc:creator><dc:creator>Roland Wiesendanger</dc:creator><dc:creator>Dirk K. Morr</dc:creator><dc:creator>Jens Wiebe</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03109-y</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-11-26; | doi:10.1038/s41567-025-03109-y</dc:source>
+            <dc:date>2025-11-26</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03109-y</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03109-y</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03100-7">
             <title>Electric toroidal invariance generates distinct transverse electromagnetic responses</title>
@@ -97,36 +110,6 @@
             <prism:publicationName>Nature Physics</prism:publicationName>
             <prism:doi>10.1038/s41567-025-03091-5</prism:doi>
             <prism:url>https://www.nature.com/articles/s41567-025-03091-5</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03112-3">
-            <title>Observation of a dynamic transition in bulk supercooled water</title>
-            <link>https://www.nature.com/articles/s41567-025-03112-3</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 19 November 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03112-3"&gt;doi:10.1038/s41567-025-03112-3&lt;/a&gt;&lt;/p&gt;Water has remarkable dynamic properties; a transition from a fragile to a strong liquid has been proposed to explain how they change on cooling. Experiments now show evidence for such a transition in bulk supercooled water at around 233 K.</content:encoded>
-            <dc:title>Observation of a dynamic transition in bulk supercooled water</dc:title>
-            <dc:creator>R. Tyburski</dc:creator><dc:creator>M. Shin</dc:creator><dc:creator>S. You</dc:creator><dc:creator>K. Nam</dc:creator><dc:creator>M. Soldemo</dc:creator><dc:creator>A. Girelli</dc:creator><dc:creator>M. Bin</dc:creator><dc:creator>S. Lee</dc:creator><dc:creator>I. Andronis</dc:creator><dc:creator>Y. Han</dc:creator><dc:creator>S. Jeong</dc:creator><dc:creator>R. A. Oggenfuss</dc:creator><dc:creator>R. Mankowsky</dc:creator><dc:creator>D. Babich</dc:creator><dc:creator>X. Liu</dc:creator><dc:creator>S. Zerdane</dc:creator><dc:creator>T. Katayama</dc:creator><dc:creator>H. Lemke</dc:creator><dc:creator>F. Perakis</dc:creator><dc:creator>A. Nilsson</dc:creator><dc:creator>K. H. Kim</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03112-3</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-11-19; | doi:10.1038/s41567-025-03112-3</dc:source>
-            <dc:date>2025-11-19</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03112-3</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03112-3</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03099-x">
-            <title>Effective bands and band-like electron transport in amorphous solids</title>
-            <link>https://www.nature.com/articles/s41567-025-03099-x</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 17 November 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03099-x"&gt;doi:10.1038/s41567-025-03099-x&lt;/a&gt;&lt;/p&gt;The standard band structure picture cannot be applied to amorphous materials as they lack crystal symmetry. Now a first-principles approach that captures the possibility of band-like electron transport in amorphous solids is presented, with In2O3 as an example.</content:encoded>
-            <dc:title>Effective bands and band-like electron transport in amorphous solids</dc:title>
-            <dc:creator>Matthew Jankousky</dc:creator><dc:creator>Dimitar Pashov</dc:creator><dc:creator>João H. Mazo</dc:creator><dc:creator>Ross E. Larsen</dc:creator><dc:creator>Vladimir Dobrosavljević</dc:creator><dc:creator>Mark van Schilfgaarde</dc:creator><dc:creator>Vladan Stevanović</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03099-x</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-11-17; | doi:10.1038/s41567-025-03099-x</dc:source>
-            <dc:date>2025-11-17</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03099-x</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03099-x</prism:url>
         </item>
     
 </rdf:RDF>
