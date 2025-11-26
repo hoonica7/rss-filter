@@ -21,9 +21,11 @@
         <items>
             <rdf:Seq>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-66432-1"/>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-66770-0"/>
                 
-                    </rdf:Seq>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-66158-0"/>
+                
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/ncomms/rss.png">
@@ -32,19 +34,34 @@
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
     
-        <item rdf:about="https://www.nature.com/articles/s41467-025-66432-1">
-            <title>Selective micropollutant degradation via nanoconfined core-shell heterostructures with robust resilience to water matrices</title>
-            <link>https://www.nature.com/articles/s41467-025-66432-1</link>
+        <item rdf:about="https://www.nature.com/articles/s41467-025-66770-0">
+            <title>High-κ dielectric van der Waals integration on 2D semiconductors for three-dimensional complementary logic systems</title>
+            <link>https://www.nature.com/articles/s41467-025-66770-0</link>
             <content:encoded>
-                &lt;p&gt;Nature Communications, Published online: 25 November 2025; &lt;a href="https://www.nature.com/articles/s41467-025-66432-1"&gt;doi:10.1038/s41467-025-66432-1&lt;/a&gt;&lt;/p&gt;Authors report a TiO2/C2N core–shell photocatalyst that creates nanoconfined sites for selective micropollutant degradation. The shell blocks natural organics and anions, ensuring high efficiency and resilience in real water environments.</content:encoded>
-            <dc:title>Selective micropollutant degradation via nanoconfined core-shell heterostructures with robust resilience to water matrices</dc:title>
-            <dc:creator>Shaoxiong He</dc:creator><dc:creator>Dehai Yu</dc:creator><dc:creator>Chun He</dc:creator><dc:creator>Ping Li</dc:creator><dc:creator>Mengye Wang</dc:creator><dc:creator>Shuanghong Tian</dc:creator><dc:creator>Jingyun Fang</dc:creator>
-            <dc:identifier>doi:10.1038/s41467-025-66432-1</dc:identifier>
-            <dc:source>Nature Communications, Published online: 2025-11-25; | doi:10.1038/s41467-025-66432-1</dc:source>
-            <dc:date>2025-11-25</dc:date>
+                &lt;p&gt;Nature Communications, Published online: 26 November 2025; &lt;a href="https://www.nature.com/articles/s41467-025-66770-0"&gt;doi:10.1038/s41467-025-66770-0&lt;/a&gt;&lt;/p&gt;The integration of high-κ dielectric materials with 2D semiconductors remains an important challenge for the implementation of post-silicon 2D electronics. Here, the authors report a HfSe2 plasma oxidation method to integrate HfO2 dielectric layers on both n- and p-type 2D semiconducting channels, showing the realisation of high-performance complementary electronic devices.</content:encoded>
+            <dc:title>High-κ dielectric van der Waals integration on 2D semiconductors for three-dimensional complementary logic systems</dc:title>
+            <dc:creator>Taeho Kang</dc:creator><dc:creator>Joonho Park</dc:creator><dc:creator>Seung Yong Lee</dc:creator><dc:creator>Hanggyo Jung</dc:creator><dc:creator>Jongwook Jeon</dc:creator><dc:creator>Yong-Hoon Kim</dc:creator><dc:creator>Sungjoo Lee</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-66770-0</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-11-26; | doi:10.1038/s41467-025-66770-0</dc:source>
+            <dc:date>2025-11-26</dc:date>
             <prism:publicationName>Nature Communications</prism:publicationName>
-            <prism:doi>10.1038/s41467-025-66432-1</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41467-025-66432-1</prism:url>
+            <prism:doi>10.1038/s41467-025-66770-0</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-66770-0</prism:url>
         </item>
     
-        </rdf:RDF>
+        <item rdf:about="https://www.nature.com/articles/s41467-025-66158-0">
+            <title>Hierarchical ground-state crystals underlying Hertzian quasicrystals</title>
+            <link>https://www.nature.com/articles/s41467-025-66158-0</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 25 November 2025; &lt;a href="https://www.nature.com/articles/s41467-025-66158-0"&gt;doi:10.1038/s41467-025-66158-0&lt;/a&gt;&lt;/p&gt;Can a minimal model reveal quasicrystal emergence and associated multi-level hierarchies of crystal patterns? Here, the theoretical discovery of the underlying energy ground states of Hertzian quasicrystal offers a new perspective on its formation.</content:encoded>
+            <dc:title>Hierarchical ground-state crystals underlying Hertzian quasicrystals</dc:title>
+            <dc:creator>Yao Li</dc:creator><dc:creator>Yiwei Wang</dc:creator><dc:creator>Yingke Geng</dc:creator><dc:creator>Wenyu Liu</dc:creator><dc:creator>Fangfu Ye</dc:creator><dc:creator>Jeff Z. Y. Chen</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-66158-0</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-11-25; | doi:10.1038/s41467-025-66158-0</dc:source>
+            <dc:date>2025-11-25</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-66158-0</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-66158-0</prism:url>
+        </item>
+    
+</rdf:RDF>
