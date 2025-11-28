@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03095-1"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03109-y"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03100-7"/>
@@ -25,8 +27,6 @@
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03097-z"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03071-9"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03091-5"/>
                 
             </rdf:Seq>
         </items>
@@ -36,6 +36,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03095-1">
+            <title>Twisting the Hubbard model into the momentum-mixing Hatsugai–Kohmoto model</title>
+            <link>https://www.nature.com/articles/s41567-025-03095-1</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 27 November 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03095-1"&gt;doi:10.1038/s41567-025-03095-1&lt;/a&gt;&lt;/p&gt;The Hubbard model describes the physics of strongly correlated electron systems, but is difficult to solve. Now, a scheme to systematically and efficiently relate the exactly solvable Hatsugai–Kohmoto model to the Hubbard model has been identified.</content:encoded>
+            <dc:title>Twisting the Hubbard model into the momentum-mixing Hatsugai–Kohmoto model</dc:title>
+            <dc:creator>Peizhi Mai</dc:creator><dc:creator>Jinchao Zhao</dc:creator><dc:creator>Gaurav Tenkila</dc:creator><dc:creator>Nico A. Hackner</dc:creator><dc:creator>Dhruv Kush</dc:creator><dc:creator>Derek Pan</dc:creator><dc:creator>Philip W. Phillips</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03095-1</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-11-27; | doi:10.1038/s41567-025-03095-1</dc:source>
+            <dc:date>2025-11-27</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03095-1</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03095-1</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03109-y">
             <title>Non-local detection of coherent Yu–Shiba–Rusinov quantum projections</title>
@@ -95,21 +110,6 @@
             <prism:publicationName>Nature Physics</prism:publicationName>
             <prism:doi>10.1038/s41567-025-03071-9</prism:doi>
             <prism:url>https://www.nature.com/articles/s41567-025-03071-9</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03091-5">
-            <title>A charge transfer mechanism for optically addressable solid-state spin pairs</title>
-            <link>https://www.nature.com/articles/s41567-025-03091-5</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 19 November 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03091-5"&gt;doi:10.1038/s41567-025-03091-5&lt;/a&gt;&lt;/p&gt;Optical spin defects in semiconductors are crucial for applications, but it is often difficult to establish their microscopic origin. A mechanism for the spin behaviour of a family of bright emitters in hexagonal boron nitride has now been identified.</content:encoded>
-            <dc:title>A charge transfer mechanism for optically addressable solid-state spin pairs</dc:title>
-            <dc:creator>Islay O. Robertson</dc:creator><dc:creator>Benjamin Whitefield</dc:creator><dc:creator>Sam C. Scholten</dc:creator><dc:creator>Priya Singh</dc:creator><dc:creator>Alexander J. Healey</dc:creator><dc:creator>Philipp Reineck</dc:creator><dc:creator>Mehran Kianinia</dc:creator><dc:creator>Gergely Barcza</dc:creator><dc:creator>Viktor Ivády</dc:creator><dc:creator>David A. Broadway</dc:creator><dc:creator>Igor Aharonovich</dc:creator><dc:creator>Jean-Philippe Tetienne</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03091-5</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-11-19; | doi:10.1038/s41567-025-03091-5</dc:source>
-            <dc:date>2025-11-19</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03091-5</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03091-5</prism:url>
         </item>
     
 </rdf:RDF>
