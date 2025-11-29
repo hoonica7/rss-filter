@@ -6,16 +6,17 @@
     <description>Recent articles in Physical Review Letters</description>
     <syn:updatePeriod>hourly</syn:updatePeriod>
     <syn:updateFrequency>1</syn:updateFrequency>
-    <syn:updateBase>2025-11-28T07:16:41+00:00</syn:updateBase>
+    <syn:updateBase>2025-11-29T01:16:43+00:00</syn:updateBase>
     <dc:creator>rss@aps.org</dc:creator>
     <dc:publisher>assocpub@aps.org</dc:publisher>
-    <dc:date>2025-11-28T07:16:41+00:00</dc:date>
+    <dc:date>2025-11-29T01:16:43+00:00</dc:date>
     <dc:language>en</dc:language>
     <dc:rights>Copyright © 2025 the American Physical Society. Personal use only, all commercial or other reuse prohibited</dc:rights>
     <prism:copyright>Copyright © 2025 the American Physical Society</prism:copyright>
     <prism:rightsAgent>assocpub@aps.org</prism:rightsAgent>
     <items>
       <rdf:Seq>
+        <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/krzp-rq8z"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/crlx-bc4r"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/4yh8-qv7g"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/q1nb-cvh6"/>
@@ -33,6 +34,8 @@
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/gvwf-fsz6"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/8cpx-2ly2"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/lqf3-6r5z"/>
+        <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/qg2g-nz88"/>
+        <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/95nd-4tzv"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/jmk4-46tj"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/qp2x-cl3q"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/8d4z-dy82"/>
@@ -42,6 +45,28 @@
         </rdf:Seq>
     </items>
   </channel>
+  <item rdf:about="http://link.aps.org/doi/10.1103/krzp-rq8z">
+    <title>Giant Number-Parity Effect Leading to Spontaneous Symmetry Breaking in Finite-Size Quantum Spin Models</title>
+    <link>http://link.aps.org/doi/10.1103/krzp-rq8z</link>
+    <description>Author(s): Filippo Caleca, Saverio Bocini, Fabio Mezzacapo, and Tommaso Roscilde&lt;br/&gt;&lt;p&gt;Spontaneous symmetry breaking (SSB) occurs when a many-body system governed by a symmetric Hamiltonian, and prepared in a symmetry-broken state by the application of a field coupling to its order parameter $O$, retains a finite $O$ value even after the field is switched off. SSB is generally thought…&lt;/p&gt;&lt;br/&gt;[Phys. Rev. Lett. 135, 220402] Published Wed Nov 26, 2025</description>
+    <content:encoded>&lt;p&gt;Author(s): Filippo Caleca, Saverio Bocini, Fabio Mezzacapo, and Tommaso Roscilde&lt;/p&gt;&lt;p&gt;Spontaneous symmetry breaking (SSB) occurs when a many-body system governed by a symmetric Hamiltonian, and prepared in a symmetry-broken state by the application of a field coupling to its order parameter &lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;/mrow&gt;&lt;/math&gt;, retains a finite &lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;/math&gt; value even after the field is switched off. SSB is generally thought to …&lt;/p&gt;&lt;br/&gt;&lt;p&gt;[Phys. Rev. Lett. 135, 220402] Published Wed Nov 26, 2025&lt;/p&gt;</content:encoded>
+    <dc:title>Giant Number-Parity Effect Leading to Spontaneous Symmetry Breaking in Finite-Size Quantum Spin Models</dc:title>
+    <dc:creator>Filippo Caleca, Saverio Bocini, Fabio Mezzacapo, and Tommaso Roscilde</dc:creator>
+    <dc:date>2025-11-26T10:00:00+00:00</dc:date>
+    <dc:rights>Personal use only, all commercial or other reuse prohibited</dc:rights>
+    <dc:source>Phys. Rev. Lett. 135, 220402 (2025)</dc:source>
+    <dc:type>article</dc:type>
+    <dc:identifier>doi:10.1103/krzp-rq8z</dc:identifier>
+    <prism:doi>10.1103/krzp-rq8z</prism:doi>
+    <prism:publicationName>Physical Review Letters</prism:publicationName>
+    <prism:volume>135</prism:volume>
+    <prism:number>22</prism:number>
+    <prism:publicationDate>2025-11-26T10:00:00+00:00</prism:publicationDate>
+    <prism:url>http://link.aps.org/doi/10.1103/krzp-rq8z</prism:url>
+    <prism:startingPage>220402</prism:startingPage>
+    <dc:subject>Quantum Information, Science, and Technology</dc:subject>
+    <prism:section>Quantum Information, Science, and Technology</prism:section>
+  </item>
   <item rdf:about="http://link.aps.org/doi/10.1103/crlx-bc4r">
     <title>Possibility of Type-III Multiferroics Hosting ${d}^{0}$ Ferroelectricity and ${d}^{0}$ Ferromagnetism</title>
     <link>http://link.aps.org/doi/10.1103/crlx-bc4r</link>
@@ -415,6 +440,50 @@
     <prism:startingPage>210602</prism:startingPage>
     <dc:subject>Quantum Information, Science, and Technology</dc:subject>
     <prism:section>Quantum Information, Science, and Technology</prism:section>
+  </item>
+  <item rdf:about="http://link.aps.org/doi/10.1103/qg2g-nz88">
+    <title>Topological Response in Open Quantum Systems with Weak Symmetries</title>
+    <link>http://link.aps.org/doi/10.1103/qg2g-nz88</link>
+    <description>Author(s): Ze-Min Huang, Sebastian Diehl, and Xiao-Qi Sun&lt;br/&gt;&lt;p&gt;In open quantum systems, the interaction of the system with its environment gives rise to two types of symmetry: a strong one, where the system’s symmetry charge is conserved exactly, and a weak one, where the system can exchange symmetry charge with the environment but still preserve symmetry at th…&lt;/p&gt;&lt;br/&gt;[Phys. Rev. Lett. 135, 213002] Published Thu Nov 20, 2025</description>
+    <content:encoded>&lt;p&gt;Author(s): Ze-Min Huang, Sebastian Diehl, and Xiao-Qi Sun&lt;/p&gt;&lt;p&gt;In open quantum systems, the interaction of the system with its environment gives rise to two types of symmetry: a strong one, where the system’s symmetry charge is conserved exactly, and a weak one, where the system can exchange symmetry charge with the environment but still preserve symmetry at th…&lt;/p&gt;&lt;br/&gt;&lt;p&gt;[Phys. Rev. Lett. 135, 213002] Published Thu Nov 20, 2025&lt;/p&gt;</content:encoded>
+    <dc:title>Topological Response in Open Quantum Systems with Weak Symmetries</dc:title>
+    <dc:creator>Ze-Min Huang, Sebastian Diehl, and Xiao-Qi Sun</dc:creator>
+    <dc:date>2025-11-20T10:00:00+00:00</dc:date>
+    <dc:rights>Personal use only, all commercial or other reuse prohibited</dc:rights>
+    <dc:source>Phys. Rev. Lett. 135, 213002 (2025)</dc:source>
+    <dc:type>article</dc:type>
+    <dc:identifier>doi:10.1103/qg2g-nz88</dc:identifier>
+    <prism:doi>10.1103/qg2g-nz88</prism:doi>
+    <prism:publicationName>Physical Review Letters</prism:publicationName>
+    <prism:volume>135</prism:volume>
+    <prism:number>21</prism:number>
+    <prism:publicationDate>2025-11-20T10:00:00+00:00</prism:publicationDate>
+    <prism:url>http://link.aps.org/doi/10.1103/qg2g-nz88</prism:url>
+    <prism:startingPage>213002</prism:startingPage>
+    <dc:subject>Atomic, Molecular, and Optical Physics</dc:subject>
+    <prism:section>Atomic, Molecular, and Optical Physics</prism:section>
+  </item>
+  <item rdf:about="http://link.aps.org/doi/10.1103/95nd-4tzv">
+    <title>Broad Feshbach Resonance with a Large Background Scattering Length in a Fermionic Atom-Molecule Mixture</title>
+    <link>http://link.aps.org/doi/10.1103/95nd-4tzv</link>
+    <description>Author(s): Zhen Su, Tong-Hui Shou, Huan Yang, Jin Cao, Bo-Yuan Wang, Ting Xie, Jun Rui, Bo Zhao, and Jian-Wei Pan&lt;br/&gt;&lt;p&gt;We report the observation of a broad magnetic Feshbach resonance with a large background scattering length in an ultracold fermionic mixture of $^{23}\mathrm{Na}^{40}\mathrm{K}$ molecules and $^{40}\mathrm{K}$ atoms, with both species prepared in their lowest hyperfine states. The Feshbach resonance…&lt;/p&gt;&lt;br/&gt;[Phys. Rev. Lett. 135, 213401] Published Thu Nov 20, 2025</description>
+    <content:encoded>&lt;p&gt;Author(s): Zhen Su, Tong-Hui Shou, Huan Yang, Jin Cao, Bo-Yuan Wang, Ting Xie, Jun Rui, Bo Zhao, and Jian-Wei Pan&lt;/p&gt;&lt;p&gt;We report the observation of a broad magnetic Feshbach resonance with a large background scattering length in an ultracold fermionic mixture of &lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;mmultiscripts&gt;&lt;mrow&gt;&lt;mi&gt;Na&lt;/mi&gt;&lt;/mrow&gt;&lt;mprescripts&gt;&lt;/mprescripts&gt;&lt;none&gt;&lt;/none&gt;&lt;mrow&gt;&lt;mn&gt;23&lt;/mn&gt;&lt;/mrow&gt;&lt;/mmultiscripts&gt;&lt;/mrow&gt;&lt;mrow&gt;&lt;mmultiscripts&gt;&lt;mrow&gt;&lt;mi mathvariant="normal"&gt;K&lt;/mi&gt;&lt;/mrow&gt;&lt;mprescripts&gt;&lt;/mprescripts&gt;&lt;none&gt;&lt;/none&gt;&lt;mrow&gt;&lt;mn&gt;40&lt;/mn&gt;&lt;/mrow&gt;&lt;/mmultiscripts&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;/math&gt; molecules and &lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"&gt;&lt;mrow&gt;&lt;mmultiscripts&gt;&lt;mrow&gt;&lt;mi mathvariant="normal"&gt;K&lt;/mi&gt;&lt;/mrow&gt;&lt;mprescripts&gt;&lt;/mprescripts&gt;&lt;none&gt;&lt;/none&gt;&lt;mrow&gt;&lt;mn&gt;40&lt;/mn&gt;&lt;/mrow&gt;&lt;/mmultiscripts&gt;&lt;/mrow&gt;&lt;/math&gt; atoms, with both species prepared in their lowest hyperfine states. The Feshbach resonance is characterized by measuring resonantl…&lt;/p&gt;&lt;br/&gt;&lt;p&gt;[Phys. Rev. Lett. 135, 213401] Published Thu Nov 20, 2025&lt;/p&gt;</content:encoded>
+    <dc:title>Broad Feshbach Resonance with a Large Background Scattering Length in a Fermionic Atom-Molecule Mixture</dc:title>
+    <dc:creator>Zhen Su, Tong-Hui Shou, Huan Yang, Jin Cao, Bo-Yuan Wang, Ting Xie, Jun Rui, Bo Zhao, and Jian-Wei Pan</dc:creator>
+    <dc:date>2025-11-20T10:00:00+00:00</dc:date>
+    <dc:rights>Personal use only, all commercial or other reuse prohibited</dc:rights>
+    <dc:source>Phys. Rev. Lett. 135, 213401 (2025)</dc:source>
+    <dc:type>article</dc:type>
+    <dc:identifier>doi:10.1103/95nd-4tzv</dc:identifier>
+    <prism:doi>10.1103/95nd-4tzv</prism:doi>
+    <prism:publicationName>Physical Review Letters</prism:publicationName>
+    <prism:volume>135</prism:volume>
+    <prism:number>21</prism:number>
+    <prism:publicationDate>2025-11-20T10:00:00+00:00</prism:publicationDate>
+    <prism:url>http://link.aps.org/doi/10.1103/95nd-4tzv</prism:url>
+    <prism:startingPage>213401</prism:startingPage>
+    <dc:subject>Atomic, Molecular, and Optical Physics</dc:subject>
+    <prism:section>Atomic, Molecular, and Optical Physics</prism:section>
   </item>
   <item rdf:about="http://link.aps.org/doi/10.1103/jmk4-46tj">
     <title>Unconventional Fractional Phases in Multiband Vortexable Systems</title>
