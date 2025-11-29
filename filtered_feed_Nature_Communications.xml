@@ -21,6 +21,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-66827-0"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-66942-y"/>
                 
                     </rdf:Seq>
@@ -31,6 +33,21 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-66827-0">
+            <title>Kinetically controlled hetero-fusion is a systems-level behaviour of polymer nanoparticle populations</title>
+            <link>https://www.nature.com/articles/s41467-025-66827-0</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 28 November 2025; &lt;a href="https://www.nature.com/articles/s41467-025-66827-0"&gt;doi:10.1038/s41467-025-66827-0&lt;/a&gt;&lt;/p&gt;Particle fusion is a promising process for constructing nanomaterials, but challenging to control in synthetic systems. Here, the authors report a method for kinetically regulated particle fusion controlled by variation in polymer chain length.</content:encoded>
+            <dc:title>Kinetically controlled hetero-fusion is a systems-level behaviour of polymer nanoparticle populations</dc:title>
+            <dc:creator>Stephen D. P. Fielden</dc:creator><dc:creator>Sean M. Collins</dc:creator><dc:creator>Matthew J. Derry</dc:creator><dc:creator>Caterina Ducati</dc:creator><dc:creator>Simon M. Fairclough</dc:creator><dc:creator>Alisha J. Miller</dc:creator><dc:creator>Rachel K. O’Reilly</dc:creator><dc:creator>Paul D. Topham</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-66827-0</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-11-28; | doi:10.1038/s41467-025-66827-0</dc:source>
+            <dc:date>2025-11-28</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-66827-0</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-66827-0</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41467-025-66942-y">
             <title>Synthesis of bimetallic MOFs via interface control using gallium-based liquid metal</title>
