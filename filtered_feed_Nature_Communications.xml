@@ -21,9 +21,13 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-67027-6"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-66658-z"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-66963-7"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-66902-6"/>
                 
                     </rdf:Seq>
         </items>
@@ -33,6 +37,21 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-67027-6">
+            <title>Tensile strain regulation via grain boundary buffering for flexible perovskite solar cells</title>
+            <link>https://www.nature.com/articles/s41467-025-67027-6</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 02 December 2025; &lt;a href="https://www.nature.com/articles/s41467-025-67027-6"&gt;doi:10.1038/s41467-025-67027-6&lt;/a&gt;&lt;/p&gt;The residual strain and modulus of polycrystalline films often limit the photovoltaic and mechanical performance of flexible perovskite solar cells. Here, the authors introduce metal chelates for a uniformly distributed tensile strain field, achieving a maximum efficiency of 24.47%.</content:encoded>
+            <dc:title>Tensile strain regulation via grain boundary buffering for flexible perovskite solar cells</dc:title>
+            <dc:creator>Zhiyang Xu</dc:creator><dc:creator>Runnan Yu</dc:creator><dc:creator>Qianglong Lv</dc:creator><dc:creator>Haoran Jia</dc:creator><dc:creator>Qiang Guo</dc:creator><dc:creator>Tangyue Xue</dc:creator><dc:creator>Ruyue Wang</dc:creator><dc:creator>Huaizhi Gao</dc:creator><dc:creator>Erjun Zhou</dc:creator><dc:creator>Zhan’ao Tan</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-67027-6</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-12-02; | doi:10.1038/s41467-025-67027-6</dc:source>
+            <dc:date>2025-12-02</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-67027-6</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-67027-6</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41467-025-66658-z">
             <title>Publisher Correction: Anomalous photoelectrochemical etching of undoped semiconductor surfaces</title>
@@ -62,6 +81,21 @@
             <prism:publicationName>Nature Communications</prism:publicationName>
             <prism:doi>10.1038/s41467-025-66963-7</prism:doi>
             <prism:url>https://www.nature.com/articles/s41467-025-66963-7</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-66902-6">
+            <title>Chiral and topological superconductivity in isospin polarized multilayer graphene</title>
+            <link>https://www.nature.com/articles/s41467-025-66902-6</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 01 December 2025; &lt;a href="https://www.nature.com/articles/s41467-025-66902-6"&gt;doi:10.1038/s41467-025-66902-6&lt;/a&gt;&lt;/p&gt;Recently, chiral superconductivity has been observed in rhombohedral tetralayer graphene under electron doping, arising from a spin- and valley-polarized normal state. Here, the authors propose a superconducting mechanism based on over-screening of Coulomb interaction due to charge fluctuations.</content:encoded>
+            <dc:title>Chiral and topological superconductivity in isospin polarized multilayer graphene</dc:title>
+            <dc:creator>Max Geier</dc:creator><dc:creator>Margarita Davydova</dc:creator><dc:creator>Liang Fu</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-66902-6</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-12-01; | doi:10.1038/s41467-025-66902-6</dc:source>
+            <dc:date>2025-12-01</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-66902-6</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-66902-6</prism:url>
         </item>
     
         </rdf:RDF>
