@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03116-z"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03104-3"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03098-y"/>
@@ -26,9 +28,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03109-y"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03100-7"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -36,6 +36,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03116-z">
+            <title>Electrically tuned light topology</title>
+            <link>https://www.nature.com/articles/s41567-025-03116-z</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 03 December 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03116-z"&gt;doi:10.1038/s41567-025-03116-z&lt;/a&gt;&lt;/p&gt;Controlling topological photonic quasiparticles is a prerequisite for their implementation in devices. Now, their precise manipulation has been demonstrated using synthetic gauge fields based on the manipulation of the material’s dielectric index.</content:encoded>
+            <dc:title>Electrically tuned light topology</dc:title>
+            <dc:creator>Shai Tsesses</dc:creator><dc:creator>Aviv Karnieli</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03116-z</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-12-03; | doi:10.1038/s41567-025-03116-z</dc:source>
+            <dc:date>2025-12-03</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03116-z</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03116-z</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03104-3">
             <title>Momentum mixing solves the Mott problem</title>
@@ -97,19 +112,4 @@
             <prism:url>https://www.nature.com/articles/s41567-025-03109-y</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03100-7">
-            <title>Electric toroidal invariance generates distinct transverse electromagnetic responses</title>
-            <link>https://www.nature.com/articles/s41567-025-03100-7</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 24 November 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03100-7"&gt;doi:10.1038/s41567-025-03100-7&lt;/a&gt;&lt;/p&gt;Magnetic toroidal invariance generates transverse electromagnetic effects in materials with broken symmetries. Now a distinct magnetic response is shown to emerge in ferro-rotational systems in which both inversion and time-reversal symmetries are preserved.</content:encoded>
-            <dc:title>Electric toroidal invariance generates distinct transverse electromagnetic responses</dc:title>
-            <dc:creator>Kai Du</dc:creator><dc:creator>Daegeun Jo</dc:creator><dc:creator>Xianghan Xu</dc:creator><dc:creator>Fei-Ting Huang</dc:creator><dc:creator>Ming-Hao Lee</dc:creator><dc:creator>Ming-Wen Chu</dc:creator><dc:creator>Kefeng Wang</dc:creator><dc:creator>Xiaoyu Guo</dc:creator><dc:creator>Liuyan Zhao</dc:creator><dc:creator>David Vanderbilt</dc:creator><dc:creator>Hyun-Woo Lee</dc:creator><dc:creator>Sang-Wook Cheong</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03100-7</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-11-24; | doi:10.1038/s41567-025-03100-7</dc:source>
-            <dc:date>2025-11-24</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03100-7</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03100-7</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
