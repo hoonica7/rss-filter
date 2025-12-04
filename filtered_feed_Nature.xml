@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-03828-5"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09872-5"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09954-4"/>
@@ -30,6 +32,21 @@
         <url>https://www.nature.com/uploads/product/nature/rss.png</url>
         <link>http://feeds.nature.com/nature/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/d41586-025-03828-5">
+            <title>A glasses-free 3D display uses AI to direct images straight to the viewer’s eyes</title>
+            <link>https://www.nature.com/articles/d41586-025-03828-5</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 03 December 2025; &lt;a href="https://www.nature.com/articles/d41586-025-03828-5"&gt;doi:10.1038/d41586-025-03828-5&lt;/a&gt;&lt;/p&gt;For decades, creating a large, glasses-free 3D display that looks like a real window has been a challenge because screens broadcast image information wastefully. Artificial intelligence has now been used to focus light only on the viewer’s eyes, delivering a seamless 3D experience using a low-cost display the size of a standard computer monitor.</content:encoded>
+            <dc:title>A glasses-free 3D display uses AI to direct images straight to the viewer’s eyes</dc:title>
+            
+            <dc:identifier>doi:10.1038/d41586-025-03828-5</dc:identifier>
+            <dc:source>Nature, Published online: 2025-12-03; | doi:10.1038/d41586-025-03828-5</dc:source>
+            <dc:date>2025-12-03</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/d41586-025-03828-5</prism:doi>
+            <prism:url>https://www.nature.com/articles/d41586-025-03828-5</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41586-025-09872-5">
             <title>Author Correction: The first-principles phase diagram of monolayer nanoconfined water</title>
