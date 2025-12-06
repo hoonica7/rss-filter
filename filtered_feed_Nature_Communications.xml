@@ -23,11 +23,11 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-66911-5"/>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-67059-y"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-66851-0"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-67066-z"/>
-                
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/ncomms/rss.png">
@@ -51,6 +51,21 @@
             <prism:url>https://www.nature.com/articles/s41467-025-66911-5</prism:url>
         </item>
     
+        <item rdf:about="https://www.nature.com/articles/s41467-025-67059-y">
+            <title>Advancing aerogel recyclability through polyhexahydrotriazine reactivity</title>
+            <link>https://www.nature.com/articles/s41467-025-67059-y</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 05 December 2025; &lt;a href="https://www.nature.com/articles/s41467-025-67059-y"&gt;doi:10.1038/s41467-025-67059-y&lt;/a&gt;&lt;/p&gt;The sustainable use of organic aerogels is limited by their non-recyclability owing to the covalently-crosslinked networks that constitute their structures. Here, the authors report on the dynamic chemistry of hexahydrotriazine units to develop recyclable aerogels.</content:encoded>
+            <dc:title>Advancing aerogel recyclability through polyhexahydrotriazine reactivity</dc:title>
+            <dc:creator>Chang-Lin Wang</dc:creator><dc:creator>Yi-Ru Chen</dc:creator><dc:creator>Brahim Mezari</dc:creator><dc:creator>Fabian Eisenreich</dc:creator><dc:creator>Željko Tomović</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-67059-y</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-12-05; | doi:10.1038/s41467-025-67059-y</dc:source>
+            <dc:date>2025-12-05</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-67059-y</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-67059-y</prism:url>
+        </item>
+    
         <item rdf:about="https://www.nature.com/articles/s41467-025-66851-0">
             <title>Electron-conductive binder for silicon negative electrode enabling low-pressure all-solid-state batteries</title>
             <link>https://www.nature.com/articles/s41467-025-66851-0</link>
@@ -66,19 +81,4 @@
             <prism:url>https://www.nature.com/articles/s41467-025-66851-0</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41467-025-67066-z">
-            <title>Observation of interface piezoelectricity in superconducting devices on silicon</title>
-            <link>https://www.nature.com/articles/s41467-025-67066-z</link>
-            <content:encoded>
-                &lt;p&gt;Nature Communications, Published online: 05 December 2025; &lt;a href="https://www.nature.com/articles/s41467-025-67066-z"&gt;doi:10.1038/s41467-025-67066-z&lt;/a&gt;&lt;/p&gt;Superconducting qubits are sensitive to multiple noise sources that compromise their coherence. Here the authors report a piezoelectric effect in aluminum-silicon junctions, revealing a previously unexplored mechanism that may limit superconducting quantum processor performance.</content:encoded>
-            <dc:title>Observation of interface piezoelectricity in superconducting devices on silicon</dc:title>
-            <dc:creator>Haoxin Zhou</dc:creator><dc:creator>Eric Li</dc:creator><dc:creator>Kadircan Godeneli</dc:creator><dc:creator>Zi-Huai Zhang</dc:creator><dc:creator>Shahin Jahanbani</dc:creator><dc:creator>Kangdi Yu</dc:creator><dc:creator>Mutasem Odeh</dc:creator><dc:creator>Shaul Aloni</dc:creator><dc:creator>Sinéad Griffin</dc:creator><dc:creator>Alp Sipahigil</dc:creator>
-            <dc:identifier>doi:10.1038/s41467-025-67066-z</dc:identifier>
-            <dc:source>Nature Communications, Published online: 2025-12-05; | doi:10.1038/s41467-025-67066-z</dc:source>
-            <dc:date>2025-12-05</dc:date>
-            <prism:publicationName>Nature Communications</prism:publicationName>
-            <prism:doi>10.1038/s41467-025-67066-z</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41467-025-67066-z</prism:url>
-        </item>
-    
-        </rdf:RDF>
+</rdf:RDF>
