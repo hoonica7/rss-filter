@@ -6,10 +6,10 @@
     <description>Recent articles in Physical Review B</description>
     <syn:updatePeriod>hourly</syn:updatePeriod>
     <syn:updateFrequency>1</syn:updateFrequency>
-    <syn:updateBase>2025-12-10T01:16:35+00:00</syn:updateBase>
+    <syn:updateBase>2025-12-09T16:16:35+00:00</syn:updateBase>
     <dc:creator>rss@aps.org</dc:creator>
     <dc:publisher>assocpub@aps.org</dc:publisher>
-    <dc:date>2025-12-10T01:16:35+00:00</dc:date>
+    <dc:date>2025-12-09T16:16:35+00:00</dc:date>
     <dc:language>en</dc:language>
     <dc:rights>Copyright © 2025 the American Physical Society. Personal use only, all commercial or other reuse prohibited</dc:rights>
     <prism:copyright>Copyright © 2025 the American Physical Society</prism:copyright>
@@ -37,7 +37,8 @@
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/llrq-1k9k"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/q5ll-klzh"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/836t-r51s"/>
-        </rdf:Seq>
+        <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/8wbp-xxz1"/>
+      </rdf:Seq>
     </items>
   </channel>
   <item rdf:about="http://link.aps.org/doi/10.1103/jmlt-7q5r">
@@ -502,4 +503,26 @@
     <dc:subject>Surface physics, nanoscale physics, low-dimensional systems</dc:subject>
     <prism:section>Surface physics, nanoscale physics, low-dimensional systems</prism:section>
   </item>
-  </rdf:RDF>
+  <item rdf:about="http://link.aps.org/doi/10.1103/8wbp-xxz1">
+    <title>Mott glass and criticality in an $S=\frac{1}{2}$ bilayer Heisenberg model with interlayer bond dilution</title>
+    <link>http://link.aps.org/doi/10.1103/8wbp-xxz1</link>
+    <description>Author(s): Kunpeng Li (李坤鹏), Han-Qing Wu (邬汉青), and Dao-Xin Yao (姚道新)&lt;br/&gt;&lt;p&gt;We employ the stochastic series expansion quantum Monte Carlo method to investigate the $S=1/2$ antiferromagnetic Heisenberg model on a bilayer square lattice with diluted interlayer couplings. Both regular and random dilution patterns are considered. In systems with regular dilution, tuning the int…&lt;/p&gt;&lt;br/&gt;[Phys. Rev. B 112, 214407] Published Wed Dec 03, 2025</description>
+    <content:encoded>&lt;p&gt;Author(s): Kunpeng Li (李坤鹏), Han-Qing Wu (邬汉青), and Dao-Xin Yao (姚道新)&lt;/p&gt;&lt;p&gt;We employ the stochastic series expansion quantum Monte Carlo method to investigate the &lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;&lt;mrow&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;/math&gt; antiferromagnetic Heisenberg model on a bilayer square lattice with diluted interlayer couplings. Both regular and random dilution patterns are considered. In systems with regular dilution, tuning the inter…&lt;/p&gt;&lt;br/&gt;&lt;p&gt;[Phys. Rev. B 112, 214407] Published Wed Dec 03, 2025&lt;/p&gt;</content:encoded>
+    <dc:title>Mott glass and criticality in an $S=\frac{1}{2}$ bilayer Heisenberg model with interlayer bond dilution</dc:title>
+    <dc:creator>Kunpeng Li (李坤鹏), Han-Qing Wu (邬汉青), and Dao-Xin Yao (姚道新)</dc:creator>
+    <dc:date>2025-12-03T10:00:00+00:00</dc:date>
+    <dc:rights>Personal use only, all commercial or other reuse prohibited</dc:rights>
+    <dc:source>Phys. Rev. B 112, 214407 (2025)</dc:source>
+    <dc:type>article</dc:type>
+    <dc:identifier>doi:10.1103/8wbp-xxz1</dc:identifier>
+    <prism:doi>10.1103/8wbp-xxz1</prism:doi>
+    <prism:publicationName>Physical Review B</prism:publicationName>
+    <prism:volume>112</prism:volume>
+    <prism:number>21</prism:number>
+    <prism:publicationDate>2025-12-03T10:00:00+00:00</prism:publicationDate>
+    <prism:url>http://link.aps.org/doi/10.1103/8wbp-xxz1</prism:url>
+    <prism:startingPage>214407</prism:startingPage>
+    <dc:subject>Magnetism</dc:subject>
+    <prism:section>Magnetism</prism:section>
+  </item>
+</rdf:RDF>
