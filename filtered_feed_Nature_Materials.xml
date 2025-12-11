@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02446-w"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02428-y"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02437-x"/>
@@ -28,10 +30,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02435-z"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02427-z"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02402-8"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -40,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02446-w">
+            <title>A confined polar conductor</title>
+            <link>https://www.nature.com/articles/s41563-025-02446-w</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 11 December 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02446-w"&gt;doi:10.1038/s41563-025-02446-w&lt;/a&gt;&lt;/p&gt;A confined polar conductor</content:encoded>
+            <dc:title>A confined polar conductor</dc:title>
+            <dc:creator>Wei Fan</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02446-w</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-12-11; | doi:10.1038/s41563-025-02446-w</dc:source>
+            <dc:date>2025-12-11</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02446-w</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02446-w</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02428-y">
             <title>Peering into cracked cathodes</title>
@@ -114,36 +127,6 @@
             <prism:publicationName>Nature Materials</prism:publicationName>
             <prism:doi>10.1038/s41563-025-02435-z</prism:doi>
             <prism:url>https://www.nature.com/articles/s41563-025-02435-z</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02427-z">
-            <title>Shining a light on interfacial conductivity</title>
-            <link>https://www.nature.com/articles/s41563-025-02427-z</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 04 December 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02427-z"&gt;doi:10.1038/s41563-025-02427-z&lt;/a&gt;&lt;/p&gt;Ultraviolet illumination dramatically increases electrical conductivity at the interface between two oxide compounds.</content:encoded>
-            <dc:title>Shining a light on interfacial conductivity</dc:title>
-            <dc:creator>Berit H. Goodge</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02427-z</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-12-04; | doi:10.1038/s41563-025-02427-z</dc:source>
-            <dc:date>2025-12-04</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02427-z</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02427-z</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02402-8">
-            <title>Ultrafast time-resolved observation of non-thermal current-induced switching in an antiferromagnetic Weyl semimetal</title>
-            <link>https://www.nature.com/articles/s41563-025-02402-8</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 04 December 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02402-8"&gt;doi:10.1038/s41563-025-02402-8&lt;/a&gt;&lt;/p&gt;This study reveals spatiotemporally resolved current-induced switching in Mn3Sn thin films, identifying both thermal and non-thermal mechanisms depending on the amplitude of the current.</content:encoded>
-            <dc:title>Ultrafast time-resolved observation of non-thermal current-induced switching in an antiferromagnetic Weyl semimetal</dc:title>
-            <dc:creator>Kazuma Ogawa</dc:creator><dc:creator>Hanshen Tsai</dc:creator><dc:creator>Naotaka Yoshikawa</dc:creator><dc:creator>Takumi Matsuo</dc:creator><dc:creator>Yutaro Tsushima</dc:creator><dc:creator>Mihiro Asakura</dc:creator><dc:creator>Hanyi Peng</dc:creator><dc:creator>Takuya Matsuda</dc:creator><dc:creator>Tomoya Higo</dc:creator><dc:creator>Satoru Nakatsuji</dc:creator><dc:creator>Ryo Shimano</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02402-8</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-12-04; | doi:10.1038/s41563-025-02402-8</dc:source>
-            <dc:date>2025-12-04</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02402-8</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02402-8</prism:url>
         </item>
     
 </rdf:RDF>

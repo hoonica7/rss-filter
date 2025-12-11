@@ -18,11 +18,11 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03118-x"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03129-8"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03126-x"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03115-0"/>
                 
             </rdf:Seq>
         </items>
@@ -32,6 +32,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03118-x">
+            <title>A super-conducting diode with ultimate efficiency and noise resilience at 77 K</title>
+            <link>https://www.nature.com/articles/s41567-025-03118-x</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 11 December 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03118-x"&gt;doi:10.1038/s41567-025-03118-x&lt;/a&gt;&lt;/p&gt;An electrical method is shown to reliably introduce nonreciprocal behaviour across a Josephson junction made of high-temperature cuprate superconductors, which then, under microwave irradiation, forms a ‘quantum superconducting diode’. The device is magnetic-field-free, works at a temperature of 77 K with a diode efficiency of 100%, and, owing to Shapiro steps that quantize the output voltage, has robust noise-filtering.</content:encoded>
+            <dc:title>A super-conducting diode with ultimate efficiency and noise resilience at 77 K</dc:title>
+            
+            <dc:identifier>doi:10.1038/s41567-025-03118-x</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-12-11; | doi:10.1038/s41567-025-03118-x</dc:source>
+            <dc:date>2025-12-11</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03118-x</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03118-x</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03129-8">
             <title>Temporal anti-parity–time symmetry in diffusive transport</title>
@@ -61,21 +76,6 @@
             <prism:publicationName>Nature Physics</prism:publicationName>
             <prism:doi>10.1038/s41567-025-03126-x</prism:doi>
             <prism:url>https://www.nature.com/articles/s41567-025-03126-x</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03115-0">
-            <title>Twist-induced non-Hermitian topology of exciton–polaritons</title>
-            <link>https://www.nature.com/articles/s41567-025-03115-0</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 04 December 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03115-0"&gt;doi:10.1038/s41567-025-03115-0&lt;/a&gt;&lt;/p&gt;Strongly coupled light–matter systems could offer enhanced manipulation of topological phenomena. Now, tunable non-Hermitian effects are demonstrated with exciton–polaritons induced by a twist degree of freedom.</content:encoded>
-            <dc:title>Twist-induced non-Hermitian topology of exciton–polaritons</dc:title>
-            <dc:creator>Jie Liang</dc:creator><dc:creator>Hao Zheng</dc:creator><dc:creator>Feng Jin</dc:creator><dc:creator>Ruiqi Bao</dc:creator><dc:creator>Kevin Dini</dc:creator><dc:creator>Jiahao Ren</dc:creator><dc:creator>Yuxi Liu</dc:creator><dc:creator>Mateusz Król</dc:creator><dc:creator>Elena A. Ostrovskaya</dc:creator><dc:creator>Eliezer Estrecho</dc:creator><dc:creator>Baile Zhang</dc:creator><dc:creator>Timothy C. H. Liew</dc:creator><dc:creator>Rui Su</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03115-0</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-12-04; | doi:10.1038/s41567-025-03115-0</dc:source>
-            <dc:date>2025-12-04</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03115-0</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03115-0</prism:url>
         </item>
     
 </rdf:RDF>
