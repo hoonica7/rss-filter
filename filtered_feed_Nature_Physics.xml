@@ -18,13 +18,13 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03129-8"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03126-x"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03115-0"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03116-z"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03104-3"/>
-                
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -32,6 +32,36 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03129-8">
+            <title>Temporal anti-parity–time symmetry in diffusive transport</title>
+            <link>https://www.nature.com/articles/s41567-025-03129-8</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 10 December 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03129-8"&gt;doi:10.1038/s41567-025-03129-8&lt;/a&gt;&lt;/p&gt;Applying concepts from non-Hermitian physics to diffusive systems enables the static control of heat transport. Now, this notion is expanded to dynamic control, including a demonstration of programmed thermal transport in a metamaterial.</content:encoded>
+            <dc:title>Temporal anti-parity–time symmetry in diffusive transport</dc:title>
+            <dc:creator>Peng Jin</dc:creator><dc:creator>Chengmeng Wang</dc:creator><dc:creator>Yuhong Zhou</dc:creator><dc:creator>Shuihua Yang</dc:creator><dc:creator>Fubao Yang</dc:creator><dc:creator>Jinrong Liu</dc:creator><dc:creator>Ya Sun</dc:creator><dc:creator>Pengfei Zhuang</dc:creator><dc:creator>Yiyang Zhang</dc:creator><dc:creator>Liujun Xu</dc:creator><dc:creator>Yi Zhou</dc:creator><dc:creator>Ghim Wei Ho</dc:creator><dc:creator>Cheng-Wei Qiu</dc:creator><dc:creator>Jiping Huang</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03129-8</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-12-10; | doi:10.1038/s41567-025-03129-8</dc:source>
+            <dc:date>2025-12-10</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03129-8</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03129-8</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03126-x">
+            <title>Hofstadter’s butterfly turns magnetic</title>
+            <link>https://www.nature.com/articles/s41567-025-03126-x</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 05 December 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03126-x"&gt;doi:10.1038/s41567-025-03126-x&lt;/a&gt;&lt;/p&gt;A fractal energy pattern known as the Hofstadter butterfly has now been observed separately for each spin in a two-dimensional semiconductor, revealing a cascade of magnetic transitions.</content:encoded>
+            <dc:title>Hofstadter’s butterfly turns magnetic</dc:title>
+            <dc:creator>Xiaomeng Liu</dc:creator><dc:creator>Zhida Liu</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03126-x</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-12-05; | doi:10.1038/s41567-025-03126-x</dc:source>
+            <dc:date>2025-12-05</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03126-x</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03126-x</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03115-0">
             <title>Twist-induced non-Hermitian topology of exciton–polaritons</title>
@@ -48,34 +78,4 @@
             <prism:url>https://www.nature.com/articles/s41567-025-03115-0</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03116-z">
-            <title>Electrically tuned light topology</title>
-            <link>https://www.nature.com/articles/s41567-025-03116-z</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 03 December 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03116-z"&gt;doi:10.1038/s41567-025-03116-z&lt;/a&gt;&lt;/p&gt;Controlling topological photonic quasiparticles is a prerequisite for their implementation in devices. Now, their precise manipulation has been demonstrated using synthetic gauge fields based on the manipulation of the material’s dielectric index.</content:encoded>
-            <dc:title>Electrically tuned light topology</dc:title>
-            <dc:creator>Shai Tsesses</dc:creator><dc:creator>Aviv Karnieli</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03116-z</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-12-03; | doi:10.1038/s41567-025-03116-z</dc:source>
-            <dc:date>2025-12-03</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03116-z</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03116-z</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03104-3">
-            <title>Momentum mixing solves the Mott problem</title>
-            <link>https://www.nature.com/articles/s41567-025-03104-3</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 28 November 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03104-3"&gt;doi:10.1038/s41567-025-03104-3&lt;/a&gt;&lt;/p&gt;Adding momentum mixing in a controllable way to the exactly solvable Hatsugai–Kohmoto model is shown to recover the physics of the Hubbard model, the starting point for understanding Mott physics. The scheme converges as the inverse square of the number of steps, and, as each step is tractable, minimal computational resources are required.</content:encoded>
-            <dc:title>Momentum mixing solves the Mott problem</dc:title>
-            
-            <dc:identifier>doi:10.1038/s41567-025-03104-3</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-11-28; | doi:10.1038/s41567-025-03104-3</dc:source>
-            <dc:date>2025-11-28</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03104-3</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03104-3</prism:url>
-        </item>
-    
-        </rdf:RDF>
+</rdf:RDF>

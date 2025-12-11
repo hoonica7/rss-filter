@@ -18,6 +18,10 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09800-7"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09776-4"/>
+                
                     </rdf:Seq>
         </items>
     </channel>
@@ -26,5 +30,35 @@
         <url>https://www.nature.com/uploads/product/nature/rss.png</url>
         <link>http://feeds.nature.com/nature/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41586-025-09800-7">
+            <title>Quantifying grain boundary deformation mechanisms in small-grained metals</title>
+            <link>https://www.nature.com/articles/s41586-025-09800-7</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 10 December 2025; &lt;a href="https://www.nature.com/articles/s41586-025-09800-7"&gt;doi:10.1038/s41586-025-09800-7&lt;/a&gt;&lt;/p&gt;Experimental observations in small-grained polycrystals suggest a new concept of considering metallic grain boundaries not as defects but as separate defect-containing lattices, providing a potential explanation for the deformation behaviour of nanocrystalline metals.</content:encoded>
+            <dc:title>Quantifying grain boundary deformation mechanisms in small-grained metals</dc:title>
+            <dc:creator>Romain Gautier</dc:creator><dc:creator>Frédéric Mompiou</dc:creator><dc:creator>Oliver Renk</dc:creator><dc:creator>Christophe Coupeau</dc:creator><dc:creator>Nicolas Combe</dc:creator><dc:creator>Gregory Seine</dc:creator><dc:creator>Marc Legros</dc:creator>
+            <dc:identifier>doi:10.1038/s41586-025-09800-7</dc:identifier>
+            <dc:source>Nature, Published online: 2025-12-10; | doi:10.1038/s41586-025-09800-7</dc:source>
+            <dc:date>2025-12-10</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/s41586-025-09800-7</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41586-025-09800-7</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41586-025-09776-4">
+            <title>Laser-based conversion electron Mössbauer spectroscopy of &lt;sup&gt;229&lt;/sup&gt;ThO&lt;sub&gt;2&lt;/sub&gt;</title>
+            <link>https://www.nature.com/articles/s41586-025-09776-4</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 10 December 2025; &lt;a href="https://www.nature.com/articles/s41586-025-09776-4"&gt;doi:10.1038/s41586-025-09776-4&lt;/a&gt;&lt;/p&gt;Laser-induced conversion electron Mössbauer spectroscopy, which detects electrons emitted by 229Th nuclei in a thin ThO2 sample excited by vacuum ultraviolet light, is demonstrated, opening the possibility of a conversion-electron-based nuclear clock.</content:encoded>
+            <dc:title>Laser-based conversion electron Mössbauer spectroscopy of &lt;sup&gt;229&lt;/sup&gt;ThO&lt;sub&gt;2&lt;/sub&gt;</dc:title>
+            <dc:creator>Ricky Elwell</dc:creator><dc:creator>James E. S. Terhune</dc:creator><dc:creator>Christian Schneider</dc:creator><dc:creator>Harry W. T. Morgan</dc:creator><dc:creator>Hoang Bao Tran Tan</dc:creator><dc:creator>Udeshika C. Perera</dc:creator><dc:creator>Daniel A. Rehn</dc:creator><dc:creator>Marisa C. Alfonso</dc:creator><dc:creator>Lars von der Wense</dc:creator><dc:creator>Benedict Seiferle</dc:creator><dc:creator>Kevin Scharl</dc:creator><dc:creator>Peter G. Thirolf</dc:creator><dc:creator>Andrei Derevianko</dc:creator><dc:creator>Eric R. Hudson</dc:creator>
+            <dc:identifier>doi:10.1038/s41586-025-09776-4</dc:identifier>
+            <dc:source>Nature, Published online: 2025-12-10; | doi:10.1038/s41586-025-09776-4</dc:source>
+            <dc:date>2025-12-10</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/s41586-025-09776-4</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41586-025-09776-4</prism:url>
+        </item>
     
         </rdf:RDF>

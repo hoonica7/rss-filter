@@ -21,6 +21,10 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-66016-z"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-67350-y"/>
+                
                     </rdf:Seq>
         </items>
     </channel>
@@ -29,5 +33,35 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-66016-z">
+            <title>All-metallic magnetic Purcell enhancement in a thermally stable room-temperature maser</title>
+            <link>https://www.nature.com/articles/s41467-025-66016-z</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 10 December 2025; &lt;a href="https://www.nature.com/articles/s41467-025-66016-z"&gt;doi:10.1038/s41467-025-66016-z&lt;/a&gt;&lt;/p&gt;Dielectric structures that enhance magnetic emission are key for quantum devices but often suffer from thermal instability. Here, the authors realize a dielectric-free, compact metallic resonator with strong Purcell enhancement, enabling stable room-temperature maser action.</content:encoded>
+            <dc:title>All-metallic magnetic Purcell enhancement in a thermally stable room-temperature maser</dc:title>
+            <dc:creator>Rongrong Xiang</dc:creator><dc:creator>Philippe Bugnon</dc:creator><dc:creator>Maliheh Khatibi Moghaddam</dc:creator><dc:creator>Romain Fleury</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-66016-z</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-12-10; | doi:10.1038/s41467-025-66016-z</dc:source>
+            <dc:date>2025-12-10</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-66016-z</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-66016-z</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-67350-y">
+            <title>Efficient perovskite/Cu(In,Ga)Se&lt;sub&gt;2&lt;/sub&gt; tandem solar cells with a composite intermediate recombination layer</title>
+            <link>https://www.nature.com/articles/s41467-025-67350-y</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 10 December 2025; &lt;a href="https://www.nature.com/articles/s41467-025-67350-y"&gt;doi:10.1038/s41467-025-67350-y&lt;/a&gt;&lt;/p&gt;Challenges remain in optimizing efficiency and stability of monolithic perovskite/Cu(In,Ga)Se2 (CIGS) tandem solar cells. Here, authors develop a composite-structured intermediate recombination layer and achieve maximum efficiency of 28.04% and 30.71% for 0.51 cm2 and 0.15 cm2 cells, respectively.</content:encoded>
+            <dc:title>Efficient perovskite/Cu(In,Ga)Se&lt;sub&gt;2&lt;/sub&gt; tandem solar cells with a composite intermediate recombination layer</dc:title>
+            <dc:creator>Wang Li</dc:creator><dc:creator>Junjun Zhang</dc:creator><dc:creator>Li Zeng</dc:creator><dc:creator>Wanhai Wang</dc:creator><dc:creator>Zhou Fang</dc:creator><dc:creator>Xinxing Liu</dc:creator><dc:creator>Zengyang Ma</dc:creator><dc:creator>Yitian Zhang</dc:creator><dc:creator>Hui Yan</dc:creator><dc:creator>Chen Shen</dc:creator><dc:creator>Zhuo Xue</dc:creator><dc:creator>Jingyi Zhu</dc:creator><dc:creator>Qiren Luo</dc:creator><dc:creator>Chang Liu</dc:creator><dc:creator>Ruixuan Jiang</dc:creator><dc:creator>Tongle Bu</dc:creator><dc:creator>Weihua Tang</dc:creator><dc:creator>Jianmin Li</dc:creator><dc:creator>Sheng Wang</dc:creator><dc:creator>Junbo Gong</dc:creator><dc:creator>Xudong Xiao</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-67350-y</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-12-10; | doi:10.1038/s41467-025-67350-y</dc:source>
+            <dc:date>2025-12-10</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-67350-y</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-67350-y</prism:url>
+        </item>
     
         </rdf:RDF>
