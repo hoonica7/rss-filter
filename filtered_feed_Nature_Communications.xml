@@ -21,11 +21,11 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-66525-x"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-67124-6"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-66127-7"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/ncomms/rss.png">
@@ -33,6 +33,21 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-66525-x">
+            <title>Topological quantum cascade laser with Dirac-scaled valley edge modes</title>
+            <link>https://www.nature.com/articles/s41467-025-66525-x</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 11 December 2025; &lt;a href="https://www.nature.com/articles/s41467-025-66525-x"&gt;doi:10.1038/s41467-025-66525-x&lt;/a&gt;&lt;/p&gt;Topological lasers offer robust performance but often at the cost of a large non-lasing bulk. Here, the authors propose a Dirac-scaled quantum cascade laser that expands the lasing mode volume while maintaining robustness against structural defects.</content:encoded>
+            <dc:title>Topological quantum cascade laser with Dirac-scaled valley edge modes</dc:title>
+            <dc:creator>Yunda Chua</dc:creator><dc:creator>Letian Yu</dc:creator><dc:creator>Jieyuan Cui</dc:creator><dc:creator>Bofeng Zhu</dc:creator><dc:creator>Hanyu Liu</dc:creator><dc:creator>Qian Wang</dc:creator><dc:creator>Zhipeng Li</dc:creator><dc:creator>Lianhe Li</dc:creator><dc:creator>Alexander Giles Davies</dc:creator><dc:creator>Edmund Harold Linfield</dc:creator><dc:creator>Baile Zhang</dc:creator><dc:creator>Qi Jie Wang</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-66525-x</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-12-11; | doi:10.1038/s41467-025-66525-x</dc:source>
+            <dc:date>2025-12-11</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-66525-x</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-66525-x</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41467-025-67124-6">
             <title>Direct imaging of residual oxygen disorder in an infinite-layer nickelate superlattice via multislice ptychography</title>
@@ -49,19 +64,4 @@
             <prism:url>https://www.nature.com/articles/s41467-025-67124-6</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41467-025-66127-7">
-            <title>Moiré-controllable exciton localization and dynamics through spatially-modulated inter- and intralayer excitons in a MoSe&lt;sub&gt;2&lt;/sub&gt;/WS&lt;sub&gt;2&lt;/sub&gt; heterobilayer</title>
-            <link>https://www.nature.com/articles/s41467-025-66127-7</link>
-            <content:encoded>
-                &lt;p&gt;Nature Communications, Published online: 11 December 2025; &lt;a href="https://www.nature.com/articles/s41467-025-66127-7"&gt;doi:10.1038/s41467-025-66127-7&lt;/a&gt;&lt;/p&gt;Here, the authors reveal how twisting MoSe2/WS2 layers controls exciton behaviour. Combining theory and ultrafast spectroscopy, they show that lattice reconstruction creates distinct bright and long-lived excitons without hybridization effects.</content:encoded>
-            <dc:title>Moiré-controllable exciton localization and dynamics through spatially-modulated inter- and intralayer excitons in a MoSe&lt;sub&gt;2&lt;/sub&gt;/WS&lt;sub&gt;2&lt;/sub&gt; heterobilayer</dc:title>
-            <dc:creator>Jiaxuan Guo</dc:creator><dc:creator>Zachary H. Withers</dc:creator><dc:creator>Ziling Li</dc:creator><dc:creator>Bowen Hou</dc:creator><dc:creator>Alexander Adler</dc:creator><dc:creator>Jianwei Ding</dc:creator><dc:creator>Victor Chang Lee</dc:creator><dc:creator>Roland K. Kawakami</dc:creator><dc:creator>Gerd Schönhense</dc:creator><dc:creator>Alice Kunin</dc:creator><dc:creator>Thomas K. Allison</dc:creator><dc:creator>Diana Y. Qiu</dc:creator>
-            <dc:identifier>doi:10.1038/s41467-025-66127-7</dc:identifier>
-            <dc:source>Nature Communications, Published online: 2025-12-11; | doi:10.1038/s41467-025-66127-7</dc:source>
-            <dc:date>2025-12-11</dc:date>
-            <prism:publicationName>Nature Communications</prism:publicationName>
-            <prism:doi>10.1038/s41467-025-66127-7</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41467-025-66127-7</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
