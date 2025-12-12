@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02447-9"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02446-w"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02428-y"/>
@@ -28,9 +30,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02411-7"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02435-z"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nmat/rss.gif">
@@ -38,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02447-9">
+            <title>An electronic paper with human-eye resolution</title>
+            <link>https://www.nature.com/articles/s41563-025-02447-9</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 12 December 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02447-9"&gt;doi:10.1038/s41563-025-02447-9&lt;/a&gt;&lt;/p&gt;An electronic paper with human-eye resolution</content:encoded>
+            <dc:title>An electronic paper with human-eye resolution</dc:title>
+            <dc:creator>Wei Fan</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02447-9</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-12-12; | doi:10.1038/s41563-025-02447-9</dc:source>
+            <dc:date>2025-12-12</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02447-9</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02447-9</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02446-w">
             <title>A confined polar conductor</title>
@@ -114,19 +129,4 @@
             <prism:url>https://www.nature.com/articles/s41563-025-02411-7</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02435-z">
-            <title>Breaking the rule of reciprocity in soft composite solids</title>
-            <link>https://www.nature.com/articles/s41563-025-02435-z</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 04 December 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02435-z"&gt;doi:10.1038/s41563-025-02435-z&lt;/a&gt;&lt;/p&gt;Borrowing an idea from granular physics, researchers design and engineer soft composite materials with non-reciprocal static and dynamical mechanical behaviours, which could power the next generation of soft robots.</content:encoded>
-            <dc:title>Breaking the rule of reciprocity in soft composite solids</dc:title>
-            <dc:creator>Jie Zhang</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02435-z</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-12-04; | doi:10.1038/s41563-025-02435-z</dc:source>
-            <dc:date>2025-12-04</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02435-z</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02435-z</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
