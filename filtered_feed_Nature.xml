@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-04063-8"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-03806-x"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09800-7"/>
@@ -34,6 +36,21 @@
         <url>https://www.nature.com/uploads/product/nature/rss.png</url>
         <link>http://feeds.nature.com/nature/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/d41586-025-04063-8">
+            <title>Quantum computing ‘KPIs’ could distinguish true breakthroughs from spurious claims</title>
+            <link>https://www.nature.com/articles/d41586-025-04063-8</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 11 December 2025; &lt;a href="https://www.nature.com/articles/d41586-025-04063-8"&gt;doi:10.1038/d41586-025-04063-8&lt;/a&gt;&lt;/p&gt;Researchers are devising ways to make new machines face off, without the hype.</content:encoded>
+            <dc:title>Quantum computing ‘KPIs’ could distinguish true breakthroughs from spurious claims</dc:title>
+            <dc:creator>Elizabeth Gibney</dc:creator>
+            <dc:identifier>doi:10.1038/d41586-025-04063-8</dc:identifier>
+            <dc:source>Nature, Published online: 2025-12-11; | doi:10.1038/d41586-025-04063-8</dc:source>
+            <dc:date>2025-12-11</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/d41586-025-04063-8</prism:doi>
+            <prism:url>https://www.nature.com/articles/d41586-025-04063-8</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/d41586-025-03806-x">
             <title>Solar cells that combine multiple perovskite layers surpass 30% efficiency</title>
