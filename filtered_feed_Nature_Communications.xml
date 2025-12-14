@@ -21,17 +21,15 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-67494-x"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-66454-9"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-67598-4"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-67294-3"/>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-66492-3"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-66532-y"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-66438-9"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/ncomms/rss.png">
@@ -39,6 +37,21 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-67494-x">
+            <title>Pressure and bias dependence of the rate-limiting steps of the oxygen reduction reaction</title>
+            <link>https://www.nature.com/articles/s41467-025-67494-x</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 13 December 2025; &lt;a href="https://www.nature.com/articles/s41467-025-67494-x"&gt;doi:10.1038/s41467-025-67494-x&lt;/a&gt;&lt;/p&gt;Electrocatalytic multi-step reactions are very complex. Here, the authors report that the oxygen reduction reaction cascades through a series of rate-limiting steps that are linked to the bias- and pressure-dependent catalyst-solution interface.</content:encoded>
+            <dc:title>Pressure and bias dependence of the rate-limiting steps of the oxygen reduction reaction</dc:title>
+            <dc:creator>Alex Ricardo Silva Olaya</dc:creator><dc:creator>Jody Druce</dc:creator><dc:creator>Jose M. Gisbert-Gonzalez</dc:creator><dc:creator>Eduardo Ortega</dc:creator><dc:creator>Beatriz Roldan Cuenya</dc:creator><dc:creator>Sebastian Z. Oener</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-67494-x</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-12-13; | doi:10.1038/s41467-025-67494-x</dc:source>
+            <dc:date>2025-12-13</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-67494-x</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-67494-x</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41467-025-66454-9">
             <title>Shell-isolated nanoparticle-enhanced femtosecond stimulated Raman spectroscopy reveals ultrafast molecular dynamics of surface reactions</title>
@@ -70,49 +83,19 @@
             <prism:url>https://www.nature.com/articles/s41467-025-67598-4</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41467-025-67294-3">
-            <title>Photoelectrochemical water splitting cells at elevated pressure using BiVO&lt;sub&gt;4&lt;/sub&gt; and platinized III-V semiconductor photoelectrodes</title>
-            <link>https://www.nature.com/articles/s41467-025-67294-3</link>
+        <item rdf:about="https://www.nature.com/articles/s41467-025-66492-3">
+            <title>Integrating dry-processing and pre-sodiation enables high-energy sodium ion batteries</title>
+            <link>https://www.nature.com/articles/s41467-025-66492-3</link>
             <content:encoded>
-                &lt;p&gt;Nature Communications, Published online: 13 December 2025; &lt;a href="https://www.nature.com/articles/s41467-025-67294-3"&gt;doi:10.1038/s41467-025-67294-3&lt;/a&gt;&lt;/p&gt;Many hydrogen applications require gas delivered under pressure. Here, the authors report that solar water-splitting devices can operate at up to 8 bar and show that the performance gains from elevated pressure depends critically on the choice of materials and device configuration.</content:encoded>
-            <dc:title>Photoelectrochemical water splitting cells at elevated pressure using BiVO&lt;sub&gt;4&lt;/sub&gt; and platinized III-V semiconductor photoelectrodes</dc:title>
-            <dc:creator>Feng Liang</dc:creator><dc:creator>Heejung Kong</dc:creator><dc:creator>Diwakar Suresh Babu</dc:creator><dc:creator>Roel van de Krol</dc:creator><dc:creator>Fatwa F. Abdi</dc:creator>
-            <dc:identifier>doi:10.1038/s41467-025-67294-3</dc:identifier>
-            <dc:source>Nature Communications, Published online: 2025-12-13; | doi:10.1038/s41467-025-67294-3</dc:source>
+                &lt;p&gt;Nature Communications, Published online: 13 December 2025; &lt;a href="https://www.nature.com/articles/s41467-025-66492-3"&gt;doi:10.1038/s41467-025-66492-3&lt;/a&gt;&lt;/p&gt;Using sacrificial salts to enhance sodium-ion batteries is hampered by practical issues. Here, authors demonstrate a solvent-free dry-processing method that ensures complete salt decomposition for major gains in energy density and lifespan.</content:encoded>
+            <dc:title>Integrating dry-processing and pre-sodiation enables high-energy sodium ion batteries</dc:title>
+            <dc:creator>Nan Qin</dc:creator><dc:creator>Yifan Li</dc:creator><dc:creator>Haotian Yang</dc:creator><dc:creator>Jing Chen</dc:creator><dc:creator>Chenchen Feng</dc:creator><dc:creator>Cunman Zhang</dc:creator><dc:creator>Zonghai Chen</dc:creator><dc:creator>Jim P. Zheng</dc:creator><dc:creator>Liming Jin</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-66492-3</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-12-13; | doi:10.1038/s41467-025-66492-3</dc:source>
             <dc:date>2025-12-13</dc:date>
             <prism:publicationName>Nature Communications</prism:publicationName>
-            <prism:doi>10.1038/s41467-025-67294-3</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41467-025-67294-3</prism:url>
+            <prism:doi>10.1038/s41467-025-66492-3</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-66492-3</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41467-025-66532-y">
-            <title>Thermal responsive Rh&lt;sub&gt;1&lt;/sub&gt;-Pd single-atom catalyst for controlling activity in direct formic acid fuel cells</title>
-            <link>https://www.nature.com/articles/s41467-025-66532-y</link>
-            <content:encoded>
-                &lt;p&gt;Nature Communications, Published online: 13 December 2025; &lt;a href="https://www.nature.com/articles/s41467-025-66532-y"&gt;doi:10.1038/s41467-025-66532-y&lt;/a&gt;&lt;/p&gt;Thermal protection is critical to extend the service life and avoid overheating in electrochemical devices. Here, the authors report a thermosensitive single-atom Rh1-Pd electrode that enables high activity towards formic acid electrooxidation under 35 °C, which drop down when the temperature is over 35 °C.</content:encoded>
-            <dc:title>Thermal responsive Rh&lt;sub&gt;1&lt;/sub&gt;-Pd single-atom catalyst for controlling activity in direct formic acid fuel cells</dc:title>
-            <dc:creator>Keying Su</dc:creator><dc:creator>Shan Yang</dc:creator><dc:creator>Yujia Liang</dc:creator><dc:creator>Dongmei Sun</dc:creator><dc:creator>Mingxing Gong</dc:creator><dc:creator>Yawen Tang</dc:creator><dc:creator>Xiaoyu Qiu</dc:creator>
-            <dc:identifier>doi:10.1038/s41467-025-66532-y</dc:identifier>
-            <dc:source>Nature Communications, Published online: 2025-12-13; | doi:10.1038/s41467-025-66532-y</dc:source>
-            <dc:date>2025-12-13</dc:date>
-            <prism:publicationName>Nature Communications</prism:publicationName>
-            <prism:doi>10.1038/s41467-025-66532-y</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41467-025-66532-y</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41467-025-66438-9">
-            <title>One-step propylene purification from a quaternary mixture by a single physisorbent</title>
-            <link>https://www.nature.com/articles/s41467-025-66438-9</link>
-            <content:encoded>
-                &lt;p&gt;Nature Communications, Published online: 13 December 2025; &lt;a href="https://www.nature.com/articles/s41467-025-66438-9"&gt;doi:10.1038/s41467-025-66438-9&lt;/a&gt;&lt;/p&gt;Researchers developed a porous material ZU-921 that solves a key challenge in removing multiple different types of impurities through fine-tuning pore chemistry, enabling the one-step production of high-purity propylene.</content:encoded>
-            <dc:title>One-step propylene purification from a quaternary mixture by a single physisorbent</dc:title>
-            <dc:creator>Peixin Zhang</dc:creator><dc:creator>Zhensong Qiu</dc:creator><dc:creator>Yechen Liu</dc:creator><dc:creator>Sen Chen</dc:creator><dc:creator>Lifeng Yang</dc:creator><dc:creator>Xian Suo</dc:creator><dc:creator>Xili Cui</dc:creator><dc:creator>Huabin Xing</dc:creator>
-            <dc:identifier>doi:10.1038/s41467-025-66438-9</dc:identifier>
-            <dc:source>Nature Communications, Published online: 2025-12-13; | doi:10.1038/s41467-025-66438-9</dc:source>
-            <dc:date>2025-12-13</dc:date>
-            <prism:publicationName>Nature Communications</prism:publicationName>
-            <prism:doi>10.1038/s41467-025-66438-9</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41467-025-66438-9</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
