@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00834-8"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00833-9"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00830-y"/>
@@ -32,8 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00819-7"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00822-y"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-025-00834-8">
+            <title>Lifshitz-enhanced superfluid density in two-gap superconducting TiSe&lt;sub&gt;2&lt;/sub&gt;</title>
+            <link>https://www.nature.com/articles/s41535-025-00834-8</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 15 December 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00834-8"&gt;doi:10.1038/s41535-025-00834-8&lt;/a&gt;&lt;/p&gt;Lifshitz-enhanced superfluid density in two-gap superconducting TiSe&lt;sub&gt;2&lt;/sub&gt;</content:encoded>
+            <dc:title>Lifshitz-enhanced superfluid density in two-gap superconducting TiSe&lt;sub&gt;2&lt;/sub&gt;</dc:title>
+            <dc:creator>F. Elson</dc:creator><dc:creator>J. Philippe</dc:creator><dc:creator>G. Simutis</dc:creator><dc:creator>O. K. Forslund</dc:creator><dc:creator>M. Abdel-Hafiez</dc:creator><dc:creator>M. Janoschek</dc:creator><dc:creator>R. Khasanov</dc:creator><dc:creator>D. Das</dc:creator><dc:creator>J. Weissenrieder</dc:creator><dc:creator>D. W. Tam</dc:creator><dc:creator>Y. Sassa</dc:creator><dc:creator>M. Månsson</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-025-00834-8</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2025-12-15; | doi:10.1038/s41535-025-00834-8</dc:source>
+            <dc:date>2025-12-15</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-025-00834-8</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-025-00834-8</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-025-00833-9">
             <title>Understanding long-lived metastable phases in ultrafast optical experiments</title>
@@ -146,21 +161,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-025-00819-7</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-025-00819-7</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-025-00822-y">
-            <title>Universal scaling behavior of resistivity under two-dimensional superconducting phase fluctuations</title>
-            <link>https://www.nature.com/articles/s41535-025-00822-y</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 25 November 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00822-y"&gt;doi:10.1038/s41535-025-00822-y&lt;/a&gt;&lt;/p&gt;Universal scaling behavior of resistivity under two-dimensional superconducting phase fluctuations</content:encoded>
-            <dc:title>Universal scaling behavior of resistivity under two-dimensional superconducting phase fluctuations</dc:title>
-            <dc:creator>Zongsheng Zhou</dc:creator><dc:creator>Kang Wang</dc:creator><dc:creator>Hai-Jun Liao</dc:creator><dc:creator>Zi-Xiang Li</dc:creator><dc:creator>Tao Xiang</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-025-00822-y</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2025-11-25; | doi:10.1038/s41535-025-00822-y</dc:source>
-            <dc:date>2025-11-25</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-025-00822-y</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-025-00822-y</prism:url>
         </item>
     
 </rdf:RDF>

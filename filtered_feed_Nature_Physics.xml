@@ -18,13 +18,15 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03107-0"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03106-1"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03118-x"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03129-8"/>
                 
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -32,6 +34,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03107-0">
+            <title>Fusion and fission of particle-like chiral nematic vortex knots</title>
+            <link>https://www.nature.com/articles/s41567-025-03107-0</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 15 December 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03107-0"&gt;doi:10.1038/s41567-025-03107-0&lt;/a&gt;&lt;/p&gt;Topologically protected vortex knots are shown to undergo fusion and fission, with electric pulses acting as a switch between the two processes. This might enable applications in electro-optics and photonics.</content:encoded>
+            <dc:title>Fusion and fission of particle-like chiral nematic vortex knots</dc:title>
+            <dc:creator>Darian Hall</dc:creator><dc:creator>Jung-Shen Benny Tai</dc:creator><dc:creator>Louis H. Kauffman</dc:creator><dc:creator>Ivan I. Smalyukh</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03107-0</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-12-15; | doi:10.1038/s41567-025-03107-0</dc:source>
+            <dc:date>2025-12-15</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03107-0</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03107-0</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03106-1">
             <title>Optimal operation of hole spin qubits</title>
@@ -78,4 +95,4 @@
             <prism:url>https://www.nature.com/articles/s41567-025-03129-8</prism:url>
         </item>
     
-        </rdf:RDF>
+</rdf:RDF>
