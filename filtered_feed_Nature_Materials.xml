@@ -18,6 +18,10 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02439-9"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02412-6"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02457-7"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02454-w"/>
@@ -28,10 +32,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02442-0"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02438-w"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02449-7"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -40,6 +40,36 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02439-9">
+            <title>The blackjack of ice</title>
+            <link>https://www.nature.com/articles/s41563-025-02439-9</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 18 December 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02439-9"&gt;doi:10.1038/s41563-025-02439-9&lt;/a&gt;&lt;/p&gt;Five different crystallization pathways of high-density ice at room temperature reveal a metastable ice phase with a body-centred tetragonal structure, termed ice XXI.</content:encoded>
+            <dc:title>The blackjack of ice</dc:title>
+            <dc:creator>Jonas A. Sellberg</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02439-9</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-12-18; | doi:10.1038/s41563-025-02439-9</dc:source>
+            <dc:date>2025-12-18</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02439-9</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02439-9</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02412-6">
+            <title>Real-space observation of flat-band ultrastrong coupling between optical phonons and surface plasmon polaritons</title>
+            <link>https://www.nature.com/articles/s41563-025-02412-6</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 18 December 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02412-6"&gt;doi:10.1038/s41563-025-02412-6&lt;/a&gt;&lt;/p&gt;Polariton interferometry reveals flat-band ultrastrong coupling between phonons and surface plasmon polaritons over a large wavevector range.</content:encoded>
+            <dc:title>Real-space observation of flat-band ultrastrong coupling between optical phonons and surface plasmon polaritons</dc:title>
+            <dc:creator>Edoardo Vicentini</dc:creator><dc:creator>Xabier Arrieta</dc:creator><dc:creator>Martin Schnell</dc:creator><dc:creator>Nicolas Pajusco</dc:creator><dc:creator>Felix Begemann</dc:creator><dc:creator>Maria Barra Burillo</dc:creator><dc:creator>Maria Ramos</dc:creator><dc:creator>Andrei Bylinkin</dc:creator><dc:creator>Ruben Esteban</dc:creator><dc:creator>Javier Aizpurua</dc:creator><dc:creator>Rainer Hillenbrand</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02412-6</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-12-18; | doi:10.1038/s41563-025-02412-6</dc:source>
+            <dc:date>2025-12-18</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02412-6</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02412-6</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02457-7">
             <title>Decoupling shear from grain boundary migration</title>
@@ -114,36 +144,6 @@
             <prism:publicationName>Nature Materials</prism:publicationName>
             <prism:doi>10.1038/s41563-025-02442-0</prism:doi>
             <prism:url>https://www.nature.com/articles/s41563-025-02442-0</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02438-w">
-            <title>Reconfiguring perovskite interlayers</title>
-            <link>https://www.nature.com/articles/s41563-025-02438-w</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 16 December 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02438-w"&gt;doi:10.1038/s41563-025-02438-w&lt;/a&gt;&lt;/p&gt;A thin coherent interlayer on polycrystalline perovskites prompts the formation of uniform, orderly fullerene films with high coverage while suppressing dimerization enabling efficient and stable perovskite photovoltaics.</content:encoded>
-            <dc:title>Reconfiguring perovskite interlayers</dc:title>
-            <dc:creator>Yu Zou</dc:creator><dc:creator>Yixin Zhao</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02438-w</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-12-16; | doi:10.1038/s41563-025-02438-w</dc:source>
-            <dc:date>2025-12-16</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02438-w</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02438-w</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02449-7">
-            <title>Geometry-driven polarity in antiferromagnetic metals</title>
-            <link>https://www.nature.com/articles/s41563-025-02449-7</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 16 December 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02449-7"&gt;doi:10.1038/s41563-025-02449-7&lt;/a&gt;&lt;/p&gt;A polar antiferromagnetic metal is realized in Sr3Co2O7 through geometry-driven inversion-symmetry breaking, and an anomalous Hall effect is observed.</content:encoded>
-            <dc:title>Geometry-driven polarity in antiferromagnetic metals</dc:title>
-            <dc:creator>Qihan Zhang</dc:creator><dc:creator>Jingsheng Chen</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02449-7</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-12-16; | doi:10.1038/s41563-025-02449-7</dc:source>
-            <dc:date>2025-12-16</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02449-7</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02449-7</prism:url>
         </item>
     
 </rdf:RDF>
