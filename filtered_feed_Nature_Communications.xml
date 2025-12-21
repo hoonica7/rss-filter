@@ -21,9 +21,9 @@
         <items>
             <rdf:Seq>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-67435-8"/>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-67678-5"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-67426-9"/>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-67435-8"/>
                 
                     </rdf:Seq>
         </items>
@@ -33,6 +33,21 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-67678-5">
+            <title>Lithium-ion battery recycling through an integrated electro-membrane crystallization technology</title>
+            <link>https://www.nature.com/articles/s41467-025-67678-5</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 20 December 2025; &lt;a href="https://www.nature.com/articles/s41467-025-67678-5"&gt;doi:10.1038/s41467-025-67678-5&lt;/a&gt;&lt;/p&gt;This study presents a scalable and sustainable electro-membrane crystallization-assisted general recycling technology that efficiently recovers high-purity lithium, manganese, nickel, and cobalt from spent lithium-ion batteries.</content:encoded>
+            <dc:title>Lithium-ion battery recycling through an integrated electro-membrane crystallization technology</dc:title>
+            <dc:creator>Yan Zhao</dc:creator><dc:creator>Yangbo Qiu</dc:creator><dc:creator>Lei Xia</dc:creator><dc:creator>Xi Zhang</dc:creator><dc:creator>Shuang Zheng</dc:creator><dc:creator>Gang Lu</dc:creator><dc:creator>Jin Shang</dc:creator><dc:creator>Raf Dewil</dc:creator><dc:creator>Seth B. Darling</dc:creator><dc:creator>Bart Van der Bruggen</dc:creator><dc:creator>Chuyang Tang</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-67678-5</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-12-20; | doi:10.1038/s41467-025-67678-5</dc:source>
+            <dc:date>2025-12-20</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-67678-5</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-67678-5</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41467-025-67435-8">
             <title>Zinc-oligoether carboxylate salts as electrolyte additives for aqueous Zn metal batteries</title>
@@ -47,21 +62,6 @@
             <prism:publicationName>Nature Communications</prism:publicationName>
             <prism:doi>10.1038/s41467-025-67435-8</prism:doi>
             <prism:url>https://www.nature.com/articles/s41467-025-67435-8</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41467-025-67426-9">
-            <title>Gradient chaotropic regulation of Zn&lt;sup&gt;2+&lt;/sup&gt; solvation chemistry for low-temperature zinc metal batteries</title>
-            <link>https://www.nature.com/articles/s41467-025-67426-9</link>
-            <content:encoded>
-                &lt;p&gt;Nature Communications, Published online: 20 December 2025; &lt;a href="https://www.nature.com/articles/s41467-025-67426-9"&gt;doi:10.1038/s41467-025-67426-9&lt;/a&gt;&lt;/p&gt;Aqueous zinc-ion batteries are promising for sustainable energy storage but challenged in low temperatures. Here, authors develop a gradient chaotropic ionic liquid-based aqueous electrolyte design that enables dendrite-free operation and robust low-temperature performance (to −40 °C).</content:encoded>
-            <dc:title>Gradient chaotropic regulation of Zn&lt;sup&gt;2+&lt;/sup&gt; solvation chemistry for low-temperature zinc metal batteries</dc:title>
-            <dc:creator>Sinian Yang</dc:creator><dc:creator>Shunshun Zhao</dc:creator><dc:creator>Haojie Xu</dc:creator><dc:creator>Xinwei Wang</dc:creator><dc:creator>Xuanrui Huang</dc:creator><dc:creator>Qi Yang</dc:creator><dc:creator>Yong Chen</dc:creator><dc:creator>Guoxiu Wang</dc:creator><dc:creator>Shimou Chen</dc:creator>
-            <dc:identifier>doi:10.1038/s41467-025-67426-9</dc:identifier>
-            <dc:source>Nature Communications, Published online: 2025-12-20; | doi:10.1038/s41467-025-67426-9</dc:source>
-            <dc:date>2025-12-20</dc:date>
-            <prism:publicationName>Nature Communications</prism:publicationName>
-            <prism:doi>10.1038/s41467-025-67426-9</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41467-025-67426-9</prism:url>
         </item>
     
         </rdf:RDF>
