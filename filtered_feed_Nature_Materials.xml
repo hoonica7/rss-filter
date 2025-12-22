@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02414-4"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02439-9"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02412-6"/>
@@ -30,8 +32,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02455-9"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02442-0"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -40,6 +40,21 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02414-4">
+            <title>Interwoven magnetic kagome metal overcomes geometric frustration</title>
+            <link>https://www.nature.com/articles/s41563-025-02414-4</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 22 December 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02414-4"&gt;doi:10.1038/s41563-025-02414-4&lt;/a&gt;&lt;/p&gt;Interwoven magnetic and non-magnetic layers in TbTi3Bi4 overcome kagome frustration, producing coupled elliptical-spiral magnetic and spin-density-wave orders and a very large anomalous Hall effect driven by strong electron–magnetic field interactions.</content:encoded>
+            <dc:title>Interwoven magnetic kagome metal overcomes geometric frustration</dc:title>
+            <dc:creator>Erjian Cheng</dc:creator><dc:creator>Kaipu Wang</dc:creator><dc:creator>Yiqing Hao</dc:creator><dc:creator>Wenqing Chen</dc:creator><dc:creator>Hengxin Tan</dc:creator><dc:creator>Zongkai Li</dc:creator><dc:creator>Meixiao Wang</dc:creator><dc:creator>Wenli Gao</dc:creator><dc:creator>Di Wu</dc:creator><dc:creator>Shuaishuai Sun</dc:creator><dc:creator>Tianping Ying</dc:creator><dc:creator>Simin Nie</dc:creator><dc:creator>Yiwei Li</dc:creator><dc:creator>Walter Schnelle</dc:creator><dc:creator>Houke Chen</dc:creator><dc:creator>Xingjiang Zhou</dc:creator><dc:creator>Ralf Koban</dc:creator><dc:creator>Yulin Chen</dc:creator><dc:creator>Binghai Yan</dc:creator><dc:creator>Yi-feng Yang</dc:creator><dc:creator>Weida Wu</dc:creator><dc:creator>Zhongkai Liu</dc:creator><dc:creator>Claudia Felser</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02414-4</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-12-22; | doi:10.1038/s41563-025-02414-4</dc:source>
+            <dc:date>2025-12-22</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02414-4</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02414-4</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02439-9">
             <title>The blackjack of ice</title>
@@ -129,21 +144,6 @@
             <prism:publicationName>Nature Materials</prism:publicationName>
             <prism:doi>10.1038/s41563-025-02455-9</prism:doi>
             <prism:url>https://www.nature.com/articles/s41563-025-02455-9</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02442-0">
-            <title>Materials reach new levels of frustration</title>
-            <link>https://www.nature.com/articles/s41563-025-02442-0</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 16 December 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02442-0"&gt;doi:10.1038/s41563-025-02442-0&lt;/a&gt;&lt;/p&gt;The small-bandgap semiconductors LnCd3P3 (Ln = La, Ce, Pr and Nd) are promising materials to study emergent phenomena from geometric frustration across bond, spin and charge degrees of freedom.</content:encoded>
-            <dc:title>Materials reach new levels of frustration</dc:title>
-            <dc:creator>Aravind Devarakonda</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02442-0</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-12-16; | doi:10.1038/s41563-025-02442-0</dc:source>
-            <dc:date>2025-12-16</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02442-0</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02442-0</prism:url>
         </item>
     
 </rdf:RDF>
