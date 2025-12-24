@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00836-6"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00837-5"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00839-3"/>
@@ -32,8 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00826-8"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00815-x"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-025-00836-6">
+            <title>Nonvolatile optical control of interlayer stacking order in 1&lt;i&gt;T&lt;/i&gt;-TaS&lt;sub&gt;2&lt;/sub&gt;</title>
+            <link>https://www.nature.com/articles/s41535-025-00836-6</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 23 December 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00836-6"&gt;doi:10.1038/s41535-025-00836-6&lt;/a&gt;&lt;/p&gt;Nonvolatile optical control of interlayer stacking order in 1&lt;i&gt;T&lt;/i&gt;-TaS&lt;sub&gt;2&lt;/sub&gt;</content:encoded>
+            <dc:title>Nonvolatile optical control of interlayer stacking order in 1&lt;i&gt;T&lt;/i&gt;-TaS&lt;sub&gt;2&lt;/sub&gt;</dc:title>
+            <dc:creator>Junde Liu</dc:creator><dc:creator>Pei Liu</dc:creator><dc:creator>Liu Yang</dc:creator><dc:creator>Sung-Hoon Lee</dc:creator><dc:creator>Mojun Pan</dc:creator><dc:creator>Famin Chen</dc:creator><dc:creator>Jierui Huang</dc:creator><dc:creator>Bei Jiang</dc:creator><dc:creator>Mingzhe Hu</dc:creator><dc:creator>Yuchong Zhang</dc:creator><dc:creator>Zhaoyang Xie</dc:creator><dc:creator>Gang Wang</dc:creator><dc:creator>Mengxue Guan</dc:creator><dc:creator>Wei Jiang</dc:creator><dc:creator>Huaixin Yang</dc:creator><dc:creator>Jianqi Li</dc:creator><dc:creator>Chenxia Yun</dc:creator><dc:creator>Zhiwei Wang</dc:creator><dc:creator>Sheng Meng</dc:creator><dc:creator>Yugui Yao</dc:creator><dc:creator>Tian Qian</dc:creator><dc:creator>Xun Shi</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-025-00836-6</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2025-12-23; | doi:10.1038/s41535-025-00836-6</dc:source>
+            <dc:date>2025-12-23</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-025-00836-6</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-025-00836-6</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-025-00837-5">
             <title>Highly mobile carrier-driven Seebeck coefficient enhancement</title>
@@ -146,21 +161,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-025-00826-8</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-025-00826-8</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-025-00815-x">
-            <title>Theory of rare-earth Kramers magnets on a shastry-sutherland lattice: dimer phases in the presence of strong spin-orbit coupling</title>
-            <link>https://www.nature.com/articles/s41535-025-00815-x</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 03 December 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00815-x"&gt;doi:10.1038/s41535-025-00815-x&lt;/a&gt;&lt;/p&gt;Theory of rare-earth Kramers magnets on a shastry-sutherland lattice: dimer phases in the presence of strong spin-orbit coupling</content:encoded>
-            <dc:title>Theory of rare-earth Kramers magnets on a shastry-sutherland lattice: dimer phases in the presence of strong spin-orbit coupling</dc:title>
-            <dc:creator>Changle Liu</dc:creator><dc:creator>Guijing Duan</dc:creator><dc:creator>Rong Yu</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-025-00815-x</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2025-12-03; | doi:10.1038/s41535-025-00815-x</dc:source>
-            <dc:date>2025-12-03</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-025-00815-x</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-025-00815-x</prism:url>
         </item>
     
 </rdf:RDF>
