@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02466-6"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02414-4"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02439-9"/>
@@ -30,8 +32,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02443-z"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02455-9"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -40,6 +40,21 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02466-6">
+            <title>Extended networks</title>
+            <link>https://www.nature.com/articles/s41563-025-02466-6</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 24 December 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02466-6"&gt;doi:10.1038/s41563-025-02466-6&lt;/a&gt;&lt;/p&gt;The ability to make porous extended structures in a predictable manner is now a mature and useful concept for materials scientists to solve real-world problems.</content:encoded>
+            <dc:title>Extended networks</dc:title>
+            
+            <dc:identifier>doi:10.1038/s41563-025-02466-6</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2025-12-24; | doi:10.1038/s41563-025-02466-6</dc:source>
+            <dc:date>2025-12-24</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02466-6</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02466-6</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02414-4">
             <title>Interwoven magnetic kagome metal overcomes geometric frustration</title>
@@ -129,21 +144,6 @@
             <prism:publicationName>Nature Materials</prism:publicationName>
             <prism:doi>10.1038/s41563-025-02443-z</prism:doi>
             <prism:url>https://www.nature.com/articles/s41563-025-02443-z</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02455-9">
-            <title>Healing crystals without heat</title>
-            <link>https://www.nature.com/articles/s41563-025-02455-9</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 17 December 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02455-9"&gt;doi:10.1038/s41563-025-02455-9&lt;/a&gt;&lt;/p&gt;An organic crystal repairs itself, even in liquid nitrogen, by using a dipole-driven mechanism rather than relying on thermal diffusion.</content:encoded>
-            <dc:title>Healing crystals without heat</dc:title>
-            <dc:creator>Kalyan J. Kalita</dc:creator><dc:creator>Catharine Esterhuysen</dc:creator><dc:creator>Leonard J. Barbour</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02455-9</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-12-17; | doi:10.1038/s41563-025-02455-9</dc:source>
-            <dc:date>2025-12-17</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02455-9</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02455-9</prism:url>
         </item>
     
 </rdf:RDF>
