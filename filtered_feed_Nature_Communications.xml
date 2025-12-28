@@ -21,9 +21,13 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-67831-0"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-67845-8"/>
                 
-                    </rdf:Seq>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-67985-x"/>
+                
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/ncomms/rss.png">
@@ -31,6 +35,21 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-67831-0">
+            <title>Printable polymer nanocomposites for scalable and architected radiative cooling</title>
+            <link>https://www.nature.com/articles/s41467-025-67831-0</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 27 December 2025; &lt;a href="https://www.nature.com/articles/s41467-025-67831-0"&gt;doi:10.1038/s41467-025-67831-0&lt;/a&gt;&lt;/p&gt;Daytime radiative cooling materials typically require high filler loading or porosity. Here, authors introduce rheology–optics coupling to control particle dispersion, enabling printable low-filler PDMS–ZrO₂ composites for scalable and durable radiative coolers with versatile architectures.</content:encoded>
+            <dc:title>Printable polymer nanocomposites for scalable and architected radiative cooling</dc:title>
+            <dc:creator>Kai Zhou</dc:creator><dc:creator>Songtao Tang</dc:creator><dc:creator>Pranto Karua</dc:creator><dc:creator>Fukang Wu</dc:creator><dc:creator>Sungmin Hong</dc:creator><dc:creator>Diya Patel</dc:creator><dc:creator>Gwendolyn M. Reeser</dc:creator><dc:creator>Donald M. Cropek</dc:creator><dc:creator>Paul V. Braun</dc:creator><dc:creator>Lili Cai</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-67831-0</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-12-27; | doi:10.1038/s41467-025-67831-0</dc:source>
+            <dc:date>2025-12-27</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-67831-0</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-67831-0</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41467-025-67845-8">
             <title>Shock compression of FeOOH and implications for iron-water interactions in super-earth magma oceans</title>
@@ -47,4 +66,19 @@
             <prism:url>https://www.nature.com/articles/s41467-025-67845-8</prism:url>
         </item>
     
-        </rdf:RDF>
+        <item rdf:about="https://www.nature.com/articles/s41467-025-67985-x">
+            <title>Surface halogenation engineering for reversible silicon-based solid-state batteries</title>
+            <link>https://www.nature.com/articles/s41467-025-67985-x</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 27 December 2025; &lt;a href="https://www.nature.com/articles/s41467-025-67985-x"&gt;doi:10.1038/s41467-025-67985-x&lt;/a&gt;&lt;/p&gt;Silicon negative electrodes in solid-state batteries exhibit poor reversibility. Here, the authors demonstrate surface halogenation engineering that suppresses irreversible lithium loss, achieving 94.3% initial Coulombic efficiency and 72% capacity retention over 500 cycles at 25°C.</content:encoded>
+            <dc:title>Surface halogenation engineering for reversible silicon-based solid-state batteries</dc:title>
+            <dc:creator>Haosheng Li</dc:creator><dc:creator>Yaru Li</dc:creator><dc:creator>Guantai Hu</dc:creator><dc:creator>Ying Li</dc:creator><dc:creator>Caijin Xiao</dc:creator><dc:creator>Liang Zhao</dc:creator><dc:creator>Huiqin Huang</dc:creator><dc:creator>Haochang Zhang</dc:creator><dc:creator>Wei Xia</dc:creator><dc:creator>Ning Lin</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-67985-x</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-12-27; | doi:10.1038/s41467-025-67985-x</dc:source>
+            <dc:date>2025-12-27</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-67985-x</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-67985-x</prism:url>
+        </item>
+    
+</rdf:RDF>
