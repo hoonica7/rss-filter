@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03113-2"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03107-0"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03106-1"/>
@@ -32,6 +34,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03113-2">
+            <title>Interplay of orbital angular momentum and chirality</title>
+            <link>https://www.nature.com/articles/s41567-025-03113-2</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 29 December 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03113-2"&gt;doi:10.1038/s41567-025-03113-2&lt;/a&gt;&lt;/p&gt;Orbital angular momentum textures can drive orbital currents and enable applications in orbitronics. This Perspective shows how polarization-dependent angle-resolved photoemission spectroscopy can visualize orbital textures in momentum space.</content:encoded>
+            <dc:title>Interplay of orbital angular momentum and chirality</dc:title>
+            <dc:creator>Dongjin Oh</dc:creator><dc:creator>Hendrik Bentmann</dc:creator><dc:creator>Riccardo Comin</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03113-2</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-12-29; | doi:10.1038/s41567-025-03113-2</dc:source>
+            <dc:date>2025-12-29</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03113-2</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03113-2</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03107-0">
             <title>Fusion and fission of particle-like chiral nematic vortex knots</title>
