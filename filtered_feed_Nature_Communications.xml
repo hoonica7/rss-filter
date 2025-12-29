@@ -21,11 +21,13 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-67919-7"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-67693-6"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-67831-0"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-67985-x"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/ncomms/rss.png">
@@ -33,6 +35,36 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-67919-7">
+            <title>Ultrafast dynamics of vibronically dressed core excitons in graphite: a femtosecond RIXS perspective</title>
+            <link>https://www.nature.com/articles/s41467-025-67919-7</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 29 December 2025; &lt;a href="https://www.nature.com/articles/s41467-025-67919-7"&gt;doi:10.1038/s41467-025-67919-7&lt;/a&gt;&lt;/p&gt;Core excitons are strongly localised excitonic states impacting x-ray absorption and resonant inelastic scattering (RIXS) spectra. Here, the authors demonstrate an application of free electron laser-driven ultrafast RIXS spectroscopy to study previously unclear aspects of core exciton-phonon interactions in graphite.</content:encoded>
+            <dc:title>Ultrafast dynamics of vibronically dressed core excitons in graphite: a femtosecond RIXS perspective</dc:title>
+            <dc:creator>Marco Malvestuto</dc:creator><dc:creator>Beatrice Volpato</dc:creator><dc:creator>Elena Babici</dc:creator><dc:creator>Richa Bhardwaj</dc:creator><dc:creator>Antonio Caretta</dc:creator><dc:creator>Simone Laterza</dc:creator><dc:creator>Fulvio Parmigiani</dc:creator><dc:creator>Michele Manfredda</dc:creator><dc:creator>Alberto Simoncig</dc:creator><dc:creator>Marco Zangrando</dc:creator><dc:creator>Alexander Demidovich</dc:creator><dc:creator>Peter Susnjar</dc:creator><dc:creator>Enrico Massimiliano Allaria</dc:creator><dc:creator>Alexander Darius Brynes</dc:creator><dc:creator>David Garzella</dc:creator><dc:creator>Luca Giannessi</dc:creator><dc:creator>Primož Rebernik</dc:creator><dc:creator>Filippo Sottocorona</dc:creator><dc:creator>Dino Novko</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-67919-7</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-12-29; | doi:10.1038/s41467-025-67919-7</dc:source>
+            <dc:date>2025-12-29</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-67919-7</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-67919-7</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-67693-6">
+            <title>Superadiabatic topological pumping on photonic chips</title>
+            <link>https://www.nature.com/articles/s41467-025-67693-6</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 29 December 2025; &lt;a href="https://www.nature.com/articles/s41467-025-67693-6"&gt;doi:10.1038/s41467-025-67693-6&lt;/a&gt;&lt;/p&gt;This work demonstrates superadiabatic topological pumping on photonic chips, achieving a 20-fold device miniaturization and high-efficiency operation across a 650–920 nm bandwidth, paving the way for ultracompact integrated photonic transports.</content:encoded>
+            <dc:title>Superadiabatic topological pumping on photonic chips</dc:title>
+            <dc:creator>Jin-Lei Wu</dc:creator><dc:creator>Kai-Heng Xiao</dc:creator><dc:creator>Xiang Ni</dc:creator><dc:creator>Jin-Kang Guo</dc:creator><dc:creator>Xu-Lin Zhang</dc:creator><dc:creator>Qi-Dai Chen</dc:creator><dc:creator>Yan Wang</dc:creator><dc:creator>Ze-Zheng Li</dc:creator><dc:creator>Shi-Lei Su</dc:creator><dc:creator>Zhen-Nan Tian</dc:creator><dc:creator>Hong-Bo Sun</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-67693-6</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2025-12-29; | doi:10.1038/s41467-025-67693-6</dc:source>
+            <dc:date>2025-12-29</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-67693-6</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-67693-6</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41467-025-67831-0">
             <title>Printable polymer nanocomposites for scalable and architected radiative cooling</title>
@@ -49,19 +81,4 @@
             <prism:url>https://www.nature.com/articles/s41467-025-67831-0</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41467-025-67985-x">
-            <title>Surface halogenation engineering for reversible silicon-based solid-state batteries</title>
-            <link>https://www.nature.com/articles/s41467-025-67985-x</link>
-            <content:encoded>
-                &lt;p&gt;Nature Communications, Published online: 27 December 2025; &lt;a href="https://www.nature.com/articles/s41467-025-67985-x"&gt;doi:10.1038/s41467-025-67985-x&lt;/a&gt;&lt;/p&gt;Silicon negative electrodes in solid-state batteries exhibit poor reversibility. Here, the authors demonstrate surface halogenation engineering that suppresses irreversible lithium loss, achieving 94.3% initial Coulombic efficiency and 72% capacity retention over 500 cycles at 25°C.</content:encoded>
-            <dc:title>Surface halogenation engineering for reversible silicon-based solid-state batteries</dc:title>
-            <dc:creator>Haosheng Li</dc:creator><dc:creator>Yaru Li</dc:creator><dc:creator>Guantai Hu</dc:creator><dc:creator>Ying Li</dc:creator><dc:creator>Caijin Xiao</dc:creator><dc:creator>Liang Zhao</dc:creator><dc:creator>Huiqin Huang</dc:creator><dc:creator>Haochang Zhang</dc:creator><dc:creator>Wei Xia</dc:creator><dc:creator>Ning Lin</dc:creator>
-            <dc:identifier>doi:10.1038/s41467-025-67985-x</dc:identifier>
-            <dc:source>Nature Communications, Published online: 2025-12-27; | doi:10.1038/s41467-025-67985-x</dc:source>
-            <dc:date>2025-12-27</dc:date>
-            <prism:publicationName>Nature Communications</prism:publicationName>
-            <prism:doi>10.1038/s41467-025-67985-x</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41467-025-67985-x</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
