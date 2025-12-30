@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00840-w"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00838-4"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00836-6"/>
@@ -32,8 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00833-9"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00830-y"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-025-00840-w">
+            <title>Interplay between altermagnetism and superconductivity in two dimensions: intertwined symmetries and singlet-triplet mixing</title>
+            <link>https://www.nature.com/articles/s41535-025-00840-w</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 30 December 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00840-w"&gt;doi:10.1038/s41535-025-00840-w&lt;/a&gt;&lt;/p&gt;Interplay between altermagnetism and superconductivity in two dimensions: intertwined symmetries and singlet-triplet mixing</content:encoded>
+            <dc:title>Interplay between altermagnetism and superconductivity in two dimensions: intertwined symmetries and singlet-triplet mixing</dc:title>
+            <dc:creator>Kinga Jasiewicz</dc:creator><dc:creator>Paweł Wójcik</dc:creator><dc:creator>Michał P. Nowak</dc:creator><dc:creator>Michał Zegrodnik</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-025-00840-w</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2025-12-30; | doi:10.1038/s41535-025-00840-w</dc:source>
+            <dc:date>2025-12-30</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-025-00840-w</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-025-00840-w</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-025-00838-4">
             <title>Suppression of intertwined density waves in La&lt;sub&gt;4&lt;/sub&gt;Ni&lt;sub&gt;3-x&lt;/sub&gt;Cu&lt;sub&gt;x&lt;/sub&gt;O&lt;sub&gt;10+δ&lt;/sub&gt;</title>
@@ -146,21 +161,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-025-00833-9</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-025-00833-9</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-025-00830-y">
-            <title>Stabilization of Tetragonal Phase and Aluminum-Doping Effect in a Bilayer Nickelate</title>
-            <link>https://www.nature.com/articles/s41535-025-00830-y</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 03 December 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00830-y"&gt;doi:10.1038/s41535-025-00830-y&lt;/a&gt;&lt;/p&gt;Stabilization of Tetragonal Phase and Aluminum-Doping Effect in a Bilayer Nickelate</content:encoded>
-            <dc:title>Stabilization of Tetragonal Phase and Aluminum-Doping Effect in a Bilayer Nickelate</dc:title>
-            <dc:creator>Jia-Yi Lu</dc:creator><dc:creator>Yi-Qiang Lin</dc:creator><dc:creator>Kai-Xin Ye</dc:creator><dc:creator>Xin-Yu Zhao</dc:creator><dc:creator>Jia-Xin Li</dc:creator><dc:creator>Ya-Nan Zhang</dc:creator><dc:creator>Hao Li</dc:creator><dc:creator>Bai-Jiang Lv</dc:creator><dc:creator>Hui-Qiu Yuan</dc:creator><dc:creator>Guang-Han Cao</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-025-00830-y</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2025-12-03; | doi:10.1038/s41535-025-00830-y</dc:source>
-            <dc:date>2025-12-03</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-025-00830-y</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-025-00830-y</prism:url>
         </item>
     
 </rdf:RDF>
