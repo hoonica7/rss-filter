@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03143-w"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03133-y"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03108-z"/>
@@ -30,7 +32,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03118-x"/>
                 
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -38,6 +40,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03143-w">
+            <title>Challenges and opportunities in orbitronics</title>
+            <link>https://www.nature.com/articles/s41567-025-03143-w</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 31 December 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03143-w"&gt;doi:10.1038/s41567-025-03143-w&lt;/a&gt;&lt;/p&gt;Orbitronics uses the electron’s orbital angular momentum to enable next-generation memory and computing technologies. This Perspective outlines recent advances, key challenges and future directions in this rapidly evolving field.</content:encoded>
+            <dc:title>Challenges and opportunities in orbitronics</dc:title>
+            <dc:creator>Shunsuke Fukami</dc:creator><dc:creator>Kyung-Jin Lee</dc:creator><dc:creator>Mathias Kläui</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03143-w</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2025-12-31; | doi:10.1038/s41567-025-03143-w</dc:source>
+            <dc:date>2025-12-31</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03143-w</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03143-w</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03133-y">
             <title>Experimental evidence of a spatially textured electron fluid</title>
@@ -129,4 +146,4 @@
             <prism:url>https://www.nature.com/articles/s41567-025-03118-x</prism:url>
         </item>
     
-        </rdf:RDF>
+</rdf:RDF>
