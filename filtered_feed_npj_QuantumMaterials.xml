@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00843-7"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00840-w"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00838-4"/>
@@ -32,8 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00834-8"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00833-9"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-025-00843-7">
+            <title>Anomalous superfluid density in pair-density-wave superconductors</title>
+            <link>https://www.nature.com/articles/s41535-025-00843-7</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 03 January 2026; &lt;a href="https://www.nature.com/articles/s41535-025-00843-7"&gt;doi:10.1038/s41535-025-00843-7&lt;/a&gt;&lt;/p&gt;Anomalous superfluid density in pair-density-wave superconductors</content:encoded>
+            <dc:title>Anomalous superfluid density in pair-density-wave superconductors</dc:title>
+            <dc:creator>Ke Wang</dc:creator><dc:creator>Qijin Chen</dc:creator><dc:creator>Rufus Boyack</dc:creator><dc:creator>K. Levin</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-025-00843-7</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2026-01-03; | doi:10.1038/s41535-025-00843-7</dc:source>
+            <dc:date>2026-01-03</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-025-00843-7</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-025-00843-7</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-025-00840-w">
             <title>Interplay between altermagnetism and superconductivity in two dimensions: intertwined symmetries and singlet-triplet mixing</title>
@@ -146,21 +161,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-025-00834-8</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-025-00834-8</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-025-00833-9">
-            <title>Understanding long-lived metastable phases in ultrafast optical experiments</title>
-            <link>https://www.nature.com/articles/s41535-025-00833-9</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 04 December 2025; &lt;a href="https://www.nature.com/articles/s41535-025-00833-9"&gt;doi:10.1038/s41535-025-00833-9&lt;/a&gt;&lt;/p&gt;Understanding long-lived metastable phases in ultrafast optical experiments</content:encoded>
-            <dc:title>Understanding long-lived metastable phases in ultrafast optical experiments</dc:title>
-            <dc:creator>Sabrina J. Li</dc:creator><dc:creator>Guru Khalsa</dc:creator><dc:creator>Jeffrey Z. Kaaret</dc:creator><dc:creator>Nicole A. Benedek</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-025-00833-9</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2025-12-04; | doi:10.1038/s41535-025-00833-9</dc:source>
-            <dc:date>2025-12-04</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-025-00833-9</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-025-00833-9</prism:url>
         </item>
     
 </rdf:RDF>
