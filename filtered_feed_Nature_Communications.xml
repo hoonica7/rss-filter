@@ -21,7 +21,13 @@
         <items>
             <rdf:Seq>
                 
-                    </rdf:Seq>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-67956-2"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-67683-8"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-68268-1"/>
+                
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/ncomms/rss.png">
@@ -30,4 +36,49 @@
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
     
-        </rdf:RDF>
+        <item rdf:about="https://www.nature.com/articles/s41467-025-67956-2">
+            <title>Low-noise optomechanical single phonon-photon conversion for quantum networks</title>
+            <link>https://www.nature.com/articles/s41467-025-67956-2</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 05 January 2026; &lt;a href="https://www.nature.com/articles/s41467-025-67956-2"&gt;doi:10.1038/s41467-025-67956-2&lt;/a&gt;&lt;/p&gt;Optomechanical crystals are promising building blocks for quantum networks but suffer from thermal mechanical noise. Here the authors demonstrate on-demand conversion of single phonons into high-purity telecom photons with low thermal noise and MHz-scale narrow bandwidth using a quasi-2D optomechanical system.</content:encoded>
+            <dc:title>Low-noise optomechanical single phonon-photon conversion for quantum networks</dc:title>
+            <dc:creator>Liu Chen</dc:creator><dc:creator>Alexander Rolf Korsch</dc:creator><dc:creator>Cauê Moreno Kersul</dc:creator><dc:creator>Rodrigo Benevides</dc:creator><dc:creator>Yong Yu</dc:creator><dc:creator>Thiago P. Mayer Alegre</dc:creator><dc:creator>Simon Gröblacher</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-67956-2</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-01-05; | doi:10.1038/s41467-025-67956-2</dc:source>
+            <dc:date>2026-01-05</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-67956-2</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-67956-2</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-67683-8">
+            <title>Harnessing strengthening-metastability synergy for extreme work hardening in additively manufactured titanium alloys</title>
+            <link>https://www.nature.com/articles/s41467-025-67683-8</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 05 January 2026; &lt;a href="https://www.nature.com/articles/s41467-025-67683-8"&gt;doi:10.1038/s41467-025-67683-8&lt;/a&gt;&lt;/p&gt;A new AM titanium alloy design tailors the metastability-strengthening synergy and achieves high yield strength with enhanced work hardening and ductility by leveraging a complete, sequential martensitic transformation pathway.</content:encoded>
+            <dc:title>Harnessing strengthening-metastability synergy for extreme work hardening in additively manufactured titanium alloys</dc:title>
+            <dc:creator>Xuliang Chen</dc:creator><dc:creator>Youneng Xie</dc:creator><dc:creator>Tianlong Zhang</dc:creator><dc:creator>Zhihao Jiang</dc:creator><dc:creator>Xiangren Bai</dc:creator><dc:creator>Shun Xu</dc:creator><dc:creator>Jian Lu</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-67683-8</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-01-05; | doi:10.1038/s41467-025-67683-8</dc:source>
+            <dc:date>2026-01-05</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-67683-8</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-67683-8</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-68268-1">
+            <title>Cycloreversion-enhanced toughness and degradability in mechanophore-embedded end-linked polymer networks</title>
+            <link>https://www.nature.com/articles/s41467-025-68268-1</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 03 January 2026; &lt;a href="https://www.nature.com/articles/s41467-025-68268-1"&gt;doi:10.1038/s41467-025-68268-1&lt;/a&gt;&lt;/p&gt;Achieving both high toughness and degradability in mechanophore containing polymer networks is a challenge. Here, the authors incorporated non-scissile cyclobutane-fused tetrahydrofuran mechanophores into end-linked polymer networks to enhance their toughness and degradability through mechanically triggered cycloreversion reactions.</content:encoded>
+            <dc:title>Cycloreversion-enhanced toughness and degradability in mechanophore-embedded end-linked polymer networks</dc:title>
+            <dc:creator>Zhuang Li</dc:creator><dc:creator>Shan Tang</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-68268-1</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-01-03; | doi:10.1038/s41467-025-68268-1</dc:source>
+            <dc:date>2026-01-03</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-68268-1</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-68268-1</prism:url>
+        </item>
+    
+</rdf:RDF>
