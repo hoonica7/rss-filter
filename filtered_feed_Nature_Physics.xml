@@ -18,15 +18,17 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03117-y"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03121-2"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03123-0"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03143-w"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03133-y"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03108-z"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03113-2"/>
                 
             </rdf:Seq>
         </items>
@@ -36,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03117-y">
+            <title>Optical control of orbital magnetism in magic-angle twisted bilayer graphene</title>
+            <link>https://www.nature.com/articles/s41567-025-03117-y</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 06 January 2026; &lt;a href="https://www.nature.com/articles/s41567-025-03117-y"&gt;doi:10.1038/s41567-025-03117-y&lt;/a&gt;&lt;/p&gt;Strong correlations and topology have been seen in moiré graphene, but their optical control has not been shown yet. Now, the optical manipulation of orbital magnetism and anomalous Hall effects is demonstrated in magic-angle twisted bilayer graphene.</content:encoded>
+            <dc:title>Optical control of orbital magnetism in magic-angle twisted bilayer graphene</dc:title>
+            <dc:creator>Eylon Persky</dc:creator><dc:creator>Léonie Parisot</dc:creator><dc:creator>Minhao He</dc:creator><dc:creator>Jiaqi Cai</dc:creator><dc:creator>Takashi Taniguchi</dc:creator><dc:creator>Kenji Watanabe</dc:creator><dc:creator>Julian May-Mann</dc:creator><dc:creator>Xiaodong Xu</dc:creator><dc:creator>Aharon Kapitulnik</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03117-y</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-01-06; | doi:10.1038/s41567-025-03117-y</dc:source>
+            <dc:date>2026-01-06</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03117-y</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03117-y</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03121-2">
             <title>Two-dimensional non-equilibrium melting of charged colloids</title>
@@ -50,6 +67,21 @@
             <prism:publicationName>Nature Physics</prism:publicationName>
             <prism:doi>10.1038/s41567-025-03121-2</prism:doi>
             <prism:url>https://www.nature.com/articles/s41567-025-03121-2</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03123-0">
+            <title>Self-induced superradiant masing</title>
+            <link>https://www.nature.com/articles/s41567-025-03123-0</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 02 January 2026; &lt;a href="https://www.nature.com/articles/s41567-025-03123-0"&gt;doi:10.1038/s41567-025-03123-0&lt;/a&gt;&lt;/p&gt;Superradiance is usually driven by light-mediated couplings, leaving the role of direct emitter interactions unclear. Now, it is shown that dipole–dipole interactions in diamond spins drive self-induced pulsed and continuous superradiant masing.</content:encoded>
+            <dc:title>Self-induced superradiant masing</dc:title>
+            <dc:creator>Wenzel Kersten</dc:creator><dc:creator>Nikolaus de Zordo</dc:creator><dc:creator>Oliver Diekmann</dc:creator><dc:creator>Elena S. Redchenko</dc:creator><dc:creator>Andrew N. Kanagin</dc:creator><dc:creator>Andreas Angerer</dc:creator><dc:creator>William J. Munro</dc:creator><dc:creator>Kae Nemoto</dc:creator><dc:creator>Igor E. Mazets</dc:creator><dc:creator>Stefan Rotter</dc:creator><dc:creator>Thomas Pohl</dc:creator><dc:creator>Jörg Schmiedmayer</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03123-0</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-01-02; | doi:10.1038/s41567-025-03123-0</dc:source>
+            <dc:date>2026-01-02</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03123-0</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03123-0</prism:url>
         </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03143-w">
@@ -95,21 +127,6 @@
             <prism:publicationName>Nature Physics</prism:publicationName>
             <prism:doi>10.1038/s41567-025-03108-z</prism:doi>
             <prism:url>https://www.nature.com/articles/s41567-025-03108-z</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03113-2">
-            <title>Interplay of orbital angular momentum and chirality</title>
-            <link>https://www.nature.com/articles/s41567-025-03113-2</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 29 December 2025; &lt;a href="https://www.nature.com/articles/s41567-025-03113-2"&gt;doi:10.1038/s41567-025-03113-2&lt;/a&gt;&lt;/p&gt;Orbital angular momentum textures can drive orbital currents and enable applications in orbitronics. This Perspective shows how polarization-dependent angle-resolved photoemission spectroscopy can visualize orbital textures in momentum space.</content:encoded>
-            <dc:title>Interplay of orbital angular momentum and chirality</dc:title>
-            <dc:creator>Dongjin Oh</dc:creator><dc:creator>Hendrik Bentmann</dc:creator><dc:creator>Riccardo Comin</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03113-2</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2025-12-29; | doi:10.1038/s41567-025-03113-2</dc:source>
-            <dc:date>2025-12-29</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03113-2</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03113-2</prism:url>
         </item>
     
 </rdf:RDF>
