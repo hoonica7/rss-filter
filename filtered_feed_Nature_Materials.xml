@@ -18,15 +18,11 @@
         <items>
             <rdf:Seq>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02448-8"/>
-                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02423-3"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02433-1"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02414-4"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nmat/rss.gif">
@@ -34,21 +30,6 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02448-8">
-            <title>All-nitride superconducting qubits based on atomic layer deposition</title>
-            <link>https://www.nature.com/articles/s41563-025-02448-8</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 06 January 2026; &lt;a href="https://www.nature.com/articles/s41563-025-02448-8"&gt;doi:10.1038/s41563-025-02448-8&lt;/a&gt;&lt;/p&gt;NbN/AlN/NbN qubits prepared by atomic layer deposition allow for precise control of the tunnelling barrier and stable operation beyond the temperature limit of aluminium-based devices.</content:encoded>
-            <dc:title>All-nitride superconducting qubits based on atomic layer deposition</dc:title>
-            <dc:creator>Danqing Wang</dc:creator><dc:creator>Yufeng Wu</dc:creator><dc:creator>Naomi Pieczulewski</dc:creator><dc:creator>Prachi Garg</dc:creator><dc:creator>Manuel C. C. Pace</dc:creator><dc:creator>Charlotte G. L. Bøttcher</dc:creator><dc:creator>Baishakhi Mazumder</dc:creator><dc:creator>David A. Muller</dc:creator><dc:creator>Hong X. Tang</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02448-8</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2026-01-06; | doi:10.1038/s41563-025-02448-8</dc:source>
-            <dc:date>2026-01-06</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02448-8</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02448-8</prism:url>
-        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02423-3">
             <title>Imaging supermoiré relaxation in helical trilayer graphene</title>
@@ -80,19 +61,4 @@
             <prism:url>https://www.nature.com/articles/s41563-025-02433-1</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02414-4">
-            <title>Interwoven magnetic kagome metal overcomes geometric frustration</title>
-            <link>https://www.nature.com/articles/s41563-025-02414-4</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 22 December 2025; &lt;a href="https://www.nature.com/articles/s41563-025-02414-4"&gt;doi:10.1038/s41563-025-02414-4&lt;/a&gt;&lt;/p&gt;Interwoven magnetic and non-magnetic layers in TbTi3Bi4 overcome kagome frustration, producing coupled elliptical-spiral magnetic and spin-density-wave orders and a very large anomalous Hall effect driven by strong electron–magnetic field interactions.</content:encoded>
-            <dc:title>Interwoven magnetic kagome metal overcomes geometric frustration</dc:title>
-            <dc:creator>Erjian Cheng</dc:creator><dc:creator>Kaipu Wang</dc:creator><dc:creator>Yiqing Hao</dc:creator><dc:creator>Wenqing Chen</dc:creator><dc:creator>Hengxin Tan</dc:creator><dc:creator>Zongkai Li</dc:creator><dc:creator>Meixiao Wang</dc:creator><dc:creator>Wenli Gao</dc:creator><dc:creator>Di Wu</dc:creator><dc:creator>Shuaishuai Sun</dc:creator><dc:creator>Tianping Ying</dc:creator><dc:creator>Simin Nie</dc:creator><dc:creator>Yiwei Li</dc:creator><dc:creator>Walter Schnelle</dc:creator><dc:creator>Houke Chen</dc:creator><dc:creator>Xingjiang Zhou</dc:creator><dc:creator>Ralf Koban</dc:creator><dc:creator>Yulin Chen</dc:creator><dc:creator>Binghai Yan</dc:creator><dc:creator>Yi-feng Yang</dc:creator><dc:creator>Weida Wu</dc:creator><dc:creator>Zhongkai Liu</dc:creator><dc:creator>Claudia Felser</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02414-4</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2025-12-22; | doi:10.1038/s41563-025-02414-4</dc:source>
-            <dc:date>2025-12-22</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02414-4</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02414-4</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
