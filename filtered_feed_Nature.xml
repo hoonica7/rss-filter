@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-03984-8"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09864-5"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-04021-4"/>
@@ -28,8 +30,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09858-3"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09842-x"/>
-                
                     </rdf:Seq>
         </items>
     </channel>
@@ -38,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/nature/rss.png</url>
         <link>http://feeds.nature.com/nature/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/d41586-025-03984-8">
+            <title>Artificial skin mimics the octopus’s art of disguise</title>
+            <link>https://www.nature.com/articles/d41586-025-03984-8</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 06 January 2026; &lt;a href="https://www.nature.com/articles/d41586-025-03984-8"&gt;doi:10.1038/d41586-025-03984-8&lt;/a&gt;&lt;/p&gt;A ‘photonic skin’ with controllable colour and texture brings materials science a step closer to the adaptive camouflage found in nature.</content:encoded>
+            <dc:title>Artificial skin mimics the octopus’s art of disguise</dc:title>
+            <dc:creator>Benjamin Renz</dc:creator><dc:creator>Na Liu</dc:creator>
+            <dc:identifier>doi:10.1038/d41586-025-03984-8</dc:identifier>
+            <dc:source>Nature, Published online: 2026-01-06; | doi:10.1038/d41586-025-03984-8</dc:source>
+            <dc:date>2026-01-06</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/d41586-025-03984-8</prism:doi>
+            <prism:url>https://www.nature.com/articles/d41586-025-03984-8</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41586-025-09864-5">
             <title>A chiral fermionic valve driven by quantum geometry</title>
@@ -112,21 +127,6 @@
             <prism:publicationName>Nature</prism:publicationName>
             <prism:doi>10.1038/s41586-025-09858-3</prism:doi>
             <prism:url>https://www.nature.com/articles/s41586-025-09858-3</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41586-025-09842-x">
-            <title>3D nanolithography with metalens arrays and spatially adaptive illumination</title>
-            <link>https://www.nature.com/articles/s41586-025-09842-x</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 17 December 2025; &lt;a href="https://www.nature.com/articles/s41586-025-09842-x"&gt;doi:10.1038/s41586-025-09842-x&lt;/a&gt;&lt;/p&gt;A three-dimensional (3D) nanofabrication platform based on metalens-generated focal spot arrays is introduced to parallelize two-photon lithography beyond centimetre-scale write field areas, revealing the potential of 3D nanolithography towards wafer-scale production.</content:encoded>
-            <dc:title>3D nanolithography with metalens arrays and spatially adaptive illumination</dc:title>
-            <dc:creator>Songyun Gu</dc:creator><dc:creator>Chenkai Mao</dc:creator><dc:creator>Anna Guell Izard</dc:creator><dc:creator>Sarvesh Sadana</dc:creator><dc:creator>Dongping Terrel-Perez</dc:creator><dc:creator>Magi Mettry-Yassa</dc:creator><dc:creator>Wonjin Choi</dc:creator><dc:creator>Wenjie Zhou</dc:creator><dc:creator>Hujie Yan</dc:creator><dc:creator>Ziran Zhou</dc:creator><dc:creator>Travis Massey</dc:creator><dc:creator>Alex Abelson</dc:creator><dc:creator>You Zhou</dc:creator><dc:creator>Sijia Huang</dc:creator><dc:creator>Chiara Daraio</dc:creator><dc:creator>Thejaswi Umanath Tumkur</dc:creator><dc:creator>Jonathan A. Fan</dc:creator><dc:creator>Xiaoxing Xia</dc:creator>
-            <dc:identifier>doi:10.1038/s41586-025-09842-x</dc:identifier>
-            <dc:source>Nature, Published online: 2025-12-17; | doi:10.1038/s41586-025-09842-x</dc:source>
-            <dc:date>2025-12-17</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/s41586-025-09842-x</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41586-025-09842-x</prism:url>
         </item>
     
         </rdf:RDF>
