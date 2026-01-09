@@ -18,9 +18,15 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-026-00080-3"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09784-4"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09867-2"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09874-3"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09877-0"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09889-w"/>
                 
@@ -34,10 +40,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/d41586-025-03984-8"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09864-5"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09860-9"/>
-                
                     </rdf:Seq>
         </items>
     </channel>
@@ -46,6 +48,36 @@
         <url>https://www.nature.com/uploads/product/nature/rss.png</url>
         <link>http://feeds.nature.com/nature/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/d41586-026-00080-3">
+            <title>Daily briefing: Octopus-inspired synthetic ‘skin’ changes appearance on demand</title>
+            <link>https://www.nature.com/articles/d41586-026-00080-3</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 08 January 2026; &lt;a href="https://www.nature.com/articles/d41586-026-00080-3"&gt;doi:10.1038/d41586-026-00080-3&lt;/a&gt;&lt;/p&gt;A new material can switch from matte to shiny and display a variety of other effects as required. Plus, humans were using poison arrows 60,000 years ago and the quest to authenticate a da Vinci drawing using DNA.</content:encoded>
+            <dc:title>Daily briefing: Octopus-inspired synthetic ‘skin’ changes appearance on demand</dc:title>
+            <dc:creator>Jacob Smith</dc:creator>
+            <dc:identifier>doi:10.1038/d41586-026-00080-3</dc:identifier>
+            <dc:source>Nature, Published online: 2026-01-08; | doi:10.1038/d41586-026-00080-3</dc:source>
+            <dc:date>2026-01-08</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/d41586-026-00080-3</prism:doi>
+            <prism:url>https://www.nature.com/articles/d41586-026-00080-3</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41586-025-09784-4">
+            <title>Surface optimization governs the local design of physical networks</title>
+            <link>https://www.nature.com/articles/s41586-025-09784-4</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 07 January 2026; &lt;a href="https://www.nature.com/articles/s41586-025-09784-4"&gt;doi:10.1038/s41586-025-09784-4&lt;/a&gt;&lt;/p&gt;Analysis of the local branching geometries of several physical networks shows violations of predictions of length and volume minimization, leading to the hypothesis that estimating the material cost requires accounting for the full three-dimensional geometry.</content:encoded>
+            <dc:title>Surface optimization governs the local design of physical networks</dc:title>
+            <dc:creator>Xiangyi Meng</dc:creator><dc:creator>Benjamin Piazza</dc:creator><dc:creator>Csaba Both</dc:creator><dc:creator>Baruch Barzel</dc:creator><dc:creator>Albert-László Barabási</dc:creator>
+            <dc:identifier>doi:10.1038/s41586-025-09784-4</dc:identifier>
+            <dc:source>Nature, Published online: 2026-01-07; | doi:10.1038/s41586-025-09784-4</dc:source>
+            <dc:date>2026-01-07</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/s41586-025-09784-4</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41586-025-09784-4</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41586-025-09867-2">
             <title>High-voltage anode-free sodium–sulfur batteries</title>
@@ -75,6 +107,21 @@
             <prism:publicationName>Nature</prism:publicationName>
             <prism:doi>10.1038/s41586-025-09874-3</prism:doi>
             <prism:url>https://www.nature.com/articles/s41586-025-09874-3</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41586-025-09877-0">
+            <title>Pulse heating and slip&amp;#xa0;enhance charging of phase-change thermal batteries</title>
+            <link>https://www.nature.com/articles/s41586-025-09877-0</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 07 January 2026; &lt;a href="https://www.nature.com/articles/s41586-025-09877-0"&gt;doi:10.1038/s41586-025-09877-0&lt;/a&gt;&lt;/p&gt;A strategy based on the design of a composite coating that enables slip-enhanced close-contact melting inside sealed phase-change thermal batteries to improve charging rates enables high-performance thermal energy storage over a wide range of temperatures.</content:encoded>
+            <dc:title>Pulse heating and slip&amp;#xa0;enhance charging of phase-change thermal batteries</dc:title>
+            <dc:creator>Zi-Rui Li</dc:creator><dc:creator>Nan Hu</dc:creator><dc:creator>Zhen-Bo Wang</dc:creator><dc:creator>Guo-Tao Fu</dc:creator><dc:creator>Yang-Yan Lai</dc:creator><dc:creator>Yue-Fei Wu</dc:creator><dc:creator>Jia-Jie Jiang</dc:creator><dc:creator>Xiao-Rong Wang</dc:creator><dc:creator>Shuang-Shuang Ni</dc:creator><dc:creator>Yu-Min Ye</dc:creator><dc:creator>Zi-Tao Yu</dc:creator><dc:creator>Xiang Gao</dc:creator><dc:creator>Howard A. Stone</dc:creator><dc:creator>Li-Wu Fan</dc:creator>
+            <dc:identifier>doi:10.1038/s41586-025-09877-0</dc:identifier>
+            <dc:source>Nature, Published online: 2026-01-07; | doi:10.1038/s41586-025-09877-0</dc:source>
+            <dc:date>2026-01-07</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/s41586-025-09877-0</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41586-025-09877-0</prism:url>
         </item>
     
         <item rdf:about="https://www.nature.com/articles/s41586-025-09889-w">
@@ -165,36 +212,6 @@
             <prism:publicationName>Nature</prism:publicationName>
             <prism:doi>10.1038/d41586-025-03984-8</prism:doi>
             <prism:url>https://www.nature.com/articles/d41586-025-03984-8</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41586-025-09864-5">
-            <title>A chiral fermionic valve driven by quantum geometry</title>
-            <link>https://www.nature.com/articles/s41586-025-09864-5</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 31 December 2025; &lt;a href="https://www.nature.com/articles/s41586-025-09864-5"&gt;doi:10.1038/s41586-025-09864-5&lt;/a&gt;&lt;/p&gt;Fermionic currents of opposing chirality can be spatially filtered without the need for a magnetic field using the quantum geometry of topological bands in single-crystal PdGa.</content:encoded>
-            <dc:title>A chiral fermionic valve driven by quantum geometry</dc:title>
-            <dc:creator>Anvesh Dixit</dc:creator><dc:creator>Pranava K. Sivakumar</dc:creator><dc:creator>Kaustuv Manna</dc:creator><dc:creator>Claudia Felser</dc:creator><dc:creator>Stuart S. P. Parkin</dc:creator>
-            <dc:identifier>doi:10.1038/s41586-025-09864-5</dc:identifier>
-            <dc:source>Nature, Published online: 2025-12-31; | doi:10.1038/s41586-025-09864-5</dc:source>
-            <dc:date>2025-12-31</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/s41586-025-09864-5</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41586-025-09864-5</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41586-025-09860-9">
-            <title>Random heteropolymers as enzyme mimics</title>
-            <link>https://www.nature.com/articles/s41586-025-09860-9</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 31 December 2025; &lt;a href="https://www.nature.com/articles/s41586-025-09860-9"&gt;doi:10.1038/s41586-025-09860-9&lt;/a&gt;&lt;/p&gt;Modulation of random heteropolymers results in globular polymer clusters with catalytic activity mimicking proteins.</content:encoded>
-            <dc:title>Random heteropolymers as enzyme mimics</dc:title>
-            <dc:creator>Hao Yu</dc:creator><dc:creator>Marco Eres</dc:creator><dc:creator>Shayna L. Hilburg</dc:creator><dc:creator>Philjun Kang</dc:creator><dc:creator>Tianyi Jin</dc:creator><dc:creator>Alexandra Grigoropoulos</dc:creator><dc:creator>Zhixia Li</dc:creator><dc:creator>Daniel M. Loh</dc:creator><dc:creator>Ivan Jayapurna</dc:creator><dc:creator>Zhiyuan Ruan</dc:creator><dc:creator>Wen Fu</dc:creator><dc:creator>Feipeng Yang</dc:creator><dc:creator>Priya Ganesh</dc:creator><dc:creator>Kali Toste</dc:creator><dc:creator>Shuni Li</dc:creator><dc:creator>Jinghua Guo</dc:creator><dc:creator>Haiyan Huang</dc:creator><dc:creator>F. Dean Toste</dc:creator><dc:creator>R. David Britt</dc:creator><dc:creator>Y Z</dc:creator><dc:creator>Alfredo Alexander-Katz</dc:creator><dc:creator>Ting Xu</dc:creator>
-            <dc:identifier>doi:10.1038/s41586-025-09860-9</dc:identifier>
-            <dc:source>Nature, Published online: 2025-12-31; | doi:10.1038/s41586-025-09860-9</dc:source>
-            <dc:date>2025-12-31</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/s41586-025-09860-9</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41586-025-09860-9</prism:url>
         </item>
     
         </rdf:RDF>
