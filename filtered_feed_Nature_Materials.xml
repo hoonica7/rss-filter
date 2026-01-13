@@ -18,6 +18,10 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02461-x"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02444-y"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02456-8"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02445-x"/>
@@ -26,11 +30,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02450-0"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02448-8"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02423-3"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nmat/rss.gif">
@@ -38,6 +38,36 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02461-x">
+            <title>Nonlinear phase-matched van der Waals crystals integrated on optical fibres</title>
+            <link>https://www.nature.com/articles/s41563-025-02461-x</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 13 January 2026; &lt;a href="https://www.nature.com/articles/s41563-025-02461-x"&gt;doi:10.1038/s41563-025-02461-x&lt;/a&gt;&lt;/p&gt;Integration of twist-phase-matched van der Waals flakes on optical fibre ends enables efficient nonlinear optical processes, including second-harmonic generation and parametric downconversion, and the fabrication of a frequency-doubling ultrafast laser.</content:encoded>
+            <dc:title>Nonlinear phase-matched van der Waals crystals integrated on optical fibres</dc:title>
+            <dc:creator>Kaifeng Lin</dc:creator><dc:creator>Guangjie Yao</dc:creator><dc:creator>Jiahui Shao</dc:creator><dc:creator>Yilong You</dc:creator><dc:creator>Jiajie Qi</dc:creator><dc:creator>Daopeng Yuan</dc:creator><dc:creator>Yijun Wang</dc:creator><dc:creator>Muhong Wu</dc:creator><dc:creator>Lingjun Kong</dc:creator><dc:creator>Xiangdong Zhang</dc:creator><dc:creator>Enge Wang</dc:creator><dc:creator>Zhipei Sun</dc:creator><dc:creator>Hao Hong</dc:creator><dc:creator>Kaihui Liu</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02461-x</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2026-01-13; | doi:10.1038/s41563-025-02461-x</dc:source>
+            <dc:date>2026-01-13</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02461-x</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02461-x</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02444-y">
+            <title>Designing heterostructured materials</title>
+            <link>https://www.nature.com/articles/s41563-025-02444-y</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 13 January 2026; &lt;a href="https://www.nature.com/articles/s41563-025-02444-y"&gt;doi:10.1038/s41563-025-02444-y&lt;/a&gt;&lt;/p&gt;Heterostructured materials can exhibit superior performance compared with their homogeneous counterparts. This Perspective discusses the fundamental effects of heterostructural features, methods for evaluating these effects and practical considerations for guiding the design of heterostructured materials.</content:encoded>
+            <dc:title>Designing heterostructured materials</dc:title>
+            <dc:creator>Hao Zhou</dc:creator><dc:creator>Xiaolei Wu</dc:creator><dc:creator>David Srolovitz</dc:creator><dc:creator>Yuntian Zhu</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02444-y</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2026-01-13; | doi:10.1038/s41563-025-02444-y</dc:source>
+            <dc:date>2026-01-13</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02444-y</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02444-y</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02456-8">
             <title>Experimental observation of liquid–solid transition of nanoconfined water at ambient temperature</title>
@@ -99,34 +129,4 @@
             <prism:url>https://www.nature.com/articles/s41563-025-02450-0</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02448-8">
-            <title>All-nitride superconducting qubits based on atomic layer deposition</title>
-            <link>https://www.nature.com/articles/s41563-025-02448-8</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 06 January 2026; &lt;a href="https://www.nature.com/articles/s41563-025-02448-8"&gt;doi:10.1038/s41563-025-02448-8&lt;/a&gt;&lt;/p&gt;NbN/AlN/NbN qubits prepared by atomic layer deposition allow for precise control of the tunnelling barrier and stable operation beyond the temperature limit of aluminium-based devices.</content:encoded>
-            <dc:title>All-nitride superconducting qubits based on atomic layer deposition</dc:title>
-            <dc:creator>Danqing Wang</dc:creator><dc:creator>Yufeng Wu</dc:creator><dc:creator>Naomi Pieczulewski</dc:creator><dc:creator>Prachi Garg</dc:creator><dc:creator>Manuel C. C. Pace</dc:creator><dc:creator>Charlotte G. L. Bøttcher</dc:creator><dc:creator>Baishakhi Mazumder</dc:creator><dc:creator>David A. Muller</dc:creator><dc:creator>Hong X. Tang</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02448-8</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2026-01-06; | doi:10.1038/s41563-025-02448-8</dc:source>
-            <dc:date>2026-01-06</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02448-8</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02448-8</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02423-3">
-            <title>Imaging supermoiré relaxation in helical trilayer graphene</title>
-            <link>https://www.nature.com/articles/s41563-025-02423-3</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 05 January 2026; &lt;a href="https://www.nature.com/articles/s41563-025-02423-3"&gt;doi:10.1038/s41563-025-02423-3&lt;/a&gt;&lt;/p&gt;A scanning single-electron transistor is used to probe the strain dependence of moiré and supermoiré domains. It is observed that these can be considered nearly independent of each other.</content:encoded>
-            <dc:title>Imaging supermoiré relaxation in helical trilayer graphene</dc:title>
-            <dc:creator>Jesse C. Hoke</dc:creator><dc:creator>Yifan Li</dc:creator><dc:creator>Yuwen Hu</dc:creator><dc:creator>Julian May-Mann</dc:creator><dc:creator>Kenji Watanabe</dc:creator><dc:creator>Takashi Taniguchi</dc:creator><dc:creator>Trithep Devakul</dc:creator><dc:creator>Benjamin E. Feldman</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02423-3</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2026-01-05; | doi:10.1038/s41563-025-02423-3</dc:source>
-            <dc:date>2026-01-05</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02423-3</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02423-3</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
