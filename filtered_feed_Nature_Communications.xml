@@ -21,6 +21,10 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-68041-4"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-68336-0"/>
+                
                     </rdf:Seq>
         </items>
     </channel>
@@ -29,5 +33,35 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-68041-4">
+            <title>Domain wall motion-driven magnetic convolutional accelerator</title>
+            <link>https://www.nature.com/articles/s41467-025-68041-4</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 14 January 2026; &lt;a href="https://www.nature.com/articles/s41467-025-68041-4"&gt;doi:10.1038/s41467-025-68041-4&lt;/a&gt;&lt;/p&gt;The authors demonstrate a magnetic compute-in-memory platform that performs convolution using domain wall motion, enabling highly energy- and area-efficient processing for future AI hardware.</content:encoded>
+            <dc:title>Domain wall motion-driven magnetic convolutional accelerator</dc:title>
+            <dc:creator>Bingqian Dai</dc:creator><dc:creator>Tianyi Wang</dc:creator><dc:creator>Albert Lee</dc:creator><dc:creator>Shijie Xu</dc:creator><dc:creator>Chin-Chung Chen</dc:creator><dc:creator>Kin Wong</dc:creator><dc:creator>Dingyi Li</dc:creator><dc:creator>Malcolm Jackson</dc:creator><dc:creator>Yang Cheng</dc:creator><dc:creator>Puyang Huang</dc:creator><dc:creator>Yaochen Li</dc:creator><dc:creator>Chao Yun</dc:creator><dc:creator>Qingyuan Shu</dc:creator><dc:creator>Haoran He</dc:creator><dc:creator>Lixuan Tai</dc:creator><dc:creator>Hanshen Huang</dc:creator><dc:creator>Tien-Kan Chung</dc:creator><dc:creator>Yanglong Hou</dc:creator><dc:creator>Kang L. Wang</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-68041-4</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-01-14; | doi:10.1038/s41467-025-68041-4</dc:source>
+            <dc:date>2026-01-14</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-68041-4</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-68041-4</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-026-68336-0">
+            <title>Deterministic and highly indistinguishable single photons in the telecom C-band</title>
+            <link>https://www.nature.com/articles/s41467-026-68336-0</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 14 January 2026; &lt;a href="https://www.nature.com/articles/s41467-026-68336-0"&gt;doi:10.1038/s41467-026-68336-0&lt;/a&gt;&lt;/p&gt;Solid-state quantum emitters in the telecom C-band hold promise for quantum communication applications, but achieving high photon indistinguishability remains challenging. Here, the authors deterministically generate highly indistinguishable single photons in the telecom C-band from InAs/InAlGaAs quantum dots.</content:encoded>
+            <dc:title>Deterministic and highly indistinguishable single photons in the telecom C-band</dc:title>
+            <dc:creator>Nico Hauser</dc:creator><dc:creator>Matthias Bayerbach</dc:creator><dc:creator>Jochen Kaupp</dc:creator><dc:creator>Yorick Reum</dc:creator><dc:creator>Giora Peniakov</dc:creator><dc:creator>Johannes Michl</dc:creator><dc:creator>Martin Kamp</dc:creator><dc:creator>Tobias Huber-Loyola</dc:creator><dc:creator>Andreas T. Pfenning</dc:creator><dc:creator>Sven Höfling</dc:creator><dc:creator>Stefanie Barz</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-026-68336-0</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-01-14; | doi:10.1038/s41467-026-68336-0</dc:source>
+            <dc:date>2026-01-14</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-026-68336-0</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-026-68336-0</prism:url>
+        </item>
     
         </rdf:RDF>
