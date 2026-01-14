@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02470-w"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02461-x"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02444-y"/>
@@ -30,7 +32,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02450-0"/>
                 
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nmat/rss.gif">
@@ -38,6 +40,21 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02470-w">
+            <title>Quasi-non-volatile capacitorless DRAM based on ultralow-leakage edge-contact MoS&lt;sub&gt;2&lt;/sub&gt; transistors</title>
+            <link>https://www.nature.com/articles/s41563-025-02470-w</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 14 January 2026; &lt;a href="https://www.nature.com/articles/s41563-025-02470-w"&gt;doi:10.1038/s41563-025-02470-w&lt;/a&gt;&lt;/p&gt;An in situ multistep edge-contact process is developed for MoS2 transistors, achieving quasi-non-volatile capacitorless two-transistor dynamic random-access memory with 5-bit accuracy and nanosecond write speeds.</content:encoded>
+            <dc:title>Quasi-non-volatile capacitorless DRAM based on ultralow-leakage edge-contact MoS&lt;sub&gt;2&lt;/sub&gt; transistors</dc:title>
+            <dc:creator>Saifei Gou</dc:creator><dc:creator>Yuxuan Zhu</dc:creator><dc:creator>Zhejia Zhang</dc:creator><dc:creator>Menglin Huang</dc:creator><dc:creator>Jinshu Zhang</dc:creator><dc:creator>Xiangqi Dong</dc:creator><dc:creator>Mingrui Ao</dc:creator><dc:creator>Qicheng Sun</dc:creator><dc:creator>Zhenggang Cai</dc:creator><dc:creator>Yan Hu</dc:creator><dc:creator>Yufei Song</dc:creator><dc:creator>Jiahao Wang</dc:creator><dc:creator>Haojie Chen</dc:creator><dc:creator>Yuchen Tian</dc:creator><dc:creator>Xinliu He</dc:creator><dc:creator>Jieya Shang</dc:creator><dc:creator>Zhengjie Sun</dc:creator><dc:creator>Qihao Chen</dc:creator><dc:creator>Yang Liu</dc:creator><dc:creator>Zihan Xu</dc:creator><dc:creator>Xiaofei Yue</dc:creator><dc:creator>Chunxiao Cong</dc:creator><dc:creator>Yin Wang</dc:creator><dc:creator>Liwei Liu</dc:creator><dc:creator>Xiaojun Tan</dc:creator><dc:creator>Mengjiao Li</dc:creator><dc:creator>Chen Yang</dc:creator><dc:creator>Hao Meng</dc:creator><dc:creator>Mingyuan Liu</dc:creator><dc:creator>Huihui Li</dc:creator><dc:creator>Shiyou Chen</dc:creator><dc:creator>Peng Zhou</dc:creator><dc:creator>Wenzhong Bao</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02470-w</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2026-01-14; | doi:10.1038/s41563-025-02470-w</dc:source>
+            <dc:date>2026-01-14</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02470-w</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02470-w</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02461-x">
             <title>Nonlinear phase-matched van der Waals crystals integrated on optical fibres</title>
@@ -129,4 +146,4 @@
             <prism:url>https://www.nature.com/articles/s41563-025-02450-0</prism:url>
         </item>
     
-        </rdf:RDF>
+</rdf:RDF>

@@ -18,13 +18,13 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03135-w"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03145-8"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03120-3"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03117-y"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -32,6 +32,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03135-w">
+            <title>Emergent topological semimetal from quantum criticality</title>
+            <link>https://www.nature.com/articles/s41567-025-03135-w</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 14 January 2026; &lt;a href="https://www.nature.com/articles/s41567-025-03135-w"&gt;doi:10.1038/s41567-025-03135-w&lt;/a&gt;&lt;/p&gt;Examples of materials with non-trivial band topology in the presence of strong electron correlations are rare. Now it is shown that quantum fluctuations near a quantum phase transition can promote topological phases in a heavy-fermion compound.</content:encoded>
+            <dc:title>Emergent topological semimetal from quantum criticality</dc:title>
+            <dc:creator>D. M. Kirschbaum</dc:creator><dc:creator>L. Chen</dc:creator><dc:creator>D. A. Zocco</dc:creator><dc:creator>H. Hu</dc:creator><dc:creator>F. Mazza</dc:creator><dc:creator>M. Karlich</dc:creator><dc:creator>M. Lužnik</dc:creator><dc:creator>D. H. Nguyen</dc:creator><dc:creator>J. Larrea Jiménez</dc:creator><dc:creator>A. M. Strydom</dc:creator><dc:creator>D. Adroja</dc:creator><dc:creator>X. Yan</dc:creator><dc:creator>A. Prokofiev</dc:creator><dc:creator>Q. Si</dc:creator><dc:creator>S. Paschen</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03135-w</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-01-14; | doi:10.1038/s41567-025-03135-w</dc:source>
+            <dc:date>2026-01-14</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03135-w</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03135-w</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03145-8">
             <title>Dynamic magneto-chiral instability in photoexcited tellurium</title>
@@ -63,19 +78,4 @@
             <prism:url>https://www.nature.com/articles/s41567-025-03120-3</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03117-y">
-            <title>Optical control of orbital magnetism in magic-angle twisted bilayer graphene</title>
-            <link>https://www.nature.com/articles/s41567-025-03117-y</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 06 January 2026; &lt;a href="https://www.nature.com/articles/s41567-025-03117-y"&gt;doi:10.1038/s41567-025-03117-y&lt;/a&gt;&lt;/p&gt;Strong correlations and topology have been seen in moiré graphene, but their optical control has not been shown yet. Now, the optical manipulation of orbital magnetism and anomalous Hall effects is demonstrated in magic-angle twisted bilayer graphene.</content:encoded>
-            <dc:title>Optical control of orbital magnetism in magic-angle twisted bilayer graphene</dc:title>
-            <dc:creator>Eylon Persky</dc:creator><dc:creator>Léonie Parisot</dc:creator><dc:creator>Minhao He</dc:creator><dc:creator>Jiaqi Cai</dc:creator><dc:creator>Takashi Taniguchi</dc:creator><dc:creator>Kenji Watanabe</dc:creator><dc:creator>Julian May-Mann</dc:creator><dc:creator>Xiaodong Xu</dc:creator><dc:creator>Aharon Kapitulnik</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03117-y</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2026-01-06; | doi:10.1038/s41567-025-03117-y</dc:source>
-            <dc:date>2026-01-06</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03117-y</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03117-y</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
