@@ -21,11 +21,17 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-68161-x"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-68447-8"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-68041-4"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-68402-7"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-025-68046-z"/>
                 
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/ncomms/rss.png">
@@ -33,6 +39,36 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-025-68161-x">
+            <title>Publisher Correction: Realization of a Dirac-vortex topological photonic crystal fiber</title>
+            <link>https://www.nature.com/articles/s41467-025-68161-x</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 14 January 2026; &lt;a href="https://www.nature.com/articles/s41467-025-68161-x"&gt;doi:10.1038/s41467-025-68161-x&lt;/a&gt;&lt;/p&gt;Publisher Correction: Realization of a Dirac-vortex topological photonic crystal fiber</content:encoded>
+            <dc:title>Publisher Correction: Realization of a Dirac-vortex topological photonic crystal fiber</dc:title>
+            <dc:creator>Quanhao Niu</dc:creator><dc:creator>Bei Yan</dc:creator><dc:creator>Lei Shen</dc:creator><dc:creator>Hao Lin</dc:creator><dc:creator>Xi Zhang</dc:creator><dc:creator>Zhenyu Wan</dc:creator><dc:creator>Mutian Xu</dc:creator><dc:creator>Hui Zhang</dc:creator><dc:creator>Jie Luo</dc:creator><dc:creator>Lei Zhang</dc:creator><dc:creator>Perry Ping Shum</dc:creator><dc:creator>Zhen Gao</dc:creator><dc:creator>Jian Wang</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-025-68161-x</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-01-14; | doi:10.1038/s41467-025-68161-x</dc:source>
+            <dc:date>2026-01-14</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-025-68161-x</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-025-68161-x</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-026-68447-8">
+            <title>Antigravity confined interfacial self-assembly approach for the synthesis and characterization of nanofilms</title>
+            <link>https://www.nature.com/articles/s41467-026-68447-8</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 14 January 2026; &lt;a href="https://www.nature.com/articles/s41467-026-68447-8"&gt;doi:10.1038/s41467-026-68447-8&lt;/a&gt;&lt;/p&gt;Gravitationally induced stratification during self-assembly often leads to density driven vertical segregation limiting the synthesis of metastable nanofilms. Here, the authors address this limitation with an antigravity confined interfacial self-assembly synthesis where capillary forces dominate and enable precise molecular organization resulting in ordered and stable nanofilms.</content:encoded>
+            <dc:title>Antigravity confined interfacial self-assembly approach for the synthesis and characterization of nanofilms</dc:title>
+            <dc:creator>Zhaohui Zhou</dc:creator><dc:creator>Jinmei Lei</dc:creator><dc:creator>Zhaoyang Zhang</dc:creator><dc:creator>Yeyun Chen</dc:creator><dc:creator>Qun Zhang</dc:creator><dc:creator>Gen Li</dc:creator><dc:creator>Shijie Yu</dc:creator><dc:creator>Lu Han</dc:creator><dc:creator>Xuan Zhou</dc:creator><dc:creator>Yi Fan</dc:creator><dc:creator>Ninghong Jia</dc:creator><dc:creator>Bo Zhang</dc:creator><dc:creator>Weifeng Lv</dc:creator><dc:creator>Xu Hou</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-026-68447-8</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-01-14; | doi:10.1038/s41467-026-68447-8</dc:source>
+            <dc:date>2026-01-14</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-026-68447-8</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-026-68447-8</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41467-025-68041-4">
             <title>Domain wall motion-driven magnetic convolutional accelerator</title>
@@ -47,6 +83,21 @@
             <prism:publicationName>Nature Communications</prism:publicationName>
             <prism:doi>10.1038/s41467-025-68041-4</prism:doi>
             <prism:url>https://www.nature.com/articles/s41467-025-68041-4</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-026-68402-7">
+            <title>A reconfigurable photosensitive split-floating-gate memory for neuromorphic computing and nonlinear activation</title>
+            <link>https://www.nature.com/articles/s41467-026-68402-7</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 14 January 2026; &lt;a href="https://www.nature.com/articles/s41467-026-68402-7"&gt;doi:10.1038/s41467-026-68402-7&lt;/a&gt;&lt;/p&gt;All-in-one computing, which merges sensing, linear computing, and nonlinear activation, is a critical goal for next-generation AI hardware. Here, Zhang et al. introduce a high-speed, reconfigurable split-floating-gate memory, enabling multi-function integration within a unified platform and hardware native neuromorphic processing.</content:encoded>
+            <dc:title>A reconfigurable photosensitive split-floating-gate memory for neuromorphic computing and nonlinear activation</dc:title>
+            <dc:creator>Zhi-Cheng Zhang</dc:creator><dc:creator>Yuan Li</dc:creator><dc:creator>Jian Yao</dc:creator><dc:creator>Zhaolong Chen</dc:creator><dc:creator>Fu-Dong Wang</dc:creator><dc:creator>Shu-Han Si</dc:creator><dc:creator>Yue Ding</dc:creator><dc:creator>Hui-Ling Qi</dc:creator><dc:creator>Tong-Bu Lu</dc:creator><dc:creator>Lixing Kang</dc:creator><dc:creator>Zhi-Bo Liu</dc:creator><dc:creator>Jian-Guo Tian</dc:creator><dc:creator>Xu-Dong Chen</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-026-68402-7</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-01-14; | doi:10.1038/s41467-026-68402-7</dc:source>
+            <dc:date>2026-01-14</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-026-68402-7</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-026-68402-7</prism:url>
         </item>
     
         <item rdf:about="https://www.nature.com/articles/s41467-025-68046-z">
@@ -64,4 +115,4 @@
             <prism:url>https://www.nature.com/articles/s41467-025-68046-z</prism:url>
         </item>
     
-        </rdf:RDF>
+</rdf:RDF>
