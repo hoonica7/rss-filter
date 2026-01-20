@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00852-0"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00831-x"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00848-w"/>
@@ -32,8 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00842-8"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00845-5"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-026-00852-0">
+            <title>Field-tailoring quantum materials via magneto-synthesis: metastable metallic and magnetically suppressed phases in a trimer iridate</title>
+            <link>https://www.nature.com/articles/s41535-026-00852-0</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 20 January 2026; &lt;a href="https://www.nature.com/articles/s41535-026-00852-0"&gt;doi:10.1038/s41535-026-00852-0&lt;/a&gt;&lt;/p&gt;Field-tailoring quantum materials via magneto-synthesis: metastable metallic and magnetically suppressed phases in a trimer iridate</content:encoded>
+            <dc:title>Field-tailoring quantum materials via magneto-synthesis: metastable metallic and magnetically suppressed phases in a trimer iridate</dc:title>
+            <dc:creator>Tristan R. Cao</dc:creator><dc:creator>Hengdi Zhao</dc:creator><dc:creator>Xudong Huai</dc:creator><dc:creator>Arabella Quane</dc:creator><dc:creator>Thao T. Tran</dc:creator><dc:creator>Feng Ye</dc:creator><dc:creator>Gang Cao</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-026-00852-0</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2026-01-20; | doi:10.1038/s41535-026-00852-0</dc:source>
+            <dc:date>2026-01-20</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-026-00852-0</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-026-00852-0</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-025-00831-x">
             <title>Single-band fluorides akin to infinite-layer cuprate superconductors</title>
@@ -146,21 +161,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-025-00842-8</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-025-00842-8</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-025-00845-5">
-            <title>Symmetry-engineered chiral magnetotransport in the correlated oxide SrNbO&lt;sub&gt;3&lt;/sub&gt;</title>
-            <link>https://www.nature.com/articles/s41535-025-00845-5</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 09 January 2026; &lt;a href="https://www.nature.com/articles/s41535-025-00845-5"&gt;doi:10.1038/s41535-025-00845-5&lt;/a&gt;&lt;/p&gt;Symmetry-engineered chiral magnetotransport in the correlated oxide SrNbO&lt;sub&gt;3&lt;/sub&gt;</content:encoded>
-            <dc:title>Symmetry-engineered chiral magnetotransport in the correlated oxide SrNbO&lt;sub&gt;3&lt;/sub&gt;</dc:title>
-            <dc:creator>Jeongkeun Song</dc:creator><dc:creator>Seoung-Hun Kang</dc:creator><dc:creator>Lucas Lindsay</dc:creator><dc:creator>Satoshi Okamoto</dc:creator><dc:creator>Yunkyu Park</dc:creator><dc:creator>Hu Miao</dc:creator><dc:creator>Jong Mok Ok</dc:creator><dc:creator>Ho Nyung Lee</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-025-00845-5</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2026-01-09; | doi:10.1038/s41535-025-00845-5</dc:source>
-            <dc:date>2026-01-09</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-025-00845-5</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-025-00845-5</prism:url>
         </item>
     
 </rdf:RDF>
