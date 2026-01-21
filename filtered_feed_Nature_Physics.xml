@@ -18,7 +18,9 @@
         <items>
             <rdf:Seq>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03144-9"/>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03139-6"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03134-x"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03131-0"/>
                 
@@ -30,7 +32,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03140-z"/>
                 
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -39,19 +41,34 @@
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
     
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03144-9">
-            <title>Dynamical simulations of many-body quantum chaos on a quantum computer</title>
-            <link>https://www.nature.com/articles/s41567-025-03144-9</link>
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03139-6">
+            <title>Orbital current from phonons</title>
+            <link>https://www.nature.com/articles/s41567-025-03139-6</link>
             <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 20 January 2026; &lt;a href="https://www.nature.com/articles/s41567-025-03144-9"&gt;doi:10.1038/s41567-025-03144-9&lt;/a&gt;&lt;/p&gt;Studying many-body quantum chaos on current quantum hardware is hindered by noise and limited scalability. Now it is shown that a superconducting processor, combined with error mitigation, can accurately simulate dual-unitary circuit dynamics.</content:encoded>
-            <dc:title>Dynamical simulations of many-body quantum chaos on a quantum computer</dc:title>
-            <dc:creator>Laurin E. Fischer</dc:creator><dc:creator>Matea Leahy</dc:creator><dc:creator>Andrew Eddins</dc:creator><dc:creator>Nathan Keenan</dc:creator><dc:creator>Davide Ferracin</dc:creator><dc:creator>Matteo A. C. Rossi</dc:creator><dc:creator>Youngseok Kim</dc:creator><dc:creator>Andre He</dc:creator><dc:creator>Francesca Pietracaprina</dc:creator><dc:creator>Boris Sokolov</dc:creator><dc:creator>Shane Dooley</dc:creator><dc:creator>Zoltán Zimborás</dc:creator><dc:creator>Francesco Tacchino</dc:creator><dc:creator>Sabrina Maniscalco</dc:creator><dc:creator>John Goold</dc:creator><dc:creator>Guillermo García-Pérez</dc:creator><dc:creator>Ivano Tavernelli</dc:creator><dc:creator>Abhinav Kandala</dc:creator><dc:creator>Sergey N. Filippov</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03144-9</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2026-01-20; | doi:10.1038/s41567-025-03144-9</dc:source>
-            <dc:date>2026-01-20</dc:date>
+                &lt;p&gt;Nature Physics, Published online: 21 January 2026; &lt;a href="https://www.nature.com/articles/s41567-025-03139-6"&gt;doi:10.1038/s41567-025-03139-6&lt;/a&gt;&lt;/p&gt;Chiral phonons, quasiparticles of lattice vibrations arising from circular atomic motion, hold potential as carriers of angular momentum for next-generation technologies. Experiments show that they can generate orbital currents under thermal gradients.</content:encoded>
+            <dc:title>Orbital current from phonons</dc:title>
+            <dc:creator>Takashi Kikkawa</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03139-6</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-01-21; | doi:10.1038/s41567-025-03139-6</dc:source>
+            <dc:date>2026-01-21</dc:date>
             <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03144-9</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03144-9</prism:url>
+            <prism:doi>10.1038/s41567-025-03139-6</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03139-6</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03134-x">
+            <title>Orbital Seebeck effect induced by chiral phonons</title>
+            <link>https://www.nature.com/articles/s41567-025-03134-x</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 21 January 2026; &lt;a href="https://www.nature.com/articles/s41567-025-03134-x"&gt;doi:10.1038/s41567-025-03134-x&lt;/a&gt;&lt;/p&gt;Generation of orbital currents in a non-magnetic material can be useful to build efficient orbitronic devices. Now, the interplay of chiral phonons and electrons is shown to produce orbital currents in α-quartz.</content:encoded>
+            <dc:title>Orbital Seebeck effect induced by chiral phonons</dc:title>
+            <dc:creator>Yoji Nabei</dc:creator><dc:creator>Cong Yang</dc:creator><dc:creator>Hong Sun</dc:creator><dc:creator>Hana Jones</dc:creator><dc:creator>Thuc Mai</dc:creator><dc:creator>Tian Wang</dc:creator><dc:creator>Rikard Bodin</dc:creator><dc:creator>Binod Pandey</dc:creator><dc:creator>Ziqi Wang</dc:creator><dc:creator>Yuzan Xiong</dc:creator><dc:creator>Andrew H. Comstock</dc:creator><dc:creator>Benjamin Ewing</dc:creator><dc:creator>John Bingen</dc:creator><dc:creator>Rui Sun</dc:creator><dc:creator>Dmitry Smirnov</dc:creator><dc:creator>Wei Zhang</dc:creator><dc:creator>Axel Hoffmann</dc:creator><dc:creator>Rahul Rao</dc:creator><dc:creator>Ming Hu</dc:creator><dc:creator>Z. Valy Vardeny</dc:creator><dc:creator>Binghai Yan</dc:creator><dc:creator>Xiaosong Li</dc:creator><dc:creator>Jun Zhou</dc:creator><dc:creator>Jun Liu</dc:creator><dc:creator>Dali Sun</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03134-x</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-01-21; | doi:10.1038/s41567-025-03134-x</dc:source>
+            <dc:date>2026-01-21</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03134-x</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03134-x</prism:url>
         </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03131-0">
@@ -129,4 +146,4 @@
             <prism:url>https://www.nature.com/articles/s41567-025-03140-z</prism:url>
         </item>
     
-        </rdf:RDF>
+</rdf:RDF>
