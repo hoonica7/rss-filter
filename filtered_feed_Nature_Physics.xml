@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03144-9"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03131-0"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03132-z"/>
@@ -36,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03144-9">
+            <title>Dynamical simulations of many-body quantum chaos on a quantum computer</title>
+            <link>https://www.nature.com/articles/s41567-025-03144-9</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 20 January 2026; &lt;a href="https://www.nature.com/articles/s41567-025-03144-9"&gt;doi:10.1038/s41567-025-03144-9&lt;/a&gt;&lt;/p&gt;Studying many-body quantum chaos on current quantum hardware is hindered by noise and limited scalability. Now it is shown that a superconducting processor, combined with error mitigation, can accurately simulate dual-unitary circuit dynamics.</content:encoded>
+            <dc:title>Dynamical simulations of many-body quantum chaos on a quantum computer</dc:title>
+            <dc:creator>Laurin E. Fischer</dc:creator><dc:creator>Matea Leahy</dc:creator><dc:creator>Andrew Eddins</dc:creator><dc:creator>Nathan Keenan</dc:creator><dc:creator>Davide Ferracin</dc:creator><dc:creator>Matteo A. C. Rossi</dc:creator><dc:creator>Youngseok Kim</dc:creator><dc:creator>Andre He</dc:creator><dc:creator>Francesca Pietracaprina</dc:creator><dc:creator>Boris Sokolov</dc:creator><dc:creator>Shane Dooley</dc:creator><dc:creator>Zoltán Zimborás</dc:creator><dc:creator>Francesco Tacchino</dc:creator><dc:creator>Sabrina Maniscalco</dc:creator><dc:creator>John Goold</dc:creator><dc:creator>Guillermo García-Pérez</dc:creator><dc:creator>Ivano Tavernelli</dc:creator><dc:creator>Abhinav Kandala</dc:creator><dc:creator>Sergey N. Filippov</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03144-9</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-01-20; | doi:10.1038/s41567-025-03144-9</dc:source>
+            <dc:date>2026-01-20</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03144-9</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03144-9</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03131-0">
             <title>Strong correlations and superconductivity in the supermoiré lattice</title>
