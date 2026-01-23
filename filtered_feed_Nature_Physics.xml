@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03137-8"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03139-6"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03134-x"/>
@@ -28,8 +30,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03159-2"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03146-7"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -38,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03137-8">
+            <title>Magnon-Cherenkov effect from a picosecond strain pulse</title>
+            <link>https://www.nature.com/articles/s41567-025-03137-8</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 23 January 2026; &lt;a href="https://www.nature.com/articles/s41567-025-03137-8"&gt;doi:10.1038/s41567-025-03137-8&lt;/a&gt;&lt;/p&gt;Coherent spin waves—quantized into magnons—can be emitted as Cherenkov radiation, but their experimental realization is hindered by the lack of fast-moving magnetic perturbations. Now, a picosecond strain pulse is shown to induce this effect.</content:encoded>
+            <dc:title>Magnon-Cherenkov effect from a picosecond strain pulse</dc:title>
+            <dc:creator>Iaroslav A. Filatov</dc:creator><dc:creator>Petr I. Gerevenkov</dc:creator><dc:creator>Andrei V. Azovtsev</dc:creator><dc:creator>Valeria A. Kovaleva</dc:creator><dc:creator>Nikolai E. Khokhlov</dc:creator><dc:creator>Alexandra M. Kalashnikova</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03137-8</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-01-23; | doi:10.1038/s41567-025-03137-8</dc:source>
+            <dc:date>2026-01-23</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03137-8</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03137-8</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03139-6">
             <title>Orbital current from phonons</title>
@@ -112,21 +127,6 @@
             <prism:publicationName>Nature Physics</prism:publicationName>
             <prism:doi>10.1038/s41567-025-03159-2</prism:doi>
             <prism:url>https://www.nature.com/articles/s41567-025-03159-2</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03146-7">
-            <title>Transport evidence for chiral surface states from three-dimensional Landau bands</title>
-            <link>https://www.nature.com/articles/s41567-025-03146-7</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 16 January 2026; &lt;a href="https://www.nature.com/articles/s41567-025-03146-7"&gt;doi:10.1038/s41567-025-03146-7&lt;/a&gt;&lt;/p&gt;The properties of electronic transport through edge states of three-dimensional quantum Hall-like states are not yet resolved. Now, increasing the surface area of the edges is shown to produce increased conductance, suggesting that chiral surface states are present.</content:encoded>
-            <dc:title>Transport evidence for chiral surface states from three-dimensional Landau bands</dc:title>
-            <dc:creator>Junho Seo</dc:creator><dc:creator>Chunyu Mark Guo</dc:creator><dc:creator>Carsten Putzke</dc:creator><dc:creator>Xiangwei Huang</dc:creator><dc:creator>Berit H. Goodge</dc:creator><dc:creator>Yip Chun Wong</dc:creator><dc:creator>Mark H. Fischer</dc:creator><dc:creator>Titus Neupert</dc:creator><dc:creator>Philip J. W. Moll</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03146-7</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2026-01-16; | doi:10.1038/s41567-025-03146-7</dc:source>
-            <dc:date>2026-01-16</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03146-7</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03146-7</prism:url>
         </item>
     
 </rdf:RDF>
