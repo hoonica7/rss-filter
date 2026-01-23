@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00849-9"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00852-0"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00831-x"/>
@@ -32,8 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00846-4"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00842-8"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-026-00849-9">
+            <title>Interlayer pairing in bilayer nickelates</title>
+            <link>https://www.nature.com/articles/s41535-026-00849-9</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 22 January 2026; &lt;a href="https://www.nature.com/articles/s41535-026-00849-9"&gt;doi:10.1038/s41535-026-00849-9&lt;/a&gt;&lt;/p&gt;Interlayer pairing in bilayer nickelates</content:encoded>
+            <dc:title>Interlayer pairing in bilayer nickelates</dc:title>
+            <dc:creator>Thomas A. Maier</dc:creator><dc:creator>Peter Doak</dc:creator><dc:creator>Ling-Fang Lin</dc:creator><dc:creator>Yang Zhang</dc:creator><dc:creator>Adriana Moreo</dc:creator><dc:creator>Elbio Dagotto</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-026-00849-9</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2026-01-22; | doi:10.1038/s41535-026-00849-9</dc:source>
+            <dc:date>2026-01-22</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-026-00849-9</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-026-00849-9</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-026-00852-0">
             <title>Field-tailoring quantum materials via magneto-synthesis: metastable metallic and magnetically suppressed phases in a trimer iridate</title>
@@ -146,21 +161,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-025-00846-4</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-025-00846-4</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-025-00842-8">
-            <title>Control of intervalley scattering in Bi&lt;sub&gt;2&lt;/sub&gt;Te&lt;sub&gt;3&lt;/sub&gt; via temperature-dependent band renormalization</title>
-            <link>https://www.nature.com/articles/s41535-025-00842-8</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 09 January 2026; &lt;a href="https://www.nature.com/articles/s41535-025-00842-8"&gt;doi:10.1038/s41535-025-00842-8&lt;/a&gt;&lt;/p&gt;Control of intervalley scattering in Bi&lt;sub&gt;2&lt;/sub&gt;Te&lt;sub&gt;3&lt;/sub&gt; via temperature-dependent band renormalization</content:encoded>
-            <dc:title>Control of intervalley scattering in Bi&lt;sub&gt;2&lt;/sub&gt;Te&lt;sub&gt;3&lt;/sub&gt; via temperature-dependent band renormalization</dc:title>
-            <dc:creator>A. Jabed</dc:creator><dc:creator>F. Goto</dc:creator><dc:creator>B. Frimpong</dc:creator><dc:creator>D. Armanno</dc:creator><dc:creator>A. Longa</dc:creator><dc:creator>M. Michiardi</dc:creator><dc:creator>A. Damascelli</dc:creator><dc:creator>P. Hofmann</dc:creator><dc:creator>G. Jargot</dc:creator><dc:creator>H. Ibrahim</dc:creator><dc:creator>F. Légaré</dc:creator><dc:creator>N. Gauthier</dc:creator><dc:creator>S. Beaulieu</dc:creator><dc:creator>F. Boschini</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-025-00842-8</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2026-01-09; | doi:10.1038/s41535-025-00842-8</dc:source>
-            <dc:date>2026-01-09</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-025-00842-8</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-025-00842-8</prism:url>
         </item>
     
 </rdf:RDF>
