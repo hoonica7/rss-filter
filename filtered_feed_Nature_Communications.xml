@@ -23,9 +23,11 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-68796-4"/>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-68697-6"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-68553-7"/>
                 
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/ncomms/rss.png">
@@ -49,6 +51,21 @@
             <prism:url>https://www.nature.com/articles/s41467-026-68796-4</prism:url>
         </item>
     
+        <item rdf:about="https://www.nature.com/articles/s41467-026-68697-6">
+            <title>Meta-amplified dark-field interferometric scattering microscopy</title>
+            <link>https://www.nature.com/articles/s41467-026-68697-6</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 23 January 2026; &lt;a href="https://www.nature.com/articles/s41467-026-68697-6"&gt;doi:10.1038/s41467-026-68697-6&lt;/a&gt;&lt;/p&gt;We introduce meta-amplified dark-field interferometric scattering microscopy, which uses a plasmonic metasurface to enhance sensitivity and contrast by converting nanoparticle-induced phase perturbations into strong far-field scattering signals.</content:encoded>
+            <dc:title>Meta-amplified dark-field interferometric scattering microscopy</dc:title>
+            <dc:creator>Hongki Lee</dc:creator><dc:creator>Junxiang Zhao</dc:creator><dc:creator>Pan Hu</dc:creator><dc:creator>Zhaoyu Nie</dc:creator><dc:creator>Ming Lei</dc:creator><dc:creator>Guanghao Chen</dc:creator><dc:creator>Soojeong Baek</dc:creator><dc:creator>Qianyi Wu</dc:creator><dc:creator>Li Chen</dc:creator><dc:creator>Ang Li</dc:creator><dc:creator>Mojie Luo</dc:creator><dc:creator>Shizhen Emily Wang</dc:creator><dc:creator>Sui Yang</dc:creator><dc:creator>Wei Wu</dc:creator><dc:creator>Zhaowei Liu</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-026-68697-6</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-01-23; | doi:10.1038/s41467-026-68697-6</dc:source>
+            <dc:date>2026-01-23</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-026-68697-6</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-026-68697-6</prism:url>
+        </item>
+    
         <item rdf:about="https://www.nature.com/articles/s41467-026-68553-7">
             <title>Polar discontinuities, emergent conductivity, and critical twist-angle-dependent behaviour at wafer-bonded ferroelectric interfaces</title>
             <link>https://www.nature.com/articles/s41467-026-68553-7</link>
@@ -64,4 +81,4 @@
             <prism:url>https://www.nature.com/articles/s41467-026-68553-7</prism:url>
         </item>
     
-        </rdf:RDF>
+</rdf:RDF>
