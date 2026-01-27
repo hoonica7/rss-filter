@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03161-8"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03137-8"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03139-6"/>
@@ -25,8 +27,6 @@
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03134-x"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03131-0"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03132-z"/>
                 
             </rdf:Seq>
         </items>
@@ -36,6 +36,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03161-8">
+            <title>Nanoscale ultrafast lattice modulation with a free-electron laser</title>
+            <link>https://www.nature.com/articles/s41567-025-03161-8</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 27 January 2026; &lt;a href="https://www.nature.com/articles/s41567-025-03161-8"&gt;doi:10.1038/s41567-025-03161-8&lt;/a&gt;&lt;/p&gt;Applications of optical laser-based techniques are limited by the long wavelengths of the lasers. Now, observations of phonons and thermal transport at nanometre length scales are reported with an all-hard X-ray transient-grating spectroscopy technique.</content:encoded>
+            <dc:title>Nanoscale ultrafast lattice modulation with a free-electron laser</dc:title>
+            <dc:creator>Haoyuan Li</dc:creator><dc:creator>Nan Wang</dc:creator><dc:creator>Leon Zhang</dc:creator><dc:creator>Sanghoon Song</dc:creator><dc:creator>Yanwen Sun</dc:creator><dc:creator>May-Ling Ng</dc:creator><dc:creator>Takahiro Sato</dc:creator><dc:creator>Dillon Hanlon</dc:creator><dc:creator>Sajal Dahal</dc:creator><dc:creator>Mario D. Balcazar</dc:creator><dc:creator>Vincent Esposito</dc:creator><dc:creator>Selene She</dc:creator><dc:creator>Chance Caleb Ornelas-Skarin</dc:creator><dc:creator>Joan Vila-Comamala</dc:creator><dc:creator>Christian David</dc:creator><dc:creator>Nadia Berndt</dc:creator><dc:creator>Peter R. Miedaner</dc:creator><dc:creator>Zhuquan Zhang</dc:creator><dc:creator>Matthias Ihme</dc:creator><dc:creator>Mariano Trigo</dc:creator><dc:creator>Keith A. Nelson</dc:creator><dc:creator>Jerome B. Hastings</dc:creator><dc:creator>Alexei A. Maznev</dc:creator><dc:creator>Laura Foglia</dc:creator><dc:creator>Samuel Teitelbaum</dc:creator><dc:creator>David A. Reis</dc:creator><dc:creator>Diling Zhu</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03161-8</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-01-27; | doi:10.1038/s41567-025-03161-8</dc:source>
+            <dc:date>2026-01-27</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03161-8</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03161-8</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03137-8">
             <title>Magnon-Cherenkov effect from a picosecond strain pulse</title>
@@ -95,21 +110,6 @@
             <prism:publicationName>Nature Physics</prism:publicationName>
             <prism:doi>10.1038/s41567-025-03131-0</prism:doi>
             <prism:url>https://www.nature.com/articles/s41567-025-03131-0</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03132-z">
-            <title>Driving Floquet physics with excitonic fields</title>
-            <link>https://www.nature.com/articles/s41567-025-03132-z</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 19 January 2026; &lt;a href="https://www.nature.com/articles/s41567-025-03132-z"&gt;doi:10.1038/s41567-025-03132-z&lt;/a&gt;&lt;/p&gt;Floquet engineering is often limited by weak light–matter coupling and heating. Now it is shown that exciton-driven fields in monolayer semiconductors produce stronger, longer-lived Floquet effects and reveal hybridization linked to excitonic phases.</content:encoded>
-            <dc:title>Driving Floquet physics with excitonic fields</dc:title>
-            <dc:creator>Vivek Pareek</dc:creator><dc:creator>David R. Bacon</dc:creator><dc:creator>Xing Zhu</dc:creator><dc:creator>Yang-Hao Chan</dc:creator><dc:creator>Fabio Bussolotti</dc:creator><dc:creator>Marcos G. Menezes</dc:creator><dc:creator>Nicholas S. Chan</dc:creator><dc:creator>Joel Pérez Urquizo</dc:creator><dc:creator>Kenji Watanabe</dc:creator><dc:creator>Takashi Taniguchi</dc:creator><dc:creator>Enrico Perfetto</dc:creator><dc:creator>Michael K. L. Man</dc:creator><dc:creator>Julien Madéo</dc:creator><dc:creator>Gianluca Stefanucci</dc:creator><dc:creator>Diana Y. Qiu</dc:creator><dc:creator>Kuan Eng Johnson Goh</dc:creator><dc:creator>Felipe H. da Jornada</dc:creator><dc:creator>Keshav M. Dani</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03132-z</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2026-01-19; | doi:10.1038/s41567-025-03132-z</dc:source>
-            <dc:date>2026-01-19</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03132-z</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03132-z</prism:url>
         </item>
     
 </rdf:RDF>
