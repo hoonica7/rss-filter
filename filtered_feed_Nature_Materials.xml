@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02484-y"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02481-1"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02475-5"/>
@@ -30,8 +32,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02467-5"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02472-8"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -40,6 +40,21 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-026-02484-y">
+            <title>Revealing key structures for reversible sulfur redox in amorphous polymeric sulfur</title>
+            <link>https://www.nature.com/articles/s41563-026-02484-y</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 28 January 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02484-y"&gt;doi:10.1038/s41563-026-02484-y&lt;/a&gt;&lt;/p&gt;Amorphous sulfurized polyacrylonitrile suppresses polysulfide shuttling in Li–S batteries, enabling long cycle life, but the structural processes involved during synthesis and initial cycling remained unclear. An operando pair distribution function, wide-angle scattering and sulfur absorption spectroscopy reveal S–C bond formation, π–π stacking and sulfur-chain shortening, which enable reversible sulfur redox.</content:encoded>
+            <dc:title>Revealing key structures for reversible sulfur redox in amorphous polymeric sulfur</dc:title>
+            <dc:creator>Nan Wang</dc:creator><dc:creator>Shen Wang</dc:creator><dc:creator>Yu Zheng</dc:creator><dc:creator>Dacheng Kuai</dc:creator><dc:creator>Seungmin Lee</dc:creator><dc:creator>Sha Tan</dc:creator><dc:creator>Dean Yen</dc:creator><dc:creator>Hui Zhong</dc:creator><dc:creator>Sanjit Ghose</dc:creator><dc:creator>Yonghua Du</dc:creator><dc:creator>Perla Balbuena</dc:creator><dc:creator>Ping Liu</dc:creator><dc:creator>Enyuan Hu</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-026-02484-y</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2026-01-28; | doi:10.1038/s41563-026-02484-y</dc:source>
+            <dc:date>2026-01-28</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-026-02484-y</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-026-02484-y</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-026-02481-1">
             <title>Exploiting and taming the structural instability for computer memories</title>
@@ -129,21 +144,6 @@
             <prism:publicationName>Nature Materials</prism:publicationName>
             <prism:doi>10.1038/s41563-025-02467-5</prism:doi>
             <prism:url>https://www.nature.com/articles/s41563-025-02467-5</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02472-8">
-            <title>Higgs mode-driven phase transitions in two-dimensional perovskites</title>
-            <link>https://www.nature.com/articles/s41563-025-02472-8</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 20 January 2026; &lt;a href="https://www.nature.com/articles/s41563-025-02472-8"&gt;doi:10.1038/s41563-025-02472-8&lt;/a&gt;&lt;/p&gt;A study of phase transitions in two-dimensional halide perovskites uncovers distinct thermal and optical pathways through Ginzburg–Landau theory. The work identifies an optically driven metastable tetragonal phase, excited by Higgs phonon modes, offering insights into symmetry-breaking dynamics.</content:encoded>
-            <dc:title>Higgs mode-driven phase transitions in two-dimensional perovskites</dc:title>
-            <dc:creator>Gregory D. Scholes</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02472-8</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2026-01-20; | doi:10.1038/s41563-025-02472-8</dc:source>
-            <dc:date>2026-01-20</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02472-8</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02472-8</prism:url>
         </item>
     
 </rdf:RDF>

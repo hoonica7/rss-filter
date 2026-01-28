@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03148-5"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03161-8"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03137-8"/>
@@ -26,9 +28,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03134-x"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03131-0"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -36,6 +36,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03148-5">
+            <title>Mode locking between helimagnetism and ferromagnetism</title>
+            <link>https://www.nature.com/articles/s41567-025-03148-5</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 28 January 2026; &lt;a href="https://www.nature.com/articles/s41567-025-03148-5"&gt;doi:10.1038/s41567-025-03148-5&lt;/a&gt;&lt;/p&gt;Understanding microwave emission from resonating spin spirals is key for on-chip magnonics. Now, real-time spin precession modes with distinct microwave patterns are captured in a helimagnet/ferromagnet heterostructure.</content:encoded>
+            <dc:title>Mode locking between helimagnetism and ferromagnetism</dc:title>
+            <dc:creator>Jingyi Chen</dc:creator><dc:creator>Haonan Jin</dc:creator><dc:creator>Ethan L. Arnold</dc:creator><dc:creator>Gerrit van der Laan</dc:creator><dc:creator>Thorsten Hesjedal</dc:creator><dc:creator>Shilei Zhang</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03148-5</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-01-28; | doi:10.1038/s41567-025-03148-5</dc:source>
+            <dc:date>2026-01-28</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03148-5</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03148-5</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03161-8">
             <title>Nanoscale ultrafast lattice modulation with a free-electron laser</title>
@@ -97,19 +112,4 @@
             <prism:url>https://www.nature.com/articles/s41567-025-03134-x</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03131-0">
-            <title>Strong correlations and superconductivity in the supermoiré lattice</title>
-            <link>https://www.nature.com/articles/s41567-025-03131-0</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 20 January 2026; &lt;a href="https://www.nature.com/articles/s41567-025-03131-0"&gt;doi:10.1038/s41567-025-03131-0&lt;/a&gt;&lt;/p&gt;When two moiré patterns interfere with each other, they produce a longer-wavelength supermoiré pattern. Now, the effects of a supermoiré lattice on the band structure and transport properties of twisted trilayer graphene is investigated.</content:encoded>
-            <dc:title>Strong correlations and superconductivity in the supermoiré lattice</dc:title>
-            <dc:creator>Zekang Zhou</dc:creator><dc:creator>Cheng Shen</dc:creator><dc:creator>Kryštof Kolár^</dc:creator><dc:creator>Kenji Watanabe</dc:creator><dc:creator>Takashi Taniguchi</dc:creator><dc:creator>Cyprian Lewandowski</dc:creator><dc:creator>Mitali Banerjee</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03131-0</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2026-01-20; | doi:10.1038/s41567-025-03131-0</dc:source>
-            <dc:date>2026-01-20</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03131-0</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03131-0</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
