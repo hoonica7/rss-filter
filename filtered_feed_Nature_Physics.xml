@@ -18,15 +18,15 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03167-2"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03090-6"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03148-5"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03161-8"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03137-8"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03139-6"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -34,6 +34,36 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03167-2">
+            <title>Observation of dissipationless fractional Chern insulator</title>
+            <link>https://www.nature.com/articles/s41567-025-03167-2</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 30 January 2026; &lt;a href="https://www.nature.com/articles/s41567-025-03167-2"&gt;doi:10.1038/s41567-025-03167-2&lt;/a&gt;&lt;/p&gt;Fractional Chern insulators have been observed in moiré MoTe2 at zero magnetic field, but the expected zero longitudinal resistance has not been demonstrated. Now it is shown that improving device quality allows this effect to appear.</content:encoded>
+            <dc:title>Observation of dissipationless fractional Chern insulator</dc:title>
+            <dc:creator>Heonjoon Park</dc:creator><dc:creator>Weijie Li</dc:creator><dc:creator>Chaowei Hu</dc:creator><dc:creator>Christiano Beach</dc:creator><dc:creator>Miguel Gonçalves</dc:creator><dc:creator>Juan Felipe Mendez-Valderrama</dc:creator><dc:creator>Jonah Herzog-Arbeitman</dc:creator><dc:creator>Takashi Taniguchi</dc:creator><dc:creator>Kenji Watanabe</dc:creator><dc:creator>David Cobden</dc:creator><dc:creator>Liang Fu</dc:creator><dc:creator>B. Andrei Bernevig</dc:creator><dc:creator>Nicolas Regnault</dc:creator><dc:creator>Jiun-Haw Chu</dc:creator><dc:creator>Di Xiao</dc:creator><dc:creator>Xiaodong Xu</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03167-2</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-01-30; | doi:10.1038/s41567-025-03167-2</dc:source>
+            <dc:date>2026-01-30</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03167-2</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03167-2</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03090-6">
+            <title>Lattice surgery realized on two distance-three repetition codes with superconducting qubits</title>
+            <link>https://www.nature.com/articles/s41567-025-03090-6</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 30 January 2026; &lt;a href="https://www.nature.com/articles/s41567-025-03090-6"&gt;doi:10.1038/s41567-025-03090-6&lt;/a&gt;&lt;/p&gt;Quantum error correction codes protect quantum information, but running algorithms also requires the ability to perform gates on logical qubits. A lattice surgery scheme for fault-tolerant gates has now been demonstrated in a quantum repetition code.</content:encoded>
+            <dc:title>Lattice surgery realized on two distance-three repetition codes with superconducting qubits</dc:title>
+            <dc:creator>Ilya Besedin</dc:creator><dc:creator>Michael Kerschbaum</dc:creator><dc:creator>Jonathan Knoll</dc:creator><dc:creator>Ian Hesner</dc:creator><dc:creator>Lukas Bödeker</dc:creator><dc:creator>Luis Colmenarez</dc:creator><dc:creator>Luca Hofele</dc:creator><dc:creator>Nathan Lacroix</dc:creator><dc:creator>Christoph Hellings</dc:creator><dc:creator>François Swiadek</dc:creator><dc:creator>Alexander Flasby</dc:creator><dc:creator>Mohsen Bahrami Panah</dc:creator><dc:creator>Dante Colao Zanuz</dc:creator><dc:creator>Markus Müller</dc:creator><dc:creator>Andreas Wallraff</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03090-6</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-01-30; | doi:10.1038/s41567-025-03090-6</dc:source>
+            <dc:date>2026-01-30</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03090-6</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03090-6</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03148-5">
             <title>Mode locking between helimagnetism and ferromagnetism</title>
@@ -65,34 +95,4 @@
             <prism:url>https://www.nature.com/articles/s41567-025-03161-8</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03137-8">
-            <title>Magnon-Cherenkov effect from a picosecond strain pulse</title>
-            <link>https://www.nature.com/articles/s41567-025-03137-8</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 23 January 2026; &lt;a href="https://www.nature.com/articles/s41567-025-03137-8"&gt;doi:10.1038/s41567-025-03137-8&lt;/a&gt;&lt;/p&gt;Coherent spin waves—quantized into magnons—can be emitted as Cherenkov radiation, but their experimental realization is hindered by the lack of fast-moving magnetic perturbations. Now, a picosecond strain pulse is shown to induce this effect.</content:encoded>
-            <dc:title>Magnon-Cherenkov effect from a picosecond strain pulse</dc:title>
-            <dc:creator>Iaroslav A. Filatov</dc:creator><dc:creator>Petr I. Gerevenkov</dc:creator><dc:creator>Andrei V. Azovtsev</dc:creator><dc:creator>Valeria A. Kovaleva</dc:creator><dc:creator>Nikolai E. Khokhlov</dc:creator><dc:creator>Alexandra M. Kalashnikova</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03137-8</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2026-01-23; | doi:10.1038/s41567-025-03137-8</dc:source>
-            <dc:date>2026-01-23</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03137-8</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03137-8</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03139-6">
-            <title>Orbital current from phonons</title>
-            <link>https://www.nature.com/articles/s41567-025-03139-6</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 21 January 2026; &lt;a href="https://www.nature.com/articles/s41567-025-03139-6"&gt;doi:10.1038/s41567-025-03139-6&lt;/a&gt;&lt;/p&gt;Chiral phonons, quasiparticles of lattice vibrations arising from circular atomic motion, hold potential as carriers of angular momentum for next-generation technologies. Experiments show that they can generate orbital currents under thermal gradients.</content:encoded>
-            <dc:title>Orbital current from phonons</dc:title>
-            <dc:creator>Takashi Kikkawa</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03139-6</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2026-01-21; | doi:10.1038/s41567-025-03139-6</dc:source>
-            <dc:date>2026-01-21</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03139-6</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03139-6</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>

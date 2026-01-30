@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-026-00274-9"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09977-x"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-10027-9"/>
@@ -25,6 +27,8 @@
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09857-4"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09777-3"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-10025-x"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-10049-3"/>
                 
@@ -37,6 +41,8 @@
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-10033-x"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-10019-9"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09931-x"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09851-w"/>
                 
@@ -54,6 +60,21 @@
         <url>https://www.nature.com/uploads/product/nature/rss.png</url>
         <link>http://feeds.nature.com/nature/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/d41586-026-00274-9">
+            <title>China is betting on ‘optical’ computer chips – will they power AI?</title>
+            <link>https://www.nature.com/articles/d41586-026-00274-9</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 30 January 2026; &lt;a href="https://www.nature.com/articles/d41586-026-00274-9"&gt;doi:10.1038/d41586-026-00274-9&lt;/a&gt;&lt;/p&gt;Semiconductor chips that process light rather than electricity could boost processing speeds and reduce energy use.</content:encoded>
+            <dc:title>China is betting on ‘optical’ computer chips – will they power AI?</dc:title>
+            <dc:creator>Mohana Basu</dc:creator>
+            <dc:identifier>doi:10.1038/d41586-026-00274-9</dc:identifier>
+            <dc:source>Nature, Published online: 2026-01-30; | doi:10.1038/d41586-026-00274-9</dc:source>
+            <dc:date>2026-01-30</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/d41586-026-00274-9</prism:doi>
+            <prism:url>https://www.nature.com/articles/d41586-026-00274-9</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41586-025-09977-x">
             <title>Prethermalization by random multipolar driving on a 78-qubit processor</title>
@@ -113,6 +134,21 @@
             <prism:publicationName>Nature</prism:publicationName>
             <prism:doi>10.1038/s41586-025-09777-3</prism:doi>
             <prism:url>https://www.nature.com/articles/s41586-025-09777-3</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41586-025-10025-x">
+            <title>Lasing of a cavity-based X-ray source</title>
+            <link>https://www.nature.com/articles/s41586-025-10025-x</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 28 January 2026; &lt;a href="https://www.nature.com/articles/s41586-025-10025-x"&gt;doi:10.1038/s41586-025-10025-x&lt;/a&gt;&lt;/p&gt;Lasing with multi-pass gain is achieved in a diamond-based X-ray cavity at the European XFEL, opening a path to next-generation X-ray science.</content:encoded>
+            <dc:title>Lasing of a cavity-based X-ray source</dc:title>
+            <dc:creator>Patrick Rauer</dc:creator><dc:creator>Immo Bahns</dc:creator><dc:creator>Bertram Friedrich</dc:creator><dc:creator>Sara Casalbuoni</dc:creator><dc:creator>Massimiliano Di Felice</dc:creator><dc:creator>Martin Dommach</dc:creator><dc:creator>Idoia Freijo Martin</dc:creator><dc:creator>Wolfgang Freund</dc:creator><dc:creator>Jan Grünert</dc:creator><dc:creator>Marc Guetg</dc:creator><dc:creator>Ivars Karpics</dc:creator><dc:creator>Suren Karabekyan</dc:creator><dc:creator>Andreas Koch</dc:creator><dc:creator>Naresh Kujala</dc:creator><dc:creator>Daniele La Civita</dc:creator><dc:creator>Jia Liu</dc:creator><dc:creator>Theophilos Maltezopoulos</dc:creator><dc:creator>Mikako Makita</dc:creator><dc:creator>Frank Mayet</dc:creator><dc:creator>Lukas Müller</dc:creator><dc:creator>Benoit Rio</dc:creator><dc:creator>Liubov Samoylova</dc:creator><dc:creator>Silja Schmidtchen</dc:creator><dc:creator>Matthias Scholz</dc:creator><dc:creator>Alessandro Silenzi</dc:creator><dc:creator>Vivienne Strauch</dc:creator><dc:creator>Daniel Thoden</dc:creator><dc:creator>Torsten Wohlenberg</dc:creator><dc:creator>Maurizio Vannoni</dc:creator><dc:creator>Fan Yang</dc:creator><dc:creator>Winfried Decking</dc:creator><dc:creator>Joerg Rossbach</dc:creator><dc:creator>Harald Sinn</dc:creator>
+            <dc:identifier>doi:10.1038/s41586-025-10025-x</dc:identifier>
+            <dc:source>Nature, Published online: 2026-01-28; | doi:10.1038/s41586-025-10025-x</dc:source>
+            <dc:date>2026-01-28</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/s41586-025-10025-x</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41586-025-10025-x</prism:url>
         </item>
     
         <item rdf:about="https://www.nature.com/articles/s41586-025-10049-3">
@@ -203,6 +239,21 @@
             <prism:publicationName>Nature</prism:publicationName>
             <prism:doi>10.1038/s41586-025-10019-9</prism:doi>
             <prism:url>https://www.nature.com/articles/s41586-025-10019-9</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41586-025-09931-x">
+            <title>A flexible digital compute-in-memory chip for edge intelligence</title>
+            <link>https://www.nature.com/articles/s41586-025-09931-x</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 28 January 2026; &lt;a href="https://www.nature.com/articles/s41586-025-09931-x"&gt;doi:10.1038/s41586-025-09931-x&lt;/a&gt;&lt;/p&gt;A flexible digital artificial intelligence chip with a compute-in-memory architecture is fabricated using a commercial low-temperature polycrystalline silicon thin-film transistor process and shows high accuracy in human daily activity monitoring using multimodal physiological signals.</content:encoded>
+            <dc:title>A flexible digital compute-in-memory chip for edge intelligence</dc:title>
+            <dc:creator>Anzhi Yan</dc:creator><dc:creator>Jianlan Yan</dc:creator><dc:creator>Penghui Shen</dc:creator><dc:creator>Yihan Fu</dc:creator><dc:creator>Enyi Zhang</dc:creator><dc:creator>Jingkai Song</dc:creator><dc:creator>Qinghang Zhang</dc:creator><dc:creator>Ziqi He</dc:creator><dc:creator>Xin Li</dc:creator><dc:creator>Zecheng Pan</dc:creator><dc:creator>Ding Li</dc:creator><dc:creator>Yu Dong</dc:creator><dc:creator>Xiaowei Xu</dc:creator><dc:creator>Feng Qi</dc:creator><dc:creator>Tianqi Shao</dc:creator><dc:creator>Bonan Yan</dc:creator><dc:creator>Yi Yang</dc:creator><dc:creator>Houfang Liu</dc:creator><dc:creator>Tian-Ling Ren</dc:creator>
+            <dc:identifier>doi:10.1038/s41586-025-09931-x</dc:identifier>
+            <dc:source>Nature, Published online: 2026-01-28; | doi:10.1038/s41586-025-09931-x</dc:source>
+            <dc:date>2026-01-28</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/s41586-025-09931-x</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41586-025-09931-x</prism:url>
         </item>
     
         <item rdf:about="https://www.nature.com/articles/s41586-025-09851-w">
