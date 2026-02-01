@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00851-1"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00849-9"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00852-0"/>
@@ -32,8 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00844-6"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00846-4"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-026-00851-1">
+            <title>Kitaev interaction and proximate higher-order skyrmion crystal in the triangular lattice van der Waals antiferromagnet Ni&lt;b&gt;I&lt;/b&gt;&lt;sub&gt;&lt;b&gt;2&lt;/b&gt;&lt;/sub&gt;</title>
+            <link>https://www.nature.com/articles/s41535-026-00851-1</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 31 January 2026; &lt;a href="https://www.nature.com/articles/s41535-026-00851-1"&gt;doi:10.1038/s41535-026-00851-1&lt;/a&gt;&lt;/p&gt;Kitaev interaction and proximate higher-order skyrmion crystal in the triangular lattice van der Waals antiferromagnet Ni&lt;b&gt;I&lt;/b&gt;&lt;sub&gt;&lt;b&gt;2&lt;/b&gt;&lt;/sub&gt;</content:encoded>
+            <dc:title>Kitaev interaction and proximate higher-order skyrmion crystal in the triangular lattice van der Waals antiferromagnet Ni&lt;b&gt;I&lt;/b&gt;&lt;sub&gt;&lt;b&gt;2&lt;/b&gt;&lt;/sub&gt;</dc:title>
+            <dc:creator>Chaebin Kim</dc:creator><dc:creator>Olivia Vilella</dc:creator><dc:creator>Youjin Lee</dc:creator><dc:creator>Pyeongjae Park</dc:creator><dc:creator>Yeochan An</dc:creator><dc:creator>Woonghee Cho</dc:creator><dc:creator>Matthew B. Stone</dc:creator><dc:creator>Alexander I. Kolesnikov</dc:creator><dc:creator>Yiqing Hao</dc:creator><dc:creator>Shinichiro Asai</dc:creator><dc:creator>Shinichi Itoh</dc:creator><dc:creator>Takatsugu Masuda</dc:creator><dc:creator>Sakib Matin</dc:creator><dc:creator>Yuna Kim</dc:creator><dc:creator>Sung-Jin Kim</dc:creator><dc:creator>Martin Mourigal</dc:creator><dc:creator>Je-Geun Park</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-026-00851-1</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2026-01-31; | doi:10.1038/s41535-026-00851-1</dc:source>
+            <dc:date>2026-01-31</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-026-00851-1</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-026-00851-1</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-026-00849-9">
             <title>Interlayer pairing in bilayer nickelates</title>
@@ -146,21 +161,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-025-00844-6</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-025-00844-6</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-025-00846-4">
-            <title>Manipulating the long-range strong photon-magnon coupling via a saturable gain</title>
-            <link>https://www.nature.com/articles/s41535-025-00846-4</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 10 January 2026; &lt;a href="https://www.nature.com/articles/s41535-025-00846-4"&gt;doi:10.1038/s41535-025-00846-4&lt;/a&gt;&lt;/p&gt;Manipulating the long-range strong photon-magnon coupling via a saturable gain</content:encoded>
-            <dc:title>Manipulating the long-range strong photon-magnon coupling via a saturable gain</dc:title>
-            <dc:creator>Lijun Yan</dc:creator><dc:creator>Xinlin Mi</dc:creator><dc:creator>Yongzhang Shi</dc:creator><dc:creator>Yanxue Chen</dc:creator><dc:creator>Yue Zhao</dc:creator><dc:creator>Jinwei Rao</dc:creator><dc:creator>Lihui Bai</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-025-00846-4</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2026-01-10; | doi:10.1038/s41535-025-00846-4</dc:source>
-            <dc:date>2026-01-10</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-025-00846-4</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-025-00846-4</prism:url>
         </item>
     
 </rdf:RDF>
