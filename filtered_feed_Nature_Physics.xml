@@ -18,15 +18,15 @@
         <items>
             <rdf:Seq>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03172-z"/>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03178-7"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03110-5"/>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03172-z"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03167-2"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03090-6"/>
                 
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -34,6 +34,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-026-03178-7">
+            <title>Selective excitation of work-generating cycles in non-reciprocal living solids</title>
+            <link>https://www.nature.com/articles/s41567-026-03178-7</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 03 February 2026; &lt;a href="https://www.nature.com/articles/s41567-026-03178-7"&gt;doi:10.1038/s41567-026-03178-7&lt;/a&gt;&lt;/p&gt;Starfish embryos can form living chiral crystals. Now it is shown that these crystals can spontaneously, as well as inducibly, transition between two stable states: fluctuating and oscillatory.</content:encoded>
+            <dc:title>Selective excitation of work-generating cycles in non-reciprocal living solids</dc:title>
+            <dc:creator>Yu-Chen Chao</dc:creator><dc:creator>Shreyas Gokhale</dc:creator><dc:creator>Lisa Lin</dc:creator><dc:creator>Alasdair Hastewell</dc:creator><dc:creator>Alexandru Bacanu</dc:creator><dc:creator>Yuchao Chen</dc:creator><dc:creator>Junang Li</dc:creator><dc:creator>Jinghui Liu</dc:creator><dc:creator>Hyunseok Lee</dc:creator><dc:creator>Jörn Dunkel</dc:creator><dc:creator>Nikta Fakhri</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-026-03178-7</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-02-03; | doi:10.1038/s41567-026-03178-7</dc:source>
+            <dc:date>2026-02-03</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-026-03178-7</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-026-03178-7</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-026-03172-z">
             <title>Co-propagating photonic topological interface states with hybridized pseudo-spins</title>
@@ -48,21 +63,6 @@
             <prism:publicationName>Nature Physics</prism:publicationName>
             <prism:doi>10.1038/s41567-026-03172-z</prism:doi>
             <prism:url>https://www.nature.com/articles/s41567-026-03172-z</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-025-03110-5">
-            <title>Quantum computing isn’t just about scaling</title>
-            <link>https://www.nature.com/articles/s41567-025-03110-5</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 30 January 2026; &lt;a href="https://www.nature.com/articles/s41567-025-03110-5"&gt;doi:10.1038/s41567-025-03110-5&lt;/a&gt;&lt;/p&gt;The race to demonstrate quantum error correction often focuses on making ever-larger devices. A demonstration showing that splitting a surface-code logical qubit into two simpler repetition codes substantially reduces logical gate errors reminds us that advancing quantum computing does not hinge solely on scaling qubit numbers.</content:encoded>
-            <dc:title>Quantum computing isn’t just about scaling</dc:title>
-            <dc:creator>Murphy Yuezhen Niu</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-025-03110-5</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2026-01-30; | doi:10.1038/s41567-025-03110-5</dc:source>
-            <dc:date>2026-01-30</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-025-03110-5</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-025-03110-5</prism:url>
         </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03167-2">
@@ -95,4 +95,4 @@
             <prism:url>https://www.nature.com/articles/s41567-025-03090-6</prism:url>
         </item>
     
-        </rdf:RDF>
+</rdf:RDF>
