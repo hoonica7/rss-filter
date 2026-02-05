@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00859-7"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00851-1"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00849-9"/>
@@ -32,8 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00847-x"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00844-6"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-026-00859-7">
+            <title>Robust magnetic polaron percolation in the antiferromagnetic CMR system EuCd&lt;sub&gt;2&lt;/sub&gt;P&lt;sub&gt;2&lt;/sub&gt;</title>
+            <link>https://www.nature.com/articles/s41535-026-00859-7</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 04 February 2026; &lt;a href="https://www.nature.com/articles/s41535-026-00859-7"&gt;doi:10.1038/s41535-026-00859-7&lt;/a&gt;&lt;/p&gt;Robust magnetic polaron percolation in the antiferromagnetic CMR system EuCd&lt;sub&gt;2&lt;/sub&gt;P&lt;sub&gt;2&lt;/sub&gt;</content:encoded>
+            <dc:title>Robust magnetic polaron percolation in the antiferromagnetic CMR system EuCd&lt;sub&gt;2&lt;/sub&gt;P&lt;sub&gt;2&lt;/sub&gt;</dc:title>
+            <dc:creator>Marvin Kopp</dc:creator><dc:creator>Charu Garg</dc:creator><dc:creator>Sarah Krebber</dc:creator><dc:creator>Kristin Kliemt</dc:creator><dc:creator>Cornelius Krellner</dc:creator><dc:creator>Sudhaman R. Balguri</dc:creator><dc:creator>Mira Mahendru</dc:creator><dc:creator>Fazel Tafti</dc:creator><dc:creator>Theodore L. Breeze</dc:creator><dc:creator>Nathan P. Bentley</dc:creator><dc:creator>Francis L. Pratt</dc:creator><dc:creator>Thomas J. Hicken</dc:creator><dc:creator>Hubertus Luetkens</dc:creator><dc:creator>Jonas A. Krieger</dc:creator><dc:creator>Stephen J. Blundell</dc:creator><dc:creator>Tom Lancaster</dc:creator><dc:creator>M. Victoria Ale Crivillero</dc:creator><dc:creator>Steffen Wirth</dc:creator><dc:creator>Jens Müller</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-026-00859-7</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2026-02-04; | doi:10.1038/s41535-026-00859-7</dc:source>
+            <dc:date>2026-02-04</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-026-00859-7</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-026-00859-7</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-026-00851-1">
             <title>Kitaev interaction and proximate higher-order skyrmion crystal in the triangular lattice van der Waals antiferromagnet Ni&lt;b&gt;I&lt;/b&gt;&lt;sub&gt;&lt;b&gt;2&lt;/b&gt;&lt;/sub&gt;</title>
@@ -146,21 +161,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-026-00847-x</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-026-00847-x</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-025-00844-6">
-            <title>Magnetization orientation-dependent Shubnikov-de Haas oscillations in ferromagnetic Weyl semimetal Co&lt;sub&gt;3&lt;/sub&gt;Sn&lt;sub&gt;2&lt;/sub&gt;S&lt;sub&gt;2&lt;/sub&gt;</title>
-            <link>https://www.nature.com/articles/s41535-025-00844-6</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 12 January 2026; &lt;a href="https://www.nature.com/articles/s41535-025-00844-6"&gt;doi:10.1038/s41535-025-00844-6&lt;/a&gt;&lt;/p&gt;Magnetization orientation-dependent Shubnikov-de Haas oscillations in ferromagnetic Weyl semimetal Co&lt;sub&gt;3&lt;/sub&gt;Sn&lt;sub&gt;2&lt;/sub&gt;S&lt;sub&gt;2&lt;/sub&gt;</content:encoded>
-            <dc:title>Magnetization orientation-dependent Shubnikov-de Haas oscillations in ferromagnetic Weyl semimetal Co&lt;sub&gt;3&lt;/sub&gt;Sn&lt;sub&gt;2&lt;/sub&gt;S&lt;sub&gt;2&lt;/sub&gt;</dc:title>
-            <dc:creator>Linda Ye</dc:creator><dc:creator>Jorge I. Facio</dc:creator><dc:creator>Madhav Prasad Ghimire</dc:creator><dc:creator>Mun K. Chan</dc:creator><dc:creator>Jhih-Shih You</dc:creator><dc:creator>David C. Bell</dc:creator><dc:creator>Manuel Richter</dc:creator><dc:creator>Jeroen van den Brink</dc:creator><dc:creator>Joseph G. Checkelsky</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-025-00844-6</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2026-01-12; | doi:10.1038/s41535-025-00844-6</dc:source>
-            <dc:date>2026-01-12</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-025-00844-6</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-025-00844-6</prism:url>
         </item>
     
 </rdf:RDF>
