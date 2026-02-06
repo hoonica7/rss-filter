@@ -18,7 +18,11 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-026-00323-3"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-10053-7"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-09951-7"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-026-10101-w"/>
                 
@@ -28,9 +32,9 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-10067-1"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-026-00312-6"/>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-026-00168-w"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41586-026-10177-4"/>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-026-00312-6"/>
                 
                     </rdf:Seq>
         </items>
@@ -40,6 +44,21 @@
         <url>https://www.nature.com/uploads/product/nature/rss.png</url>
         <link>http://feeds.nature.com/nature/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/d41586-026-00323-3">
+            <title>Not just a chip off the old block: nanoparticles reveal odd traits</title>
+            <link>https://www.nature.com/articles/d41586-026-00323-3</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 05 February 2026; &lt;a href="https://www.nature.com/articles/d41586-026-00323-3"&gt;doi:10.1038/d41586-026-00323-3&lt;/a&gt;&lt;/p&gt;Melting point of nanoscale sodium particles differs to that of bulk sodium.</content:encoded>
+            <dc:title>Not just a chip off the old block: nanoparticles reveal odd traits</dc:title>
+            
+            <dc:identifier>doi:10.1038/d41586-026-00323-3</dc:identifier>
+            <dc:source>Nature, Published online: 2026-02-05; | doi:10.1038/d41586-026-00323-3</dc:source>
+            <dc:date>2026-02-05</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/d41586-026-00323-3</prism:doi>
+            <prism:url>https://www.nature.com/articles/d41586-026-00323-3</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41586-025-10053-7">
             <title>Large-scale analogue quantum simulation using atom dot arrays</title>
@@ -54,6 +73,21 @@
             <prism:publicationName>Nature</prism:publicationName>
             <prism:doi>10.1038/s41586-025-10053-7</prism:doi>
             <prism:url>https://www.nature.com/articles/s41586-025-10053-7</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41586-025-09951-7">
+            <title>Discovery Learning predicts battery cycle life from minimal experiments</title>
+            <link>https://www.nature.com/articles/s41586-025-09951-7</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 04 February 2026; &lt;a href="https://www.nature.com/articles/s41586-025-09951-7"&gt;doi:10.1038/s41586-025-09951-7&lt;/a&gt;&lt;/p&gt;Discovery Learning, a machine learning approach integrating active learning, physics-guided learning and zero-shot learning into a human-like reasoning loop, is described for predicting the battery cycle life of new designs from minimal experiments, reducing prototyping requirements.</content:encoded>
+            <dc:title>Discovery Learning predicts battery cycle life from minimal experiments</dc:title>
+            <dc:creator>Jiawei Zhang</dc:creator><dc:creator>Yifei Zhang</dc:creator><dc:creator>Baozhao Yi</dc:creator><dc:creator>Yao Ren</dc:creator><dc:creator>Qi Jiao</dc:creator><dc:creator>Hanyu Bai</dc:creator><dc:creator>Weiran Jiang</dc:creator><dc:creator>Ziyou Song</dc:creator>
+            <dc:identifier>doi:10.1038/s41586-025-09951-7</dc:identifier>
+            <dc:source>Nature, Published online: 2026-02-04; | doi:10.1038/s41586-025-09951-7</dc:source>
+            <dc:date>2026-02-04</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/s41586-025-09951-7</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41586-025-09951-7</prism:url>
         </item>
     
         <item rdf:about="https://www.nature.com/articles/s41586-026-10101-w">
@@ -116,6 +150,21 @@
             <prism:url>https://www.nature.com/articles/s41586-025-10067-1</prism:url>
         </item>
     
+        <item rdf:about="https://www.nature.com/articles/d41586-026-00168-w">
+            <title>Machine learning slashes the testing needed to work out battery lifetimes</title>
+            <link>https://www.nature.com/articles/d41586-026-00168-w</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 04 February 2026; &lt;a href="https://www.nature.com/articles/d41586-026-00168-w"&gt;doi:10.1038/d41586-026-00168-w&lt;/a&gt;&lt;/p&gt;A machine-learning method that reasons and adapts has been developed to solve one of the most time-consuming bottlenecks in battery development.</content:encoded>
+            <dc:title>Machine learning slashes the testing needed to work out battery lifetimes</dc:title>
+            <dc:creator>Chao Hu</dc:creator>
+            <dc:identifier>doi:10.1038/d41586-026-00168-w</dc:identifier>
+            <dc:source>Nature, Published online: 2026-02-04; | doi:10.1038/d41586-026-00168-w</dc:source>
+            <dc:date>2026-02-04</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/d41586-026-00168-w</prism:doi>
+            <prism:url>https://www.nature.com/articles/d41586-026-00168-w</prism:url>
+        </item>
+    
         <item rdf:about="https://www.nature.com/articles/d41586-026-00312-6">
             <title>Quantum computers will finally be useful: what’s behind the revolution</title>
             <link>https://www.nature.com/articles/d41586-026-00312-6</link>
@@ -129,21 +178,6 @@
             <prism:publicationName>Nature</prism:publicationName>
             <prism:doi>10.1038/d41586-026-00312-6</prism:doi>
             <prism:url>https://www.nature.com/articles/d41586-026-00312-6</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41586-026-10177-4">
-            <title>Long-lived remote ion-ion entanglement for scalable quantum repeaters</title>
-            <link>https://www.nature.com/articles/s41586-026-10177-4</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 02 February 2026; &lt;a href="https://www.nature.com/articles/s41586-026-10177-4"&gt;doi:10.1038/s41586-026-10177-4&lt;/a&gt;&lt;/p&gt;Long-lived remote ion-ion entanglement for scalable quantum repeaters</content:encoded>
-            <dc:title>Long-lived remote ion-ion entanglement for scalable quantum repeaters</dc:title>
-            <dc:creator>Wen-Zhao Liu</dc:creator><dc:creator>Ya-Bin Zhou</dc:creator><dc:creator>Jiu-Peng Chen</dc:creator><dc:creator>Bin Wang</dc:creator><dc:creator>Ao Teng</dc:creator><dc:creator>Xiao-Wen Han</dc:creator><dc:creator>Guang-Cheng Liu</dc:creator><dc:creator>Zhi-Jiong Zhang</dc:creator><dc:creator>Yi Yang</dc:creator><dc:creator>Feng-Guang Liu</dc:creator><dc:creator>Chao-Hui Xue</dc:creator><dc:creator>Bo-Wen Yang</dc:creator><dc:creator>Jin Yang</dc:creator><dc:creator>Chao Zeng</dc:creator><dc:creator>Du-Ruo Pan</dc:creator><dc:creator>Ming-Yang Zheng</dc:creator><dc:creator>Xingjian Zhang</dc:creator><dc:creator>Shen Cao</dc:creator><dc:creator>Yi-Zheng Zhen</dc:creator><dc:creator>You Xiao</dc:creator><dc:creator>Hao Li</dc:creator><dc:creator>Lixing You</dc:creator><dc:creator>Xiongfeng Ma</dc:creator><dc:creator>Qi Zhao</dc:creator><dc:creator>Feihu Xu</dc:creator><dc:creator>Ye Wang</dc:creator><dc:creator>Yong Wan</dc:creator><dc:creator>Qiang Zhang</dc:creator><dc:creator>Jian-Wei Pan</dc:creator>
-            <dc:identifier>doi:10.1038/s41586-026-10177-4</dc:identifier>
-            <dc:source>Nature, Published online: 2026-02-02; | doi:10.1038/s41586-026-10177-4</dc:source>
-            <dc:date>2026-02-02</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/s41586-026-10177-4</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41586-026-10177-4</prism:url>
         </item>
     
         </rdf:RDF>
