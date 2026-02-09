@@ -30,6 +30,8 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-025-10067-1"/>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-026-00312-6"/>
+                
                     </rdf:Seq>
         </items>
     </channel>
@@ -127,6 +129,21 @@
             <prism:publicationName>Nature</prism:publicationName>
             <prism:doi>10.1038/s41586-025-10067-1</prism:doi>
             <prism:url>https://www.nature.com/articles/s41586-025-10067-1</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/d41586-026-00312-6">
+            <title>Quantum computers will finally be useful: what’s behind the revolution</title>
+            <link>https://www.nature.com/articles/d41586-026-00312-6</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 04 February 2026; &lt;a href="https://www.nature.com/articles/d41586-026-00312-6"&gt;doi:10.1038/d41586-026-00312-6&lt;/a&gt;&lt;/p&gt;A string of surprising advances suggests usable quantum computers could be here in a decade.</content:encoded>
+            <dc:title>Quantum computers will finally be useful: what’s behind the revolution</dc:title>
+            <dc:creator>Davide Castelvecchi</dc:creator>
+            <dc:identifier>doi:10.1038/d41586-026-00312-6</dc:identifier>
+            <dc:source>Nature, Published online: 2026-02-04; | doi:10.1038/d41586-026-00312-6</dc:source>
+            <dc:date>2026-02-04</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/d41586-026-00312-6</prism:doi>
+            <prism:url>https://www.nature.com/articles/d41586-026-00312-6</prism:url>
         </item>
     
         </rdf:RDF>
