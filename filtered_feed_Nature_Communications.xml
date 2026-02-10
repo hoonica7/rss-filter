@@ -21,9 +21,13 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-69389-x"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-69406-z"/>
                 
-                    </rdf:Seq>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-69272-9"/>
+                
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/ncomms/rss.png">
@@ -31,6 +35,21 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-026-69389-x">
+            <title>Spin-exciton coupling modified by interfacial magnetic interactions in a van der Waals heterostructure</title>
+            <link>https://www.nature.com/articles/s41467-026-69389-x</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 10 February 2026; &lt;a href="https://www.nature.com/articles/s41467-026-69389-x"&gt;doi:10.1038/s41467-026-69389-x&lt;/a&gt;&lt;/p&gt;Excitons are important excitations in solids with potential applications in quantum and spintronic technologies. The authors achieve bidirectional control of exciton energy in a twodimensional antiferromagnetic semiconductor via interfacial spin-exciton coupling.</content:encoded>
+            <dc:title>Spin-exciton coupling modified by interfacial magnetic interactions in a van der Waals heterostructure</dc:title>
+            <dc:creator>Weican Lan</dc:creator><dc:creator>Chaocheng Liu</dc:creator><dc:creator>Yajuan Feng</dc:creator><dc:creator>Ruiqi Liu</dc:creator><dc:creator>Yafei Chu</dc:creator><dc:creator>Lu Cheng</dc:creator><dc:creator>Chao Wang</dc:creator><dc:creator>Huijuan Wang</dc:creator><dc:creator>Minghui Fan</dc:creator><dc:creator>Zixun Zhang</dc:creator><dc:creator>Yuran Niu</dc:creator><dc:creator>Jheng-Cyuan Lin</dc:creator><dc:creator>Francesco Maccherozzi</dc:creator><dc:creator>Hengli Duan</dc:creator><dc:creator>Wensheng Yan</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-026-69389-x</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-02-10; | doi:10.1038/s41467-026-69389-x</dc:source>
+            <dc:date>2026-02-10</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-026-69389-x</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-026-69389-x</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41467-026-69406-z">
             <title>Publisher Correction: [Hg&lt;sub&gt;3&lt;/sub&gt;Se&lt;sub&gt;2&lt;/sub&gt;]&lt;sup&gt;2-&lt;/sup&gt; cluster drives giant optical anisotropy and broad infrared transparency</title>
@@ -47,4 +66,19 @@
             <prism:url>https://www.nature.com/articles/s41467-026-69406-z</prism:url>
         </item>
     
-        </rdf:RDF>
+        <item rdf:about="https://www.nature.com/articles/s41467-026-69272-9">
+            <title>Phase engineering of relaxor ferroelectricity in van der Waals crystal</title>
+            <link>https://www.nature.com/articles/s41467-026-69272-9</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 09 February 2026; &lt;a href="https://www.nature.com/articles/s41467-026-69272-9"&gt;doi:10.1038/s41467-026-69272-9&lt;/a&gt;&lt;/p&gt;Relaxor ferroelectricity is achieved in two-dimensional CuInP2(S1−xSex)6 crystal via controlling the monoclinic and trigonal coexist phase, enabling memristors with more analog states and lower operating voltages.</content:encoded>
+            <dc:title>Phase engineering of relaxor ferroelectricity in van der Waals crystal</dc:title>
+            <dc:creator>Tao Yang</dc:creator><dc:creator>Yinchang Ma</dc:creator><dc:creator>Dongxing Zheng</dc:creator><dc:creator>Weili Deng</dc:creator><dc:creator>Chen Liu</dc:creator><dc:creator>Maolin Chen</dc:creator><dc:creator>Kairan Mai</dc:creator><dc:creator>Xiang Lv</dc:creator><dc:creator>Xiaowen Zhang</dc:creator><dc:creator>Jingkai Xu</dc:creator><dc:creator>Baoyu Wang</dc:creator><dc:creator>Yan Li</dc:creator><dc:creator>Meng Tang</dc:creator><dc:creator>Guo Tian</dc:creator><dc:creator>Weiqing Yang</dc:creator><dc:creator>Xixiang Zhang</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-026-69272-9</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-02-09; | doi:10.1038/s41467-026-69272-9</dc:source>
+            <dc:date>2026-02-09</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-026-69272-9</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-026-69272-9</prism:url>
+        </item>
+    
+</rdf:RDF>
