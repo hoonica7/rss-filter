@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00854-y"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00860-0"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00853-z"/>
@@ -30,8 +32,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00849-9"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00852-0"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -40,6 +40,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-026-00854-y">
+            <title>Vanishing ordered moment in the frustrated triangular lattice antiferromagnet CuNdO&lt;sub&gt;2&lt;/sub&gt;</title>
+            <link>https://www.nature.com/articles/s41535-026-00854-y</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 11 February 2026; &lt;a href="https://www.nature.com/articles/s41535-026-00854-y"&gt;doi:10.1038/s41535-026-00854-y&lt;/a&gt;&lt;/p&gt;Vanishing ordered moment in the frustrated triangular lattice antiferromagnet CuNdO&lt;sub&gt;2&lt;/sub&gt;</content:encoded>
+            <dc:title>Vanishing ordered moment in the frustrated triangular lattice antiferromagnet CuNdO&lt;sub&gt;2&lt;/sub&gt;</dc:title>
+            <dc:creator>Jonathan Gaudet</dc:creator><dc:creator>Dalmau Reig-i-Plessis</dc:creator><dc:creator>Bogeng Wen</dc:creator><dc:creator>Thomas J. Hicken</dc:creator><dc:creator>Jonas A. Krieger</dc:creator><dc:creator>Jan Peter Embs</dc:creator><dc:creator>Hubertus Luetkens</dc:creator><dc:creator>Adam A. Aczel</dc:creator><dc:creator>Stuart A. Calder</dc:creator><dc:creator>Matthew B. Stone</dc:creator><dc:creator>Hae-Young Kee</dc:creator><dc:creator>Alannah M. Hallas</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-026-00854-y</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2026-02-11; | doi:10.1038/s41535-026-00854-y</dc:source>
+            <dc:date>2026-02-11</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-026-00854-y</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-026-00854-y</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-026-00860-0">
             <title>Much ado about MOFs: metal-organic-frameworks as quantum materials</title>
@@ -129,21 +144,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-026-00849-9</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-026-00849-9</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-026-00852-0">
-            <title>Field-tailoring quantum materials via magneto-synthesis: metastable metallic and magnetically suppressed phases in a trimer iridate</title>
-            <link>https://www.nature.com/articles/s41535-026-00852-0</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 20 January 2026; &lt;a href="https://www.nature.com/articles/s41535-026-00852-0"&gt;doi:10.1038/s41535-026-00852-0&lt;/a&gt;&lt;/p&gt;Field-tailoring quantum materials via magneto-synthesis: metastable metallic and magnetically suppressed phases in a trimer iridate</content:encoded>
-            <dc:title>Field-tailoring quantum materials via magneto-synthesis: metastable metallic and magnetically suppressed phases in a trimer iridate</dc:title>
-            <dc:creator>Tristan R. Cao</dc:creator><dc:creator>Hengdi Zhao</dc:creator><dc:creator>Xudong Huai</dc:creator><dc:creator>Arabella Quane</dc:creator><dc:creator>Thao T. Tran</dc:creator><dc:creator>Feng Ye</dc:creator><dc:creator>Gang Cao</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-026-00852-0</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2026-01-20; | doi:10.1038/s41535-026-00852-0</dc:source>
-            <dc:date>2026-01-20</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-026-00852-0</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-026-00852-0</prism:url>
         </item>
     
 </rdf:RDF>
