@@ -7,277 +7,344 @@
     <atom:link href="http://rss.arxiv.org/rss/cond-mat" rel="self" type="application/rss+xml"/>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <language>en-us</language>
-    <lastBuildDate>Thu, 12 Feb 2026 02:47:52 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Feb 2026 05:00:13 +0000</lastBuildDate>
     <managingEditor>rss-help@arxiv.org</managingEditor>
-    <pubDate>Wed, 11 Feb 2026 00:00:00 -0500</pubDate>
+    <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
     <skipDays>
       <day>Saturday</day>
       <day>Sunday</day>
     </skipDays>
     <item>
-      <title>Predicting magnetism with first-principles AI</title>
-      <link>https://arxiv.org/abs/2602.09093</link>
-      <description>arXiv:2602.09093v1 Announce Type: new 
-Abstract: Computational discovery of magnetic materials remains challenging because magnetism arises from the competition between kinetic energy and Coulomb interaction that is often beyond the reach of standard electronic-structure methods. Here we tackle this challenge by directly solving the many-electron Schr\"odinger equation with neural-network variational Monte Carlo, which provides a highly expressive variational wavefunction for strongly correlated systems. Applying this technique to transition metal dichalcogenide moir\'e semicondutors, we predict itinerant ferromagnetism in WSe$_2$/WS$_2$ and an antiferromagnetic insulator in twisted $\Gamma$-valley homobilayer, using the same neural network without any physics input beyond the microscopic Hamiltonian. Crucially, both types of magnetic states are obtained from a single calculation within the $S_z=0$ sector, removing the need to compute and compare multiple $S_z$ sectors. This significantly reduces computational cost and paves the way for faster and more reliable magnetic material design.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2602.09093v1</guid>
+      <title>Superconductivity in strongly correlated systems for local repulsive interactions</title>
+      <link>https://arxiv.org/abs/2602.10351</link>
+      <description>arXiv:2602.10351v1 Announce Type: new 
+Abstract: The understanding of the mechanisms responsible for superconductivity in strongly correlated systems is an interesting and important subject in condensed matter physics. Several theoretical proposals were considered for these systems. The Coulomb interaction between electrons allow a new approach to study this problem. In this paper, we use a usual Hubbard model with a local repulsive interaction to describe a 2D system. The system of equations are solved using the Green's functions method, within a Hubbard-I mean field approximation, which allows to treat the strong interaction limit. We consider both cases of attractive and repulsive interactions and obtain the zero temperature phase diagram of the model. Our results show, in the repulsive case, the existence of a superconducting ground state mediated by the kinetic electronic energy and described by a non-local order parameter. A minimum value of the repulsive interaction $U_{min}$ is required to create a pairing state. At finite temperatures, for strong interactions, the critical temperature $T_c$ shows a saturation similar to the Bose-Einstein condensation observed for strong attractive interactions.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.10351v1</guid>
       <category>cond-mat.str-el</category>
-      <category>cs.LG</category>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 -0500</pubDate>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
       <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
-      <dc:creator>Max Geier, Liang Fu</dc:creator>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Humberto M. Silva, Francisco Dinola Neto, Griffith M. A. R., Minos A. Neto, Octavio D. R. Salmon, Mucio A. Continentino, Amos Troper</dc:creator>
     </item>
     <item>
-      <title>Adsorption of Water on Pristine Graphene: A van der Waals Density Functional Study with the vdW-C09 Approach</title>
-      <link>https://arxiv.org/abs/2602.09184</link>
-      <description>arXiv:2602.09184v1 Announce Type: new 
-Abstract: Understanding how water interacts with graphene at the molecular level is essential for advancing nanomaterial applications in filtration, catalysis, and environmental technologies. This study establishes a quantitative baseline for assessing how structural defects, dopants, or surface functionalization may enhance water adsorption, providing insights for the rational design of graphene-based materials in water purification, sensing, and nanofluidic applications. In this work, we employed density functional theory (DFT) with the vdW-C09 functional to investigate the adsorption of a single water molecule on pristine graphene, accurately accounting for long-range dispersion forces. Three high-symmetry adsorption sites-the center of the hexagonal ring, the C-C bond, and the top site-were explored in combination with three molecular orientations: Down, H-bond, and Up configurations. The calculated adsorption energies range from -93 to -145 meV (milli-electron volts), indicating that the interaction is dominated by weak van der Waals forces characteristic of physisorption. The most stable configuration corresponds to the Down orientation above the center of the hexagonal ring, with an adsorption energy of -145 meV and an equilibrium distance of 3.27 A (angstrom), defined as the vertical separation between the oxygen atom of the water molecule and the graphene plane. These results are in close agreement with previous theoretical studies and confirm the non-reactive and hydrophobic nature of pristine graphene.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2602.09184v1</guid>
-      <category>cond-mat.mtrl-sci</category>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 -0500</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
-      <dc:creator>Aline Oliveira Santos, Bruno H. S. Mendon\c{c}a, Elizane E. de Moraes</dc:creator>
-    </item>
-    <item>
-      <title>Interplay of Quantum Size Effect and Tensile Strain on Surface Morphology of Sn(100) Islands</title>
-      <link>https://arxiv.org/abs/2602.09361</link>
-      <description>arXiv:2602.09361v1 Announce Type: new 
-Abstract: The quantum size effect (QSE) and strain effect are two key factors influencing the surface morphology of thin films, which can increase film surface roughness through QSE-induced thickness oscillation and strain-induced island formation, respectively. Surface roughness usually manifests in the early stages of film growth and diminishes beyond a critical thickness. In this work, we employ molecular beam epitaxy (MBE) to grow Sn(100) islands with varying thickness N on bilayer graphene-terminated 6H-SiC(0001) substrates. Scanning tunneling microscopy and spectroscopy measurements reveal an inverse surface roughness effect that highlights the interplay of QSE and misfit strain in shaping the surface morphology of Sn(100) islands. For N =&lt; 10, the islands exhibit flat surfaces, while for N &gt;= 26, the island surfaces become corrugated and patterned. For the intermediate range, i.e., 12 =&lt; N =&lt;24, both flat and patterned surfaces coexist, with the percentage coverage of the patterned surface oscillating as a function of N. By performing density functional theory calculations, we demonstrate that the unusual surface pattern evolution in our MBE-grown Sn(100) islands is a result of the interplay between QSE-induced surface roughing and tensile strain-induced smoothening effect.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2602.09361v1</guid>
+      <title>Excitons in van der Waals magnetic materials</title>
+      <link>https://arxiv.org/abs/2602.10409</link>
+      <description>arXiv:2602.10409v1 Announce Type: new 
+Abstract: Two-dimensional magnetic semiconductors provide a unique materials platform in which long-range magnetic order coexists with strongly bound excitons. Because excitonic states and magnetic moments originate from the same electronic orbitals and are coupled through intrinsic exchange interactions, optical excitations in these systems exhibit pronounced sensitivity to magnetic order. Recent experiments have revealed unusually strong magneto-optical responses, as well as direct coupling between excitons and magnons, establishing new routes for controlling light-matter interactions with spin degrees of freedom. This Review surveys key developments in the field, focusing on representative material systems, experimental signatures of exciton-magnetism coupling, and the theoretical frameworks used to describe these phenomena. We conclude with perspectives on how this rapidly evolving field could enable next-generation optoelectronic and quantum technologies leveraging the coupled dynamics of light, charge, and spin.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.10409v1</guid>
       <category>cond-mat.mtrl-sci</category>
       <category>cond-mat.mes-hall</category>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 -0500</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
-      <dc:creator>Bing Xia, Xiaoyin Li, Hongyuan Chen, Bo Yang, Jie Cai, Stephen Paolini, Zihao Wang, Zi-Jie Yan, Hao Yang, Xiaoxue Liu, Liang Liu, Dandan Guan, Shiyong Wang, Yaoyi Li, Canhua Liu, Hao Zheng, Cui-Zu Chang, Feng Liu, Jinfeng Jia</dc:creator>
-    </item>
-    <item>
-      <title>Surface-State-Driven Anomalous Hall Effect in Altermagnetic MnTe Films</title>
-      <link>https://arxiv.org/abs/2602.09363</link>
-      <description>arXiv:2602.09363v1 Announce Type: new 
-Abstract: Altermagnets have recently emerged as a new class of magnetic materials that combine compensated magnetic order with spin-split electronic band structures. In this work, we employ molecular beam epitaxy to grow MnTe thin films with controlled thickness on InP(111)A substrates. By performing angle-resolved photoemission spectroscopy measurements, we observe a large spin splitting of ~230 meV for bulk bands well below the Fermi level and identify surface states that cross the Fermi level. Electrical transport measurements reveal that a robust anomalous Hall (AH) effect persists down to 2 K and an AH sign reversal occurs near 175 K. By systematically tuning film thickness, growth conditions, and interfacial structure, we demonstrate that the AH response in MnTe films originates from the Berry curvature of surface states rather than from bulk bands. Our first-principles calculations reveal that this surface-state-driven AH effect is imprinted by the bulk altermagnetic order and remains unchanged for terminations with opposite Mn magnetic orientations. Our results establish a unique surface transport probe of bulk altermagnetism, demonstrate interface engineering as an effective route to generate and control the AH effect in altermagnets, and provide a unified understanding of the AH response in altermagentic MnTe films.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2602.09363v1</guid>
-      <category>cond-mat.mtrl-sci</category>
-      <category>cond-mat.mes-hall</category>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 -0500</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
-      <dc:creator>Ling-Jie Zhou, Zi-Jie Yan, Hongtao Rong, Yufei Zhao, Pu Xiao, Lok-Kan Lai, Zhiyuan Xi, Ke Wang, Tibendra Adhikari, Ganesh P. Tiwari, Zhong Lin, Pascal Manue, Fabio Orlandi, Dmitry Khalyavin, Alexander J. Grutter, Chao-Xing Liu, Binghai Yan, Cui-Zu Chang</dc:creator>
-    </item>
-    <item>
-      <title>Three-dimensional real-space electron dynamics in graphene driven by strong laser fields</title>
-      <link>https://arxiv.org/abs/2602.09440</link>
-      <description>arXiv:2602.09440v1 Announce Type: new 
-Abstract: We theoretically investigate the three-dimensional (3D) electron dynamics of graphene in real space under strong laser fields using time-dependent density functional theory (TDDFT). We successfully reproduce the reversal of current direction originating from the cancellation of two oppositely directed residual currents, as previously predicted by Morimoto et al. [Y. Morimoto et al., New J. Phys. 24, 033051 (2022)]. By distinguishing contributions from individual orbitals, our results validate the two-level system approximation and also emphasize that the first-principles approach agrees better with experimental results for light-driven residual current, especially in extremely strong fields. Furthermore, our 3D model reveals that the real-space atomic-scale current induced by strong laser fields is concentrated slightly above and below the graphene basal plane, rather than strictly within it. The two oppositely directed currents exhibit a pronounced height separation in the out-of-plane direction, indicating that the ring current is not confined to the graphene plane but forms a rotating 3D circulation loop which is absent in the reduced-dimensional model.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2602.09440v1</guid>
-      <category>cond-mat.mes-hall</category>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 -0500</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
-      <dc:creator>S. Li, M. Tani, A. Hashmi, K. L. Ishikawa</dc:creator>
-    </item>
-    <item>
-      <title>Competing magnetic states in a non-coplanar Kagome magnet</title>
-      <link>https://arxiv.org/abs/2602.09479</link>
-      <description>arXiv:2602.09479v1 Announce Type: new 
-Abstract: Non-collinear Kagome antiferromagnets (AFMs) Mn3X (X = Sn, Ga, Ge, Ir, Pt) can generate an anomalous Hall effect (AHE) despite vanishing net magnetization, enabled by broken time-reversal and inversion symmetries. However, strong in-plane anisotropy has limited studies of the AFM-AHE and electronic applications to coplanar spin configurations. Non-coplanar spin textures in these systems have been realized only in low temperature spin-glass states or at interfaces with heavy metals. Here, we report an intrinsic non-coplanar spin configuration persisting up to 400 K in cubic-phase Mn3Ge, originating from coexisting symmetric and antisymmetric exchange interactions. Competing magnetic states associated with this non-coplanar spin configuration give rise to an unconventional AHE with a magnetic-field-induced sign reversal and a hump-like feature. Our findings establish a platform for non-coplanar magnetism in AFM spintronics.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2602.09479v1</guid>
-      <category>cond-mat.mtrl-sci</category>
-      <category>cond-mat.mes-hall</category>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 -0500</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
-      <dc:creator>Xiaodong Hu, Amar Fakhredine, Roger Guzman, Martin Frentrup, Jinan Shi, Giulio I. Lampronti, Sami El-Khatib, Waichuen Tse, Laura Gorzawski, Angelo Di Bernardo, Nadia Stelmashenko, Wu Zhou, Mehmet Egilmez, Danfeng Li, Grzegorz P. Mazur, Mario Cuoco, Carmine Autieri, Jason W. A. Robinson</dc:creator>
-    </item>
-    <item>
-      <title>Interaction-driven spin polaron in itinerant flat-band ferromagnetism</title>
-      <link>https://arxiv.org/abs/2602.09545</link>
-      <description>arXiv:2602.09545v1 Announce Type: new 
-Abstract: Interaction effects are dramatically enhanced in flat-band systems due to quenched kinetics, facilitating the binding of single excitations into composite quasiparticles. In this work, we present a comprehensive study of spin polarons over the entire momentum and energy space within the Mielke-Tasaki model using projected exact diagonalization. We identify distinct low-energy spin polarons at momenta q=0 and q=\pi, and also find multiple high-energy branches of spin polaron. It is demonstrated that the interaction-induced Hartree dispersion plays a decisive role in determining the momentum sector of low-energy spin polarons. Furthermore, by introducing a finite bandwidth, we unravel the underlying binding mechanisms: the formation of low-energy spin polarons is governed by the conventional virtual exchange mechanism, whereas the high-energy spin polarons arise from a joint effect of the effective attraction and virtual exchange. Our results suggest promising avenues for realizing spin polaron crystals and exploring novel superconducting pairing mechanisms in moir\'e materials like twisted WSe2 and MoTe2.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2602.09545v1</guid>
-      <category>cond-mat.str-el</category>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 -0500</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
-      <dc:creator>Wei-Tao Zhou, Zhao-Yang Dong, Jian-Xin Li</dc:creator>
-    </item>
-    <item>
-      <title>Chiralometer: Direct Torque Detection of Crystal Chirality</title>
-      <link>https://arxiv.org/abs/2602.09556</link>
-      <description>arXiv:2602.09556v1 Announce Type: new 
-Abstract: Chirality governs phenomena ranging from chemical reactions to the topology of quasiparticle charge carriers. However, a direct macroscopic probe for crystal chirality remains a significant challenge, especially in time reversal symmetric systems with weak circular dichroism signal. Here, we propose the ``Chiralometer'', a mechanical detection method that probes chirality by driving angular momentum carriers out of equilibrium. Using first-principles calculations and semiclassical transport theory, we demonstrate that a temperature gradient in insulators or an electric field in metals induces uncompensated angular momentum in phonons and electrons, respectively. This imbalance generates a macroscopic mechanical torque ($\tau \sim 10^{-11} N \cdot m$) well within the sensitivity of modern torque magnetometry and cantilever-based sensors. We identify robust signatures in chiral crystals such as Te, SiO$_2$, and the topological semimetal CoSi. Our work establishes mechanical torque as a fundamental order parameter for chirality, offering a transformative tool for orbitronics and chiral quantum materials.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2602.09556v1</guid>
-      <category>cond-mat.mtrl-sci</category>
-      <category>cond-mat.other</category>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 -0500</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
-      <dc:creator>Nikolai Peshcherenko, Ning Mao, Claudia Felser, Yang Zhang</dc:creator>
-    </item>
-    <item>
-      <title>Pressure-induced superconductivity beyond magnetic quantum criticality in a Kondo ferromagnet</title>
-      <link>https://arxiv.org/abs/2602.09654</link>
-      <description>arXiv:2602.09654v1 Announce Type: new 
-Abstract: Quantum phase transitions are an established setting for emergent phenomena driven by strong electronic correlations, including strange metals and unconventional superconductivity. These have been explored extensively in Kondo lattice materials tuned to an antiferromagnetic quantum critical point (QCP), but superconductivity emerging near ferromagnetic quantum criticality is not yet observed, and the conditions under which it occurs in proximity to ferromagnetism are undetermined. Here, we report a new setting for superconductivity in the ferromagnetic Kondo-lattice material Ce5CoGe2, where there is a ferromagnetic ground state at ambient pressure, which evolves to antiferromagnetism under applied pressures. The antiferromagnetic transition is suppressed to a zero-temperature QCP, which is accompanied by strange-metal behavior. Superconductivity does not occur at the QCP, but instead appears at pressures beyond the magnetic instability. These findings suggest that Ce5CoGe2 represents a distinct class of correlated materials exhibiting a unique scenario for the emergence of superconductivity, likely associated with unconventional pairing mechanisms beyond spin-fluctuations.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2602.09654v1</guid>
-      <category>cond-mat.supr-con</category>
-      <category>cond-mat.str-el</category>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 -0500</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
-      <dc:creator>Yanan Zhang, Yongjun Zhang, Jiawen Zhang, Kaixin Ye, Dajun Su, Yanen Huang, Zhaoyang Shan, Jiyuan Li, Rui Li, Ye Chen, Xin Lu, Lin Jiao, Yu Liu, Michael Smidman, Frank Steglich, Huiqiu Yuan</dc:creator>
-    </item>
-    <item>
-      <title>Raman Spectroscopic Investigation of Kitaev Quantum Spin Liquids</title>
-      <link>https://arxiv.org/abs/2602.09709</link>
-      <description>arXiv:2602.09709v1 Announce Type: new 
-Abstract: Quantum spin liquids, a highly topologically entangled, dynamically correlated state where quantum fluctuations preclude any long-range ordering down to absolute zero. In the search for a topologically robust qubit, the scientific community has been in continuous hunt for real quantum spin liquid systems. Alexei Kitaev in his exactly solvable model for a spin-1/2 two-dimensional honeycomb lattice, presented a system that hosts a topologically protected state (Majorana zero-modes). Under an applied external field, the Kitaev spin liquids turn into a topologically non-trivial chiral spin-liquid state with non-abelian anionic excitations, which is crucial for quantum computing. Earlier theoretical predictions advocated that Kitaev physics can be realized in spin-orbit-coupled Mott insulators such as honeycomb irradiates and ruthenates. However, the experimental findings continuously challenge the theoretical aspects, indicating the presence of non-Kitaev interactions in real materials, where the dimensionality, disorder (vacancy), chemical composition, generalized spin-S, and external perturbations (pressure, magnetic field, temperature) can actively tune the Kitaev interactions and the ground state excitations. In this review article, a comprehensive discussion is included with an updated literature survey in the context of the potential of Raman spectroscopy as a probe for Kitaev quantum spin liquids.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2602.09709v1</guid>
-      <category>cond-mat.str-el</category>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 -0500</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
-      <dc:creator>Vivek Kumar, Pradeep Kumar</dc:creator>
-    </item>
-    <item>
-      <title>MoireStudio: A Universal Twisted Electronic Structure Calculation Package</title>
-      <link>https://arxiv.org/abs/2602.09739</link>
-      <description>arXiv:2602.09739v1 Announce Type: new 
-Abstract: Twistronics is an emerging and captivating field in condensed matter physics and material science. However, accurately and efficiently calculating the electronic structures of twisted systems remains a significant challenge. To address this, we have developed MoireStudio, a universal Python-based computational package for twisted electronic structures. Its functionalities include commensurate structure search, structure generation, parameterization, and construction for tight-binding models and continuum models, and the precise incorporation of full relaxation effects. The package is applicable to arbitrary combinations of two-dimensional materials, including rectangular lattices and heterostructures. User-friendly and easy to use, MoireStudio supports parallel large-scale computations, provides visualization capabilities, and offers interfaces with third-party software. It is poised to become a convenient and powerful tool for researchers in twistronics fields.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2602.09739v1</guid>
-      <category>cond-mat.mtrl-sci</category>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 -0500</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
-      <dc:creator>Junxi Yu, Yichen Liu, Cheng-Cheng Liu</dc:creator>
-    </item>
-    <item>
-      <title>Refined DFT recipe and renormalisation of band-edge parameters for electrons in monolayer MoS$_2$ informed by the measured spin-orbit splitting</title>
-      <link>https://arxiv.org/abs/2602.09858</link>
-      <description>arXiv:2602.09858v1 Announce Type: new 
-Abstract: Conduction band-edge spin-orbit splitting (SOS) in monolayer transition metal dichalcogenides determines a competition between bright and dark excitons and sets conditions for spintronics applications of these semiconductors. Here, we report the SOS measurement for electrons in monolayer MoS$_2$, found from the threshold density, $n_*$, for the upper spin-orbit-split band population, which exceeds by an order of magnitude the values expected from the conventional density functional theory (DFT). Theoretically, half of the observed value can be attributed to the exchange enhancement of SOS in a finite-density electron gas, but explaining the rest requires refining the DFT approach. As the conduction band SOS in MoS$_2$ is set by a delicate balance between the contribution of sulphur $p_x$ and $p_y$ orbitals and $d_{z^2}-d_{xz}$ and $d_{z^2}-d_{yz}$ mixing in molybdenum, we use a DFT+U+V framework for fine-tuning the orbital composition of the relevant band-edge states. An optimised choice of Hubbard U/V parameters produces close agreement with the experimentally observed conduction band SOS in MoS$_2$, simultaneously resulting in the valence-band SOS and the quasi-particle band gap which are closer to their values established in the earlier-published experiments.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2602.09858v1</guid>
-      <category>cond-mat.mes-hall</category>
-      <category>cond-mat.mtrl-sci</category>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 -0500</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
-      <dc:creator>Igor Rozhansky, Michele Masseroni, Ricardo Pisoni, Suad Alshammari, Xue Li, Thomas Ihn, Klaus Ensslin, James McHugh, Vladimir Fal'ko</dc:creator>
-    </item>
-    <item>
-      <title>Long-Range Machine Learning of Electron Density for Twisted Bilayer Moir\'e Materials</title>
-      <link>https://arxiv.org/abs/2602.09938</link>
-      <description>arXiv:2602.09938v1 Announce Type: new 
-Abstract: Moir\'e superlattices in two-dimensional (2D) materials exhibit rich quantum phenomena, but ab initio modelling of these systems remains computationally prohibitive. Existing machine learning methods for accelerating density-functional theory (DFT) can target the prediction of different quantities and often rely on the locality assumption. Here we train a Gaussian process regression SALTED model exclusively on the electron densities of small displaced bilayer structures and then extrapolate electron density prediction to the large supercells required to describe small twist angles between these bilayers. We show the necessity of long-range descriptors to yield reliable band structures and electrostatic properties of large twisted bilayer structures, when these are derived from predicted densities. We demonstrate that the choice of descriptor determines the distribution of residual density errors, which in turn affects the downstream electronic properties. We apply our models to twisted bilayer graphene, hexagonal boron nitride, and transition metal dichalcogenides, focusing on the model's capacity to predict complex phenomena, including flat band formation, bandwidth narrowing, domain-wall electric fields, and spin-orbit coupling effects. Beyond moir\'e materials, this approach provides a general methodology for electronic structure prediction in large-scale systems with substantial long-range phenomena related to non-local geometric information.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2602.09938v1</guid>
-      <category>cond-mat.mtrl-sci</category>
-      <category>physics.chem-ph</category>
-      <category>physics.comp-ph</category>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 -0500</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
-      <dc:creator>Zekun Lou, Alan M. Lewis, Mariana Rossi</dc:creator>
-    </item>
-    <item>
-      <title>Magneto-optical study of Nb thin films for superconducting qubits</title>
-      <link>https://arxiv.org/abs/2602.10010</link>
-      <description>arXiv:2602.10010v1 Announce Type: new 
-Abstract: Among the recognized sources of decoherence in superconducting qubits, the spatial inhomogeneity of the superconducting state and the possible presence of magnetic-flux vortices remain comparatively underexplored. Niobium is commonly used as a structural material in transmon qubits that host Josephson junctions, and excess dissipation anywhere in the transmon can become a bottleneck that limits overall quantum performance. The metal/substrate interfacial layer may simultaneously host pair-breaking loss channels (e.g., two-level systems, TLS) and control thermal transport, thereby affecting dissipation and temperature stability. Here, we use quantitative magneto-optical imaging of the magnetic-flux distribution to characterize the homogeneity of the superconducting state and the critical current density, $j_{c}$, in niobium films fabricated under different sputtering conditions. The imaging reveals distinct flux-penetration regimes, ranging from a nearly ideal Bean critical state to strongly nonuniform thermo-magnetic dendritic avalanches. By fitting the measured magnetic-induction profiles, we extract $j_{c}$ and correlate it with film physical properties and with measured qubit internal quality factors. Our results indicate that the Nb/Si interlayer can be a significant contributor to decoherence and should be considered an important factor that must be optimized.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2602.10010v1</guid>
-      <category>cond-mat.supr-con</category>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 -0500</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
-      <dc:creator>Amlan Datta, Kamal R. Joshi, Sunil Ghimire, Makariy A. Tanatar, Cameron J. Kopas, Jayss Marshall, Josh Y. Mutus, David P. Pappas, Matthew J. Kramer, Ruslan Prozorov</dc:creator>
-    </item>
-    <item>
-      <title>Orbital piezomagnetic polarizability of pure insulating altermagnets in two dimensions</title>
-      <link>https://arxiv.org/abs/2602.10076</link>
-      <description>arXiv:2602.10076v1 Announce Type: new 
-Abstract: The distinctive symmetry properties of pure altermagnets make them natural candidates for piezomagnetism. Previous work motivated by the piezomagnetic properties of altermagnets has primarily focused on the spin magnetization response to applied strain. In this paper we study orbital piezomagnetic effects--the orbital magnetization response to applied strain--in minimal lattice models of pure insulating altermagnets in two dimensions. We obtain general microscopic expressions for the orbital magnetization in the presence of strain, as well as the orbital piezomagnetic polarizability, i.e., the defining response characteristic of pure altermagnets. We apply these expressions to three specific tetragonal lattice models, two corresponding to $d$-wave altermagnets and one describing a $g$-wave altermagnet. Whereas the $d$-wave altermagnets are associated with a linear piezomagnetic polarizability, the $g$-wave altermagnet exhibits a nonlinear piezomagnetic effect. Our analysis reveals how the polarizabilities are related to and determined by the Berry curvature of the occupied bands. Connections to materials of current interest are discussed.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2602.10076v1</guid>
-      <category>cond-mat.str-el</category>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 -0500</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
-      <dc:creator>Beryl Bell, J\"orn W. F. Venderbos</dc:creator>
-    </item>
-    <item>
-      <title>Canonical strong coupling spin wave expansion of Kondo lattice magnets. II. Itinerant ferromagnets and topological magnon bands</title>
-      <link>https://arxiv.org/abs/2602.10086</link>
-      <description>arXiv:2602.10086v1 Announce Type: new 
-Abstract: In this paper we apply the canonical spin wave theory developed for itinerant Kondo lattice magnets in the strong coupling regime to Kondo ferromagnets, and address two general questions pertaining to their magnetic excitations. First, we compute corrections to the strong coupling (i.e., double-exchange) spin wave dispersion of itinerant ferromagnets. We show that the spin wave dispersion beyond the strong coupling limit can be mapped to the spin wave dispersion of a Heisenberg ferromagnet with farther neighbor exchange couplings, and discuss how this affects instabilities towards antiferromagnetism. Second, we examine the effect of including electronic spin-orbit coupling in the spin wave theory of Kondo ferromagnets. Including spin-orbit coupling is natural and straightforward in the formulation of the canonical spin wave expansion. Our key result is to demonstrate that the linear spin wave Hamiltonian of the itinerant Kondo ferromagnet can be mapped to the spin wave Hamiltonian of a Heisenberg ferromagnet with easy-axis Ising anisotropy and antisymmetric Dzyaloshinskii-Moriya exchange interaction. We show that in the case of the Kane-Mele honeycomb lattice Kondo ferromagnet this leads to topological magnon bands, and discuss the implications of this result for itinerant ferromagnets more broadly.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2602.10086v1</guid>
-      <category>cond-mat.str-el</category>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 -0500</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
-      <dc:creator>M. Frakulla, J. Strockoz, D. S. Antonenko, J. W. F. Venderbos</dc:creator>
-    </item>
-    <item>
-      <title>Topologically Protected Surface Altermagnetism on Antiferromagnets</title>
-      <link>https://arxiv.org/abs/2602.10108</link>
-      <description>arXiv:2602.10108v2 Announce Type: new 
-Abstract: Altermagnetism (AM) and its associated spin-transport phenomena are typically linked to spin-split electronic band structures in bulk materials. However, the crystal surface has a reduced symmetry with respect to the bulk, which can induce AM at the surface of conventional antiferromagnets (AFMs) $\unicode{x2013}$ a local effect which cannot be detected using bulk properties. In this work we define the symmetry conditions necessary for surface AM and show how it can be topologically protected, rendering it a robust effect. We provide a minimal model for one trivial and two topological examples of surface AM. We show that the spin spectral density, accessible by spin- and angle-resolved photoemission spectroscopy, can exhibit a $d$-wave-like altermagnetic character at the surface, even when the full band structure is completely spin degenerate. Our topological model describes the Dirac semimetal CuMnAs, which provides an existing realization of our theory. Our results identify crystal surfaces as a platform to realize robust, topology- and symmetry-driven unconventional magnetism beyond the bulk classification of magnetic materials.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2602.10108v2</guid>
-      <category>cond-mat.str-el</category>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 -0500</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
-      <dc:creator>Valentin Leeb, Peru d'Ornellas, Fernando de Juan, Adolfo G. Grushin</dc:creator>
-    </item>
-    <item>
-      <title>Volume-law protection of metrological advantage</title>
-      <link>https://arxiv.org/abs/2602.09086</link>
-      <description>arXiv:2602.09086v1 Announce Type: cross 
-Abstract: Although entanglement can boost metrological precision beyond the standard quantum limit, the advantage often disappears with particle loss. We demonstrate that scrambling safeguards precision by dispersing information about the encoded parameter into many-body correlations. For Haar-random scrambling unitaries, we derive exact formulas for the average quantum Fisher information (QFI) of the reduced state after tracing out lost particles. The result exhibits a threshold; any remaining subsystem larger than $N/2$ recovers the full QFI, while smaller subsystems contain negligible information. We link this threshold to the scrambling-induced transition from area-law to volume-law entanglement and the associated growth of the Schmidt rank. We outline two realizations -- a brickwork circuit and chaotic XX-chain evolution -- and demonstrate the protection of one-axis-twisted probes against the loss of up to half of the particles.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2602.09086v1</guid>
-      <category>quant-ph</category>
-      <category>cond-mat.quant-gas</category>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 -0500</pubDate>
-      <arxiv:announce_type>cross</arxiv:announce_type>
-      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
-      <dc:creator>Piotr Wysocki, Jan Chwede\'nczuk, Marcin P{\l}odzie\'n</dc:creator>
-    </item>
-    <item>
-      <title>Nonreciprocal lensing and backscattering suppression via magneto-optical nonlocality</title>
-      <link>https://arxiv.org/abs/2602.10038</link>
-      <description>arXiv:2602.10038v1 Announce Type: cross 
-Abstract: We introduce a special kind of nonreciprocal electromagnetic response which gives rise to backscattering suppression in the bulk, a long-sought feature in topological photonics, as well as nonreciprocal lensing - an effect when the same structure focuses light incident from one direction and defocuses light propagating in the opposite way. We predict this response in spin spirals and in specially designed metamaterials, validating the key predictions.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2602.10038v1</guid>
       <category>physics.optics</category>
-      <category>cond-mat.mes-hall</category>
-      <category>cond-mat.str-el</category>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 -0500</pubDate>
-      <arxiv:announce_type>cross</arxiv:announce_type>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
       <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
-      <dc:creator>Dmitry Vagin, Maxim A. Gorlach</dc:creator>
+      <dc:creator>Pratap Chandra Adak, Florian Dirnberger, Swagata Acharya, Akashdeep Kamra, Xiaodong Xu, Vinod M. Menon</dc:creator>
     </item>
     <item>
-      <title>Magnetic-Field-Induced Geometric Response of Mean-Field Projectors: Streda Formula and Orbital Magnetization</title>
-      <link>https://arxiv.org/abs/2510.07001</link>
-      <description>arXiv:2510.07001v2 Announce Type: replace 
-Abstract: We study the magnetic-field response of interacting electron systems within mean-field theory using perturbation theory. We show that the linear response of the mean-field density-matrix to a weak magnetic field is purely geometric: it depends only on wavefunction derivatives, the Berry connections linking the occupied and unoccupied subspaces, and is independent of the interaction potential and the quasiparticle dispersion. This leads to compact, gauge-invariant projector expressions for both the St\v{r}eda formula and the formula for orbital magnetization. Our calculation explicitly elucidates the role of exchange and self-consistency in defining current vertices for orbital magnetization calculations. Our work establishes a direct connection between mean-field theory, quantum geometry and the non-interacting topological band theory.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2510.07001v2</guid>
+      <title>Probing Plasmonic Oscillations in 2D Moir\'e Nanocrystal Superlattices by Low-Loss EELS</title>
+      <link>https://arxiv.org/abs/2602.10534</link>
+      <description>arXiv:2602.10534v1 Announce Type: new 
+Abstract: Electron energy loss spectroscopy (EELS) has been established as a powerful analytical technique for investigating the oxidation state, band structure, and dielectric properties of materials with exceptional spatial resolution. Inspired by twisted 2D materials, we utilize low-loss EELS to examine the plasmonic excitations in 2D moir\'e Au nanocrystal superlattices (NCSLs) formed by liquid-air interface self-assembly using a double-dipping method. This approach produces stacked hexagonal layers that can be twisted, forming moir\'e patterns in NCSLs whose twist angles are precisely measured via scanning transmission electron microscopy (STEM). Low-loss EELS effectively mitigates challenges arising from fabrication-induced non-uniformity and reveals a blue shift in plasmonic excitation when comparing single-layer, double-layer, and twisted configurations. This sharply contrasts with the optical spectroscopy measurements, which show an overall red shift relative to the EELS data. The high spatial resolution of STEM-EELS further demonstrates that twist-induced symmetry breaking strongly influences plasmonic behavior. Coupled dipole modeling explains the observed discrepancies: the electron beam excites out-of-plane polarization modes unavailable to optical probes, while optical measurements average over ensembles. Our findings highlight that EELS provides complementary information to optical spectroscopy for understanding how structural arrangements at the nanoscale influence collective electronic properties, advancing the design of plasmonic metamaterials.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.10534v1</guid>
+      <category>cond-mat.mtrl-sci</category>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Swarnendu Das, Shengsong Yang, Kevin N. Moser, Marc R. Bourgeois, Quentin M. Ramasse, David J. Masiello, Christopher B. Murray, Eric A. Stach</dc:creator>
+    </item>
+    <item>
+      <title>Ferroelectric Quantum Point Contact in Twisted Transition Metal Dichalcogenides</title>
+      <link>https://arxiv.org/abs/2602.10554</link>
+      <description>arXiv:2602.10554v1 Announce Type: new 
+Abstract: In twisted transition metal dichalcogenides (tTMDs), atomic reconstruction gives rise to moir\'e domains with alternating ferroelectric polarization, whose domain size and overall electric dipole moment are tunable by an out-of-plane electric field. Previous transport measurements in Hall bar devices have successfully demonstrated the overall ferroelectric behavior of tTMDs from a collective ensemble of ferroelectric moir\'e domains. To locally probe a single ferroelectric moir\'e domain, we fabricate and study mesoscopic quantum transport via a gate-defined twisted molybdenum disulfide (tMoS2) quantum point contact (QPC). The local property of a single moir\'e domain is invulnerable to long-range disorder and twist-angle inhomogeneity, resulting in an unusually long conductance plateau with large electrical hysteresis. The comparison between local and global measurements confirms that antiferroelectricity can emerge from alternating polarization of individual ferroelectric domains. Using a QPC as a single charge sensor, we characterize the nature and time scale of different domain evolution mechanisms with single atomic dipole resolution. Our findings shed new light on the microscopic ferroelectric behavior and dynamics within a single tTMD moir\'e domain, paving the way toward more advanced ferroelectric quantum devices with tunable local Hamiltonian, such as ferroelectric tTMD quantum dots (QDs).</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.10554v1</guid>
+      <category>cond-mat.mes-hall</category>
+      <category>cond-mat.mtrl-sci</category>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>Wei Ren, Shiyu Guo, Daochen Long, Noah Friedman, Jingyuan Xian, David Li, Jack Tavakley, Jeongsoo Park, Kenji Watanabe, Takashi Taniguchi, Ke Wang</dc:creator>
+    </item>
+    <item>
+      <title>Universality of linear in temperature and linear in field Planckian scattering rate in high temperature cuprate superconductors</title>
+      <link>https://arxiv.org/abs/2602.10627</link>
+      <description>arXiv:2602.10627v1 Announce Type: new 
+Abstract: One of the long standing puzzles in strongly correlated materials is the microscopic origin of the quantum critical Planckian strange metal phase with universal linear in temperature scattering rate from which unconventional superconductivity directly emerges by lowering temperatures. Recently, the linear in temperature and linear in field resistivity have been simultaneously observed in high temperature cuprate superconductors, manifested by the universal field to temperature scaling in magnetoresistivity. To date, there has been a lack of coherent and unified understanding of these coexisting linear behaviors and their possible link to quantum criticality. In this work, we establish the universality in linear in temperature and linear in field Planckian behaviors in underdoped LSCO near optimal doping. Experimentally, we observe the linear in field Planckian scattering rate and its relation to its linear in temperature counterpart. Theoretically, we propose a spin based common microscopic mechanism based on Kondo-like charge fluctuations near local quantum criticality of heavy fermion formulated tJ model subject to a Zeeman term. Similar to frequency to temperature scaling near quantum criticality, we find the magnetic field here effectively introduces a Zeeman energy, reminiscent of an external energy in the quantum critical regime, leading to field to temperature scaling. Our analytically predicted universal field to temperature scaling in isotropic scattering rate and the relation between the linear in temperature and linear in field Planckian coefficients, unifies these two phenomena over an extended doping range, pointing toward a unified quantum-critical origin of Planckian transport in cuprates.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.10627v1</guid>
+      <category>cond-mat.supr-con</category>
+      <category>cond-mat.str-el</category>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>K. Remund, K. V. Nguyen, P. -H. Chou, P. Giraldo-Gallo, J. A. Galvis, G. S. Boebinger, C. -H. Chung</dc:creator>
+    </item>
+    <item>
+      <title>Nonlinear dynamics in magnonic Fabry-P\'{e}rot resonators: Low-power neuron-like activation and transmission suppression</title>
+      <link>https://arxiv.org/abs/2602.10650</link>
+      <description>arXiv:2602.10650v1 Announce Type: new 
+Abstract: We report on nonlinear spin-wave dynamics in magnonic Fabry-P\'{e}rot resonators composed of yttrium iron garnet (YIG) films coupled to CoFeB nanostripes. Using super-Nyquist sampling magneto-optical Kerr effect microscopy and micromagnetic simulations, we observe a systematic downshift of the spin-wave transmission gaps as the excitation power increases. This nonlinear behavior occurs at low power levels, reduced by a strong spatial concentration of spin waves within the resonator. The resulting power-dependent transmission enables neuron-like activation behavior and frequency-selective nonlinear spin-wave absorption. Our results highlight magnonic Fabry-P\'{e}rot resonators as compact low-power nonlinear elements for neuromorphic magnonic computing architectures.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.10650v1</guid>
+      <category>cond-mat.mtrl-sci</category>
+      <category>cond-mat.mes-hall</category>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Anton Lutsenko, Kevin G. Fripp, Luk\'a\v{s} Flaj\v{s}man, Andrey V. Shytov, Volodymyr V. Kruglyak, Sebastiaan van Dijken</dc:creator>
+    </item>
+    <item>
+      <title>Layer-dependent antiferromagnetic Chern and axion insulating states in UOTe</title>
+      <link>https://arxiv.org/abs/2602.10705</link>
+      <description>arXiv:2602.10705v1 Announce Type: new 
+Abstract: Magnetic topological insulators have received significant interest due to their dissipationless edge states, which promise advances in energy-efficient electronic transport. However, the magnetic topological insulator state has typically been found in ferromagnets (FMs) that suffer from low magnetic ordering temperatures and stray fields. Identifying an antiferromagnetic topological insulator that exhibits the quantum anomalous Hall effect (QAHE) with a relatively high N\'eel temperature has been a longstanding challenge. Here, we focus on the recently discovered van der Waals (vdW) antiferromagnet (AFM) UOTe, which not only features a high N\'eel temperature (\(\sim\)150K) but also exhibits intriguing Kondo interaction and topological characteristics. Our systematic analysis of the layer-dependent topological phases based on \textit{ab} initio computations predicts the two-layer UOTe film to be an ideal 2D AFM Chern insulator in which the Hall conductivity is quantized with a fully compensated spin magnetization. By applying an in-plane strain or electric field, we show how the itinerancy of U-5f electrons can be manipulated to trigger a transition between the nontrivial ($C = 1$) and trivial ($C = 0$) phases. Interestingly, the 3-layer UOTe film is found to have zero charge conductance but it hosts a quantized spin Hall conductivity (SHC) with finite magneto-electric coupling, suggesting the presence of an axion insulator-like state. The unique magnetic structure of UOTe supports a layer-tunable topology in which films with an odd number of layers are axion-like insulators, while films with an even number of layers are Chern insulators, and the bulk material is a Dirac semimetal. Our study offers a new intrinsic AFM materials platform for realizing correlated topological phases for next-generation spintronics applications and fundamental science studies.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.10705v1</guid>
+      <category>cond-mat.mtrl-sci</category>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Sougata Mardanya, Barun Ghosh, Mengke Liu, Christopher Broyles, Junyeong Ahn, Kai Sun, Jennifer E. Hoffman, Sheng Ran, Arun Bansil, Su-Yang Xu, Sugata Chowdhury</dc:creator>
+    </item>
+    <item>
+      <title>Enhanced effective masses, spin-orbit polarization, and dispersion relations in 2D hole gases under strongly asymmetric confinement</title>
+      <link>https://arxiv.org/abs/2602.10852</link>
+      <description>arXiv:2602.10852v1 Announce Type: new 
+Abstract: The dispersion of Rashba-split heavy-hole subbands in GaAs two-dimensional hole gases (2DHGs) is difficult to access experimentally because strong heavy-hole-light-hole mixing produces non-parabolicity and breaks the usual correspondence between carrier density and Fermi wave vector. Here we use low-field magnetotransport (B &lt; 1 T) to reconstruct the dispersions of the two spin-orbit-split heavy-hole branches (HH-, HH+) in undoped (100) GaAs/AlGaAs single heterojunction 2DHGs operated in an accumulation-mode field-effect geometry. The dopant-free devices sustain out-of-plane electric fields up to 26 kV/cm while maintaining mobilities up to 84 m$^2$/Vs and exhibiting a spin-orbit polarization as large as 36%. Fourier analysis of Shubnikov-de Haas (SdH) oscillations resolves the individual HH-/HH+ subband densities; fitting the temperature dependence of the corresponding Fourier amplitudes yields both branch-resolved SdH effective masses over the same magnetic field window. SdH regimes in which reliable subband parameters can be extracted are delineated. Over 2DHG densities (0.76-1.9) $\times$ 10$^{15}$ /m$^2$, the HH- mass is nearly density independent ($\approx 0.34m_e$), implying a near-parabolic HH- dispersion below the first LH+/HH- anticrossing, whereas HH+ exhibits strong non-parabolicity with an effective mass that increases with density. Combining the extracted dispersions yields a transport-based determination of the spin-orbit splitting energy $\Delta_\text{HH}$ between HH and HH+ as a function of in-plane wave vector. Parameter-free Luttinger-model calculations reproduce the qualitative trends but underestimate both masses by a common factor $\approx$ 2, suggesting a many-body renormalization of the heavy-hole mass in this strongly asymmetric regime.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.10852v1</guid>
+      <category>cond-mat.mes-hall</category>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>N. A. Cockton, F. Sfigakis, M. Korkusinski, S. R. Harrigan, G. Nichols, Z. D. Merino, T. Zou, A. C. Coschizza, T. Joshi, A. Shetty, M. C. Tam, Z. R. Wasilewski, S. A. Studenikin, D. G. Austing, J. Baugh, J. B. Kycia</dc:creator>
+    </item>
+    <item>
+      <title>Low magnetic moment and unconventional magneto-transport in half-Heusler alloy CoVGe</title>
+      <link>https://arxiv.org/abs/2602.10939</link>
+      <description>arXiv:2602.10939v1 Announce Type: new 
+Abstract: In the present work, we experimentally realize CoVGe for the first time and investigate its structural, magnetic, and transport properties, supported by theoretical calculations. The material crystallizes in a cubic structure and exhibits a very low magnetic moment of 0.13 {\mu}B per formula unit at 5 K. The temperature dependence of electrical resistivity suggests half-metallic behaviour. Magnetoresistance shows a positive, non-saturating linear field dependence at low temperature that gradually weakens with increasing temperature. The combination of low magnetic moment and unusual magnetotransport behaviour positions CoVGe as a promising platform for exploring spin-dependent transport in Heusler-based materials.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.10939v1</guid>
+      <category>cond-mat.mtrl-sci</category>
+      <category>cond-mat.str-el</category>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Ravinder Kumar, Jyotiraditya Pandey, Shoaib Akhtar, Sachin Majee, Dibyendu Majee, Samik DuttaGupta, Sachin Gupta</dc:creator>
+    </item>
+    <item>
+      <title>Quantum critical behavior of cuprate superconductors observed by inelastic X-ray scattering</title>
+      <link>https://arxiv.org/abs/2602.11011</link>
+      <description>arXiv:2602.11011v1 Announce Type: new 
+Abstract: Progress toward a complete understanding of cuprate superconductors has been hindered by their intricate phase diagram, potentially linked to a quantum critical point (QCP). However, conclusive evidence for the QCP is lacking, as the presumed QCP is buried under the superconducting dome, disguising its presence. Here, we use high-resolution resonant inelastic X-ray scattering to examine the dynamical charge-charge correlation in La$_{2-x}$Sr$_x$CuO$_4$ and uncover the quantum critical scaling, a key feature required for a QCP. Specifically, \djh{we observed that the inverse correlation lengths for various dopings and temperatures collapsed onto a universal scaling curve, yielding a critical exponent $\nu$ of $0.74 \pm 0.08$. The non-negativity of this exponent confirms the presence of a QCP. Remarkably, the value of $\nu$ suggests that while the QCP is manifested through the charge-density wave, other orders also participate, such that the QCP appears to belong to the universality class characterized by the O(4) symmetry, reminiscent of the microscopic SO(4) symmetry in the Hubbard model at half-filling. Further analysis indicates that the QCP is highly dissipative with a short quasi-particle lifetime, reflecting the intertwined quantum fluctuations due to its being buried inside the superconducting state.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.11011v1</guid>
+      <category>cond-mat.str-el</category>
+      <category>cond-mat.supr-con</category>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>H. Y. Huang, C. Y. Mou, A. Singh, J. S. Su, J. Okamoto, S. Komiya, C. T. Chen, T. K. Lee, A. Fujimor, D. J. Huang</dc:creator>
+    </item>
+    <item>
+      <title>Floquet Control of Electron and Exciton Transport in Kekul\'e-Distorted Graphene</title>
+      <link>https://arxiv.org/abs/2602.11119</link>
+      <description>arXiv:2602.11119v1 Announce Type: new 
+Abstract: This work investigates the Floquet dynamics of electrons and excitons (particle-hole pairs) in a Dirac material referred to as Kekul\'e-distorted graphene. Specifically, we examine the role played by a high frequency driving electromagnetic field on the tunneling and blocking by a potential barrier on both the charged single particles as well as the neutral composite particles. We demonstrate that the small effective masses of the electron and hole for the energy spectrum of this Kekul\'e distorted graphene leads to practically almost perfect transmission across a symmetric potential barrier for any angle of incidence of impinging excitons. However, this unexpected Klein paradox for excitons does not hold for the single-particle electrons. The reduced total transmission of electron due to Kekul\'e distortion is more suppressed due to irradiation. Additionally, we calculate and investigate the exciton binding energy since the quantum tunneling of a bound electron-hole pair across a potential barrier is governed by its mass measured in the center of mass and binding energy of the composite pair. Thus, irradiation with circularly polarized light fundamentally modifies exciton formation, coherence and transport properties, thereby producing unusual topological behaviors. These behaviors are unlike conventional Dirac materials. Possible technical applications of the results arising from our investigation include valleytronics due to the folding of the valleys, thereby making intervalley coupling feasible. Other practical applications include optoelectronics due to Floquet tuning of energy spectrum and transport properties.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.11119v1</guid>
+      <category>cond-mat.mes-hall</category>
+      <category>quant-ph</category>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>Sita Kandel, Godfrey Gumbs</dc:creator>
+    </item>
+    <item>
+      <title>Mapping reservoir-enhanced superconductivity to near-long-range magnetic order in the undoped 1D Anderson- and Kondo-lattices</title>
+      <link>https://arxiv.org/abs/2602.11153</link>
+      <description>arXiv:2602.11153v1 Announce Type: new 
+Abstract: The undoped Kondo necklace in 1D is a paradigmatic and well understood model of a Kondo insulator. This work performs the first large-scale study of the 1D Anderson-lattice underlying the Kondo necklace with quasi-exact numerical methods, comparing this with the perturbative effective 1D Kondo-necklace model derived from the former. This study is based on an exact mapping of the Anderson model to one of a superconducting pairing layer connected to a metallic reservoir which is valid in arbitrary spatial dimensions, thereby linking the previously disparate areas of reservoir-enhanced superconductivity, following Kivelson's pioneering proposals, and that of periodic Kondo-systems. Our work reveals that below the length-scales on which the insulating state sets in, which can be very large, superconducting and density-density correlations are degenerate and may both appear to approach an almost ordered state, to a degree that far exceeds that of any isolated 1D pairing layer with short-range interactions. We trace these effects to the effective extended-range coupling that the metallic layer mediates within the pairing layer. These results translate directly to the appearance of near-long-range magnetic order at intermediate scales in the Kondo-systems, and explain the strong renormalization of the RKKY-coupling that we effectively observe, in terms of the back-action of the pairing layer onto the metallic layer. The effects we predict could be tested either by local probes of quasi-1D heavy fermion compounds such as CeCo$_2$Ga$_8$, in engineered chains of ad-atoms or in ultracold atomic gases.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.11153v1</guid>
+      <category>cond-mat.str-el</category>
+      <category>cond-mat.quant-gas</category>
+      <category>cond-mat.supr-con</category>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>J. E. Ebot, Lorenzo Pizzino, Sam Mardazad, Johannes S. Hofmann, Thierry Giamarchi, Adrian Kantian</dc:creator>
+    </item>
+    <item>
+      <title>Magneto-optical properties of the neutral silicon-vacancy center in diamond under extreme isotropic strain fields</title>
+      <link>https://arxiv.org/abs/2602.10690</link>
+      <description>arXiv:2602.10690v1 Announce Type: cross 
+Abstract: The neutral silicon--vacancy (SiV$^{0}$) center in diamond combines inversion symmetry with optical emission, making it a robust quantum emitter resilient to stray electric fields. Using first-principles density-functional theory, we quantify its response to isotropic strain spanning strong compression and tensile regimes (effective hydrostatic pressures of approximately $-80$ to $180$~GPa). The coexistence of doubly degenerate $e_g$ and $e_u$ levels produces a structural instability captured by a quadratic product Jahn--Teller model. Under isotropic compression, the zero-phonon line blue-shifts nearly linearly while the $E_g$ phonon stiffens, suppressing vibronic instabilities and reducing Jahn--Teller quenching. Consequently, the Ham-reduced excited-state spin--orbit splitting increases substantially and the dark--bright vibronic gap widens. In contrast, isotropic tensile strain enhances vibronic effects and induces symmetry breaking beyond a critical strain, with tunneling-mediated dynamical averaging at the onset. Throughout the symmetry-preserving regime, parity remains well defined, so isotropic strain alone does not activate the dark transition. Charge-transition levels indicate photostability of the emission deep into the compressive regime, and near the highest photostable deformation ($\sim 100$~GPa), the radiative lifetime increases due to a reduced transition dipole moment despite the increasing optical energy. These trends yield compact calibration relations linking optical and spin observables to isotropic strain and establish SiV$^{0}$ as a symmetry-protected, strain-tunable quantum emitter operating into the multi-megabar-equivalent regime.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.10690v1</guid>
+      <category>quant-ph</category>
+      <category>cond-mat.mtrl-sci</category>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>cross</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Meysam Mohseni, Gerg\H{o} Thiering, Adam Gali</dc:creator>
+    </item>
+    <item>
+      <title>Establishing the Magnetoelastic Origin of Spin-Wave Routing through Focused Ion Beam Patterning</title>
+      <link>https://arxiv.org/abs/2602.10797</link>
+      <description>arXiv:2602.10797v1 Announce Type: cross 
+Abstract: Spin waves are promising information carriers for analog and wave-based computing, requiring compact and precisely engineered scattering landscapes. Focused ion beam (FIB) irradiation enables such control by locally modifying the spin-wave dispersion in yttrium iron garnet (YIG), yet the underlying crystallographic mechanisms remain unclear. Here, we present an experimentally validated framework that attributes FIB-induced spin-wave steering to magnetoelastic effects arising from irradiation-induced lattice dislocations. Following FIB irradiation and wet-chemical etching, local height profiles were obtained by atomic force microscopy (AFM) and used as fixed geometric constraints in fits of spin-wave dispersion relations measured by time-resolved magneto-optical Kerr effect (trMOKE) microscopy. The dispersion relation was extended by an explicit magnetoelastic field term, treated as a fit parameter. Its evolution reveals three successive deformation regimes, elastic, plastic, and partial amorphization, explaining the observed non-monotonic dependence of the spin-wave wavelength on ion dose. A three-phase deformation scenario based on SRIM simulations reproduces the extracted magnetoelastic field trends, validating the fitting approach. Micromagnetic simulations incorporating strain tensors derived from the experimental magnetoelastic field reproduce the characteristic non-monotonic wavelength behavior. These results establish a physical basis for FIB-engineered graded-index (GRIN) spin-wave landscapes and magnetoelastically programmable magnonic devices.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.10797v1</guid>
+      <category>physics.app-ph</category>
+      <category>cond-mat.mes-hall</category>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>cross</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Felix Naunheimer, Johannes Greil, Valentin Ahrens, Levente Maucha, \'Ad\'am Papp, Gy\"orgy Csaba, Markus Becherer</dc:creator>
+    </item>
+    <item>
+      <title>Microscopic theory for electron-phonon coupling in twisted bilayer graphene</title>
+      <link>https://arxiv.org/abs/2407.03293</link>
+      <description>arXiv:2407.03293v3 Announce Type: replace 
+Abstract: The origin of superconductivity in twisted bilayer graphene -- whether phonon-driven or electron-driven -- remains unresolved, in part due to the absence of a quantitative and efficient model for electron-phonon coupling (EPC). In this work, we develop a first-principles-based microscopic theory to calculate EPC in twisted bilayer graphene for arbitrary twist angles without requiring a periodic moir\'e supercell. Our approach combines a momentum-space continuum model for both electronic and phononic structures with a generalized Eliashberg-McMillan theory beyond the adiabatic approximation. Using this framework, we find that the EPC is strongly enhanced near the magic angle. The superconducting transition temperature induced by low-energy phonons peaks at $1.1^\circ$ around 1 K, and remains finite for a range of angles both below and above the magic angles. We predict that superconductivity persists up to $\sim 1.4^\circ$, where superconductivity has been recently observed despite the dispersive electronic bands. Beyond a large density of states, we identify a key condition for strong EPC: resonance between the electronic bandwidth and the dominant phonon frequencies. We also show that the EPC strength of a specific phonon corresponds to the modification of the moir\'e potential. In particular, we identify several $\Gamma$-phonon branches that contribute most significantly to the EPC, which are experimentally detectable via Raman spectroscopy.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2407.03293v3</guid>
       <category>cond-mat.mes-hall</category>
       <category>cond-mat.str-el</category>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 -0500</pubDate>
+      <category>cond-mat.supr-con</category>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <arxiv:DOI>10.1103/tpww-cq4k</arxiv:DOI>
+      <arxiv:journal_reference>Physical Review B 113 (3), 035446 (2026)</arxiv:journal_reference>
+      <dc:creator>Ziyan Zhu, Thomas P. Devereaux</dc:creator>
+    </item>
+    <item>
+      <title>Nonpertubative Many-Body Theory for the Two-Dimensional Hubbard Model at Low Temperature: From Weak to Strong Coupling Regimes</title>
+      <link>https://arxiv.org/abs/2503.12468</link>
+      <description>arXiv:2503.12468v3 Announce Type: replace 
+Abstract: In theoretical studies of two-dimensional (2D) systems, the Mermin-Wagner theorem prevents continuous symmetry breaking at any finite temperature, thus forbidding a Landau phase transition at a critical temperature $T_c$. The difficulty arises when many-body theoretical studies predict a Landau phase transition at finite temperatures, which contradicts the Mermin-Wagner theorem and is termed a pseudo phase transition. To tackle this problem, we systematically develop a symmetrization scheme, defined as averaging physical quantities over all symmetry-breaking states, thus ensuring that it preserves the Mermin-Wagner theorem. We apply the symmetrization scheme to the GW-covariance calculation for the 2D repulsive Hubbard model at half-filling in the intermediate-to-strong coupling regime and at low temperatures, obtaining the one-body Green's function and spin-spin correlation function, and benchmark them against Determinant Quantum Monte Carlo (DQMC) with good agreement.The spin-spin correlation functions are approached within the covariance theory, a general method for calculating two-body correlation functions from a one-particle starting point, such as the GW formalism used here, which ensures the preservation of the fundamental fluctuation-dissipation relation (FDR) and Ward-Takahashi identities (WTI). With the FDR and WTI satisfied, we conjecture that the $\chi$-sum rule, a fundamental relation from the Pauli exclusion principle, can be used to probe the reliability of many-body methods, and demonstrate this by comparing the GW-covariance and mean-field-covariance approaches. This work provides a novel framework to investigate the strong-coupling and doped regime of the 2D Hubbard model, which is believed to be applicable to real high-$T_c$ cuprate superconductors.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2503.12468v3</guid>
+      <category>cond-mat.str-el</category>
+      <category>physics.atom-ph</category>
+      <category>physics.comp-ph</category>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Ruitao Xiao, Yingze Su, Junnian Xiong, Hui Li, Huaqing Huang, Dingping Li</dc:creator>
+    </item>
+    <item>
+      <title>Microscopic Mechanism of Anyon Superconductivity Emerging from Fractional Chern Insulators</title>
+      <link>https://arxiv.org/abs/2506.08000</link>
+      <description>arXiv:2506.08000v2 Announce Type: replace 
+Abstract: Fractional quantum Hall (FQH) states and superconductors typically require contrasting conditions, yet recent experiments have observed them in the same device. A natural explanation is that mobile anyons give rise to superconductivity; however, this mechanism requires binding of minimally charged anyons to establish an unusual energy hierarchy. This scenario has mostly been studied with effective theories, leaving open the question of how anyon superconductivity can arise from repulsive interactions. Here, we show that such an energy hierarchy of anyons arises naturally in fractional Chern insulators (FCIs) at fillings $\nu = 2/(4p \mp 1)$ when they are driven toward a quantum phase transition into a ``semion crystal'' -- an exotic charge-density-wave (CDW) insulator with semion topological order. Near the transition, Cooper-pair correlations are enhanced, so that a conventional charge-2e superconductor appears with doping. Guided by these insights, we analyze a microscopic realization in a repulsive Hubbard-Hofstadter model. Tensor network simulations at $\nu = 2/3$ reveal a robust FCI that, with increasing interactions, transitions into the semion crystal. Finding a stable semion crystal in such a minimal model highlights it as a viable state competing with conventional CDW and FQH states. In the vicinity of this transition, we find markedly enhanced Cooper pairing, consistent with our theory that the 2e/3 anyon is cheaper than a pair of isolated e/3 anyons. Doping near the transition should in general lead to doping Cooper pairs and charge-2e superconductivity, with chiral edge modes of alternating central charge $c = \pm2$, which can coexist with translation symmetry breaking. Our framework unifies recent approaches to anyon superconductivity, reconciles it with strong repulsion and provides guidance for flat band moir\'e materials such as recent experiments in twisted MoTe$_2$.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2506.08000v2</guid>
+      <category>cond-mat.str-el</category>
+      <category>cond-mat.mes-hall</category>
+      <category>cond-mat.supr-con</category>
+      <category>quant-ph</category>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <arxiv:DOI>10.1016/j.newton.2025.100340</arxiv:DOI>
+      <arxiv:journal_reference>Newton 2, 100340 (2026)</arxiv:journal_reference>
+      <dc:creator>Fabian Pichler, Clemens Kuhlenkamp, Michael Knap, Ashvin Vishwanath</dc:creator>
+    </item>
+    <item>
+      <title>Real-Space Approach to Light-Induced Hall Transport in Disordered Materials</title>
+      <link>https://arxiv.org/abs/2506.19184</link>
+      <description>arXiv:2506.19184v2 Announce Type: replace 
+Abstract: We introduce a linear-scaling real-space methodology to compute time-resolved electrical responses of materials driven far-from-equilibrium, with energy relaxation and disorder treated on equal footing. Applying this approach to AB-stacked (Bernal) bilayer graphene, driven by a circularly polarized optical pulse, we observe the generation of a finite Hall conductivity. This Hall signal oscillates during optical driving and remains sizable after the light is switched off before relaxing toward equilibrium. Remarkably, this dynamical Hall response is robust in the presence of realistic descriptions of disorder, suggesting that disorder and relaxation dynamics can be leveraged as design parameters rather than being limitations. More broadly, our new methodology enables the investigation of electrical responses in driven, complex disordered quantum materials and highlights how engineered energy transfer pathways can enable ultrafast optoelectronic functionality.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2506.19184v2</guid>
+      <category>cond-mat.mes-hall</category>
+      <category>cond-mat.mtrl-sci</category>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-nd/4.0/</dc:rights>
+      <dc:creator>Jorge Martinez Romeral, Luis M. Canonico, Aron W. Cummings, Stephan Roche</dc:creator>
+    </item>
+    <item>
+      <title>Observation of mirror-odd and mirror-even spin texture in ultra-thin epitaxially-strained RuO2 films</title>
+      <link>https://arxiv.org/abs/2509.16361</link>
+      <description>arXiv:2509.16361v2 Announce Type: replace 
+Abstract: Recently, rutile RuO$_2$ has attracted renewed interest due to expectations of prominent altermagnetic spin-splitting. However, accumulating experimental evidence suggests that in its bulk and thick-film forms, RuO$_2$ does not display any form of magnetic ordering. Despite this, the spin structure of RuO$_2$ remains largely unexplored in the ultra-thin limit, where substrate-imposed epitaxial strain can be substantial. Here, we employ spin-resolved angle-resolved photoemission spectroscopy, supported by ab-initio calculations, to reveal the electronic structure of 2.7~nm-thick epitaxial RuO$_2$ heterostructures. We observe an unconventional spin texture characterized by the coexistence of mirror-even and mirror-odd momentum-dependent components. A comprehensive symmetry analysis rules out nonmagnetic origins of this spin texture. These findings suggest an emergent non-relativistic spin structure enabled by epitaxial strain in the ultra-thin limit, marking a distinct departure from the behavior of relaxed or bulk RuO$_2$. Our work opens new perspectives for exploring symmetry-breaking mechanisms and spin textures in oxide heterostructures.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2509.16361v2</guid>
+      <category>cond-mat.mtrl-sci</category>
+      <category>cond-mat.str-el</category>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-sa/4.0/</dc:rights>
+      <dc:creator>Yichen Zhang, Seung Gyo Jeong, Luca Buiarelli, Seungjun Lee, Yucheng Guo, Jiaqin Wen, Hang Li, Sreejith Nair, In Hyeok Choi, Zheng Ren, Ziqin Yue, Alexei Fedorov, Sung-Kwan Mo, Junichiro Kono, Jong Seok Lee, Tony Low, Turan Birol, Rafael M. Fernandes, Milan Radovic, Bharat Jalan, Ming Yi</dc:creator>
+    </item>
+    <item>
+      <title>Finite temperature dopant-induced spin reorganization explored via tensor networks in the two-dimensional $t$-$J$ model</title>
+      <link>https://arxiv.org/abs/2510.04756</link>
+      <description>arXiv:2510.04756v3 Announce Type: replace 
+Abstract: We study the two-dimensional $t$--$J$ model at finite temperature directly in the thermodynamic limit using purification represented by an infinite projected entangled-pair state (iPEPS). We reach temperatures down to $T/t=0.1$ and hole concentrations up to $1-n\simeq0.25$, and provide benchmark thermodynamic-limit results for the specific heat, uniform susceptibility, and charge compressibility. We identify a susceptibility maximum $T^\ast$ that tracks the buildup of short-range antiferromagnetism and a shallow compressibility enhancement upon cooling in the same doping window. To expose the underlying microscopic mechanism, we introduce dopant-conditioned multi-point correlators that quantify how holes reorganize nearby exchange: single holes weaken adjacent antiferromagnetic bonds, while nearest-neighbor hole pairs produce a cooperative response that reinforces antiferromagnetism on the parallel plaquette edge. Over the same parameter window, $d$-wave pairing correlations remain short-ranged. These results provide experiment-compatible thermodynamic-limit benchmarks and establish dopant-conditioned correlators as incisive probes of finite-temperature spin-texture reorganization in doped Mott insulators.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2510.04756v3</guid>
+      <category>cond-mat.str-el</category>
+      <category>quant-ph</category>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <arxiv:DOI>10.1103/6pcg-qq4p</arxiv:DOI>
+      <dc:creator>Yintai Zhang, Aritra Sinha, Marek M. Rams, Jacek Dziarmaga</dc:creator>
+    </item>
+    <item>
+      <title>Emergence of nematic loop-current bond order in Kagome metals near van Hove singularities</title>
+      <link>https://arxiv.org/abs/2510.05234</link>
+      <description>arXiv:2510.05234v2 Announce Type: replace 
+Abstract: The recently-discovered family of Kagome metals has attracted significant interest due to reports of charge-bond order, orbital magnetism, and superconductivity. Some of these phases may exhibit time-reversal symmetry breaking. More recently, experiments have reported the emergence of nematic order that lowers the rotational symmetry of the system from sixfold to twofold. Here we investigate the mechanism behind a nematic loop-current bond order (NLCBO) that breaks both rotational and time-reversal symmetries. Examining an effective patch model that captures one $p$-type and one $m$-type van Hove singularity at each $M$ point, we find that frustration of the complex order-parameter phases leads to NLCBO. We further present conditions for overcoming other competing phases, including isotropic charge-bond and loop-current orders. Applying our findings to a previously studied model for $\mathrm{A}\mathrm{V}_3\mathrm{Sb}_5$ $(\mathrm{A}=\mathrm{K,Rb,Cs})$, we find that NLCBO emerges within a small region of phase space within mean-field theory. Our theory provides a microscopic description that goes beyond symmetry-allowed free-energy analyses and is broadly applicable to other Kagome metals featuring van Hove singularities near the Fermi level.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2510.05234v2</guid>
+      <category>cond-mat.str-el</category>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Alex Friedlan, Hae-Young Kee</dc:creator>
+    </item>
+    <item>
+      <title>Magnetic field-induced momentum-dependent symmetry breaking in a kagome superconductor</title>
+      <link>https://arxiv.org/abs/2512.11341</link>
+      <description>arXiv:2512.11341v2 Announce Type: replace 
+Abstract: When multiple degrees of freedom share similar energy scales in quantum materials, intertwined electronic orders, which exhibit broken symmetries, are often strongly coupled. Recent studies on kagome superconductors such as CsV$_3$Sb$_5$ report rotational and time-reversal symmetry breaking linked to a charge density wave. Here, we observe a momentum-selective response of the electronic structure of CsV$_3$Sb$_5$ to an external magnetic field. By performing angle-resolved photoemission spectroscopy in a tuneable magnetic field, we demonstrate that the response of the electronic structure is compatible with piezomagnetism along with strong orbital selectivity. Our results show that the origin of the time-reversal symmetry breaking is associated with the vanadium Van Hove singularities at the onset of the charge density wave order. We also demonstrate the presence of fluctuations beyond the charge ordering temperature. Our results reveal that magnetic fields can be used as tuning knobs for disentangling intertwined orders in the momentum space for quantum materials.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2512.11341v2</guid>
+      <category>cond-mat.str-el</category>
+      <category>cond-mat.mtrl-sci</category>
+      <category>cond-mat.supr-con</category>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>Jianwei Huang, Zheng Ren, Hengxin Tan, Jounghoon Hyun, Yichen Zhang, Thomas Hulse, Zhaoyu Liu, Jonathan M. DeStefano, Yaofeng Xie, Ziqin Yue, Junichiro Kono, Pengcheng Dai, Yu He, Aki Pulkkinen, J\'an Min\'ar, Jiun-Haw Chu, Ziqiang Wang, Binghai Yan, Rafael M. Fernandes, Ming Yi</dc:creator>
+    </item>
+    <item>
+      <title>Microscopic origin of orbital magnetization in chiral superconductors</title>
+      <link>https://arxiv.org/abs/2601.12387</link>
+      <description>arXiv:2601.12387v2 Announce Type: replace 
+Abstract: Chiral superconductivity is a time-reversal-symmetry-breaking superconducting phase that has attracted broad interest as a potential platform for topological quantum computation. A fundamental consequence of this symmetry breaking is orbital magnetization, yet a clear microscopic formulation of this quantity has remained elusive. This difficulty arises because Bogoliubov quasiparticles do not carry a definite electric charge, precluding a simple interpretation of orbital magnetization in terms of circulating quasiparticle currents. Moreover, superconductivity and ferromagnetism rarely coexist, and in the few materials where they do (e.g. uranium-based compounds), strong spin-orbit coupling obscures the orbital contribution to the magnetization. The recent report of chiral superconductivity in rhombohedral multilayer graphene, which has negligible spin-orbit coupling, therefore provides a unique opportunity to develop and test a microscopic theory of orbital magnetization in chiral superconductors. Here we develop such a theory, unifying the interband coherence effects underlying normal-state orbital magnetization with the intrinsic orbital moments of the Cooper-pair condensate. Applying our theory to rhombohedral tetralayer graphene, we find that the onset of superconductivity can either enhance or suppress the normal-state orbital magnetization, depending on the bandstructure. We further identify a generalized clapping mode with a gap set by the sublattice winding form factor. This collective mode is unique to chiral superconductors and contributes to the orbital magnetization through its role in dressing the photon vertex. Our theory resolves a long-standing conceptual difficulty in defining orbital magnetization in superconducting systems, and measurements of the orbital magnetization relative to the quarter-metal phase would provide a direct experimental test.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2601.12387v2</guid>
+      <category>cond-mat.supr-con</category>
+      <category>cond-mat.mes-hall</category>
+      <category>cond-mat.str-el</category>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
       <arxiv:announce_type>replace</arxiv:announce_type>
       <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
       <dc:creator>Jihang Zhu, Chunli Huang</dc:creator>
     </item>
     <item>
-      <title>Collective excitations in chiral spin liquid: chiral roton and long-wavelength nematic mode</title>
-      <link>https://arxiv.org/abs/2601.20702</link>
-      <description>arXiv:2601.20702v2 Announce Type: replace 
-Abstract: Chiral spin liquid (CSL) is a magnetic analogue of the fractional quantum Hall (FQH) liquid. Collective excitations play a vital role in shaping our understanding of these exotic quantum phases of matter and their quantum phase transitions. While the magneto-roton and long-wavelength chiral graviton modes in the FQH liquids have been extensively explored, the collective excitations of CSLs remain elusive. Here we explore the collective excitations in the SU(2) symmetric CSL phase of the spin-1/2 square-lattice $J_1-J_2-J_\chi$ model, where an intriguing quantum phase diagram was recently revealed. Combining exact diagonalization and time-dependent variational principle calculations, we observe two spin-singlet collective modes: a chiral p-wave (low-energy) roton mode at finite momentum and a elliptically polarized d-wave (higher-energy) nematic mode at zero momentum, both of which are prominent across the CSL phase. Such exotic modes exhibit fingerprints distinct from those of FQH liquids, and to the best of our knowledge, are reported for the first time. By tuning $J_2$, we find the nematic mode to be pronouncedly soft, together with the spin-triplet two-spinon bound states, potentially promoting strong nematic and spin stripe instabilities. Our work paves the way for further understanding CSL from the dynamical perspective and provides new spectroscopic signatures for future experiments of CSL candidates.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2601.20702v2</guid>
+      <title>Electrostatic Screening Modulation of Graphene's Electronic Structure and the Helical Wavefunction Dominated Topological Properties</title>
+      <link>https://arxiv.org/abs/2601.18489</link>
+      <description>arXiv:2601.18489v2 Announce Type: replace 
+Abstract: This study examines electrostatic screening effects in graphene using tight binding calculations based on the Binding energy and Bond Charge model and a modified version of it. The results indicate that the modified BBC potential decays in an exponential manner with distance, which suppresses electron electron interactions. The hopping integrals exhibit a pronounced decrease over distance and shift with parameter variation. A band gap opens once the parameter exceeds a certain threshold. The density of states shows a prominent peak near the Fermi level, whereas the low-energy region remains largely unchanged. The low energy helical wave functions in graphene display topological characteristics, including pseudospin momentum locking and a {\pi} Berry phase, resulting in distinctive transport properties. By avoiding the Coulomb singularity, the model offers valuable insights for the engineering of screening in two-dimensional systems and the design of topological devices.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2601.18489v2</guid>
+      <category>cond-mat.mes-hall</category>
+      <category>cond-mat.mtrl-sci</category>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>Yaorui Tan, Xiang Chen, Yunhu Zhu, Xiaowu Yang, Zhongkai Huang, Chuang Yao, Maolin Bo</dc:creator>
+    </item>
+    <item>
+      <title>Topologically Protected Surface Altermagnetism on Antiferromagnets</title>
+      <link>https://arxiv.org/abs/2602.10108</link>
+      <description>arXiv:2602.10108v2 Announce Type: replace 
+Abstract: Altermagnetism (AM) and its associated spin-transport phenomena are typically linked to spin-split electronic band structures in bulk materials. However, the crystal surface has a reduced symmetry with respect to the bulk, which can induce AM at the surface of conventional antiferromagnets (AFMs) $\unicode{x2013}$ a local effect which cannot be detected using bulk properties. In this work we define the symmetry conditions necessary for surface AM and show how it can be topologically protected, rendering it a robust effect. We provide a minimal model for one trivial and two topological examples of surface AM. We show that the spin spectral density, accessible by spin- and angle-resolved photoemission spectroscopy, can exhibit a $d$-wave-like altermagnetic character at the surface, even when the full band structure is completely spin degenerate. Our topological model describes the Dirac semimetal CuMnAs, which provides an existing realization of our theory. Our results identify crystal surfaces as a platform to realize robust, topology- and symmetry-driven unconventional magnetism beyond the bulk classification of magnetic materials.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.10108v2</guid>
       <category>cond-mat.str-el</category>
-      <pubDate>Wed, 11 Feb 2026 00:00:00 -0500</pubDate>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 -0500</pubDate>
       <arxiv:announce_type>replace</arxiv:announce_type>
       <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
-      <dc:creator>Hongyu Lu, Wei Zhu, Wang Yao</dc:creator>
+      <dc:creator>Valentin Leeb, Peru d'Ornellas, Fernando de Juan, Adolfo G. Grushin</dc:creator>
     </item>
     </channel>
 </rss>

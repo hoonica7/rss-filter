@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02488-8"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02478-2"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02503-y"/>
@@ -28,11 +30,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02525-6"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02479-9"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02487-9"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nmat/rss.gif">
@@ -40,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-026-02488-8">
+            <title>Helical metasurfaces based on topological surface states in three-dimensional photonic topological insulators</title>
+            <link>https://www.nature.com/articles/s41563-026-02488-8</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 12 February 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02488-8"&gt;doi:10.1038/s41563-026-02488-8&lt;/a&gt;&lt;/p&gt;The open interfaces of a three-dimensional all-dielectric photonic topological insulator operate as effective metasurfaces with helical surface states, enabling spin-dependent steering and directional control of far-field surface state emission.</content:encoded>
+            <dc:title>Helical metasurfaces based on topological surface states in three-dimensional photonic topological insulators</dc:title>
+            <dc:creator>Dmitry V. Zhirihin</dc:creator><dc:creator>Mikhail S. Sidorenko</dc:creator><dc:creator>Alina D. Rozenblit</dc:creator><dc:creator>Georgiy D. Kurganov</dc:creator><dc:creator>Maxim A. Gorlach</dc:creator><dc:creator>Dmitry S. Filonov</dc:creator><dc:creator>Yuri S. Kivshar</dc:creator><dc:creator>Alexey P. Slobozhanyuk</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-026-02488-8</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2026-02-12; | doi:10.1038/s41563-026-02488-8</dc:source>
+            <dc:date>2026-02-12</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-026-02488-8</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-026-02488-8</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-025-02478-2">
             <title>Cation–polymer interactions drive water expulsion and deswelling in n-type ladder organic mixed conductors</title>
@@ -116,34 +129,4 @@
             <prism:url>https://www.nature.com/articles/s41563-026-02525-6</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41563-026-02479-9">
-            <title>A 3-GPa ductile martensitic alloy enabled by interface complexes and dislocations</title>
-            <link>https://www.nature.com/articles/s41563-026-02479-9</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 30 January 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02479-9"&gt;doi:10.1038/s41563-026-02479-9&lt;/a&gt;&lt;/p&gt;A martensitic alloy with a tensile strength exceeding 3 GPa and a fracture elongation of 5.13% is developed. These mechanical properties arise from interface complexes interacting with dense dislocation networks, which is a mechanism shown to be applicable to other compositions.</content:encoded>
-            <dc:title>A 3-GPa ductile martensitic alloy enabled by interface complexes and dislocations</dc:title>
-            <dc:creator>Rong Lv</dc:creator><dc:creator>Jia Li</dc:creator><dc:creator>Yunzhu Shi</dc:creator><dc:creator>Shuai Dai</dc:creator><dc:creator>Shuo Wang</dc:creator><dc:creator>Xinren Chen</dc:creator><dc:creator>Xiaoye Zhou</dc:creator><dc:creator>Fei Zhang</dc:creator><dc:creator>Meiyuan Jiao</dc:creator><dc:creator>Chao Ma</dc:creator><dc:creator>Alexander Schökel</dc:creator><dc:creator>Shaolou Wei</dc:creator><dc:creator>Yan Ma</dc:creator><dc:creator>Claudio Pistidda</dc:creator><dc:creator>Zhifeng Lei</dc:creator><dc:creator>Zhaoping Lu</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-026-02479-9</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2026-01-30; | doi:10.1038/s41563-026-02479-9</dc:source>
-            <dc:date>2026-01-30</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-026-02479-9</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-026-02479-9</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-026-02487-9">
-            <title>A free energy landscape analysis of resistance fluctuations in a memristive device</title>
-            <link>https://www.nature.com/articles/s41563-026-02487-9</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 30 January 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02487-9"&gt;doi:10.1038/s41563-026-02487-9&lt;/a&gt;&lt;/p&gt;Resistance noise in memristive devices is often described as a thermally activated process across simple energy barriers, but this can underestimate the role of entropy in a complex free energy landscape. Quantifying transition rates between discrete resistance states during resistance fluctuations in nanoscale GeTe shows that entropic contributions can strongly shape the free energy barriers.</content:encoded>
-            <dc:title>A free energy landscape analysis of resistance fluctuations in a memristive device</dc:title>
-            <dc:creator>Sebastian Walfort</dc:creator><dc:creator>Xuan Thang Vu</dc:creator><dc:creator>Jakob Ballmaier</dc:creator><dc:creator>Nils Holle</dc:creator><dc:creator>Niklas Vollmar</dc:creator><dc:creator>Martin Salinga</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-026-02487-9</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2026-01-30; | doi:10.1038/s41563-026-02487-9</dc:source>
-            <dc:date>2026-01-30</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-026-02487-9</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-026-02487-9</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
