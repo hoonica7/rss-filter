@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00863-x"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00854-y"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00860-0"/>
@@ -30,8 +32,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00851-1"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00849-9"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -40,6 +40,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-026-00863-x">
+            <title>The influence of phonon symmetry and electronic structure on the electron-phonon coupling momentum dependence in cuprates</title>
+            <link>https://www.nature.com/articles/s41535-026-00863-x</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 13 February 2026; &lt;a href="https://www.nature.com/articles/s41535-026-00863-x"&gt;doi:10.1038/s41535-026-00863-x&lt;/a&gt;&lt;/p&gt;The influence of phonon symmetry and electronic structure on the electron-phonon coupling momentum dependence in cuprates</content:encoded>
+            <dc:title>The influence of phonon symmetry and electronic structure on the electron-phonon coupling momentum dependence in cuprates</dc:title>
+            <dc:creator>Maryia Zinouyeva</dc:creator><dc:creator>Rolf Heid</dc:creator><dc:creator>Giacomo Merzoni</dc:creator><dc:creator>Riccardo Arpaia</dc:creator><dc:creator>Nikolai Andreev</dc:creator><dc:creator>Marco Biagi</dc:creator><dc:creator>Nicholas B. Brookes</dc:creator><dc:creator>Daniele Di Castro</dc:creator><dc:creator>Alexei Kalaboukhov</dc:creator><dc:creator>Kurt Kummer</dc:creator><dc:creator>Floriana Lombardi</dc:creator><dc:creator>Leonardo Martinelli</dc:creator><dc:creator>Francesco Rosa</dc:creator><dc:creator>Matteo Rossi</dc:creator><dc:creator>Flora Yakhou-Harris</dc:creator><dc:creator>Lucio Braicovich</dc:creator><dc:creator>Marco Moretti</dc:creator><dc:creator>Paolo G. Radaelli</dc:creator><dc:creator>Giacomo Ghiringhelli</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-026-00863-x</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2026-02-13; | doi:10.1038/s41535-026-00863-x</dc:source>
+            <dc:date>2026-02-13</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-026-00863-x</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-026-00863-x</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-026-00854-y">
             <title>Vanishing ordered moment in the frustrated triangular lattice antiferromagnet CuNdO&lt;sub&gt;2&lt;/sub&gt;</title>
@@ -129,21 +144,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-026-00851-1</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-026-00851-1</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-026-00849-9">
-            <title>Interlayer pairing in bilayer nickelates</title>
-            <link>https://www.nature.com/articles/s41535-026-00849-9</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 22 January 2026; &lt;a href="https://www.nature.com/articles/s41535-026-00849-9"&gt;doi:10.1038/s41535-026-00849-9&lt;/a&gt;&lt;/p&gt;Interlayer pairing in bilayer nickelates</content:encoded>
-            <dc:title>Interlayer pairing in bilayer nickelates</dc:title>
-            <dc:creator>Thomas A. Maier</dc:creator><dc:creator>Peter Doak</dc:creator><dc:creator>Ling-Fang Lin</dc:creator><dc:creator>Yang Zhang</dc:creator><dc:creator>Adriana Moreo</dc:creator><dc:creator>Elbio Dagotto</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-026-00849-9</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2026-01-22; | doi:10.1038/s41535-026-00849-9</dc:source>
-            <dc:date>2026-01-22</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-026-00849-9</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-026-00849-9</prism:url>
         </item>
     
 </rdf:RDF>

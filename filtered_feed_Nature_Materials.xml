@@ -18,9 +18,11 @@
         <items>
             <rdf:Seq>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02488-8"/>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02502-z"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02478-2"/>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02496-8"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02488-8"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02503-y"/>
                 
@@ -28,9 +30,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02474-6"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02525-6"/>
-                
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nmat/rss.gif">
@@ -38,6 +38,36 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-026-02502-z">
+            <title>Reconstructing into a denser phase</title>
+            <link>https://www.nature.com/articles/s41563-026-02502-z</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 13 February 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02502-z"&gt;doi:10.1038/s41563-026-02502-z&lt;/a&gt;&lt;/p&gt;Tellurium vacancies can drive atomic reconstruction in PdTe2 thin films, converting them into non-layered PdTe. Such a non-stoichiometric phase transition yields large-scale thin-film superconductors and can also create an intermediate heterostructure that enables helicity-sensitive terahertz emission.</content:encoded>
+            <dc:title>Reconstructing into a denser phase</dc:title>
+            <dc:creator>Jaewon Wang</dc:creator><dc:creator>Soon-Yong Kwon</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-026-02502-z</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2026-02-13; | doi:10.1038/s41563-026-02502-z</dc:source>
+            <dc:date>2026-02-13</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-026-02502-z</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-026-02502-z</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-026-02496-8">
+            <title>Ideal non-crystals as a distinct form of ordered states without symmetry breaking</title>
+            <link>https://www.nature.com/articles/s41563-026-02496-8</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 13 February 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02496-8"&gt;doi:10.1038/s41563-026-02496-8&lt;/a&gt;&lt;/p&gt;A distinct class of ordered states without symmetry breaking is reported with perfect non-crystalline steric order. These ideal non-crystals exhibit non-trivial long-range orientational correlations and crystal-like properties.</content:encoded>
+            <dc:title>Ideal non-crystals as a distinct form of ordered states without symmetry breaking</dc:title>
+            <dc:creator>Xinyu Fan</dc:creator><dc:creator>Ding Xu</dc:creator><dc:creator>Jianhua Zhang</dc:creator><dc:creator>Hao Hu</dc:creator><dc:creator>Peng Tan</dc:creator><dc:creator>Ning Xu</dc:creator><dc:creator>Hajime Tanaka</dc:creator><dc:creator>Hua Tong</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-026-02496-8</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2026-02-13; | doi:10.1038/s41563-026-02496-8</dc:source>
+            <dc:date>2026-02-13</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-026-02496-8</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-026-02496-8</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-026-02488-8">
             <title>Helical metasurfaces based on topological surface states in three-dimensional photonic topological insulators</title>
@@ -52,21 +82,6 @@
             <prism:publicationName>Nature Materials</prism:publicationName>
             <prism:doi>10.1038/s41563-026-02488-8</prism:doi>
             <prism:url>https://www.nature.com/articles/s41563-026-02488-8</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02478-2">
-            <title>Cation–polymer interactions drive water expulsion and deswelling in n-type ladder organic mixed conductors</title>
-            <link>https://www.nature.com/articles/s41563-025-02478-2</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 11 February 2026; &lt;a href="https://www.nature.com/articles/s41563-025-02478-2"&gt;doi:10.1038/s41563-025-02478-2&lt;/a&gt;&lt;/p&gt;A molecular-level understanding of structural evolution upon electrochemical doping in organic mixed ionic-electronic conductors is required. A pronounced reduction in mass and thickness is observed in an n-type ladder polymer upon doping with protic cations owing to water expulsion.</content:encoded>
-            <dc:title>Cation–polymer interactions drive water expulsion and deswelling in n-type ladder organic mixed conductors</dc:title>
-            <dc:creator>Tom P. A. van der Pol</dc:creator><dc:creator>Dongxun Lyu</dc:creator><dc:creator>Zoé Truyens</dc:creator><dc:creator>Vincent Lemaur</dc:creator><dc:creator>Demetra Tsokkou</dc:creator><dc:creator>Arianna Magni</dc:creator><dc:creator>Chiara Musumeci</dc:creator><dc:creator>Han-Yan Wu</dc:creator><dc:creator>Junpeng Ji</dc:creator><dc:creator>David Cornil</dc:creator><dc:creator>Chi-Yuan Yang</dc:creator><dc:creator>Scott T. Keene</dc:creator><dc:creator>Gabriele D’Avino</dc:creator><dc:creator>Alberto Salleo</dc:creator><dc:creator>Natalie Banerji</dc:creator><dc:creator>Clare Grey</dc:creator><dc:creator>David Beljonne</dc:creator><dc:creator>Simone Fabiano</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-025-02478-2</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2026-02-11; | doi:10.1038/s41563-025-02478-2</dc:source>
-            <dc:date>2026-02-11</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02478-2</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02478-2</prism:url>
         </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-026-02503-y">
@@ -114,19 +129,4 @@
             <prism:url>https://www.nature.com/articles/s41563-025-02474-6</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41563-026-02525-6">
-            <title>Author Correction: How charge frustration causes ion ordering and microphase separation at surfaces</title>
-            <link>https://www.nature.com/articles/s41563-026-02525-6</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 05 February 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02525-6"&gt;doi:10.1038/s41563-026-02525-6&lt;/a&gt;&lt;/p&gt;Author Correction: How charge frustration causes ion ordering and microphase separation at surfaces</content:encoded>
-            <dc:title>Author Correction: How charge frustration causes ion ordering and microphase separation at surfaces</dc:title>
-            <dc:creator>Mingyi Zhang</dc:creator><dc:creator>Benjamin A. Legg</dc:creator><dc:creator>Benjamin A. Helfrecht</dc:creator><dc:creator>Yuanzhong Zhang</dc:creator><dc:creator>Shuai Tan</dc:creator><dc:creator>Ying Xia</dc:creator><dc:creator>Rae Karell Yodong</dc:creator><dc:creator>Monica Iepure</dc:creator><dc:creator>Venkateshkumar Prabhakaran</dc:creator><dc:creator>Peter J. Pauzauskie</dc:creator><dc:creator>Younjin Min</dc:creator><dc:creator>Christopher J. Mundy</dc:creator><dc:creator>James J. De Yoreo</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-026-02525-6</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2026-02-05; | doi:10.1038/s41563-026-02525-6</dc:source>
-            <dc:date>2026-02-05</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-026-02525-6</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-026-02525-6</prism:url>
-        </item>
-    
-        </rdf:RDF>
+</rdf:RDF>

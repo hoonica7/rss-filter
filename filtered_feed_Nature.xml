@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-026-00250-3"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-026-10134-1"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-026-10144-z"/>
@@ -34,6 +36,21 @@
         <url>https://www.nature.com/uploads/product/nature/rss.png</url>
         <link>http://feeds.nature.com/nature/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/d41586-026-00250-3">
+            <title>Self-powered vibration sensor for wearable health care and voice detection</title>
+            <link>https://www.nature.com/articles/d41586-026-00250-3</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 12 February 2026; &lt;a href="https://www.nature.com/articles/d41586-026-00250-3"&gt;doi:10.1038/d41586-026-00250-3&lt;/a&gt;&lt;/p&gt;Densely packed arrays of electrical components called capacitors can form a high-fidelity vibration sensor that can be worn on the skin.</content:encoded>
+            <dc:title>Self-powered vibration sensor for wearable health care and voice detection</dc:title>
+            <dc:creator>Seungjae Lee</dc:creator><dc:creator>Hyunhyub Ko</dc:creator>
+            <dc:identifier>doi:10.1038/d41586-026-00250-3</dc:identifier>
+            <dc:source>Nature, Published online: 2026-02-12; | doi:10.1038/d41586-026-00250-3</dc:source>
+            <dc:date>2026-02-12</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/d41586-026-00250-3</prism:doi>
+            <prism:url>https://www.nature.com/articles/d41586-026-00250-3</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41586-026-10134-1">
             <title>Maximizing perovskite electroluminescence with ordered 3D/2D heterojunction</title>
