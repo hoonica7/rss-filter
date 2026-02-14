@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00864-w"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00863-x"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00854-y"/>
@@ -30,8 +32,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00859-7"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00851-1"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -40,6 +40,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-026-00864-w">
+            <title>Superconductivity induced by spin-orbit coupling in a two-valley ferromagnet</title>
+            <link>https://www.nature.com/articles/s41535-026-00864-w</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 13 February 2026; &lt;a href="https://www.nature.com/articles/s41535-026-00864-w"&gt;doi:10.1038/s41535-026-00864-w&lt;/a&gt;&lt;/p&gt;Superconductivity induced by spin-orbit coupling in a two-valley ferromagnet</content:encoded>
+            <dc:title>Superconductivity induced by spin-orbit coupling in a two-valley ferromagnet</dc:title>
+            <dc:creator>Zachary M. Raines</dc:creator><dc:creator>Andrey V. Chubukov</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-026-00864-w</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2026-02-13; | doi:10.1038/s41535-026-00864-w</dc:source>
+            <dc:date>2026-02-13</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-026-00864-w</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-026-00864-w</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-026-00863-x">
             <title>The influence of phonon symmetry and electronic structure on the electron-phonon coupling momentum dependence in cuprates</title>
@@ -129,21 +144,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-026-00859-7</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-026-00859-7</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-026-00851-1">
-            <title>Kitaev interaction and proximate higher-order skyrmion crystal in the triangular lattice van der Waals antiferromagnet Ni&lt;b&gt;I&lt;/b&gt;&lt;sub&gt;&lt;b&gt;2&lt;/b&gt;&lt;/sub&gt;</title>
-            <link>https://www.nature.com/articles/s41535-026-00851-1</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 31 January 2026; &lt;a href="https://www.nature.com/articles/s41535-026-00851-1"&gt;doi:10.1038/s41535-026-00851-1&lt;/a&gt;&lt;/p&gt;Kitaev interaction and proximate higher-order skyrmion crystal in the triangular lattice van der Waals antiferromagnet Ni&lt;b&gt;I&lt;/b&gt;&lt;sub&gt;&lt;b&gt;2&lt;/b&gt;&lt;/sub&gt;</content:encoded>
-            <dc:title>Kitaev interaction and proximate higher-order skyrmion crystal in the triangular lattice van der Waals antiferromagnet Ni&lt;b&gt;I&lt;/b&gt;&lt;sub&gt;&lt;b&gt;2&lt;/b&gt;&lt;/sub&gt;</dc:title>
-            <dc:creator>Chaebin Kim</dc:creator><dc:creator>Olivia Vilella</dc:creator><dc:creator>Youjin Lee</dc:creator><dc:creator>Pyeongjae Park</dc:creator><dc:creator>Yeochan An</dc:creator><dc:creator>Woonghee Cho</dc:creator><dc:creator>Matthew B. Stone</dc:creator><dc:creator>Alexander I. Kolesnikov</dc:creator><dc:creator>Yiqing Hao</dc:creator><dc:creator>Shinichiro Asai</dc:creator><dc:creator>Shinichi Itoh</dc:creator><dc:creator>Takatsugu Masuda</dc:creator><dc:creator>Sakib Matin</dc:creator><dc:creator>Yuna Kim</dc:creator><dc:creator>Sung-Jin Kim</dc:creator><dc:creator>Martin Mourigal</dc:creator><dc:creator>Je-Geun Park</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-026-00851-1</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2026-01-31; | doi:10.1038/s41535-026-00851-1</dc:source>
-            <dc:date>2026-01-31</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-026-00851-1</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-026-00851-1</prism:url>
         </item>
     
 </rdf:RDF>
