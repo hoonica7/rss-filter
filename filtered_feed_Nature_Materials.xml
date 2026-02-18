@@ -18,17 +18,19 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02508-7"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02502-z"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02496-8"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02488-8"/>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02478-2"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02503-y"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02495-9"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02474-6"/>
                 
             </rdf:Seq>
         </items>
@@ -38,6 +40,21 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-026-02508-7">
+            <title>Multiscale-structured miniaturized 3D force sensors</title>
+            <link>https://www.nature.com/articles/s41563-026-02508-7</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 18 February 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02508-7"&gt;doi:10.1038/s41563-026-02508-7&lt;/a&gt;&lt;/p&gt;Tactile sensing to differentiate normal and shear forces remains a challenge. A force microsensor array based on graphene and a liquid-metal composites decouples normal–shear force sensing, achieving a 200 μm scale and a 0.9 μN force detection limit.</content:encoded>
+            <dc:title>Multiscale-structured miniaturized 3D force sensors</dc:title>
+            <dc:creator>Guolin Yun</dc:creator><dc:creator>Zesheng Chen</dc:creator><dc:creator>Zhuo Chen</dc:creator><dc:creator>Jinrui Chen</dc:creator><dc:creator>Binghan Zhou</dc:creator><dc:creator>Mingfei Xiao</dc:creator><dc:creator>Michael Stevens</dc:creator><dc:creator>Manish Chhowalla</dc:creator><dc:creator>Tawfique Hasan</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-026-02508-7</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2026-02-18; | doi:10.1038/s41563-026-02508-7</dc:source>
+            <dc:date>2026-02-18</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-026-02508-7</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-026-02508-7</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-026-02502-z">
             <title>Reconstructing into a denser phase</title>
@@ -84,6 +101,21 @@
             <prism:url>https://www.nature.com/articles/s41563-026-02488-8</prism:url>
         </item>
     
+        <item rdf:about="https://www.nature.com/articles/s41563-025-02478-2">
+            <title>Cation–polymer interactions drive water expulsion and deswelling in n-type ladder organic mixed conductors</title>
+            <link>https://www.nature.com/articles/s41563-025-02478-2</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 11 February 2026; &lt;a href="https://www.nature.com/articles/s41563-025-02478-2"&gt;doi:10.1038/s41563-025-02478-2&lt;/a&gt;&lt;/p&gt;A molecular-level understanding of structural evolution upon electrochemical doping in organic mixed ionic-electronic conductors is required. A pronounced reduction in mass and thickness is observed in an n-type ladder polymer upon doping with protic cations owing to water expulsion.</content:encoded>
+            <dc:title>Cation–polymer interactions drive water expulsion and deswelling in n-type ladder organic mixed conductors</dc:title>
+            <dc:creator>Tom P. A. van der Pol</dc:creator><dc:creator>Dongxun Lyu</dc:creator><dc:creator>Zoé Truyens</dc:creator><dc:creator>Vincent Lemaur</dc:creator><dc:creator>Demetra Tsokkou</dc:creator><dc:creator>Arianna Magni</dc:creator><dc:creator>Chiara Musumeci</dc:creator><dc:creator>Han-Yan Wu</dc:creator><dc:creator>Junpeng Ji</dc:creator><dc:creator>David Cornil</dc:creator><dc:creator>Chi-Yuan Yang</dc:creator><dc:creator>Scott T. Keene</dc:creator><dc:creator>Gabriele D’Avino</dc:creator><dc:creator>Alberto Salleo</dc:creator><dc:creator>Natalie Banerji</dc:creator><dc:creator>Clare Grey</dc:creator><dc:creator>David Beljonne</dc:creator><dc:creator>Simone Fabiano</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-025-02478-2</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2026-02-11; | doi:10.1038/s41563-025-02478-2</dc:source>
+            <dc:date>2026-02-11</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-025-02478-2</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-025-02478-2</prism:url>
+        </item>
+    
         <item rdf:about="https://www.nature.com/articles/s41563-026-02503-y">
             <title>Ultraclean monolayers from a van der Waals confinement</title>
             <link>https://www.nature.com/articles/s41563-026-02503-y</link>
@@ -112,21 +144,6 @@
             <prism:publicationName>Nature Materials</prism:publicationName>
             <prism:doi>10.1038/s41563-026-02495-9</prism:doi>
             <prism:url>https://www.nature.com/articles/s41563-026-02495-9</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-025-02474-6">
-            <title>Narrowband quantum emitters with optically addressable spin states generated in hexagonal boron nitride</title>
-            <link>https://www.nature.com/articles/s41563-025-02474-6</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 06 February 2026; &lt;a href="https://www.nature.com/articles/s41563-025-02474-6"&gt;doi:10.1038/s41563-025-02474-6&lt;/a&gt;&lt;/p&gt;A single-step thermal process reliably generates high-density, narrowband quantum emitters in hexagonal boron nitride. More than 25% of these emitters show room-temperature optical spin readout, revealing S = 1 and S = 1/2 spin complexes that are explained by charge transfer from strongly to weakly coupled spin pairs.</content:encoded>
-            <dc:title>Narrowband quantum emitters with optically addressable spin states generated in hexagonal boron nitride</dc:title>
-            
-            <dc:identifier>doi:10.1038/s41563-025-02474-6</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2026-02-06; | doi:10.1038/s41563-025-02474-6</dc:source>
-            <dc:date>2026-02-06</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-025-02474-6</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-025-02474-6</prism:url>
         </item>
     
 </rdf:RDF>
