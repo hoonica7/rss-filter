@@ -70,8 +70,8 @@ JOURNAL_URLS = {
 }
 
 # Initialize Gemini model
-primary_model = 'gemini-2.5-flash'
-fallback_model = 'gemini-2.0-flash'
+primary_model = 'gemini-3-flash'
+fallback_model = 'gemini-2.5-flash'
 current_model = None
 using_primary_model = True
 try:
