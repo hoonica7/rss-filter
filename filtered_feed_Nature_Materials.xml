@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02492-y"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02508-7"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02502-z"/>
@@ -28,10 +30,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-025-02478-2"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02503-y"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02495-9"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -40,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-026-02492-y">
+            <title>A molten-salt dispersion of lanthanides at the atomic scale</title>
+            <link>https://www.nature.com/articles/s41563-026-02492-y</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 19 February 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02492-y"&gt;doi:10.1038/s41563-026-02492-y&lt;/a&gt;&lt;/p&gt;Persistent synthesis challenges constrain the stabilization of single-atom lanthanide catalysts across many substrates. Using a method based on molten-nitrite chemistry, the atomic dispersion of lanthanide atoms on diverse substrates is achieved and exemplified by Dy1/Pt for acidic hydrogen evolution.</content:encoded>
+            <dc:title>A molten-salt dispersion of lanthanides at the atomic scale</dc:title>
+            <dc:creator>Haoyuan Wang</dc:creator><dc:creator>Chunxiao Liu</dc:creator><dc:creator>Yuan Ji</dc:creator><dc:creator>Hongliang Zeng</dc:creator><dc:creator>Sunpei Hu</dc:creator><dc:creator>Xinyan Zhang</dc:creator><dc:creator>Qisheng Zeng</dc:creator><dc:creator>Jiawei Li</dc:creator><dc:creator>Qinglong Gao</dc:creator><dc:creator>Yao Zhang</dc:creator><dc:creator>Jie Zeng</dc:creator><dc:creator>Xu Li</dc:creator><dc:creator>Tingting Zheng</dc:creator><dc:creator>Qiu Jiang</dc:creator><dc:creator>Chuan Xia</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-026-02492-y</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2026-02-19; | doi:10.1038/s41563-026-02492-y</dc:source>
+            <dc:date>2026-02-19</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-026-02492-y</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-026-02492-y</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-026-02508-7">
             <title>Multiscale-structured miniaturized 3D force sensors</title>
@@ -114,36 +127,6 @@
             <prism:publicationName>Nature Materials</prism:publicationName>
             <prism:doi>10.1038/s41563-025-02478-2</prism:doi>
             <prism:url>https://www.nature.com/articles/s41563-025-02478-2</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-026-02503-y">
-            <title>Ultraclean monolayers from a van der Waals confinement</title>
-            <link>https://www.nature.com/articles/s41563-026-02503-y</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 09 February 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02503-y"&gt;doi:10.1038/s41563-026-02503-y&lt;/a&gt;&lt;/p&gt;Growing transition metal dichalcogenide monolayers at a buried van der Waals interface simultaneously improves thickness control, preserves ultraclean interfaces, and enables intrinsic patterning and atomically selective Janus structure formation.</content:encoded>
-            <dc:title>Ultraclean monolayers from a van der Waals confinement</dc:title>
-            <dc:creator>Chang-Hsun Huang</dc:creator><dc:creator>Jui-Han Fu</dc:creator><dc:creator>Vincent Tung</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-026-02503-y</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2026-02-09; | doi:10.1038/s41563-026-02503-y</dc:source>
-            <dc:date>2026-02-09</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-026-02503-y</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-026-02503-y</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-026-02495-9">
-            <title>Atomically precise synthesis and simultaneous heterostructure integration of 2D transition metal dichalcogenides through nano-confinement</title>
-            <link>https://www.nature.com/articles/s41563-026-02495-9</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 09 February 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02495-9"&gt;doi:10.1038/s41563-026-02495-9&lt;/a&gt;&lt;/p&gt;Nano-confinement between a capping layer composed of graphene or hexagonal boron nitride and a substrate directs the growth kinetics during chemical vapour deposition, which enables the atomically precise synthesis of 2D transition metal dichalcogenide monolayers, Janus monolayers and van der Waals heterostructures with ultraclean interfaces.</content:encoded>
-            <dc:title>Atomically precise synthesis and simultaneous heterostructure integration of 2D transition metal dichalcogenides through nano-confinement</dc:title>
-            <dc:creator>Ce Bian</dc:creator><dc:creator>Yifan Zhao</dc:creator><dc:creator>Roger Guzman</dc:creator><dc:creator>Hongtao Liu</dc:creator><dc:creator>Hao Hu</dc:creator><dc:creator>Qi Qi</dc:creator><dc:creator>Ke Zhu</dc:creator><dc:creator>Hao Wang</dc:creator><dc:creator>Kang Wu</dc:creator><dc:creator>Hui Guo</dc:creator><dc:creator>Wanzhen He</dc:creator><dc:creator>Zhaoqing Wang</dc:creator><dc:creator>Peng Peng</dc:creator><dc:creator>Zhiping Xu</dc:creator><dc:creator>Wu Zhou</dc:creator><dc:creator>Feng Ding</dc:creator><dc:creator>Haitao Yang</dc:creator><dc:creator>Hong-Jun Gao</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-026-02495-9</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2026-02-09; | doi:10.1038/s41563-026-02495-9</dc:source>
-            <dc:date>2026-02-09</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-026-02495-9</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-026-02495-9</prism:url>
         </item>
     
 </rdf:RDF>
