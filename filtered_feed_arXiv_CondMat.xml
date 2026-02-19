@@ -7,12 +7,12 @@
     <atom:link href="http://rss.arxiv.org/rss/cond-mat" rel="self" type="application/rss+xml"/>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Feb 2026 05:00:06 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Feb 2026 02:32:19 +0000</lastBuildDate>
     <managingEditor>rss-help@arxiv.org</managingEditor>
     <pubDate>Wed, 18 Feb 2026 00:00:00 -0500</pubDate>
     <skipDays>
-      <day>Sunday</day>
       <day>Saturday</day>
+      <day>Sunday</day>
     </skipDays>
     <item>
       <title>Hidden Twisted Sectors and Exponential Degeneracy in Root-of-Unity XXZ Heisenberg Chains</title>
@@ -94,9 +94,9 @@ Abstract: We investigate the critical current in microwave-irradiated Josephson 
     <item>
       <title>Universal electrical transport of composite Fermi liquid to Metal transition in Moir\'e systems</title>
       <link>https://arxiv.org/abs/2602.15334</link>
-      <description>arXiv:2602.15334v1 Announce Type: new 
+      <description>arXiv:2602.15334v2 Announce Type: new 
 Abstract: We compute universal electrical transport near continuous transitions between a composite Fermi liquid (CFL) and a metallic phase in moire Chern bands, focusing on fillings $\nu=-1/2$ and $\nu=-3/4$. The critical theory represents a novel QED-Chern-Simons framework: a charged sector at a bosonic Laughlin-superfluid critical point is coupled, via emergent gauge fields and Chern-Simons mixing, to a neutral spinon Fermi surface. Integrating out matter fields to quadratic order yields an explicit Ioffe-Larkin composition rule for the full resistivity tensor, showing how longitudinal channels add in series while Chern-Simons terms generate Hall response. To obtain the DC limit in the quantum critical fan, we develop a controlled large-N expansion where both fermion flavors and Chern-Simons levels scale with $N$, and solve a quantum Boltzmann equation at leading nontrivial order $1/N$. Gauge-mediated inelastic scattering removes the collisionless Drude singularity and produces a universal scaling function $\Sigma(\omega/T)$ and finite DC conductivities $\sigma(0) \approx 0.033 e^2/\hbar$ ($\nu=-1/2$) and $0.047 e^2/\hbar$ ($\nu=-3/4$). We also identify a Chern-Simons "filtering" mechanism that suppresses transmission of Landau damping from the spinon Fermi surface to the critical gauge mode. Our approach provides concrete transport diagnostics for detecting quantum criticality in moire superlattices.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2602.15334v1</guid>
+      <guid isPermaLink="false">oai:arXiv.org:2602.15334v2</guid>
       <category>cond-mat.str-el</category>
       <pubDate>Wed, 18 Feb 2026 00:00:00 -0500</pubDate>
       <arxiv:announce_type>new</arxiv:announce_type>
@@ -116,6 +116,20 @@ Abstract: The (111)-oriented 4d ferromagnetic perovskite SrRuO3 (SRO) offers a u
       <dc:creator>Harunori Shiratani, Yuki K. Wakabayashi, Yoshiharu Krockenberger, Masaki Kobayashi, Kohei Yamagami, Takahito Takeda, Shinobu Ohya, Masaaki Tanaka, Yoshitaka Taniyasu</dc:creator>
     </item>
     <item>
+      <title>Effects of quenched disorder in three-dimensional lattice ${\mathbb Z}_2$ gauge Higgs models</title>
+      <link>https://arxiv.org/abs/2602.15418</link>
+      <description>arXiv:2602.15418v1 Announce Type: new 
+Abstract: We study the effects of uncorrelated quenched disorder to the phase diagram and continuous transitions of three-dimensional lattice ${\mathbb Z}_2$ gauge Higgs models. For this purpose, we consider two types of quenched disorder, associated with the sites and plaquettes of the cubic lattice. In both cases, for sufficiently weak disorder, the phase diagram remains similar to that of the pure system, showing two different phases (one of them being a topologically ordered phase), separated by two different continuous transition lines. However, the quenched disorder changes the universality classes of the critical behaviors along some of the transition lines. The random-plaquette disorder turns out to be relevant along the topological ${\mathbb Z}_2$ gauge transition line, so the critical behaviors belong to the different random-plaquette $\mathbb{Z}_2$ gauge (RP${\mathbb Z}_2$G) universality class with length-scale exponent $\nu=\nu_{\rm rp}\approx 0.82$; on the other hand, it turns out to be irrelevant along the other Ising$^\times$ transition line (a variant of the Ising transitions with a gauge-dependent order parameter), leaving unchanged its asymptotic critical behaviors with $\nu=\nu_{\cal I}\approx 0.63$. The random-site disorder leads to a substantially different scenario: it destabilizes the Ising$^\times$ critical behaviors of the pure model, changing them into those of the randomly-dilute Ising$^{\times}$ (RDI$^{\times}$) universality class with $\nu=\nu_{\rm rdi}\approx 0.68$, while the critical behaviors along the other ${\mathbb Z}_2$ gauge topological transition line remains stable, with $\nu=\nu_{\cal I}\approx 0.63$.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.15418v1</guid>
+      <category>cond-mat.dis-nn</category>
+      <category>cond-mat.stat-mech</category>
+      <category>hep-lat</category>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>Claudio Bonati, Ettore Vicari</dc:creator>
+    </item>
+    <item>
       <title>Optimal conditions for detecting optical dichroism at the nanoscale by electron energy-loss spectroscopy</title>
       <link>https://arxiv.org/abs/2602.15425</link>
       <description>arXiv:2602.15425v1 Announce Type: new 
@@ -126,6 +140,55 @@ Abstract: The emergence of optical circular dichroism in chiral nanoscale and mo
       <arxiv:announce_type>new</arxiv:announce_type>
       <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
       <dc:creator>Marek Z\'ale\v{s}\'ak, Martin O\v{s}mera, Martin Hrto\v{n}, Andrea Kone\v{c}n\'a</dc:creator>
+    </item>
+    <item>
+      <title>Photoionization of temperature-controlled nanoparticles in a beam: Accurate and efficient determination of ionization energies and work functions</title>
+      <link>https://arxiv.org/abs/2602.15426</link>
+      <description>arXiv:2602.15426v1 Announce Type: new 
+Abstract: A beam of free alkali metal nanoparticles is produced by a condensation source, passed through a thermalizing tube adjustable over a broad temperature range, and ionized by tunable light. High stability of the particle flux and an automated data acquisition routine allow efficient collection of photoionization yield curves. A careful fit of the data to the universal Fowler function makes it possible to obtain nanoparticle ionization energies, and from those, the metal work functions, with $\sim$0.2% precision. The experimental arrangement, nanoparticle thermalization rates, and ionization threshold analysis are described in detail. The use of ultrapure and temperature-controlled gas-phase nanoparticles facilitates the analysis of electronic properties, such as work functions, and of their interplay with thermal lattice dynamics.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.15426v1</guid>
+      <category>cond-mat.mes-hall</category>
+      <category>cond-mat.mtrl-sci</category>
+      <category>physics.atm-clus</category>
+      <category>physics.chem-ph</category>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <arxiv:DOI>10.1063/5.0300914</arxiv:DOI>
+      <arxiv:journal_reference>Rev. Sci. Instrum. 96, 123705 (2025)</arxiv:journal_reference>
+      <dc:creator>Atef A. Sheekhoon, Abdelrahman O. Haridy, Sebastian Pedalino, Vitaly V. Kresin</dc:creator>
+    </item>
+    <item>
+      <title>Temperature-dependent photoionization thresholds of alkali-metal nanoparticles reveal thermal expansion and the melting transition</title>
+      <link>https://arxiv.org/abs/2602.15434</link>
+      <description>arXiv:2602.15434v1 Announce Type: new 
+Abstract: A precision measurement of the photoionization of pure sodium and potassium nanoparticles isolated in a beam enabled an accurate determination of their work functions as a function of temperature. In addition to resolving and quantifying the initial gradual decrease of the work function with temperature, which is associated with thermal expansion, the experiment revealed that the work function then undergoes a distinct drop both in magnitude and in slope that signifies the onset of nanoparticle melting. This establishes that a structural phase transition can be detected via a high-resolution measurement of the photoemission threshold. The melting temperature of nanoparticles with diameters of 7-9 nm is reduced by nearly 100 K relative to the bulk value. This suppression aligns with predictions from the Gibbs-Thomson equation which describes finite-size phase transitions.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.15434v1</guid>
+      <category>cond-mat.mes-hall</category>
+      <category>cond-mat.mtrl-sci</category>
+      <category>physics.atm-clus</category>
+      <category>physics.chem-ph</category>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <arxiv:DOI>10.1103/j6bf-bhkk</arxiv:DOI>
+      <arxiv:journal_reference>Phys. Rev. B 113, L041404 (2026)</arxiv:journal_reference>
+      <dc:creator>Abdelrahman O. Haridy, Atef A. Sheekhoon, Vitaly V. Kresin</dc:creator>
+    </item>
+    <item>
+      <title>Isotope effect in the work function of lithium</title>
+      <link>https://arxiv.org/abs/2602.15437</link>
+      <description>arXiv:2602.15437v1 Announce Type: new 
+Abstract: The work functions of 7Li and 6Li metals have been measured as a function of temperature, by using photoionization of pure isolated metal nanoparticles in a beam. These data reveal a marked isotope effect in the temperature variation of these work functions. Furthermore, for both isotopes the curvature of this temperature variation is found to be significantly larger than may be ascribed purely to a change in the electron gas density. These findings enhance the characterization of lithium as a quantum material in which the interplay between electronic and ionic degrees of freedom is nontrivial, and call for a microscopic understanding beyond simple models. Additionally, the slope of the work function curves was observed to vanish in the low temperature limit, as had been predicted on the basis of the Third Law of thermodynamics.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.15437v1</guid>
+      <category>cond-mat.mes-hall</category>
+      <category>cond-mat.mtrl-sci</category>
+      <category>physics.atm-clus</category>
+      <category>physics.chem-ph</category>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Atef A. Sheekhoon, Abdelrahman O. Haridy, Vitaly V. Kresin</dc:creator>
     </item>
     <item>
       <title>Resonant inelastic x-ray scattering in layered trimer iridate Ba4Ir3 O10 : the density functional approach</title>
@@ -252,6 +315,19 @@ Abstract: We show how the micro-focused BLS signal of forward volume spin waves 
       <dc:creator>Krzysztof Szulc, Mengying Guo, Ond\v{r}ej Wojewoda, Hongyu Wang, Dominik Pavelka, Jan Kl\'ima, Jakub Kr\v{c}ma, Xiufeng Han, Qi Wang, Michal Urb\'anek</dc:creator>
     </item>
     <item>
+      <title>Correlated electronic states at a ferromagnetic oxide interface</title>
+      <link>https://arxiv.org/abs/2602.15774</link>
+      <description>arXiv:2602.15774v1 Announce Type: new 
+Abstract: We propose a minimal tight-binding model for the electronic interface layer of the LaAlO$_3$/SrTiO$_3$ heterostructure with oxygen vacancies. In this model, the effective carriers are subject to oxygen vacancy induced magnetic impurities. Both the effects of random on-site potentials and Zeeman-like exchange interactions between correlated carriers and magnetic impurities are taken into account. By applying the combined coherent potential approximation (CPA) and dynamical mean-field theory (DMFT) for a ferromagnetic state, we uncover a disordered Fermi-liquid regime for the majority-spins and a low energy scale which controls the transport of the minority-spin carriers, both induced by the magnetic impurities.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.15774v1</guid>
+      <category>cond-mat.str-el</category>
+      <category>cond-mat.dis-nn</category>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>D. Jones, A. Weh, A. \"Ostlin, D. Braak, T. Kopp, P. Seiler, U. Eckern, L. Chioncel</dc:creator>
+    </item>
+    <item>
       <title>Observing quantum many-body dynamics in emergent curved spacetime using programmable quantum processors</title>
       <link>https://arxiv.org/abs/2602.15524</link>
       <description>arXiv:2602.15524v1 Announce Type: cross 
@@ -310,6 +386,21 @@ Abstract: Moir\'e superlattices in stacked 2D crystals are powerful platforms fo
       <dc:creator>Qixuan Zhang, Lingyuan Lyu, Sneh Pancholi, Ziying Yan, Trevor Senaha, Ruolun Zhang, Chen Wu, Leonard W. Cao, Jason Tresback, Andrew Dai, Kenji Watanabe, Takashi Taniguchi, Daniel E. Parker, Monica T. Allen</dc:creator>
     </item>
     <item>
+      <title>Signatures of Quantum Phase Transitions in Driven Dissipative Spin Chains</title>
+      <link>https://arxiv.org/abs/2405.20518</link>
+      <description>arXiv:2405.20518v2 Announce Type: replace 
+Abstract: Open driven quantum systems have defined a powerful paradigm of nonequilibrium phases and phase transitions; however, quantum phase transitions are generically not expected in this setting due to the decohering effect of dissipation. In this Letter, we consider a quantum Ising model subject to bulk dissipation (at rate $\Gamma$) and show that, although the correlation length remains finite (hence no phase transition), it develops a pronounced peak close to the ground-state quantum critical point. While standard techniques fail in this regime, we develop a versatile analytical approach that becomes exact with vanishing dissipation ($\Gamma\to 0$ but finite $\Gamma t$). On a technical level, our approach builds on previous work where the state of the system is described by a slowly evolving generalized Gibbs ensemble that accounts for the integrability of the Hamiltonian while treating dissipation perturbatively. Finally, we demonstrate a kind of universality in that integrability-breaking perturbations of the Hamiltonian lead to the same behavior. To this end, we first show that the steady state of a chaotic Ising Hamiltonian under local Markovian dissipation that preserves the Ising symmetry, and in the limit $\Gamma \to 0$, is identical to that of quench dynamics in the absence of dissipation. This intriguing connection then allows us to draw on recent findings about quantum phase transition signatures in quench dynamics.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2405.20518v2</guid>
+      <category>cond-mat.quant-gas</category>
+      <category>quant-ph</category>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <arxiv:DOI>10.1103/q84x-x5ds</arxiv:DOI>
+      <arxiv:journal_reference>Phys. Rev. Lett. 136, 060404 (2026)</arxiv:journal_reference>
+      <dc:creator>Mostafa Ali, Naushad A. Kamar, Alireza Seif, Mohammad Maghrebi</dc:creator>
+    </item>
+    <item>
       <title>Interedge backscattering in time-reversal symmetric quantum spin Hall Josephson junctions</title>
       <link>https://arxiv.org/abs/2410.12357</link>
       <description>arXiv:2410.12357v3 Announce Type: replace 
@@ -322,11 +413,11 @@ Abstract: Using standard tight-binding methods, we investigate a novel backscatt
       <dc:creator>Cajetan Heinz, Patrik Recher, Fernando Dominguez</dc:creator>
     </item>
     <item>
-      <title>The Ising dual-reflection interface: $\mathbb{Z}_4$ symmetry, Majorana strong zero modes and SPT phases</title>
+      <title>The Ising dual-reflection interface: $\mathbb{Z}_4$ symmetry and Majorana strong zero modes</title>
       <link>https://arxiv.org/abs/2412.06377</link>
-      <description>arXiv:2412.06377v2 Announce Type: replace 
-Abstract: We investigate an interface in the transverse field quantum Ising chain connecting an ordered ferromagnetic phase and a disordered paramagnetic phase that are Kramers-Wannier duals of each other. Unlike prior studies focused on non-invertible defects, this interface exhibits a symmetry that combines Kramers-Wannier transformation with spatial reflection. We demonstrate that, under open boundary conditions, this setup gives rise to a discrete $\mathbb{Z}_4$ symmetry, encompassing the conventional $\mathbb{Z}_2$ Ising parity as a subgroup, while in a closed geometry a non-invertible symmetry emerges. Using the Jordan-Wigner transformation, we map the spin chain onto a solvable quadratic Majorana fermion system. In this formulation, the $\mathbb{Z}_4$ symmetry is realized manifestly as a parity-dependent reflection operation with respect to a Majorana site, in contrast to the conventional reflection which mirrors with respect to the central link of the Majorana chain. Additionally, we construct Majorana strong zero modes that retain the $\mathbb{Z}_4$ symmetry, ensure degeneracies of all energy eigenstates, and are robust under generic local symmetry-preserving perturbations of the fermion model, including interactions. In an open geometry of the studied model, we identify two regimes that exhibit different degeneracy patterns. We discuss whether this is a manifestation of distinct fermion symmetry-protected topological orders protected by the $\mathbb{Z}_4$ symmetry.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2412.06377v2</guid>
+      <description>arXiv:2412.06377v3 Announce Type: replace 
+Abstract: We investigate an interface in the transverse field quantum Ising chain connecting an ordered ferromagnetic phase and a disordered paramagnetic phase that are Kramers-Wannier duals of each other. Unlike prior studies focused on non-invertible defects, this interface exhibits a symmetry that combines Kramers-Wannier transformation with spatial reflection. We demonstrate that, under open boundary conditions, this setup gives rise to a discrete $\mathbb{Z}_4$ symmetry, encompassing the conventional $\mathbb{Z}_2$ Ising parity as a subgroup, while in a closed geometry a non-invertible symmetry emerges. Using the Jordan-Wigner transformation, we map the spin chain onto a solvable quadratic Majorana fermion system. In this formulation, the $\mathbb{Z}_4$ symmetry is realized manifestly as a parity-dependent reflection with respect to a Majorana site, in contrast to the conventional reflection which mirrors with respect to the central link of the Majorana chain. Additionally, we construct Majorana strong zero modes that retain the $\mathbb{Z}_4$ symmetry, ensure degeneracies of all energy eigenstates, and are robust under generic local symmetry-preserving perturbations of the fermion model, including interactions. Finally, we develop quantum circuit realizations of our model paving the way towards the creation of exact Majorana strong zero modes with digital quantum hardware.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2412.06377v3</guid>
       <category>cond-mat.str-el</category>
       <category>cond-mat.quant-gas</category>
       <category>cond-mat.supr-con</category>
@@ -335,6 +426,21 @@ Abstract: We investigate an interface in the transverse field quantum Ising chai
       <arxiv:announce_type>replace</arxiv:announce_type>
       <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
       <dc:creator>Juliane Graf, Federica Maria Surace, Marcus Berg, Sergej Moroz</dc:creator>
+    </item>
+    <item>
+      <title>Fermi-Liquid $T^2$ Resistivity: Dynamical Mean-Field Theory Meets Experiment</title>
+      <link>https://arxiv.org/abs/2412.16363</link>
+      <description>arXiv:2412.16363v3 Announce Type: replace 
+Abstract: Direct-current resistivity is a key probe for the physical properties of materials. In metals, Fermi-liquid (FL) theory serves as the basis for understanding transport. A $T^2$ behavior of the resistivity is often taken as a signature of FL electron-electron scattering. However, the presence of impurity and phonon scattering as well as material-specific aspects such as Fermi surface geometry can complicate this interpretation. We demonstrate how density-functional theory combined with dynamical mean-field theory can be used to elucidate the FL regime. We take as examples SrVO$_{3}$ and SrMoO$_{3}$, two moderately correlated perovskite oxides, and establish a precise framework to analyze the FL behavior of the self-energy at low energy and temperature. Reviewing published low-temperature resistivity measurements, we find agreement between our calculations and experiments performed on samples with exceptionally low residual resistivity. This comparison emphasizes the need for further theoretical, synthesis, and characterization developments in these and other FL materials.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2412.16363v3</guid>
+      <category>cond-mat.mtrl-sci</category>
+      <category>cond-mat.str-el</category>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <arxiv:DOI>10.1103/f4p8-5xb8</arxiv:DOI>
+      <arxiv:journal_reference>Phys. Rev. B 113, L081105 (2026)</arxiv:journal_reference>
+      <dc:creator>Fabian B. Kugler, Jeremy Lee-Hand, Harrison LaBollita, Lorenzo Van Mu\~noz, Jason Kaye, Sophie Beck, Alexander Hampel, Antoine Georges, Cyrus E. Dreyer</dc:creator>
     </item>
     <item>
       <title>Quasi-particle residue and charge of the one-dimensional Fermi polaron</title>
@@ -379,6 +485,33 @@ Abstract: Altermagnets constitute a class of collinear magnets with momentum-dep
       <arxiv:DOI>10.1103/3sw6-y8vf</arxiv:DOI>
       <arxiv:journal_reference>Phys. Rev. B 112, L220404 (2025)</arxiv:journal_reference>
       <dc:creator>Arsen Herasymchuk, Karl Bergson Hallberg, Erik Wegner Hodt, Jacob Linder, E. V. Gorbar, Pavlo Sukhachov</dc:creator>
+    </item>
+    <item>
+      <title>Exact kinetic propagators for coherent state complex Langevin simulations</title>
+      <link>https://arxiv.org/abs/2508.11057</link>
+      <description>arXiv:2508.11057v2 Announce Type: replace 
+Abstract: We introduce and benchmark an improved algorithm for complex Langevin simulations of bosonic coherent state path integrals. Our approach utilizes a Strang splitting of the imaginary-time propagator rather than the conventional linear-order Taylor expansion, allowing us to construct an action that incorporates higher-order terms at negligible computational cost. The resulting algorithm enjoys guaranteed linear stability independent of the imaginary-time discretization, enabling more resource-efficient simulations. We demonstrate this improved performance for single-species bosons and for two-component bosons with Rashba spin-orbit coupling.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2508.11057v2</guid>
+      <category>cond-mat.quant-gas</category>
+      <category>cond-mat.stat-mech</category>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <arxiv:DOI>10.1103/p87t-vyc9</arxiv:DOI>
+      <arxiv:journal_reference>Phys. Rev. A 113, 023310 (2026)</arxiv:journal_reference>
+      <dc:creator>Thomas G. Kiely, Ethan C. McGarrigle, Glenn H. Fredrickson</dc:creator>
+    </item>
+    <item>
+      <title>Many-Body Rashba Spin-Orbit Interaction and Exciton Spin Relaxation in Atomically Thin Semiconductor Structures</title>
+      <link>https://arxiv.org/abs/2509.04285</link>
+      <description>arXiv:2509.04285v3 Announce Type: replace 
+Abstract: We propose a pair spin-orbit interaction (PSOI) mechanism by establishing a mesoscopic many-particle Rashba Hamiltonian. In lowest order, this Hamiltonian self-consistently describes exciton spin relaxation in monolayer transition metal dichalcogenides (TMDC) due to local electric fields caused by spatial asymmetries in the dielectric environment. For a monolayer MoSe$_2$ on a SiO$_2$ substrate above 77$\,$K showing a bright-dark splitting in the meV range, the local electric field causes fast intravalley spin relaxation on a sub-picosecond timescale, whereas it is negligible for other TMDCs with larger bright-dark splitting.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2509.04285v3</guid>
+      <category>cond-mat.mes-hall</category>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Henry Mittenzwey, Andreas Knorr</dc:creator>
     </item>
     <item>
       <title>Non-Abelian Gauge Theory of Spin Triplet Superconductivity and Spin Triplet Magnon Spintronics</title>
@@ -436,6 +569,18 @@ Abstract: In this paper, we establish an explicit correspondence between continu
       <dc:creator>Yizhou Huang, Zhi-Feng Zhang, Qing-Rui Wang, Peng Ye</dc:creator>
     </item>
     <item>
+      <title>Giant and Oscillatory Junction Magnetoresistance via RKKY-like Spin Coupling in Spin-Gapless Mn$_2$CoAl/SiO$_2$/p-Si Heterostructures</title>
+      <link>https://arxiv.org/abs/2601.05303</link>
+      <description>arXiv:2601.05303v2 Announce Type: replace 
+Abstract: Here, we report spin-selective transport and exceptionally large positive junction magnetoresistance (JMR) in sputter-deposited Mn$_2$CoAl/native-SiO$_2$/p-Si heterostructures. Highly ordered inverse-Heusler Mn$_2$CoAl thin films with near-ideal XA chemical ordering (S$\approx$0.97) and a Curie temperature of $\sim$590 K are realized using magnetron sputtering process. The spin-gapless semiconducting nature of Mn$_2$CoAl is experimentally supported by a weakly temperature-dependent resistivity with a very small negative temperature coefficient of resistance ($\mathrm{TCR} \approx -4.2 \times 10^{-9}\,\Omega \cdot \mathrm{m} \cdot \mathrm{K}^{-1}$) and a nonsaturating linear magnetoresistance over a wide range of magnetic fields and temperatures. A giant positive JMR of $\sim$825% at 10 K and $\sim$134% at room temperature is observed despite the presence of only a single ferromagnetic electrode. Systematic variation of the SiO$_2$ tunnel barrier thickness reveals a reproducible oscillatory sign reversal of the JMR accompanied by a monotonic decay in magnitude. This behavior reflects thickness-dependent modulation of spin-selective tunneling mediated by phase-coherent interfacial carriers. It can be described phenomenologically by an RKKY-like functional form without invoking conventional metallic exchange interactions. These results identify Mn$_2$CoAl/native-SiO$_2$/p-Si heterostructures as robust and scalable platforms for room-temperature spin-selective transport, with potential applications in semiconductor-compatible spin filters, magnetic field sensors, and reconfigurable spintronic logic elements.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2601.05303v2</guid>
+      <category>cond-mat.mes-hall</category>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Nilay Maji, Subham Mohanty, Pujarani Dehuri</dc:creator>
+    </item>
+    <item>
       <title>Multistability of graphene nanobubbles</title>
       <link>https://arxiv.org/abs/2601.16300</link>
       <description>arXiv:2601.16300v2 Announce Type: replace 
@@ -459,6 +604,18 @@ Abstract: We provide a theoretical description of diffusive charge and spin tran
       <arxiv:announce_type>replace</arxiv:announce_type>
       <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
       <dc:creator>Nicol\'as Sigales, Tim Kokkeler, Gonzalo de Polsi, Sebastian Bergeret</dc:creator>
+    </item>
+    <item>
+      <title>Enhanced Spin Lifetime and Long-Range Spin Transport in p-Silicon using Spin Gapless Semiconductor as Ferromagnetic Injector</title>
+      <link>https://arxiv.org/abs/2602.13118</link>
+      <description>arXiv:2602.13118v2 Announce Type: replace 
+Abstract: Electrical spin injection and transport in silicon are central challenges for realizing semiconductor-based spintronic devices, particularly in p-type Si, where strong spin relaxation and interface effects often suppress detectable spin signals. Here, we report electrical spin injection, accumulation, and transport in lightly doped p-type silicon using the spin-gapless Heusler compound Mn$_2$CoAl as a ferromagnetic spin injector, separated from the p-Si channel by a thin MgO tunnel barrier in a lateral device geometry. Spin transport is systematically investigated through three-terminal (3-T) Hanle and four-terminal (4-T) nonlocal (NL) spin-valve and Hanle measurements. Clear Lorentzian Hanle signals are observed in the 3-T configuration from 5 K up to room temperature, yielding a spin lifetime of $\sim$0.68 ns at 300 K that increases to $\sim$4.11 ns at 5 K. Temperature-dependent analysis reveals a weak power-law dependence of the spin lifetime, indicating Bir--Aronov--Pikus--type spin relaxation mechanism. To validate genuine spin transport, NL spin-valve and Hanle measurements were performed, revealing well-defined spin-valve switching and controlled spin precession at 5 K. From NL Hanle fitting, a spin lifetime of $\sim$5.65 ns and a spin diffusion length of $\sim$0.82 $\mu$m are extracted, confirming diffusive long-range spin transport in the p-Si channel. Although NL signals diminish at elevated temperatures due to reduced interfacial spin polarization and thermal noise, the combined 3-T and 4-T results establish spin-gapless Mn$_2$CoAl as an effective spin injector for p-type silicon. These findings highlight the potential of spin-gapless semiconductors for improving spin injection efficiency and advancing Si-compatible spintronic devices.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.13118v2</guid>
+      <category>cond-mat.other</category>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Nilay Maji, Subham Mohanty, Pujarani Dehuri, Garima Yadav</dc:creator>
     </item>
     <item>
       <title>Interplay between non-Fermi liquid and non-Hermiticity: A multi-method study of non-Hermitian multichannel Kondo model</title>
@@ -513,21 +670,6 @@ Abstract: The Fermi-Hubbard model is the starting point for the simulation of ma
       <arxiv:announce_type>replace-cross</arxiv:announce_type>
       <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
       <dc:creator>Etienne Granet, Sheng-Hsuan Lin, Kevin H\'emery, Reza Haghshenas, Pablo Andres-Martinez, David T. Stephen, Anthony Ransford, Jake Arkinstall, M. S. Allman, Pete Campora, Samuel F. Cooper, Robert D. Delaney, Joan M. Dreiling, Brian Estey, Caroline Figgatt, Cameron Foltz, John P. Gaebler, Alex Hall, Ali Husain, Akhil Isanaka, Colin J. Kennedy, Nikhil Kotibhaskar, Ivaylo S. Madjarov, Michael Mills, Alistair R. Milne, Annie J. Park, Adam P. Reed, Brian Neyenhuis, Justin G. Bohnet, Michael Foss-Feig, Andrew C. Potter, Ramil Nigmatullin, Mohsin Iqbal, Henrik Dreyer</dc:creator>
-    </item>
-    <item>
-      <title>Real-time collisions of fractional charges in a trapped-ion Jackiw-Rebbi field theory</title>
-      <link>https://arxiv.org/abs/2512.07748</link>
-      <description>arXiv:2512.07748v2 Announce Type: replace-cross 
-Abstract: We propose and analyze a trapped-ion quantum simulator of the Jackiw-Rebbi model, a paradigmatic quantum field theory in (1+1) dimensions where solitonic excitations of a scalar field can bind fermionic zero modes leading to fractionally-charged excitations. In our approach, the scalar field is a coarse-grained description of the planar zigzag ion displacements in the vicinity of a structural phase transition. The internal electronic states of the ions encode spins with interactions mediated by the transverse phonons and in-plane spin-phonon couplings with a zigzag pattern, which together correspond to a Yukawa-coupled Dirac field. Instead of assuming a fixed soliton background, we study the effect of back-reaction and quantum fluctuations on the coupled dynamics of the full fermion-boson system. We start by applying a Born-Oppenheimer approximation to obtain an effective Peierls-Nabarro potential for the topological kink, unveiling how the fermionic back-reaction can lead to localization of the kink. Beyond this limit, a truncated Wigner approximation combined with fermionic Gaussian states captures the quantum spreading and localization of a kink and kink-antikink scattering. Our results reveal how back-reaction and quantum fluctuations modify the stability and real-time evolution of fractionalized fermions, predicting experimentally accessible signatures in current trapped-ion architectures.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2512.07748v2</guid>
-      <category>quant-ph</category>
-      <category>cond-mat.quant-gas</category>
-      <category>cond-mat.str-el</category>
-      <category>hep-lat</category>
-      <pubDate>Wed, 18 Feb 2026 00:00:00 -0500</pubDate>
-      <arxiv:announce_type>replace-cross</arxiv:announce_type>
-      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
-      <dc:creator>Alan Kahan, Pablo Vi\~nas, Torsten V. Zache, Alejandro Bermudez</dc:creator>
     </item>
     <item>
       <title>Beyond Wigner: Non-Invertible Symmetries Preserve Probabilities</title>
