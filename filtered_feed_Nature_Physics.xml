@@ -18,15 +18,19 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03156-5"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03155-6"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03174-x"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03184-9"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03183-w"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03170-1"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03206-6"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -34,6 +38,51 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03156-5">
+            <title>How light scattering loses its boost</title>
+            <link>https://www.nature.com/articles/s41567-025-03156-5</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 20 February 2026; &lt;a href="https://www.nature.com/articles/s41567-025-03156-5"&gt;doi:10.1038/s41567-025-03156-5&lt;/a&gt;&lt;/p&gt;In a Bose–Einstein condensate, bosonic stimulation enhances light scattering. An experiment now reveals that interatomic interactions diminish this effect, offering a probe of quantum correlations.</content:encoded>
+            <dc:title>How light scattering loses its boost</dc:title>
+            <dc:creator>Giovanni Ferioli</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03156-5</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-02-20; | doi:10.1038/s41567-025-03156-5</dc:source>
+            <dc:date>2026-02-20</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03156-5</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03156-5</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03155-6">
+            <title>Suppression and enhancement of bosonic stimulation by atomic interactions</title>
+            <link>https://www.nature.com/articles/s41567-025-03155-6</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 20 February 2026; &lt;a href="https://www.nature.com/articles/s41567-025-03155-6"&gt;doi:10.1038/s41567-025-03155-6&lt;/a&gt;&lt;/p&gt;Bosonic bunching of non-interacting atoms enhances atom–light scattering. An experiment now shows that attractive atomic interactions enhance this scattering further, while repulsive ones can completely suppress bosonic stimulation.</content:encoded>
+            <dc:title>Suppression and enhancement of bosonic stimulation by atomic interactions</dc:title>
+            <dc:creator>Konstantinos Konstantinou</dc:creator><dc:creator>Yansheng Zhang</dc:creator><dc:creator>Paul H. C. Wong</dc:creator><dc:creator>Feiyang Wang</dc:creator><dc:creator>Yu-Kun Lu</dc:creator><dc:creator>Nishant Dogra</dc:creator><dc:creator>Christoph Eigen</dc:creator><dc:creator>Tanish Satoor</dc:creator><dc:creator>Wolfgang Ketterle</dc:creator><dc:creator>Zoran Hadzibabic</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03155-6</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-02-20; | doi:10.1038/s41567-025-03155-6</dc:source>
+            <dc:date>2026-02-20</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03155-6</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03155-6</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-026-03174-x">
+            <title>Fatigue failure in glasses under cyclic shear deformation</title>
+            <link>https://www.nature.com/articles/s41567-026-03174-x</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 20 February 2026; &lt;a href="https://www.nature.com/articles/s41567-026-03174-x"&gt;doi:10.1038/s41567-026-03174-x&lt;/a&gt;&lt;/p&gt;Fatigue failure refers to a material’s loss of rigidity after repeated application of stress or deformation. Simulations of model glasses now show that failure times display a power-law divergence and a strong dependence on annealing.</content:encoded>
+            <dc:title>Fatigue failure in glasses under cyclic shear deformation</dc:title>
+            <dc:creator>Swarnendu Maity</dc:creator><dc:creator>Himangsu Bhaumik</dc:creator><dc:creator>Shivakumar Athani</dc:creator><dc:creator>Srikanth Sastry</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-026-03174-x</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-02-20; | doi:10.1038/s41567-026-03174-x</dc:source>
+            <dc:date>2026-02-20</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-026-03174-x</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-026-03174-x</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-026-03184-9">
             <title>An exciton crystal in a moiré excitonic insulator</title>
@@ -80,19 +129,4 @@
             <prism:url>https://www.nature.com/articles/s41567-026-03170-1</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41567-026-03206-6">
-            <title>Structure by exclusion</title>
-            <link>https://www.nature.com/articles/s41567-026-03206-6</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 13 February 2026; &lt;a href="https://www.nature.com/articles/s41567-026-03206-6"&gt;doi:10.1038/s41567-026-03206-6&lt;/a&gt;&lt;/p&gt;One hundred years ago, Enrico Fermi and Paul Dirac worked out how fermions distribute across the quantum states available to them. Their intuition laid the statistical foundation for the study of systems ranging from solids to white dwarfs.</content:encoded>
-            <dc:title>Structure by exclusion</dc:title>
-            
-            <dc:identifier>doi:10.1038/s41567-026-03206-6</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2026-02-13; | doi:10.1038/s41567-026-03206-6</dc:source>
-            <dc:date>2026-02-13</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-026-03206-6</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-026-03206-6</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
