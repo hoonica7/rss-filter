@@ -21,9 +21,13 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-69852-9"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-69591-x"/>
                 
-                    </rdf:Seq>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-69631-6"/>
+                
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/ncomms/rss.png">
@@ -31,6 +35,21 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-026-69852-9">
+            <title>Pattern-enhanced Resonant Soft X-ray Scattering for &lt;i&gt;Operando&lt;/i&gt; monitoring of electrochemical solid-liquid interfaces</title>
+            <link>https://www.nature.com/articles/s41467-026-69852-9</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 21 February 2026; &lt;a href="https://www.nature.com/articles/s41467-026-69852-9"&gt;doi:10.1038/s41467-026-69852-9&lt;/a&gt;&lt;/p&gt;Understanding interfaces at sub-nanometer scales is vital for complex chemical reactions. Here, the authors advance Pattern-enhanced Resonant Soft X-ray Scattering, enabling efficient operando probing of chemical and structural dynamics at solid-liquid interfaces.</content:encoded>
+            <dc:title>Pattern-enhanced Resonant Soft X-ray Scattering for &lt;i&gt;Operando&lt;/i&gt; monitoring of electrochemical solid-liquid interfaces</dc:title>
+            <dc:creator>Haoyi Li</dc:creator><dc:creator>Kas Andrle</dc:creator><dc:creator>Qi Zhang</dc:creator><dc:creator>Isvar A. Cordova</dc:creator><dc:creator>Yao Yang</dc:creator><dc:creator>Zhengxing Peng</dc:creator><dc:creator>Feipeng Yang</dc:creator><dc:creator>Guillaume Freychet</dc:creator><dc:creator>Scott Dhuey</dc:creator><dc:creator>Alexander Hexemer</dc:creator><dc:creator>Brett A. Helms</dc:creator><dc:creator>Weilun Chao</dc:creator><dc:creator>Bruno La Fontaine</dc:creator><dc:creator>Ricardo Ruiz</dc:creator><dc:creator>Jinghua Guo</dc:creator><dc:creator>Wanli Yang</dc:creator><dc:creator>Junko Yano</dc:creator><dc:creator>Cheng Wang</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-026-69852-9</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-02-21; | doi:10.1038/s41467-026-69852-9</dc:source>
+            <dc:date>2026-02-21</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-026-69852-9</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-026-69852-9</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41467-026-69591-x">
             <title>A synergistic design model for ultrathin broadband microwave absorbers using electromagnetic frequency dispersion coefficients</title>
@@ -47,4 +66,19 @@
             <prism:url>https://www.nature.com/articles/s41467-026-69591-x</prism:url>
         </item>
     
-        </rdf:RDF>
+        <item rdf:about="https://www.nature.com/articles/s41467-026-69631-6">
+            <title>Heterogeneous weakly coupled polar nanoclusters enabling superior high-temperature capacitive energy storage</title>
+            <link>https://www.nature.com/articles/s41467-026-69631-6</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 21 February 2026; &lt;a href="https://www.nature.com/articles/s41467-026-69631-6"&gt;doi:10.1038/s41467-026-69631-6&lt;/a&gt;&lt;/p&gt;Ceramic capacitors face challenges in energy storage performance at high temperatures, restricting their applications. Here the high-performance BaTiO3-based capacitors, as a paradigm, are designed by constructing weakly coupled polar nanoclusters.</content:encoded>
+            <dc:title>Heterogeneous weakly coupled polar nanoclusters enabling superior high-temperature capacitive energy storage</dc:title>
+            <dc:creator>Qibin Yuan</dc:creator><dc:creator>Binglong Zheng</dc:creator><dc:creator>Ying Lin</dc:creator><dc:creator>Haibo Yang</dc:creator><dc:creator>Da Li</dc:creator><dc:creator>Tao Lei</dc:creator><dc:creator>Jinming Guo</dc:creator><dc:creator>Wen Gong</dc:creator><dc:creator>Yingchun Niu</dc:creator><dc:creator>Fang-Zhou Yao</dc:creator><dc:creator>Ke Wang</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-026-69631-6</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-02-21; | doi:10.1038/s41467-026-69631-6</dc:source>
+            <dc:date>2026-02-21</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-026-69631-6</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-026-69631-6</prism:url>
+        </item>
+    
+</rdf:RDF>
