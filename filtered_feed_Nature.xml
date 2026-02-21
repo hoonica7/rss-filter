@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-026-00556-2"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-026-10195-2"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-026-10174-7"/>
@@ -36,8 +38,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/d41586-026-00286-5"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-026-00439-6"/>
-                
                     </rdf:Seq>
         </items>
     </channel>
@@ -46,6 +46,21 @@
         <url>https://www.nature.com/uploads/product/nature/rss.png</url>
         <link>http://feeds.nature.com/nature/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/d41586-026-00556-2">
+            <title>Why do curling stones slide across ice the way they do?</title>
+            <link>https://www.nature.com/articles/d41586-026-00556-2</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 20 February 2026; &lt;a href="https://www.nature.com/articles/d41586-026-00556-2"&gt;doi:10.1038/d41586-026-00556-2&lt;/a&gt;&lt;/p&gt;After a century of study, physicists have theories — but they’re still not 100% sure.</content:encoded>
+            <dc:title>Why do curling stones slide across ice the way they do?</dc:title>
+            <dc:creator>Jenna  Ahart</dc:creator>
+            <dc:identifier>doi:10.1038/d41586-026-00556-2</dc:identifier>
+            <dc:source>Nature, Published online: 2026-02-20; | doi:10.1038/d41586-026-00556-2</dc:source>
+            <dc:date>2026-02-20</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/d41586-026-00556-2</prism:doi>
+            <prism:url>https://www.nature.com/articles/d41586-026-00556-2</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41586-026-10195-2">
             <title>Giant energy storage and dielectric performance in all-polymer nanocomposites</title>
@@ -138,11 +153,11 @@
         </item>
     
         <item rdf:about="https://www.nature.com/articles/d41586-026-00502-2">
-            <title>Microsoft team creates ‘revolutionary’ data storage system that lasts for millennia</title>
+            <title>Microsoft team creates ‘revolutionary’ data-storage system that lasts for millennia</title>
             <link>https://www.nature.com/articles/d41586-026-00502-2</link>
             <content:encoded>
                 &lt;p&gt;Nature, Published online: 18 February 2026; &lt;a href="https://www.nature.com/articles/d41586-026-00502-2"&gt;doi:10.1038/d41586-026-00502-2&lt;/a&gt;&lt;/p&gt;Researchers use mini plasma explosions to encode the equivalent of two million books into a coaster-sized device. The method could preserve research data for millennia with minimal storage costs.</content:encoded>
-            <dc:title>Microsoft team creates ‘revolutionary’ data storage system that lasts for millennia</dc:title>
+            <dc:title>Microsoft team creates ‘revolutionary’ data-storage system that lasts for millennia</dc:title>
             <dc:creator>Elizabeth Gibney</dc:creator>
             <dc:identifier>doi:10.1038/d41586-026-00502-2</dc:identifier>
             <dc:source>Nature, Published online: 2026-02-18; | doi:10.1038/d41586-026-00502-2</dc:source>
@@ -180,21 +195,6 @@
             <prism:publicationName>Nature</prism:publicationName>
             <prism:doi>10.1038/d41586-026-00286-5</prism:doi>
             <prism:url>https://www.nature.com/articles/d41586-026-00286-5</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/d41586-026-00439-6">
-            <title>Nanoscience is latest discipline to embrace large-scale replication efforts</title>
-            <link>https://www.nature.com/articles/d41586-026-00439-6</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 17 February 2026; &lt;a href="https://www.nature.com/articles/d41586-026-00439-6"&gt;doi:10.1038/d41586-026-00439-6&lt;/a&gt;&lt;/p&gt;A European project calls for help to verify whether carbon quantum dots are really able to sense chemicals in cells.</content:encoded>
-            <dc:title>Nanoscience is latest discipline to embrace large-scale replication efforts</dc:title>
-            <dc:creator>David Adam</dc:creator>
-            <dc:identifier>doi:10.1038/d41586-026-00439-6</dc:identifier>
-            <dc:source>Nature, Published online: 2026-02-17; | doi:10.1038/d41586-026-00439-6</dc:source>
-            <dc:date>2026-02-17</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/d41586-026-00439-6</prism:doi>
-            <prism:url>https://www.nature.com/articles/d41586-026-00439-6</prism:url>
         </item>
     
         </rdf:RDF>
