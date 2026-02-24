@@ -30,7 +30,9 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02485-x"/>
                 
-                    </rdf:Seq>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02492-y"/>
+                
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nmat/rss.gif">
@@ -129,4 +131,19 @@
             <prism:url>https://www.nature.com/articles/s41563-026-02485-x</prism:url>
         </item>
     
-        </rdf:RDF>
+        <item rdf:about="https://www.nature.com/articles/s41563-026-02492-y">
+            <title>A molten-salt dispersion of lanthanides at the atomic scale</title>
+            <link>https://www.nature.com/articles/s41563-026-02492-y</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 19 February 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02492-y"&gt;doi:10.1038/s41563-026-02492-y&lt;/a&gt;&lt;/p&gt;Persistent synthesis challenges constrain the stabilization of single-atom lanthanide catalysts across many substrates. Using a method based on molten-nitrite chemistry, the atomic dispersion of lanthanide atoms on diverse substrates is achieved and exemplified by Dy1/Pt for acidic hydrogen evolution.</content:encoded>
+            <dc:title>A molten-salt dispersion of lanthanides at the atomic scale</dc:title>
+            <dc:creator>Haoyuan Wang</dc:creator><dc:creator>Chunxiao Liu</dc:creator><dc:creator>Yuan Ji</dc:creator><dc:creator>Hongliang Zeng</dc:creator><dc:creator>Sunpei Hu</dc:creator><dc:creator>Xinyan Zhang</dc:creator><dc:creator>Qisheng Zeng</dc:creator><dc:creator>Jiawei Li</dc:creator><dc:creator>Qinglong Gao</dc:creator><dc:creator>Yao Zhang</dc:creator><dc:creator>Jie Zeng</dc:creator><dc:creator>Xu Li</dc:creator><dc:creator>Tingting Zheng</dc:creator><dc:creator>Qiu Jiang</dc:creator><dc:creator>Chuan Xia</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-026-02492-y</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2026-02-19; | doi:10.1038/s41563-026-02492-y</dc:source>
+            <dc:date>2026-02-19</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-026-02492-y</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-026-02492-y</prism:url>
+        </item>
+    
+</rdf:RDF>
