@@ -29,6 +29,31 @@ Abstract: Density waves conventionally describe the periodic modulation of charg
       <dc:creator>Weihang Lu, Camron Farhang, Yuchuan Yao, Pratap Pal, Hao Zhang, Shaofeng Han, Shi-Zeng Lin, Chang-Beom Eom, Jing Xia</dc:creator>
     </item>
     <item>
+      <title>El Agente S\'olido: A New Age(nt) for Solid State Simulations</title>
+      <link>https://arxiv.org/abs/2602.17886</link>
+      <description>arXiv:2602.17886v1 Announce Type: new 
+Abstract: Quantum chemistry calculations are a key component of the materials discovery process. The results from first-principles explorations enable the prediction of material properties prior to experimental validation. Despite their impact, the practical use of first-principles methods remains limited by the expertise required to design, execute, and troubleshoot complex computational workflows. Even when workflows are successfully built, they are sometimes rigid and not adaptable to different use cases. Recent advances in large language models (LLMs) and agentic systems offer a pathway to flexibly automate these processes and lower barriers to entry. Here, we introduce El Agente S\'olido, a hierarchical multi-agent framework for automating solid-state quantum chemistry workflows using the open-source Quantum ESPRESSO simulation package. The framework translates high-level scientific objectives expressed in natural language into end-to-end computational pipelines that include structure generation, input file construction, workflow execution, and post-processing analysis. El Agente S\'olido integrates density functional theory with phonon calculations and machine-learning interatomic potentials to enable efficient and physically consistent simulations. Extensive benchmarking and case studies demonstrate that El Agente S\'olido reliably executes a wide range of solid-state calculations, highlighting its potential to improve reproducibility and accelerate computational materials discovery</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.17886v1</guid>
+      <category>cond-mat.mtrl-sci</category>
+      <category>physics.chem-ph</category>
+      <pubDate>Mon, 23 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-sa/4.0/</dc:rights>
+      <dc:creator>Sai Govind Hari Kumar, Yunheng Zou, Andrew Wang, Jes\'us Vald\'es-Hern\'andez, Tsz Wai Ko, Nathan Yue, Olivia Leng, Hanyong Xu, Chris Crebolder, Al\'an Aspuru-Guzik, Varinia Bernales</dc:creator>
+    </item>
+    <item>
+      <title>Ab initio Monte Carlo prediction of order-to-disorder transitions in multicomponent MXenes</title>
+      <link>https://arxiv.org/abs/2602.17889</link>
+      <description>arXiv:2602.17889v1 Announce Type: new 
+Abstract: This letter predicts unprecedented order-to-disorder transition behaviors in multicomponent MXenes using an integrated and improved first-principles Monte Carlo (MC) framework. The improvements include (i) structural relaxation and (ii) selective atom swapping during MC iterations for more accurate and efficient predictions. Using (TiMo)-based double transition metal (DTM) carbide MXenes as a model system, ab initio MC simulations reveal that surface termination and coordination environments play critical roles in governing chemical ordering in MXenes. Specifically, the formation of out-of-plane MXene (o-MXenes) with Mo segregation to outermost metallic layers (M') is only driven by the oxygen (O) termination at prismatic sites. In contrast, O termination at octahedral sites and fluorine (F) termination at both prismatic and octahedral sites always promote the formation of o-MXenes with Ti-segregated to M' layers. Furthermore, changing the F/O ratio at prismatic termination sites or alternating the atomic coordination within the MXene lattices can induce an order-to-disorder transition in DTM MXenes.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.17889v1</guid>
+      <category>cond-mat.mtrl-sci</category>
+      <pubDate>Mon, 23 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Noah Oyeniran, Chongze Hu</dc:creator>
+    </item>
+    <item>
       <title>Microwave Imaging of Edge Conductivity in Graphene at Charge Neutrality and Quantum Hall States</title>
       <link>https://arxiv.org/abs/2602.17906</link>
       <description>arXiv:2602.17906v1 Announce Type: new 
@@ -111,6 +136,18 @@ Abstract: Atomically thin metallenes have emerged as a new member of the two-dim
       <dc:creator>Kameyab Raza Abidi, Mohammad Bagheri, Pekka Koskinen</dc:creator>
     </item>
     <item>
+      <title>Achieving Robust Extrapolation in Materials Property Prediction via Decoupled Transfer Learning</title>
+      <link>https://arxiv.org/abs/2602.18054</link>
+      <description>arXiv:2602.18054v1 Announce Type: new 
+Abstract: Machine learning has revolutionized materials property prediction, yet fails catastrophically when extrapolating beyond training distributions-precisely the capability required for discovering unprecedented materials. Graph neural networks (GNNs) exhibit this collapse because end-to-end training fundamentally couples learned representations to target property distributions, preventing genuine extrapolation. We demonstrate that decoupled transfer learning-separating pretrained GNN feature extractors from simple regressors-overcomes this barrier. Pretrained features provide transferable structural knowledge, while simple regressors enable smooth extrapolation by maintaining learned trends beyond training boundaries. Benchmarked on layered intercalation compounds through four rigorous extrapolation scenarios and a temporal Materials Project split, our framework achieves 68% error reduction (RMSE: 0.881 vs. 2.778 eV/atom) versus end-to-end GNNs for extrapolation. Failure analysis reveals extrapolation succeeds for continuous chemical space but fails for discontinuous space, establishing clear design principles. Validated on Fermi energy prediction, this framework is immediately deployable using existing pretrained models, requiring no architectural innovations-transforming ML-driven materials discovery.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.18054v1</guid>
+      <category>cond-mat.mtrl-sci</category>
+      <pubDate>Mon, 23 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Tasuku Sugiura, Teruyasu Mizoguchi</dc:creator>
+    </item>
+    <item>
       <title>Ultrafast Band-Gap Renormalization in Bilayer Graphene</title>
       <link>https://arxiv.org/abs/2602.18065</link>
       <description>arXiv:2602.18065v1 Announce Type: new 
@@ -166,19 +203,6 @@ Abstract: We study two-dimensional systems of interacting excitons with a moat d
       <dc:creator>L. Maisel Licer\'an, S. H. Boeve, H. T. C. Stoof</dc:creator>
     </item>
     <item>
-      <title>Bright-dark exciton splitting in lead halide perovskite crystals accessed via quantum beats in photon echoes</title>
-      <link>https://arxiv.org/abs/2602.18205</link>
-      <description>arXiv:2602.18205v1 Announce Type: new 
-Abstract: Understanding the fine structure of excitons is crucial for optoelectronic and quantum photonic applications of lead halide perovskites. It is demonstrated that polarization-sensitive photon echo spectroscopy in magnetic field provides a powerful method to access coherent exciton dynamics and reveal their energy level structure, which is hidden by inhomogeneous broadening. Exciton quantum beats observed in both Faraday and Voigt geometries offer a precise probe of the energy splittings among the four 1$s$ exciton states, enabling determination of the fine structure and bright-dark splittings. Application of this technique to bulk mixed halide perovskite crystals FA$_{0.9}$Cs$_{0.1}$PbI$_{2.8}$Br$_{0.2}$ reveals a bright-dark exciton splitting of $\Delta_\mathrm{X}=0.46~$meV, along with electron and hole Land\'{e} $g$ factors $g_\mathrm{e}=3.38$ and $g_\mathrm{h}=-1.14$, respectively. The quantum beats persist on timescales of 20--50$~$ps, demonstrating remarkably robust spin and optical coherences at cryogenic temperature of 2$~$K. The decay of the quantum beats of the outer doublet is governed by dephasing due to dispersion of the bright-dark splitting of $\sim0.06~$meV caused by localization potential fluctuations, while dephasing in the bright exciton inner doublet originates from a small zero field splitting of $\sim0.035~$meV due to anisotropic potentials.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2602.18205v1</guid>
-      <category>cond-mat.mes-hall</category>
-      <category>cond-mat.mtrl-sci</category>
-      <pubDate>Mon, 23 Feb 2026 00:00:00 -0500</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://creativecommons.org/licenses/by-nc-nd/4.0/</dc:rights>
-      <dc:creator>M. Alex Hollberg, O. Nestoklon, Artur V. Trifonov, Stefan Grisard, Oleh Hordiichuk, Dmitry N. Dirin, Maksym V. Kovalenko, Dimitri R. Yakovlev, Manfred Bayer, Ilya A. Akimov</dc:creator>
-    </item>
-    <item>
       <title>Machine-learning force-field models for dynamical simulations of metallic magnets</title>
       <link>https://arxiv.org/abs/2602.18213</link>
       <description>arXiv:2602.18213v1 Announce Type: new 
@@ -231,6 +255,30 @@ Abstract: We investigate the interplay between charge, magnetic, and structural 
       <dc:creator>Francesco Martinelli, Claude Ederer</dc:creator>
     </item>
     <item>
+      <title>Phonon assisted light absorption and emission in cubic-Boron Nitride</title>
+      <link>https://arxiv.org/abs/2602.18259</link>
+      <description>arXiv:2602.18259v1 Announce Type: new 
+Abstract: Cubic boron nitride (cBN) is a wide-bandgap polymorph of boron nitride whose optical response remains only partially understood due to the coexistence of indirect electronic transitions and strong exciton-phonon coupling. Using first-principles many-body perturbation theory, we investigate the optical properties of cBN by combining GW quasiparticle corrections with Bethe-Salpeter equation calculations of excitonic effects. Phonon-assisted absorption and emission processes are explicitly included through the exciton-phonon coupling formalism. We find that phonon-mediated optical transitions provide a dominant contribution to both absorption and luminescence spectra, partially reconciling the discrepancy between the theoretical optical gap ($\simeq$ 11 eV) and experimental emission around 6-7 eV. Our results demonstrate the importance of including exciton-phonon interactions for the correct interpretation of experimental spectra, offering new insights into light emission in wide-bandgap materials.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.18259v1</guid>
+      <category>cond-mat.mtrl-sci</category>
+      <pubDate>Mon, 23 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>Ashwin Pillai, Elena Cannuccia, Aurelien Manchon, Fulvio Paleari, Claudio Attaccalite</dc:creator>
+    </item>
+    <item>
+      <title>Large Pyroelectric Enhancement in Freestanding Epitaxial BaTiO3 Membranes on Si</title>
+      <link>https://arxiv.org/abs/2602.18267</link>
+      <description>arXiv:2602.18267v1 Announce Type: new 
+Abstract: Ferroelectric membranes transferred onto arbitrary substrates provide reduced mechanical clamping at the interfaces that can diminish the effective polarization-rotation barrier offering a pathway to engineer larger electromechanical and thermally driven responses in oxide electronics. Here, we report integration of single crystalline thin film BaTiO3 (BTO) ferroelectric membrane on Si and demonstrate a 4x at 30C and 34x at 60C enhancement of pyroelectric coefficient compared to clamped films. The BTO membrane is grown epitaxially on a water-soluble Sr3Al2O6 sacrificial layer, released by selective dissolution, and transferred onto Si, yielding a strain-relaxed membrane with robust intrinsic polarization. Temperature dependent piezoresponse force microscopy (PFM) reveals pronounced thermally driven evolution of domain orientation, consistent with reduced barriers for dipolar modulation in the freestanding state. Variable-temperature Kelvin probe force microscopy (KPFM) quantifies an effective pyroelectric coefficient of ~75 uC/m^2K at 30C and 450 uC/m^2K at 60C with a detectivity of 40 m^2K^-1at room temperature. These results establish lead-free freestanding BTO membranes as a promising silicon-integrable platform for cryogen-free infrared detection and waste-heat energy management.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.18267v1</guid>
+      <category>cond-mat.mtrl-sci</category>
+      <pubDate>Mon, 23 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Ajay Kumar, Asraful Haque, Shubham Kumar Parate, Harshal DSouza, Jishnu NK, Binoy Krishna De, Srinivasan Raghavan, Pavan Nukala</dc:creator>
+    </item>
+    <item>
       <title>Martensitic laminate geometry controls electronic phase transitions in a Mott insulator</title>
       <link>https://arxiv.org/abs/2602.18268</link>
       <description>arXiv:2602.18268v1 Announce Type: new 
@@ -268,6 +316,19 @@ Abstract: Nodal-line semimetals (NLSs) can display unconventional quasiparticle 
       <dc:creator>Aman Anand, Alessandro De Martino</dc:creator>
     </item>
     <item>
+      <title>Responsive Disorder in a Metal-Organic Framework Enables Solid-State Reservoir Computing</title>
+      <link>https://arxiv.org/abs/2602.18335</link>
+      <description>arXiv:2602.18335v1 Announce Type: new 
+Abstract: Complex systems with nonlinear response mechanisms can be applied as reservoir computers for energy-efficient machine learning tasks. Historically explored at the macro- and meso-scale, physical reservoir computing has recently been extended to the atomic scale via chemical mixtures with strong and dynamic heterogeneity. Here we explore the possibility that configurational degeneracy within disordered materials might form the basis for solid-state atomic-scale reservoirs. Our proof-of-concept uses the disordered metal-organic framework DUT-8, which undergoes a series of disorder-disorder transitions on exposure to different guest species. We show that variations in X-ray diffuse scattering associated with these transitions function as suitable readouts for machine learning applications. A combination of nonlinearity and memory effects in the DUT-8 response allows the system to carry out both classification and time-series machine learning tasks with accuracies comparable to those of mesoscale physical reservoir computers. Our results suggest a new avenue for exploiting correlated disorder in solid phases whenever the nature of that disorder can be modulated through external perturbations-a phenomenon we term `responsive disorder'.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.18335v1</guid>
+      <category>cond-mat.dis-nn</category>
+      <category>cond-mat.mtrl-sci</category>
+      <pubDate>Mon, 23 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>Guy Greenbaum, Will R. Branford, Andrew L. Goodwin</dc:creator>
+    </item>
+    <item>
       <title>Modeling of a magnetic field sensor based on spin Hall magnetoresistance</title>
       <link>https://arxiv.org/abs/2602.18338</link>
       <description>arXiv:2602.18338v1 Announce Type: new 
@@ -292,6 +353,18 @@ Abstract: Magnetic flux (vortex) trapping remains a major obstacle to very large
       <arxiv:announce_type>new</arxiv:announce_type>
       <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
       <dc:creator>Rohan T. Kapur (MIT Lincoln Laboratory, Lexington, MA, USA), Sergey K. Tolpygo (MIT Lincoln Laboratory, Lexington, MA, USA), Alex Wynn (MIT Lincoln Laboratory, Lexington, MA, USA), Pauli Kehayias (MIT Lincoln Laboratory, Lexington, MA, USA), Adam A. Libson (MIT Lincoln Laboratory, Lexington, MA, USA), Collin N. Muniz (MIT Lincoln Laboratory, Lexington, MA, USA), Michael J. Gold (MIT Lincoln Laboratory, Lexington, MA, USA), Justin L. Mallek (MIT Lincoln Laboratory, Lexington, MA, USA), Danielle A. Braje (MIT Lincoln Laboratory, Lexington, MA, USA), Jennifer M. Schloss (MIT Lincoln Laboratory, Lexington, MA, USA)</dc:creator>
+    </item>
+    <item>
+      <title>Overlap locking and non-perturbative effects in spin glasses</title>
+      <link>https://arxiv.org/abs/2602.18399</link>
+      <description>arXiv:2602.18399v1 Announce Type: new 
+Abstract: We study the phenomenon of the locking of the order parameter (or synchronization) in spin glasses at low temperatures. When two systems with independent disorders are coupled, their overlaps become similar. A crucial question is how this effect depends on the strength of the coupling between the two systems. Non-perturbative phenomena are present when $1 \ll \Delta H \ll N$, being $\Delta H$ the coupling Hamiltonian and $N$ the size of the system. In this intermediate-coupling region, the effect is related to finite-size free-energy corrections and to the correlations in the Dyson hierarchical spin glass, a model that mimics the physics of finite-dimensional systems. We study this phenomenon in the mean-field approach, both analytically and numerically, and we finally compute the critical exponents for finite-volume corrections in mean-field theory and for the decay of correlations in the Dyson hierarchical model.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.18399v1</guid>
+      <category>cond-mat.dis-nn</category>
+      <pubDate>Mon, 23 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>Silvio Franz, Giorgio Parisi, Federico Ricci-Tersenghi</dc:creator>
     </item>
     <item>
       <title>Higher-Dimensional Information Lattice: Quantum State Characterization through Inclusion-Exclusion Local Information</title>
@@ -362,22 +435,6 @@ Abstract: Gate-defined semiconductor quantum dots utilize fast electrical contro
       <dc:creator>Jiheng Duan, Fernando Torres-Leal, John M. Nichol</dc:creator>
     </item>
     <item>
-      <title>Simulating Quantum Field Theories with Boundaries in Curved Spacetimes Using Open Spin Systems</title>
-      <link>https://arxiv.org/abs/2602.17935</link>
-      <description>arXiv:2602.17935v1 Announce Type: cross 
-Abstract: We develop a framework to simulate quantum field theories (QFTs) with boundaries in $(1+1)$-dimenmsional curved spacetimes by employing open spin systems. Building upon our previous work that established a mapping from spin systems to QFTs in periodic geometries, we extend the correspondence to systems with boundaries, where boundary conditions play a crucial role in shaping the dynamics. Focusing on Majorana fermions, we derive the allowed boundary conditions from the requirement of inner product conservation and formulate their realization in spin systems. The corresponding spin model is shown to reproduce boundary conditions of QFT accurately when a free function in the spin model is appropriately chosen. As an explicit demonstration, we analyze a flat spacetime example, comparing spectra, mode functions, and linear responses between the continuum and lattice descriptions. Our findings confirm that open spin systems can successfully replicate QFT dynamics with boundaries.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2602.17935v1</guid>
-      <category>hep-th</category>
-      <category>cond-mat.quant-gas</category>
-      <category>cond-mat.stat-mech</category>
-      <category>gr-qc</category>
-      <category>quant-ph</category>
-      <pubDate>Mon, 23 Feb 2026 00:00:00 -0500</pubDate>
-      <arxiv:announce_type>cross</arxiv:announce_type>
-      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
-      <dc:creator>Shunichiro Kinoshita, Keiju Murata, Daisuke Yamamoto, Ryosuke Yoshii</dc:creator>
-    </item>
-    <item>
       <title>Dynamic topological exciton-polaritons enabling ultrafast logic operations</title>
       <link>https://arxiv.org/abs/2602.17966</link>
       <description>arXiv:2602.17966v1 Announce Type: cross 
@@ -430,6 +487,20 @@ Abstract: Resonant laser excitation of a two-level system with subsequent single
       <dc:creator>Nils Heinisch, Francesco Salusti, Mark R. Hogg, Timon L. Baltisberger, Malwina A. Marczak, Sascha R. Valentin, Arne Ludwig, Klaus D. J\"ons, Richard J. Warburton, Stefan Schumacher</dc:creator>
     </item>
     <item>
+      <title>Rydberg states with a liquid core</title>
+      <link>https://arxiv.org/abs/2602.18169</link>
+      <description>arXiv:2602.18169v1 Announce Type: cross 
+Abstract: We develop a self-consistent approach that provides an explicit potential for a Rydberg electron whose ionic core consists of a polarizable medium, typically realized with superfluid droplets. The electron's motion remains separable in spherical coordinates, but the radial force exerted by the droplet breaks degeneracy of the angular momentum states non-perturbatively. The ensuing electron spectrum reveals intriguing properties dependent on droplet size and electron excitation. Deviations of the polarizable medium from the continuous spherical distribution can be taken into account as a perturbation of this redefined Rydberg dynamics. We discuss specific but paradigmatic examples for superfluid helium and also propose a way to probe droplet properties including its possible crystallized fraction through stimulated transitions of the Rydberg electron.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.18169v1</guid>
+      <category>physics.atom-ph</category>
+      <category>cond-mat.quant-gas</category>
+      <category>quant-ph</category>
+      <pubDate>Mon, 23 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>cross</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Juan Carlos Acosta Matos, P. Giannakeas, Jan M. Rost</dc:creator>
+    </item>
+    <item>
       <title>Twisted symmetric exclusion processes and set-theoretical $R$-matrices</title>
       <link>https://arxiv.org/abs/2602.18204</link>
       <description>arXiv:2602.18204v1 Announce Type: cross 
@@ -444,6 +515,20 @@ Abstract: We investigate periodic integrable Markov models, constructed from set
       <arxiv:announce_type>cross</arxiv:announce_type>
       <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
       <dc:creator>Mathieu Dabrowski, Lo\"ic Poulain d'Andecy, Eric Ragoucy</dc:creator>
+    </item>
+    <item>
+      <title>Phase diagram of a lattice fermion model with symmetric mass generation</title>
+      <link>https://arxiv.org/abs/2602.18360</link>
+      <description>arXiv:2602.18360v1 Announce Type: cross 
+Abstract: We study the phase structure of a model containing two flavors of massless staggered fermions interacting through two independent four-fermion couplings, UI and UB, formulated on a three-dimensional Euclidean space-time lattice. At UB = 0, this model is known to exhibit a direct second-order quantum phase transition between a massless fermion (MF) phase and a phase in which fermions acquire masses through the mechanism commonly referred to as symmetric mass generation (SMG). We demonstrate that introducing a small nonzero value of UB qualitatively alters this structure: the single exotic transition at UB = 0 splits into two distinct, conventional transitions, separated by an intermediate phase in which fermion masses arise through the standard mechanism of spontaneous symmetry breaking (SSB). The first of these is a Gross-Neveu transition separating the MF phase from the SSB-induced massive phase, while the second is a three-dimensional XY transition between the SSB phase and the SMG phase. Using the fermion-bag Monte Carlo method, we verify that the critical exponents associated with both transitions are consistent with the literature, thereby yielding a quantitative characterization of the resulting phase structure of the model.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.18360v1</guid>
+      <category>hep-lat</category>
+      <category>cond-mat.str-el</category>
+      <category>hep-th</category>
+      <pubDate>Mon, 23 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>cross</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Sandip Maiti, Debasish Banerjee, Shailesh Chandrasekharan, Marina K. Marinkovic</dc:creator>
     </item>
     <item>
       <title>Correlated topological band structures of the kagome altermagnets Mn$_3X$ ($X=$ Sn, Ge, Ga)</title>
@@ -485,6 +570,19 @@ Abstract: Latching techniques are widely used to enhance readout of qubits. Thes
       <arxiv:DOI>10.1038/s41534-025-01094-x</arxiv:DOI>
       <arxiv:journal_reference>npj Quantum Information 11, 148 (2025)</arxiv:journal_reference>
       <dc:creator>Sanghyeok Park, Jared Benson, J. Corrigan, J. P. Dodson, S. N. Coppersmith, Mark Friesen, M. A. Eriksson</dc:creator>
+    </item>
+    <item>
+      <title>Dynamical scaling study for the estimation of dynamical exponent $z$ of three-dimensional XY spin glass model</title>
+      <link>https://arxiv.org/abs/2503.06386</link>
+      <description>arXiv:2503.06386v5 Announce Type: replace 
+Abstract: To analyze the $\pm J$ XY spin-glass in three dimensions, we verified a method aimed at obtaining a high-precision dynamical exponent $z$ from the correlation length in the nonequilibrium relaxation process. The obtained $z$ yielded consistent and highly accurate results in previous studies for relatively well-studied models -- specifically, the three-dimensional (3D) ferromagnetic Ising model and the 3D $\pm J$ Ising model. Building on these previous studies, we used this method and the dynamical scaling method to analyze the 3D $\pm J$ XY model and obtained highly precise critical temperatures and exponents. These findings support the spin chirality decoupling picture, explaining the experimental spin-glass phase transition.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2503.06386v5</guid>
+      <category>cond-mat.stat-mech</category>
+      <category>cond-mat.dis-nn</category>
+      <pubDate>Mon, 23 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>Yusuke Terasawa, Yukiyasu Ozeki</dc:creator>
     </item>
     <item>
       <title>Spin liquids in spin-1 pyrochlore magnets: nematic Coulomb phase, intrinsic spin glass, and its realization in NaCaNi$_2$F$_7$</title>
@@ -550,6 +648,20 @@ Abstract: We report ultrahigh magnetic field Faraday rotation results on the chi
       <arxiv:DOI>10.1103/b6gt-w5xy</arxiv:DOI>
       <arxiv:journal_reference>Phys. Rev. Lett. 136, 076703 (2026)</arxiv:journal_reference>
       <dc:creator>T. Nomura, I. Rousochatzakis, O. Janson, M. Gen, X. -G. Zhou, Y. Ishii, S. Seki, Y. Kohama, Y. H. Matsuda</dc:creator>
+    </item>
+    <item>
+      <title>Exact description of fermionic reservoirs via purified damped ancillary fermions</title>
+      <link>https://arxiv.org/abs/2509.13781</link>
+      <description>arXiv:2509.13781v2 Announce Type: replace 
+Abstract: We present a method for the modeling of fermionic reservoirs using a new class of ancillary damped fermions, dubbed purified pseudofermions, which exhibit unusual free correlations. We show that this key feature, when combined with existing efficient decomposition algorithms for the reservoir correlation functions, enables the development of an easily implementable and accurate scheme for constructing effective models of fermionic reservoirs. We numerically demonstrate the validity, accuracy, efficiency and potential use of our method by studying the particle transport of spinless fermions in a one-dimensional chain. Beyond its utility as a quantum impurity solver, our method holds promise for addressing a wide range of problems involving extended systems in fields like quantum transport, quantum thermodynamics, thermal engines and nonequilibrium phase transitions.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2509.13781v2</guid>
+      <category>cond-mat.str-el</category>
+      <pubDate>Mon, 23 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <arxiv:DOI>10.1103/9mjr-wxh2</arxiv:DOI>
+      <arxiv:journal_reference>Phys. Rev. B 113, 085131 (2026)</arxiv:journal_reference>
+      <dc:creator>Pengfei Liang, Neill Lambert, Mauro Cirio</dc:creator>
     </item>
     <item>
       <title>The role of stacking and strain in mean-field magnetic moments of multilayer graphene</title>
@@ -717,6 +829,63 @@ Abstract: Superconductivity arises from the global phase coherence of Cooper pai
       <arxiv:announce_type>replace</arxiv:announce_type>
       <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
       <dc:creator>Menghan Liao, Heng Wang, Mingwei Yang, Chuanwu Cao, Jiayin Tang, Wenjing Xu, Xianfeng Wu, Guangdi Zhou, Haoliang Huang, Kaiwei Chen, Yuying Zhu, Peng Deng, Jianhao Chen, Zhuoyu Chen, Danfeng Li, Kai Chang, Qi-Kun Xue</dc:creator>
+    </item>
+    <item>
+      <title>Long-range spin glass in a field at zero temperature</title>
+      <link>https://arxiv.org/abs/2602.03488</link>
+      <description>arXiv:2602.03488v2 Announce Type: replace 
+Abstract: We compute the critical exponents of the zero-temperature spin glass transition in a field on a one-dimensional long-range model, a proxy for higher-dimensional systems. Our approach is based on a novel loop expansion within the Bethe $M$-layer formalism, whose adaptation to this specific case is detailed here. The resulting estimates provide crucial benchmarks for numerical simulations that can access larger system sizes in one dimension, thus offering a key test of the theory of spin glasses in a field.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.03488v2</guid>
+      <category>cond-mat.dis-nn</category>
+      <category>cond-mat.stat-mech</category>
+      <pubDate>Mon, 23 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by-sa/4.0/</dc:rights>
+      <dc:creator>Maria Chiara Angelini, Saverio Palazzi, Giorgio Parisi, Tommaso Rizzo</dc:creator>
+    </item>
+    <item>
+      <title>Stress-Induced Ferroelectricity in Hafnium Oxide Core-Shell Nanoparticles</title>
+      <link>https://arxiv.org/abs/2602.09262</link>
+      <description>arXiv:2602.09262v2 Announce Type: replace 
+Abstract: In contrast to hafnium oxide (HfO2) thin films, where the appearance of switchable ferroelectric polarization can be induced by strain engineering, reliable methods for controlling ferroelectricity are absent in HfO2 nanoparticles. Direct experimental observations of ferroelectric hysteresis and/or ferroelectric domains in the nanoparticles are absent too. To the best of our knowledge, the possibility of stress-induced ferroelectric states in the HfO2 nanoparticles was not explored. In this work, we study the influence of chemical stress on phase diagrams, dielectric and polar properties of spherical HfO2 core-shell nanoparticles using the Landau-Ginzburg-Devonshire free energy functional that includes higher-order contributions together with trilinear and biquadratic couplings involving polar, antipolar, and nonpolar order parameters. The ferroelectric phase exhibits reentrant behavior as a function of nanoparticle size, such that the spontaneous polarization exists only within a limited range of core radii R_c, namely R_cr^min&lt;R_c&lt;R_cr^max. The minimal critical radius R_cr^min is primarily determined by the size dependence of the depolarization field and correlation effects; the maximal critical radius R_cr^max is primarily determined by the size dependence of chemical stresses induced by the elastic defects in the shell. Thus, this work identifies a stress-driven mechanism for reentrant ferroelectricity stabilization in nanoscale hafnia-zirconia, arising from the competition between depolarization field-induced suppression of ferroelectricity and its support by shell-induced chemical stress.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2602.09262v2</guid>
+      <category>cond-mat.mtrl-sci</category>
+      <category>cond-mat.mes-hall</category>
+      <pubDate>Mon, 23 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>Anna N. Morozovska (Yu), Eugene A. Eliseev (Yu),  Richard (Yu),  Liu, Sergei V. Kalinin, Dean R. Evans</dc:creator>
+    </item>
+    <item>
+      <title>Expediting quantum state transfer through the long-range extended XY model</title>
+      <link>https://arxiv.org/abs/2501.16196</link>
+      <description>arXiv:2501.16196v2 Announce Type: replace-cross 
+Abstract: Going beyond short-range interactions, we explore the role of long-range interactions in the extended XY model for transferring quantum states through evolution. In particular, employing a spin-1/2 chain with interactions decaying as a power law, we demonstrate that long-range (LR) interactions significantly enhance the efficiency of a quantum state transfer (QST) protocol, improving the achievable fidelity, mitigating its slow decline as compared with the nearest-neighbor setting, associated with increasing system-size. Our study identifies the LR regime as providing an optimal balance between interaction range and transfer efficiency, outperforming the protocol with the short-range interacting model. Our detailed analysis reveals the impact of system parameters, such as anisotropy, magnetic field strength, and coordination number, on QST dynamics. Specifically, we find that intermediate coordination numbers lead to a faster and more reliable state transfer, while extreme values diminish performance. Furthermore, we exhibit that the presence of LR interactions considerably reduces the minimum time required to achieve fidelity beyond the classical limit.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2501.16196v2</guid>
+      <category>quant-ph</category>
+      <category>cond-mat.quant-gas</category>
+      <category>cond-mat.str-el</category>
+      <pubDate>Mon, 23 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>replace-cross</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <arxiv:DOI>10.1103/skyr-jmzs</arxiv:DOI>
+      <arxiv:journal_reference>Phys. Rev. A 113, 022426 (2026)</arxiv:journal_reference>
+      <dc:creator>Sejal Ahuja, Tanoy Kanti Konar, Leela Ganesh Chandra Lakkaraju, Aditi Sen De</dc:creator>
+    </item>
+    <item>
+      <title>Nonstabilizerness generation in a multiparticle quantum walk</title>
+      <link>https://arxiv.org/abs/2504.19750</link>
+      <description>arXiv:2504.19750v2 Announce Type: replace-cross 
+Abstract: We investigate the generation of non-stabilizerness, or magic, in a multi-particle quantum walk by analyzing the time evolution of the stabilizer R\'enyi entropy $M_2$. Our study considers both single- and two-particle quantum walks in the framework of the XXZ Heisenberg model with varying interaction strengths. We demonstrate that the spread of magic follows the light-cone structure dictated by the system's dynamics, with distinct behaviors emerging in the easy-plane ($\Delta &lt; 1$) and easy-axis ($\Delta &gt; 1$) regimes. For $\Delta &lt; 1$, magic generation is primarily governed by single-particle dynamics, while for $\Delta &gt; 1$, doublon propagation dominates, resulting in a significantly slower growth of $M_2$. Furthermore, the magic exhibits logarithmic growth in time for both one and two-particle dynamics. Additionally, by examining the Pauli spectrum, we show that the statistical distribution of level spacings exhibits Poissonian behavior, independent of interaction strength or particle number. Our results shed light on the role of interactions on magic generation in a many-body system.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2504.19750v2</guid>
+      <category>quant-ph</category>
+      <category>cond-mat.str-el</category>
+      <pubDate>Mon, 23 Feb 2026 00:00:00 -0500</pubDate>
+      <arxiv:announce_type>replace-cross</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <arxiv:DOI>10.1103/nzrp-49mr</arxiv:DOI>
+      <arxiv:journal_reference>Phys. Rev. B 113, 075142 (2026)</arxiv:journal_reference>
+      <dc:creator>C\u{a}t\u{a}lin Pa\c{s}cu Moca, Doru Sticlet, Bal\'azs D\'ora, Angelo Valli, Dominik Szombathy, Gergely Zar\'and</dc:creator>
     </item>
     <item>
       <title>TasVisAn and InsPy -- Python Packages for Triple-Axis Spectrometer Data Visualization, Analysis, Instrument Resolution Calculation, and Convolution</title>
