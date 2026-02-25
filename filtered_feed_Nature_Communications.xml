@@ -23,7 +23,9 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-69815-0"/>
                 
-                    </rdf:Seq>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-69973-1"/>
+                
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/ncomms/rss.png">
@@ -47,4 +49,19 @@
             <prism:url>https://www.nature.com/articles/s41467-026-69815-0</prism:url>
         </item>
     
-        </rdf:RDF>
+        <item rdf:about="https://www.nature.com/articles/s41467-026-69973-1">
+            <title>Blunt-force assembly of programmable DNA architectures using π–π stacking</title>
+            <link>https://www.nature.com/articles/s41467-026-69973-1</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 24 February 2026; &lt;a href="https://www.nature.com/articles/s41467-026-69973-1"&gt;doi:10.1038/s41467-026-69973-1&lt;/a&gt;&lt;/p&gt;Sticky-ended cohesion has historically been the driving force for DNA self-assembly and was employed for self-assembled crystals to avoid unpredictable packing; however, this limits the diversity of resulting architectures. Here, the authors employ composable DNA tiles to form complex 3D architectures using blunt-ended motifs with single duplex interfaces, leveraging the geometry of the tile and the terminal nucleobase identity to control self-assembly outcomes.</content:encoded>
+            <dc:title>Blunt-force assembly of programmable DNA architectures using π–π stacking</dc:title>
+            <dc:creator>Karol Woloszyn</dc:creator><dc:creator>Andrew Horvath</dc:creator><dc:creator>Mara Jaffe</dc:creator><dc:creator>Lara Perren</dc:creator><dc:creator>Joe Rueb</dc:creator><dc:creator>Samyra Mahiba</dc:creator><dc:creator>Nataša Jonoska</dc:creator><dc:creator>Yoel P. Ohayon</dc:creator><dc:creator>James W. Canary</dc:creator><dc:creator>Simon Vecchioni</dc:creator><dc:creator>Ruojie Sha</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-026-69973-1</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-02-24; | doi:10.1038/s41467-026-69973-1</dc:source>
+            <dc:date>2026-02-24</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-026-69973-1</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-026-69973-1</prism:url>
+        </item>
+    
+</rdf:RDF>
