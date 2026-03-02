@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-026-00516-w"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-026-10127-0"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/d41586-026-00620-x"/>
@@ -54,6 +56,21 @@
         <url>https://www.nature.com/uploads/product/nature/rss.png</url>
         <link>http://feeds.nature.com/nature/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/d41586-026-00516-w">
+            <title>The squeal of peeling tape, explained</title>
+            <link>https://www.nature.com/articles/d41586-026-00516-w</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 02 March 2026; &lt;a href="https://www.nature.com/articles/d41586-026-00516-w"&gt;doi:10.1038/d41586-026-00516-w&lt;/a&gt;&lt;/p&gt;Weak shock waves triggered by micro-cracks in the adhesive layer of tape cause it to screech when being unspooled from its roll.</content:encoded>
+            <dc:title>The squeal of peeling tape, explained</dc:title>
+            
+            <dc:identifier>doi:10.1038/d41586-026-00516-w</dc:identifier>
+            <dc:source>Nature, Published online: 2026-03-02; | doi:10.1038/d41586-026-00516-w</dc:source>
+            <dc:date>2026-03-02</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/d41586-026-00516-w</prism:doi>
+            <prism:url>https://www.nature.com/articles/d41586-026-00516-w</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41586-026-10127-0">
             <title>Reply to: Limitations of probing field-induced response with STM</title>
