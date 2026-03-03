@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02515-8"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02523-8"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02527-4"/>
@@ -30,10 +32,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02500-1"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02509-6"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02528-3"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +40,21 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-026-02515-8">
+            <title>Texture-dependent all-optical switching in ferromagnetic films via stochastic nucleation of nanoscale domains</title>
+            <link>https://www.nature.com/articles/s41563-026-02515-8</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 03 March 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02515-8"&gt;doi:10.1038/s41563-026-02515-8&lt;/a&gt;&lt;/p&gt;Faraday microscopy and magnetic force microscopy with circularly polarized picosecond optical pulses are used to investigate domain switching in a ferromagnetic Pt/Co/Pt thin film. A stochastic model explains the nucleation and growth of magnetic domains, taking into account light helicity and the relative magnetization of neighbouring domains.</content:encoded>
+            <dc:title>Texture-dependent all-optical switching in ferromagnetic films via stochastic nucleation of nanoscale domains</dc:title>
+            <dc:creator>Dinar Khusyainov</dc:creator><dc:creator>Rein Liefferink</dc:creator><dc:creator>MengXing Na</dc:creator><dc:creator>Fabian Kammerbauer</dc:creator><dc:creator>Robert Frömter</dc:creator><dc:creator>Mathias Kläui</dc:creator><dc:creator>Dmitry Kozodaev</dc:creator><dc:creator>Nikolay Vovk</dc:creator><dc:creator>Rostislav V. Mikhaylovskiy</dc:creator><dc:creator>Dmytro Afanasiev</dc:creator><dc:creator>Alexey V. Kimel</dc:creator><dc:creator>Johan H. Mentink</dc:creator><dc:creator>Theo Rasing</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-026-02515-8</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2026-03-03; | doi:10.1038/s41563-026-02515-8</dc:source>
+            <dc:date>2026-03-03</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-026-02515-8</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-026-02515-8</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-026-02523-8">
             <title>Efficient two-photon emission from a quantum dot</title>
@@ -131,36 +144,6 @@
             <prism:publicationName>Nature Materials</prism:publicationName>
             <prism:doi>10.1038/s41563-026-02500-1</prism:doi>
             <prism:url>https://www.nature.com/articles/s41563-026-02500-1</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-026-02509-6">
-            <title>Molecular factors controlling charge pair generation in organic photovoltaic materials</title>
-            <link>https://www.nature.com/articles/s41563-026-02509-6</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 27 February 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02509-6"&gt;doi:10.1038/s41563-026-02509-6&lt;/a&gt;&lt;/p&gt;A model is devised to investigate free charge generation in neat acceptor domains and at donor–acceptor heterojunctions. Efficient photocurrent generation in organic heterojunctions at low energetic offsets can be related to key molecular parameters and to electronic state delocalization.</content:encoded>
-            <dc:title>Molecular factors controlling charge pair generation in organic photovoltaic materials</dc:title>
-            <dc:creator>Lucy J. F. Hart</dc:creator><dc:creator>Daniel G. Medranda</dc:creator><dc:creator>Shi Wei Yuan</dc:creator><dc:creator>Linnea Lindh</dc:creator><dc:creator>Jolanda S. Müller</dc:creator><dc:creator>Hanbo Yang</dc:creator><dc:creator>Hugo Gerard</dc:creator><dc:creator>Tianyu Zhao</dc:creator><dc:creator>Arianna Quesada-Ramirez</dc:creator><dc:creator>Mariano Campoy-Quiles</dc:creator><dc:creator>Mohammed Azzouzi</dc:creator><dc:creator>Flurin D. Eisner</dc:creator><dc:creator>Jenny Nelson</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-026-02509-6</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2026-02-27; | doi:10.1038/s41563-026-02509-6</dc:source>
-            <dc:date>2026-02-27</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-026-02509-6</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-026-02509-6</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-026-02528-3">
-            <title>Engineering phase-frustration-induced flat bands in an aza-triangulene covalent kagome lattice</title>
-            <link>https://www.nature.com/articles/s41563-026-02528-3</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 27 February 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02528-3"&gt;doi:10.1038/s41563-026-02528-3&lt;/a&gt;&lt;/p&gt;The on-surface synthesis of π-conjugated covalent organic frameworks (COFs) enables the realization of designer quantum nanomaterials. Orbital-phase frustration within an aza-triangulene COF-based kagome lattice is reported to give rise to non-trivial flat bands.</content:encoded>
-            <dc:title>Engineering phase-frustration-induced flat bands in an aza-triangulene covalent kagome lattice</dc:title>
-            <dc:creator>Yuyi Yan</dc:creator><dc:creator>Fujia Liu</dc:creator><dc:creator>Weichen Tang</dc:creator><dc:creator>Han Xuan Wong</dc:creator><dc:creator>Boyu Qie</dc:creator><dc:creator>Steven G. Louie</dc:creator><dc:creator>Felix R. Fischer</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-026-02528-3</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2026-02-27; | doi:10.1038/s41563-026-02528-3</dc:source>
-            <dc:date>2026-02-27</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-026-02528-3</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-026-02528-3</prism:url>
         </item>
     
 </rdf:RDF>
