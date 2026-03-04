@@ -6,10 +6,10 @@
     <description>Recent articles in Physical Review B</description>
     <syn:updatePeriod>hourly</syn:updatePeriod>
     <syn:updateFrequency>1</syn:updateFrequency>
-    <syn:updateBase>2026-03-04T02:16:39+00:00</syn:updateBase>
+    <syn:updateBase>2026-03-04T01:16:32+00:00</syn:updateBase>
     <dc:creator>rss@aps.org</dc:creator>
     <dc:publisher>assocpub@aps.org</dc:publisher>
-    <dc:date>2026-03-04T02:16:39+00:00</dc:date>
+    <dc:date>2026-03-04T01:16:32+00:00</dc:date>
     <dc:language>en</dc:language>
     <dc:rights>Copyright © 2026 the American Physical Society. Personal use only, all commercial or other reuse prohibited</dc:rights>
     <prism:copyright>Copyright © 2026 the American Physical Society</prism:copyright>
@@ -26,6 +26,7 @@
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/42dq-5xlf"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/rhs6-7mmk"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/mc1p-blhk"/>
+        <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/2p4w-mdcj"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/qdcg-ykf5"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/zk45-6lb2"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/c57s-skv9"/>
@@ -53,7 +54,6 @@
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/1bng-7kbv"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/xy6g-q2f5"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/qcdc-1bdv"/>
-        <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/lx2h-w9fl"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/ny9t-sfmk"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/9tt5-qm26"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/ykhd-c334"/>
@@ -279,6 +279,28 @@
     <prism:startingPage>125108</prism:startingPage>
     <dc:subject>Electronic structure and strongly correlated systems</dc:subject>
     <prism:section>Electronic structure and strongly correlated systems</prism:section>
+  </item>
+  <item rdf:about="http://link.aps.org/doi/10.1103/2p4w-mdcj">
+    <title>Magnon scattering and transduction in Coulomb-coupled quantum Hall ferromagnets</title>
+    <link>http://link.aps.org/doi/10.1103/2p4w-mdcj</link>
+    <description>Author(s): Alexander Canright, Deepak Iyer, and Matthew S. Foster&lt;br/&gt;&lt;p&gt;The magnetization field of a quantum Hall ferromagnet (QHFM) can host a variety of spin textures, including skyrmions and magnons. When projected into the lowest Landau level with $ν=1$ filling, the topological (Pontryagin) charge density of the magnetization field is proportional to the electric ch…&lt;/p&gt;&lt;br/&gt;[Phys. Rev. B 113, 125301] Published Tue Mar 03, 2026</description>
+    <content:encoded>&lt;p&gt;Author(s): Alexander Canright, Deepak Iyer, and Matthew S. Foster&lt;/p&gt;&lt;p&gt;The magnetization field of a quantum Hall ferromagnet (QHFM) can host a variety of spin textures, including skyrmions and magnons. When projected into the lowest Landau level with &lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;&lt;mrow&gt;&lt;mi&gt;ν&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/math&gt; filling, the topological (Pontryagin) charge density of the magnetization field is proportional to the electric char…&lt;/p&gt;&lt;br/&gt;&lt;p&gt;[Phys. Rev. B 113, 125301] Published Tue Mar 03, 2026&lt;/p&gt;</content:encoded>
+    <dc:title>Magnon scattering and transduction in Coulomb-coupled quantum Hall ferromagnets</dc:title>
+    <dc:creator>Alexander Canright, Deepak Iyer, and Matthew S. Foster</dc:creator>
+    <dc:date>2026-03-03T10:00:00+00:00</dc:date>
+    <dc:rights>Personal use only, all commercial or other reuse prohibited</dc:rights>
+    <dc:source>Phys. Rev. B 113, 125301 (2026)</dc:source>
+    <dc:type>article</dc:type>
+    <dc:identifier>doi:10.1103/2p4w-mdcj</dc:identifier>
+    <prism:doi>10.1103/2p4w-mdcj</prism:doi>
+    <prism:publicationName>Physical Review B</prism:publicationName>
+    <prism:volume>113</prism:volume>
+    <prism:number>12</prism:number>
+    <prism:publicationDate>2026-03-03T10:00:00+00:00</prism:publicationDate>
+    <prism:url>http://link.aps.org/doi/10.1103/2p4w-mdcj</prism:url>
+    <prism:startingPage>125301</prism:startingPage>
+    <dc:subject>Semiconductors II: surfaces, interfaces, microstructures, and related topics</dc:subject>
+    <prism:section>Semiconductors II: surfaces, interfaces, microstructures, and related topics</prism:section>
   </item>
   <item rdf:about="http://link.aps.org/doi/10.1103/qdcg-ykf5">
     <title>Anomalous Hall effect in rhombohedral graphene</title>
@@ -873,28 +895,6 @@
     <prism:startingPage>064115</prism:startingPage>
     <dc:subject>Structure, structural phase transitions, mechanical properties, defects</dc:subject>
     <prism:section>Structure, structural phase transitions, mechanical properties, defects</prism:section>
-  </item>
-  <item rdf:about="http://link.aps.org/doi/10.1103/lx2h-w9fl">
-    <title>Interplay of localization and topology in disordered dimerized arrays of Rydberg atoms</title>
-    <link>http://link.aps.org/doi/10.1103/lx2h-w9fl</link>
-    <description>Author(s): Maksym Prodius, Adith Sai Aramthottil, and Jakub Zakrzewski&lt;br/&gt;&lt;p&gt;Rydberg tweezer arrays provide a platform for realizing spin-1/2 Hamiltonians with long-range tunneling that decays as a power law with distance. We numerically investigate the effects of positional disorder and dimerization on the properties of excited states in such a one-dimensional system. Our m…&lt;/p&gt;&lt;br/&gt;[Phys. Rev. B 113, 064205] Published Wed Feb 25, 2026</description>
-    <content:encoded>&lt;p&gt;Author(s): Maksym Prodius, Adith Sai Aramthottil, and Jakub Zakrzewski&lt;/p&gt;&lt;p&gt;Rydberg tweezer arrays provide a platform for realizing spin-1/2 Hamiltonians with long-range tunneling that decays as a power law with distance. We numerically investigate the effects of positional disorder and dimerization on the properties of excited states in such a one-dimensional system. Our m…&lt;/p&gt;&lt;br/&gt;&lt;p&gt;[Phys. Rev. B 113, 064205] Published Wed Feb 25, 2026&lt;/p&gt;</content:encoded>
-    <dc:title>Interplay of localization and topology in disordered dimerized arrays of Rydberg atoms</dc:title>
-    <dc:creator>Maksym Prodius, Adith Sai Aramthottil, and Jakub Zakrzewski</dc:creator>
-    <dc:date>2026-02-25T10:00:00+00:00</dc:date>
-    <dc:rights>Personal use only, all commercial or other reuse prohibited</dc:rights>
-    <dc:source>Phys. Rev. B 113, 064205 (2026)</dc:source>
-    <dc:type>article</dc:type>
-    <dc:identifier>doi:10.1103/lx2h-w9fl</dc:identifier>
-    <prism:doi>10.1103/lx2h-w9fl</prism:doi>
-    <prism:publicationName>Physical Review B</prism:publicationName>
-    <prism:volume>113</prism:volume>
-    <prism:number>6</prism:number>
-    <prism:publicationDate>2026-02-25T10:00:00+00:00</prism:publicationDate>
-    <prism:url>http://link.aps.org/doi/10.1103/lx2h-w9fl</prism:url>
-    <prism:startingPage>064205</prism:startingPage>
-    <dc:subject>Inhomogeneous, disordered, and partially ordered systems</dc:subject>
-    <prism:section>Inhomogeneous, disordered, and partially ordered systems</prism:section>
   </item>
   <item rdf:about="http://link.aps.org/doi/10.1103/ny9t-sfmk">
     <title>High bosonic Bott index and transport of multiband topological magnons</title>

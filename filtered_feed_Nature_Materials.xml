@@ -18,19 +18,15 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02510-z"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02515-8"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02523-8"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02527-4"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02489-7"/>
-                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02499-5"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02522-9"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02500-1"/>
                 
             </rdf:Seq>
         </items>
@@ -40,6 +36,21 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-026-02510-z">
+            <title>Dynamical stability by spin transfer in nearly isotropic magnets</title>
+            <link>https://www.nature.com/articles/s41563-026-02510-z</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 04 March 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02510-z"&gt;doi:10.1038/s41563-026-02510-z&lt;/a&gt;&lt;/p&gt;Spin torques generated via the spin-Hall effect in CoFeB/W/MgO are found to stabilize magnetization in a high-energy anti-parallel state relative to an applied magnetic field. This observation serves as a platform for studying far-from-equilibrium spin dynamics and holds promise for realizing unconventional computing paradigms.</content:encoded>
+            <dc:title>Dynamical stability by spin transfer in nearly isotropic magnets</dc:title>
+            <dc:creator>Hidekazu Kurebayashi</dc:creator><dc:creator>Joseph Barker</dc:creator><dc:creator>Takumi Yamazaki</dc:creator><dc:creator>Varun K. Kushwaha</dc:creator><dc:creator>Kilian D. Stenning</dc:creator><dc:creator>Harry Youel</dc:creator><dc:creator>Xueyao Hou</dc:creator><dc:creator>Troy Dion</dc:creator><dc:creator>Daniel Prestwood</dc:creator><dc:creator>Gerrit E. W. Bauer</dc:creator><dc:creator>Kei Yamamoto</dc:creator><dc:creator>Takeshi Seki</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-026-02510-z</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2026-03-04; | doi:10.1038/s41563-026-02510-z</dc:source>
+            <dc:date>2026-03-04</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-026-02510-z</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-026-02510-z</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-026-02515-8">
             <title>Texture-dependent all-optical switching in ferromagnetic films via stochastic nucleation of nanoscale domains</title>
@@ -71,36 +82,6 @@
             <prism:url>https://www.nature.com/articles/s41563-026-02523-8</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41563-026-02527-4">
-            <title>Stability in the dilute limit</title>
-            <link>https://www.nature.com/articles/s41563-026-02527-4</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 02 March 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02527-4"&gt;doi:10.1038/s41563-026-02527-4&lt;/a&gt;&lt;/p&gt;Highly dilute metal dopants arrest nanoparticle sintering by electronically stabilizing a few critical surface atoms, redefining how catalyst stability can be engineered at the atomic scale.</content:encoded>
-            <dc:title>Stability in the dilute limit</dc:title>
-            <dc:creator>Haisong Feng</dc:creator><dc:creator>Xin Zhang</dc:creator><dc:creator>Min Wei</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-026-02527-4</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2026-03-02; | doi:10.1038/s41563-026-02527-4</dc:source>
-            <dc:date>2026-03-02</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-026-02527-4</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-026-02527-4</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-026-02489-7">
-            <title>Metal hybridization in dilute-alloy catalysts promotes sintering resistance by decreasing surface mobility</title>
-            <link>https://www.nature.com/articles/s41563-026-02489-7</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 02 March 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02489-7"&gt;doi:10.1038/s41563-026-02489-7&lt;/a&gt;&lt;/p&gt;Single-atom alloys can exhibit unique catalytic properties. Here, using reactivity measurements, atomic-scale imaging, simulation and spectroscopic analysis, it is shown that 1 atom% addition of Pt to Cu nanoparticles substantially decreases deactivation in single-atom alloys via sintering. A general predictive model of catalyst stabilization is developed.</content:encoded>
-            <dc:title>Metal hybridization in dilute-alloy catalysts promotes sintering resistance by decreasing surface mobility</dc:title>
-            <dc:creator>Jordan Finzel</dc:creator><dc:creator>Audrey Dannar</dc:creator><dc:creator>Shoutian Sun</dc:creator><dc:creator>Adam S. Hoffman</dc:creator><dc:creator>Yogita Soni</dc:creator><dc:creator>Bin Wang</dc:creator><dc:creator>Simon R. Bare</dc:creator><dc:creator>E. Charles H. Sykes</dc:creator><dc:creator>Phillip Christopher</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-026-02489-7</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2026-03-02; | doi:10.1038/s41563-026-02489-7</dc:source>
-            <dc:date>2026-03-02</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-026-02489-7</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-026-02489-7</prism:url>
-        </item>
-    
         <item rdf:about="https://www.nature.com/articles/s41563-026-02499-5">
             <title>Charge-triggered switching mechanism in selenium selector enabling ultralow leakage current</title>
             <link>https://www.nature.com/articles/s41563-026-02499-5</link>
@@ -129,21 +110,6 @@
             <prism:publicationName>Nature Materials</prism:publicationName>
             <prism:doi>10.1038/s41563-026-02522-9</prism:doi>
             <prism:url>https://www.nature.com/articles/s41563-026-02522-9</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-026-02500-1">
-            <title>Deeper insights into charge photogeneration in organic solar cells</title>
-            <link>https://www.nature.com/articles/s41563-026-02500-1</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 27 February 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02500-1"&gt;doi:10.1038/s41563-026-02500-1&lt;/a&gt;&lt;/p&gt;An advanced model is developed to pinpoint the parameters that control the bulk charge photogeneration yield and to provide design strategies for highly efficient organic solar cells.</content:encoded>
-            <dc:title>Deeper insights into charge photogeneration in organic solar cells</dc:title>
-            <dc:creator>Carsten Deibel</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-026-02500-1</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2026-02-27; | doi:10.1038/s41563-026-02500-1</dc:source>
-            <dc:date>2026-02-27</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-026-02500-1</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-026-02500-1</prism:url>
         </item>
     
 </rdf:RDF>

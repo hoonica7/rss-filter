@@ -18,9 +18,9 @@
         <items>
             <rdf:Seq>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03187-6"/>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03200-y"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03190-x"/>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03187-6"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03163-6"/>
                 
@@ -30,8 +30,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03174-x"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03184-9"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -40,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-026-03200-y">
+            <title>Dots of entropy</title>
+            <link>https://www.nature.com/articles/s41567-026-03200-y</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 04 March 2026; &lt;a href="https://www.nature.com/articles/s41567-026-03200-y"&gt;doi:10.1038/s41567-026-03200-y&lt;/a&gt;&lt;/p&gt;Irreversibility is linked to the production of entropy and relaxation to thermal equilibrium. Entropy production has now been measured at the nanoscale using quantum dots.</content:encoded>
+            <dc:title>Dots of entropy</dc:title>
+            <dc:creator>Paul Eastham</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-026-03200-y</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-03-04; | doi:10.1038/s41567-026-03200-y</dc:source>
+            <dc:date>2026-03-04</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-026-03200-y</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-026-03200-y</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-026-03187-6">
             <title>Quantum-limited metrology of macroscopic spin ensembles</title>
@@ -54,21 +67,6 @@
             <prism:publicationName>Nature Physics</prism:publicationName>
             <prism:doi>10.1038/s41567-026-03187-6</prism:doi>
             <prism:url>https://www.nature.com/articles/s41567-026-03187-6</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-026-03190-x">
-            <title>A crowd of marine embryos self-assembles into a living solid</title>
-            <link>https://www.nature.com/articles/s41567-026-03190-x</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 23 February 2026; &lt;a href="https://www.nature.com/articles/s41567-026-03190-x"&gt;doi:10.1038/s41567-026-03190-x&lt;/a&gt;&lt;/p&gt;Marine embryos are usually studied in isolation. But when starfish embryos are in a crowd, they self-assemble into living solids with unexpected dynamics, revealing how simple organisms can help understand physics far from equilibrium.</content:encoded>
-            <dc:title>A crowd of marine embryos self-assembles into a living solid</dc:title>
-            <dc:creator>Vivek N. Prakash</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-026-03190-x</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2026-02-23; | doi:10.1038/s41567-026-03190-x</dc:source>
-            <dc:date>2026-02-23</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-026-03190-x</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-026-03190-x</prism:url>
         </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-025-03163-6">
@@ -129,21 +127,6 @@
             <prism:publicationName>Nature Physics</prism:publicationName>
             <prism:doi>10.1038/s41567-026-03174-x</prism:doi>
             <prism:url>https://www.nature.com/articles/s41567-026-03174-x</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-026-03184-9">
-            <title>An exciton crystal in a moiré excitonic insulator</title>
-            <link>https://www.nature.com/articles/s41567-026-03184-9</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 18 February 2026; &lt;a href="https://www.nature.com/articles/s41567-026-03184-9"&gt;doi:10.1038/s41567-026-03184-9&lt;/a&gt;&lt;/p&gt;The formation of exciton crystals is challenging because excitons possess short lifetimes and exhibit weaker interactions than electrons. Now, an exciton Wigner crystal is observed in a moiré electron–hole bilayer.</content:encoded>
-            <dc:title>An exciton crystal in a moiré excitonic insulator</dc:title>
-            <dc:creator>Ruishi Qi</dc:creator><dc:creator>Qize Li</dc:creator><dc:creator>Haleem Kim</dc:creator><dc:creator>Jiahui Nie</dc:creator><dc:creator>Zuocheng Zhang</dc:creator><dc:creator>Ruichen Xia</dc:creator><dc:creator>Zhiyuan Cui</dc:creator><dc:creator>Jianghan Xiao</dc:creator><dc:creator>Takashi Taniguchi</dc:creator><dc:creator>Kenji Watanabe</dc:creator><dc:creator>Michael F. Crommie</dc:creator><dc:creator>Feng Wang</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-026-03184-9</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2026-02-18; | doi:10.1038/s41567-026-03184-9</dc:source>
-            <dc:date>2026-02-18</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-026-03184-9</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-026-03184-9</prism:url>
         </item>
     
 </rdf:RDF>
