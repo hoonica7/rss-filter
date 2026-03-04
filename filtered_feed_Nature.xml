@@ -42,11 +42,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-026-10171-w"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-026-00295-4"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-026-00580-2"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nature/rss.png">
@@ -235,34 +231,4 @@
             <prism:url>https://www.nature.com/articles/s41586-026-10171-w</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/d41586-026-00295-4">
-            <title>The secret of squeaky basketball shoes</title>
-            <link>https://www.nature.com/articles/d41586-026-00295-4</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 25 February 2026; &lt;a href="https://www.nature.com/articles/d41586-026-00295-4"&gt;doi:10.1038/d41586-026-00295-4&lt;/a&gt;&lt;/p&gt;When shoes slide across a floor, wave-like deformations of the sole can generate squeaking. The pitch of the squeak depends on the rate at which deformations are generated.</content:encoded>
-            <dc:title>The secret of squeaky basketball shoes</dc:title>
-            <dc:creator>Bart Weber</dc:creator>
-            <dc:identifier>doi:10.1038/d41586-026-00295-4</dc:identifier>
-            <dc:source>Nature, Published online: 2026-02-25; | doi:10.1038/d41586-026-00295-4</dc:source>
-            <dc:date>2026-02-25</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/d41586-026-00295-4</prism:doi>
-            <prism:url>https://www.nature.com/articles/d41586-026-00295-4</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/d41586-026-00580-2">
-            <title>Amplified X-ray laser pulses achieved using mirror set-up</title>
-            <link>https://www.nature.com/articles/d41586-026-00580-2</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 25 February 2026; &lt;a href="https://www.nature.com/articles/d41586-026-00580-2"&gt;doi:10.1038/d41586-026-00580-2&lt;/a&gt;&lt;/p&gt;Current X-ray lasers require facilities that are kilometres long. A cavity-based set-up about 66 metres in length has been developed that uses highly reflective mirrors to enable the generation of high-intensity pulses of narrow-band X-ray radiation. This promises to overcome the limitations of current X-ray lasers.</content:encoded>
-            <dc:title>Amplified X-ray laser pulses achieved using mirror set-up</dc:title>
-            
-            <dc:identifier>doi:10.1038/d41586-026-00580-2</dc:identifier>
-            <dc:source>Nature, Published online: 2026-02-25; | doi:10.1038/d41586-026-00580-2</dc:source>
-            <dc:date>2026-02-25</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/d41586-026-00580-2</prism:doi>
-            <prism:url>https://www.nature.com/articles/d41586-026-00580-2</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
