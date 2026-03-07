@@ -21,9 +21,13 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-70223-7"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-70063-5"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-70252-2"/>
                 
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/ncomms/rss.png">
@@ -31,6 +35,36 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-026-70223-7">
+            <title>Oligomeric-solvent engineering of hierarchical hydrogen-bonding networks for multifunctional glass interlayers</title>
+            <link>https://www.nature.com/articles/s41467-026-70223-7</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 07 March 2026; &lt;a href="https://www.nature.com/articles/s41467-026-70223-7"&gt;doi:10.1038/s41467-026-70223-7&lt;/a&gt;&lt;/p&gt;As the properties of polymer gels are influenced by solvent as well as the network, choice of solvent is important for determination of properties. Here, the authors report the use of polyethylene glycol as a solvent for the formation of a dissipative gel, with coupling of elasticity and viscosity.</content:encoded>
+            <dc:title>Oligomeric-solvent engineering of hierarchical hydrogen-bonding networks for multifunctional glass interlayers</dc:title>
+            <dc:creator>Min Li</dc:creator><dc:creator>Longyu Hu</dc:creator><dc:creator>Menghan Pi</dc:creator><dc:creator>Xiayue Yang</dc:creator><dc:creator>Xiaoyu He</dc:creator><dc:creator>Wei Cui</dc:creator><dc:creator>Rong Ran</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-026-70223-7</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-03-07; | doi:10.1038/s41467-026-70223-7</dc:source>
+            <dc:date>2026-03-07</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-026-70223-7</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-026-70223-7</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-026-70063-5">
+            <title>Discovery of van Hove singularities: electronic fingerprints of 3Q magnetic order in a van der Waals quantum magnet</title>
+            <link>https://www.nature.com/articles/s41467-026-70063-5</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 07 March 2026; &lt;a href="https://www.nature.com/articles/s41467-026-70063-5"&gt;doi:10.1038/s41467-026-70063-5&lt;/a&gt;&lt;/p&gt;Cobalt intercalated TaS2 has recently been found to host 3Q antiferromagnetic order. This 3Q state occurs coexists with a very large anomalous hall effect, and shows strong sensitivity to Cobalt concentration. Here, Luo and coauthors perform doping dependent angular resolved photoemission experiments on Co1/3TaS2, finding clearly fingerprints of 3Q magnetic order in the electronic band structure.</content:encoded>
+            <dc:title>Discovery of van Hove singularities: electronic fingerprints of 3Q magnetic order in a van der Waals quantum magnet</dc:title>
+            <dc:creator>Hai-Lan Luo</dc:creator><dc:creator>Josue Rodriguez</dc:creator><dc:creator>Debasis Dutta</dc:creator><dc:creator>Maximilian Huber</dc:creator><dc:creator>Haoyue Jiang</dc:creator><dc:creator>Luca Moreschini</dc:creator><dc:creator>Catherine Xu</dc:creator><dc:creator>Alexei Fedorov</dc:creator><dc:creator>Chris Jozwiak</dc:creator><dc:creator>Aaron Bostwick</dc:creator><dc:creator>Guoqing Chang</dc:creator><dc:creator>James G. Analytis</dc:creator><dc:creator>Dung-Hai Lee</dc:creator><dc:creator>Alessandra Lanzara</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-026-70063-5</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-03-07; | doi:10.1038/s41467-026-70063-5</dc:source>
+            <dc:date>2026-03-07</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-026-70063-5</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-026-70063-5</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41467-026-70252-2">
             <title>Ballistic transport in nanodevices based on single-crystalline Cu thin films</title>
@@ -47,4 +81,4 @@
             <prism:url>https://www.nature.com/articles/s41467-026-70252-2</prism:url>
         </item>
     
-        </rdf:RDF>
+</rdf:RDF>
