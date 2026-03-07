@@ -21,6 +21,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-70252-2"/>
+                
                     </rdf:Seq>
         </items>
     </channel>
@@ -29,5 +31,20 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-026-70252-2">
+            <title>Ballistic transport in nanodevices based on single-crystalline Cu thin films</title>
+            <link>https://www.nature.com/articles/s41467-026-70252-2</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 07 March 2026; &lt;a href="https://www.nature.com/articles/s41467-026-70252-2"&gt;doi:10.1038/s41467-026-70252-2&lt;/a&gt;&lt;/p&gt;Ballistic transport is achieved in nanodevices based on atomically flat, grain-boundary-free single-crystalline Cu(111) thin films. Negative bend resistance below 85 K confirms it, establishing a scalable platform for exploring quantum nature of Cu.</content:encoded>
+            <dc:title>Ballistic transport in nanodevices based on single-crystalline Cu thin films</dc:title>
+            <dc:creator>Yongjin Cho</dc:creator><dc:creator>Su Jae Kim</dc:creator><dc:creator>Min-Hyoung Jung</dc:creator><dc:creator>Yousil Lee</dc:creator><dc:creator>Hu Young Jeong</dc:creator><dc:creator>Young-Min Kim</dc:creator><dc:creator>Hu-Jong Lee</dc:creator><dc:creator>Seong-Gon Kim</dc:creator><dc:creator>Se-Young Jeong</dc:creator><dc:creator>Gil-Ho Lee</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-026-70252-2</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-03-07; | doi:10.1038/s41467-026-70252-2</dc:source>
+            <dc:date>2026-03-07</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-026-70252-2</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-026-70252-2</prism:url>
+        </item>
     
         </rdf:RDF>
