@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-026-00754-y"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/d41586-026-00682-x"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/d41586-026-00249-w"/>
@@ -42,6 +44,21 @@
         <url>https://www.nature.com/uploads/product/nature/rss.png</url>
         <link>http://feeds.nature.com/nature/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/d41586-026-00754-y">
+            <title>Daily briefing: How DNA testing can tell identical twins apart</title>
+            <link>https://www.nature.com/articles/d41586-026-00754-y</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 05 March 2026; &lt;a href="https://www.nature.com/articles/d41586-026-00754-y"&gt;doi:10.1038/d41586-026-00754-y&lt;/a&gt;&lt;/p&gt;Emerging forensic methods can differentiate between twin suspects in criminal cases. Plus, GLP-1 obesity drugs can help stave off addictions and scientists claim to have made a rare hexagonal diamond.</content:encoded>
+            <dc:title>Daily briefing: How DNA testing can tell identical twins apart</dc:title>
+            <dc:creator>Flora Graham</dc:creator>
+            <dc:identifier>doi:10.1038/d41586-026-00754-y</dc:identifier>
+            <dc:source>Nature, Published online: 2026-03-05; | doi:10.1038/d41586-026-00754-y</dc:source>
+            <dc:date>2026-03-05</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/d41586-026-00754-y</prism:doi>
+            <prism:url>https://www.nature.com/articles/d41586-026-00754-y</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/d41586-026-00682-x">
             <title>First ‘half Möbius’ carbon chain wows chemists</title>
