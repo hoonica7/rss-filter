@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-025-03165-4"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03203-9"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03209-3"/>
@@ -26,11 +28,13 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03185-8"/>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03204-8"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03211-9"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03200-y"/>
                 
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -38,6 +42,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-025-03165-4">
+            <title>Geometric origin of particle and dislocation dynamics during grain boundary migration</title>
+            <link>https://www.nature.com/articles/s41567-025-03165-4</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 09 March 2026; &lt;a href="https://www.nature.com/articles/s41567-025-03165-4"&gt;doi:10.1038/s41567-025-03165-4&lt;/a&gt;&lt;/p&gt;Grain boundaries in polycrystalline systems display complicated dynamics. Now, a general framework is presented that predicts the microscopic dynamics of both particles and dislocations underlying grain boundary migration in two-dimensional colloids.</content:encoded>
+            <dc:title>Geometric origin of particle and dislocation dynamics during grain boundary migration</dc:title>
+            <dc:creator>Berend van der Meer</dc:creator><dc:creator>Mathieu G. Baltussen</dc:creator><dc:creator>François A. Lavergne</dc:creator><dc:creator>Arran Curran</dc:creator><dc:creator>Marjolein Dijkstra</dc:creator><dc:creator>Roel P. A. Dullens</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-025-03165-4</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-03-09; | doi:10.1038/s41567-025-03165-4</dc:source>
+            <dc:date>2026-03-09</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-025-03165-4</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-025-03165-4</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-026-03203-9">
             <title>Transient grating spectroscopy down to the atomic length scale</title>
@@ -99,6 +118,21 @@
             <prism:url>https://www.nature.com/articles/s41567-026-03185-8</prism:url>
         </item>
     
+        <item rdf:about="https://www.nature.com/articles/s41567-026-03204-8">
+            <title>Cavity-enhanced spectroscopy in the deep cryogenic regime for quantum sensing and metrology</title>
+            <link>https://www.nature.com/articles/s41567-026-03204-8</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 06 March 2026; &lt;a href="https://www.nature.com/articles/s41567-026-03204-8"&gt;doi:10.1038/s41567-026-03204-8&lt;/a&gt;&lt;/p&gt;Operating cavity-based spectrometers at low temperature has several advantages, such as improved sensitivity. Now, a cavity-enhanced spectrometer is demonstrated down to 4 K.</content:encoded>
+            <dc:title>Cavity-enhanced spectroscopy in the deep cryogenic regime for quantum sensing and metrology</dc:title>
+            <dc:creator>K. Stankiewicz</dc:creator><dc:creator>M. Makowski</dc:creator><dc:creator>M. Słowiński</dc:creator><dc:creator>K. L. Sołtys</dc:creator><dc:creator>B. Bednarski</dc:creator><dc:creator>H. J. Jóźwiak</dc:creator><dc:creator>N. Stolarczyk</dc:creator><dc:creator>M. Narożnik</dc:creator><dc:creator>D. Kierski</dc:creator><dc:creator>S. Wójtewicz</dc:creator><dc:creator>A. Cygan</dc:creator><dc:creator>G. Kowzan</dc:creator><dc:creator>P. Masłowski</dc:creator><dc:creator>M. Piwiński</dc:creator><dc:creator>D. Lisak</dc:creator><dc:creator>P. Wcisło</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-026-03204-8</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-03-06; | doi:10.1038/s41567-026-03204-8</dc:source>
+            <dc:date>2026-03-06</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-026-03204-8</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-026-03204-8</prism:url>
+        </item>
+    
         <item rdf:about="https://www.nature.com/articles/s41567-026-03211-9">
             <title>Logical multi-qubit entanglement with dual-rail superconducting qubits</title>
             <link>https://www.nature.com/articles/s41567-026-03211-9</link>
@@ -129,4 +163,4 @@
             <prism:url>https://www.nature.com/articles/s41567-026-03200-y</prism:url>
         </item>
     
-        </rdf:RDF>
+</rdf:RDF>
