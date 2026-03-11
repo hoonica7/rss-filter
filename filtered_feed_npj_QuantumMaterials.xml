@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00868-6"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00867-7"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-025-00841-9"/>
@@ -32,8 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00863-x"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00854-y"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-026-00868-6">
+            <title>Magnetic excitations of the Kitaev model candidate RuBr&lt;sub&gt;3&lt;/sub&gt;</title>
+            <link>https://www.nature.com/articles/s41535-026-00868-6</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 11 March 2026; &lt;a href="https://www.nature.com/articles/s41535-026-00868-6"&gt;doi:10.1038/s41535-026-00868-6&lt;/a&gt;&lt;/p&gt;Magnetic excitations of the Kitaev model candidate RuBr&lt;sub&gt;3&lt;/sub&gt;</content:encoded>
+            <dc:title>Magnetic excitations of the Kitaev model candidate RuBr&lt;sub&gt;3&lt;/sub&gt;</dc:title>
+            <dc:creator>Kazuhiro Nawa</dc:creator><dc:creator>Yoshinori Imai</dc:creator><dc:creator>Maiko Kofu</dc:creator><dc:creator>Richard Mole</dc:creator><dc:creator>Hideyuki Fujihara</dc:creator><dc:creator>Takumi Hiraoka</dc:creator><dc:creator>Ryo Murasaki</dc:creator><dc:creator>Pharit Piyawongwatthana</dc:creator><dc:creator>Daisuke Okuyama</dc:creator><dc:creator>Hirotada Gotou</dc:creator><dc:creator>Kenya Ohgushi</dc:creator><dc:creator>Taku J. Sato</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-026-00868-6</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2026-03-11; | doi:10.1038/s41535-026-00868-6</dc:source>
+            <dc:date>2026-03-11</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-026-00868-6</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-026-00868-6</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-026-00867-7">
             <title>Anomalous Landau levels and quantum oscillation in rotation-invariant insulators</title>
@@ -146,21 +161,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-026-00863-x</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-026-00863-x</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-026-00854-y">
-            <title>Vanishing ordered moment in the frustrated triangular lattice antiferromagnet CuNdO&lt;sub&gt;2&lt;/sub&gt;</title>
-            <link>https://www.nature.com/articles/s41535-026-00854-y</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 11 February 2026; &lt;a href="https://www.nature.com/articles/s41535-026-00854-y"&gt;doi:10.1038/s41535-026-00854-y&lt;/a&gt;&lt;/p&gt;Vanishing ordered moment in the frustrated triangular lattice antiferromagnet CuNdO&lt;sub&gt;2&lt;/sub&gt;</content:encoded>
-            <dc:title>Vanishing ordered moment in the frustrated triangular lattice antiferromagnet CuNdO&lt;sub&gt;2&lt;/sub&gt;</dc:title>
-            <dc:creator>Jonathan Gaudet</dc:creator><dc:creator>Dalmau Reig-i-Plessis</dc:creator><dc:creator>Bogeng Wen</dc:creator><dc:creator>Thomas J. Hicken</dc:creator><dc:creator>Jonas A. Krieger</dc:creator><dc:creator>Jan Peter Embs</dc:creator><dc:creator>Hubertus Luetkens</dc:creator><dc:creator>Adam A. Aczel</dc:creator><dc:creator>Stuart A. Calder</dc:creator><dc:creator>Matthew B. Stone</dc:creator><dc:creator>Hae-Young Kee</dc:creator><dc:creator>Alannah M. Hallas</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-026-00854-y</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2026-02-11; | doi:10.1038/s41535-026-00854-y</dc:source>
-            <dc:date>2026-02-11</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-026-00854-y</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-026-00854-y</prism:url>
         </item>
     
 </rdf:RDF>
