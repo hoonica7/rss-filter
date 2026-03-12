@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02530-9"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02536-3"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02524-7"/>
@@ -28,8 +30,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02535-4"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02517-6"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -38,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-026-02530-9">
+            <title>Enriched membrane stackings made possible</title>
+            <link>https://www.nature.com/articles/s41563-026-02530-9</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 12 March 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02530-9"&gt;doi:10.1038/s41563-026-02530-9&lt;/a&gt;&lt;/p&gt;A sacrificial layer with hexagonal symmetry is reported that can be used to peel and delaminate oxide substrates with hexagonal symmetry and beyond.</content:encoded>
+            <dc:title>Enriched membrane stackings made possible</dc:title>
+            <dc:creator>Atsushi Tsukazaki</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-026-02530-9</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2026-03-12; | doi:10.1038/s41563-026-02530-9</dc:source>
+            <dc:date>2026-03-12</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-026-02530-9</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-026-02530-9</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-026-02536-3">
             <title>Unravel the complexity</title>
@@ -112,21 +127,6 @@
             <prism:publicationName>Nature Materials</prism:publicationName>
             <prism:doi>10.1038/s41563-026-02535-4</prism:doi>
             <prism:url>https://www.nature.com/articles/s41563-026-02535-4</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-026-02517-6">
-            <title>Quantum control of Hubbard excitons</title>
-            <link>https://www.nature.com/articles/s41563-026-02517-6</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 09 March 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02517-6"&gt;doi:10.1038/s41563-026-02517-6&lt;/a&gt;&lt;/p&gt;Floquet engineering is emerging as a tool to control quantum materials. Here it is applied using non-resonant optical fields to coherently dress Hubbard excitons in Sr2CuO3, driving wavefunction rotations between bright and dark states.</content:encoded>
-            <dc:title>Quantum control of Hubbard excitons</dc:title>
-            <dc:creator>Denitsa R. Baykusheva</dc:creator><dc:creator>Deven Carmichael</dc:creator><dc:creator>Clara S. Weber</dc:creator><dc:creator>I-Te Lu</dc:creator><dc:creator>Filippo Glerean</dc:creator><dc:creator>Tepie Meng</dc:creator><dc:creator>Pedro B. M. De Oliveira</dc:creator><dc:creator>Christopher C. Homes</dc:creator><dc:creator>Igor A. Zaliznyak</dc:creator><dc:creator>G. D. Gu</dc:creator><dc:creator>Mark P. M. Dean</dc:creator><dc:creator>Angel Rubio</dc:creator><dc:creator>Dante M. Kennes</dc:creator><dc:creator>Martin Claassen</dc:creator><dc:creator>Matteo Mitrano</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-026-02517-6</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2026-03-09; | doi:10.1038/s41563-026-02517-6</dc:source>
-            <dc:date>2026-03-09</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-026-02517-6</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-026-02517-6</prism:url>
         </item>
     
 </rdf:RDF>
