@@ -21,13 +21,13 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-70812-6"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-70534-9"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-70806-4"/>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-70587-w"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-70788-3"/>
-                
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/ncomms/rss.png">
@@ -35,6 +35,21 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-026-70812-6">
+            <title>Solvation-mediated isomerization of surface motifs tunes emissions and electron transfer dynamics in gold nanoclusters</title>
+            <link>https://www.nature.com/articles/s41467-026-70812-6</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 18 March 2026; &lt;a href="https://www.nature.com/articles/s41467-026-70812-6"&gt;doi:10.1038/s41467-026-70812-6&lt;/a&gt;&lt;/p&gt;Tuning the emission of metal nanoclusters is a challenge. Here, the authors report on solvation-induced isomerization and modulation of electron transfer dynamics to achieve controllable emission across the entire visible range.</content:encoded>
+            <dc:title>Solvation-mediated isomerization of surface motifs tunes emissions and electron transfer dynamics in gold nanoclusters</dc:title>
+            <dc:creator>Xue Wang</dc:creator><dc:creator>Yuan Zhong</dc:creator><dc:creator>Tingting Li</dc:creator><dc:creator>Lingzhang Xu</dc:creator><dc:creator>Wenwu Xu</dc:creator><dc:creator>Yingguo Yang</dc:creator><dc:creator>Chunru Fan</dc:creator><dc:creator>Weinan Dong</dc:creator><dc:creator>Guizhong Luo</dc:creator><dc:creator>Feng Jiang</dc:creator><dc:creator>Fujun Zhang</dc:creator><dc:creator>Min Lu</dc:creator><dc:creator>Yu Zhang</dc:creator><dc:creator>Zhennan Wu</dc:creator><dc:creator>Xue Bai</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-026-70812-6</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-03-18; | doi:10.1038/s41467-026-70812-6</dc:source>
+            <dc:date>2026-03-18</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-026-70812-6</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-026-70812-6</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41467-026-70534-9">
             <title>Sub-second spin and lifetime-limited optical coherences in &lt;sup&gt;171&lt;/sup&gt;Yb&lt;sup&gt;3+&lt;/sup&gt;:CaWO&lt;sub&gt;4&lt;/sub&gt;</title>
@@ -51,34 +66,19 @@
             <prism:url>https://www.nature.com/articles/s41467-026-70534-9</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41467-026-70806-4">
-            <title>High-speed energy-efficient memristor confined in sub-5 nm space with elemental oxygen reservoir layer</title>
-            <link>https://www.nature.com/articles/s41467-026-70806-4</link>
+        <item rdf:about="https://www.nature.com/articles/s41467-026-70587-w">
+            <title>Multimodal ion-gated transistor based on 2D superionic conductor for in-memory computing in deep learning</title>
+            <link>https://www.nature.com/articles/s41467-026-70587-w</link>
             <content:encoded>
-                &lt;p&gt;Nature Communications, Published online: 18 March 2026; &lt;a href="https://www.nature.com/articles/s41467-026-70806-4"&gt;doi:10.1038/s41467-026-70806-4&lt;/a&gt;&lt;/p&gt;The switching behavior of oxide-based memristors is governed by uncontrolled formation and rupture of conductive filaments. Here Li et al. report a device with ultrathin elemental oxygen reservoir layer to regulate the random migration of oxygen vacancy, enabling switching speed of ~10 ns and high energy efficiency.</content:encoded>
-            <dc:title>High-speed energy-efficient memristor confined in sub-5 nm space with elemental oxygen reservoir layer</dc:title>
-            <dc:creator>Chenfei Li</dc:creator><dc:creator>Wencheng Niu</dc:creator><dc:creator>Da Wan</dc:creator><dc:creator>Lin Tang</dc:creator><dc:creator>Zhengdao Xie</dc:creator><dc:creator>Kai Zhang</dc:creator><dc:creator>Yuan Liu</dc:creator><dc:creator>Qi Liu</dc:creator><dc:creator>Lei Liao</dc:creator><dc:creator>Xuming Zou</dc:creator><dc:creator>Xingqiang Liu</dc:creator>
-            <dc:identifier>doi:10.1038/s41467-026-70806-4</dc:identifier>
-            <dc:source>Nature Communications, Published online: 2026-03-18; | doi:10.1038/s41467-026-70806-4</dc:source>
+                &lt;p&gt;Nature Communications, Published online: 18 March 2026; &lt;a href="https://www.nature.com/articles/s41467-026-70587-w"&gt;doi:10.1038/s41467-026-70587-w&lt;/a&gt;&lt;/p&gt;The authors report a CdPS3-Li multimodal ion-gated transistor that combines linear, non-volatile electrical states with light-driven nonlinear synaptic responses, enabling both multiply-accumulate operations and activation functions within a single device.</content:encoded>
+            <dc:title>Multimodal ion-gated transistor based on 2D superionic conductor for in-memory computing in deep learning</dc:title>
+            <dc:creator>Bo Tong</dc:creator><dc:creator>Tianming Du</dc:creator><dc:creator>Jinhong Du</dc:creator><dc:creator>Xin Yu</dc:creator><dc:creator>Jinmeng Tong</dc:creator><dc:creator>Jiajun Xu</dc:creator><dc:creator>Wanying Li</dc:creator><dc:creator>Zhibo Liu</dc:creator><dc:creator>Chen Li</dc:creator><dc:creator>Wencai Ren</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-026-70587-w</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-03-18; | doi:10.1038/s41467-026-70587-w</dc:source>
             <dc:date>2026-03-18</dc:date>
             <prism:publicationName>Nature Communications</prism:publicationName>
-            <prism:doi>10.1038/s41467-026-70806-4</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41467-026-70806-4</prism:url>
+            <prism:doi>10.1038/s41467-026-70587-w</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-026-70587-w</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41467-026-70788-3">
-            <title>Ultrathin Quarter-Waveplates Based on Two-Dimensional Anisotropic NbOCl&lt;sub&gt;2&lt;/sub&gt;</title>
-            <link>https://www.nature.com/articles/s41467-026-70788-3</link>
-            <content:encoded>
-                &lt;p&gt;Nature Communications, Published online: 18 March 2026; &lt;a href="https://www.nature.com/articles/s41467-026-70788-3"&gt;doi:10.1038/s41467-026-70788-3&lt;/a&gt;&lt;/p&gt;Miniaturized waveplates are essential for integrated photonics but faced challenges like weak optical anisotropy and scattering losses at small scales. Here, authors demonstrate ultrathin NbOCl2 waveplates with strong optical anisotropy, enabling high-fidelity polarization control at sub-micron thickness.</content:encoded>
-            <dc:title>Ultrathin Quarter-Waveplates Based on Two-Dimensional Anisotropic NbOCl&lt;sub&gt;2&lt;/sub&gt;</dc:title>
-            <dc:creator>Jia Gao</dc:creator><dc:creator>Caokun Wang</dc:creator><dc:creator>Chorng Haur Sow</dc:creator><dc:creator>Qi Zhang</dc:creator><dc:creator>Eng Tuan Poh</dc:creator>
-            <dc:identifier>doi:10.1038/s41467-026-70788-3</dc:identifier>
-            <dc:source>Nature Communications, Published online: 2026-03-18; | doi:10.1038/s41467-026-70788-3</dc:source>
-            <dc:date>2026-03-18</dc:date>
-            <prism:publicationName>Nature Communications</prism:publicationName>
-            <prism:doi>10.1038/s41467-026-70788-3</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41467-026-70788-3</prism:url>
-        </item>
-    
-        </rdf:RDF>
+</rdf:RDF>
