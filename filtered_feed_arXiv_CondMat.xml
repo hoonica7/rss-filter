@@ -7,12 +7,12 @@
     <atom:link href="http://rss.arxiv.org/rss/cond-mat" rel="self" type="application/rss+xml"/>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Mar 2026 04:00:17 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2026 02:20:10 +0000</lastBuildDate>
     <managingEditor>rss-help@arxiv.org</managingEditor>
     <pubDate>Wed, 18 Mar 2026 00:00:00 -0400</pubDate>
     <skipDays>
-      <day>Sunday</day>
       <day>Saturday</day>
+      <day>Sunday</day>
     </skipDays>
     <item>
       <title>Production of Low-Density Aerogel Nuclear Fuels for Use in Fission Fragment Rockets and Novel Reactor Design</title>
@@ -26,6 +26,19 @@ Abstract: Graphene hydrogels were created and loaded with uranyl nitrate or thor
       <arxiv:announce_type>new</arxiv:announce_type>
       <dc:rights>http://creativecommons.org/licenses/by-nc-nd/4.0/</dc:rights>
       <dc:creator>Noah D'Amico, Sandeep Puri, Ian Jones, Andrew Gillespie, Cuikun Lin, Bo Zhao, R. V. Duncan</dc:creator>
+    </item>
+    <item>
+      <title>AC Fingerprints of 2D Electron Hydrodynamics: Superdiffusion and Drude Weight Suppression</title>
+      <link>https://arxiv.org/abs/2603.15737</link>
+      <description>arXiv:2603.15737v1 Announce Type: new 
+Abstract: Clean two-dimensional Fermi liquids are now known to exhibit an intermediate tomographic regime, between ballistic and Navier--Stokes transport, caused by the anomalously slow relaxation of parity-odd multipolar deformations of the Fermi surface. Here we show that this anomaly extends to the dynamical realm. Starting from a microscopic numerical evaluation of the linearized electron--electron collision operator, we find that the finite-frequency nonlocal conductivity is controlled at low frequency by a single hydrodynamic pole, $\sigma(q,\omega)=\mathcal{D}(q)/(i\omega+\eta_\star q^z)$, with dynamical exponent $z=4/3$ and superdiffusive viscosity $\eta_\star$. Remarkably, the pole residue itself is scale dependent and obeys $\mathcal{D}(q)\sim q^{-\alpha}$ with $\alpha=1/3$, so the dynamical properties are described by two separate exponents rather than one. We interpret the residue suppression using a Krylov-chain description of current relaxation: as $q$ increases, the longest-lived quasinormal mode ceases to be a nearly pure current excitation and spreads over higher odd angular harmonics. Finally, we show that AC transport in narrow channels provides a direct route to measuring the exponents $z$ and $\alpha$ separately.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2603.15737v1</guid>
+      <category>cond-mat.str-el</category>
+      <category>cond-mat.mes-hall</category>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>Davis Thuillier, Thomas Scaffidi</dc:creator>
     </item>
     <item>
       <title>Neural-Network Quantum Embedding Solvers for Correlated Materials</title>
@@ -101,18 +114,6 @@ Abstract: Chirality is a fundamental organizing principle of correlated and topo
       <dc:creator>H. Miao, G. Fabbris, J. Bouaziz, W. R. Meier, P. Mercado Lozano, Y. Choi, J. Strempfer, D. Haskel, S. Bl\"ugel, M. Cook, M. Brahlek, H. N. Lee, A. D. Christianson, A. F. May, S. Okamoto</dc:creator>
     </item>
     <item>
-      <title>Dissipation effects in the Su-Schrieffer-Heeger model coupled to a metallic environment</title>
-      <link>https://arxiv.org/abs/2603.15835</link>
-      <description>arXiv:2603.15835v1 Announce Type: new 
-Abstract: We theoretically study the electronic and lattice properties of a trans-polyacetylene (tPA) molecule deposited on top of a metallic substrate at equilibrium. We describe the system using a modified Su-Schrieffer-Heeger (SSH) model generalized to incorporate the effects of a metallic environment, represented by independent one-dimensional semi-infinite chains coupled to each site of the SSH chain (i.e., ``local bath approximation"). We focus on the zero-temperature case and obtain the physical properties of an $N$-site tPA chain deposited on a metallic surface by minimizing its total ground-state energy (i.e., electronic plus lattice degrees of freedom) as a function of the $N$ lattice-site positions. Interestingly, in the case of a homogeneous metallic substrate, where all coupling parameters are assumed identical, the SSH chain undergoes a zero-temperature insulator-to-metal transition as the coupling parameter $\gamma_0$ reaches a critical value where the Peierls dimerization is fully suppressed and the system becomes metallic. In addition, our model can be generalized to describe inhomogeneous situations where the substrate contains metallic and insulating regions, as usually occurs in realistic experiments containing accidentally oxidized decoupling layers. In this case, our results predict the occurrence of local nucleation of the metalized or the Peierls-dimerized phase within the same tPA molecule, depending on whether the surface directly beneath the molecule is metallic or insulating, respectively. We finally discuss the relevance of our findings for both the correct interpretation of existing tPA/Cu(110) experiments, as well as for their possible utility in the design of novel organic nanoelectronic devices.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2603.15835v1</guid>
-      <category>cond-mat.mes-hall</category>
-      <pubDate>Wed, 18 Mar 2026 00:00:00 -0400</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
-      <dc:creator>Leandro M. Arancibia, Cristi\'an G. S\'anchez, Alejandro M. Lobos</dc:creator>
-    </item>
-    <item>
       <title>Tuning the optoelectronic properties of graphene quantum dots by BN-ring doping: A density functional theory study</title>
       <link>https://arxiv.org/abs/2603.15906</link>
       <description>arXiv:2603.15906v1 Announce Type: new 
@@ -142,18 +143,42 @@ Abstract: How ordered phases melt in low-dimensional quantum materials remain di
       <dc:creator>Han Huang, Jinghang Dai, Joyce Christiansen-Salameh, Jiyoung Kim, Samual Kielar, Desheng Ma, Noah Schinitzer, Danrui Ni, Gustavo Alvarez, Chen Li, Carla Slebodnick, Mario Medina, Bilal Azhar, Ahmet Alatas, Robert Cava, David Muller, Zhiting Tian</dc:creator>
     </item>
     <item>
-      <title>Anomalous dynamical scaling in interacting anyonic chains</title>
-      <link>https://arxiv.org/abs/2603.15972</link>
-      <description>arXiv:2603.15972v1 Announce Type: new 
-Abstract: Particle statistics impose fundamental constraints on nonequilibrium quantum dynamics, yet it remains an open question whether fractional statistics can lead to emergent universal dynamical scaling beyond the conventional Bose-Fermi paradigm. Here we investigate the far-from-equilibrium many-body relaxation of anyons in a one-dimensional lattice and uncover an unconventional yet universal scaling behavior governed by fractional statistics. Based on large-scale numerical simulations and scaling analysis, we identify a distinct separation between particle transport and information spreading: density correlations spread superdiffusively, whereas entanglement entropy grows ballistically. The anomalous particle dynamics can be interpreted intuitively from the statistical-phase-induced quantum interference, which suppresses coherent holon-doublon propagation. In contrast, the entanglement growth turns out to be dominated by its configurational component, which propagates ballistically. Our results establish anyonic statistics as a distinct source of universal nonequilibrium dynamics beyond bosons and fermions, with direct relevance to current quantum simulation experiments.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2603.15972v1</guid>
-      <category>cond-mat.quant-gas</category>
-      <category>cond-mat.str-el</category>
-      <category>quant-ph</category>
+      <title>Descriptor-Based Classification of Interfacial Electronic Coupling in Janus XP3-Based 2D Heterostructures</title>
+      <link>https://arxiv.org/abs/2603.16000</link>
+      <description>arXiv:2603.16000v1 Announce Type: new 
+Abstract: Understanding and controlling interfacial electronic coupling in two-dimensional (2D) heterostructures is essential for designing functional materials for electronic, optoelectronic, and catalytic applications. Here, we investigate vertical heterobilayers constructed from two distinct XP3 monolayers (X = As, Ge, Sb, Bi, Sn, Al, Ga, and Pb) using first-principles density functional theory. The resulting Janus heterobilayers are energetically favorable and elastically stable, with electronic band gaps ranging from metallic and near-metallic to semiconducting regimes. Interlayer interactions induce significant band renormalization, including transitions between type I and type II alignment upon structural relaxation. To rationalize these effects, we establish a descriptor-based framework based on the metal metal interlayer distance, interfacial electron localization, and Bader charge redistribution. This combined analysis discriminates vdW-like, polar covalent, and ionic interaction regimes, with systematic trends governed by the average atomic number of the constituent elements. Optical absorption calculations indicate visible-to-near-infrared activity in selected systems, and band-edge alignment identifies promising candidates for selective redox processes. Overall, the proposed descriptor-based strategy provides a physically grounded route for identifying and engineering interfacial coupling in XP3 heterostructures and can be extended to other classes of two-dimensional material interfaces.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2603.16000v1</guid>
+      <category>cond-mat.mtrl-sci</category>
       <pubDate>Wed, 18 Mar 2026 00:00:00 -0400</pubDate>
       <arxiv:announce_type>new</arxiv:announce_type>
       <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
-      <dc:creator>Xu-Chen Yang, Botao Wang, Jianpeng Liu, Bing Yang, Jianmin Yuan, Yongqiang Li</dc:creator>
+      <dc:creator>Erika N. Lima, Teldo A. S. Pereira, Elisangela S. Barboza, Dominike Pacine, Igor S. S. de Oliveira</dc:creator>
+    </item>
+    <item>
+      <title>Pressure and strain tuning of the alternating bilayer-trilayer Ruddlesden-Popper nickelate: crystal and electronic structure</title>
+      <link>https://arxiv.org/abs/2603.16072</link>
+      <description>arXiv:2603.16072v1 Announce Type: new 
+Abstract: We use first-principles calculations to investigate the crystal and electronic structure of the hybrid bilayer-trilayer Ruddlesden-Popper (RP) nickelate La$_7$Ni$_5$O$_{17}$ under hydrostatic pressure and biaxial compressive strain. By analyzing the irreducible representations of the dynamically unstable phonon modes in the high-symmetry $P4/mmm$ structure, we identify a dynamically stable lower-symmetry $C2/c$ structure containing octahedral tilts. The application of both pressure and compressive strain tends to suppress the octahedral tilts, effectively tetragonalizing the structure, in analogy with the conventional RPs. The electronic structure under hydrostatic pressure and strain has similarities, but it differs in the position of the $d_{z^2}$ bonding band from the trilayer block. This band crosses the Fermi level at a pressure of 30 GPa, but it remains below it for any level of compressive strain. This strain-induced modification mirrors the electronic structure changes observed in the conventional bilayer nickelate.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2603.16072v1</guid>
+      <category>cond-mat.mtrl-sci</category>
+      <category>cond-mat.supr-con</category>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Huan Wu, Yi-Feng Zhao, Antia S. Botana</dc:creator>
+    </item>
+    <item>
+      <title>Tuning Topological Charge and Gauge Field Anisotropy in a Spin-1 Synthetic Monopole</title>
+      <link>https://arxiv.org/abs/2603.16090</link>
+      <description>arXiv:2603.16090v1 Announce Type: new 
+Abstract: Higher-dimensional Hilbert spaces in quantum simulation, as in all quantum science, expand the range of accessible phenomena. In this work, we experimentally realize a synthetic monopole using an ultracold spin-1 ensemble, where the monopole charge is quantified by the topologically invariant first Chern number and sources a synthetic magnetic field quantified by the Berry curvature. By using a three-level system with tunable spin-tensor coupling, we introduce anisotropy to the field, directly measure the Chern number, and observe a topological phase transition. We verify the robustness of the monopole's topological charge under deformation, and observe signatures of the topological phases using spin-texture and Majorana-star measurements. This work demonstrates spin-tensor coupling as a tuning parameter for engineering both geometric anisotropy and a rich topological phase space.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2603.16090v1</guid>
+      <category>cond-mat.quant-gas</category>
+      <category>physics.atom-ph</category>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Nicholas Milson, Arina Tashchilina, Kathleen Tamura, Douglas Florizone, Lindsay J. LeBlanc</dc:creator>
     </item>
     <item>
       <title>SU($N$) Quantum Spin Model with Weak and Strong First-Order N\'eel to Valence-Bond Solid Transitions</title>
@@ -166,6 +191,20 @@ Abstract: We introduce an SU($N$) symmetric two-dimensional quantum spin model, 
       <arxiv:announce_type>new</arxiv:announce_type>
       <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
       <dc:creator>Ryan Flynn, Anders W. Sandvik</dc:creator>
+    </item>
+    <item>
+      <title>Stoichiometric FeTe is a Superconductor</title>
+      <link>https://arxiv.org/abs/2603.16115</link>
+      <description>arXiv:2603.16115v1 Announce Type: new 
+Abstract: Iron-based superconductors are a fascinating family of materials in which multiple electronic bands and strong antiferromagnetic (AFM) correlations are key ingredients for competing ground states, including antiferromagnetism, electronic nematicity, and unconventional superconductivity. FeTe, unlike its superconducting isostructural counterpart FeSe, has long been regarded as an AFM metal sans superconductivity. In this work, we employ molecular beam epitaxy to grow FeTe films and perform post-growth annealing under a Te flux. By performing spin-polarized scanning tunneling microscopy and spectroscopy, we demonstrate that the AFM order in as-grown FeTe films is induced by interstitial Fe atoms that disrupt the ideal 1:1 stoichiometry. Remarkably, the removal of these interstitial Fe atoms through Te annealing yields stoichiometric FeTe films that show no AFM order and instead exhibit robust superconductivity with a critical temperature of ~13.5K. This superconducting state is further confirmed by the observation of Cooper pair tunneling, zero electrical resistance, and the Meissner effect. Therefore, our results demonstrate that stoichiometric FeTe is inherently a superconductor, overturning a long-held view that it is an AFM metal. This work clarifies the origin of superconductivity in FeTe-based heterostructures and demonstrates the importance of stoichiometry control in understanding the competition between AFM and superconductivity in iron-based superconductors.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2603.16115v1</guid>
+      <category>cond-mat.supr-con</category>
+      <category>cond-mat.mes-hall</category>
+      <category>cond-mat.mtrl-sci</category>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>Zi-Jie Yan, Zihao Wang, Bing Xia, Stephen Paolini, Ying-Ting Chan, Nikalabh Dihingia, Hongtao Rong, Pu Xiao, Kalana D. Halanayake, Jiatao Song, Veer Gowda, Danielle Reifsnyder Hickey, Weida Wu, Jiabin Yu, Peter J. Hirschfeld, Cui-Zu Chang</dc:creator>
     </item>
     <item>
       <title>Nonmagnetic Ground State of Rutile RuO$_2$ from Diffusion Quantum Monte Carlo</title>
@@ -278,6 +317,18 @@ Abstract: Moir\'e superlattices formed by semiconducting transition metal dichal
       <dc:creator>Zheng Sun, Fan Xu, Jiayi Li, Yifan Jiang, Jingjing Gao, Cheng Xu, Tongtong Jia, Kehao Cheng, Jinyang Zhang, Wanghao Tian, Kenji Watanabe, Takashi Taniguchi, Jinfeng Jia, Shengwei Jiang, Yang Zhang, Yuanbo Zhang, Shiming Lei, Xiaoxue Liu, Tingxin Li</dc:creator>
     </item>
     <item>
+      <title>Electron Tesla valve</title>
+      <link>https://arxiv.org/abs/2603.16443</link>
+      <description>arXiv:2603.16443v1 Announce Type: new 
+Abstract: In solids, frequent electron-electron collisions can induse collective, fluid-like electron transport. While this regime offers a powerful framework for exploring many-body phenomena, there is still a lack in functional electronic device actively exploting hydrodynamic behaviour of electrons. Here, we introduce a solid-state analogue of a Tesla valve $\unicode{x2013}$ a passive fluidic diode that rectifies flow without moving parts. Lithographically defined in high-mobility GaAs two-dimensional electron gas, the device exhibits abrupt rectification producing a more than tenfold difference between forward and reverse resistances. This threshold behaviour, reminiscent of the onset of turbulence in fluidic Tesla valves, points to the emergence of turbulent regime in the electron liquid $\unicode{x2013}$ a long-predicted, but yet unobserved state of electronic matter. More broadly, our work demonstrates the fruitfulness of the hydrodynamic analogy: fluidic technologies can be readily adopted to create novel electronic devices. Here, this is realized through a solid-state rectifier whose operation relies on a new physical mechanism, interparticle collisions.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2603.16443v1</guid>
+      <category>cond-mat.mes-hall</category>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Daniil I. Sarypov, Dmitriy A. Pokhabov, Arthur G. Pogosov, Evgeny Yu. Zhdanov, Andrey A. Shevyrin, Askhat K. Bakarov</dc:creator>
+    </item>
+    <item>
       <title>A Correlated Route to Antiferromagnetic Spintronics</title>
       <link>https://arxiv.org/abs/2603.16552</link>
       <description>arXiv:2603.16552v1 Announce Type: new 
@@ -364,6 +415,18 @@ Abstract: Many intriguing phenomena such as the wave-like hydrodynamic heat flow
       <dc:creator>Navaneetha K Ravichandran</dc:creator>
     </item>
     <item>
+      <title>Fate of a Fractional Chern Insulator under Nonlocal Interactions in Synthetic Dimensions</title>
+      <link>https://arxiv.org/abs/2603.16724</link>
+      <description>arXiv:2603.16724v1 Announce Type: new 
+Abstract: Synthetic dimensions provide a powerful route to engineer topological lattice models in ultracold atomic systems, but they contain intrinsic nonlocal interactions along the synthetic direction. We investigate an extended Harper-Hofstadter model subject to infinite-range column interactions that mimic this synthetic nonlocality. By tuning this interaction strength, we demonstrate an adiabatic evolution from a Laughlin-type bosonic fractional Chern insulator to a charge-ordered Tao-Thouless-like state without closing the many-body gap. Along this path, the many-body Chern number and the topological entanglement entropy remain unchanged, despite a pronounced restructuring of the entanglement spectrum and the loss of robustness against local perturbations. This adiabatic connectivity establishes a controlled bridge between topologically ordered and effect- ively one-dimensional charge-ordered regimes, opening potential new avenues for state preparation. Our results also show that conventional topological markers may fail to diagnose the breakdown of locality-protected topological order in synthetic dimensions, and identify nonlocal interactions as a powerful knob to coherently interpolate between distinct many-body regimes.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2603.16724v1</guid>
+      <category>cond-mat.quant-gas</category>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Patrick Liam Geraghty, Alberto Nardin, Leonardo Mazza, Matteo Rizzi</dc:creator>
+    </item>
+    <item>
       <title>Machine Learning Reconstruction of High-Dimensional Electronic Structure from Angle-Resolved Photoemission Spectroscopy</title>
       <link>https://arxiv.org/abs/2603.16725</link>
       <description>arXiv:2603.16725v1 Announce Type: new 
@@ -376,16 +439,16 @@ Abstract: The emergent behavior of quantum materials is governed by their electr
       <dc:creator>Yu Zhang, Yong Zhong, Nhat Huy Tran, Shuyi Li, Kyuho Lee, Yonghun Lee, Tiffany C. Wang, Harold Y. Hwang, Zhi-Xun Shen, Chunjing Jia</dc:creator>
     </item>
     <item>
-      <title>Visualizing shear-induced structures in carbon black gels by tomo-rheoscopy</title>
-      <link>https://arxiv.org/abs/2603.16804</link>
-      <description>arXiv:2603.16804v1 Announce Type: new 
-Abstract: Suspensions of attractive particles form space-spanning networks that endow the suspension with solid-like behavior at rest. The microstructure of these colloidal gels depends sensitively on the shear history and on the path followed across the sol-gel transition, resulting in viscoelastic properties that can be tuned by shear. Here, we report in situ X-ray tomo-rheoscopy experiments on carbon black gels whose elastic properties exhibit a non-monotonic dependence on the shear intensity applied prior to flow cessation. By directly imaging the gel microstructure under a well-controlled rheological protocol, we reveal the emergence of pronounced structural heterogeneities extending from tens to hundreds of microns -- length scales far larger than those accessible by conventional scattering techniques such as Ultra-Small Angle X-ray Scattering. In particular, we show that only the low-shear reinforcement of elasticity correlates with a growing mesoscale correlation length, while high-shear strengthening occurs without detectable mesoscale reorganization. These observations demonstrate that flow memory in colloidal gels is not solely governed by local particle rearrangements, but is also encoded in a mesoscale structural organization extending up to 100 times the particle size. More broadly, this work highlights the power of X-ray tomo-rheoscopy to uncover large-scale structural signatures of flow history in soft materials, opening new perspectives to tailor their mechanical properties.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2603.16804v1</guid>
-      <category>cond-mat.soft</category>
+      <title>Magnetism Induced by Periodically Driven Non-Magnetic Impurities on Surfaces with Spin-Orbit Coupling</title>
+      <link>https://arxiv.org/abs/2603.16782</link>
+      <description>arXiv:2603.16782v1 Announce Type: new 
+Abstract: We investigate the response of the Rashba spin-orbit system to a time-periodic scalar potential, in order to determine whether an induced magnetization exists. We approach this by employing the Floquet-Green function method within the Keldysh formalism, computing the non-equilibrium steady state of the system. We find that, even in the absence of an external magnetic field, the system evolves into a state with an oscillating magnetization density that is remarkably rich in structure. We provide a detailed physical interpretation of the results by performing a Fourier decomposition in non-local momentum-space, which helps to uncover the physical origin of the induced magnetic field in terms of Fermi surface spin polarization and the system's dynamical character.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2603.16782v1</guid>
+      <category>cond-mat.mes-hall</category>
       <pubDate>Wed, 18 Mar 2026 00:00:00 -0400</pubDate>
       <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
-      <dc:creator>Julien Bauland, St\'ephane G. Roux, Stefan Gst\"ohl, Christian M. Schlep\"utz, Michael Haist, Thibaut Divoux</dc:creator>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Malen Etxeberria-Etxaniz, Andr\'es Arnau, Asier Eiguren</dc:creator>
     </item>
     <item>
       <title>Majorana Crystal in Rhombohedral Graphene</title>
@@ -412,20 +475,6 @@ Abstract: The extension of topological band theory to non-Hermitian Hamiltonians
       <arxiv:announce_type>new</arxiv:announce_type>
       <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
       <dc:creator>Pedro Fittipaldi de Castro, Wladimir A. Benalcazar</dc:creator>
-    </item>
-    <item>
-      <title>Quantum simulation of lattice gauge theories coupled to fermionic matter via anyonic regularization</title>
-      <link>https://arxiv.org/abs/2603.15820</link>
-      <description>arXiv:2603.15820v1 Announce Type: cross 
-Abstract: The optimal regularization of infinite-dimensional degrees of freedom is a central open problem in the tractable simulation of lattice gauge theories on quantum computers. Here, we consider regularizing the gauge field by replacing the gauge group $G$ with a braided fusion category whose objects correspond to Wilson lines of the associated Chern-Simons theory $G_k$, with the level $k$ serving as the regularization parameter. We demonstrate how to couple these regularized $U(1)$ and $SU(2)$ gauge groups to fermionic matter using the framework of fusion surface models, which treats matter and gauge field excitations as interacting anyons. We then address the simulation of the Hamiltonians we construct on fault-tolerant quantum computers, providing explicit quantum circuit constructions for implementing the primitive gates in this model, namely, the $F$ and $R$ symbols of the $U(1)_k$ and $SU(2)_k$ anyon theories, which may be of independent interest.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2603.15820v1</guid>
-      <category>quant-ph</category>
-      <category>cond-mat.str-el</category>
-      <category>hep-lat</category>
-      <pubDate>Wed, 18 Mar 2026 00:00:00 -0400</pubDate>
-      <arxiv:announce_type>cross</arxiv:announce_type>
-      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
-      <dc:creator>Mason L. Rhodes, Shivesh Pathak, Riley W. Chien</dc:creator>
     </item>
     <item>
       <title>A Route to Pure Optical Rotation in Self-Assembled Materials through Energetic Non-Degeneracy</title>
@@ -468,6 +517,35 @@ Abstract: Efficient charge separation in van der Waals (vdW) heterostructures is
       <dc:creator>Niklas Hofmann, Johannes Gradl, Leonard Weigl, Stiven Forti, Camilla Coletti, Isabella Gierz</dc:creator>
     </item>
     <item>
+      <title>Coupled electron-phonon hydrodynamics and viscous thermoelectric equations</title>
+      <link>https://arxiv.org/abs/2503.07560</link>
+      <description>arXiv:2503.07560v3 Announce Type: replace 
+Abstract: Non-diffusive, fluid-like transport of charge and heat has been observed in several materials, raising the question of whether they can emerge simultaneously and how they are related to electron-phonon bifluids. Here we introduce a first-principles theory and computational framework to quantitatively describe these phenomena from atomistic to continuum scales in complex device geometries. Starting from the microscopic coupled electron-phonon Boltzmann transport equation, we formalize the emergence of composite "relaxon" electron-phonon excitations, show that they determine the bifluid viscosity tensor, and quantify the impact of electron-phonon drag on thermoelectric transport coefficients. We then demonstrate that the coupled Boltzmann equation can be coarse-grained into a set of mesoscopic Viscous Thermoelectric Equations, formally unifying Gurzhi's hydrodynamic equation for electrons [Sov. Phys. Usp., 1968] and the recently developed Viscous Heat Equations for phonons [PRX 10 011019 2020], while extending them to cover the mixed electron-phonon bifluid regime. We employ this framework to elucidate the conditions under which electron and phonon fluids can coexist and mix, rationalizing pioneering experiments on electron-phonon drag in graphite. Finally, we rely on these findings to predict smoking-gun signatures of non-diffusive behavior such as non-harmonic temperature and electric potential fields, and compressible thermoelectric backflow.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2503.07560v3</guid>
+      <category>cond-mat.mes-hall</category>
+      <category>cond-mat.mtrl-sci</category>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-nd/4.0/</dc:rights>
+      <dc:creator>Jennifer Coulter, Bogdan Rajkov, Michele Simoncelli</dc:creator>
+    </item>
+    <item>
+      <title>Generic deformation channels for critical Fermi surfaces including the impact of collisions</title>
+      <link>https://arxiv.org/abs/2504.06945</link>
+      <description>arXiv:2504.06945v3 Announce Type: replace 
+Abstract: This paper constitutes a sequel to our theoretical efforts to determine the nature of generic low-energy deformations of the Fermi surface of a quantum-critical metal, which arises at the stable non-Fermi liquid (NFL) fixed point of a quantum phase transition. The emergent critical Fermi surface, arising right at the Ising-nematic quantum critical point (QCP), is a paradigmatic example where an NFL behaviour is induced by the strong interactions of the fermionic degrees of freedom with those of the bosonic order parameter. It is an artifact of the bosonic modes becoming massless at the QCP, thus undergoing Landau-damping at the level of one-loop self-energy. We resort to the well-tested formalism of the quantum Boltzmann equations (QBEs) for identifying the excitations. While in our earlier works, we have focused on the collisionless regime by neglecting the collision integral and assuming the bosons to be in equilibrium, here we embark on a full analysis. In particular, we take into account the bosonic part of the QBEs as well, which, however, turn out to have no effect on the solutions. Decomposing the master equation into angular-momentum ($\ell$) channels, the emergent modes are of two types: Fermi-surface deformations with discrete spectra and particle-hole excitations forming a continuous band. The long-lived zero-sound mode, which corresponds to $\ell = 0$, is found to be robust against damping effects. Intriguingly, we have an infinite family of discrete modes corresponding to higher-order harmonics of the net deformation.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2504.06945v3</guid>
+      <category>cond-mat.str-el</category>
+      <category>cond-mat.mes-hall</category>
+      <category>hep-th</category>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <arxiv:DOI>10.1103/cv1r-yv8d</arxiv:DOI>
+      <arxiv:journal_reference>Phys. Rev. B 113, 125130 (2026)</arxiv:journal_reference>
+      <dc:creator>Kazi Ranjibul Islam, Aditya Savanur, Ipsita Mandal</dc:creator>
+    </item>
+    <item>
       <title>Magnetoresistivity in the Antiferromagnetic Hubbard Model</title>
       <link>https://arxiv.org/abs/2504.11632</link>
       <description>arXiv:2504.11632v3 Announce Type: replace 
@@ -493,6 +571,22 @@ Abstract: The classical field description of phonon spin relies on the invarianc
       <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
       <arxiv:DOI>10.1103/8w63-d7h7</arxiv:DOI>
       <dc:creator>Yizhou Liu, Yu-Tao Tan, Dapeng Liu, Jie Ren</dc:creator>
+    </item>
+    <item>
+      <title>Higher-Order Fermion Interactions in Effective Field Theories for Phase Transitions</title>
+      <link>https://arxiv.org/abs/2507.11624</link>
+      <description>arXiv:2507.11624v4 Announce Type: replace 
+Abstract: We investigate the impact of higher-order fermionic deformations in phase transitions analogous to those described by the Bardeen-Cooper-Schrieffer (BCS) theory.
+  Focusing specifically on the 8-fermion interaction, we show that this term can have significant consequences. In certain regions of parameter space, the theory continues to exhibit second-order phase transitions with mean-field critical exponents and the same critical temperature; however, the temperature dependence of the superconducting gap can deviate markedly from conventional BCS behavior. In other regions, the theory exhibits first-order phase transitions. We conclude by discussing potential phenomenological applications of these theories.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2507.11624v4</guid>
+      <category>cond-mat.supr-con</category>
+      <category>cond-mat.str-el</category>
+      <category>hep-th</category>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <arxiv:journal_reference>Phys.Lett.B 873 (2026) 140172</arxiv:journal_reference>
+      <dc:creator>Diego Rodriguez-Gomez, Jorge G. Russo</dc:creator>
     </item>
     <item>
       <title>Variational Monte Carlo Optimization of Topological Chiral Superconductors</title>
@@ -549,6 +643,33 @@ Abstract: We present a theoretical study of spin Hall phenomenon in a nanoribbon
       <arxiv:DOI>10.1088/1361-648X/ae4c0f</arxiv:DOI>
       <arxiv:journal_reference>Journal of Physics: Condensed Matter 38, 115301 (2026)</arxiv:journal_reference>
       <dc:creator>Mohamad Usman, Tarun Kanti Ghosh, SK Firoz Islam</dc:creator>
+    </item>
+    <item>
+      <title>Quantum localization in incommensurate tight-binding chains</title>
+      <link>https://arxiv.org/abs/2510.20004</link>
+      <description>arXiv:2510.20004v2 Announce Type: replace 
+Abstract: We explore quantum localization phenomena in a system of two coupled tight-binding chains with incommensurate periods. Employing the inverse participation ratio as a measure of localization, we investigate the effects of geometric incommensurability and external magnetic fields. Numerical results reveal the existence of a mobility edge in the spectrum characterized by an abrupt onset of localization in higher-energy states. We find that localization tends to be enhanced by a weak magnetic field, whereas a strong field delocalizes most states.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2510.20004v2</guid>
+      <category>cond-mat.dis-nn</category>
+      <category>cond-mat.mes-hall</category>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>C. J. Dyrseth, K. V. Samokhin</dc:creator>
+    </item>
+    <item>
+      <title>Potential-Barrier Affinity Effect in Solid Systems</title>
+      <link>https://arxiv.org/abs/2511.11160</link>
+      <description>arXiv:2511.11160v3 Announce Type: replace 
+Abstract: Electron accumulation in interatomic regions is a fundamental quantum phenomenon dictating chemical bonding and material properties, yet its origin remains elusive across disciplines. Here, we report a quantum accumulation effect -- potential-barrier affinity (PBA) -- revealed by solving the Schr\"odinger equation for a crystalline potential. PBA effect drives significant interatomic electron accumulation when electron energy exceeds the barrier maximum. This effect essentially enhances interatomic electron density, governing microstructures and properties of condensed matter. Our theory overturns the traditional wisdom that the interstitial electron localization in electride requires potential-well constraints or hybrid orbitals, and it serves as the fundamental mechanism underlying the formation of conventional solid bonding. This work delivers a paradigm shift in understanding electron distribution and establishes a theoretical foundation for the microscopic design of material properties.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2511.11160v3</guid>
+      <category>cond-mat.mtrl-sci</category>
+      <category>physics.chem-ph</category>
+      <category>physics.comp-ph</category>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>Qiang Xu, Zhao Liu, Yanming Ma</dc:creator>
     </item>
     <item>
       <title>Structural transitions related to order-disorder and thermal desorption of D atoms in TbFe$_{2}$D$_{4.2}$</title>
@@ -618,11 +739,57 @@ Abstract: We resolve the phase diagram of the $S=1$ pyrochlore spin ice, which e
       <dc:creator>Sena Watanabe, Yukitoshi Motome, Haruki Watanabe</dc:creator>
     </item>
     <item>
+      <title>Measuring temporal entropies in experiments</title>
+      <link>https://arxiv.org/abs/2409.05517</link>
+      <description>arXiv:2409.05517v2 Announce Type: replace-cross 
+Abstract: We propose a novel experimental protocol to measure generalized temporal entropies in many-body quantum systems. Our approach involves using local operators as probes to characterize the out-of-equilibrium dynamics induced by a geometric double quench on a replicated system. Such protocol mimics the path-integral on the corresponding Riemann surface encoding generalized temporal entanglement. We present the results of tensor network simulations of one-dimensional systems which validate the protocol and demonstrate the experimental feasibility of measuring generalized temporal entropies, and we outline the experimental requirements for implementing these quenches using state-of-the-art quantum simulators. Therefore, our results provide a physical interpretation of the meaning of generalized temporal entropies. Furthermore, they reveal that the dynamics induced on two replicas of the Ising model in a transverse field differ qualitatively from the ones of its non-integrable extension, suggesting that generalized temporal entropies can be used as a tool for identifying different dynamical classes in quantum systems.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2409.05517v2</guid>
+      <category>quant-ph</category>
+      <category>cond-mat.quant-gas</category>
+      <category>cond-mat.stat-mech</category>
+      <category>hep-th</category>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>replace-cross</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>Aleix Bou-Comas, Carlos Ramos Marim\'on, Jan T. Schneider, Stefano Carignano, Luca Tagliacozzo</dc:creator>
+    </item>
+    <item>
+      <title>Quantum thermal state preparation for near-term quantum processors</title>
+      <link>https://arxiv.org/abs/2506.21318</link>
+      <description>arXiv:2506.21318v2 Announce Type: replace-cross 
+Abstract: Preparation of quantum thermal states of many-body systems is a key computational challenge for quantum processors, with applications in physics, chemistry, and classical optimization. We provide a simple and efficient algorithm for thermal state preparation, combining engineered bath resetting and modulated system-bath coupling to derive a quantum channel approximately satisfying quantum detailed balance relations. We show that the fixed point $\hat\sigma$ of the channel approximates the Gibbs state as $\|\hat\sigma -\hat\sigma_\beta\|\sim \theta^2$, where $\theta$ is the system-bath coupling and $\hat\sigma_\beta \propto e^{-\beta \hat H_S}$. We provide extensive numerics, for the example of the 2D Quantum Ising model, confirming that the protocol successfully prepares the thermal state throughout the finite-temperature phase diagram, including near the quantum phase transition. Simulations for free-fermion systems provide further evidence for the accuracy of the protocol for large system sizes in the weak-coupling limit. Our algorithm provides a path to efficient quantum simulation of quantum-correlated states at finite temperature with current and near-term quantum processors.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2506.21318v2</guid>
+      <category>quant-ph</category>
+      <category>cond-mat.quant-gas</category>
+      <category>cond-mat.stat-mech</category>
+      <category>cond-mat.str-el</category>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>replace-cross</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Jerome Lloyd, Dmitry A. Abanin</dc:creator>
+    </item>
+    <item>
+      <title>A complex scalar field theory for charged fluids, superfluids, and fracton fluids</title>
+      <link>https://arxiv.org/abs/2509.10602</link>
+      <description>arXiv:2509.10602v2 Announce Type: replace-cross 
+Abstract: We propose a field-theoretic framework for ideal hydrodynamics of charged relativistic fluids formulated in terms of a complex scalar field defined on a spacelike hypersurface comoving with the fluid. In the normal phase, the dynamics of charge-carrying fluids is constrained by the restrictive chemical shift symmetry, which locks charges to fixed positions in the comoving plane as they are transported through space by the fluid's motion. On the other hand, in the superfluid phase, the chemical shift symmetry is relaxed to a constant shift, allowing charges to redistribute freely across the comoving hypersurface. We demonstrate that both models recover the respective nonlinear hydrodynamic equations and provide explicit expressions for the collective variables of hydrodynamics in terms of the theory's fields. Introduced models provide a UV completion to the effective field theories of hydrodynamics constructed in terms of the Goldstone fields. Finally, we propose a relativistic fracton fluid phase as a natural interpolation between the normal and superfluid phases, in which the mobility of elementary charges is constrained by a linear shift symmetry in the comoving space.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2509.10602v2</guid>
+      <category>hep-th</category>
+      <category>cond-mat.quant-gas</category>
+      <category>cond-mat.stat-mech</category>
+      <category>cond-mat.str-el</category>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>replace-cross</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <arxiv:DOI>10.1007/JHEP03(2026)134</arxiv:DOI>
+      <dc:creator>Aleksander G{\l}\'odkowski</dc:creator>
+    </item>
+    <item>
       <title>Equivalent class of Emergent Single Weyl Fermion in 3d Topological States: gapless superconductors and superfluids Vs chiral fermions</title>
       <link>https://arxiv.org/abs/2510.25959</link>
-      <description>arXiv:2510.25959v2 Announce Type: replace-cross 
+      <description>arXiv:2510.25959v3 Announce Type: replace-cross 
 Abstract: In this article, we put forward a practical but generic approach towards constructing a large family of $(3+1)$ dimension lattice models which can naturally lead to a single Weyl cone in the infrared (IR) limit. Our proposal relies on spontaneous charge $U(1)$ symmetry breaking to evade the usual no-go theorem of a single Weyl cone in a 3d lattice. We have explored three concrete paths in this approach, all involving fermionic topological symmetry protected states (SPTs). Path a) is to push a gapped SPT in a 3d lattice with time-reversal symmetry (or $T$-symmetry) to a gapless topological quantum critical point (tQCP) which involves a minimum change of topologies,i.e. $\delta N_w=2$ where $\delta N_w$ is the change of winding numbers across the tQCP. Path b) is to peal off excessive degrees of freedom in the gapped SPT via applying $T$-symmetry breaking fields which naturally result in a pair of gapless nodal points of real fermions. Path c) is a hybrid of a) and b) where tQCPs, with $\delta N_w \geq 2$, are further subject to time-reversal-symmetry breaking actions. In the infrared limit, all the lattice models with single Weyl fermions studied here are isomorphic to either a tQCP in a DIII class topological superconductor with a protecting $T$-symmetry, or its dual, a $T$-symmetry breaking superconducting nodal point phase, and therefore form an equivalent class. For a generic $T$-symmetric tQCP along Path a), the conserved-charge operators span a six-dimensional linear space while for a $T$-symmetry breaking gapless state along Path b), c), charge operators typically span a two-dimensional linear space instead. Finally, we pinpoint connections between three spatial dimensional lattice chiral fermion models and gapless real fermions that can naturally appear in superfluids or superconductors studied previously.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2510.25959v2</guid>
+      <guid isPermaLink="false">oai:arXiv.org:2510.25959v3</guid>
       <category>hep-th</category>
       <category>cond-mat.supr-con</category>
       <category>hep-lat</category>
@@ -632,6 +799,34 @@ Abstract: In this article, we put forward a practical but generic approach towar
       <arxiv:announce_type>replace-cross</arxiv:announce_type>
       <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
       <dc:creator>Gabriel Meyniel, Fei Zhou</dc:creator>
+    </item>
+    <item>
+      <title>Measuring out-of-time-order correlators on a quantum computer based on an irreversibility-susceptibility method</title>
+      <link>https://arxiv.org/abs/2512.22643</link>
+      <description>arXiv:2512.22643v2 Announce Type: replace-cross 
+Abstract: The out-of-time-ordered correlator (OTOC) is a powerful tool for probing quantum information scrambling, a fundamental process by which local information spreads irreversibly throughout a quantum many-body system. Experimentally measuring the OTOC, however, is notoriously challenging due to the need for time-reversed evolution. Here, we present an experimental evaluation of the OTOC on a quantum computer, using three distinct protocols to address this challenge: the rewinding time method (RTM), the weak-measurement method (WMM), and the irreversibility-susceptibility method (ISM). Our experiments investigate the quantum dynamics of an XXZ spin-1/2 chain prepared in a thermal Gibbs state. As a key contribution, we provide the first experimental demonstration of the ISM, using the trapped-ion quantum computer, reimei. We also conduct a detailed comparative analysis of all three methods, revealing method-dependent behaviors in the measured OTOC. This work not only validates these protocols as practical tools for exploring quantum chaos on near-term hardware but also offers crucial insights into their respective advantages and limitations, providing a practical framework for future experimental investigations.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2512.22643v2</guid>
+      <category>quant-ph</category>
+      <category>cond-mat.stat-mech</category>
+      <category>hep-ex</category>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>replace-cross</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>Haruki Emori, Hiroyasu Tajima</dc:creator>
+    </item>
+    <item>
+      <title>A comparison of simulation tools for Muon-Induced X-ray Emission (MIXE) in thin films: a study case with lithium batteries</title>
+      <link>https://arxiv.org/abs/2601.10401</link>
+      <description>arXiv:2601.10401v2 Announce Type: replace-cross 
+Abstract: We present a comparative study of three Monte Carlo simulation frameworks -SRIM, GEANT4, and PHITS- for modeling the transport, stopping, and atomic cascade of negative muons in micrometer-scale, multilayer systems relevant to Muon-Induced X-ray Emission (MIXE) experiments at the Paul Scherrer Institute (PSI). Using a lithium-ion battery as a benchmark target, simulated implantation profiles are compared with experimental data from the GIANT spectrometer. All three codes reproduce the overall muon depth distributions with good consistency, even across sharp density contrasts. SRIM provides reliable implantation estimates for compact geometries, whereas PHITS reproduces GEANT4 results with comparable accuracy and additionally generates muonic X-ray spectra. These spectra, however, exhibit a systematic energy offset in the K-line transitions of medium- and high-Z elements relative to theoretical and experimental values. Despite this bias, PHITS accurately captures relative intensities and spectral shapes, enabling element-specific line identification. The results demonstrate that SRIM and PHITS constitute practical tools for rapid estimation of muon implantation and stopping profiles, and that PHITS holds strong potential for predictive MIXE spectroscopy once its transition-energy bias is corrected.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2601.10401v2</guid>
+      <category>hep-ex</category>
+      <category>cond-mat.mtrl-sci</category>
+      <category>physics.app-ph</category>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>replace-cross</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>Maxime Lamotte, Michael W. Heiss, Thomas Prokscha, Alex Amato</dc:creator>
     </item>
     </channel>
 </rss>
