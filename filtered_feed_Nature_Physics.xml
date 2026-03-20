@@ -18,21 +18,17 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03217-3"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03213-7"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03216-4"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03234-2"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03194-7"/>
-                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03214-6"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03233-3"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03212-8"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -40,6 +36,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-026-03217-3">
+            <title>Exceptional sensitivity near the bistable transition point of a hybrid quantum system</title>
+            <link>https://www.nature.com/articles/s41567-026-03217-3</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 20 March 2026; &lt;a href="https://www.nature.com/articles/s41567-026-03217-3"&gt;doi:10.1038/s41567-026-03217-3&lt;/a&gt;&lt;/p&gt;Operating devices close to a phase transition can improve performance due to the singular behaviour at critical points. An enhancement in sensitivity has now been achieved using the bistable transition point in a hybrid quantum system.</content:encoded>
+            <dc:title>Exceptional sensitivity near the bistable transition point of a hybrid quantum system</dc:title>
+            <dc:creator>Hanfeng Wang</dc:creator><dc:creator>Kurt Jacobs</dc:creator><dc:creator>Donald Fahey</dc:creator><dc:creator>Yong Hu</dc:creator><dc:creator>Dirk R. Englund</dc:creator><dc:creator>Matthew E. Trusheim</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-026-03217-3</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-03-20; | doi:10.1038/s41567-026-03217-3</dc:source>
+            <dc:date>2026-03-20</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-026-03217-3</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-026-03217-3</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-026-03213-7">
             <title>Bose–Hubbard simulator with long-range hopping</title>
@@ -86,21 +97,6 @@
             <prism:url>https://www.nature.com/articles/s41567-026-03234-2</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41567-026-03194-7">
-            <title>Relevant recoil</title>
-            <link>https://www.nature.com/articles/s41567-026-03194-7</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 16 March 2026; &lt;a href="https://www.nature.com/articles/s41567-026-03194-7"&gt;doi:10.1038/s41567-026-03194-7&lt;/a&gt;&lt;/p&gt;Relevant recoil</content:encoded>
-            <dc:title>Relevant recoil</dc:title>
-            <dc:creator>Stefanie Reichert</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-026-03194-7</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2026-03-16; | doi:10.1038/s41567-026-03194-7</dc:source>
-            <dc:date>2026-03-16</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-026-03194-7</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-026-03194-7</prism:url>
-        </item>
-    
         <item rdf:about="https://www.nature.com/articles/s41567-026-03214-6">
             <title>When excitons lose their mass</title>
             <link>https://www.nature.com/articles/s41567-026-03214-6</link>
@@ -116,34 +112,4 @@
             <prism:url>https://www.nature.com/articles/s41567-026-03214-6</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41567-026-03233-3">
-            <title>The future is bright</title>
-            <link>https://www.nature.com/articles/s41567-026-03233-3</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 16 March 2026; &lt;a href="https://www.nature.com/articles/s41567-026-03233-3"&gt;doi:10.1038/s41567-026-03233-3&lt;/a&gt;&lt;/p&gt;Fifty years ago, the theoretical concept behind free-electron lasers was proposed. Since then, these light sources, operating from millimetre to X-ray wavelengths, have been indispensable for many areas of science.</content:encoded>
-            <dc:title>The future is bright</dc:title>
-            
-            <dc:identifier>doi:10.1038/s41567-026-03233-3</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2026-03-16; | doi:10.1038/s41567-026-03233-3</dc:source>
-            <dc:date>2026-03-16</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-026-03233-3</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-026-03233-3</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-026-03212-8">
-            <title>A matter of flow</title>
-            <link>https://www.nature.com/articles/s41567-026-03212-8</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 16 March 2026; &lt;a href="https://www.nature.com/articles/s41567-026-03212-8"&gt;doi:10.1038/s41567-026-03212-8&lt;/a&gt;&lt;/p&gt;A matter of flow</content:encoded>
-            <dc:title>A matter of flow</dc:title>
-            <dc:creator>Mark Buchanan</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-026-03212-8</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2026-03-16; | doi:10.1038/s41567-026-03212-8</dc:source>
-            <dc:date>2026-03-16</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-026-03212-8</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-026-03212-8</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>

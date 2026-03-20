@@ -21,11 +21,7 @@
         <items>
             <rdf:Seq>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-70865-7"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-70833-1"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/ncomms/rss.png">
@@ -34,34 +30,4 @@
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
     
-        <item rdf:about="https://www.nature.com/articles/s41467-026-70865-7">
-            <title>Physics-informed Hamiltonian learning for large-scale optoelectronic property prediction</title>
-            <link>https://www.nature.com/articles/s41467-026-70865-7</link>
-            <content:encoded>
-                &lt;p&gt;Nature Communications, Published online: 20 March 2026; &lt;a href="https://www.nature.com/articles/s41467-026-70865-7"&gt;doi:10.1038/s41467-026-70865-7&lt;/a&gt;&lt;/p&gt;Schwade et al. report HAMSTER, a physics-informed machine learning framework for predicting the quantum-mechanical Hamiltonian of complex chemical systems. It yields accurate property prediction of halide perovskites across various temperatures and compositions for systems containing 50,000 atoms.</content:encoded>
-            <dc:title>Physics-informed Hamiltonian learning for large-scale optoelectronic property prediction</dc:title>
-            <dc:creator>Martin Schwade</dc:creator><dc:creator>Shaoming Zhang</dc:creator><dc:creator>Frederik Vonhoff</dc:creator><dc:creator>Frederico P. Delgado</dc:creator><dc:creator>David A. Egger</dc:creator>
-            <dc:identifier>doi:10.1038/s41467-026-70865-7</dc:identifier>
-            <dc:source>Nature Communications, Published online: 2026-03-20; | doi:10.1038/s41467-026-70865-7</dc:source>
-            <dc:date>2026-03-20</dc:date>
-            <prism:publicationName>Nature Communications</prism:publicationName>
-            <prism:doi>10.1038/s41467-026-70865-7</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41467-026-70865-7</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41467-026-70833-1">
-            <title>Plasmonic Dirac-vortex lasers via three-dimensional photonic mass vortices engineering</title>
-            <link>https://www.nature.com/articles/s41467-026-70833-1</link>
-            <content:encoded>
-                &lt;p&gt;Nature Communications, Published online: 19 March 2026; &lt;a href="https://www.nature.com/articles/s41467-026-70833-1"&gt;doi:10.1038/s41467-026-70833-1&lt;/a&gt;&lt;/p&gt;The intensity profiles and polarization states bestowed upon a beam by topological photonic crystals are limited to the spatial symmetries that can be realized with the crystal lattice. Here, authors demonstrate plasmonic Dirac-vortex lasing with tailorable intensity and polarisation distributions, based on photonic mass vortices engineering.</content:encoded>
-            <dc:title>Plasmonic Dirac-vortex lasers via three-dimensional photonic mass vortices engineering</dc:title>
-            <dc:creator>Mou Zhong</dc:creator><dc:creator>Xiaoqiong Bi</dc:creator><dc:creator>Mengyuan Song</dc:creator><dc:creator>Nanli Mou</dc:creator><dc:creator>Delin Zhang</dc:creator><dc:creator>Xiaolu Zhuo</dc:creator><dc:creator>Jingtian Hu</dc:creator><dc:creator>Biye Xie</dc:creator><dc:creator>Xianyu Ao</dc:creator><dc:creator>Jun Guan</dc:creator>
-            <dc:identifier>doi:10.1038/s41467-026-70833-1</dc:identifier>
-            <dc:source>Nature Communications, Published online: 2026-03-19; | doi:10.1038/s41467-026-70833-1</dc:source>
-            <dc:date>2026-03-19</dc:date>
-            <prism:publicationName>Nature Communications</prism:publicationName>
-            <prism:doi>10.1038/s41467-026-70833-1</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41467-026-70833-1</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
