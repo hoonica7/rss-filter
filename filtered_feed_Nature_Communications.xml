@@ -21,13 +21,9 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-70865-7"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-70833-1"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-71039-1"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-70581-2"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-70831-3"/>
                 
             </rdf:Seq>
         </items>
@@ -37,6 +33,21 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-026-70865-7">
+            <title>Physics-informed Hamiltonian learning for large-scale optoelectronic property prediction</title>
+            <link>https://www.nature.com/articles/s41467-026-70865-7</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 20 March 2026; &lt;a href="https://www.nature.com/articles/s41467-026-70865-7"&gt;doi:10.1038/s41467-026-70865-7&lt;/a&gt;&lt;/p&gt;Schwade et al. report HAMSTER, a physics-informed machine learning framework for predicting the quantum-mechanical Hamiltonian of complex chemical systems. It yields accurate property prediction of halide perovskites across various temperatures and compositions for systems containing 50,000 atoms.</content:encoded>
+            <dc:title>Physics-informed Hamiltonian learning for large-scale optoelectronic property prediction</dc:title>
+            <dc:creator>Martin Schwade</dc:creator><dc:creator>Shaoming Zhang</dc:creator><dc:creator>Frederik Vonhoff</dc:creator><dc:creator>Frederico P. Delgado</dc:creator><dc:creator>David A. Egger</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-026-70865-7</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-03-20; | doi:10.1038/s41467-026-70865-7</dc:source>
+            <dc:date>2026-03-20</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-026-70865-7</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-026-70865-7</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41467-026-70833-1">
             <title>Plasmonic Dirac-vortex lasers via three-dimensional photonic mass vortices engineering</title>
@@ -51,51 +62,6 @@
             <prism:publicationName>Nature Communications</prism:publicationName>
             <prism:doi>10.1038/s41467-026-70833-1</prism:doi>
             <prism:url>https://www.nature.com/articles/s41467-026-70833-1</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41467-026-71039-1">
-            <title>Epsilon-near-zero time-gate for high-fidelity spatial information transfer through dynamic scattering media</title>
-            <link>https://www.nature.com/articles/s41467-026-71039-1</link>
-            <content:encoded>
-                &lt;p&gt;Nature Communications, Published online: 19 March 2026; &lt;a href="https://www.nature.com/articles/s41467-026-71039-1"&gt;doi:10.1038/s41467-026-71039-1&lt;/a&gt;&lt;/p&gt;Here, authors demonstrate an ultrafast time-gating protocol using a sub-micron-thick layer of epsilon-near-zero indium-tin oxide, yielding a strong four-wave mixing signal while reducing scattering and scintillation.</content:encoded>
-            <dc:title>Epsilon-near-zero time-gate for high-fidelity spatial information transfer through dynamic scattering media</dc:title>
-            <dc:creator>Yang Xu</dc:creator><dc:creator>Saumya Choudhary</dc:creator><dc:creator>Long D. Nguyen</dc:creator><dc:creator>Matthew Klein</dc:creator><dc:creator>Shivashankar Vangala</dc:creator><dc:creator>J. Keith Miller</dc:creator><dc:creator>Eric G. Johnson</dc:creator><dc:creator>Joshua R. Hendrickson</dc:creator><dc:creator>M. Zahirul Alam</dc:creator><dc:creator>Robert W. Boyd</dc:creator>
-            <dc:identifier>doi:10.1038/s41467-026-71039-1</dc:identifier>
-            <dc:source>Nature Communications, Published online: 2026-03-19; | doi:10.1038/s41467-026-71039-1</dc:source>
-            <dc:date>2026-03-19</dc:date>
-            <prism:publicationName>Nature Communications</prism:publicationName>
-            <prism:doi>10.1038/s41467-026-71039-1</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41467-026-71039-1</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41467-026-70581-2">
-            <title>Deciphering the liquid-solid interactions in dealkalization of O3 layered oxides</title>
-            <link>https://www.nature.com/articles/s41467-026-70581-2</link>
-            <content:encoded>
-                &lt;p&gt;Nature Communications, Published online: 19 March 2026; &lt;a href="https://www.nature.com/articles/s41467-026-70581-2"&gt;doi:10.1038/s41467-026-70581-2&lt;/a&gt;&lt;/p&gt;High-performance battery materials often degrade during standard cleaning processes. Here, the authors identify why water washing causes structural collapse in sodium-based oxides and demonstrate that ethylene glycol can safely remove impurities while maintaining the material’s integrity.</content:encoded>
-            <dc:title>Deciphering the liquid-solid interactions in dealkalization of O3 layered oxides</dc:title>
-            <dc:creator>Wujiu Zhang</dc:creator><dc:creator>Jifu Zhu</dc:creator><dc:creator>Amin Song</dc:creator><dc:creator>Mengjie Huang</dc:creator><dc:creator>Xin Zhang</dc:creator><dc:creator>Xiekun Xu</dc:creator><dc:creator>Chenyang Liu</dc:creator><dc:creator>Chuhan Yuan</dc:creator><dc:creator>Nan Li</dc:creator><dc:creator>Shipeng Zhang</dc:creator><dc:creator>Yiran Ying</dc:creator><dc:creator>Lei Dong</dc:creator><dc:creator>Chao Shen</dc:creator><dc:creator>Keyu Xie</dc:creator>
-            <dc:identifier>doi:10.1038/s41467-026-70581-2</dc:identifier>
-            <dc:source>Nature Communications, Published online: 2026-03-19; | doi:10.1038/s41467-026-70581-2</dc:source>
-            <dc:date>2026-03-19</dc:date>
-            <prism:publicationName>Nature Communications</prism:publicationName>
-            <prism:doi>10.1038/s41467-026-70581-2</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41467-026-70581-2</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41467-026-70831-3">
-            <title>A bioinspired microdevice unifying energy storage and actuation through hydration control</title>
-            <link>https://www.nature.com/articles/s41467-026-70831-3</link>
-            <content:encoded>
-                &lt;p&gt;Nature Communications, Published online: 19 March 2026; &lt;a href="https://www.nature.com/articles/s41467-026-70831-3"&gt;doi:10.1038/s41467-026-70831-3&lt;/a&gt;&lt;/p&gt;Conjugated polymers are promising for compact energy storage and actuation devices though it is challenging to balance these properties. Here the authors report a polymer system suppressing ion hydration for a multifunctional microdevice.</content:encoded>
-            <dc:title>A bioinspired microdevice unifying energy storage and actuation through hydration control</dc:title>
-            <dc:creator>Wenlan Zhang</dc:creator><dc:creator>Leandro Merces</dc:creator><dc:creator>Jiachen Ma</dc:creator><dc:creator>Christian Becker</dc:creator><dc:creator>Daniil Karnaushenko</dc:creator><dc:creator>Hongmei Tang</dc:creator><dc:creator>Jiang Qu</dc:creator><dc:creator>Letícia Mariê Minatogau Ferro</dc:creator><dc:creator>Yang Huang</dc:creator><dc:creator>Yaping Yan</dc:creator><dc:creator>Yeji Lee</dc:creator><dc:creator>Vineeth K. Bandari</dc:creator><dc:creator>Dmitriy D. Karnaushenko</dc:creator><dc:creator>Aleksandr I. Egunov</dc:creator><dc:creator>Minshen Zhu</dc:creator><dc:creator>Oliver G. Schmidt</dc:creator>
-            <dc:identifier>doi:10.1038/s41467-026-70831-3</dc:identifier>
-            <dc:source>Nature Communications, Published online: 2026-03-19; | doi:10.1038/s41467-026-70831-3</dc:source>
-            <dc:date>2026-03-19</dc:date>
-            <prism:publicationName>Nature Communications</prism:publicationName>
-            <prism:doi>10.1038/s41467-026-70831-3</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41467-026-70831-3</prism:url>
         </item>
     
 </rdf:RDF>
