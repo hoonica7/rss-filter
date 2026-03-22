@@ -6,10 +6,10 @@
     <description>Recent articles in Physical Review B</description>
     <syn:updatePeriod>hourly</syn:updatePeriod>
     <syn:updateFrequency>1</syn:updateFrequency>
-    <syn:updateBase>2026-03-21T01:16:29+00:00</syn:updateBase>
+    <syn:updateBase>2026-03-22T01:16:32+00:00</syn:updateBase>
     <dc:creator>rss@aps.org</dc:creator>
     <dc:publisher>assocpub@aps.org</dc:publisher>
-    <dc:date>2026-03-21T01:16:29+00:00</dc:date>
+    <dc:date>2026-03-22T01:16:32+00:00</dc:date>
     <dc:language>en</dc:language>
     <dc:rights>Copyright © 2026 the American Physical Society. Personal use only, all commercial or other reuse prohibited</dc:rights>
     <prism:copyright>Copyright © 2026 the American Physical Society</prism:copyright>
@@ -17,18 +17,27 @@
     <items>
       <rdf:Seq>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/26cc-76rm"/>
+        <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/dgyy-rbcn"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/y3wb-hv8c"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/9p92-qt26"/>
+        <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/k36v-91br"/>
+        <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/hjqc-zqq9"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/6xbw-j8vg"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/6ng9-4vqy"/>
+        <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/3ytx-9fmt"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/ymt3-48l9"/>
+        <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/7d61-8hh1"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/g84x-qwrk"/>
+        <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/8gq5-d954"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/9lb4-hrnv"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/p9f7-ftjd"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/t4j9-3c26"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/6yph-t11q"/>
+        <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/pc57-schm"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/rtdd-37y7"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/m9mz-y9xv"/>
+        <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/vrpg-stnt"/>
+        <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/fv8k-twwl"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/clbr-64nf"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/2b75-psq2"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/8p79-4r7x"/>
@@ -41,11 +50,16 @@
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/qzns-hs4t"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/b6vp-zt8z"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/557d-dvl7"/>
+        <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/pvpj-dbnq"/>
+        <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/vgd5-4xyj"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/pnl1-7vcl"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/tglp-ts2c"/>
+        <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/6zdg-1mpt"/>
+        <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/ngrr-y8jb"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/h1tv-ltc4"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/lq5f-lvh7"/>
-        </rdf:Seq>
+        <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/f7rt-5vwb"/>
+      </rdf:Seq>
     </items>
   </channel>
   <item rdf:about="http://link.aps.org/doi/10.1103/26cc-76rm">
@@ -69,6 +83,28 @@
     <prism:startingPage>094111</prism:startingPage>
     <dc:subject>Structure, structural phase transitions, mechanical properties, defects</dc:subject>
     <prism:section>Structure, structural phase transitions, mechanical properties, defects</prism:section>
+  </item>
+  <item rdf:about="http://link.aps.org/doi/10.1103/dgyy-rbcn">
+    <title>Compact localized fermions and Ising anyons in a chiral spin liquid</title>
+    <link>http://link.aps.org/doi/10.1103/dgyy-rbcn</link>
+    <description>Author(s): Tim Bauer and Johannes Reuther&lt;br/&gt;&lt;p&gt;Quasiparticle hybridization remains a major challenge in realizing and controlling exotic states of matter in existing quantum simulation platforms. We report the absence of hybridization for compact localized states (CLSs) emerging in the chiral spin liquid described by the Yao-Kivelson model. The …&lt;/p&gt;&lt;br/&gt;[Phys. Rev. B 113, 094442] Published Fri Mar 20, 2026</description>
+    <content:encoded>&lt;p&gt;Author(s): Tim Bauer and Johannes Reuther&lt;/p&gt;&lt;p&gt;Quasiparticle hybridization remains a major challenge in realizing and controlling exotic states of matter in existing quantum simulation platforms. We report the absence of hybridization for compact localized states (CLSs) emerging in the chiral spin liquid described by the Yao-Kivelson model. The …&lt;/p&gt;&lt;br/&gt;&lt;p&gt;[Phys. Rev. B 113, 094442] Published Fri Mar 20, 2026&lt;/p&gt;</content:encoded>
+    <dc:title>Compact localized fermions and Ising anyons in a chiral spin liquid</dc:title>
+    <dc:creator>Tim Bauer and Johannes Reuther</dc:creator>
+    <dc:date>2026-03-20T10:00:00+00:00</dc:date>
+    <dc:rights>Personal use only, all commercial or other reuse prohibited</dc:rights>
+    <dc:source>Phys. Rev. B 113, 094442 (2026)</dc:source>
+    <dc:type>article</dc:type>
+    <dc:identifier>doi:10.1103/dgyy-rbcn</dc:identifier>
+    <prism:doi>10.1103/dgyy-rbcn</prism:doi>
+    <prism:publicationName>Physical Review B</prism:publicationName>
+    <prism:volume>113</prism:volume>
+    <prism:number>9</prism:number>
+    <prism:publicationDate>2026-03-20T10:00:00+00:00</prism:publicationDate>
+    <prism:url>http://link.aps.org/doi/10.1103/dgyy-rbcn</prism:url>
+    <prism:startingPage>094442</prism:startingPage>
+    <dc:subject>Magnetism</dc:subject>
+    <prism:section>Magnetism</prism:section>
   </item>
   <item rdf:about="http://link.aps.org/doi/10.1103/y3wb-hv8c">
     <title>Linear magnetoresistance and anomalous Hall effect in the superconductor ${\mathrm{NiBi}}_{3}$</title>
@@ -114,6 +150,50 @@
     <dc:subject>Technical Perspective</dc:subject>
     <prism:section>Technical Perspective</prism:section>
   </item>
+  <item rdf:about="http://link.aps.org/doi/10.1103/k36v-91br">
+    <title>Unlocking doping effects on altermagnetism in MnTe: Emergence of quasi-altermagnetism</title>
+    <link>http://link.aps.org/doi/10.1103/k36v-91br</link>
+    <description>Author(s): Nayana Devaraj, Anumita Bose, Arindom Das, Md Afsar Reja, Arijit Mandal, Awadhesh Narayan, and B. R. K. Nanda&lt;br/&gt;&lt;p&gt;Governed by specific symmetries, altermagnetism is an emerging field in condensed matter physics, characterized by unique spin-splitting of the bands in the momentum space coexisting with the compensated magnetization as in antiferromagnets. As crystals can have tailored and unintended defects, it i…&lt;/p&gt;&lt;br/&gt;[Phys. Rev. B 113, 104438] Published Fri Mar 20, 2026</description>
+    <content:encoded>&lt;p&gt;Author(s): Nayana Devaraj, Anumita Bose, Arindom Das, Md Afsar Reja, Arijit Mandal, Awadhesh Narayan, and B. R. K. Nanda&lt;/p&gt;&lt;p&gt;Governed by specific symmetries, altermagnetism is an emerging field in condensed matter physics, characterized by unique spin-splitting of the bands in the momentum space coexisting with the compensated magnetization as in antiferromagnets. As crystals can have tailored and unintended defects, it i…&lt;/p&gt;&lt;br/&gt;&lt;p&gt;[Phys. Rev. B 113, 104438] Published Fri Mar 20, 2026&lt;/p&gt;</content:encoded>
+    <dc:title>Unlocking doping effects on altermagnetism in MnTe: Emergence of quasi-altermagnetism</dc:title>
+    <dc:creator>Nayana Devaraj, Anumita Bose, Arindom Das, Md Afsar Reja, Arijit Mandal, Awadhesh Narayan, and B. R. K. Nanda</dc:creator>
+    <dc:date>2026-03-20T10:00:00+00:00</dc:date>
+    <dc:rights>Personal use only, all commercial or other reuse prohibited</dc:rights>
+    <dc:source>Phys. Rev. B 113, 104438 (2026)</dc:source>
+    <dc:type>article</dc:type>
+    <dc:identifier>doi:10.1103/k36v-91br</dc:identifier>
+    <prism:doi>10.1103/k36v-91br</prism:doi>
+    <prism:publicationName>Physical Review B</prism:publicationName>
+    <prism:volume>113</prism:volume>
+    <prism:number>10</prism:number>
+    <prism:publicationDate>2026-03-20T10:00:00+00:00</prism:publicationDate>
+    <prism:url>http://link.aps.org/doi/10.1103/k36v-91br</prism:url>
+    <prism:startingPage>104438</prism:startingPage>
+    <dc:subject>Magnetism</dc:subject>
+    <prism:section>Magnetism</prism:section>
+  </item>
+  <item rdf:about="http://link.aps.org/doi/10.1103/hjqc-zqq9">
+    <title>Twofold symmetric superconductivity in the bulk Ising superconductor $4{H}_{\mathrm{a}}{\text{-NbSe}}_{2}$</title>
+    <link>http://link.aps.org/doi/10.1103/hjqc-zqq9</link>
+    <description>Author(s): Shunli Ni, Menghu Zhou, Yu Zhao, Xiang-Bo Xiao, Lewei Chen, Jiali Liu, Ke Shi, Junkun Yi, Hao Xu, Minrui Yang, Kai Hu, Minjie Zhang, Yongqi Han, Hua Zhang, Ze Wang, Chuanying Xi, Min Liu, Zhenghua Xu, Pan Chen, and Zhaosheng Wang&lt;br/&gt;&lt;p&gt;Symmetry breaking is identified as a predominant mechanism governing the formation of exotic quantum state. The absence of inversion symmetry in noncentrosymmetric superconductors leads to an antisymmetric spin-orbit coupling, which promotes the system toward possible unconventional electron pairing…&lt;/p&gt;&lt;br/&gt;[Phys. Rev. B 113, 104515] Published Fri Mar 20, 2026</description>
+    <content:encoded>&lt;p&gt;Author(s): Shunli Ni, Menghu Zhou, Yu Zhao, Xiang-Bo Xiao, Lewei Chen, Jiali Liu, Ke Shi, Junkun Yi, Hao Xu, Minrui Yang, Kai Hu, Minjie Zhang, Yongqi Han, Hua Zhang, Ze Wang, Chuanying Xi, Min Liu, Zhenghua Xu, Pan Chen, and Zhaosheng Wang&lt;/p&gt;&lt;p&gt;Symmetry breaking is identified as a predominant mechanism governing the formation of exotic quantum state. The absence of inversion symmetry in noncentrosymmetric superconductors leads to an antisymmetric spin-orbit coupling, which promotes the system toward possible unconventional electron pairing…&lt;/p&gt;&lt;br/&gt;&lt;p&gt;[Phys. Rev. B 113, 104515] Published Fri Mar 20, 2026&lt;/p&gt;</content:encoded>
+    <dc:title>Twofold symmetric superconductivity in the bulk Ising superconductor $4{H}_{\mathrm{a}}{\text{-NbSe}}_{2}$</dc:title>
+    <dc:creator>Shunli Ni, Menghu Zhou, Yu Zhao, Xiang-Bo Xiao, Lewei Chen, Jiali Liu, Ke Shi, Junkun Yi, Hao Xu, Minrui Yang, Kai Hu, Minjie Zhang, Yongqi Han, Hua Zhang, Ze Wang, Chuanying Xi, Min Liu, Zhenghua Xu, Pan Chen, and Zhaosheng Wang</dc:creator>
+    <dc:date>2026-03-20T10:00:00+00:00</dc:date>
+    <dc:rights>Personal use only, all commercial or other reuse prohibited</dc:rights>
+    <dc:source>Phys. Rev. B 113, 104515 (2026)</dc:source>
+    <dc:type>article</dc:type>
+    <dc:identifier>doi:10.1103/hjqc-zqq9</dc:identifier>
+    <prism:doi>10.1103/hjqc-zqq9</prism:doi>
+    <prism:publicationName>Physical Review B</prism:publicationName>
+    <prism:volume>113</prism:volume>
+    <prism:number>10</prism:number>
+    <prism:publicationDate>2026-03-20T10:00:00+00:00</prism:publicationDate>
+    <prism:url>http://link.aps.org/doi/10.1103/hjqc-zqq9</prism:url>
+    <prism:startingPage>104515</prism:startingPage>
+    <dc:subject>Superfluidity and superconductivity</dc:subject>
+    <prism:section>Superfluidity and superconductivity</prism:section>
+  </item>
   <item rdf:about="http://link.aps.org/doi/10.1103/6xbw-j8vg">
     <title>Ideal nodal-sphere semimetal in the three-dimensional boron allotrope ${\text{CT-B}}_{24}$</title>
     <link>http://link.aps.org/doi/10.1103/6xbw-j8vg</link>
@@ -158,6 +238,28 @@
     <dc:subject>Semiconductors II: surfaces, interfaces, microstructures, and related topics</dc:subject>
     <prism:section>Semiconductors II: surfaces, interfaces, microstructures, and related topics</prism:section>
   </item>
+  <item rdf:about="http://link.aps.org/doi/10.1103/3ytx-9fmt">
+    <title>Magnetotransport properties of an unconventional Rashba spin-orbit coupled two-dimensional electronic system</title>
+    <link>http://link.aps.org/doi/10.1103/3ytx-9fmt</link>
+    <description>Author(s): Aryan Pandita and SK Firoz Islam&lt;br/&gt;&lt;p&gt;We investigate the magnetotransport properties of a two-dimensional electronic system with unconventional Rashba spin-orbit coupling. We obtain the Landau levels analytically and find that intra-spin and/or inter-spin Landau-level crossing occurs. We compute the longitudinal conductivity and quantum…&lt;/p&gt;&lt;br/&gt;[Phys. Rev. B 113, 115419] Published Fri Mar 20, 2026</description>
+    <content:encoded>&lt;p&gt;Author(s): Aryan Pandita and SK Firoz Islam&lt;/p&gt;&lt;p&gt;We investigate the magnetotransport properties of a two-dimensional electronic system with unconventional Rashba spin-orbit coupling. We obtain the Landau levels analytically and find that intra-spin and/or inter-spin Landau-level crossing occurs. We compute the longitudinal conductivity and quantum…&lt;/p&gt;&lt;br/&gt;&lt;p&gt;[Phys. Rev. B 113, 115419] Published Fri Mar 20, 2026&lt;/p&gt;</content:encoded>
+    <dc:title>Magnetotransport properties of an unconventional Rashba spin-orbit coupled two-dimensional electronic system</dc:title>
+    <dc:creator>Aryan Pandita and SK Firoz Islam</dc:creator>
+    <dc:date>2026-03-20T10:00:00+00:00</dc:date>
+    <dc:rights>Personal use only, all commercial or other reuse prohibited</dc:rights>
+    <dc:source>Phys. Rev. B 113, 115419 (2026)</dc:source>
+    <dc:type>article</dc:type>
+    <dc:identifier>doi:10.1103/3ytx-9fmt</dc:identifier>
+    <prism:doi>10.1103/3ytx-9fmt</prism:doi>
+    <prism:publicationName>Physical Review B</prism:publicationName>
+    <prism:volume>113</prism:volume>
+    <prism:number>11</prism:number>
+    <prism:publicationDate>2026-03-20T10:00:00+00:00</prism:publicationDate>
+    <prism:url>http://link.aps.org/doi/10.1103/3ytx-9fmt</prism:url>
+    <prism:startingPage>115419</prism:startingPage>
+    <dc:subject>Surface physics, nanoscale physics, low-dimensional systems</dc:subject>
+    <prism:section>Surface physics, nanoscale physics, low-dimensional systems</prism:section>
+  </item>
   <item rdf:about="http://link.aps.org/doi/10.1103/ymt3-48l9">
     <title>Interplay of Rashba and valley Zeeman splittings in weak localization of spin-orbit coupled graphene</title>
     <link>http://link.aps.org/doi/10.1103/ymt3-48l9</link>
@@ -180,6 +282,28 @@
     <dc:subject>Semiconductors II: surfaces, interfaces, microstructures, and related topics</dc:subject>
     <prism:section>Semiconductors II: surfaces, interfaces, microstructures, and related topics</prism:section>
   </item>
+  <item rdf:about="http://link.aps.org/doi/10.1103/7d61-8hh1">
+    <title>Universal classes of disorder scattering for the in-plane anomalous Hall effect</title>
+    <link>http://link.aps.org/doi/10.1103/7d61-8hh1</link>
+    <description>Author(s): Guoao Yang, Tao Qin, and Jianhui Zhou&lt;br/&gt;&lt;p&gt;The in-plane anomalous Hall effect (IPAHE) with planar Hall current and magnetization/magnetic fields in various quantum materials has received increasing attention. Most of the current efforts are devoted to the intrinsic part due to the Berry curvature of electronic bands, however, how disorder sc…&lt;/p&gt;&lt;br/&gt;[Phys. Rev. B 113, 125426] Published Fri Mar 20, 2026</description>
+    <content:encoded>&lt;p&gt;Author(s): Guoao Yang, Tao Qin, and Jianhui Zhou&lt;/p&gt;&lt;p&gt;The in-plane anomalous Hall effect (IPAHE) with planar Hall current and magnetization/magnetic fields in various quantum materials has received increasing attention. Most of the current efforts are devoted to the intrinsic part due to the Berry curvature of electronic bands, however, how disorder sc…&lt;/p&gt;&lt;br/&gt;&lt;p&gt;[Phys. Rev. B 113, 125426] Published Fri Mar 20, 2026&lt;/p&gt;</content:encoded>
+    <dc:title>Universal classes of disorder scattering for the in-plane anomalous Hall effect</dc:title>
+    <dc:creator>Guoao Yang, Tao Qin, and Jianhui Zhou</dc:creator>
+    <dc:date>2026-03-20T10:00:00+00:00</dc:date>
+    <dc:rights>Personal use only, all commercial or other reuse prohibited</dc:rights>
+    <dc:source>Phys. Rev. B 113, 125426 (2026)</dc:source>
+    <dc:type>article</dc:type>
+    <dc:identifier>doi:10.1103/7d61-8hh1</dc:identifier>
+    <prism:doi>10.1103/7d61-8hh1</prism:doi>
+    <prism:publicationName>Physical Review B</prism:publicationName>
+    <prism:volume>113</prism:volume>
+    <prism:number>12</prism:number>
+    <prism:publicationDate>2026-03-20T10:00:00+00:00</prism:publicationDate>
+    <prism:url>http://link.aps.org/doi/10.1103/7d61-8hh1</prism:url>
+    <prism:startingPage>125426</prism:startingPage>
+    <dc:subject>Surface physics, nanoscale physics, low-dimensional systems</dc:subject>
+    <prism:section>Surface physics, nanoscale physics, low-dimensional systems</prism:section>
+  </item>
   <item rdf:about="http://link.aps.org/doi/10.1103/g84x-qwrk">
     <title>Chiral spin liquid and quantum phase transition in the triangular-lattice Hofstadter-Hubbard model</title>
     <link>http://link.aps.org/doi/10.1103/g84x-qwrk</link>
@@ -201,6 +325,28 @@
     <prism:startingPage>L121107</prism:startingPage>
     <dc:subject>Electronic structure and strongly correlated systems</dc:subject>
     <prism:section>Electronic structure and strongly correlated systems</prism:section>
+  </item>
+  <item rdf:about="http://link.aps.org/doi/10.1103/8gq5-d954">
+    <title>Projectification of point group symmetries with a background flux and the Lieb-Schultz-Mattis theorem</title>
+    <link>http://link.aps.org/doi/10.1103/8gq5-d954</link>
+    <description>Author(s): Yasuhiro Tada and Masaki Oshikawa&lt;br/&gt;&lt;p&gt;We discuss the Lieb-Schultz-Mattis (LSM) theorem in two-dimensional spin systems with onsite $\mathrm{U}(1)⋊{\mathbb{Z}}_{2}$ spin-rotation symmetry and point group ${C}_{2v}$ symmetry about a site. We “twist” the point group symmetry by introducing a small uniform U(1) flux to obtain a projective s…&lt;/p&gt;&lt;br/&gt;[Phys. Rev. B 113, 094439] Published Thu Mar 19, 2026</description>
+    <content:encoded>&lt;p&gt;Author(s): Yasuhiro Tada and Masaki Oshikawa&lt;/p&gt;&lt;p&gt;We discuss the Lieb-Schultz-Mattis (LSM) theorem in two-dimensional spin systems with onsite &lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;&lt;mrow&gt;&lt;mi mathvariant="normal"&gt;U&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo&gt;⋊&lt;/mo&gt;&lt;msub&gt;&lt;mi mathvariant="double-struck"&gt;Z&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;/math&gt; spin-rotation symmetry and point group &lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;&lt;msub&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/math&gt; symmetry about a site. We “twist” the point group symmetry by introducing a small uniform U(1) flux to obtain a projective symmetry, similarly to the famili…&lt;/p&gt;&lt;br/&gt;&lt;p&gt;[Phys. Rev. B 113, 094439] Published Thu Mar 19, 2026&lt;/p&gt;</content:encoded>
+    <dc:title>Projectification of point group symmetries with a background flux and the Lieb-Schultz-Mattis theorem</dc:title>
+    <dc:creator>Yasuhiro Tada and Masaki Oshikawa</dc:creator>
+    <dc:date>2026-03-19T10:00:00+00:00</dc:date>
+    <dc:rights>Personal use only, all commercial or other reuse prohibited</dc:rights>
+    <dc:source>Phys. Rev. B 113, 094439 (2026)</dc:source>
+    <dc:type>article</dc:type>
+    <dc:identifier>doi:10.1103/8gq5-d954</dc:identifier>
+    <prism:doi>10.1103/8gq5-d954</prism:doi>
+    <prism:publicationName>Physical Review B</prism:publicationName>
+    <prism:volume>113</prism:volume>
+    <prism:number>9</prism:number>
+    <prism:publicationDate>2026-03-19T10:00:00+00:00</prism:publicationDate>
+    <prism:url>http://link.aps.org/doi/10.1103/8gq5-d954</prism:url>
+    <prism:startingPage>094439</prism:startingPage>
+    <dc:subject>Magnetism</dc:subject>
+    <prism:section>Magnetism</prism:section>
   </item>
   <item rdf:about="http://link.aps.org/doi/10.1103/9lb4-hrnv">
     <title>Scanning tunneling microscopy study of helimagnetic monolayer ${\mathrm{CrBr}}_{2}$ on the $s$-wave superconductor ${\mathrm{NbSe}}_{2}$: A topologically trivial system due to weak interfacial coupling</title>
@@ -290,6 +436,28 @@
     <dc:subject>Electronic structure and strongly correlated systems</dc:subject>
     <prism:section>Electronic structure and strongly correlated systems</prism:section>
   </item>
+  <item rdf:about="http://link.aps.org/doi/10.1103/pc57-schm">
+    <title>Shubnikov–de Haas oscillations in two-dimensional hole gases with competing cyclotron and Zeeman energy</title>
+    <link>http://link.aps.org/doi/10.1103/pc57-schm</link>
+    <description>Author(s): Davide Costa, Lucas E. A. Stehouwer, Davide Degli Esposti, and Giordano Scappucci&lt;br/&gt;&lt;p&gt;Evaluating fundamental properties of two-dimensional hole gases in strained germanium quantum wells is a complex task due to the competition between cyclotron and Zeeman energies. Here, the authors present a self-consistent framework to accurately extract the effective mass, &lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;/math&gt; factor, and quantum lifetime from Shubnikov–de Haas oscillations at a single temperature. By applying this procedure to a low-disorder Ge/SiGe heterostructure, the authors demonstrate a benchmark quantum mobility for holes in group-IV semiconductors, with clean fractional quantum Hall states observed.&lt;/p&gt;&lt;img src="//cdn.journals.aps.org/journals/PRB/key_images/10.1103/pc57-schm.png" width="200" height=\"100\"&gt;&lt;br/&gt;[Phys. Rev. B 113, 115418] Published Thu Mar 19, 2026</description>
+    <content:encoded>&lt;p&gt;Author(s): Davide Costa, Lucas E. A. Stehouwer, Davide Degli Esposti, and Giordano Scappucci&lt;/p&gt;&lt;p&gt;Evaluating fundamental properties of two-dimensional hole gases in strained germanium quantum wells is a complex task due to the competition between cyclotron and Zeeman energies. Here, the authors present a self-consistent framework to accurately extract the effective mass, &lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;/math&gt; factor, and quantum lifetime from Shubnikov–de Haas oscillations at a single temperature. By applying this procedure to a low-disorder Ge/SiGe heterostructure, the authors demonstrate a benchmark quantum mobility for holes in group-IV semiconductors, with clean fractional quantum Hall states observed.&lt;/p&gt;&lt;img src="//cdn.journals.aps.org/journals/PRB/key_images/10.1103/pc57-schm.png" width="200" height=\"100\"&gt;&lt;br/&gt;&lt;p&gt;[Phys. Rev. B 113, 115418] Published Thu Mar 19, 2026&lt;/p&gt;</content:encoded>
+    <dc:title>Shubnikov–de Haas oscillations in two-dimensional hole gases with competing cyclotron and Zeeman energy</dc:title>
+    <dc:creator>Davide Costa, Lucas E. A. Stehouwer, Davide Degli Esposti, and Giordano Scappucci</dc:creator>
+    <dc:date>2026-03-19T10:00:00+00:00</dc:date>
+    <dc:rights>Personal use only, all commercial or other reuse prohibited</dc:rights>
+    <dc:source>Phys. Rev. B 113, 115418 (2026)</dc:source>
+    <dc:type>article</dc:type>
+    <dc:identifier>doi:10.1103/pc57-schm</dc:identifier>
+    <prism:doi>10.1103/pc57-schm</prism:doi>
+    <prism:publicationName>Physical Review B</prism:publicationName>
+    <prism:volume>113</prism:volume>
+    <prism:number>11</prism:number>
+    <prism:publicationDate>2026-03-19T10:00:00+00:00</prism:publicationDate>
+    <prism:url>http://link.aps.org/doi/10.1103/pc57-schm</prism:url>
+    <prism:startingPage>115418</prism:startingPage>
+    <dc:subject>Surface physics, nanoscale physics, low-dimensional systems</dc:subject>
+    <prism:section>Surface physics, nanoscale physics, low-dimensional systems</prism:section>
+  </item>
   <item rdf:about="http://link.aps.org/doi/10.1103/rtdd-37y7">
     <title>Intrinsic nonlinear Hall effect beyond Bloch geometry</title>
     <link>http://link.aps.org/doi/10.1103/rtdd-37y7</link>
@@ -333,6 +501,50 @@
     <prism:startingPage>125137</prism:startingPage>
     <dc:subject>Electronic structure and strongly correlated systems</dc:subject>
     <prism:section>Electronic structure and strongly correlated systems</prism:section>
+  </item>
+  <item rdf:about="http://link.aps.org/doi/10.1103/vrpg-stnt">
+    <title>Tailoring corner states and exceptional points in altermagnets</title>
+    <link>http://link.aps.org/doi/10.1103/vrpg-stnt</link>
+    <description>Author(s): Xiao-Ming Zhao, Cui-Xian Guo, Xin-Ran Ma, Xiao-Ran Wang, and Su-Peng Kou&lt;br/&gt;&lt;p&gt;Altermagnets (AMs) exhibit vanishing net magnetization but strong momentum-dependent spin splitting enforced by crystal symmetry. Here, we explore the non-Hermitian (NH) effects in dissipative two-dimensional AMs. We show that symmetry-compliant dissipation naturally induces an imaginary staggered e…&lt;/p&gt;&lt;br/&gt;[Phys. Rev. B 113, L100409] Published Thu Mar 19, 2026</description>
+    <content:encoded>&lt;p&gt;Author(s): Xiao-Ming Zhao, Cui-Xian Guo, Xin-Ran Ma, Xiao-Ran Wang, and Su-Peng Kou&lt;/p&gt;&lt;p&gt;Altermagnets (AMs) exhibit vanishing net magnetization but strong momentum-dependent spin splitting enforced by crystal symmetry. Here, we explore the non-Hermitian (NH) effects in dissipative two-dimensional AMs. We show that symmetry-compliant dissipation naturally induces an imaginary staggered e…&lt;/p&gt;&lt;br/&gt;&lt;p&gt;[Phys. Rev. B 113, L100409] Published Thu Mar 19, 2026&lt;/p&gt;</content:encoded>
+    <dc:title>Tailoring corner states and exceptional points in altermagnets</dc:title>
+    <dc:creator>Xiao-Ming Zhao, Cui-Xian Guo, Xin-Ran Ma, Xiao-Ran Wang, and Su-Peng Kou</dc:creator>
+    <dc:date>2026-03-19T10:00:00+00:00</dc:date>
+    <dc:rights>Personal use only, all commercial or other reuse prohibited</dc:rights>
+    <dc:source>Phys. Rev. B 113, L100409 (2026)</dc:source>
+    <dc:type>article</dc:type>
+    <dc:identifier>doi:10.1103/vrpg-stnt</dc:identifier>
+    <prism:doi>10.1103/vrpg-stnt</prism:doi>
+    <prism:publicationName>Physical Review B</prism:publicationName>
+    <prism:volume>113</prism:volume>
+    <prism:number>10</prism:number>
+    <prism:publicationDate>2026-03-19T10:00:00+00:00</prism:publicationDate>
+    <prism:url>http://link.aps.org/doi/10.1103/vrpg-stnt</prism:url>
+    <prism:startingPage>L100409</prism:startingPage>
+    <dc:subject>Magnetism</dc:subject>
+    <prism:section>Magnetism</prism:section>
+  </item>
+  <item rdf:about="http://link.aps.org/doi/10.1103/fv8k-twwl">
+    <title>Josephson diode effect in unconventional $p$-wave magnet/superconductor Josephson junctions</title>
+    <link>http://link.aps.org/doi/10.1103/fv8k-twwl</link>
+    <description>Author(s): Zhe Yang and Zhi Ping Niu&lt;br/&gt;&lt;p&gt;Motivated by recent advancements in the Josephson diode effect and unconventional $p$-wave magnets (UPMs), we investigate the supercurrent in UPM/superconductor Josephson junctions by the Green's function method. The simultaneous presence of an out-of-plane Zeeman field and Rashba spin-orbit couplin…&lt;/p&gt;&lt;br/&gt;[Phys. Rev. B 113, 094515] Published Wed Mar 18, 2026</description>
+    <content:encoded>&lt;p&gt;Author(s): Zhe Yang and Zhi Ping Niu&lt;/p&gt;&lt;p&gt;Motivated by recent advancements in the Josephson diode effect and unconventional &lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;/math&gt;-wave magnets (UPMs), we investigate the supercurrent in UPM/superconductor Josephson junctions by the Green's function method. The simultaneous presence of an out-of-plane Zeeman field and Rashba spin-orbit coupling …&lt;/p&gt;&lt;br/&gt;&lt;p&gt;[Phys. Rev. B 113, 094515] Published Wed Mar 18, 2026&lt;/p&gt;</content:encoded>
+    <dc:title>Josephson diode effect in unconventional $p$-wave magnet/superconductor Josephson junctions</dc:title>
+    <dc:creator>Zhe Yang and Zhi Ping Niu</dc:creator>
+    <dc:date>2026-03-18T10:00:00+00:00</dc:date>
+    <dc:rights>Personal use only, all commercial or other reuse prohibited</dc:rights>
+    <dc:source>Phys. Rev. B 113, 094515 (2026)</dc:source>
+    <dc:type>article</dc:type>
+    <dc:identifier>doi:10.1103/fv8k-twwl</dc:identifier>
+    <prism:doi>10.1103/fv8k-twwl</prism:doi>
+    <prism:publicationName>Physical Review B</prism:publicationName>
+    <prism:volume>113</prism:volume>
+    <prism:number>9</prism:number>
+    <prism:publicationDate>2026-03-18T10:00:00+00:00</prism:publicationDate>
+    <prism:url>http://link.aps.org/doi/10.1103/fv8k-twwl</prism:url>
+    <prism:startingPage>094515</prism:startingPage>
+    <dc:subject>Superfluidity and superconductivity</dc:subject>
+    <prism:section>Superfluidity and superconductivity</prism:section>
   </item>
   <item rdf:about="http://link.aps.org/doi/10.1103/clbr-64nf">
     <title>Interlayer sliding and two-stage superconductivity in pressurized $\mathrm{N}{\mathrm{b}}_{0.6}\mathrm{R}{\mathrm{e}}_{0.4}\mathrm{S}{\mathrm{e}}_{2}$</title>
@@ -598,6 +810,50 @@
     <dc:subject>Electronic structure and strongly correlated systems</dc:subject>
     <prism:section>Electronic structure and strongly correlated systems</prism:section>
   </item>
+  <item rdf:about="http://link.aps.org/doi/10.1103/pvpj-dbnq">
+    <title>Emergence of $p$-wave collinear magnetism in antiferromagnets with reflection-asymmetric magnetic motifs</title>
+    <link>http://link.aps.org/doi/10.1103/pvpj-dbnq</link>
+    <description>Author(s): Reynel Cárdenas, Valeria Quintana, Lin-Ding Yuan, and Carlos Mera Acosta&lt;br/&gt;&lt;p&gt;The classification of collinear magnetic phases in analogy with atomic orbitals and superconducting pairings has long lacked a collinear $p$-wave counterpart—systems exhibiting linear-in-$k$ spin splitting (SS) without net magnetization or spin-orbit coupling. Here, we resolve this gap by identifyin…&lt;/p&gt;&lt;br/&gt;[Phys. Rev. B 113, 094431] Published Mon Mar 16, 2026</description>
+    <content:encoded>&lt;p&gt;Author(s): Reynel Cárdenas, Valeria Quintana, Lin-Ding Yuan, and Carlos Mera Acosta&lt;/p&gt;&lt;p&gt;The classification of collinear magnetic phases in analogy with atomic orbitals and superconducting pairings has long lacked a collinear &lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;/math&gt;-wave counterpart—systems exhibiting linear-in-&lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;/math&gt; spin splitting (SS) without net magnetization or spin-orbit coupling. Here, we resolve this gap by identifying a …&lt;/p&gt;&lt;br/&gt;&lt;p&gt;[Phys. Rev. B 113, 094431] Published Mon Mar 16, 2026&lt;/p&gt;</content:encoded>
+    <dc:title>Emergence of $p$-wave collinear magnetism in antiferromagnets with reflection-asymmetric magnetic motifs</dc:title>
+    <dc:creator>Reynel Cárdenas, Valeria Quintana, Lin-Ding Yuan, and Carlos Mera Acosta</dc:creator>
+    <dc:date>2026-03-16T10:00:00+00:00</dc:date>
+    <dc:rights>Personal use only, all commercial or other reuse prohibited</dc:rights>
+    <dc:source>Phys. Rev. B 113, 094431 (2026)</dc:source>
+    <dc:type>article</dc:type>
+    <dc:identifier>doi:10.1103/pvpj-dbnq</dc:identifier>
+    <prism:doi>10.1103/pvpj-dbnq</prism:doi>
+    <prism:publicationName>Physical Review B</prism:publicationName>
+    <prism:volume>113</prism:volume>
+    <prism:number>9</prism:number>
+    <prism:publicationDate>2026-03-16T10:00:00+00:00</prism:publicationDate>
+    <prism:url>http://link.aps.org/doi/10.1103/pvpj-dbnq</prism:url>
+    <prism:startingPage>094431</prism:startingPage>
+    <dc:subject>Magnetism</dc:subject>
+    <prism:section>Magnetism</prism:section>
+  </item>
+  <item rdf:about="http://link.aps.org/doi/10.1103/vgd5-4xyj">
+    <title>Decorated cluster lattices: A natural framework for classical spin liquids and flat bands</title>
+    <link>http://link.aps.org/doi/10.1103/vgd5-4xyj</link>
+    <description>Author(s): Naïmo Davier&lt;br/&gt;&lt;p&gt;Classical spin liquids are frustrated magnetic phases characterized by local constraints, flat bands in reciprocal space, and emergent gauge structures with distinctive signatures such as pinch points. These arise generally in &lt;i&gt;cluster systems&lt;/i&gt;, where spin interactions can be expressed as constraints …&lt;/p&gt;&lt;br/&gt;[Phys. Rev. B 113, 094433] Published Mon Mar 16, 2026</description>
+    <content:encoded>&lt;p&gt;Author(s): Naïmo Davier&lt;/p&gt;&lt;p&gt;Classical spin liquids are frustrated magnetic phases characterized by local constraints, flat bands in reciprocal space, and emergent gauge structures with distinctive signatures such as pinch points. These arise generally in &lt;i&gt;cluster systems&lt;/i&gt;, where spin interactions can be expressed as constraints …&lt;/p&gt;&lt;br/&gt;&lt;p&gt;[Phys. Rev. B 113, 094433] Published Mon Mar 16, 2026&lt;/p&gt;</content:encoded>
+    <dc:title>Decorated cluster lattices: A natural framework for classical spin liquids and flat bands</dc:title>
+    <dc:creator>Naïmo Davier</dc:creator>
+    <dc:date>2026-03-16T10:00:00+00:00</dc:date>
+    <dc:rights>Personal use only, all commercial or other reuse prohibited</dc:rights>
+    <dc:source>Phys. Rev. B 113, 094433 (2026)</dc:source>
+    <dc:type>article</dc:type>
+    <dc:identifier>doi:10.1103/vgd5-4xyj</dc:identifier>
+    <prism:doi>10.1103/vgd5-4xyj</prism:doi>
+    <prism:publicationName>Physical Review B</prism:publicationName>
+    <prism:volume>113</prism:volume>
+    <prism:number>9</prism:number>
+    <prism:publicationDate>2026-03-16T10:00:00+00:00</prism:publicationDate>
+    <prism:url>http://link.aps.org/doi/10.1103/vgd5-4xyj</prism:url>
+    <prism:startingPage>094433</prism:startingPage>
+    <dc:subject>Magnetism</dc:subject>
+    <prism:section>Magnetism</prism:section>
+  </item>
   <item rdf:about="http://link.aps.org/doi/10.1103/pnl1-7vcl">
     <title>Roles of electron-magnon cross diffusion in unidirectional magnetoresistance of metallic magnetic bilayers</title>
     <link>http://link.aps.org/doi/10.1103/pnl1-7vcl</link>
@@ -641,6 +897,50 @@
     <prism:startingPage>104202</prism:startingPage>
     <dc:subject>Inhomogeneous, disordered, and partially ordered systems</dc:subject>
     <prism:section>Inhomogeneous, disordered, and partially ordered systems</prism:section>
+  </item>
+  <item rdf:about="http://link.aps.org/doi/10.1103/6zdg-1mpt">
+    <title>Chiral phonons in sixfold chiral ${\mathrm{CrSi}}_{2}$: Raman spectroscopy and first-principles calculations</title>
+    <link>http://link.aps.org/doi/10.1103/6zdg-1mpt</link>
+    <description>Author(s): Gakuto Kusuno, Shingo Kisanuki, Yusuke Kousaka, Yoshihiko Togawa, and Takuya Satoh&lt;br/&gt;&lt;p&gt;Chiral phonons, collective atomic rotations in crystals, have been experimentally identified mainly in trigonal chiral materials. Here, the authors demonstrate chiral phonons in the sixfold chiral semiconductor CrSi&lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"&gt;&lt;msub&gt;&lt;mrow&gt;&lt;/mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;/math&gt; using circularly polarized Raman spectroscopy. Polarization-dependent frequency splittings of doubly degenerate phonon modes reveal the handedness of the crystal, and first-principles calculations confirm their rotational character. The work extends chiral phonon research to hexagonal systems and establish circularly polarized Raman scattering as a powerful probe of crystal chirality.&lt;/p&gt;&lt;img src="//cdn.journals.aps.org/journals/PRB/key_images/10.1103/6zdg-1mpt.png" width="200" height=\"100\"&gt;&lt;br/&gt;[Phys. Rev. B 113, 104306] Published Mon Mar 16, 2026</description>
+    <content:encoded>&lt;p&gt;Author(s): Gakuto Kusuno, Shingo Kisanuki, Yusuke Kousaka, Yoshihiko Togawa, and Takuya Satoh&lt;/p&gt;&lt;p&gt;Chiral phonons, collective atomic rotations in crystals, have been experimentally identified mainly in trigonal chiral materials. Here, the authors demonstrate chiral phonons in the sixfold chiral semiconductor CrSi&lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"&gt;&lt;msub&gt;&lt;mrow&gt;&lt;/mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;/math&gt; using circularly polarized Raman spectroscopy. Polarization-dependent frequency splittings of doubly degenerate phonon modes reveal the handedness of the crystal, and first-principles calculations confirm their rotational character. The work extends chiral phonon research to hexagonal systems and establish circularly polarized Raman scattering as a powerful probe of crystal chirality.&lt;/p&gt;&lt;img src="//cdn.journals.aps.org/journals/PRB/key_images/10.1103/6zdg-1mpt.png" width="200" height=\"100\"&gt;&lt;br/&gt;&lt;p&gt;[Phys. Rev. B 113, 104306] Published Mon Mar 16, 2026&lt;/p&gt;</content:encoded>
+    <dc:title>Chiral phonons in sixfold chiral ${\mathrm{CrSi}}_{2}$: Raman spectroscopy and first-principles calculations</dc:title>
+    <dc:creator>Gakuto Kusuno, Shingo Kisanuki, Yusuke Kousaka, Yoshihiko Togawa, and Takuya Satoh</dc:creator>
+    <dc:date>2026-03-16T10:00:00+00:00</dc:date>
+    <dc:rights>Personal use only, all commercial or other reuse prohibited</dc:rights>
+    <dc:source>Phys. Rev. B 113, 104306 (2026)</dc:source>
+    <dc:type>article</dc:type>
+    <dc:identifier>doi:10.1103/6zdg-1mpt</dc:identifier>
+    <prism:doi>10.1103/6zdg-1mpt</prism:doi>
+    <prism:publicationName>Physical Review B</prism:publicationName>
+    <prism:volume>113</prism:volume>
+    <prism:number>10</prism:number>
+    <prism:publicationDate>2026-03-16T10:00:00+00:00</prism:publicationDate>
+    <prism:url>http://link.aps.org/doi/10.1103/6zdg-1mpt</prism:url>
+    <prism:startingPage>104306</prism:startingPage>
+    <dc:subject>Dynamics, dynamical systems, lattice effects</dc:subject>
+    <prism:section>Dynamics, dynamical systems, lattice effects</prism:section>
+  </item>
+  <item rdf:about="http://link.aps.org/doi/10.1103/ngrr-y8jb">
+    <title>General theory for the anomalous valley Hall effect in two-dimensional tetragonal crystals via static control</title>
+    <link>http://link.aps.org/doi/10.1103/ngrr-y8jb</link>
+    <description>Author(s): Xinyi Wang, Hongfu Zhou, Luyin Zhao, and Fujun Liu&lt;br/&gt;&lt;p&gt;The valley degree of freedom provides a promising route for functionalizing two-dimensional materials, yet a unified principle for realizing the anomalous valley Hall effect (AVHE) in tetragonal systems under static control has remained elusive. Here, we establish a general symmetry criterion for ac…&lt;/p&gt;&lt;br/&gt;[Phys. Rev. B 113, 104429] Published Mon Mar 16, 2026</description>
+    <content:encoded>&lt;p&gt;Author(s): Xinyi Wang, Hongfu Zhou, Luyin Zhao, and Fujun Liu&lt;/p&gt;&lt;p&gt;The valley degree of freedom provides a promising route for functionalizing two-dimensional materials, yet a unified principle for realizing the anomalous valley Hall effect (AVHE) in tetragonal systems under static control has remained elusive. Here, we establish a general symmetry criterion for ac…&lt;/p&gt;&lt;br/&gt;&lt;p&gt;[Phys. Rev. B 113, 104429] Published Mon Mar 16, 2026&lt;/p&gt;</content:encoded>
+    <dc:title>General theory for the anomalous valley Hall effect in two-dimensional tetragonal crystals via static control</dc:title>
+    <dc:creator>Xinyi Wang, Hongfu Zhou, Luyin Zhao, and Fujun Liu</dc:creator>
+    <dc:date>2026-03-16T10:00:00+00:00</dc:date>
+    <dc:rights>Personal use only, all commercial or other reuse prohibited</dc:rights>
+    <dc:source>Phys. Rev. B 113, 104429 (2026)</dc:source>
+    <dc:type>article</dc:type>
+    <dc:identifier>doi:10.1103/ngrr-y8jb</dc:identifier>
+    <prism:doi>10.1103/ngrr-y8jb</prism:doi>
+    <prism:publicationName>Physical Review B</prism:publicationName>
+    <prism:volume>113</prism:volume>
+    <prism:number>10</prism:number>
+    <prism:publicationDate>2026-03-16T10:00:00+00:00</prism:publicationDate>
+    <prism:url>http://link.aps.org/doi/10.1103/ngrr-y8jb</prism:url>
+    <prism:startingPage>104429</prism:startingPage>
+    <dc:subject>Magnetism</dc:subject>
+    <prism:section>Magnetism</prism:section>
   </item>
   <item rdf:about="http://link.aps.org/doi/10.1103/h1tv-ltc4">
     <title>Impact of the honeycomb spin lattice on topological magnons and edge states in ferromagnetic two-dimensional skyrmion crystals</title>
@@ -686,4 +986,26 @@
     <dc:subject>Superfluidity and superconductivity</dc:subject>
     <prism:section>Superfluidity and superconductivity</prism:section>
   </item>
-  </rdf:RDF>
+  <item rdf:about="http://link.aps.org/doi/10.1103/f7rt-5vwb">
+    <title>Effect of Rashba spin-orbit coupling and next-nearest-neighbor hopping on superconductivity in the square-octagon lattice</title>
+    <link>http://link.aps.org/doi/10.1103/f7rt-5vwb</link>
+    <description>Author(s): Ravi Kiran and A. Taraphder&lt;br/&gt;&lt;p&gt;Recent studies have highlighted the role of flat bands and Van Hove singularities in enhancing electronic correlations, which can influence unconventional superconductivity. Here, we present a computational study of a two-dimensional superconductor on the square-octagon lattice, a geometry character…&lt;/p&gt;&lt;br/&gt;[Phys. Rev. B 113, 104512] Published Mon Mar 16, 2026</description>
+    <content:encoded>&lt;p&gt;Author(s): Ravi Kiran and A. Taraphder&lt;/p&gt;&lt;p&gt;Recent studies have highlighted the role of flat bands and Van Hove singularities in enhancing electronic correlations, which can influence unconventional superconductivity. Here, we present a computational study of a two-dimensional superconductor on the square-octagon lattice, a geometry character…&lt;/p&gt;&lt;br/&gt;&lt;p&gt;[Phys. Rev. B 113, 104512] Published Mon Mar 16, 2026&lt;/p&gt;</content:encoded>
+    <dc:title>Effect of Rashba spin-orbit coupling and next-nearest-neighbor hopping on superconductivity in the square-octagon lattice</dc:title>
+    <dc:creator>Ravi Kiran and A. Taraphder</dc:creator>
+    <dc:date>2026-03-16T10:00:00+00:00</dc:date>
+    <dc:rights>Personal use only, all commercial or other reuse prohibited</dc:rights>
+    <dc:source>Phys. Rev. B 113, 104512 (2026)</dc:source>
+    <dc:type>article</dc:type>
+    <dc:identifier>doi:10.1103/f7rt-5vwb</dc:identifier>
+    <prism:doi>10.1103/f7rt-5vwb</prism:doi>
+    <prism:publicationName>Physical Review B</prism:publicationName>
+    <prism:volume>113</prism:volume>
+    <prism:number>10</prism:number>
+    <prism:publicationDate>2026-03-16T10:00:00+00:00</prism:publicationDate>
+    <prism:url>http://link.aps.org/doi/10.1103/f7rt-5vwb</prism:url>
+    <prism:startingPage>104512</prism:startingPage>
+    <dc:subject>Superfluidity and superconductivity</dc:subject>
+    <prism:section>Superfluidity and superconductivity</prism:section>
+  </item>
+</rdf:RDF>
