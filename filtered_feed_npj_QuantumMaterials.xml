@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00876-6"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00871-x"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00855-x"/>
@@ -26,7 +28,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00867-7"/>
                 
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/npjquantmats/rss.png">
@@ -34,6 +36,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-026-00876-6">
+            <title>Phonon thermal Hall effect: the roles of disorder, annealing, and metallic contacts</title>
+            <link>https://www.nature.com/articles/s41535-026-00876-6</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 24 March 2026; &lt;a href="https://www.nature.com/articles/s41535-026-00876-6"&gt;doi:10.1038/s41535-026-00876-6&lt;/a&gt;&lt;/p&gt;Phonon thermal Hall effect: the roles of disorder, annealing, and metallic contacts</content:encoded>
+            <dc:title>Phonon thermal Hall effect: the roles of disorder, annealing, and metallic contacts</dc:title>
+            <dc:creator>Qiaochao Xiang</dc:creator><dc:creator>Xiaokang Li</dc:creator><dc:creator>Xiaodong Guo</dc:creator><dc:creator>Kamran Behnia</dc:creator><dc:creator>Zengwei Zhu</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-026-00876-6</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2026-03-24; | doi:10.1038/s41535-026-00876-6</dc:source>
+            <dc:date>2026-03-24</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-026-00876-6</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-026-00876-6</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-026-00871-x">
             <title>Fermi liquid and isotropic superconductivity of Hund scenario for bilayer nickelates</title>
@@ -95,4 +112,4 @@
             <prism:url>https://www.nature.com/articles/s41535-026-00867-7</prism:url>
         </item>
     
-        </rdf:RDF>
+</rdf:RDF>

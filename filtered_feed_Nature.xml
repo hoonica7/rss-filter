@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-026-00851-y"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/d41586-026-00904-2"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-026-10275-3"/>
@@ -32,8 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/d41586-026-00839-8"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-026-00837-w"/>
-                
                     </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,21 @@
         <url>https://www.nature.com/uploads/product/nature/rss.png</url>
         <link>http://feeds.nature.com/nature/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/d41586-026-00851-y">
+            <title>Mighty mini-magnet is low in cost and light on energy use</title>
+            <link>https://www.nature.com/articles/d41586-026-00851-y</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 20 March 2026; &lt;a href="https://www.nature.com/articles/d41586-026-00851-y"&gt;doi:10.1038/d41586-026-00851-y&lt;/a&gt;&lt;/p&gt;A compact device can produce a magnetic field that is more than 800,000 times stronger than Earth’s.</content:encoded>
+            <dc:title>Mighty mini-magnet is low in cost and light on energy use</dc:title>
+            
+            <dc:identifier>doi:10.1038/d41586-026-00851-y</dc:identifier>
+            <dc:source>Nature, Published online: 2026-03-20; | doi:10.1038/d41586-026-00851-y</dc:source>
+            <dc:date>2026-03-20</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/d41586-026-00851-y</prism:doi>
+            <prism:url>https://www.nature.com/articles/d41586-026-00851-y</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/d41586-026-00904-2">
             <title>Daily briefing: Static electricity is still a mystery — here’s what we know</title>
@@ -146,21 +161,6 @@
             <prism:publicationName>Nature</prism:publicationName>
             <prism:doi>10.1038/d41586-026-00839-8</prism:doi>
             <prism:url>https://www.nature.com/articles/d41586-026-00839-8</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/d41586-026-00837-w">
-            <title>Static electricity is a big mystery — a jolt of fresh research could help to solve it</title>
-            <link>https://www.nature.com/articles/d41586-026-00837-w</link>
-            <content:encoded>
-                &lt;p&gt;Nature, Published online: 18 March 2026; &lt;a href="https://www.nature.com/articles/d41586-026-00837-w"&gt;doi:10.1038/d41586-026-00837-w&lt;/a&gt;&lt;/p&gt;The familiar phenomenon has puzzled researchers for centuries, but experiments are finally making sense of its unruly behaviours.</content:encoded>
-            <dc:title>Static electricity is a big mystery — a jolt of fresh research could help to solve it</dc:title>
-            <dc:creator>Jenna Ahart</dc:creator>
-            <dc:identifier>doi:10.1038/d41586-026-00837-w</dc:identifier>
-            <dc:source>Nature, Published online: 2026-03-18; | doi:10.1038/d41586-026-00837-w</dc:source>
-            <dc:date>2026-03-18</dc:date>
-            <prism:publicationName>Nature</prism:publicationName>
-            <prism:doi>10.1038/d41586-026-00837-w</prism:doi>
-            <prism:url>https://www.nature.com/articles/d41586-026-00837-w</prism:url>
         </item>
     
         </rdf:RDF>
