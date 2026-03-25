@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02557-y"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02548-z"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02549-y"/>
@@ -28,8 +30,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02539-0"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02521-w"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -38,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-026-02557-y">
+            <title>Entanglement made measurable</title>
+            <link>https://www.nature.com/articles/s41563-026-02557-y</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 25 March 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02557-y"&gt;doi:10.1038/s41563-026-02557-y&lt;/a&gt;&lt;/p&gt;A resonant inelastic X-ray scattering interferometric approach exposes a highly entangled electronic ground state in a pyrochlore iridate, linking quantum entanglement to intertwined symmetry-breaking orders in a correlated metal near a metal–insulator transition.</content:encoded>
+            <dc:title>Entanglement made measurable</dc:title>
+            <dc:creator>Riccardo Arpaia</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-026-02557-y</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2026-03-25; | doi:10.1038/s41563-026-02557-y</dc:source>
+            <dc:date>2026-03-25</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-026-02557-y</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-026-02557-y</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-026-02548-z">
             <title>A Floquet gap finally opens in graphene</title>
@@ -112,21 +127,6 @@
             <prism:publicationName>Nature Materials</prism:publicationName>
             <prism:doi>10.1038/s41563-026-02539-0</prism:doi>
             <prism:url>https://www.nature.com/articles/s41563-026-02539-0</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-026-02521-w">
-            <title>Multiscale phase nucleation driven by photoinduced polarons in a volume-changing material</title>
-            <link>https://www.nature.com/articles/s41563-026-02521-w</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 19 March 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02521-w"&gt;doi:10.1038/s41563-026-02521-w&lt;/a&gt;&lt;/p&gt;Photoinduced phase transitions in a Prussian blue analogue are studied using femtosecond X-ray techniques, revealing a multistep phase nucleation process with photoinduced polarons triggering the macroscopic phase transformation.</content:encoded>
-            <dc:title>Multiscale phase nucleation driven by photoinduced polarons in a volume-changing material</dc:title>
-            <dc:creator>Marius Hervé</dc:creator><dc:creator>Gaël Privault</dc:creator><dc:creator>Serhane Zerdane</dc:creator><dc:creator>Shintaro Akagi</dc:creator><dc:creator>Leland B. Gee</dc:creator><dc:creator>Ryan D. Ribson</dc:creator><dc:creator>Matthieu Chollet</dc:creator><dc:creator>Shin-ichi Ohkoshi</dc:creator><dc:creator>Hiroko Tokoro</dc:creator><dc:creator>Marco Cammarata</dc:creator><dc:creator>Eric Collet</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-026-02521-w</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2026-03-19; | doi:10.1038/s41563-026-02521-w</dc:source>
-            <dc:date>2026-03-19</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-026-02521-w</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-026-02521-w</prism:url>
         </item>
     
 </rdf:RDF>
