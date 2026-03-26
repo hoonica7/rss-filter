@@ -18,6 +18,10 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02552-3"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02550-5"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02557-y"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02548-z"/>
@@ -28,8 +32,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02559-w"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02539-0"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -38,6 +40,36 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-026-02552-3">
+            <title>Designing disordered materials beyond equilibrium</title>
+            <link>https://www.nature.com/articles/s41563-026-02552-3</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 26 March 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02552-3"&gt;doi:10.1038/s41563-026-02552-3&lt;/a&gt;&lt;/p&gt;A family of glassy materials emerges from local structural optimization, revealing an unexpected form of long-range orientational order.</content:encoded>
+            <dc:title>Designing disordered materials beyond equilibrium</dc:title>
+            <dc:creator>Ludovic Berthier</dc:creator><dc:creator>M. D. Ediger</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-026-02552-3</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2026-03-26; | doi:10.1038/s41563-026-02552-3</dc:source>
+            <dc:date>2026-03-26</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-026-02552-3</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-026-02552-3</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-026-02550-5">
+            <title>From a same origin to diverse and recyclable materials</title>
+            <link>https://www.nature.com/articles/s41563-026-02550-5</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 26 March 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02550-5"&gt;doi:10.1038/s41563-026-02550-5&lt;/a&gt;&lt;/p&gt;A single monomer can be leveraged to generate polymeric materials with diverse structures or tunable properties and chemical recyclability.</content:encoded>
+            <dc:title>From a same origin to diverse and recyclable materials</dc:title>
+            <dc:creator>Wei-Feng Zheng</dc:creator><dc:creator>Eugene Y.-X. Chen</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-026-02550-5</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2026-03-26; | doi:10.1038/s41563-026-02550-5</dc:source>
+            <dc:date>2026-03-26</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-026-02550-5</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-026-02550-5</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-026-02557-y">
             <title>Entanglement made measurable</title>
@@ -112,21 +144,6 @@
             <prism:publicationName>Nature Materials</prism:publicationName>
             <prism:doi>10.1038/s41563-026-02559-w</prism:doi>
             <prism:url>https://www.nature.com/articles/s41563-026-02559-w</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-026-02539-0">
-            <title>Optically detected nuclear magnetic resonance of coherent spins in a molecular complex</title>
-            <link>https://www.nature.com/articles/s41563-026-02539-0</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 19 March 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02539-0"&gt;doi:10.1038/s41563-026-02539-0&lt;/a&gt;&lt;/p&gt;Optical initialization and read-out of nuclear spins with a spin coherence time of 2 ms in a Eu3+ molecular crystal is demonstrated with radio-frequency control, providing coherent nuclear spin manipulation for quantum information technologies.</content:encoded>
-            <dc:title>Optically detected nuclear magnetic resonance of coherent spins in a molecular complex</dc:title>
-            <dc:creator>Evgenij Vasilenko</dc:creator><dc:creator>Vishnu Unni Chorakkunnath</dc:creator><dc:creator>Jeremias Resch</dc:creator><dc:creator>Nicholas Jobbitt</dc:creator><dc:creator>Diana Serrano</dc:creator><dc:creator>Philippe Goldner</dc:creator><dc:creator>Senthil Kumar Kuppusamy</dc:creator><dc:creator>Mario Ruben</dc:creator><dc:creator>David Hunger</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-026-02539-0</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2026-03-19; | doi:10.1038/s41563-026-02539-0</dc:source>
-            <dc:date>2026-03-19</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-026-02539-0</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-026-02539-0</prism:url>
         </item>
     
 </rdf:RDF>
