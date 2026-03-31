@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03227-1"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03189-4"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03223-5"/>
@@ -32,8 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03234-2"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03194-7"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-026-03227-1">
+            <title>A tunable topological photonic interferometer</title>
+            <link>https://www.nature.com/articles/s41567-026-03227-1</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 30 March 2026; &lt;a href="https://www.nature.com/articles/s41567-026-03227-1"&gt;doi:10.1038/s41567-026-03227-1&lt;/a&gt;&lt;/p&gt;Robust interference between photonic topological edge states, without compromising unidirectional transmission, is achieved. Optical gain enables fast, reconfigurable control of mode coupling, thus realizing a tunable on-chip topological interferometer.</content:encoded>
+            <dc:title>A tunable topological photonic interferometer</dc:title>
+            <dc:creator>Yandong Li</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-026-03227-1</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-03-30; | doi:10.1038/s41567-026-03227-1</dc:source>
+            <dc:date>2026-03-30</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-026-03227-1</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-026-03227-1</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-026-03189-4">
             <title>The hydrodynamic torque dipole from rotary bacterial flagella powers symmetric discs</title>
@@ -146,21 +161,6 @@
             <prism:publicationName>Nature Physics</prism:publicationName>
             <prism:doi>10.1038/s41567-026-03234-2</prism:doi>
             <prism:url>https://www.nature.com/articles/s41567-026-03234-2</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-026-03194-7">
-            <title>Relevant recoil</title>
-            <link>https://www.nature.com/articles/s41567-026-03194-7</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 16 March 2026; &lt;a href="https://www.nature.com/articles/s41567-026-03194-7"&gt;doi:10.1038/s41567-026-03194-7&lt;/a&gt;&lt;/p&gt;Relevant recoil</content:encoded>
-            <dc:title>Relevant recoil</dc:title>
-            <dc:creator>Stefanie Reichert</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-026-03194-7</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2026-03-16; | doi:10.1038/s41567-026-03194-7</dc:source>
-            <dc:date>2026-03-16</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-026-03194-7</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-026-03194-7</prism:url>
         </item>
     
 </rdf:RDF>
