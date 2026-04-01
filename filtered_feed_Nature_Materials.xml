@@ -18,6 +18,10 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02566-x"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02562-1"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02560-3"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02544-3"/>
@@ -26,13 +30,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02558-x"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02563-0"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02554-1"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02529-2"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nmat/rss.gif">
@@ -40,6 +38,36 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-026-02566-x">
+            <title>Magnetic drag from frustrated order</title>
+            <link>https://www.nature.com/articles/s41563-026-02566-x</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 01 April 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02566-x"&gt;doi:10.1038/s41563-026-02566-x&lt;/a&gt;&lt;/p&gt;Friction typically scales with load but magnetic systems can defy this rule. Sliding arrays of magnetic rotors reveal that energy dissipation peaks where competing magnetic orders dynamically clash. This non-monotonic magnetic drag arises from sliding-induced hysteresis, offering a blueprint for tunable, contactless braking at any scale.</content:encoded>
+            <dc:title>Magnetic drag from frustrated order</dc:title>
+            <dc:creator>Antoine Niguès</dc:creator><dc:creator>Alessandro Siria</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-026-02566-x</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2026-04-01; | doi:10.1038/s41563-026-02566-x</dc:source>
+            <dc:date>2026-04-01</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-026-02566-x</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-026-02566-x</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-026-02562-1">
+            <title>Synthesis of 4H-phase high-entropy alloys for electrocatalysis</title>
+            <link>https://www.nature.com/articles/s41563-026-02562-1</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 01 April 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02562-1"&gt;doi:10.1038/s41563-026-02562-1&lt;/a&gt;&lt;/p&gt;Au nanowires with an unconventional hexagonal close-packed (4H) phase stabilize the 4H-phase high-entropy alloys grown epitaxially on their surface through a facile chemical synthesis. The resulting core–shell nanostructures demonstrate promising overall water electrolysis performance.</content:encoded>
+            <dc:title>Synthesis of 4H-phase high-entropy alloys for electrocatalysis</dc:title>
+            <dc:creator>Zijian Li</dc:creator><dc:creator>An Zhang</dc:creator><dc:creator>Changsheng Chen</dc:creator><dc:creator>Hua Yang</dc:creator><dc:creator>Mingzi Sun</dc:creator><dc:creator>Qinghua Zhang</dc:creator><dc:creator>Shibo Xi</dc:creator><dc:creator>Li Zhai</dc:creator><dc:creator>Xinyue Long</dc:creator><dc:creator>Lujiang Li</dc:creator><dc:creator>Wei Zhai</dc:creator><dc:creator>Zhenyu Shi</dc:creator><dc:creator>Zhiying Wu</dc:creator><dc:creator>Yiyao Ge</dc:creator><dc:creator>Yuhui Tian</dc:creator><dc:creator>Shuai Bi</dc:creator><dc:creator>Jie Wang</dc:creator><dc:creator>Kuan Liang</dc:creator><dc:creator>Shiqi Li</dc:creator><dc:creator>Zhen-Yu Wu</dc:creator><dc:creator>Cailing Chen</dc:creator><dc:creator>Zhiqi Huang</dc:creator><dc:creator>Bo Chen</dc:creator><dc:creator>Lixin Wang</dc:creator><dc:creator>Yu Han</dc:creator><dc:creator>Lin Gu</dc:creator><dc:creator>Panzhe Qiao</dc:creator><dc:creator>Bolong Huang</dc:creator><dc:creator>Ye Zhu</dc:creator><dc:creator>Hua Zhang</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-026-02562-1</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2026-04-01; | doi:10.1038/s41563-026-02562-1</dc:source>
+            <dc:date>2026-04-01</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-026-02562-1</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-026-02562-1</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-026-02560-3">
             <title>Connecting the dots for cooperative emission</title>
@@ -101,49 +129,4 @@
             <prism:url>https://www.nature.com/articles/s41563-026-02558-x</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41563-026-02563-0">
-            <title>Anodic protection enables moisture-stable Mg&lt;sub&gt;3&lt;/sub&gt;(Sb, Bi)&lt;sub&gt;2&lt;/sub&gt; for thermoelectric cooling</title>
-            <link>https://www.nature.com/articles/s41563-026-02563-0</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 27 March 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02563-0"&gt;doi:10.1038/s41563-026-02563-0&lt;/a&gt;&lt;/p&gt;Mg3(Sb, Bi)2 is a potential next-generation thermoelectric with cost-effectiveness compared with Bi2Te3; however, it suffers from poor moisture corrosion resistance. Here, an anodic protection strategy is presented that substantially reduces corrosion, enabling the 28-day performance of a module in high-temperature and high-humidity environment.</content:encoded>
-            <dc:title>Anodic protection enables moisture-stable Mg&lt;sub&gt;3&lt;/sub&gt;(Sb, Bi)&lt;sub&gt;2&lt;/sub&gt; for thermoelectric cooling</dc:title>
-            <dc:creator>Zhiyuan Yu</dc:creator><dc:creator>Yuxin Sun</dc:creator><dc:creator>Haijun Wu</dc:creator><dc:creator>Fengkai Guo</dc:creator><dc:creator>Jin Hu</dc:creator><dc:creator>Ming Liu</dc:creator><dc:creator>Xianghong Zhou</dc:creator><dc:creator>Hao Wu</dc:creator><dc:creator>Jinsuo Hu</dc:creator><dc:creator>Lankun Wang</dc:creator><dc:creator>Yuke Zhu</dc:creator><dc:creator>Haoyang Tong</dc:creator><dc:creator>Jianbo Zhu</dc:creator><dc:creator>Zihang Liu</dc:creator><dc:creator>Wei Cai</dc:creator><dc:creator>Weishu Liu</dc:creator><dc:creator>Jiehe Sui</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-026-02563-0</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2026-03-27; | doi:10.1038/s41563-026-02563-0</dc:source>
-            <dc:date>2026-03-27</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-026-02563-0</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-026-02563-0</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-026-02554-1">
-            <title>Materials with 5&lt;i&gt;d&lt;/i&gt; electrons for future technologies</title>
-            <link>https://www.nature.com/articles/s41563-026-02554-1</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 27 March 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02554-1"&gt;doi:10.1038/s41563-026-02554-1&lt;/a&gt;&lt;/p&gt;Materials with 5d electrons are receiving increasing attention due to their unique properties and functions. To understand property–function relations, this Perspective analyses six key factors in the electronic structure of 5d electron materials in a range of application areas.</content:encoded>
-            <dc:title>Materials with 5&lt;i&gt;d&lt;/i&gt; electrons for future technologies</dc:title>
-            <dc:creator>Lin Gu</dc:creator><dc:creator>Ce-Wen Nan</dc:creator><dc:creator>Yeqiang Tan</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-026-02554-1</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2026-03-27; | doi:10.1038/s41563-026-02554-1</dc:source>
-            <dc:date>2026-03-27</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-026-02554-1</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-026-02554-1</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-026-02529-2">
-            <title>Narrowband helical emitter with frontier orbital confinement for stable deep-blue hybrid-tandem organic light-emitting diodes</title>
-            <link>https://www.nature.com/articles/s41563-026-02529-2</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 27 March 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02529-2"&gt;doi:10.1038/s41563-026-02529-2&lt;/a&gt;&lt;/p&gt;Narrowband deep-blue organic light-emitting diodes combining high colour purity, efficiency and stability are realized by using multiresonance thermally activated delayed fluorescence emitters with a highly twisted helical structure.</content:encoded>
-            <dc:title>Narrowband helical emitter with frontier orbital confinement for stable deep-blue hybrid-tandem organic light-emitting diodes</dc:title>
-            <dc:creator>Chuanqin Cheng</dc:creator><dc:creator>Minqiang Mai</dc:creator><dc:creator>Chenglong Li</dc:creator><dc:creator>Dongdong Zhang</dc:creator><dc:creator>Lian Duan</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-026-02529-2</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2026-03-27; | doi:10.1038/s41563-026-02529-2</dc:source>
-            <dc:date>2026-03-27</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-026-02529-2</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-026-02529-2</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
