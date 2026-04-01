@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03264-w"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03199-2"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03221-7"/>
@@ -30,8 +32,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03223-5"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03207-5"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -40,6 +40,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-026-03264-w">
+            <title>Publisher Correction: Driving Floquet physics with excitonic fields</title>
+            <link>https://www.nature.com/articles/s41567-026-03264-w</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 31 March 2026; &lt;a href="https://www.nature.com/articles/s41567-026-03264-w"&gt;doi:10.1038/s41567-026-03264-w&lt;/a&gt;&lt;/p&gt;Publisher Correction: Driving Floquet physics with excitonic fields</content:encoded>
+            <dc:title>Publisher Correction: Driving Floquet physics with excitonic fields</dc:title>
+            <dc:creator>Vivek Pareek</dc:creator><dc:creator>David R. Bacon</dc:creator><dc:creator>Xing Zhu</dc:creator><dc:creator>Yang-Hao Chan</dc:creator><dc:creator>Fabio Bussolotti</dc:creator><dc:creator>Marcos G. Menezes</dc:creator><dc:creator>Nicholas S. Chan</dc:creator><dc:creator>Joel Pérez Urquizo</dc:creator><dc:creator>Kenji Watanabe</dc:creator><dc:creator>Takashi Taniguchi</dc:creator><dc:creator>Enrico Perfetto</dc:creator><dc:creator>Michael K. L. Man</dc:creator><dc:creator>Julien Madéo</dc:creator><dc:creator>Gianluca Stefanucci</dc:creator><dc:creator>Diana Y. Qiu</dc:creator><dc:creator>Kuan Eng Johnson Goh</dc:creator><dc:creator>Felipe H. da Jornada</dc:creator><dc:creator>Keshav M. Dani</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-026-03264-w</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-03-31; | doi:10.1038/s41567-026-03264-w</dc:source>
+            <dc:date>2026-03-31</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-026-03264-w</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-026-03264-w</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-026-03199-2">
             <title>Topology uncovered in real space</title>
@@ -129,21 +144,6 @@
             <prism:publicationName>Nature Physics</prism:publicationName>
             <prism:doi>10.1038/s41567-026-03223-5</prism:doi>
             <prism:url>https://www.nature.com/articles/s41567-026-03223-5</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-026-03207-5">
-            <title>MagnetoARPES reveals time-reversal symmetry breaking in a kagome superconductor</title>
-            <link>https://www.nature.com/articles/s41567-026-03207-5</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 23 March 2026; &lt;a href="https://www.nature.com/articles/s41567-026-03207-5"&gt;doi:10.1038/s41567-026-03207-5&lt;/a&gt;&lt;/p&gt;The electronic structure of a kagome metal has been investigated using magnetoARPES — the newly developed capability to perform angle-resolved photoemission spectroscopy in the presence of a tunable magnetic field. The momentum-resolved spectral response to a magnetic field was seen to develop in the charge density wave order, revealing electronic evidence of time-reversal symmetry breaking.</content:encoded>
-            <dc:title>MagnetoARPES reveals time-reversal symmetry breaking in a kagome superconductor</dc:title>
-            
-            <dc:identifier>doi:10.1038/s41567-026-03207-5</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2026-03-23; | doi:10.1038/s41567-026-03207-5</dc:source>
-            <dc:date>2026-03-23</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-026-03207-5</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-026-03207-5</prism:url>
         </item>
     
 </rdf:RDF>
