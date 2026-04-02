@@ -30,7 +30,9 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02558-x"/>
                 
-                    </rdf:Seq>
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02563-0"/>
+                
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nmat/rss.gif">
@@ -129,4 +131,19 @@
             <prism:url>https://www.nature.com/articles/s41563-026-02558-x</prism:url>
         </item>
     
-        </rdf:RDF>
+        <item rdf:about="https://www.nature.com/articles/s41563-026-02563-0">
+            <title>Anodic protection enables moisture-stable Mg&lt;sub&gt;3&lt;/sub&gt;(Sb, Bi)&lt;sub&gt;2&lt;/sub&gt; for thermoelectric cooling</title>
+            <link>https://www.nature.com/articles/s41563-026-02563-0</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 27 March 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02563-0"&gt;doi:10.1038/s41563-026-02563-0&lt;/a&gt;&lt;/p&gt;Mg3(Sb, Bi)2 is a potential next-generation thermoelectric with cost-effectiveness compared with Bi2Te3; however, it suffers from poor moisture corrosion resistance. Here, an anodic protection strategy is presented that substantially reduces corrosion, enabling the 28-day performance of a module in high-temperature and high-humidity environment.</content:encoded>
+            <dc:title>Anodic protection enables moisture-stable Mg&lt;sub&gt;3&lt;/sub&gt;(Sb, Bi)&lt;sub&gt;2&lt;/sub&gt; for thermoelectric cooling</dc:title>
+            <dc:creator>Zhiyuan Yu</dc:creator><dc:creator>Yuxin Sun</dc:creator><dc:creator>Haijun Wu</dc:creator><dc:creator>Fengkai Guo</dc:creator><dc:creator>Jin Hu</dc:creator><dc:creator>Ming Liu</dc:creator><dc:creator>Xianghong Zhou</dc:creator><dc:creator>Hao Wu</dc:creator><dc:creator>Jinsuo Hu</dc:creator><dc:creator>Lankun Wang</dc:creator><dc:creator>Yuke Zhu</dc:creator><dc:creator>Haoyang Tong</dc:creator><dc:creator>Jianbo Zhu</dc:creator><dc:creator>Zihang Liu</dc:creator><dc:creator>Wei Cai</dc:creator><dc:creator>Weishu Liu</dc:creator><dc:creator>Jiehe Sui</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-026-02563-0</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2026-03-27; | doi:10.1038/s41563-026-02563-0</dc:source>
+            <dc:date>2026-03-27</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-026-02563-0</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-026-02563-0</prism:url>
+        </item>
+    
+</rdf:RDF>
