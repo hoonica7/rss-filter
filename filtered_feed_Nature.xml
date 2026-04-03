@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/d41586-026-01050-5"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41586-026-10446-2"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/d41586-026-01001-0"/>
@@ -44,6 +46,21 @@
         <url>https://www.nature.com/uploads/product/nature/rss.png</url>
         <link>http://feeds.nature.com/nature/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/d41586-026-01050-5">
+            <title>Breakthrough computer chip tech could help meet ‘monumental demand’ driven by AI</title>
+            <link>https://www.nature.com/articles/d41586-026-01050-5</link>
+            <content:encoded>
+                &lt;p&gt;Nature, Published online: 02 April 2026; &lt;a href="https://www.nature.com/articles/d41586-026-01050-5"&gt;doi:10.1038/d41586-026-01050-5&lt;/a&gt;&lt;/p&gt;Innovative tool for producing computer chips uses giant, nearly perfect mirrors to make tiny transistors and circuits.</content:encoded>
+            <dc:title>Breakthrough computer chip tech could help meet ‘monumental demand’ driven by AI</dc:title>
+            <dc:creator>Katherine Bourzac</dc:creator>
+            <dc:identifier>doi:10.1038/d41586-026-01050-5</dc:identifier>
+            <dc:source>Nature, Published online: 2026-04-02; | doi:10.1038/d41586-026-01050-5</dc:source>
+            <dc:date>2026-04-02</dc:date>
+            <prism:publicationName>Nature</prism:publicationName>
+            <prism:doi>10.1038/d41586-026-01050-5</prism:doi>
+            <prism:url>https://www.nature.com/articles/d41586-026-01050-5</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41586-026-10446-2">
             <title>Structural modifications in strain-engineered bilayer nickelate thin films</title>
