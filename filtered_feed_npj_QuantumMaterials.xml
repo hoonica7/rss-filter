@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00877-5"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00874-8"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00876-6"/>
@@ -28,7 +30,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00869-5"/>
                 
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/npjquantmats/rss.png">
@@ -36,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-026-00877-5">
+            <title>Surveying optically addressable spin qubits for quantum information and sensing technology</title>
+            <link>https://www.nature.com/articles/s41535-026-00877-5</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 05 April 2026; &lt;a href="https://www.nature.com/articles/s41535-026-00877-5"&gt;doi:10.1038/s41535-026-00877-5&lt;/a&gt;&lt;/p&gt;Surveying optically addressable spin qubits for quantum information and sensing technology</content:encoded>
+            <dc:title>Surveying optically addressable spin qubits for quantum information and sensing technology</dc:title>
+            <dc:creator>Calysta A. Tesiman</dc:creator><dc:creator>Mark Oxborrow</dc:creator><dc:creator>Max Attwood</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-026-00877-5</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2026-04-05; | doi:10.1038/s41535-026-00877-5</dc:source>
+            <dc:date>2026-04-05</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-026-00877-5</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-026-00877-5</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-026-00874-8">
             <title>Topological altermagnetic Josephson junctions</title>
@@ -112,4 +129,4 @@
             <prism:url>https://www.nature.com/articles/s41535-026-00869-5</prism:url>
         </item>
     
-        </rdf:RDF>
+</rdf:RDF>
