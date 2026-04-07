@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03228-0"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03244-0"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03208-4"/>
@@ -26,9 +28,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03215-5"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03232-4"/>
-                
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nphys/rss.gif">
@@ -36,6 +36,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-026-03228-0">
+            <title>Length-scale dependence of the anomalous atomic motion in metallic glasses</title>
+            <link>https://www.nature.com/articles/s41567-026-03228-0</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 06 April 2026; &lt;a href="https://www.nature.com/articles/s41567-026-03228-0"&gt;doi:10.1038/s41567-026-03228-0&lt;/a&gt;&lt;/p&gt;Synchrotron experiments show that the anomalous hyper-diffusive atomic motion in metallic glasses corresponds to a regime of medium-length-scale order, resulting from internal stresses developed throughout the glass transition.</content:encoded>
+            <dc:title>Length-scale dependence of the anomalous atomic motion in metallic glasses</dc:title>
+            <dc:creator>Jie Shen</dc:creator><dc:creator>Fan Yang</dc:creator><dc:creator>Antoine Cornet</dc:creator><dc:creator>Eloi Pineda</dc:creator><dc:creator>Kirsten Martens</dc:creator><dc:creator>Yuriy Chushkin</dc:creator><dc:creator>Federico Zontone</dc:creator><dc:creator>Irene Festi</dc:creator><dc:creator>Alberto Ronca</dc:creator><dc:creator>Nico Neuber</dc:creator><dc:creator>Maximilian Frey</dc:creator><dc:creator>Ralf Busch</dc:creator><dc:creator>Marco Cammarata</dc:creator><dc:creator>Marco di Michiel</dc:creator><dc:creator>Gavin Vaughan</dc:creator><dc:creator>Michael Sprung</dc:creator><dc:creator>Beatrice Ruta</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-026-03228-0</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-04-06; | doi:10.1038/s41567-026-03228-0</dc:source>
+            <dc:date>2026-04-06</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-026-03228-0</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-026-03228-0</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-026-03244-0">
             <title>A crystal of neutral excitons</title>
@@ -97,19 +112,4 @@
             <prism:url>https://www.nature.com/articles/s41567-026-03215-5</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41567-026-03232-4">
-            <title>Frieze charge stripes in a correlated kagome superconductor</title>
-            <link>https://www.nature.com/articles/s41567-026-03232-4</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 02 April 2026; &lt;a href="https://www.nature.com/articles/s41567-026-03232-4"&gt;doi:10.1038/s41567-026-03232-4&lt;/a&gt;&lt;/p&gt;In a kagome superconductor, sublattice degrees of freedom are shown to govern a distinct density wave phase featuring chiral textures and symmetry properties that align with one of the fundamental frieze symmetry groups.</content:encoded>
-            <dc:title>Frieze charge stripes in a correlated kagome superconductor</dc:title>
-            <dc:creator>Siyu Cheng</dc:creator><dc:creator>Keyu Zeng</dc:creator><dc:creator>Yi Liu</dc:creator><dc:creator>Christopher Candelora</dc:creator><dc:creator>Ziqiang Wang</dc:creator><dc:creator>Guang-Han Cao</dc:creator><dc:creator>Ilija Zeljkovic</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-026-03232-4</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2026-04-02; | doi:10.1038/s41567-026-03232-4</dc:source>
-            <dc:date>2026-04-02</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-026-03232-4</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-026-03232-4</prism:url>
-        </item>
-    
-        </rdf:RDF>
+</rdf:RDF>
