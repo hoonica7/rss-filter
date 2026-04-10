@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03252-0"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03238-y"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03243-1"/>
@@ -32,8 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03208-4"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03247-x"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-026-03252-0">
+            <title>Wetting beyond equilibrium</title>
+            <link>https://www.nature.com/articles/s41567-026-03252-0</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 10 April 2026; &lt;a href="https://www.nature.com/articles/s41567-026-03252-0"&gt;doi:10.1038/s41567-026-03252-0&lt;/a&gt;&lt;/p&gt;Wetting is well understood for equilibrium conditions. Simulations probing wetting by active matter now demonstrate the emergence of stabilizing particle currents and provide the basis for a formalism describing wetting for non-equilibrium systems.</content:encoded>
+            <dc:title>Wetting beyond equilibrium</dc:title>
+            <dc:creator>Takumi Matsuzawa</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-026-03252-0</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-04-10; | doi:10.1038/s41567-026-03252-0</dc:source>
+            <dc:date>2026-04-10</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-026-03252-0</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-026-03252-0</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-026-03238-y">
             <title>Self-organized elastic membranes with life-like oscillatory dynamics</title>
@@ -146,21 +161,6 @@
             <prism:publicationName>Nature Physics</prism:publicationName>
             <prism:doi>10.1038/s41567-026-03208-4</prism:doi>
             <prism:url>https://www.nature.com/articles/s41567-026-03208-4</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-026-03247-x">
-            <title>Evidence for odd-parity superconductivity underpinned by antiferromagnetism in heavy-fermion metal YbRh&lt;sub&gt;2&lt;/sub&gt;Si&lt;sub&gt;2&lt;/sub&gt;</title>
-            <link>https://www.nature.com/articles/s41567-026-03247-x</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 03 April 2026; &lt;a href="https://www.nature.com/articles/s41567-026-03247-x"&gt;doi:10.1038/s41567-026-03247-x&lt;/a&gt;&lt;/p&gt;Odd-parity spin-triplet superconductivity remains difficult to establish experimentally. Now, several distinct magnetic-field-tuned superconducting states—including a possible topological helical phase—have been identified in YbRh2Si2.</content:encoded>
-            <dc:title>Evidence for odd-parity superconductivity underpinned by antiferromagnetism in heavy-fermion metal YbRh&lt;sub&gt;2&lt;/sub&gt;Si&lt;sub&gt;2&lt;/sub&gt;</dc:title>
-            <dc:creator>Lev V. Levitin</dc:creator><dc:creator>Jan Knapp</dc:creator><dc:creator>Petra Knappová</dc:creator><dc:creator>Marijn Lucas</dc:creator><dc:creator>Ján Nyéki</dc:creator><dc:creator>Petri Heikkinen</dc:creator><dc:creator>Vladimir Antonov</dc:creator><dc:creator>Andrew Casey</dc:creator><dc:creator>Andrew F. Ho</dc:creator><dc:creator>Piers Coleman</dc:creator><dc:creator>Christoph Geibel</dc:creator><dc:creator>Alexander Steppke</dc:creator><dc:creator>Kristin Kliemt</dc:creator><dc:creator>Cornelius Krellner</dc:creator><dc:creator>Manuel Brando</dc:creator><dc:creator>John Saunders</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-026-03247-x</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2026-04-03; | doi:10.1038/s41567-026-03247-x</dc:source>
-            <dc:date>2026-04-03</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-026-03247-x</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-026-03247-x</prism:url>
         </item>
     
 </rdf:RDF>
