@@ -21,11 +21,13 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-71892-0"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-71898-8"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-71687-3"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-69692-7"/>
-                
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/ncomms/rss.png">
@@ -33,6 +35,36 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-026-71892-0">
+            <title>Electronic band and core-shell structure engineering enables ultrahigh energy storage in high-entropy ceramics</title>
+            <link>https://www.nature.com/articles/s41467-026-71892-0</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 12 April 2026; &lt;a href="https://www.nature.com/articles/s41467-026-71892-0"&gt;doi:10.1038/s41467-026-71892-0&lt;/a&gt;&lt;/p&gt;A high-entropy strategy combines flattened electronic bands, core–shell microstructures, and polymorphic polar phases to overcome the trade-off between polarization and breakdown electric field, achieving high energy storage performance in lead-free dielectric ceramics.</content:encoded>
+            <dc:title>Electronic band and core-shell structure engineering enables ultrahigh energy storage in high-entropy ceramics</dc:title>
+            <dc:creator>Yunting Li</dc:creator><dc:creator>Peng Li</dc:creator><dc:creator>Haihua Huang</dc:creator><dc:creator>Hairui Bai</dc:creator><dc:creator>Fei Xu</dc:creator><dc:creator>Jigong Hao</dc:creator><dc:creator>Peng Fu</dc:creator><dc:creator>Juan Du</dc:creator><dc:creator>Zhongbin Pan</dc:creator><dc:creator>Wangfeng Bai</dc:creator><dc:creator>Wei Li</dc:creator><dc:creator>Jiwei Zhai</dc:creator><dc:creator>Zhenxiang Cheng</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-026-71892-0</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-04-12; | doi:10.1038/s41467-026-71892-0</dc:source>
+            <dc:date>2026-04-12</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-026-71892-0</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-026-71892-0</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-026-71898-8">
+            <title>All-solid passive organic optical limiter via coordination-bond anchoring strategy</title>
+            <link>https://www.nature.com/articles/s41467-026-71898-8</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 12 April 2026; &lt;a href="https://www.nature.com/articles/s41467-026-71898-8"&gt;doi:10.1038/s41467-026-71898-8&lt;/a&gt;&lt;/p&gt;Solid-state organic optical limiters for laser protection suffer from aggregation quenching. Here, the authors use coordination-bond anchoring strategy to overcome this and achieve an enhancement of nonlinear absorption coefficient.</content:encoded>
+            <dc:title>All-solid passive organic optical limiter via coordination-bond anchoring strategy</dc:title>
+            <dc:creator>Dan Chen</dc:creator><dc:creator>Yuang Chen</dc:creator><dc:creator>Yunming Wang</dc:creator><dc:creator>Qingwei Zhou</dc:creator><dc:creator>Fang Luo</dc:creator><dc:creator>Jinbao Jiang</dc:creator><dc:creator>Chunrui Wang</dc:creator><dc:creator>Fan Wu</dc:creator><dc:creator>Chucai Guo</dc:creator><dc:creator>Zhihong Zhu</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-026-71898-8</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-04-12; | doi:10.1038/s41467-026-71898-8</dc:source>
+            <dc:date>2026-04-12</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-026-71898-8</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-026-71898-8</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41467-026-71687-3">
             <title>Spin-polarized edge modes between different magnet-superconductor-hybrids</title>
@@ -49,19 +81,4 @@
             <prism:url>https://www.nature.com/articles/s41467-026-71687-3</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41467-026-69692-7">
-            <title>Mach-Zehnder atom interferometry with non-interacting trapped Bose-Einstein condensates</title>
-            <link>https://www.nature.com/articles/s41467-026-69692-7</link>
-            <content:encoded>
-                &lt;p&gt;Nature Communications, Published online: 11 April 2026; &lt;a href="https://www.nature.com/articles/s41467-026-69692-7"&gt;doi:10.1038/s41467-026-69692-7&lt;/a&gt;&lt;/p&gt;Current implementations of trapped atom interferometers are limited by the detrimental role of atomic interactions and trapping potential imperfections. To address these challenges, the authors develop a Mach-Zender atom interferometer by means of a double-well potential array, enabling trapped-atom-based gradiometry.</content:encoded>
-            <dc:title>Mach-Zehnder atom interferometry with non-interacting trapped Bose-Einstein condensates</dc:title>
-            <dc:creator>T. Petrucciani</dc:creator><dc:creator>A. Santoni</dc:creator><dc:creator>C. Mazzinghi</dc:creator><dc:creator>D. Trypogeorgos</dc:creator><dc:creator>F. S. Cataliotti</dc:creator><dc:creator>M. Inguscio</dc:creator><dc:creator>G. Modugno</dc:creator><dc:creator>A. Smerzi</dc:creator><dc:creator>L. Pezzè</dc:creator><dc:creator>M. Fattori</dc:creator>
-            <dc:identifier>doi:10.1038/s41467-026-69692-7</dc:identifier>
-            <dc:source>Nature Communications, Published online: 2026-04-11; | doi:10.1038/s41467-026-69692-7</dc:source>
-            <dc:date>2026-04-11</dc:date>
-            <prism:publicationName>Nature Communications</prism:publicationName>
-            <prism:doi>10.1038/s41467-026-69692-7</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41467-026-69692-7</prism:url>
-        </item>
-    
-        </rdf:RDF>
+</rdf:RDF>
