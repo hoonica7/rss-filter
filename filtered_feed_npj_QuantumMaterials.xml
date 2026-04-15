@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00881-9"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00880-w"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00856-w"/>
@@ -32,8 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00871-x"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00855-x"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-026-00881-9">
+            <title>Spin-supersolidity induced quantum criticality and magnetocaloric effect in the triangular-lattice antiferromagnet Rb&lt;sub&gt;2&lt;/sub&gt;Co(SeO&lt;sub&gt;3&lt;/sub&gt;)&lt;sub&gt;2&lt;/sub&gt;</title>
+            <link>https://www.nature.com/articles/s41535-026-00881-9</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 15 April 2026; &lt;a href="https://www.nature.com/articles/s41535-026-00881-9"&gt;doi:10.1038/s41535-026-00881-9&lt;/a&gt;&lt;/p&gt;Spin-supersolidity induced quantum criticality and magnetocaloric effect in the triangular-lattice antiferromagnet Rb&lt;sub&gt;2&lt;/sub&gt;Co(SeO&lt;sub&gt;3&lt;/sub&gt;)&lt;sub&gt;2&lt;/sub&gt;</content:encoded>
+            <dc:title>Spin-supersolidity induced quantum criticality and magnetocaloric effect in the triangular-lattice antiferromagnet Rb&lt;sub&gt;2&lt;/sub&gt;Co(SeO&lt;sub&gt;3&lt;/sub&gt;)&lt;sub&gt;2&lt;/sub&gt;</dc:title>
+            <dc:creator>Yi Cui</dc:creator><dc:creator>Zhanlong Wu</dc:creator><dc:creator>Zhongcen Sun</dc:creator><dc:creator>Kefan Du</dc:creator><dc:creator>Jun Luo</dc:creator><dc:creator>Shuo Li</dc:creator><dc:creator>Jie Yang</dc:creator><dc:creator>Jinchen Wang</dc:creator><dc:creator>Rui Zhou</dc:creator><dc:creator>Qian Chen</dc:creator><dc:creator>Yoshimitsu Kohama</dc:creator><dc:creator>Atsuhiko Miyata</dc:creator><dc:creator>Zhuo Yang</dc:creator><dc:creator>Rong Yu</dc:creator><dc:creator>Weiqiang Yu</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-026-00881-9</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2026-04-15; | doi:10.1038/s41535-026-00881-9</dc:source>
+            <dc:date>2026-04-15</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-026-00881-9</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-026-00881-9</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-026-00880-w">
             <title>Inverse Lieb materials: altermagnetism and more</title>
@@ -146,21 +161,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-026-00871-x</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-026-00871-x</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-026-00855-x">
-            <title>Spin order and spin excitation spectra of spin-1/2 tetramer chains</title>
-            <link>https://www.nature.com/articles/s41535-026-00855-x</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 18 March 2026; &lt;a href="https://www.nature.com/articles/s41535-026-00855-x"&gt;doi:10.1038/s41535-026-00855-x&lt;/a&gt;&lt;/p&gt;Spin order and spin excitation spectra of spin-1/2 tetramer chains</content:encoded>
-            <dc:title>Spin order and spin excitation spectra of spin-1/2 tetramer chains</dc:title>
-            <dc:creator>Junli Li</dc:creator><dc:creator>Jun-Qing Cheng</dc:creator><dc:creator>Trinanjan Datta</dc:creator><dc:creator>Dao-Xin Yao</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-026-00855-x</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2026-03-18; | doi:10.1038/s41535-026-00855-x</dc:source>
-            <dc:date>2026-03-18</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-026-00855-x</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-026-00855-x</prism:url>
         </item>
     
 </rdf:RDF>

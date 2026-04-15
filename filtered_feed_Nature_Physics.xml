@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03246-y"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03255-x"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03225-3"/>
@@ -28,8 +30,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03238-y"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03243-1"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -38,6 +38,21 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-026-03246-y">
+            <title>Efficient thermalization and universal quantum computing with quantum Gibbs samplers</title>
+            <link>https://www.nature.com/articles/s41567-026-03246-y</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 15 April 2026; &lt;a href="https://www.nature.com/articles/s41567-026-03246-y"&gt;doi:10.1038/s41567-026-03246-y&lt;/a&gt;&lt;/p&gt;Quantum simulation of equilibrium many-body systems requires the ability to sample from the thermal distribution of quantum states. An algorithm has now been proven to be an appropriate quantum analogue to classical Monte Carlo methods.</content:encoded>
+            <dc:title>Efficient thermalization and universal quantum computing with quantum Gibbs samplers</dc:title>
+            <dc:creator>Cambyse Rouzé</dc:creator><dc:creator>Daniel Stilck França</dc:creator><dc:creator>Álvaro M. Alhambra</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-026-03246-y</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-04-15; | doi:10.1038/s41567-026-03246-y</dc:source>
+            <dc:date>2026-04-15</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-026-03246-y</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-026-03246-y</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-026-03255-x">
             <title>Capillary Leidenfrost effect</title>
@@ -112,21 +127,6 @@
             <prism:publicationName>Nature Physics</prism:publicationName>
             <prism:doi>10.1038/s41567-026-03238-y</prism:doi>
             <prism:url>https://www.nature.com/articles/s41567-026-03238-y</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-026-03243-1">
-            <title>Double-edged role of interactions in superconducting twisted bilayer graphene</title>
-            <link>https://www.nature.com/articles/s41567-026-03243-1</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 07 April 2026; &lt;a href="https://www.nature.com/articles/s41567-026-03243-1"&gt;doi:10.1038/s41567-026-03243-1&lt;/a&gt;&lt;/p&gt;It is unclear whether the superconducting pairing in moiré graphene is driven primarily by electronic interactions. Now, by tuning the electrostatic environment, the authors show that these interactions may play a crucial role in both mediating the pairing and screening it.</content:encoded>
-            <dc:title>Double-edged role of interactions in superconducting twisted bilayer graphene</dc:title>
-            <dc:creator>Xueshi Gao</dc:creator><dc:creator>Alejandro Jimeno-Pozo</dc:creator><dc:creator>Pierre A. Pantaleon</dc:creator><dc:creator>Aatmaj Rajesh</dc:creator><dc:creator>Emilio Codecido</dc:creator><dc:creator>Daria L. Sharifi</dc:creator><dc:creator>Zheneng Zhang</dc:creator><dc:creator>Youwei Liu</dc:creator><dc:creator>Kenji Watanabe</dc:creator><dc:creator>Takashi Taniguchi</dc:creator><dc:creator>Marc W. Bockrath</dc:creator><dc:creator>Francisco Guinea</dc:creator><dc:creator>Chun Ning Lau</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-026-03243-1</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2026-04-07; | doi:10.1038/s41567-026-03243-1</dc:source>
-            <dc:date>2026-04-07</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-026-03243-1</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-026-03243-1</prism:url>
         </item>
     
 </rdf:RDF>
