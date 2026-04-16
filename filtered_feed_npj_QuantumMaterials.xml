@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00878-4"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00881-9"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00880-w"/>
@@ -32,8 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00876-6"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00871-x"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-026-00878-4">
+            <title>How pairing mechanism dictates topology in valley-polarized superconductors with Berry curvature</title>
+            <link>https://www.nature.com/articles/s41535-026-00878-4</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 15 April 2026; &lt;a href="https://www.nature.com/articles/s41535-026-00878-4"&gt;doi:10.1038/s41535-026-00878-4&lt;/a&gt;&lt;/p&gt;How pairing mechanism dictates topology in valley-polarized superconductors with Berry curvature</content:encoded>
+            <dc:title>How pairing mechanism dictates topology in valley-polarized superconductors with Berry curvature</dc:title>
+            <dc:creator>Julian May-Mann</dc:creator><dc:creator>Tobias Helbig</dc:creator><dc:creator>Trithep Devakul</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-026-00878-4</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2026-04-15; | doi:10.1038/s41535-026-00878-4</dc:source>
+            <dc:date>2026-04-15</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-026-00878-4</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-026-00878-4</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-026-00881-9">
             <title>Spin-supersolidity induced quantum criticality and magnetocaloric effect in the triangular-lattice antiferromagnet Rb&lt;sub&gt;2&lt;/sub&gt;Co(SeO&lt;sub&gt;3&lt;/sub&gt;)&lt;sub&gt;2&lt;/sub&gt;</title>
@@ -146,21 +161,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-026-00876-6</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-026-00876-6</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-026-00871-x">
-            <title>Fermi liquid and isotropic superconductivity of Hund scenario for bilayer nickelates</title>
-            <link>https://www.nature.com/articles/s41535-026-00871-x</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 20 March 2026; &lt;a href="https://www.nature.com/articles/s41535-026-00871-x"&gt;doi:10.1038/s41535-026-00871-x&lt;/a&gt;&lt;/p&gt;Fermi liquid and isotropic superconductivity of Hund scenario for bilayer nickelates</content:encoded>
-            <dc:title>Fermi liquid and isotropic superconductivity of Hund scenario for bilayer nickelates</dc:title>
-            <dc:creator>Jiangfan Wang</dc:creator><dc:creator>Yi-feng Yang</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-026-00871-x</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2026-03-20; | doi:10.1038/s41535-026-00871-x</dc:source>
-            <dc:date>2026-03-20</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-026-00871-x</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-026-00871-x</prism:url>
         </item>
     
 </rdf:RDF>

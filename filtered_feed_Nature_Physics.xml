@@ -18,6 +18,10 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03256-w"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03229-z"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03246-y"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03255-x"/>
@@ -25,10 +29,6 @@
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03225-3"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03230-6"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03252-0"/>
-                
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41567-026-03238-y"/>
                 
             </rdf:Seq>
         </items>
@@ -38,6 +38,36 @@
         <url>https://www.nature.com/uploads/product/nphys/rss.gif</url>
         <link>http://feeds.nature.com/nphys/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-026-03256-w">
+            <title>Motorized paperclip learns functional reflexes</title>
+            <link>https://www.nature.com/articles/s41567-026-03256-w</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 16 April 2026; &lt;a href="https://www.nature.com/articles/s41567-026-03256-w"&gt;doi:10.1038/s41567-026-03256-w&lt;/a&gt;&lt;/p&gt;A wire of motorized hinges learns, forgets, and relearns automatic responses on demand, uncovering the physical principles necessary to emulate autonomous learning of living matter.</content:encoded>
+            <dc:title>Motorized paperclip learns functional reflexes</dc:title>
+            <dc:creator>Karen Alim</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-026-03256-w</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-04-16; | doi:10.1038/s41567-026-03256-w</dc:source>
+            <dc:date>2026-04-16</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-026-03256-w</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-026-03256-w</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41567-026-03229-z">
+            <title>Loop-current order in kagome metals</title>
+            <link>https://www.nature.com/articles/s41567-026-03229-z</link>
+            <content:encoded>
+                &lt;p&gt;Nature Physics, Published online: 16 April 2026; &lt;a href="https://www.nature.com/articles/s41567-026-03229-z"&gt;doi:10.1038/s41567-026-03229-z&lt;/a&gt;&lt;/p&gt;Loop-current states represent a rare magnetic order driven by orbital motion, rather than by spin. This Perspective examines their symmetry, microscopic origins, detection challenges and interplay with other orders in kagome superconductors.</content:encoded>
+            <dc:title>Loop-current order in kagome metals</dc:title>
+            <dc:creator>Rafael M. Fernandes</dc:creator><dc:creator>Turan Birol</dc:creator><dc:creator>Mengxing Ye</dc:creator><dc:creator>David Vanderbilt</dc:creator>
+            <dc:identifier>doi:10.1038/s41567-026-03229-z</dc:identifier>
+            <dc:source>Nature Physics, Published online: 2026-04-16; | doi:10.1038/s41567-026-03229-z</dc:source>
+            <dc:date>2026-04-16</dc:date>
+            <prism:publicationName>Nature Physics</prism:publicationName>
+            <prism:doi>10.1038/s41567-026-03229-z</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41567-026-03229-z</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41567-026-03246-y">
             <title>Efficient thermalization and universal quantum computing with quantum Gibbs samplers</title>
@@ -97,36 +127,6 @@
             <prism:publicationName>Nature Physics</prism:publicationName>
             <prism:doi>10.1038/s41567-026-03230-6</prism:doi>
             <prism:url>https://www.nature.com/articles/s41567-026-03230-6</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-026-03252-0">
-            <title>Wetting beyond equilibrium</title>
-            <link>https://www.nature.com/articles/s41567-026-03252-0</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 10 April 2026; &lt;a href="https://www.nature.com/articles/s41567-026-03252-0"&gt;doi:10.1038/s41567-026-03252-0&lt;/a&gt;&lt;/p&gt;Wetting is well understood for equilibrium conditions. Simulations probing wetting by active matter now demonstrate the emergence of stabilizing particle currents and provide the basis for a formalism describing wetting for non-equilibrium systems.</content:encoded>
-            <dc:title>Wetting beyond equilibrium</dc:title>
-            <dc:creator>Takumi Matsuzawa</dc:creator>
-            <dc:identifier>doi:10.1038/s41567-026-03252-0</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2026-04-10; | doi:10.1038/s41567-026-03252-0</dc:source>
-            <dc:date>2026-04-10</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-026-03252-0</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-026-03252-0</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41567-026-03238-y">
-            <title>Self-organized elastic membranes with life-like oscillatory dynamics</title>
-            <link>https://www.nature.com/articles/s41567-026-03238-y</link>
-            <content:encoded>
-                &lt;p&gt;Nature Physics, Published online: 07 April 2026; &lt;a href="https://www.nature.com/articles/s41567-026-03238-y"&gt;doi:10.1038/s41567-026-03238-y&lt;/a&gt;&lt;/p&gt;Chaotic flows generated by a microtubule-based active fluid are shown to enhance the motion of passive actin fibres and assemble them into a hierarchical elastic membrane. Active flows also actuate the multiscale dynamics of the emerging membrane, and non-reciprocal feedback between the active and elastic stresses yields macroscopic oscillations.</content:encoded>
-            <dc:title>Self-organized elastic membranes with life-like oscillatory dynamics</dc:title>
-            
-            <dc:identifier>doi:10.1038/s41567-026-03238-y</dc:identifier>
-            <dc:source>Nature Physics, Published online: 2026-04-07; | doi:10.1038/s41567-026-03238-y</dc:source>
-            <dc:date>2026-04-07</dc:date>
-            <prism:publicationName>Nature Physics</prism:publicationName>
-            <prism:doi>10.1038/s41567-026-03238-y</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41567-026-03238-y</prism:url>
         </item>
     
 </rdf:RDF>
