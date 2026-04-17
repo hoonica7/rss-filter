@@ -21,8 +21,6 @@
         <items>
             <rdf:Seq>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-71937-4"/>
-                
                     </rdf:Seq>
         </items>
     </channel>
@@ -31,20 +29,5 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
-    
-        <item rdf:about="https://www.nature.com/articles/s41467-026-71937-4">
-            <title>Higher-order neuromorphic Ising machines—autoencoders and Fowler-Nordheim annealers are all you need for scalability</title>
-            <link>https://www.nature.com/articles/s41467-026-71937-4</link>
-            <content:encoded>
-                &lt;p&gt;Nature Communications, Published online: 16 April 2026; &lt;a href="https://www.nature.com/articles/s41467-026-71937-4"&gt;doi:10.1038/s41467-026-71937-4&lt;/a&gt;&lt;/p&gt;The authors demonstrate that an autoencoder-based neuromorphic architecture combined with Fowler-Nordheim annealing, is sufficient to implement scalable higher-order Ising machines. They show that these machines can consistently produce state-of-the-art solutions with high reliability and competitive time-to-solution metrics.</content:encoded>
-            <dc:title>Higher-order neuromorphic Ising machines—autoencoders and Fowler-Nordheim annealers are all you need for scalability</dc:title>
-            <dc:creator>Faiek Ahsan</dc:creator><dc:creator>Saptarshi Maiti</dc:creator><dc:creator>Zihao Chen</dc:creator><dc:creator>Jakob Kaiser</dc:creator><dc:creator>Ankita Nandi</dc:creator><dc:creator>Madhuvanthi Srivatsav</dc:creator><dc:creator>Johannes Schemmel</dc:creator><dc:creator>Andreas G. Andreou</dc:creator><dc:creator>Jason Eshraghian</dc:creator><dc:creator>Chetan Singh Thakur</dc:creator><dc:creator>Shantanu Chakrabartty</dc:creator>
-            <dc:identifier>doi:10.1038/s41467-026-71937-4</dc:identifier>
-            <dc:source>Nature Communications, Published online: 2026-04-16; | doi:10.1038/s41467-026-71937-4</dc:source>
-            <dc:date>2026-04-16</dc:date>
-            <prism:publicationName>Nature Communications</prism:publicationName>
-            <prism:doi>10.1038/s41467-026-71937-4</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41467-026-71937-4</prism:url>
-        </item>
     
         </rdf:RDF>
