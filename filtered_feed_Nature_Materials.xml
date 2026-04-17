@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02578-7"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02582-x"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02571-0"/>
@@ -30,8 +32,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02577-8"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02587-6"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -40,6 +40,21 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-026-02578-7">
+            <title>The data-only illusion in materials discovery</title>
+            <link>https://www.nature.com/articles/s41563-026-02578-7</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 17 April 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02578-7"&gt;doi:10.1038/s41563-026-02578-7&lt;/a&gt;&lt;/p&gt;Artificial intelligence may have transformed image and language generation, but in materials science, data scarcity and synthesis complexity demand a different approach. Only by coupling artificial intelligence with deep chemical insight can we turn virtual predictions into real materials.</content:encoded>
+            <dc:title>The data-only illusion in materials discovery</dc:title>
+            <dc:creator>Berend Smit</dc:creator><dc:creator>Susana Garcia</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-026-02578-7</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2026-04-17; | doi:10.1038/s41563-026-02578-7</dc:source>
+            <dc:date>2026-04-17</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-026-02578-7</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-026-02578-7</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-026-02582-x">
             <title>Contact-reaction-triggered selective doping</title>
@@ -129,21 +144,6 @@
             <prism:publicationName>Nature Materials</prism:publicationName>
             <prism:doi>10.1038/s41563-026-02577-8</prism:doi>
             <prism:url>https://www.nature.com/articles/s41563-026-02577-8</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41563-026-02587-6">
-            <title>Rapid sintering of ultrafine-grained refractory metals under mild conditions</title>
-            <link>https://www.nature.com/articles/s41563-026-02587-6</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 15 April 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02587-6"&gt;doi:10.1038/s41563-026-02587-6&lt;/a&gt;&lt;/p&gt;The introduction of liquid metals to refractory metals weakens metal bonding, which enables rapid, low-temperature fabrication of refractory metal bulk materials with ultrafine grains, high strength and tunable composition.</content:encoded>
-            <dc:title>Rapid sintering of ultrafine-grained refractory metals under mild conditions</dc:title>
-            <dc:creator>Erli Ni</dc:creator><dc:creator>Junlin Liu</dc:creator><dc:creator>Mingjun Sun</dc:creator><dc:creator>Jingrui Luo</dc:creator><dc:creator>Like Yao</dc:creator><dc:creator>Limeng Zi</dc:creator><dc:creator>Zhujun Kuang</dc:creator><dc:creator>Yu Ding</dc:creator><dc:creator>Xiaopeng Liang</dc:creator><dc:creator>Bin Liu</dc:creator><dc:creator>Yong Liu</dc:creator><dc:creator>Mengqi Zeng</dc:creator><dc:creator>Feng Ding</dc:creator><dc:creator>Lei Fu</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-026-02587-6</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2026-04-15; | doi:10.1038/s41563-026-02587-6</dc:source>
-            <dc:date>2026-04-15</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-026-02587-6</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-026-02587-6</prism:url>
         </item>
     
 </rdf:RDF>
