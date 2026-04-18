@@ -21,6 +21,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-71986-9"/>
+                
                     </rdf:Seq>
         </items>
     </channel>
@@ -29,5 +31,20 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-026-71986-9">
+            <title>Challenges and prospects of 2D electronics for future monolithic complementary field-effect transistors</title>
+            <link>https://www.nature.com/articles/s41467-026-71986-9</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 18 April 2026; &lt;a href="https://www.nature.com/articles/s41467-026-71986-9"&gt;doi:10.1038/s41467-026-71986-9&lt;/a&gt;&lt;/p&gt;2D semiconductors offer an appealing platform to complement 3D integrated silicon complementary field-effect transistors (CFETs) and continue the miniaturization of future electronic circuits. Here, the authors summarize the advantages and challenges presented by 2D materials, outlining a roadmap towards the realization of 2D CFETs.</content:encoded>
+            <dc:title>Challenges and prospects of 2D electronics for future monolithic complementary field-effect transistors</dc:title>
+            <dc:creator>Md Mobaidul Islam</dc:creator><dc:creator>Yongin Cho</dc:creator><dc:creator>Anamika Sen</dc:creator><dc:creator>Prashant Bisht</dc:creator><dc:creator>Junoh Shim</dc:creator><dc:creator>Joo-On Oh</dc:creator><dc:creator>Geonyong Park</dc:creator><dc:creator>Antonio Rossi</dc:creator><dc:creator>Hyeongwu Lee</dc:creator><dc:creator>Lin Jiang</dc:creator><dc:creator>Camilla Coletti</dc:creator><dc:creator>Bo-In Park</dc:creator><dc:creator>Heeyeop Chae</dc:creator><dc:creator>SangHoon Shin</dc:creator><dc:creator>Heekyeong Park</dc:creator><dc:creator>Sunkook Kim</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-026-71986-9</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-04-18; | doi:10.1038/s41467-026-71986-9</dc:source>
+            <dc:date>2026-04-18</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-026-71986-9</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-026-71986-9</prism:url>
+        </item>
     
         </rdf:RDF>
