@@ -21,6 +21,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-70621-x"/>
+                
                     </rdf:Seq>
         </items>
     </channel>
@@ -29,5 +31,20 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-026-70621-x">
+            <title>Unraveling the Foreign-Cation Effect in UCl₃-Type Halide Solid Electrolytes for Low-Temperature All-Solid-State Batteries</title>
+            <link>https://www.nature.com/articles/s41467-026-70621-x</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 21 April 2026; &lt;a href="https://www.nature.com/articles/s41467-026-70621-x"&gt;doi:10.1038/s41467-026-70621-x&lt;/a&gt;&lt;/p&gt;UCl₃-type electrolytes show promise for all-solid-state batteries, yet their structure and Li⁺ transport remain debated. Here, authors reveal foreign cations reside in the amorphous phase, which serve as the dominant Li⁺ pathway yielding enhanced conductivity and low-temperature battery performance.</content:encoded>
+            <dc:title>Unraveling the Foreign-Cation Effect in UCl₃-Type Halide Solid Electrolytes for Low-Temperature All-Solid-State Batteries</dc:title>
+            <dc:creator>Pushun Lu</dc:creator><dc:creator>Zhimin Zhou</dc:creator><dc:creator>Shiyue Cao</dc:creator><dc:creator>Jiamin Fu</dc:creator><dc:creator>Weiping Li</dc:creator><dc:creator>Kaiyong Tuo</dc:creator><dc:creator>Suze Liang</dc:creator><dc:creator>Jian Hong</dc:creator><dc:creator>Jiuwei Lei</dc:creator><dc:creator>Jiaxu Zhang</dc:creator><dc:creator>Ziqing Wang</dc:creator><dc:creator>Shutao Zhang</dc:creator><dc:creator>Guantai Hu</dc:creator><dc:creator>Chao Wang</dc:creator><dc:creator>Tingting Liu</dc:creator><dc:creator>Suting Weng</dc:creator><dc:creator>Wei Xia</dc:creator><dc:creator>Xuefeng Wang</dc:creator><dc:creator>Xueliang Sun</dc:creator><dc:creator>Changhong Wang</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-026-70621-x</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-04-21; | doi:10.1038/s41467-026-70621-x</dc:source>
+            <dc:date>2026-04-21</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-026-70621-x</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-026-70621-x</prism:url>
+        </item>
     
         </rdf:RDF>
