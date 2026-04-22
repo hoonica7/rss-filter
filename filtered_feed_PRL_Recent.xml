@@ -6,10 +6,10 @@
     <description>Recent articles in Physical Review Letters</description>
     <syn:updatePeriod>hourly</syn:updatePeriod>
     <syn:updateFrequency>1</syn:updateFrequency>
-    <syn:updateBase>2026-04-21T00:16:39+00:00</syn:updateBase>
+    <syn:updateBase>2026-04-21T09:16:34+00:00</syn:updateBase>
     <dc:creator>rss@aps.org</dc:creator>
     <dc:publisher>assocpub@aps.org</dc:publisher>
-    <dc:date>2026-04-21T00:16:39+00:00</dc:date>
+    <dc:date>2026-04-21T09:16:34+00:00</dc:date>
     <dc:language>en</dc:language>
     <dc:rights>Copyright © 2026 the American Physical Society. Personal use only, all commercial or other reuse prohibited</dc:rights>
     <prism:copyright>Copyright © 2026 the American Physical Society</prism:copyright>
@@ -19,12 +19,14 @@
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/q7ss-pvcq"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/6fxy-6drm"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/ncq1-yzpd"/>
+        <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/hhdf-xpwg"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/261t-cs82"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/wz27-6nhx"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/7bss-9yxb"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/flnv-3ts2"/>
         <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/8w63-d7h7"/>
-        </rdf:Seq>
+        <rdf:li rdf:resource="http://link.aps.org/doi/10.1103/jzjh-hbyj"/>
+      </rdf:Seq>
     </items>
   </channel>
   <item rdf:about="http://link.aps.org/doi/10.1103/q7ss-pvcq">
@@ -90,6 +92,28 @@
     <prism:publicationDate>2026-04-13T10:00:00+00:00</prism:publicationDate>
     <prism:url>http://link.aps.org/doi/10.1103/ncq1-yzpd</prism:url>
     <prism:startingPage>156401</prism:startingPage>
+    <dc:subject>Condensed Matter and Materials</dc:subject>
+    <prism:section>Condensed Matter and Materials</prism:section>
+  </item>
+  <item rdf:about="http://link.aps.org/doi/10.1103/hhdf-xpwg">
+    <title>Tensor Network Method for Real-Space Topology in Quasicrystal Chern Mosaics</title>
+    <link>http://link.aps.org/doi/10.1103/hhdf-xpwg</link>
+    <description>Author(s): Tiago V. C. Antão, Yitao Sun, Adolfo O. Fumega, and Jose L. Lado&lt;br/&gt;&lt;p&gt;A quantum-many-body-inspired tensor-network algorithm can compute local topological invariants for systems with hundreds of millions of sites by avoiding an explicit storage of Hamiltonian matrices.&lt;/p&gt;&lt;img src="//cdn.journals.aps.org/journals/PRL/key_images/10.1103/hhdf-xpwg.png" width="200" height=\"100\"&gt;&lt;br/&gt;[Phys. Rev. Lett. 136, 156601] Published Mon Apr 13, 2026</description>
+    <content:encoded>&lt;p&gt;Author(s): Tiago V. C. Antão, Yitao Sun, Adolfo O. Fumega, and Jose L. Lado&lt;/p&gt;&lt;p&gt;A quantum-many-body-inspired tensor-network algorithm can compute local topological invariants for systems with hundreds of millions of sites by avoiding an explicit storage of Hamiltonian matrices.&lt;/p&gt;&lt;img src="//cdn.journals.aps.org/journals/PRL/key_images/10.1103/hhdf-xpwg.png" width="200" height=\"100\"&gt;&lt;br/&gt;&lt;p&gt;[Phys. Rev. Lett. 136, 156601] Published Mon Apr 13, 2026&lt;/p&gt;</content:encoded>
+    <dc:title>Tensor Network Method for Real-Space Topology in Quasicrystal Chern Mosaics</dc:title>
+    <dc:creator>Tiago V. C. Antão, Yitao Sun, Adolfo O. Fumega, and Jose L. Lado</dc:creator>
+    <dc:date>2026-04-13T10:00:00+00:00</dc:date>
+    <dc:rights>Personal use only, all commercial or other reuse prohibited</dc:rights>
+    <dc:source>Phys. Rev. Lett. 136, 156601 (2026)</dc:source>
+    <dc:type>article</dc:type>
+    <dc:identifier>doi:10.1103/hhdf-xpwg</dc:identifier>
+    <prism:doi>10.1103/hhdf-xpwg</prism:doi>
+    <prism:publicationName>Physical Review Letters</prism:publicationName>
+    <prism:volume>136</prism:volume>
+    <prism:number>15</prism:number>
+    <prism:publicationDate>2026-04-13T10:00:00+00:00</prism:publicationDate>
+    <prism:url>http://link.aps.org/doi/10.1103/hhdf-xpwg</prism:url>
+    <prism:startingPage>156601</prism:startingPage>
     <dc:subject>Condensed Matter and Materials</dc:subject>
     <prism:section>Condensed Matter and Materials</prism:section>
   </item>
@@ -203,4 +227,26 @@
     <dc:subject>Condensed Matter and Materials</dc:subject>
     <prism:section>Condensed Matter and Materials</prism:section>
   </item>
-  </rdf:RDF>
+  <item rdf:about="http://link.aps.org/doi/10.1103/jzjh-hbyj">
+    <title>Parity Anomalous Semimetal with Minimal Conductivity Induced by an In-Plane Magnetic Field</title>
+    <link>http://link.aps.org/doi/10.1103/jzjh-hbyj</link>
+    <description>Author(s): Binbin Wang, Jiayuan Hu, Bo Fu, Jiaqi Li, Yunchuan Kong, Kai-Zhi Bai, Shun-Qing Shen, and Di Xiao&lt;br/&gt;&lt;p&gt;The interplay between topological materials and local symmetry breaking yields diverse topological quantum phenomena. A notable example is the parity-anomalous semimetal (PAS), which hosts a single unpaired gapless Dirac cone with a half-integer quantized Hall conductivity. Here, we realize this pha…&lt;/p&gt;&lt;br/&gt;[Phys. Rev. Lett. 136, 146602] Published Mon Apr 06, 2026</description>
+    <content:encoded>&lt;p&gt;Author(s): Binbin Wang, Jiayuan Hu, Bo Fu, Jiaqi Li, Yunchuan Kong, Kai-Zhi Bai, Shun-Qing Shen, and Di Xiao&lt;/p&gt;&lt;p&gt;The interplay between topological materials and local symmetry breaking yields diverse topological quantum phenomena. A notable example is the parity-anomalous semimetal (PAS), which hosts a single unpaired gapless Dirac cone with a half-integer quantized Hall conductivity. Here, we realize this pha…&lt;/p&gt;&lt;br/&gt;&lt;p&gt;[Phys. Rev. Lett. 136, 146602] Published Mon Apr 06, 2026&lt;/p&gt;</content:encoded>
+    <dc:title>Parity Anomalous Semimetal with Minimal Conductivity Induced by an In-Plane Magnetic Field</dc:title>
+    <dc:creator>Binbin Wang, Jiayuan Hu, Bo Fu, Jiaqi Li, Yunchuan Kong, Kai-Zhi Bai, Shun-Qing Shen, and Di Xiao</dc:creator>
+    <dc:date>2026-04-06T10:00:00+00:00</dc:date>
+    <dc:rights>Personal use only, all commercial or other reuse prohibited</dc:rights>
+    <dc:source>Phys. Rev. Lett. 136, 146602 (2026)</dc:source>
+    <dc:type>article</dc:type>
+    <dc:identifier>doi:10.1103/jzjh-hbyj</dc:identifier>
+    <prism:doi>10.1103/jzjh-hbyj</prism:doi>
+    <prism:publicationName>Physical Review Letters</prism:publicationName>
+    <prism:volume>136</prism:volume>
+    <prism:number>14</prism:number>
+    <prism:publicationDate>2026-04-06T10:00:00+00:00</prism:publicationDate>
+    <prism:url>http://link.aps.org/doi/10.1103/jzjh-hbyj</prism:url>
+    <prism:startingPage>146602</prism:startingPage>
+    <dc:subject>Condensed Matter and Materials</dc:subject>
+    <prism:section>Condensed Matter and Materials</prism:section>
+  </item>
+</rdf:RDF>
