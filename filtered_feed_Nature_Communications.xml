@@ -21,11 +21,13 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-72274-2"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-71802-4"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-72159-4"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-71816-y"/>
-                
-            </rdf:Seq>
+                    </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/ncomms/rss.png">
@@ -33,6 +35,36 @@
         <url>https://www.nature.com/uploads/product/ncomms/rss.png</url>
         <link>http://feeds.nature.com/ncomms/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-026-72274-2">
+            <title>Engineered local polarization disorder unlocks record efficiency in antiferroelectric capacitors</title>
+            <link>https://www.nature.com/articles/s41467-026-72274-2</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 22 April 2026; &lt;a href="https://www.nature.com/articles/s41467-026-72274-2"&gt;doi:10.1038/s41467-026-72274-2&lt;/a&gt;&lt;/p&gt;The authors introduce controlled compositional heterogeneity to broaden polarization vector distributions while preserving the antiferroelectric modulation in PbZrO3-based ceramics. They reduce polarization hysteresis while maintaining high polarization strength.</content:encoded>
+            <dc:title>Engineered local polarization disorder unlocks record efficiency in antiferroelectric capacitors</dc:title>
+            <dc:creator>Fukang Chen</dc:creator><dc:creator>Leiyang Zhang</dc:creator><dc:creator>Yule Yang</dc:creator><dc:creator>Ruiyi Jing</dc:creator><dc:creator>Yunyao Huang</dc:creator><dc:creator>Kaiyuan Liu</dc:creator><dc:creator>Zibin Chen</dc:creator><dc:creator>Liqiang He</dc:creator><dc:creator>Dong Wang</dc:creator><dc:creator>Bin Zhou</dc:creator><dc:creator>Xuefeng Chen</dc:creator><dc:creator>Gang Liu</dc:creator><dc:creator>Hua Tan</dc:creator><dc:creator>Haibo Zhang</dc:creator><dc:creator>Jun Yang</dc:creator><dc:creator>Shujun Zhang</dc:creator><dc:creator>Li Jin</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-026-72274-2</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-04-22; | doi:10.1038/s41467-026-72274-2</dc:source>
+            <dc:date>2026-04-22</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-026-72274-2</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-026-72274-2</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41467-026-71802-4">
+            <title>S-atom dislocation-induced room-temperature ferroelectricity in two-dimensional α-MnS semiconductor</title>
+            <link>https://www.nature.com/articles/s41467-026-71802-4</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 22 April 2026; &lt;a href="https://www.nature.com/articles/s41467-026-71802-4"&gt;doi:10.1038/s41467-026-71802-4&lt;/a&gt;&lt;/p&gt;A room-temperature ferroelectricity with out-of-plane polarization is disclosed in chemical vapor deposition synthesized two-dimensional α-MnS, which exhibits large tunneling electroresistance, high endurance, and long retention time.</content:encoded>
+            <dc:title>S-atom dislocation-induced room-temperature ferroelectricity in two-dimensional α-MnS semiconductor</dc:title>
+            <dc:creator>Ling Huang</dc:creator><dc:creator>Jialiang Wu</dc:creator><dc:creator>Chen-Min Dai</dc:creator><dc:creator>Ruofan Du</dc:creator><dc:creator>Junbo Yang</dc:creator><dc:creator>Yanan Peng</dc:creator><dc:creator>Xiaohui Li</dc:creator><dc:creator>Hang Sun</dc:creator><dc:creator>Luying Song</dc:creator><dc:creator>Yinuo Li</dc:creator><dc:creator>Ruihan Xu</dc:creator><dc:creator>Chuxuan Xiao</dc:creator><dc:creator>Yulin Jiang</dc:creator><dc:creator>Zhu Du</dc:creator><dc:creator>Yuhang Li</dc:creator><dc:creator>Yao Wen</dc:creator><dc:creator>Jianping Shi</dc:creator><dc:creator>Jun He</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-026-71802-4</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-04-22; | doi:10.1038/s41467-026-71802-4</dc:source>
+            <dc:date>2026-04-22</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-026-71802-4</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-026-71802-4</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41467-026-72159-4">
             <title>Ambient-compatible precursor engineering for efficient perovskite photovoltaics</title>
@@ -49,19 +81,4 @@
             <prism:url>https://www.nature.com/articles/s41467-026-72159-4</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41467-026-71816-y">
-            <title>Emergence of large-scale patterns in soft quasicrystals</title>
-            <link>https://www.nature.com/articles/s41467-026-71816-y</link>
-            <content:encoded>
-                &lt;p&gt;Nature Communications, Published online: 22 April 2026; &lt;a href="https://www.nature.com/articles/s41467-026-71816-y"&gt;doi:10.1038/s41467-026-71816-y&lt;/a&gt;&lt;/p&gt;The study of quasicrystals has revealed unique material properties that challenge traditional notions of order and symmetry in solids, prompting interest in their potential applications in advanced materials. Here, authors demonstrate the experimental realization of large-scale pattern formation in soft quasicrystals through mechanical loading, revealing a multiscale transformation process that can be finely tuned by adjusting initial local chirality and porosity.</content:encoded>
-            <dc:title>Emergence of large-scale patterns in soft quasicrystals</dc:title>
-            <dc:creator>Dean Chen</dc:creator><dc:creator>Nitesh Arora</dc:creator><dc:creator>Yuhai Xiang</dc:creator><dc:creator>Qi Yao</dc:creator><dc:creator>Quan Zhang</dc:creator><dc:creator>Stephan Rudykh</dc:creator>
-            <dc:identifier>doi:10.1038/s41467-026-71816-y</dc:identifier>
-            <dc:source>Nature Communications, Published online: 2026-04-22; | doi:10.1038/s41467-026-71816-y</dc:source>
-            <dc:date>2026-04-22</dc:date>
-            <prism:publicationName>Nature Communications</prism:publicationName>
-            <prism:doi>10.1038/s41467-026-71816-y</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41467-026-71816-y</prism:url>
-        </item>
-    
-</rdf:RDF>
+        </rdf:RDF>
