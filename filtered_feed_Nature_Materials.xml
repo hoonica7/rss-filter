@@ -18,6 +18,10 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02612-8"/>
+                
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02581-y"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02583-w"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02578-7"/>
@@ -30,9 +34,7 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02585-8"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41563-026-02588-5"/>
-                
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/nmat/rss.gif">
@@ -40,6 +42,36 @@
         <url>https://www.nature.com/uploads/product/nmat/rss.gif</url>
         <link>http://feeds.nature.com/nmat/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-026-02612-8">
+            <title>Author Correction: Magnon confinement in epitaxial antiferromagnetic oxide heterostructures</title>
+            <link>https://www.nature.com/articles/s41563-026-02612-8</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 23 April 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02612-8"&gt;doi:10.1038/s41563-026-02612-8&lt;/a&gt;&lt;/p&gt;Author Correction: Magnon confinement in epitaxial antiferromagnetic oxide heterostructures</content:encoded>
+            <dc:title>Author Correction: Magnon confinement in epitaxial antiferromagnetic oxide heterostructures</dc:title>
+            <dc:creator>Sajid Husain</dc:creator><dc:creator>Maya Ramesh</dc:creator><dc:creator>Xinyan Li</dc:creator><dc:creator>Sergei Prokhorenko</dc:creator><dc:creator>Shashank Kumar Ojha</dc:creator><dc:creator>Aiden Ross</dc:creator><dc:creator>Koushik Das</dc:creator><dc:creator>Boyang Zhao</dc:creator><dc:creator>Hyeon Woo Park</dc:creator><dc:creator>Peter Meisenheimer</dc:creator><dc:creator>Yousra Nahas</dc:creator><dc:creator>Lucas Caretta</dc:creator><dc:creator>Lane W. Martin</dc:creator><dc:creator>Se Kwon Kim</dc:creator><dc:creator>Zhi Yao</dc:creator><dc:creator>Haidan Wen</dc:creator><dc:creator>Sayeef Salahuddin</dc:creator><dc:creator>Long-Qing Chen</dc:creator><dc:creator>Yimo Han</dc:creator><dc:creator>Rogério de Sousa</dc:creator><dc:creator>Laurent Bellaiche</dc:creator><dc:creator>Manuel Bibes</dc:creator><dc:creator>Darrell G. Schlom</dc:creator><dc:creator>Ramamoorthy Ramesh</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-026-02612-8</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2026-04-23; | doi:10.1038/s41563-026-02612-8</dc:source>
+            <dc:date>2026-04-23</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-026-02612-8</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-026-02612-8</prism:url>
+        </item>
+    
+        <item rdf:about="https://www.nature.com/articles/s41563-026-02581-y">
+            <title>To bioprint morphogenic organoids it is essential to chill out and relax</title>
+            <link>https://www.nature.com/articles/s41563-026-02581-y</link>
+            <content:encoded>
+                &lt;p&gt;Nature Materials, Published online: 23 April 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02581-y"&gt;doi:10.1038/s41563-026-02581-y&lt;/a&gt;&lt;/p&gt;High-throughput and controlled organoid fabrication is achieved by combining 3D bioprinting, matrix biochemistry and stress relaxation in packed hydrogel particles.</content:encoded>
+            <dc:title>To bioprint morphogenic organoids it is essential to chill out and relax</dc:title>
+            <dc:creator>Christopher B. Highley</dc:creator><dc:creator>Thomas E. Angelini</dc:creator>
+            <dc:identifier>doi:10.1038/s41563-026-02581-y</dc:identifier>
+            <dc:source>Nature Materials, Published online: 2026-04-23; | doi:10.1038/s41563-026-02581-y</dc:source>
+            <dc:date>2026-04-23</dc:date>
+            <prism:publicationName>Nature Materials</prism:publicationName>
+            <prism:doi>10.1038/s41563-026-02581-y</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41563-026-02581-y</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41563-026-02583-w">
             <title>Sub-wavelength extreme ultraviolet microscopy reveals domain-wall stability during ultrafast demagnetization</title>
@@ -131,19 +163,4 @@
             <prism:url>https://www.nature.com/articles/s41563-026-02585-8</prism:url>
         </item>
     
-        <item rdf:about="https://www.nature.com/articles/s41563-026-02588-5">
-            <title>Anisotropic lattice distortion makes ultrastrong martensitic steel ductile</title>
-            <link>https://www.nature.com/articles/s41563-026-02588-5</link>
-            <content:encoded>
-                &lt;p&gt;Nature Materials, Published online: 16 April 2026; &lt;a href="https://www.nature.com/articles/s41563-026-02588-5"&gt;doi:10.1038/s41563-026-02588-5&lt;/a&gt;&lt;/p&gt;The brittleness of as-quenched carbon martensitic steel is overcome by introducing severe lattice distortion through the addition of high concentrations of substitutional solutes and carbon. This lattice distortion transforms the traditionally detrimental crystallographic anisotropy of martensite into an effective contributor to ductility.</content:encoded>
-            <dc:title>Anisotropic lattice distortion makes ultrastrong martensitic steel ductile</dc:title>
-            <dc:creator>S. Pan</dc:creator><dc:creator>B. B. He</dc:creator><dc:creator>M. X. Huang</dc:creator>
-            <dc:identifier>doi:10.1038/s41563-026-02588-5</dc:identifier>
-            <dc:source>Nature Materials, Published online: 2026-04-16; | doi:10.1038/s41563-026-02588-5</dc:source>
-            <dc:date>2026-04-16</dc:date>
-            <prism:publicationName>Nature Materials</prism:publicationName>
-            <prism:doi>10.1038/s41563-026-02588-5</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41563-026-02588-5</prism:url>
-        </item>
-    
-        </rdf:RDF>
+</rdf:RDF>
