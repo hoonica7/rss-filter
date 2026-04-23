@@ -18,6 +18,8 @@
         <items>
             <rdf:Seq>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00882-8"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00878-4"/>
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00881-9"/>
@@ -32,8 +34,6 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00874-8"/>
                 
-                    <rdf:li rdf:resource="https://www.nature.com/articles/s41535-026-00876-6"/>
-                
             </rdf:Seq>
         </items>
     </channel>
@@ -42,6 +42,21 @@
         <url>https://www.nature.com/uploads/product/npjquantmats/rss.png</url>
         <link>http://feeds.nature.com/npjquantmats/rss/current</link>
     </image>
+    
+        <item rdf:about="https://www.nature.com/articles/s41535-026-00882-8">
+            <title>Anisotropic magnetoresistance and magnetic field-tunable Weyl nodes in Weyl metal SrRuO&lt;sub&gt;3&lt;/sub&gt; thin films</title>
+            <link>https://www.nature.com/articles/s41535-026-00882-8</link>
+            <content:encoded>
+                &lt;p&gt;npj Quantum Materials, Published online: 22 April 2026; &lt;a href="https://www.nature.com/articles/s41535-026-00882-8"&gt;doi:10.1038/s41535-026-00882-8&lt;/a&gt;&lt;/p&gt;Anisotropic magnetoresistance and magnetic field-tunable Weyl nodes in Weyl metal SrRuO&lt;sub&gt;3&lt;/sub&gt; thin films</content:encoded>
+            <dc:title>Anisotropic magnetoresistance and magnetic field-tunable Weyl nodes in Weyl metal SrRuO&lt;sub&gt;3&lt;/sub&gt; thin films</dc:title>
+            <dc:creator>Uddipta Kar</dc:creator><dc:creator>Akhilesh Kr. Singh</dc:creator><dc:creator>Elisha Cho-Hao Lu</dc:creator><dc:creator>P. V. Sreenivasa Reddy</dc:creator><dc:creator>Fu-En Cheng</dc:creator><dc:creator>Wazid Ahmed</dc:creator><dc:creator>Song Yang</dc:creator><dc:creator>Chun-Yen Lin</dc:creator><dc:creator>Chia-Hung Hsu</dc:creator><dc:creator>Guang-Yu Guo</dc:creator><dc:creator>Wei-Li Lee</dc:creator>
+            <dc:identifier>doi:10.1038/s41535-026-00882-8</dc:identifier>
+            <dc:source>npj Quantum Materials, Published online: 2026-04-22; | doi:10.1038/s41535-026-00882-8</dc:source>
+            <dc:date>2026-04-22</dc:date>
+            <prism:publicationName>npj Quantum Materials</prism:publicationName>
+            <prism:doi>10.1038/s41535-026-00882-8</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41535-026-00882-8</prism:url>
+        </item>
     
         <item rdf:about="https://www.nature.com/articles/s41535-026-00878-4">
             <title>How pairing mechanism dictates topology in valley-polarized superconductors with Berry curvature</title>
@@ -146,21 +161,6 @@
             <prism:publicationName>npj Quantum Materials</prism:publicationName>
             <prism:doi>10.1038/s41535-026-00874-8</prism:doi>
             <prism:url>https://www.nature.com/articles/s41535-026-00874-8</prism:url>
-        </item>
-    
-        <item rdf:about="https://www.nature.com/articles/s41535-026-00876-6">
-            <title>Phonon thermal Hall effect: the roles of disorder, annealing, and metallic contacts</title>
-            <link>https://www.nature.com/articles/s41535-026-00876-6</link>
-            <content:encoded>
-                &lt;p&gt;npj Quantum Materials, Published online: 24 March 2026; &lt;a href="https://www.nature.com/articles/s41535-026-00876-6"&gt;doi:10.1038/s41535-026-00876-6&lt;/a&gt;&lt;/p&gt;Phonon thermal Hall effect: the roles of disorder, annealing, and metallic contacts</content:encoded>
-            <dc:title>Phonon thermal Hall effect: the roles of disorder, annealing, and metallic contacts</dc:title>
-            <dc:creator>Qiaochao Xiang</dc:creator><dc:creator>Xiaokang Li</dc:creator><dc:creator>Xiaodong Guo</dc:creator><dc:creator>Kamran Behnia</dc:creator><dc:creator>Zengwei Zhu</dc:creator>
-            <dc:identifier>doi:10.1038/s41535-026-00876-6</dc:identifier>
-            <dc:source>npj Quantum Materials, Published online: 2026-03-24; | doi:10.1038/s41535-026-00876-6</dc:source>
-            <dc:date>2026-03-24</dc:date>
-            <prism:publicationName>npj Quantum Materials</prism:publicationName>
-            <prism:doi>10.1038/s41535-026-00876-6</prism:doi>
-            <prism:url>https://www.nature.com/articles/s41535-026-00876-6</prism:url>
         </item>
     
 </rdf:RDF>
