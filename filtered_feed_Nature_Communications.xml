@@ -23,9 +23,11 @@
                 
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-70916-z"/>
                 
+                    <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-72137-w"/>
+                
                     <rdf:li rdf:resource="https://www.nature.com/articles/s41467-026-72335-6"/>
                 
-                    </rdf:Seq>
+            </rdf:Seq>
         </items>
     </channel>
     <image rdf:about="https://www.nature.com/uploads/product/ncomms/rss.png">
@@ -49,6 +51,21 @@
             <prism:url>https://www.nature.com/articles/s41467-026-70916-z</prism:url>
         </item>
     
+        <item rdf:about="https://www.nature.com/articles/s41467-026-72137-w">
+            <title>Artificial chemotaxis in micro/nanomotors</title>
+            <link>https://www.nature.com/articles/s41467-026-72137-w</link>
+            <content:encoded>
+                &lt;p&gt;Nature Communications, Published online: 25 April 2026; &lt;a href="https://www.nature.com/articles/s41467-026-72137-w"&gt;doi:10.1038/s41467-026-72137-w&lt;/a&gt;&lt;/p&gt;This Review Article examines artificial chemotaxis in micro/nanomotors, detailing mechanisms, experimental strategies, and collective behaviors. It highlights the need for standardized validation and explores applications in biomedical and industrial fields, emphasizing the challenges and potential of synthetic chemotaxis.</content:encoded>
+            <dc:title>Artificial chemotaxis in micro/nanomotors</dc:title>
+            <dc:creator>Roshan Velluvakandy</dc:creator><dc:creator>Xiaohui Ju</dc:creator><dc:creator>Martin Pumera</dc:creator>
+            <dc:identifier>doi:10.1038/s41467-026-72137-w</dc:identifier>
+            <dc:source>Nature Communications, Published online: 2026-04-25; | doi:10.1038/s41467-026-72137-w</dc:source>
+            <dc:date>2026-04-25</dc:date>
+            <prism:publicationName>Nature Communications</prism:publicationName>
+            <prism:doi>10.1038/s41467-026-72137-w</prism:doi>
+            <prism:url>https://www.nature.com/articles/s41467-026-72137-w</prism:url>
+        </item>
+    
         <item rdf:about="https://www.nature.com/articles/s41467-026-72335-6">
             <title>Beyond MPB engineering: enhanced piezoelectricity and thermal stability assisted by high-entropy design</title>
             <link>https://www.nature.com/articles/s41467-026-72335-6</link>
@@ -64,4 +81,4 @@
             <prism:url>https://www.nature.com/articles/s41467-026-72335-6</prism:url>
         </item>
     
-        </rdf:RDF>
+</rdf:RDF>
