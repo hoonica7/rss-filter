@@ -10,9 +10,9 @@ import sys
 import os
 import time
 import json
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 import datetime
-import google.api_core.exceptions as exceptions
 import re
 import math
 import html
@@ -86,14 +86,14 @@ JOURNAL_URLS = {
 
 primary_model = 'gemini-3-flash-preview'
 fallback_model = 'gemini-2.5-flash'
-current_model = None
+gemini_client = None
+current_model_name = primary_model
 using_primary_model = True
 try:
     GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
     if GOOGLE_API_KEY:
-        genai.configure(api_key=GOOGLE_API_KEY)
-        current_model = genai.GenerativeModel(primary_model)
-        print(f"{COLOR_GREEN}{COLOR_BOLD}✓ Gemini API configured{COLOR_END}", file=sys.stderr)
+        gemini_client = genai.Client(api_key=GOOGLE_API_KEY)
+        print(f"{COLOR_GREEN}{COLOR_BOLD}✓ Gemini API configured with google-genai SDK{COLOR_END}", file=sys.stderr)
     else:
         print(f"{COLOR_YELLOW}⚠ GOOGLE_API_KEY not found. Gemini filter skipped.{COLOR_END}", file=sys.stderr)
 except Exception as e:
@@ -339,11 +339,11 @@ Articles:
 
 
 def classify_entries_with_gemini(journal_name, entries):
-    global current_model, using_primary_model
+    global current_model_name, using_primary_model
     passed, removed, metadata = [], [], {}
     if not entries:
         return passed, removed, metadata
-    if not current_model:
+    if not gemini_client:
         for entry in entries:
             metadata[get_entry_link(entry)] = {
                 "tier": "C_MAYBE_UNCLASSIFIED",
@@ -378,10 +378,10 @@ def classify_entries_with_gemini(journal_name, entries):
         attempt = 0
         while not api_success:
             try:
-                response = current_model.generate_content(
-                    full_prompt,
-                    generation_config=genai.types.GenerationConfig(response_mime_type="application/json"),
-                    request_options={'timeout': 120}
+                response = gemini_client.models.generate_content(
+                    model=current_model_name,
+                    contents=full_prompt,
+                    config=types.GenerateContentConfig(response_mime_type="application/json")
                 )
                 decisions = json.loads(response.text)
                 by_title = {e.get('title',''): e for e in batch_entries}
@@ -422,15 +422,19 @@ def classify_entries_with_gemini(journal_name, entries):
                         }
                         passed.append(entry)
                 api_success = True
-            except exceptions.ResourceExhausted as e:
-                print(f"      {COLOR_ORANGE}Quota issue: {e}{COLOR_END}", file=sys.stderr)
-                if using_primary_model:
-                    current_model = genai.GenerativeModel(fallback_model)
+            except Exception as e:
+                msg = str(e).lower()
+                is_quota = ("429" in msg) or ("resource_exhausted" in msg) or ("quota" in msg) or ("rate limit" in msg)
+                if is_quota and using_primary_model:
+                    print(f"      {COLOR_ORANGE}Quota issue on {current_model_name}: {e}{COLOR_END}", file=sys.stderr)
+                    current_model_name = fallback_model
                     using_primary_model = False
                     attempt = 0
+                    print(f"      {COLOR_ORANGE}Switching to fallback model: {fallback_model}{COLOR_END}", file=sys.stderr)
                     continue
-                break
-            except Exception as e:
+                if is_quota:
+                    print(f"      {COLOR_ORANGE}Quota issue on fallback model: {e}{COLOR_END}", file=sys.stderr)
+                    break
                 print(f"      {COLOR_RED}Gemini error attempt {attempt+1}: {e}{COLOR_END}", file=sys.stderr)
                 attempt += 1
                 if attempt >= max_attempts:
@@ -677,40 +681,103 @@ def tier_rank(tier):
     return order.get(tier, 4)
 
 
-def create_briefing_html(records):
-    # Keep journal grouping, but sort within each journal by tier.
-    grouped = {}
-    for r in records:
-        grouped.setdefault(r['journal'], []).append(r)
+def create_briefing_html(records, email_body_content=''):
+    """Create a fast morning briefing, not a full journal-by-journal browser.
+
+    A/B are listed as papers; C/D are summarized as counts with audit links.
+    """
     now_utc = datetime.datetime.utcnow()
     now_texas = now_utc - datetime.timedelta(hours=5)
     now_korea = now_utc + datetime.timedelta(hours=9)
-    total_a = sum(1 for r in records if r['tier'] == 'A_MUST_READ')
-    total_b = sum(1 for r in records if r['tier'] == 'B_IMPORTANT_CONDMAT')
-    total_c = sum(1 for r in records if r['tier'].startswith('C_') or r['tier'] == '')
-    html_parts = [f"""<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Daily Paper Briefing</title><script src='https://cdn.tailwindcss.com'></script></head><body class='bg-slate-100 p-6'><div class='max-w-6xl mx-auto'><div class='mb-6'><a href='index.html' class='inline-flex items-center px-4 py-2 bg-indigo-600 text-white font-semibold rounded hover:bg-indigo-700'>← To Main</a></div><div class='bg-white rounded-2xl shadow-xl p-8'><h1 class='text-3xl font-bold text-slate-900'>Daily Paper Briefing</h1><p class='text-slate-600 mt-2'>Journal-by-journal view. RSS feeds remain journal-specific; this page is only for fast morning triage.</p><div class='grid grid-cols-1 md:grid-cols-3 gap-4 my-6'><div class='p-4 rounded-xl bg-red-50'><div class='text-2xl font-bold'>{total_a}</div><div class='text-sm text-slate-600'>A Must Read</div></div><div class='p-4 rounded-xl bg-amber-50'><div class='text-2xl font-bold'>{total_b}</div><div class='text-sm text-slate-600'>B Important CM</div></div><div class='p-4 rounded-xl bg-slate-50'><div class='text-2xl font-bold'>{total_c}</div><div class='text-sm text-slate-600'>C Maybe / Unclassified</div></div></div><p class='text-xs text-slate-500 mb-8'>Last updated: {now_texas.strftime('%Y-%m-%d %H:%M')} Texas / {now_korea.strftime('%Y-%m-%d %H:%M')} Korea</p>"""]
-    for journal, items in grouped.items():
-        items = sorted(items, key=lambda r: (tier_rank(r['tier']), r['title']))
-        html_parts.append(f"<section class='mt-8'><h2 class='text-2xl font-bold text-indigo-700 border-b pb-2'>{html.escape(journal)}</h2><div class='space-y-4 mt-4'>")
-        if not items:
-            html_parts.append("<p class='text-slate-500'>No passed papers.</p>")
-        for r in items:
-            tier = r['tier'] or 'UNCLASSIFIED'
-            badge = 'bg-red-100 text-red-800' if tier == 'A_MUST_READ' else 'bg-amber-100 text-amber-800' if tier == 'B_IMPORTANT_CONDMAT' else 'bg-slate-100 text-slate-700'
-            html_parts.append(f"""
-<div class='p-4 rounded-xl border bg-white hover:bg-slate-50'>
-  <div class='flex flex-wrap gap-2 items-center mb-1'><span class='text-xs px-2 py-1 rounded-full {badge}'>{html.escape(tier)}</span><span class='text-xs text-slate-500'>{html.escape(r['source'])}</span></div>
-  <a href='{html.escape(r['link'])}' target='_blank' class='text-lg font-semibold text-blue-700 hover:underline'>{html.escape(strip_html(r['title']))}</a>
-  <p class='text-sm text-slate-700 mt-1'><b>Authors:</b> {html.escape(r['authors'])}</p>
-  <p class='text-sm text-slate-700'><b>Last/corresponding-author proxy:</b> {html.escape(r['last_authors'])}</p>
-  <p class='text-sm text-slate-600 mt-1'><b>Why:</b> {html.escape(r['reason'] or 'keyword/Gemini passed')}</p>
-  <details class='mt-2'><summary class='cursor-pointer text-sm text-slate-500'>Abstract</summary><p class='text-sm text-slate-700 mt-2'>{html.escape(r['summary'][:1600])}</p></details>
-</div>""")
-        html_parts.append("</div></section>")
-    html_parts.append("</div></div></body></html>")
-    with open('briefing.html', 'w', encoding='utf-8') as f:
-        f.write('\n'.join(html_parts))
 
+    def score_value(r):
+        try:
+            return float(r.get('score', 0) or 0)
+        except Exception:
+            return 0
+
+    a_items = sorted([r for r in records if r.get('tier') == 'A_MUST_READ'], key=lambda r: (-score_value(r), r.get('journal', ''), r.get('title', '')))
+    b_items = sorted([r for r in records if r.get('tier') == 'B_IMPORTANT_CONDMAT'], key=lambda r: (-score_value(r), r.get('journal', ''), r.get('title', '')))
+    c_items = [r for r in records if str(r.get('tier', '')).startswith('C_') or not r.get('tier')]
+
+    archived_count = sum(1 for line in email_body_content.splitlines() if '❌' in line) if email_body_content else 0
+
+    journal_c_counts = {}
+    for r in c_items:
+        journal = r.get('journal', 'Unknown')
+        journal_c_counts[journal] = journal_c_counts.get(journal, 0) + 1
+
+    def render_paper_list(items, empty_text):
+        if not items:
+            return f"<p class='text-slate-500'>{html.escape(empty_text)}</p>"
+        chunks = ["<ol class='space-y-4 list-decimal list-inside'>"]
+        for r in items:
+            tags = r.get('tags') or []
+            tag_html = ' '.join(f"<span class='text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-600'>#{html.escape(str(t))}</span>" for t in tags[:6])
+            score = r.get('score', '')
+            score_badge = f"<span class='text-xs px-2 py-1 rounded-full bg-rose-100 text-rose-800 font-semibold'>{html.escape(str(score))}/10</span>" if score != '' else ''
+            chunks.append(f"""
+<li class='pl-1'>
+  <div class='inline-block w-full align-top p-4 rounded-xl border bg-white hover:bg-slate-50'>
+    <div class='flex flex-wrap items-center gap-2 mb-1'>{score_badge}<span class='text-xs px-2 py-1 rounded-full bg-indigo-50 text-indigo-700'>{html.escape(r.get('journal', ''))}</span><span class='text-xs text-slate-500'>{html.escape(r.get('source', ''))}</span></div>
+    <a href='{html.escape(r.get('link', ''))}' target='_blank' class='text-lg font-semibold text-blue-700 hover:underline'>{html.escape(strip_html(r.get('title', 'No title')))}</a>
+    <p class='text-sm text-slate-700 mt-1'><b>{html.escape(r.get('journal', ''))}</b> | {html.escape(r.get('authors', ''))}</p>
+    <p class='text-sm text-slate-700'><b>Last/corresponding-author proxy:</b> {html.escape(r.get('last_authors', ''))}</p>
+    <p class='text-sm text-slate-600 mt-1'><b>Why:</b> {html.escape(r.get('reason') or 'keyword/Gemini passed')}</p>
+    <div class='flex flex-wrap gap-1 mt-2'>{tag_html}</div>
+    <p class='mt-2'><a href='{html.escape(r.get('link', ''))}' target='_blank' class='text-sm text-blue-600 hover:underline'>Link →</a></p>
+  </div>
+</li>""")
+        chunks.append("</ol>")
+        return '\n'.join(chunks)
+
+    if journal_c_counts:
+        rows = ''.join(f"<li><span class='font-medium'>{html.escape(journal)}</span>: {count}</li>" for journal, count in sorted(journal_c_counts.items()))
+        c_summary = f"<ul class='text-sm text-slate-600 mt-2 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1'>{rows}</ul>"
+    else:
+        c_summary = "<p class='text-sm text-slate-500 mt-2'>No Maybe / Theory Watch papers in this run.</p>"
+
+    html_doc = f"""<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Morning Paper Briefing</title><script src='https://cdn.tailwindcss.com'></script></head>
+<body class='bg-slate-100 p-6'>
+<div class='max-w-5xl mx-auto'>
+  <div class='mb-6'><a href='index.html' class='inline-flex items-center px-4 py-2 bg-indigo-600 text-white font-semibold rounded hover:bg-indigo-700'>← To Main</a></div>
+  <div class='bg-white rounded-2xl shadow-xl p-8'>
+    <h1 class='text-3xl font-bold text-slate-900'>[hoonica RSS] Morning Paper Briefing</h1>
+    <p class='text-slate-600 mt-2'>Fast skim page: A/B papers are listed; C/D are summarized. Full pass/fail archive remains in the audit page.</p>
+    <div class='grid grid-cols-1 md:grid-cols-4 gap-4 my-6'>
+      <div class='p-4 rounded-xl bg-red-50'><div class='text-2xl font-bold'>{len(a_items)}</div><div class='text-sm text-slate-600'>A Must Read</div></div>
+      <div class='p-4 rounded-xl bg-amber-50'><div class='text-2xl font-bold'>{len(b_items)}</div><div class='text-sm text-slate-600'>B Important CM</div></div>
+      <div class='p-4 rounded-xl bg-slate-50'><div class='text-2xl font-bold'>{len(c_items)}</div><div class='text-sm text-slate-600'>C Maybe / Theory Watch</div></div>
+      <div class='p-4 rounded-xl bg-gray-50'><div class='text-2xl font-bold'>{archived_count}</div><div class='text-sm text-slate-600'>D Archived / Removed</div></div>
+    </div>
+    <p class='text-xs text-slate-500 mb-8'>Last updated: {now_texas.strftime('%Y-%m-%d %H:%M')} Texas / {now_korea.strftime('%Y-%m-%d %H:%M')} Korea</p>
+
+    <section class='mt-8'>
+      <h2 class='text-2xl font-bold text-red-700 border-b pb-2'>A. MUST READ</h2>
+      <div class='mt-4'>{render_paper_list(a_items, 'No A-level papers in this run.')}</div>
+    </section>
+
+    <section class='mt-10'>
+      <h2 class='text-2xl font-bold text-amber-700 border-b pb-2'>B. IMPORTANT CONDENSED MATTER</h2>
+      <div class='mt-4'>{render_paper_list(b_items, 'No B-level papers in this run.')}</div>
+    </section>
+
+    <section class='mt-10 p-5 rounded-xl bg-slate-50 border'>
+      <h2 class='text-xl font-bold text-slate-800'>C. MAYBE / THEORY WATCH</h2>
+      <p class='text-slate-700 mt-2'>{len(c_items)} papers moved to Maybe / Theory Watch. They are kept in the journal-specific RSS feeds and audit page, but hidden from this fast briefing list.</p>
+      {c_summary}
+    </section>
+
+    <section class='mt-6 p-5 rounded-xl bg-gray-50 border'>
+      <h2 class='text-xl font-bold text-slate-800'>D. ARCHIVED</h2>
+      <p class='text-slate-700 mt-2'>{archived_count} clearly unrelated or below-threshold papers archived/removed from the filtered RSS feeds.</p>
+      <p class='mt-2'><a href='filtered_results.html' target='_blank' class='text-blue-600 hover:underline'>Audit page →</a></p>
+    </section>
+  </div>
+</div>
+</body></html>"""
+    with open('briefing.html', 'w', encoding='utf-8') as f:
+        f.write(html_doc)
 
 def create_index_html(journal_urls, rss_base_filename):
     now_utc = datetime.datetime.utcnow()
@@ -835,7 +902,7 @@ if __name__ == '__main__':
             f.write('SUCCESS')
         create_index_html(JOURNAL_URLS, OUTPUT_FILE_BASE)
         create_results_html_file(email_content)
-        create_briefing_html(briefing_records)
+        create_briefing_html(briefing_records, email_content)
         clear_partial_state()
     finally:
         github_server_url = os.getenv('GITHUB_SERVER_URL')
