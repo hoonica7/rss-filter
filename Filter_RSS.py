@@ -1,5 +1,5 @@
-# RSS filter v7
-# Journal-by-journal RSS feeds + scored LLM filtering + daily briefing.
+# Filter_RSS v10
+# Journal-by-journal RSS feeds + stricter scored LLM filtering + compact daily briefing.
 # Adds robust checkpoint/resume support via partial state files restored by GitHub Actions cache.
 
 import feedparser
@@ -44,6 +44,28 @@ DIRECT_RELEVANCE_KEYWORDS = [
     "loop current", "time-reversal symmetry breaking", "TRSB", "Weyl", "Dirac", "Berry curvature", "anomalous Hall",
     "altermagnet", "spin-charge separation", "Luttinger", "NbSe3", "TaNiTe2", "NbNiTe2", "112 telluride"
 ]
+
+A_MUST_TRIGGER_KEYWORDS = [
+    "ARPES", "angle-resolved photoemission", "photoemission", "magnetoARPES", "CD-ARPES",
+    "momentum-resolved spectroscopy", "quantum twisting microscope",
+    "AV3Sb5", "CsV3Sb5", "RbV3Sb5", "KV3Sb5", "V3Sb5",
+    "NbSe3", "spin-charge separation", "Luttinger liquid",
+    "TaNiTe2", "NbNiTe2", "112 telluride",
+]
+
+A_MUST_COMBO_RULES = [
+    ("kagome", ["cdw", "charge density wave", "nematic", "loop current", "trsb", "time-reversal",
+                "berry curvature", "anomalous hall", "flat band", "weyl", "dirac", "semimetal"]),
+    ("altermagnet", ["arpes", "photoemission", "transport", "spin-orbit torque", "terahertz", "magneto", "band", "splitting"]),
+    ("topological semimetal", ["anomalous hall", "berry curvature", "transport", "magnet", "arpes", "photoemission"]),
+]
+
+THEORY_OVERPROMOTION_HINTS = [
+    "krylov", "syk", "tensor network", "holographic", "conformal field theory", "quantum information",
+    "measurement-induced", "majorana wire", "majorana zero modes", "surface code", "gottesman",
+    "kitaev chain", "non-hermitian", "exceptional point", "higher-dimensional", "abstract",
+]
+
 BROAD_CONDMAT_KEYWORDS = [
     "superconduct", "correlated", "Mott", "Hubbard", "moiré", "twisted", "graphene", "topological", "Chern", "flat band",
     "spin liquid", "magnon", "phonon", "quantum critical", "Kondo", "van der Waals", "ferromagnet", "antiferromagnet",
@@ -84,21 +106,24 @@ JOURNAL_URLS = {
     "arXiv_CondMat": "https://rss.arxiv.org/rss/cond-mat",
 }
 
-primary_model = 'gemini-3-flash-preview'
-fallback_model = 'gemini-2.5-flash'
+# Avoid preview/high-demand models by default. Override with a repo secret if desired:
+#   GEMINI_MODELS=gemini-2.5-flash,gemini-2.0-flash-lite
+MODEL_CANDIDATES = [m.strip() for m in os.getenv(
+    "GEMINI_MODELS",
+    "gemini-3-flash-preview,gemini-3.1-flash-lite-preview,gemini-2.5-flash"
+).split(',') if m.strip()]
 gemini_client = None
-current_model_name = primary_model
-using_primary_model = True
+current_model_index = 0
+current_model_name = MODEL_CANDIDATES[current_model_index] if MODEL_CANDIDATES else 'gemini-2.5-flash'
 try:
     GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
     if GOOGLE_API_KEY:
         gemini_client = genai.Client(api_key=GOOGLE_API_KEY)
-        print(f"{COLOR_GREEN}{COLOR_BOLD}✓ Gemini API configured with google-genai SDK{COLOR_END}", file=sys.stderr)
+        print(f"{COLOR_GREEN}{COLOR_BOLD}✓ Gemini API configured with google-genai SDK; models={MODEL_CANDIDATES}{COLOR_END}", file=sys.stderr)
     else:
         print(f"{COLOR_YELLOW}⚠ GOOGLE_API_KEY not found. Gemini filter skipped.{COLOR_END}", file=sys.stderr)
 except Exception as e:
     print(f"{COLOR_RED}✗ Error configuring Gemini API: {e}{COLOR_END}", file=sys.stderr)
-    using_primary_model = False
 
 
 def strip_html(text):
@@ -178,6 +203,45 @@ def score_to_tier(score):
 
 def get_threshold(journal_name):
     return JOURNAL_THRESHOLDS.get(journal_name, 6)
+
+
+def text_for_entry(entry):
+    return (strip_html(entry.get('title', '')) + " " + strip_html(entry.get('summary', ''))).lower()
+
+
+def has_a_must_trigger(entry):
+    text = text_for_entry(entry)
+    for kw in A_MUST_TRIGGER_KEYWORDS:
+        if kw.lower() in text:
+            return True
+    for anchor, partners in A_MUST_COMBO_RULES:
+        if anchor in text and any(p in text for p in partners):
+            return True
+    return False
+
+
+def postprocess_score_and_tier(journal_name, entry, score, reason=''):
+    """Make A_MUST_READ genuinely must-read.
+
+    Gemini may score broad CM/theory papers as 9-10. For the morning briefing, A should be
+    reserved for direct project/spectroscopy/material relevance. We cap broad papers to B/C
+    instead of deleting them, preserving recall while cleaning the A list.
+    """
+    text = text_for_entry(entry)
+    has_a = has_a_must_trigger(entry)
+
+    if not has_a and score >= 9:
+        score = 8
+        reason = (reason + "; capped below A: broad CM, not direct user/project hit").strip('; ')
+
+    if any(h in text for h in THEORY_OVERPROMOTION_HINTS) and not has_a:
+        score = min(score, 6)
+        reason = (reason + "; capped: formal/generic theory watch").strip('; ')
+
+    if journal_name == 'arXiv_CondMat' and not has_a:
+        score = min(score, 7)
+
+    return score, score_to_tier(score), reason[:220]
 
 
 def tag_keywords(title, summary):
@@ -306,15 +370,17 @@ Journal/source: {journal_name}
 RSS pass threshold for this source: score >= {threshold}/10.
 
 SCORING RUBRIC:
-10 = direct hit for user's current projects: ARPES/magnetoARPES/CD-ARPES, AV3Sb5/CsV3Sb5/RbV3Sb5, kagome CDW/nematicity/loop current/TRSB.
-8-9 = very relevant quantum materials paper: kagome/topological semimetal/Berry curvature/anomalous Hall/altermagnetism/electronic structure with experimental relevance.
-6-7 = broad important condensed matter / materials physics paper that a CM experimentalist should know.
-4-5 = adjacent condensed matter or theory watch; keep if uncertainty is meaningful.
+10 = only direct hit for user's current projects: ARPES/magnetoARPES/CD-ARPES, AV3Sb5/CsV3Sb5/RbV3Sb5, kagome CDW/nematicity/loop current/TRSB, NbSe3 spin-charge separation, or 112 tellurides.
+9 = very direct but not perfect: electronic-structure spectroscopy, kagome electronic order, magnetic/topological material with direct experimental relevance.
+7-8 = important condensed-matter/quantum-materials paper worth keeping, but NOT A-level unless directly connected to the user profile.
+4-6 = adjacent condensed matter or theory watch; keep if uncertainty is meaningful.
 1-3 = mostly unrelated formal theory, generic quantum information, generic Majorana wires, generic Krylov/Floquet/SYK/tensor network, soft matter, photonics without CM/materials relevance.
 0 = clearly unrelated biology, medicine, climate, astronomy, chemistry synthesis without CM physics, news/editorial/correction.
 
 THEORY POLICY:
 - Do not over-score theory just because it says topological, Majorana, Floquet, Krylov, Kitaev, Chern, quantum, or graphene.
+- A_MUST_READ requires direct user/project relevance, not merely being a good condensed-matter paper.
+- Put broad but interesting condensed-matter papers in B_IMPORTANT_CONDMAT, not A_MUST_READ.
 - Theory scores high only if it is likely useful for interpreting real quantum materials, ARPES spectra, kagome/CDW/nematicity, magnetic topology, Berry-curvature transport, or spectroscopy.
 - Examples:
   * "Krylov dynamics in ergodic Floquet systems" => score 1, D_ARCHIVE.
@@ -332,36 +398,29 @@ Return a JSON array only. One object per article:
   "reason": "one short phrase under 18 words",
   "tags": ["ARPES", "kagome", "CDW"]
 }}
-Use decision YES iff score >= {threshold}. If unsure but plausibly relevant, give 4-6 rather than 0-3.
+Use decision YES iff score >= {threshold}. If unsure but plausibly relevant, give 4-6 rather than 0-3. Use A_MUST_READ only for direct user/project relevance; otherwise use B_IMPORTANT_CONDMAT even for excellent broad condensed-matter papers.
 
 Articles:
 """
 
 
 def classify_entries_with_gemini(journal_name, entries):
-    global current_model_name, using_primary_model
-    passed, removed, metadata = [], [], {}
+    global current_model_name, current_model_index
+    passed, removed, metadata, pending_retry = [], [], {}, []
     if not entries:
-        return passed, removed, metadata
+        return passed, removed, metadata, pending_retry
     if not gemini_client:
-        for entry in entries:
-            metadata[get_entry_link(entry)] = {
-                "tier": "C_MAYBE_UNCLASSIFIED",
-                "score": 5,
-                "reason": "Gemini unavailable; kept to avoid false negative",
-                "tags": tag_keywords(entry.get('title',''), entry.get('summary','')),
-            }
-            passed.append(entry)
-        return passed, removed, metadata
+        print(f"    {COLOR_YELLOW}Gemini unavailable. Deferring {len(entries)} item(s) to pending queue instead of adding them to RSS.{COLOR_END}", file=sys.stderr)
+        return passed, removed, metadata, list(entries)
 
     threshold = get_threshold(journal_name)
     base_prompt = build_gemini_prompt(journal_name)
-    batch_size = 60
+    batch_size = int(os.getenv("GEMINI_BATCH_SIZE", "20"))
     for start in range(0, len(entries), batch_size):
         batch_entries = entries[start:start+batch_size]
         batch_num = start//batch_size + 1
         total_batches = math.ceil(len(entries) / batch_size)
-        print(f"    {COLOR_BLUE}📦 Gemini scoring batch {batch_num}/{total_batches}{COLOR_END}", file=sys.stderr)
+        print(f"    {COLOR_BLUE}Gemini scoring batch {batch_num}/{total_batches}{COLOR_END}", file=sys.stderr)
         payload = []
         for e in batch_entries:
             title = e.get('title','')
@@ -397,61 +456,60 @@ def classify_entries_with_gemini(journal_name, entries):
                     except Exception:
                         score = 0
                     score = max(0, min(10, score))
-                    tier = d.get('tier') or score_to_tier(score)
                     reason = strip_html(d.get('reason',''))[:180]
                     tags = d.get('tags') or tag_keywords(entry.get('title',''), entry.get('summary',''))
                     if not isinstance(tags, list):
                         tags = tag_keywords(entry.get('title',''), entry.get('summary',''))
                     tags = [strip_html(str(t)).replace(" ", "") for t in tags if strip_html(str(t))][:8]
+                    score, tier, reason = postprocess_score_and_tier(journal_name, entry, score, reason)
                     link = get_entry_link(entry)
                     metadata[link] = {"tier": tier, "score": score, "reason": reason, "tags": tags}
                     if score >= threshold:
                         passed.append(entry)
-                        print(f"      🤖✅ [{score}] {title} [{tier}]", file=sys.stderr)
+                        print(f"      GEMINI_PASS [{score}] {title} [{tier}]", file=sys.stderr)
                     else:
                         removed.append(entry)
-                        print(f"      🤖❌ [{score}] {title} [{tier}]", file=sys.stderr)
+                        print(f"      GEMINI_DROP [{score}] {title} [{tier}]", file=sys.stderr)
 
-                for entry in batch_entries:
-                    if entry.get('title','') not in used_titles:
-                        metadata[get_entry_link(entry)] = {
-                            "tier": "C_MAYBE_UNCLASSIFIED",
-                            "score": 5,
-                            "reason": "Gemini response missing item; kept to avoid false negative",
-                            "tags": tag_keywords(entry.get('title',''), entry.get('summary','')),
-                        }
-                        passed.append(entry)
+                missing_entries = [entry for entry in batch_entries if entry.get('title','') not in used_titles]
+                if missing_entries:
+                    print(f"      {COLOR_YELLOW}Gemini response missed {len(missing_entries)} item(s); deferring them for retry instead of adding to RSS.{COLOR_END}", file=sys.stderr)
+                    pending_retry.extend(missing_entries)
                 api_success = True
             except Exception as e:
                 msg = str(e).lower()
                 is_quota = ("429" in msg) or ("resource_exhausted" in msg) or ("quota" in msg) or ("rate limit" in msg)
-                if is_quota and using_primary_model:
-                    print(f"      {COLOR_ORANGE}Quota issue on {current_model_name}: {e}{COLOR_END}", file=sys.stderr)
-                    current_model_name = fallback_model
-                    using_primary_model = False
+                is_unavailable = ("503" in msg) or ("unavailable" in msg) or ("overloaded" in msg) or ("high demand" in msg)
+                is_model_error = ("404" in msg) or ("not found" in msg) or ("invalid" in msg) or ("unsupported" in msg)
+
+                if (is_quota or is_unavailable or is_model_error) and current_model_index + 1 < len(MODEL_CANDIDATES):
+                    print(f"      {COLOR_ORANGE}Model issue on {current_model_name}: {e}{COLOR_END}", file=sys.stderr)
+                    current_model_index += 1
+                    current_model_name = MODEL_CANDIDATES[current_model_index]
                     attempt = 0
-                    print(f"      {COLOR_ORANGE}Switching to fallback model: {fallback_model}{COLOR_END}", file=sys.stderr)
+                    print(f"      {COLOR_ORANGE}Switching to next model: {current_model_name}{COLOR_END}", file=sys.stderr)
                     continue
+
                 if is_quota:
-                    print(f"      {COLOR_ORANGE}Quota issue on fallback model: {e}{COLOR_END}", file=sys.stderr)
-                    break
+                    m_retry = re.search(r'retry in ([0-9.]+)s', str(e), flags=re.I)
+                    wait_s = min(90, max(20, int(float(m_retry.group(1))) + 3)) if m_retry else 45
+                    print(f"      {COLOR_ORANGE}Quota/rate-limit issue on final model; waiting {wait_s}s once: {e}{COLOR_END}", file=sys.stderr)
+                    time.sleep(wait_s)
+                    attempt += 1
+                    if attempt >= max_attempts:
+                        break
+                    continue
+
                 print(f"      {COLOR_RED}Gemini error attempt {attempt+1}: {e}{COLOR_END}", file=sys.stderr)
                 attempt += 1
                 if attempt >= max_attempts:
                     break
-                time.sleep(30)
+                wait_s = min(90, 20 * attempt)
+                time.sleep(wait_s)
         if not api_success:
-            print(f"      {COLOR_YELLOW}Gemini batch failed. Keeping items as C_MAYBE_UNCLASSIFIED.{COLOR_END}", file=sys.stderr)
-            for entry in batch_entries:
-                passed.append(entry)
-                metadata[get_entry_link(entry)] = {
-                    "tier": "C_MAYBE_UNCLASSIFIED",
-                    "score": 5,
-                    "reason": "Gemini failed; kept to avoid false negative",
-                    "tags": tag_keywords(entry.get('title',''), entry.get('summary','')),
-                }
-    return passed, removed, metadata
-
+            print(f"      {COLOR_YELLOW}Gemini batch failed. Deferring {len(batch_entries)} item(s) to pending queue; not adding them to RSS as C_MAYBE_UNCLASSIFIED.{COLOR_END}", file=sys.stderr)
+            pending_retry.extend(batch_entries)
+    return passed, removed, metadata, pending_retry
 
 def find_xml_items(root):
     namespaces = {
@@ -552,6 +610,30 @@ def ensure_description_prefix(xml_item, feed_type, entry, meta, journal_name):
             title_el.text = f"[{score}] {strip_html(title_el.text)}"
 
 
+def append_synthetic_item_if_needed(root, parent, entry, meta, journal_name):
+    link = get_entry_link(entry)
+    if not link:
+        return
+    ns_atom = 'http://www.w3.org/2005/Atom'
+    if root.tag == 'rss':
+        item = ET.SubElement(parent, 'item')
+        ET.SubElement(item, 'title').text = strip_html(entry.get('title', 'No title'))
+        ET.SubElement(item, 'link').text = link
+        guid = ET.SubElement(item, 'guid')
+        guid.set('isPermaLink', 'true')
+        guid.text = link
+        if entry.get('published'):
+            ET.SubElement(item, 'pubDate').text = entry.get('published')
+        ensure_description_prefix(item, 'rss2', entry, meta, journal_name)
+    elif root.tag == f'{{{ns_atom}}}feed':
+        item = ET.SubElement(parent, f'{{{ns_atom}}}entry')
+        ET.SubElement(item, f'{{{ns_atom}}}title').text = strip_html(entry.get('title', 'No title'))
+        link_el = ET.SubElement(item, f'{{{ns_atom}}}link')
+        link_el.set('href', link)
+        ET.SubElement(item, f'{{{ns_atom}}}id').text = entry.get('id') or link
+        ET.SubElement(item, f'{{{ns_atom}}}updated').text = entry.get('updated') or entry.get('published') or datetime.datetime.utcnow().isoformat() + 'Z'
+        ensure_description_prefix(item, 'atom', entry, meta, journal_name)
+
 def filter_rss_for_journal(journal_name, feed_url):
     target_url = feed_url.strip('<> ')
     print(f"\n{'='*80}\n{COLOR_BOLD}{COLOR_BLUE}📚 {journal_name}{COLOR_END}\n{target_url}\n{'='*80}", file=sys.stderr)
@@ -559,6 +641,7 @@ def filter_rss_for_journal(journal_name, feed_url):
     response.raise_for_status()
     raw_xml = response.content
     parsed_feed = feedparser.parse(raw_xml)
+    entries_for_classification = merge_pending_with_current_entries(journal_name, parsed_feed.entries)
 
     threshold = get_threshold(journal_name)
 
@@ -566,7 +649,7 @@ def filter_rss_for_journal(journal_name, feed_url):
     keyword_removed_entries = []
     meta_by_link = {}
 
-    for entry in parsed_feed.entries:
+    for entry in entries_for_classification:
         title = entry.get('title', '')
         summary = entry.get('summary', '')
         link = get_entry_link(entry)
@@ -585,15 +668,18 @@ def filter_rss_for_journal(journal_name, feed_url):
         else:
             gemini_pending_entries.append(entry)
 
-    gemini_passed_entries, gemini_removed_entries, gemini_meta = classify_entries_with_gemini(journal_name, gemini_pending_entries)
+    gemini_passed_entries, gemini_removed_entries, gemini_meta, gemini_retry_entries = classify_entries_with_gemini(journal_name, gemini_pending_entries)
     meta_by_link.update(gemini_meta)
+    update_pending_for_journal(journal_name, gemini_retry_entries)
 
     passed_entries = keyword_passed_entries + gemini_passed_entries
     passed_links = set(get_entry_link(e) for e in passed_entries)
 
     root = ET.fromstring(raw_xml)
     xml_items, namespaces = find_xml_items(root)
-    parsed_map = entry_by_link(parsed_feed.entries)
+    parsed_map = entry_by_link(entries_for_classification)
+
+    existing_xml_links = set(link for _, link, _, _ in xml_items if link)
 
     if root.tag == 'rss':
         channel = root.find('channel')
@@ -602,12 +688,20 @@ def filter_rss_for_journal(journal_name, feed_url):
                 channel.remove(item)
             else:
                 ensure_description_prefix(item, feed_type, parsed_map.get(link, {}), meta_by_link.get(link, {}), journal_name)
+        for entry in passed_entries:
+            link = get_entry_link(entry)
+            if link and link not in existing_xml_links:
+                append_synthetic_item_if_needed(root, channel, entry, meta_by_link.get(link, {}), journal_name)
     elif root.tag == '{http://www.w3.org/2005/Atom}feed':
         for item, link, parent, feed_type in xml_items:
             if link not in passed_links:
                 root.remove(item)
             else:
                 ensure_description_prefix(item, feed_type, parsed_map.get(link, {}), meta_by_link.get(link, {}), journal_name)
+        for entry in passed_entries:
+            link = get_entry_link(entry)
+            if link and link not in existing_xml_links:
+                append_synthetic_item_if_needed(root, root, entry, meta_by_link.get(link, {}), journal_name)
     elif root.tag == '{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF':
         for item, link, parent, feed_type in xml_items:
             if link not in passed_links:
@@ -626,7 +720,7 @@ def filter_rss_for_journal(journal_name, feed_url):
     buffer = BytesIO()
     ET.ElementTree(root).write(buffer, encoding='utf-8', xml_declaration=True, pretty_print=True)
     all_entries = keyword_passed_entries + gemini_passed_entries + keyword_removed_entries + gemini_removed_entries
-    return buffer.getvalue(), keyword_passed_entries, gemini_passed_entries, keyword_removed_entries, gemini_removed_entries, meta_by_link
+    return buffer.getvalue(), keyword_passed_entries, gemini_passed_entries, keyword_removed_entries, gemini_removed_entries, gemini_retry_entries, meta_by_link
 
 
 def paper_record(entry, journal, source, meta):
@@ -696,8 +790,13 @@ def create_briefing_html(records, email_body_content=''):
         except Exception:
             return 0
 
-    a_items = sorted([r for r in records if r.get('tier') == 'A_MUST_READ'], key=lambda r: (-score_value(r), r.get('journal', ''), r.get('title', '')))
-    b_items = sorted([r for r in records if r.get('tier') == 'B_IMPORTANT_CONDMAT'], key=lambda r: (-score_value(r), r.get('journal', ''), r.get('title', '')))
+    # Keep the fast briefing clean: A requires both A tier and a direct trigger.
+    def record_has_a_trigger(r):
+        fake_entry = {'title': r.get('title', ''), 'summary': r.get('summary', '')}
+        return has_a_must_trigger(fake_entry)
+
+    a_items = sorted([r for r in records if r.get('tier') == 'A_MUST_READ' and record_has_a_trigger(r)], key=lambda r: (-score_value(r), r.get('journal', ''), r.get('title', '')))
+    b_items = sorted([r for r in records if r.get('tier') == 'B_IMPORTANT_CONDMAT' or (r.get('tier') == 'A_MUST_READ' and not record_has_a_trigger(r))], key=lambda r: (-score_value(r), r.get('journal', ''), r.get('title', '')))
     c_items = [r for r in records if str(r.get('tier', '')).startswith('C_') or not r.get('tier')]
 
     archived_count = sum(1 for line in email_body_content.splitlines() if '❌' in line) if email_body_content else 0
@@ -819,6 +918,81 @@ def save_json_file(path, obj):
         json.dump(obj, f, ensure_ascii=False, indent=2)
 
 
+
+PENDING_QUEUE_FILE = 'pending_classification_queue.json'
+
+
+def serialize_entry_for_pending(entry, journal_name):
+    return {
+        "journal": journal_name,
+        "title": entry.get('title', ''),
+        "summary": strip_html(entry.get('summary', '')),
+        "link": get_entry_link(entry),
+        "authors": get_authors(entry),
+        "published": entry.get('published', '') or entry.get('updated', ''),
+        "id": entry.get('id', '') or get_entry_link(entry),
+    }
+
+
+def entry_from_pending_dict(d):
+    authors = d.get('authors') or []
+    entry = {
+        "title": d.get('title', ''),
+        "summary": d.get('summary', ''),
+        "link": d.get('link', ''),
+        "id": d.get('id', '') or d.get('link', ''),
+        "published": d.get('published', ''),
+        "updated": d.get('published', ''),
+    }
+    if authors:
+        entry["authors"] = [{"name": a} for a in authors]
+        entry["author"] = ", ".join(authors)
+    return entry
+
+
+def load_pending_queue():
+    q = load_json_file(PENDING_QUEUE_FILE, {})
+    return q if isinstance(q, dict) else {}
+
+
+def save_pending_queue(queue):
+    clean = {}
+    for journal, items in (queue or {}).items():
+        seen, out = set(), []
+        for item in items or []:
+            key = item.get('link') or item.get('title')
+            if not key or key in seen:
+                continue
+            seen.add(key)
+            out.append(item)
+        if out:
+            clean[journal] = out
+    save_json_file(PENDING_QUEUE_FILE, clean)
+
+
+def merge_pending_with_current_entries(journal_name, current_entries):
+    queue = load_pending_queue()
+    pending_entries = [entry_from_pending_dict(d) for d in queue.get(journal_name, []) or []]
+    seen, merged = set(), []
+    for e in pending_entries + list(current_entries):
+        key = get_entry_link(e) or e.get('title', '')
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        merged.append(e)
+    if pending_entries:
+        print(f"  {COLOR_ORANGE}Retrying {len(pending_entries)} pending item(s) from previous failed Gemini batches.{COLOR_END}", file=sys.stderr)
+    return merged
+
+
+def update_pending_for_journal(journal_name, pending_entries):
+    queue = load_pending_queue()
+    if pending_entries:
+        queue[journal_name] = [serialize_entry_for_pending(e, journal_name) for e in pending_entries]
+        print(f"  {COLOR_YELLOW}Deferred {len(pending_entries)} item(s) for next run; not added to RSS yet.{COLOR_END}", file=sys.stderr)
+    else:
+        queue.pop(journal_name, None)
+    save_pending_queue(queue)
 def clear_partial_state():
     for path in ['partial_briefing_records.json', 'partial_email_content.txt']:
         try:
@@ -860,7 +1034,7 @@ if __name__ == '__main__':
     try:
         for journal_name, feed_url in journals_to_process[start_index:]:
             try:
-                filtered_xml, keyword_passed, gemini_passed, keyword_removed, gemini_removed, meta = filter_rss_for_journal(journal_name, feed_url)
+                filtered_xml, keyword_passed, gemini_passed, keyword_removed, gemini_removed, gemini_retry, meta = filter_rss_for_journal(journal_name, feed_url)
                 output_filename = f"{OUTPUT_FILE_BASE}_{journal_name}.xml"
                 with open(output_filename, 'wb') as f:
                     f.write(filtered_xml)
@@ -885,6 +1059,14 @@ if __name__ == '__main__':
                         email_content += f"  ❌ {entry.get('title', 'No title')} ({get_entry_link(entry) or 'No link'})\n"
                     for entry in gemini_removed:
                         email_content += f"  🤖❌ {entry.get('title', 'No title')} ({get_entry_link(entry) or 'No link'})\n"
+                    email_content += '\n'
+
+                email_content += 'PENDING RETRY PAPERS:\n'
+                if not gemini_retry:
+                    email_content += 'No papers are pending retry.\n\n'
+                else:
+                    for entry in gemini_retry:
+                        email_content += f"  ⏸ {entry.get('title', 'No title')} ({get_entry_link(entry) or 'No link'})\n"
                     email_content += '\n'
 
                 # Persist partial progress after each successful journal. If a later journal fails,
