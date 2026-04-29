@@ -28,6 +28,7 @@ jobs:
             last_failed_journal.txt
             partial_email_content.txt
             partial_briefing_records.json
+            pending_classification_queue.json
             filtered_feed_*.xml
             filtered_titles.txt
             briefing.html
@@ -60,6 +61,10 @@ jobs:
       - name: Run Python script to filter RSS and create files
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          # Optional: set repo secret GEMINI_MODELS to override model order.
+          # Default in Filter_RSS.py: gemini-3-flash-preview,gemini-3.1-flash-lite-preview,gemini-2.5-flash
+          GEMINI_MODELS: ${{ secrets.GEMINI_MODELS }}
+          GEMINI_BATCH_SIZE: "20"
           GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           python Filter_RSS.py
@@ -79,6 +84,7 @@ jobs:
             last_failed_journal.txt
             partial_email_content.txt
             partial_briefing_records.json
+            pending_classification_queue.json
 
       # Save checkpoint for the next run, even on failure.
       # Use a unique key because GitHub cache entries are immutable.
@@ -90,6 +96,7 @@ jobs:
             last_failed_journal.txt
             partial_email_content.txt
             partial_briefing_records.json
+            pending_classification_queue.json
             filtered_feed_*.xml
             filtered_titles.txt
             briefing.html
