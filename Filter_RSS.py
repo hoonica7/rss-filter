@@ -1,6 +1,22 @@
-# Filter_RSS v10
-# Journal-by-journal RSS feeds + stricter scored LLM filtering + compact daily briefing.
-# Adds robust checkpoint/resume support via partial state files restored by GitHub Actions cache.
+# Filter_RSS v11
+# Builds on v10 with seven correctness/perf fixes:
+#   1. Curated HARD_REJECT_KEYWORDS pre-filter restored (saves Gemini calls).
+#   2. postprocess_score_and_tier demotes tier only — never the score —
+#      so above-threshold papers stay in RSS (recall preserved) while the
+#      A_MUST_READ / briefing list is reserved for direct project hits.
+#   3. Title normalization for Gemini response → input matching, so HTML
+#      entities (<sub>, &amp; etc.) no longer cause papers to get stuck
+#      in the pending queue forever.
+#   4. lru_cache on og:image fetcher and a real Chrome User-Agent string,
+#      so each article URL is fetched at most once per run and publishers
+#      are less likely to 403.
+#   5. Synthetic RSS-insert path now supports Atom and RDF feeds, not just
+#      RSS 2.0. arXiv pending papers can now make it into the feed.
+#   6. ensure_description_prefix uses the correct namespace for RSS 1.0
+#      (arXiv) — previously the enrichment was written into a dangling
+#      no-namespace <description> that readers ignored.
+#   7. Pending queue is preserved across resume runs (was being clobbered
+#      on a successful resume that did not re-process all journals).
 
 import feedparser
 import lxml.etree as ET
@@ -16,6 +32,7 @@ import datetime
 import re
 import math
 import html
+from functools import lru_cache
 from urllib.parse import urljoin
 
 COLOR_GREEN = '\033[92m'
@@ -72,12 +89,133 @@ BROAD_CONDMAT_KEYWORDS = [
     "quantum geometry", "Hall effect", "transport", "Fermi surface", "band structure", "Landau level"
 ]
 
-STRONG_NEGATIVE_KEYWORDS = [
-    "congress", "forest", "climate", "lava", "protein", "archeologist", "mummy", "cancer", "tumor", "immune",
-    "immunology", "inflammation", "antibody", "cytokine", "genome", "genetic", "transcriptome", "rna", "mrna",
-    "mirna", "crispr", "mutation", "mouse", "zebrafish", "neuron", "neural", "brain", "synapse", "microbiome",
-    "gut", "pathogen", "bacteria", "virus", "viral", "infection", "epidemiology", "clinical", "therapy", "therapeutic",
-    "disease", "patient", "biopsy", "in vivo", "in vitro", "drug", "pharmacology", "oncology"
+# =============================================================================
+# HARD_REJECT_KEYWORDS — papers whose title or abstract contains any of these
+# (whole-word, case-insensitive) are dropped BEFORE Gemini classification.
+#
+# Curated to avoid blocking physics papers:
+#   * "neural" REMOVED → matches "neural network", "neural quantum states"
+#     used in ML-for-physics work that the user may want to see.
+#   * "genetic" REMOVED → matches "genetic algorithm".
+#   * "forest" REMOVED → matches "random forest" ML method.
+#   * "quark"/"gluon"/"hadron" NOT included → may appear in interdisciplinary
+#     high-impact papers (e.g., muon g-2 in Nature).
+#   * "dendrite" NOT included → matches "Li dendrite" battery papers.
+#   * "axion"/"neutrino"/"holography" NOT included → can be CMP topics.
+#   * "oxygen"/"cell" NOT included → "oxygen vacancy", "unit cell".
+#
+# Plural / adjectival variants are listed explicitly because the matcher
+# uses word boundaries (\b...\b) — without these, "genome" would not match
+# "genomes" or "genomic".
+# =============================================================================
+HARD_REJECT_KEYWORDS = [
+    # ---- Cancer / oncology ----
+    "cancer", "cancers", "carcinoma", "carcinomas", "carcinogen", "carcinogenic",
+    "tumor", "tumors", "tumour", "tumours",
+    "metastasis", "metastases", "metastatic",
+    "leukemia", "leukaemia", "lymphoma",
+    "oncology", "oncological", "chemotherapy",
+
+    # ---- Infectious disease ----
+    "virus", "viruses", "viral",
+    "vaccine", "vaccines", "vaccination",
+    "infection", "infections", "infectious",
+    "pathogen", "pathogens", "pathogenic",
+    "bacteria", "bacterial", "bacterium",
+    "antibiotic", "antibiotics",
+    "epidemic", "pandemic", "epidemiology", "epidemiological",
+
+    # ---- Molecular biology ----
+    "genome", "genomes", "genomic", "genomics",
+    "transcriptome", "transcriptomes", "transcriptomic", "transcriptomics",
+    "proteome", "proteomic", "proteomics",
+    "mRNA", "miRNA", "lncRNA", "ncRNA", "tRNA", "siRNA",
+    "CRISPR", "Cas9",
+    "phenotype", "phenotypes", "phenotypic",
+    "genotype", "genotypes",
+    "epigenetic", "epigenetics", "epigenome",
+    "methylation",
+    "antibody", "antibodies", "antigen", "antigens",
+    "cytokine", "cytokines", "interleukin", "chemokine",
+
+    # ---- Cell types / anatomy / tissues ----
+    # NB: bare "cell" / "neural" / "dendrite" omitted — would match physics terms.
+    "neuron", "neurons", "neuronal",
+    "synapse", "synapses", "synaptic",
+    "astrocyte", "astrocytes",
+    "glia", "glial", "microglia", "microglial",
+    "hippocampus", "hippocampal",
+    "neocortex", "neocortical",
+    "embryo", "embryos", "embryonic",
+    "fetus", "fetuses", "fetal",
+    "myosin", "actin", "kinase", "cytoskeleton", "cytoskeletal", "ribosome",
+
+    # ---- Organisms ----
+    "mouse", "mice", "rat", "rats",
+    "zebrafish", "drosophila", "yeast",
+    "fungus", "fungi", "fungal",
+    "Salmonella", "octopus", "octopuses",
+
+    # ---- Medicine / clinical ----
+    "patient", "patients", "clinical", "diagnosis", "diagnostic", "diagnoses",
+    "therapy", "therapies", "therapeutic", "therapeutics",
+    "drug", "drugs", "pharmacology", "pharmacological", "pharmaceutical",
+    "biopsy", "biopsies", "disease", "diseases",
+    "in vivo", "in-vivo", "in vitro", "in-vitro", "ex vivo", "ex-vivo",
+    "Alzheimer", "Parkinson", "diabetes", "diabetic",
+    "obesity", "obese", "asthma",
+    "psoriasis", "schizophrenia",
+    "cardiovascular", "myocardial", "ischemia", "ischemic", "stroke",
+
+    # ---- Immune system ----
+    "immune", "immunity", "immunology", "immunological",
+    "autoimmune", "autoimmunity",
+    "inflammation", "inflammatory",
+
+    # ---- Cognitive / behavioral / social ----
+    "psychology", "psychological", "psychiatric",
+    "behavioral", "behavioural",
+
+    # ---- Earth / climate / ecology ----
+    "climate", "climatic",
+    "ecosystem", "ecosystems",
+    "biodiversity", "habitat", "habitats",
+    "wildfire", "wildfires", "deforestation",
+    "glacier", "glaciers", "glaciation", "permafrost",
+    "volcano", "volcanoes", "volcanic",
+    "earthquake", "earthquakes", "tsunami", "tectonic",
+    "monsoon", "hurricane", "hurricanes", "cyclone", "cyclones",
+    "pollinator", "pollinators", "pesticide", "pesticides",
+    "agriculture", "agricultural",
+    "lava", "archeology", "archaeology", "archaeological", "mummy",
+    "fishery", "fisheries",
+
+    # ---- Cosmology / astrophysics ----
+    "exoplanet", "exoplanets",
+    "galaxy", "galaxies", "galactic",
+    "supernova", "supernovae",
+    "interstellar", "asteroid", "asteroids", "comet", "comets",
+    "dark matter", "dark energy",
+    "AdS/CFT",
+    "cosmic ray", "cosmic rays", "cosmological", "cosmology",
+    "gravitational wave", "gravitational waves",
+
+    # ---- Misc ----
+    "microbiome", "microbiomes", "gut",
+    "obituary",
+]
+
+# Backwards-compatible alias for the Gemini prompt's negative_hints field.
+STRONG_NEGATIVE_KEYWORDS = HARD_REJECT_KEYWORDS
+
+# Bio stems that show up as the tail half of compound words and therefore
+# don't match the whole-word \b...\b pattern. Use sparingly — substring
+# matching has higher false-positive risk than the curated word list above.
+# Only include stems where any compound use is reliably bio/medical.
+SUBSTRING_REJECT_STEMS = [
+    "coronavirus",   # alphacoronavirus, betacoronaviruses, retrovirus-like usage
+    "carcinoma",     # adenocarcinoma, hepatocarcinoma
+    "sarcoma",       # osteosarcoma
 ]
 
 JOURNAL_THRESHOLDS = {
@@ -106,8 +244,8 @@ JOURNAL_URLS = {
     "arXiv_CondMat": "https://rss.arxiv.org/rss/cond-mat",
 }
 
-# Avoid preview/high-demand models by default. Override with a repo secret if desired:
-#   GEMINI_MODELS=gemini-2.5-flash,gemini-2.0-flash-lite
+# Model order requested by user. Override with repo secret if desired:
+#   GEMINI_MODELS=gemini-3-flash-preview,gemini-3.1-flash-lite-preview,gemini-2.5-flash
 MODEL_CANDIDATES = [m.strip() for m in os.getenv(
     "GEMINI_MODELS",
     "gemini-3-flash-preview,gemini-3.1-flash-lite-preview,gemini-2.5-flash"
@@ -220,28 +358,35 @@ def has_a_must_trigger(entry):
     return False
 
 
-def postprocess_score_and_tier(journal_name, entry, score, reason=''):
-    """Make A_MUST_READ genuinely must-read.
+def postprocess_score_and_tier(journal_name, entry, score, tier, reason=''):
+    """Demote tier (NOT score) for broad/theory papers without a direct hit
+    on the user's project keywords. Score is preserved so the RSS-feed
+    threshold check below uses Gemini's raw judgment (recall-oriented),
+    while tier — which drives the briefing's A list — is reserved for
+    direct project relevance.
 
-    Gemini may score broad CM/theory papers as 9-10. For the morning briefing, A should be
-    reserved for direct project/spectroscopy/material relevance. We cap broad papers to B/C
-    instead of deleting them, preserving recall while cleaning the A list.
+    Previous behavior (v10) capped score, which inadvertently turned
+    tier demotion into a hard filter (score below threshold = removed).
     """
     text = text_for_entry(entry)
     has_a = has_a_must_trigger(entry)
 
-    if not has_a and score >= 9:
-        score = 8
-        reason = (reason + "; capped below A: broad CM, not direct user/project hit").strip('; ')
+    # Demote A → B if there is no direct project/material hit.
+    if not has_a and tier == "A_MUST_READ":
+        tier = "B_IMPORTANT_CONDMAT"
+        reason = (reason + "; demoted from A: broad CM, not direct user/project hit").strip('; ')
 
+    # Theory overpromotion: cap A or B → C for formal/abstract theory.
     if any(h in text for h in THEORY_OVERPROMOTION_HINTS) and not has_a:
-        score = min(score, 6)
-        reason = (reason + "; capped: formal/generic theory watch").strip('; ')
+        if tier in ("A_MUST_READ", "B_IMPORTANT_CONDMAT"):
+            tier = "C_MAYBE"
+        reason = (reason + "; tier capped to C: formal/generic theory watch").strip('; ')
 
-    if journal_name == 'arXiv_CondMat' and not has_a:
-        score = min(score, 7)
+    # arXiv: never A without a direct hit.
+    if journal_name == 'arXiv_CondMat' and not has_a and tier == "A_MUST_READ":
+        tier = "B_IMPORTANT_CONDMAT"
 
-    return score, score_to_tier(score), reason[:220]
+    return score, tier, reason[:220]
 
 
 def tag_keywords(title, summary):
@@ -268,6 +413,55 @@ def find_negative_hints(title, summary):
     return [kw for kw in STRONG_NEGATIVE_KEYWORDS if kw.lower() in text][:5]
 
 
+def norm_title(s):
+    """Canonical form for title matching. Strips HTML, collapses whitespace,
+    lowercases, removes incidental punctuation differences. Used so that
+    titles containing entities like α-RuCl<sub>3</sub> still round-trip
+    correctly through Gemini even if it normalizes them to α-RuCl3.
+    """
+    if not s:
+        return ""
+    t = strip_html(str(s))
+    t = re.sub(r'\s+', ' ', t).strip().lower()
+    # Drop trailing/leading punctuation noise that LLMs sometimes change.
+    t = t.strip(' .;:,"\'')
+    return t
+
+
+def find_hard_reject(title, summary):
+    """Word-boundary match against HARD_REJECT_KEYWORDS, plus substring
+    match against SUBSTRING_REJECT_STEMS for stems that appear inside
+    compound words (e.g., "alphacoronaviruses"). Returns (keyword, location)
+    or (None, None). Title is checked before abstract so the more visible
+    signal wins. Hyphens in input are normalized to spaces so multi-word
+    keywords like "cosmic ray" match titles like "Cosmic-Ray Acceleration".
+    """
+    title_text = re.sub(r'-', ' ', strip_html(title or ""))
+    abstract_text = re.sub(r'-', ' ', strip_html(summary or ""))
+
+    # Whole-word matches in title.
+    for kw in HARD_REJECT_KEYWORDS:
+        pattern = r'\b' + re.escape(kw) + r'\b'
+        if re.search(pattern, title_text, re.IGNORECASE):
+            return kw, "Title"
+    # Compound stems in title (e.g., alphacoronaviruses).
+    for stem in SUBSTRING_REJECT_STEMS:
+        if re.search(re.escape(stem), title_text, re.IGNORECASE):
+            return stem, "Title"
+
+    # Whole-word matches in abstract.
+    for kw in HARD_REJECT_KEYWORDS:
+        pattern = r'\b' + re.escape(kw) + r'\b'
+        if re.search(pattern, abstract_text, re.IGNORECASE):
+            return kw, "Abstract"
+    # Compound stems in abstract.
+    for stem in SUBSTRING_REJECT_STEMS:
+        if re.search(re.escape(stem), abstract_text, re.IGNORECASE):
+            return stem, "Abstract"
+
+    return None, None
+
+
 def arxiv_html_url(link):
     if not link:
         return None
@@ -278,22 +472,40 @@ def arxiv_html_url(link):
     return f"https://arxiv.org/html/{arxiv_id}"
 
 
+_BROWSER_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/124.0.0.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+}
+
+
+@lru_cache(maxsize=512)
 def fetch_first_image_from_html(url, timeout=15):
+    """Fetch og:image (or first content image) from a URL. Memoized per-run
+    so a paper that appears in both ensure_description_prefix and
+    paper_record only triggers one HTTP fetch.
+    """
     if not url:
         return None
     try:
-        resp = requests.get(url, timeout=timeout, headers={"User-Agent": "Mozilla/5.0"})
+        resp = requests.get(url, timeout=timeout, headers=_BROWSER_HEADERS, allow_redirects=True)
         if resp.status_code >= 400:
             return None
         html_text = resp.text
         m = re.search(r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)["\']', html_text, flags=re.I)
         if not m:
             m = re.search(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image["\']', html_text, flags=re.I)
+        if not m:
+            m = re.search(r'<meta[^>]+name=["\']twitter:image["\'][^>]+content=["\']([^"\']+)["\']', html_text, flags=re.I)
         if m:
             return urljoin(url, html.unescape(m.group(1)))
         for m in re.finditer(r'<img[^>]+(?:src|data-src)=["\']([^"\']+)["\']', html_text, flags=re.I):
             src = html.unescape(m.group(1))
-            if any(skip in src.lower() for skip in ["logo", "icon", "favicon", "avatar"]):
+            if any(skip in src.lower() for skip in ["logo", "icon", "favicon", "avatar", "default-cover", "branding"]):
                 continue
             return urljoin(url, src)
     except Exception as e:
@@ -404,23 +616,66 @@ Articles:
 """
 
 
+def serialize_entry_for_pending(entry):
+    """Store enough metadata to retry a failed Gemini classification in a later run."""
+    return {
+        "title": entry.get('title', ''),
+        "link": get_entry_link(entry),
+        "summary": strip_html(entry.get('summary', '')),
+        "authors": get_authors(entry),
+        "published": entry.get('published', '') or entry.get('updated', ''),
+        "id": entry.get('id', '') or get_entry_link(entry),
+    }
+
+
+def entry_from_pending_record(record):
+    """Create a small feedparser-like dict for retrying and, if passed, RSS insertion."""
+    authors = record.get('authors') or []
+    return {
+        "title": record.get('title', ''),
+        "link": record.get('link', ''),
+        "summary": record.get('summary', ''),
+        "authors": [{"name": a} for a in authors],
+        "author": "; ".join(authors),
+        "published": record.get('published', ''),
+        "updated": record.get('published', ''),
+        "id": record.get('id', '') or record.get('link', ''),
+        "_from_pending_queue": True,
+    }
+
+
+def dedupe_entries_by_link_or_title(entries):
+    out = []
+    seen = set()
+    for e in entries:
+        key = get_entry_link(e) or strip_html(e.get('title', '')).lower()
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        out.append(e)
+    return out
+
+
 def classify_entries_with_gemini(journal_name, entries):
     global current_model_name, current_model_index
-    passed, removed, metadata, pending_retry = [], [], {}, []
+    passed, removed, pending, metadata = [], [], [], {}
     if not entries:
-        return passed, removed, metadata, pending_retry
+        return passed, removed, pending, metadata
     if not gemini_client:
-        print(f"    {COLOR_YELLOW}Gemini unavailable. Deferring {len(entries)} item(s) to pending queue instead of adding them to RSS.{COLOR_END}", file=sys.stderr)
-        return passed, removed, metadata, list(entries)
+        print(f"      {COLOR_YELLOW}⏸ Gemini unavailable. Holding {len(entries)} items for next run.{COLOR_END}", file=sys.stderr)
+        return passed, removed, list(entries), metadata
 
     threshold = get_threshold(journal_name)
     base_prompt = build_gemini_prompt(journal_name)
-    batch_size = int(os.getenv("GEMINI_BATCH_SIZE", "20"))
+    batch_size = int(os.getenv("GEMINI_BATCH_SIZE", "25"))
+    max_attempts_per_model = int(os.getenv("GEMINI_MAX_ATTEMPTS_PER_MODEL", "3"))
+
     for start in range(0, len(entries), batch_size):
         batch_entries = entries[start:start+batch_size]
         batch_num = start//batch_size + 1
         total_batches = math.ceil(len(entries) / batch_size)
-        print(f"    {COLOR_BLUE}Gemini scoring batch {batch_num}/{total_batches}{COLOR_END}", file=sys.stderr)
+        print(f"    {COLOR_BLUE}📦 Gemini scoring batch {batch_num}/{total_batches}{COLOR_END}", file=sys.stderr)
+
         payload = []
         for e in batch_entries:
             title = e.get('title','')
@@ -432,84 +687,112 @@ def classify_entries_with_gemini(journal_name, entries):
                 "negative_hints": find_negative_hints(title, summary),
             })
         full_prompt = base_prompt + json.dumps(payload, ensure_ascii=False, indent=2)
-        max_attempts = 3
+
         api_success = False
-        attempt = 0
-        while not api_success:
-            try:
-                response = gemini_client.models.generate_content(
-                    model=current_model_name,
-                    contents=full_prompt,
-                    config=types.GenerateContentConfig(response_mime_type="application/json")
-                )
-                decisions = json.loads(response.text)
-                by_title = {e.get('title',''): e for e in batch_entries}
-                used_titles = set()
-                for d in decisions:
-                    title = d.get('title','')
-                    entry = by_title.get(title)
-                    if not entry:
-                        continue
-                    used_titles.add(title)
-                    try:
-                        score = int(d.get('score', 0))
-                    except Exception:
-                        score = 0
-                    score = max(0, min(10, score))
-                    reason = strip_html(d.get('reason',''))[:180]
-                    tags = d.get('tags') or tag_keywords(entry.get('title',''), entry.get('summary',''))
-                    if not isinstance(tags, list):
-                        tags = tag_keywords(entry.get('title',''), entry.get('summary',''))
-                    tags = [strip_html(str(t)).replace(" ", "") for t in tags if strip_html(str(t))][:8]
-                    score, tier, reason = postprocess_score_and_tier(journal_name, entry, score, reason)
-                    link = get_entry_link(entry)
-                    metadata[link] = {"tier": tier, "score": score, "reason": reason, "tags": tags}
-                    if score >= threshold:
-                        passed.append(entry)
-                        print(f"      GEMINI_PASS [{score}] {title} [{tier}]", file=sys.stderr)
-                    else:
-                        removed.append(entry)
-                        print(f"      GEMINI_DROP [{score}] {title} [{tier}]", file=sys.stderr)
+        last_error = None
+        # Try every configured model before deferring to the pending queue.
+        # Start from the current model index; if an earlier model has already hit quota in this run,
+        # keep using the later model for the rest of the run.
+        start_model_index = max(0, min(current_model_index, len(MODEL_CANDIDATES) - 1))
 
-                missing_entries = [entry for entry in batch_entries if entry.get('title','') not in used_titles]
-                if missing_entries:
-                    print(f"      {COLOR_YELLOW}Gemini response missed {len(missing_entries)} item(s); deferring them for retry instead of adding to RSS.{COLOR_END}", file=sys.stderr)
-                    pending_retry.extend(missing_entries)
-                api_success = True
-            except Exception as e:
-                msg = str(e).lower()
-                is_quota = ("429" in msg) or ("resource_exhausted" in msg) or ("quota" in msg) or ("rate limit" in msg)
-                is_unavailable = ("503" in msg) or ("unavailable" in msg) or ("overloaded" in msg) or ("high demand" in msg)
-                is_model_error = ("404" in msg) or ("not found" in msg) or ("invalid" in msg) or ("unsupported" in msg)
+        for model_idx in range(start_model_index, len(MODEL_CANDIDATES)):
+            model_name = MODEL_CANDIDATES[model_idx]
+            current_model_index = model_idx
+            current_model_name = model_name
+            print(f"      🤖 Gemini model: {model_name} ({model_idx+1}/{len(MODEL_CANDIDATES)})", file=sys.stderr)
 
-                if (is_quota or is_unavailable or is_model_error) and current_model_index + 1 < len(MODEL_CANDIDATES):
-                    print(f"      {COLOR_ORANGE}Model issue on {current_model_name}: {e}{COLOR_END}", file=sys.stderr)
-                    current_model_index += 1
-                    current_model_name = MODEL_CANDIDATES[current_model_index]
-                    attempt = 0
-                    print(f"      {COLOR_ORANGE}Switching to next model: {current_model_name}{COLOR_END}", file=sys.stderr)
-                    continue
+            # Invalid/missing model errors should fall through quickly, while 503/429 get retries.
+            for attempt in range(1, max_attempts_per_model + 1):
+                try:
+                    print(f"        ↳ attempt {attempt}/{max_attempts_per_model} on {model_name}", file=sys.stderr)
+                    response = gemini_client.models.generate_content(
+                        model=model_name,
+                        contents=full_prompt,
+                        config=types.GenerateContentConfig(response_mime_type="application/json")
+                    )
+                    decisions = json.loads(response.text)
+                    # Normalize titles when matching Gemini's reply against
+                    # the original batch — Gemini may strip HTML entities or
+                    # whitespace, which would otherwise leave items unmatched
+                    # and they would loop in the pending queue forever.
+                    by_title = {norm_title(e.get('title','')): e for e in batch_entries}
+                    used_norms = set()
+                    for d in decisions:
+                        title = d.get('title','')
+                        nt = norm_title(title)
+                        entry = by_title.get(nt)
+                        if not entry:
+                            continue
+                        used_norms.add(nt)
+                        try:
+                            score = int(d.get('score', 0))
+                        except Exception:
+                            score = 0
+                        score = max(0, min(10, score))
+                        tier = d.get('tier') or score_to_tier(score)
+                        reason = strip_html(d.get('reason',''))[:180]
+                        tags = d.get('tags') or tag_keywords(entry.get('title',''), entry.get('summary',''))
+                        if not isinstance(tags, list):
+                            tags = tag_keywords(entry.get('title',''), entry.get('summary',''))
+                        tags = [strip_html(str(t)).replace(" ", "") for t in tags if strip_html(str(t))][:8]
+                        score, tier, reason = postprocess_score_and_tier(journal_name, entry, score, tier, reason)
+                        link = get_entry_link(entry)
+                        metadata[link] = {"tier": tier, "score": score, "reason": reason, "tags": tags}
+                        if score >= threshold:
+                            passed.append(entry)
+                            print(f"      🤖✅ [{score}] {title} [{tier}]", file=sys.stderr)
+                        else:
+                            removed.append(entry)
+                            print(f"      🤖❌ [{score}] {title} [{tier}]", file=sys.stderr)
 
-                if is_quota:
-                    m_retry = re.search(r'retry in ([0-9.]+)s', str(e), flags=re.I)
-                    wait_s = min(90, max(20, int(float(m_retry.group(1))) + 3)) if m_retry else 45
-                    print(f"      {COLOR_ORANGE}Quota/rate-limit issue on final model; waiting {wait_s}s once: {e}{COLOR_END}", file=sys.stderr)
-                    time.sleep(wait_s)
-                    attempt += 1
-                    if attempt >= max_attempts:
-                        break
-                    continue
-
-                print(f"      {COLOR_RED}Gemini error attempt {attempt+1}: {e}{COLOR_END}", file=sys.stderr)
-                attempt += 1
-                if attempt >= max_attempts:
+                    for entry in batch_entries:
+                        if norm_title(entry.get('title','')) not in used_norms:
+                            pending.append(entry)
+                            print(f"      ⏸ Gemini response missing item. Pending retry: {entry.get('title','')}", file=sys.stderr)
+                    api_success = True
+                    # Keep the working model for subsequent batches in this run.
+                    current_model_index = model_idx
+                    current_model_name = model_name
+                    print(f"      ✅ Gemini batch classified using {model_name}", file=sys.stderr)
                     break
-                wait_s = min(90, 20 * attempt)
-                time.sleep(wait_s)
+                except Exception as e:
+                    last_error = e
+                    msg = str(e).lower()
+                    is_quota = ("429" in msg) or ("resource_exhausted" in msg) or ("quota" in msg) or ("rate limit" in msg)
+                    is_unavailable = ("503" in msg) or ("unavailable" in msg) or ("overloaded" in msg) or ("high demand" in msg)
+                    is_model_error = ("404" in msg) or ("not found" in msg) or ("invalid" in msg) or ("unsupported" in msg)
+
+                    print(f"      {COLOR_RED}Gemini error on {model_name} attempt {attempt}/{max_attempts_per_model}: {e}{COLOR_END}", file=sys.stderr)
+
+                    # Do not waste three attempts on a clearly invalid/unsupported model.
+                    if is_model_error:
+                        print(f"      {COLOR_ORANGE}🔁 Model error on {model_name}; trying next configured model.{COLOR_END}", file=sys.stderr)
+                        break
+
+                    if attempt < max_attempts_per_model:
+                        wait_s = 0
+                        if is_quota:
+                            m_retry = re.search(r'retry in ([0-9.]+)s', str(e), flags=re.I)
+                            wait_s = min(90, max(15, int(float(m_retry.group(1))) + 3)) if m_retry else 30
+                        elif is_unavailable:
+                            wait_s = min(60, 15 * attempt)
+                        else:
+                            wait_s = min(45, 10 * attempt)
+                        print(f"      {COLOR_ORANGE}↻ Retrying {model_name} after {wait_s}s...{COLOR_END}", file=sys.stderr)
+                        time.sleep(wait_s)
+
+            if api_success:
+                break
+            if model_idx + 1 < len(MODEL_CANDIDATES):
+                next_model = MODEL_CANDIDATES[model_idx + 1]
+                print(f"      {COLOR_ORANGE}🔁 Switching Gemini model: {model_name} → {next_model}{COLOR_END}", file=sys.stderr)
+
         if not api_success:
-            print(f"      {COLOR_YELLOW}Gemini batch failed. Deferring {len(batch_entries)} item(s) to pending queue; not adding them to RSS as C_MAYBE_UNCLASSIFIED.{COLOR_END}", file=sys.stderr)
-            pending_retry.extend(batch_entries)
-    return passed, removed, metadata, pending_retry
+            print(f"      {COLOR_YELLOW}⏸ Gemini batch failed after trying all configured models. Deferring {len(batch_entries)} item(s) to pending queue; not adding them to RSS.{COLOR_END}", file=sys.stderr)
+            if last_error:
+                print(f"      {COLOR_YELLOW}Last Gemini error: {last_error}{COLOR_END}", file=sys.stderr)
+            pending.extend(batch_entries)
+    return passed, removed, pending, metadata
 
 def find_xml_items(root):
     namespaces = {
@@ -580,6 +863,7 @@ def ensure_description_prefix(xml_item, feed_type, entry, meta, journal_name):
 
     ns_atom = 'http://www.w3.org/2005/Atom'
     ns_dc = 'http://purl.org/dc/elements/1.1/'
+    ns_rss1 = 'http://purl.org/rss/1.0/'
     if feed_type == 'atom':
         summary_el = xml_item.find(f'{{{ns_atom}}}summary')
         if summary_el is None:
@@ -592,7 +876,22 @@ def ensure_description_prefix(xml_item, feed_type, entry, meta, journal_name):
             author_el = ET.SubElement(xml_item, f'{{{ns_atom}}}author')
             name_el = ET.SubElement(author_el, f'{{{ns_atom}}}name')
             name_el.text = author_compact
+    elif feed_type == 'rss1':
+        # RSS 1.0 (arXiv): description lives in the rss1 default namespace.
+        # Without this fix v10 wrote a dangling no-namespace <description>
+        # while the original (namespaced) description stayed unchanged,
+        # so readers showed the un-enriched abstract.
+        desc_el = xml_item.find(f'{{{ns_rss1}}}description')
+        if desc_el is None:
+            desc_el = ET.SubElement(xml_item, f'{{{ns_rss1}}}description')
+        desc_el.text = prefix_html  # CDATA inside namespaced element is iffy; plain HTML escaped via safe_text is fine
+        if authors:
+            dc_el = xml_item.find(f'{{{ns_dc}}}creator')
+            if dc_el is None:
+                dc_el = ET.SubElement(xml_item, f'{{{ns_dc}}}creator')
+            dc_el.text = author_compact
     else:
+        # rss2
         desc_el = xml_item.find('description')
         if desc_el is None:
             desc_el = ET.SubElement(xml_item, 'description')
@@ -605,43 +904,97 @@ def ensure_description_prefix(xml_item, feed_type, entry, meta, journal_name):
 
     # Prefix title with score for fast Reeder list triage.
     if score != '':
-        title_el = xml_item.find('title') if feed_type != 'atom' else xml_item.find(f'{{{ns_atom}}}title')
+        if feed_type == 'atom':
+            title_el = xml_item.find(f'{{{ns_atom}}}title')
+        elif feed_type == 'rss1':
+            title_el = xml_item.find(f'{{{ns_rss1}}}title')
+        else:
+            title_el = xml_item.find('title')
         if title_el is not None and title_el.text and not re.match(r'^\[\d{1,2}\]', strip_html(title_el.text)):
             title_el.text = f"[{score}] {strip_html(title_el.text)}"
 
 
-def append_synthetic_item_if_needed(root, parent, entry, meta, journal_name):
+def append_synthetic_rss_item(root, entry, meta, journal_name):
+    """Append a passed entry to the output XML when it is no longer in the
+    source feed (typical for items that were pending in a previous run and
+    Gemini classified successfully this run). Supports rss2, atom, and rss1.
+    """
+    tag = root.tag
+    title_text = strip_html(entry.get('title', 'No title'))
+    score = meta.get('score', '')
+    titled = f"[{score}] {title_text}" if score != '' else title_text
     link = get_entry_link(entry)
-    if not link:
-        return
-    ns_atom = 'http://www.w3.org/2005/Atom'
-    if root.tag == 'rss':
-        item = ET.SubElement(parent, 'item')
-        ET.SubElement(item, 'title').text = strip_html(entry.get('title', 'No title'))
+    pub = entry.get('published', '') or entry.get('updated', '')
+
+    if tag == 'rss':
+        channel = root.find('channel')
+        if channel is None:
+            return False
+        item = ET.SubElement(channel, 'item')
+        ET.SubElement(item, 'title').text = titled
         ET.SubElement(item, 'link').text = link
         guid = ET.SubElement(item, 'guid')
         guid.set('isPermaLink', 'true')
-        guid.text = link
-        if entry.get('published'):
-            ET.SubElement(item, 'pubDate').text = entry.get('published')
+        guid.text = link or entry.get('id', '') or title_text
+        if pub:
+            ET.SubElement(item, 'pubDate').text = pub
         ensure_description_prefix(item, 'rss2', entry, meta, journal_name)
-    elif root.tag == f'{{{ns_atom}}}feed':
-        item = ET.SubElement(parent, f'{{{ns_atom}}}entry')
-        ET.SubElement(item, f'{{{ns_atom}}}title').text = strip_html(entry.get('title', 'No title'))
-        link_el = ET.SubElement(item, f'{{{ns_atom}}}link')
-        link_el.set('href', link)
-        ET.SubElement(item, f'{{{ns_atom}}}id').text = entry.get('id') or link
-        ET.SubElement(item, f'{{{ns_atom}}}updated').text = entry.get('updated') or entry.get('published') or datetime.datetime.utcnow().isoformat() + 'Z'
-        ensure_description_prefix(item, 'atom', entry, meta, journal_name)
+        return True
 
-def filter_rss_for_journal(journal_name, feed_url):
+    if tag == '{http://www.w3.org/2005/Atom}feed':
+        ns_atom = 'http://www.w3.org/2005/Atom'
+        new_entry = ET.SubElement(root, f'{{{ns_atom}}}entry')
+        title_el = ET.SubElement(new_entry, f'{{{ns_atom}}}title')
+        title_el.text = titled
+        link_el = ET.SubElement(new_entry, f'{{{ns_atom}}}link')
+        if link:
+            link_el.set('href', link)
+        id_el = ET.SubElement(new_entry, f'{{{ns_atom}}}id')
+        id_el.text = entry.get('id', '') or link or title_text
+        if pub:
+            pub_el = ET.SubElement(new_entry, f'{{{ns_atom}}}published')
+            pub_el.text = pub
+            upd_el = ET.SubElement(new_entry, f'{{{ns_atom}}}updated')
+            upd_el.text = pub
+        ensure_description_prefix(new_entry, 'atom', entry, meta, journal_name)
+        return True
+
+    if tag == '{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF':
+        ns_rss1 = 'http://purl.org/rss/1.0/'
+        ns_rdf = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+        item = ET.SubElement(root, f'{{{ns_rss1}}}item')
+        if link:
+            item.set(f'{{{ns_rdf}}}about', link)
+        title_el = ET.SubElement(item, f'{{{ns_rss1}}}title')
+        title_el.text = titled
+        link_el = ET.SubElement(item, f'{{{ns_rss1}}}link')
+        link_el.text = link
+        ensure_description_prefix(item, 'rss1', entry, meta, journal_name)
+        # Keep the rdf:Seq listing in sync for arXiv readers that iterate it.
+        for channel in root.findall(f'{{{ns_rss1}}}channel'):
+            items_el = channel.find(f'{{{ns_rss1}}}items')
+            if items_el is not None:
+                seq = items_el.find(f'{{{ns_rdf}}}Seq')
+                if seq is not None and link:
+                    li = ET.SubElement(seq, f'{{{ns_rdf}}}li')
+                    li.set(f'{{{ns_rdf}}}resource', link)
+        return True
+
+    return False
+
+
+def filter_rss_for_journal(journal_name, feed_url, pending_records=None):
     target_url = feed_url.strip('<> ')
     print(f"\n{'='*80}\n{COLOR_BOLD}{COLOR_BLUE}📚 {journal_name}{COLOR_END}\n{target_url}\n{'='*80}", file=sys.stderr)
     response = requests.get(target_url, timeout=30)
     response.raise_for_status()
     raw_xml = response.content
     parsed_feed = feedparser.parse(raw_xml)
-    entries_for_classification = merge_pending_with_current_entries(journal_name, parsed_feed.entries)
+    source_entries = list(parsed_feed.entries)
+    retry_entries = [entry_from_pending_record(r) for r in (pending_records or [])]
+    if retry_entries:
+        print(f"  ⏸ Retrying {len(retry_entries)} pending papers from previous runs", file=sys.stderr)
+    entries_to_classify = dedupe_entries_by_link_or_title(retry_entries + source_entries)
 
     threshold = get_threshold(journal_name)
 
@@ -649,7 +1002,7 @@ def filter_rss_for_journal(journal_name, feed_url):
     keyword_removed_entries = []
     meta_by_link = {}
 
-    for entry in entries_for_classification:
+    for entry in entries_to_classify:
         title = entry.get('title', '')
         summary = entry.get('summary', '')
         link = get_entry_link(entry)
@@ -665,21 +1018,34 @@ def filter_rss_for_journal(journal_name, feed_url):
                 "tags": tags or [autopass_kw.replace(" ", "")],
             }
             print(f"  ✅ [{score}] {title} (title strong match: {autopass_kw})", file=sys.stderr)
-        else:
-            gemini_pending_entries.append(entry)
+            continue
 
-    gemini_passed_entries, gemini_removed_entries, gemini_meta, gemini_retry_entries = classify_entries_with_gemini(journal_name, gemini_pending_entries)
+        # Hard pre-filter: kill biology/medicine/climate/cosmology before
+        # spending Gemini API calls on them. This list is curated to avoid
+        # blocking physics terms — see HARD_REJECT_KEYWORDS comment.
+        reject_kw, reject_loc = find_hard_reject(title, summary)
+        if reject_kw:
+            keyword_removed_entries.append(entry)
+            meta_by_link[link] = {
+                "tier": "D_ARCHIVE",
+                "score": 0,
+                "reason": f"hard reject: '{reject_kw}' in {reject_loc}",
+                "tags": [],
+            }
+            print(f"  ❌ {title}  ('{COLOR_RED}{COLOR_BOLD}{reject_kw}{COLOR_END}' in {reject_loc})", file=sys.stderr)
+            continue
+
+        gemini_pending_entries.append(entry)
+
+    gemini_passed_entries, gemini_removed_entries, gemini_retry_entries, gemini_meta = classify_entries_with_gemini(journal_name, gemini_pending_entries)
     meta_by_link.update(gemini_meta)
-    update_pending_for_journal(journal_name, gemini_retry_entries)
 
     passed_entries = keyword_passed_entries + gemini_passed_entries
     passed_links = set(get_entry_link(e) for e in passed_entries)
 
     root = ET.fromstring(raw_xml)
     xml_items, namespaces = find_xml_items(root)
-    parsed_map = entry_by_link(entries_for_classification)
-
-    existing_xml_links = set(link for _, link, _, _ in xml_items if link)
+    parsed_map = entry_by_link(entries_to_classify)
 
     if root.tag == 'rss':
         channel = root.find('channel')
@@ -688,20 +1054,12 @@ def filter_rss_for_journal(journal_name, feed_url):
                 channel.remove(item)
             else:
                 ensure_description_prefix(item, feed_type, parsed_map.get(link, {}), meta_by_link.get(link, {}), journal_name)
-        for entry in passed_entries:
-            link = get_entry_link(entry)
-            if link and link not in existing_xml_links:
-                append_synthetic_item_if_needed(root, channel, entry, meta_by_link.get(link, {}), journal_name)
     elif root.tag == '{http://www.w3.org/2005/Atom}feed':
         for item, link, parent, feed_type in xml_items:
             if link not in passed_links:
                 root.remove(item)
             else:
                 ensure_description_prefix(item, feed_type, parsed_map.get(link, {}), meta_by_link.get(link, {}), journal_name)
-        for entry in passed_entries:
-            link = get_entry_link(entry)
-            if link and link not in existing_xml_links:
-                append_synthetic_item_if_needed(root, root, entry, meta_by_link.get(link, {}), journal_name)
     elif root.tag == '{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF':
         for item, link, parent, feed_type in xml_items:
             if link not in passed_links:
@@ -717,9 +1075,18 @@ def filter_rss_for_journal(journal_name, feed_url):
                         if li.get(f"{{{namespaces['rdf']}}}resource") not in passed_links:
                             rdf_seq.remove(li)
 
+    existing_links = {link for _, link, _, _ in xml_items}
+    for entry in passed_entries:
+        link = get_entry_link(entry)
+        if link and link not in existing_links:
+            appended = append_synthetic_rss_item(root, entry, meta_by_link.get(link, {}), journal_name)
+            if appended:
+                print(f"  ✅ Added previously pending paper to RSS: {entry.get('title','')}", file=sys.stderr)
+            else:
+                print(f"  ⏸ Passed pending paper could not be inserted into non-RSS feed: {entry.get('title','')}", file=sys.stderr)
+
     buffer = BytesIO()
     ET.ElementTree(root).write(buffer, encoding='utf-8', xml_declaration=True, pretty_print=True)
-    all_entries = keyword_passed_entries + gemini_passed_entries + keyword_removed_entries + gemini_removed_entries
     return buffer.getvalue(), keyword_passed_entries, gemini_passed_entries, keyword_removed_entries, gemini_removed_entries, gemini_retry_entries, meta_by_link
 
 
@@ -918,81 +1285,6 @@ def save_json_file(path, obj):
         json.dump(obj, f, ensure_ascii=False, indent=2)
 
 
-
-PENDING_QUEUE_FILE = 'pending_classification_queue.json'
-
-
-def serialize_entry_for_pending(entry, journal_name):
-    return {
-        "journal": journal_name,
-        "title": entry.get('title', ''),
-        "summary": strip_html(entry.get('summary', '')),
-        "link": get_entry_link(entry),
-        "authors": get_authors(entry),
-        "published": entry.get('published', '') or entry.get('updated', ''),
-        "id": entry.get('id', '') or get_entry_link(entry),
-    }
-
-
-def entry_from_pending_dict(d):
-    authors = d.get('authors') or []
-    entry = {
-        "title": d.get('title', ''),
-        "summary": d.get('summary', ''),
-        "link": d.get('link', ''),
-        "id": d.get('id', '') or d.get('link', ''),
-        "published": d.get('published', ''),
-        "updated": d.get('published', ''),
-    }
-    if authors:
-        entry["authors"] = [{"name": a} for a in authors]
-        entry["author"] = ", ".join(authors)
-    return entry
-
-
-def load_pending_queue():
-    q = load_json_file(PENDING_QUEUE_FILE, {})
-    return q if isinstance(q, dict) else {}
-
-
-def save_pending_queue(queue):
-    clean = {}
-    for journal, items in (queue or {}).items():
-        seen, out = set(), []
-        for item in items or []:
-            key = item.get('link') or item.get('title')
-            if not key or key in seen:
-                continue
-            seen.add(key)
-            out.append(item)
-        if out:
-            clean[journal] = out
-    save_json_file(PENDING_QUEUE_FILE, clean)
-
-
-def merge_pending_with_current_entries(journal_name, current_entries):
-    queue = load_pending_queue()
-    pending_entries = [entry_from_pending_dict(d) for d in queue.get(journal_name, []) or []]
-    seen, merged = set(), []
-    for e in pending_entries + list(current_entries):
-        key = get_entry_link(e) or e.get('title', '')
-        if not key or key in seen:
-            continue
-        seen.add(key)
-        merged.append(e)
-    if pending_entries:
-        print(f"  {COLOR_ORANGE}Retrying {len(pending_entries)} pending item(s) from previous failed Gemini batches.{COLOR_END}", file=sys.stderr)
-    return merged
-
-
-def update_pending_for_journal(journal_name, pending_entries):
-    queue = load_pending_queue()
-    if pending_entries:
-        queue[journal_name] = [serialize_entry_for_pending(e, journal_name) for e in pending_entries]
-        print(f"  {COLOR_YELLOW}Deferred {len(pending_entries)} item(s) for next run; not added to RSS yet.{COLOR_END}", file=sys.stderr)
-    else:
-        queue.pop(journal_name, None)
-    save_pending_queue(queue)
 def clear_partial_state():
     for path in ['partial_briefing_records.json', 'partial_email_content.txt']:
         try:
@@ -1007,6 +1299,9 @@ if __name__ == '__main__':
     STATE_FILE = 'last_failed_journal.txt'
     email_content = ''
     briefing_records = []
+    PENDING_FILE = 'pending_classification_queue.json'
+    pending_queue = load_json_file(PENDING_FILE, {})
+    new_pending_queue = {}
     journals_to_process = list(JOURNAL_URLS.items())
     start_index = 0
     resume_mode = False
@@ -1034,7 +1329,10 @@ if __name__ == '__main__':
     try:
         for journal_name, feed_url in journals_to_process[start_index:]:
             try:
-                filtered_xml, keyword_passed, gemini_passed, keyword_removed, gemini_removed, gemini_retry, meta = filter_rss_for_journal(journal_name, feed_url)
+                pending_records_for_journal = pending_queue.get(journal_name, [])
+                filtered_xml, keyword_passed, gemini_passed, keyword_removed, gemini_removed, gemini_pending, meta = filter_rss_for_journal(journal_name, feed_url, pending_records_for_journal)
+                if gemini_pending:
+                    new_pending_queue[journal_name] = [serialize_entry_for_pending(e) for e in gemini_pending]
                 output_filename = f"{OUTPUT_FILE_BASE}_{journal_name}.xml"
                 with open(output_filename, 'wb') as f:
                     f.write(filtered_xml)
@@ -1062,10 +1360,10 @@ if __name__ == '__main__':
                     email_content += '\n'
 
                 email_content += 'PENDING RETRY PAPERS:\n'
-                if not gemini_retry:
-                    email_content += 'No papers are pending retry.\n\n'
+                if not gemini_pending:
+                    email_content += 'No papers pending retry.\n\n'
                 else:
-                    for entry in gemini_retry:
+                    for entry in gemini_pending:
                         email_content += f"  ⏸ {entry.get('title', 'No title')} ({get_entry_link(entry) or 'No link'})\n"
                     email_content += '\n'
 
@@ -1074,6 +1372,12 @@ if __name__ == '__main__':
                 with open('partial_email_content.txt', 'w', encoding='utf-8') as f:
                     f.write(email_content)
                 save_json_file('partial_briefing_records.json', briefing_records)
+                # Preserve unprocessed old pending journals plus newly pending items.
+                merged_pending = dict(pending_queue)
+                for done_journal in list(JOURNAL_URLS.keys())[:list(JOURNAL_URLS.keys()).index(journal_name)+1]:
+                    merged_pending.pop(done_journal, None)
+                merged_pending.update(new_pending_queue)
+                save_json_file(PENDING_FILE, merged_pending)
             except Exception as e:
                 with open(STATE_FILE, 'w', encoding='utf-8') as f:
                     f.write(journal_name)
@@ -1082,6 +1386,16 @@ if __name__ == '__main__':
 
         with open(STATE_FILE, 'w', encoding='utf-8') as f:
             f.write('SUCCESS')
+        # Keep pending items from journals NOT processed in this run (i.e.
+        # journals before start_index on a resume run) plus this run's
+        # newly-pending items. Without this, a successful resume drops
+        # pending items that were saved in a previous partial run.
+        final_pending = dict(pending_queue)
+        processed_journals = list(JOURNAL_URLS.keys())[start_index:]
+        for j in processed_journals:
+            final_pending.pop(j, None)
+        final_pending.update(new_pending_queue)
+        save_json_file(PENDING_FILE, final_pending)
         create_index_html(JOURNAL_URLS, OUTPUT_FILE_BASE)
         create_results_html_file(email_content)
         create_briefing_html(briefing_records, email_content)
