@@ -246,20 +246,59 @@ JOURNAL_URLS = {
 
 # Model order requested by user. Override with repo secret if desired:
 #   GEMINI_MODELS=gemini-3-flash-preview,gemini-3.1-flash-lite-preview,gemini-2.5-flash
-MODEL_CANDIDATES = [m.strip() for m in os.getenv(
-    "GEMINI_MODELS",
-    "gemini-3-flash-preview,gemini-3.1-flash-lite-preview,gemini-2.5-flash"
-).split(',') if m.strip()]
-gemini_client = None
+# NOTE: os.getenv("GEMINI_MODELS", default) returns "" (not the default) if
+# the secret exists but is empty, which produced models=[] in earlier runs.
+# Treat empty/whitespace explicitly as "use default."
+_DEFAULT_MODELS = "gemini-3-flash-preview,gemini-3.1-flash-lite-preview,gemini-2.5-flash"
+_models_env = (os.getenv("GEMINI_MODELS") or "").strip()
+MODEL_CANDIDATES = [m.strip() for m in (_models_env or _DEFAULT_MODELS).split(',') if m.strip()]
+if not MODEL_CANDIDATES:
+    MODEL_CANDIDATES = ["gemini-2.5-flash"]
+
 current_model_index = 0
-current_model_name = MODEL_CANDIDATES[current_model_index] if MODEL_CANDIDATES else 'gemini-2.5-flash'
+current_model_name = MODEL_CANDIDATES[0]
+
+# =============================================================================
+# Gemini API key rotation
+# =============================================================================
+# The user runs three separate API keys to multiply quota. The retry strategy
+# inside a batch is:
+#   1. Try every model on the current key.
+#   2. If they all fail, switch to the next key (wraparound) and try every
+#      model again.
+#   3. If all keys × all models fail, defer the batch to the pending queue
+#      and reset to API1 for the next batch (quota errors usually clear by
+#      then).
+# Once a (key, model) combo succeeds, both indices stick for the next batch
+# so we don't waste calls re-checking dead endpoints.
+# =============================================================================
+GOOGLE_API_KEYS = []
+for _i in (1, 2, 3):
+    _k = os.getenv(f"GOOGLE_API_KEY{_i}")
+    if _k:
+        GOOGLE_API_KEYS.append((f"KEY{_i}", _k))
+
+# Backwards compatibility: if user hasn't migrated yet, still accept the old
+# single-key name. Logged loudly so they know to update.
+if not GOOGLE_API_KEYS:
+    _legacy = os.getenv("GOOGLE_API_KEY")
+    if _legacy:
+        GOOGLE_API_KEYS.append(("LEGACY", _legacy))
+        print(f"{COLOR_YELLOW}⚠ Using legacy GOOGLE_API_KEY. Migrate to GOOGLE_API_KEY1/2/3 for rotation.{COLOR_END}", file=sys.stderr)
+
+gemini_clients = []           # parallel list of (label, genai.Client) tuples
+current_api_index = 0          # persists across batches
 try:
-    GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-    if GOOGLE_API_KEY:
-        gemini_client = genai.Client(api_key=GOOGLE_API_KEY)
-        print(f"{COLOR_GREEN}{COLOR_BOLD}✓ Gemini API configured with google-genai SDK; models={MODEL_CANDIDATES}{COLOR_END}", file=sys.stderr)
+    for label, key in GOOGLE_API_KEYS:
+        try:
+            gemini_clients.append((label, genai.Client(api_key=key)))
+        except Exception as e:
+            print(f"{COLOR_RED}✗ Failed to init Gemini client for {label}: {e}{COLOR_END}", file=sys.stderr)
+    if gemini_clients:
+        labels = ",".join(lab for lab, _ in gemini_clients)
+        print(f"{COLOR_GREEN}{COLOR_BOLD}✓ Gemini API configured: keys=[{labels}], models={MODEL_CANDIDATES}{COLOR_END}", file=sys.stderr)
     else:
-        print(f"{COLOR_YELLOW}⚠ GOOGLE_API_KEY not found. Gemini filter skipped.{COLOR_END}", file=sys.stderr)
+        print(f"{COLOR_YELLOW}⚠ No Gemini API keys found (set GOOGLE_API_KEY1/2/3). Filter will skip Gemini.{COLOR_END}", file=sys.stderr)
 except Exception as e:
     print(f"{COLOR_RED}✗ Error configuring Gemini API: {e}{COLOR_END}", file=sys.stderr)
 
@@ -657,18 +696,19 @@ def dedupe_entries_by_link_or_title(entries):
 
 
 def classify_entries_with_gemini(journal_name, entries):
-    global current_model_name, current_model_index
+    global current_model_name, current_model_index, current_api_index
     passed, removed, pending, metadata = [], [], [], {}
     if not entries:
         return passed, removed, pending, metadata
-    if not gemini_client:
-        print(f"      {COLOR_YELLOW}⏸ Gemini unavailable. Holding {len(entries)} items for next run.{COLOR_END}", file=sys.stderr)
+    if not gemini_clients:
+        print(f"      {COLOR_YELLOW}⏸ Gemini unavailable (no API keys). Holding {len(entries)} items for next run.{COLOR_END}", file=sys.stderr)
         return passed, removed, list(entries), metadata
 
     threshold = get_threshold(journal_name)
     base_prompt = build_gemini_prompt(journal_name)
     batch_size = int(os.getenv("GEMINI_BATCH_SIZE", "25"))
-    max_attempts_per_model = int(os.getenv("GEMINI_MAX_ATTEMPTS_PER_MODEL", "3"))
+    n_apis = len(gemini_clients)
+    n_models = len(MODEL_CANDIDATES)
 
     for start in range(0, len(entries), batch_size):
         batch_entries = entries[start:start+batch_size]
@@ -689,23 +729,22 @@ def classify_entries_with_gemini(journal_name, entries):
         full_prompt = base_prompt + json.dumps(payload, ensure_ascii=False, indent=2)
 
         api_success = False
-        last_error = None
-        # Try every configured model before deferring to the pending queue.
-        # Start from the current model index; if an earlier model has already hit quota in this run,
-        # keep using the later model for the rest of the run.
-        start_model_index = max(0, min(current_model_index, len(MODEL_CANDIDATES) - 1))
+        last_error = None              # (key_label, model_name, exception)
+        attempts_log = []              # for visibility when total failure occurs
 
-        for model_idx in range(start_model_index, len(MODEL_CANDIDATES)):
-            model_name = MODEL_CANDIDATES[model_idx]
-            current_model_index = model_idx
-            current_model_name = model_name
-            print(f"      🤖 Gemini model: {model_name} ({model_idx+1}/{len(MODEL_CANDIDATES)})", file=sys.stderr)
+        # Build the rotation order: start at current API key, wrap around.
+        api_attempts = [(current_api_index + i) % n_apis for i in range(n_apis)]
+        # Build the model rotation order: start at current model, wrap around.
+        model_attempts = [(current_model_index + j) % n_models for j in range(n_models)]
 
-            # Invalid/missing model errors should fall through quickly, while 503/429 get retries.
-            for attempt in range(1, max_attempts_per_model + 1):
+        for api_idx in api_attempts:
+            key_label, client = gemini_clients[api_idx]
+
+            for model_idx in model_attempts:
+                model_name = MODEL_CANDIDATES[model_idx]
+                print(f"      🤖 Trying {key_label} + {model_name}", file=sys.stderr)
                 try:
-                    print(f"        ↳ attempt {attempt}/{max_attempts_per_model} on {model_name}", file=sys.stderr)
-                    response = gemini_client.models.generate_content(
+                    response = client.models.generate_content(
                         model=model_name,
                         contents=full_prompt,
                         config=types.GenerateContentConfig(response_mime_type="application/json")
@@ -749,49 +788,48 @@ def classify_entries_with_gemini(journal_name, entries):
                         if norm_title(entry.get('title','')) not in used_norms:
                             pending.append(entry)
                             print(f"      ⏸ Gemini response missing item. Pending retry: {entry.get('title','')}", file=sys.stderr)
-                    api_success = True
-                    # Keep the working model for subsequent batches in this run.
+
+                    # Success — persist this (key, model) combo for next batches.
+                    current_api_index = api_idx
                     current_model_index = model_idx
                     current_model_name = model_name
-                    print(f"      ✅ Gemini batch classified using {model_name}", file=sys.stderr)
-                    break
+                    api_success = True
+                    print(f"      ✅ Gemini batch classified using {key_label} + {model_name}", file=sys.stderr)
+                    break  # out of model loop
+
                 except Exception as e:
-                    last_error = e
+                    last_error = (key_label, model_name, e)
                     msg = str(e).lower()
                     is_quota = ("429" in msg) or ("resource_exhausted" in msg) or ("quota" in msg) or ("rate limit" in msg)
-                    is_unavailable = ("503" in msg) or ("unavailable" in msg) or ("overloaded" in msg) or ("high demand" in msg)
-                    is_model_error = ("404" in msg) or ("not found" in msg) or ("invalid" in msg) or ("unsupported" in msg)
-
-                    print(f"      {COLOR_RED}Gemini error on {model_name} attempt {attempt}/{max_attempts_per_model}: {e}{COLOR_END}", file=sys.stderr)
-
-                    # Do not waste three attempts on a clearly invalid/unsupported model.
-                    if is_model_error:
-                        print(f"      {COLOR_ORANGE}🔁 Model error on {model_name}; trying next configured model.{COLOR_END}", file=sys.stderr)
-                        break
-
-                    if attempt < max_attempts_per_model:
-                        wait_s = 0
-                        if is_quota:
-                            m_retry = re.search(r'retry in ([0-9.]+)s', str(e), flags=re.I)
-                            wait_s = min(90, max(15, int(float(m_retry.group(1))) + 3)) if m_retry else 30
-                        elif is_unavailable:
-                            wait_s = min(60, 15 * attempt)
-                        else:
-                            wait_s = min(45, 10 * attempt)
-                        print(f"      {COLOR_ORANGE}↻ Retrying {model_name} after {wait_s}s...{COLOR_END}", file=sys.stderr)
-                        time.sleep(wait_s)
+                    is_unavailable = ("503" in msg) or ("unavailable" in msg) or ("overloaded" in msg)
+                    is_model_error = ("404" in msg) or ("not found" in msg) or ("unsupported" in msg)
+                    is_auth = ("401" in msg) or ("403" in msg) or ("permission" in msg) or ("api key" in msg)
+                    cat = "quota" if is_quota else "unavailable" if is_unavailable else "auth" if is_auth else "model" if is_model_error else "other"
+                    attempts_log.append(f"{key_label}+{model_name}:{cat}")
+                    print(f"      {COLOR_RED}✗ {key_label} + {model_name} failed [{cat}]: {e}{COLOR_END}", file=sys.stderr)
+                    # Don't retry the same combo — try the next model on this key,
+                    # or the next key once all models on this key have been tried.
+                    continue
 
             if api_success:
-                break
-            if model_idx + 1 < len(MODEL_CANDIDATES):
-                next_model = MODEL_CANDIDATES[model_idx + 1]
-                print(f"      {COLOR_ORANGE}🔁 Switching Gemini model: {model_name} → {next_model}{COLOR_END}", file=sys.stderr)
+                break  # out of api loop
+
+            # Done with all models on this key.
+            if api_idx != api_attempts[-1]:  # not the last key in rotation
+                next_label = gemini_clients[api_attempts[(api_attempts.index(api_idx) + 1) % n_apis]][0]
+                print(f"      {COLOR_ORANGE}🔁 All models failed on {key_label}; switching to {next_label}{COLOR_END}", file=sys.stderr)
 
         if not api_success:
-            print(f"      {COLOR_YELLOW}⏸ Gemini batch failed after trying all configured models. Deferring {len(batch_entries)} item(s) to pending queue; not adding them to RSS.{COLOR_END}", file=sys.stderr)
+            print(f"      {COLOR_YELLOW}⏸ Gemini batch failed after trying all keys × models. Deferring {len(batch_entries)} item(s) to pending.{COLOR_END}", file=sys.stderr)
+            print(f"      {COLOR_YELLOW}   Attempts: {' → '.join(attempts_log)}{COLOR_END}", file=sys.stderr)
             if last_error:
-                print(f"      {COLOR_YELLOW}Last Gemini error: {last_error}{COLOR_END}", file=sys.stderr)
+                lk, lm, le = last_error
+                print(f"      {COLOR_YELLOW}   Last error ({lk} + {lm}): {le}{COLOR_END}", file=sys.stderr)
             pending.extend(batch_entries)
+            # All keys exhausted — for the next batch, restart rotation from API1.
+            # Quota windows are typically minute-level so a fresh start is sane.
+            current_api_index = 0
+
     return passed, removed, pending, metadata
 
 def find_xml_items(root):
