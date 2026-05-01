@@ -1,6 +1,10 @@
 name: Filter RSS Feed everyday + Scored Briefing + Email audit
 
-on:
+# Note: 'on' is quoted because unquoted YAML 1.1 parses bare `on` as boolean
+# True, which causes GitHub's workflow validator to display
+# "No event triggers defined in `on`" on every commit (cosmetic only — the
+# actual scheduler still runs, but the red warning is annoying).
+"on":
   schedule:
     # 오전 8시 CDT = 13:00 UTC + 17분 (CST 기간엔 7:17 AM이 됨; cron은 UTC 고정)
     - cron: '17 13 * * *'
