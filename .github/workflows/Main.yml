@@ -2,9 +2,9 @@ name: Filter RSS Feed everyday + Scored Briefing + Email audit
 
 on:
   schedule:
-    # 오전 8시 CDT = 13:00 UTC + 17분
+    # 오전 8시 CDT = 13:00 UTC + 17분 (CST 기간엔 7:17 AM이 됨; cron은 UTC 고정)
     - cron: '17 13 * * *'
-    # 7PM Texas (CDT) = 00:00 UTC (technically next day midnight, but cron remains the same) + 17 min
+    # 7PM Texas (CDT) = 00:00 UTC + 17 min
     - cron: '17 0 * * *'
   workflow_dispatch:
 
@@ -28,12 +28,12 @@ jobs:
             last_failed_journal.txt
             partial_email_content.txt
             partial_briefing_records.json
-            pending_classification_queue.json
             filtered_feed_*.xml
             filtered_titles.txt
             briefing.html
             filtered_results.html
             index.html
+            pending_classification_queue.json
           key: rss-checkpoint-${{ github.run_id }}
           restore-keys: |
             rss-checkpoint-
@@ -60,11 +60,16 @@ jobs:
 
       - name: Run Python script to filter RSS and create files
         env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          # Optional: set repo secret GEMINI_MODELS to override model order.
-          # Default in Filter_RSS.py: gemini-3-flash-preview,gemini-3.1-flash-lite-preview,gemini-2.5-flash
+          # Three Gemini API keys for rotation. Filter_RSS.py tries every model
+          # on KEY1; if all fail it switches to KEY2; etc. After all 3 keys ×
+          # all models fail it defers the batch to the pending queue.
+          GOOGLE_API_KEY1: ${{ secrets.GOOGLE_API_KEY1 }}
+          GOOGLE_API_KEY2: ${{ secrets.GOOGLE_API_KEY2 }}
+          GOOGLE_API_KEY3: ${{ secrets.GOOGLE_API_KEY3 }}
+          # Optional: override model order. Default if empty/unset:
+          #   gemini-3-flash-preview,gemini-3.1-flash-lite-preview,gemini-2.5-flash
           GEMINI_MODELS: ${{ secrets.GEMINI_MODELS }}
-          GEMINI_BATCH_SIZE: "20"
+          GEMINI_BATCH_SIZE: "25"
           GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           python Filter_RSS.py
@@ -75,16 +80,17 @@ jobs:
         with:
           name: filtered-files
           if-no-files-found: warn
+          retention-days: 14
           path: |
             filtered_titles.txt
             filtered_feed_*.xml
             briefing.html
             filtered_results.html
             index.html
+            pending_classification_queue.json
             last_failed_journal.txt
             partial_email_content.txt
             partial_briefing_records.json
-            pending_classification_queue.json
 
       # Save checkpoint for the next run, even on failure.
       # Use a unique key because GitHub cache entries are immutable.
@@ -96,12 +102,12 @@ jobs:
             last_failed_journal.txt
             partial_email_content.txt
             partial_briefing_records.json
-            pending_classification_queue.json
             filtered_feed_*.xml
             filtered_titles.txt
             briefing.html
             filtered_results.html
             index.html
+            pending_classification_queue.json
           key: rss-checkpoint-${{ github.run_id }}
 
       - name: Deploy to GitHub Pages
@@ -118,7 +124,7 @@ jobs:
         run: echo "hour=$(date -u +%H)" >> $GITHUB_OUTPUT
 
       - name: Send email with results
-        if: success() && steps.get_hour.outputs.hour > '10'
+        if: success() && fromJSON(steps.get_hour.outputs.hour) >= 10
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
