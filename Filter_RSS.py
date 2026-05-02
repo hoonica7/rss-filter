@@ -453,17 +453,30 @@ def find_negative_hints(title, summary):
 
 
 def norm_title(s):
-    """Canonical form for title matching. Strips HTML, collapses whitespace,
-    lowercases, removes incidental punctuation differences. Used so that
-    titles containing entities like α-RuCl<sub>3</sub> still round-trip
-    correctly through Gemini even if it normalizes them to α-RuCl3.
+    """Aggressive title fingerprint for round-tripping titles through Gemini.
+
+    Gemini may return any of these surface forms for the same paper:
+      KTaO<sub>3</sub>   →  KTaO3   |   KTaO_3   |   KTaO₃   |   KTaO 3
+      α-RuCl<sub>3</sub> →  α-RuCl3 |   α-RuCl₃  |   α-RuCl 3
+      multi-<b>Q</b>     →  multi-Q |   multiQ   |   multi Q
+
+    To make all of them collide, the fingerprint:
+      1. strips HTML tags WITHOUT inserting whitespace (so <sub>3</sub> closes
+         up rather than splitting "KTaO" and "3"),
+      2. unescapes HTML entities,
+      3. maps unicode sub/superscript digits to plain ASCII digits,
+      4. lowercases,
+      5. keeps only alphanumerics (drops spaces, hyphens, punctuation).
+
+    Collision risk inside a single 25-paper batch is effectively zero.
     """
     if not s:
         return ""
-    t = strip_html(str(s))
-    t = re.sub(r'\s+', ' ', t).strip().lower()
-    # Drop trailing/leading punctuation noise that LLMs sometimes change.
-    t = t.strip(' .;:,"\'')
+    t = re.sub(r'<[^>]+>', '', str(s))     # strip tags WITHOUT a space
+    t = html.unescape(t)
+    t = t.translate(str.maketrans('₀₁₂₃₄₅₆₇₈₉⁰¹²³⁴⁵⁶⁷⁸⁹', '01234567890123456789'))
+    t = t.lower()
+    t = ''.join(ch for ch in t if ch.isalnum())
     return t
 
 
