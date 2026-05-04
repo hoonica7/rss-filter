@@ -513,6 +513,41 @@ def find_negative_hints(title, summary):
     return [kw for kw in STRONG_NEGATIVE_KEYWORDS if kw.lower() in text][:5]
 
 
+def coerce_decisions_list(parsed_json):
+    """Normalize Gemini's JSON response to a list of decision dicts.
+
+    Gemini sometimes wraps the array in an object even when prompted for an
+    array, e.g.:
+        {"articles": [{"title": "...", "score": 8}, ...]}
+        {"results": [...]}
+        {"decisions": [...]}
+        {"items": [...]}
+        {"data": [...]}
+        [{"title": ...}]                      ← already correct
+        {"title": "...", "score": 8}          ← single decision (1-item batch)
+
+    Without this helper, iterating a wrapper dict yields its KEYS as strings,
+    which then crash on .get() calls and the whole batch gets deferred to
+    pending despite Gemini having actually answered correctly.
+    """
+    if isinstance(parsed_json, list):
+        return [d for d in parsed_json if isinstance(d, dict)]
+    if isinstance(parsed_json, dict):
+        # Look for the most likely array-valued field.
+        for key in ('articles', 'results', 'decisions', 'items', 'data', 'papers', 'entries'):
+            v = parsed_json.get(key)
+            if isinstance(v, list):
+                return [d for d in v if isinstance(d, dict)]
+        # Fallback: any array-valued field.
+        for v in parsed_json.values():
+            if isinstance(v, list) and v and isinstance(v[0], dict):
+                return [d for d in v if isinstance(d, dict)]
+        # Last resort: the dict itself looks like a single decision.
+        if 'title' in parsed_json or 'score' in parsed_json:
+            return [parsed_json]
+    return []
+
+
 def norm_title(s):
     """Aggressive title fingerprint for round-tripping titles through Gemini.
 
@@ -826,13 +861,53 @@ def classify_entries_with_gemini(journal_name, entries):
             for model_idx in model_attempts:
                 model_name = MODEL_CANDIDATES[model_idx]
                 print(f"      🤖 Trying {key_label} + {model_name}", file=sys.stderr)
+                # Build config with response_json_schema as best-effort. Some
+                # preview models reject schema, so we retry without it on
+                # specific schema-related errors below.
+                schema = {
+                    "type": "ARRAY",
+                    "items": {
+                        "type": "OBJECT",
+                        "properties": {
+                            "title":    {"type": "STRING"},
+                            "score":    {"type": "INTEGER"},
+                            "decision": {"type": "STRING"},
+                            "tier":     {"type": "STRING"},
+                            "reason":   {"type": "STRING"},
+                            "tags":     {"type": "ARRAY", "items": {"type": "STRING"}},
+                        },
+                    },
+                }
                 try:
-                    response = client.models.generate_content(
-                        model=model_name,
-                        contents=full_prompt,
-                        config=types.GenerateContentConfig(response_mime_type="application/json")
-                    )
-                    decisions = json.loads(response.text)
+                    response = None
+                    try:
+                        response = client.models.generate_content(
+                            model=model_name,
+                            contents=full_prompt,
+                            config=types.GenerateContentConfig(
+                                response_mime_type="application/json",
+                                response_schema=schema,
+                            ),
+                        )
+                    except Exception as schema_err:
+                        # Fall back if the model doesn't support response_schema.
+                        msg = str(schema_err).lower()
+                        if "schema" in msg or "response_schema" in msg or "not supported" in msg:
+                            print(f"      {COLOR_ORANGE}↳ {model_name} doesn't support schema; retrying without it.{COLOR_END}", file=sys.stderr)
+                            response = client.models.generate_content(
+                                model=model_name,
+                                contents=full_prompt,
+                                config=types.GenerateContentConfig(response_mime_type="application/json"),
+                            )
+                        else:
+                            raise
+                    parsed = json.loads(response.text)
+                    decisions = coerce_decisions_list(parsed)
+                    if not decisions:
+                        # Gemini returned valid JSON but with no parseable
+                        # decisions in any expected shape. Treat as a real
+                        # failure for this combo so we move to the next.
+                        raise ValueError(f"Gemini returned JSON with no parseable decisions; got top-level type={type(parsed).__name__}, keys={list(parsed)[:5] if isinstance(parsed, dict) else 'N/A'}")
                     # Normalize titles when matching Gemini's reply against
                     # the original batch — Gemini may strip HTML entities or
                     # whitespace, which would otherwise leave items unmatched
