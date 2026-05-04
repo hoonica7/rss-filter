@@ -323,6 +323,55 @@ def get_entry_link(entry):
     return ""
 
 
+def _split_author_string(raw):
+    """Split a single combined-authors string into individual names.
+
+    Handles:
+      * "A and B"                              → 2 names
+      * "A, B, and C"                          → 3 names (Oxford comma + and)
+      * "A; B; C"                              → 3 names (semicolon)
+      * "A, B, C"                              → 3 names (plain comma)
+      * "Smith, A."  /  "Jones, B.J."          → 1 name (Last, First initials)
+      * "Smith, A.; Jones, B."                 → 2 names (Last, First; ...)
+
+    The 'Last, First' detection is heuristic: if every comma-separated piece
+    is short (<= 4 chars or a sequence of capital letters with dots), the
+    commas are treated as part of name pairs rather than separators.
+    """
+    raw = raw.strip()
+    if not raw:
+        return []
+
+    # Semicolons are unambiguous — split first.
+    if ';' in raw:
+        return [p for piece in raw.split(';') for p in _split_author_string(piece) if p]
+
+    # Detect "Last, First" form: alternating Surname, Given-initials chunks.
+    # Heuristic: piece looks like initials if it's <= 6 chars and contains a dot.
+    pieces = [p.strip() for p in raw.split(',')]
+    looks_like_lastfirst = (
+        len(pieces) >= 2
+        and len(pieces) % 2 == 0
+        and all('.' in p or len(p) <= 4 for p in pieces[1::2])  # every other piece looks like initials
+    )
+    if looks_like_lastfirst:
+        out = []
+        for i in range(0, len(pieces), 2):
+            last = pieces[i]
+            first = pieces[i+1] if i+1 < len(pieces) else ''
+            # Strip leading "and" from the surname half (Oxford-comma case).
+            last = re.sub(r'^and\s+', '', last, flags=re.I)
+            if first:
+                out.append(f"{last}, {first}")
+            elif last:
+                out.append(last)
+        return [x for x in out if x]
+
+    # Default split: comma OR " and ", honoring Oxford comma.
+    parts = re.split(r'\s*,?\s+and\s+|\s*,\s*', raw)
+    return [p.strip() for p in parts if p.strip()]
+
+
 def get_authors(entry):
     authors = []
     if entry.get('authors'):
@@ -331,15 +380,22 @@ def get_authors(entry):
             if name:
                 authors.append(strip_html(name))
     if not authors and entry.get('author'):
-        raw = strip_html(entry.get('author'))
-        # Split cautiously; arXiv often uses comma-separated authors.
-        parts = re.split(r'\s*(?:;|, and | and )\s*', raw)
-        authors = [p.strip() for p in parts if p.strip()]
+        authors = [strip_html(entry.get('author'))]
     # Some feeds expose dc:creator as dc_creator or creator.
     for key in ['dc_creator', 'creator']:
         if not authors and entry.get(key):
-            raw = strip_html(entry.get(key))
-            authors = [p.strip() for p in re.split(r'\s*;\s*', raw) if p.strip()]
+            authors = [strip_html(entry.get(key))]
+
+    # Re-split each author string. Even if feedparser returned a list of N>1
+    # entries, each may itself be a multi-author string (APS/arXiv put all
+    # names in one dc:creator; Nature usually doesn't but normalizing is
+    # safe). The splitter detects 'Last, First' form to avoid breaking
+    # Science-style entries.
+    expanded = []
+    for raw in authors:
+        expanded.extend(_split_author_string(raw))
+    authors = expanded
+
     # De-duplicate while preserving order.
     seen, deduped = set(), []
     for a in authors:
@@ -353,14 +409,19 @@ def compact_authors(authors, front=3, back=2):
         return "Authors not available in source RSS"
     if len(authors) <= front + back + 1:
         return ", ".join(authors)
-    return ", ".join(authors[:front]) + ", et al.; last authors: " + ", ".join(authors[-back:])
+    # No more "et al.; last authors:" trailer here — the last-authors line is
+    # rendered separately above the author list.
+    return ", ".join(authors[:front]) + ", et al."
 
 
-def last_author_line(authors):
+def last_authors_text(authors):
+    """Last 1-2 names from the author list. Plain string, no label.
+    Replaces the previous 'corresponding-author proxy' heuristic per user
+    request — just take the tail.
+    """
     if not authors:
-        return "Last/corresponding-author proxy: not available"
-    tail = authors[-2:] if len(authors) >= 2 else authors
-    return "Last/corresponding-author proxy: " + ", ".join(tail)
+        return ""
+    return ", ".join(authors[-2:]) if len(authors) >= 2 else authors[0]
 
 
 
@@ -459,14 +520,17 @@ def norm_title(s):
       KTaO<sub>3</sub>   →  KTaO3   |   KTaO_3   |   KTaO₃   |   KTaO 3
       α-RuCl<sub>3</sub> →  α-RuCl3 |   α-RuCl₃  |   α-RuCl 3
       multi-<b>Q</b>     →  multi-Q |   multiQ   |   multi Q
+      ${(\\mathrm{Bi})}_{2}{Te}_{3}$ → (Bi)2Te3   (LaTeX commands stripped)
+      Title (arXiv:2605.12345)       → Title       (arXiv ID stripped)
 
-    To make all of them collide, the fingerprint:
-      1. strips HTML tags WITHOUT inserting whitespace (so <sub>3</sub> closes
-         up rather than splitting "KTaO" and "3"),
-      2. unescapes HTML entities,
-      3. maps unicode sub/superscript digits to plain ASCII digits,
-      4. lowercases,
-      5. keeps only alphanumerics (drops spaces, hyphens, punctuation).
+    Fingerprint pipeline:
+      1. strip HTML tags WITHOUT inserting whitespace,
+      2. unescape HTML entities,
+      3. drop arXiv IDs and DOIs that may or may not appear in Gemini's reply,
+      4. drop LaTeX command tokens (\\mathrm, \\rm, \\text, \\mathbf, ...),
+      5. map unicode sub/superscript digits to plain ASCII,
+      6. lowercase,
+      7. keep only alphanumerics.
 
     Collision risk inside a single 25-paper batch is effectively zero.
     """
@@ -474,6 +538,12 @@ def norm_title(s):
         return ""
     t = re.sub(r'<[^>]+>', '', str(s))     # strip tags WITHOUT a space
     t = html.unescape(t)
+    # Drop trailing/parenthetical arXiv IDs and DOIs that Gemini may omit.
+    t = re.sub(r'\(arXiv:\s*\S+?\)', '', t, flags=re.I)
+    t = re.sub(r'\barxiv:\s*\S+', '', t, flags=re.I)
+    t = re.sub(r'\bdoi:\s*\S+', '', t, flags=re.I)
+    # Drop LaTeX command tokens like \mathrm, \rm, \text, \mathbf, \mathit, etc.
+    t = re.sub(r'\\[a-zA-Z]+', '', t)
     t = t.translate(str.maketrans('₀₁₂₃₄₅₆₇₈₉⁰¹²³⁴⁵⁶⁷⁸⁹', '01234567890123456789'))
     t = t.lower()
     t = ''.join(ch for ch in t if ch.isalnum())
@@ -885,7 +955,7 @@ def entry_by_link(parsed_entries):
 def ensure_description_prefix(xml_item, feed_type, entry, meta, journal_name):
     authors = get_authors(entry)
     author_compact = compact_authors(authors)
-    last_line = last_author_line(authors)
+    last_authors = last_authors_text(authors)
     tier = meta.get('tier', '')
     score = meta.get('score', '')
     reason = meta.get('reason', '')
@@ -896,9 +966,14 @@ def ensure_description_prefix(xml_item, feed_type, entry, meta, journal_name):
     tag_html = " ".join([f"<span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#{safe_text(t)}</span>" for t in tags])
     score_badge = f"<span style='display:inline-block;padding:4px 9px;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:700;'>Score {safe_text(str(score))}/10</span>" if score != '' else ""
 
-    # Put authors first so Reeder's article view shows the research group immediately under the title.
-    prefix_html = f"<p><b>Authors:</b> {safe_text(author_compact)}</p>"
-    prefix_html += f"<p><b>{safe_text(last_line)}</b></p>"
+    # Last authors first (most relevant signal of which group the paper is from),
+    # then the full author list. If the full list is short enough that
+    # author_compact already equals last_authors verbatim, skip the duplicate.
+    prefix_html = ""
+    if last_authors:
+        prefix_html += f"<p><b>Last authors:</b> {safe_text(last_authors)}</p>"
+    if author_compact and author_compact != last_authors:
+        prefix_html += f"<p><b>Authors:</b> {safe_text(author_compact)}</p>"
     if score_badge:
         prefix_html += f"<p>{score_badge} <b>{safe_text(tier)}</b></p>"
     elif tier:
@@ -956,13 +1031,25 @@ def ensure_description_prefix(xml_item, feed_type, entry, meta, journal_name):
     # Prefix title with score for fast Reeder list triage.
     if score != '':
         if feed_type == 'atom':
-            title_el = xml_item.find(f'{{{ns_atom}}}title')
+            # Some atom feeds (e.g. APS Physical Review series) include
+            # multiple <title> nodes per entry, or set type='html' which
+            # makes some readers ignore prefix-as-text. We rewrite EVERY
+            # atom:title for the entry and force type='text'.
+            title_els = xml_item.findall(f'{{{ns_atom}}}title')
+            for title_el in title_els:
+                if title_el.text and not re.match(r'^\[\d{1,2}\]', strip_html(title_el.text)):
+                    title_el.text = f"[{score}] {strip_html(title_el.text)}"
+                    title_el.set('type', 'text')
         elif feed_type == 'rss1':
-            title_el = xml_item.find(f'{{{ns_rss1}}}title')
+            # APS PRB exposes both <title> and <dc:title>. Reeder and some
+            # other readers prefer <dc:title> for display, so prefix BOTH.
+            for title_el in xml_item.findall(f'{{{ns_rss1}}}title') + xml_item.findall(f'{{{ns_dc}}}title'):
+                if title_el.text and not re.match(r'^\[\d{1,2}\]', strip_html(title_el.text)):
+                    title_el.text = f"[{score}] {strip_html(title_el.text)}"
         else:
             title_el = xml_item.find('title')
-        if title_el is not None and title_el.text and not re.match(r'^\[\d{1,2}\]', strip_html(title_el.text)):
-            title_el.text = f"[{score}] {strip_html(title_el.text)}"
+            if title_el is not None and title_el.text and not re.match(r'^\[\d{1,2}\]', strip_html(title_el.text)):
+                title_el.text = f"[{score}] {strip_html(title_el.text)}"
 
 
 def append_synthetic_rss_item(root, entry, meta, journal_name):
@@ -1150,7 +1237,7 @@ def paper_record(entry, journal, source, meta):
         "title": entry.get('title', 'No title'),
         "link": get_entry_link(entry),
         "authors": compact_authors(authors),
-        "last_authors": last_author_line(authors).replace('Last/corresponding-author proxy: ', ''),
+        "last_authors": last_authors_text(authors),
         "summary": strip_html(entry.get('summary', '')),
         "tier": m.get('tier', ''),
         "score": m.get('score', ''),
@@ -1238,8 +1325,8 @@ def create_briefing_html(records, email_body_content=''):
   <div class='inline-block w-full align-top p-4 rounded-xl border bg-white hover:bg-slate-50'>
     <div class='flex flex-wrap items-center gap-2 mb-1'>{score_badge}<span class='text-xs px-2 py-1 rounded-full bg-indigo-50 text-indigo-700'>{html.escape(r.get('journal', ''))}</span><span class='text-xs text-slate-500'>{html.escape(r.get('source', ''))}</span></div>
     <a href='{html.escape(r.get('link', ''))}' target='_blank' class='text-lg font-semibold text-blue-700 hover:underline'>{html.escape(strip_html(r.get('title', 'No title')))}</a>
-    <p class='text-sm text-slate-700 mt-1'><b>{html.escape(r.get('journal', ''))}</b> | {html.escape(r.get('authors', ''))}</p>
-    <p class='text-sm text-slate-700'><b>Last/corresponding-author proxy:</b> {html.escape(r.get('last_authors', ''))}</p>
+    {("<p class='text-sm text-slate-700 mt-1'><b>Last authors:</b> " + html.escape(r.get('last_authors', '')) + "</p>") if r.get('last_authors') else ""}
+    <p class='text-sm text-slate-700'><b>{html.escape(r.get('journal', ''))}</b> | {html.escape(r.get('authors', ''))}</p>
     <p class='text-sm text-slate-600 mt-1'><b>Why:</b> {html.escape(r.get('reason') or 'keyword/Gemini passed')}</p>
     <div class='flex flex-wrap gap-1 mt-2'>{tag_html}</div>
     <p class='mt-2'><a href='{html.escape(r.get('link', ''))}' target='_blank' class='text-sm text-blue-600 hover:underline'>Link →</a></p>
