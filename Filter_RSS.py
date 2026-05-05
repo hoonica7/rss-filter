@@ -824,7 +824,11 @@ def classify_entries_with_gemini(journal_name, entries):
 
     threshold = get_threshold(journal_name)
     base_prompt = build_gemini_prompt(journal_name)
-    batch_size = int(os.getenv("GEMINI_BATCH_SIZE", "25"))
+    # Default batch size is 15 (was 25). Smaller batches reduce the chance
+    # of Gemini truncating its JSON reply, which silently dumps unmatched
+    # papers into the pending queue. 15 papers per batch with a 4500-char
+    # cap on each abstract fits well under our 8192 max_output_tokens.
+    batch_size = int(os.getenv("GEMINI_BATCH_SIZE", "15"))
     n_apis = len(gemini_clients)
     n_models = len(MODEL_CANDIDATES)
 
@@ -887,6 +891,14 @@ def classify_entries_with_gemini(journal_name, entries):
                             config=types.GenerateContentConfig(
                                 response_mime_type="application/json",
                                 response_schema=schema,
+                                # Without max_output_tokens explicitly set, the
+                                # default may be too small for JSON-array
+                                # responses on >15-paper batches, causing the
+                                # reply to be truncated mid-array. The truncated
+                                # JSON parses but yields fewer decisions than
+                                # papers sent, and the missing papers end up
+                                # in the pending queue.
+                                max_output_tokens=8192,
                             ),
                         )
                     except Exception as schema_err:
@@ -897,7 +909,10 @@ def classify_entries_with_gemini(journal_name, entries):
                             response = client.models.generate_content(
                                 model=model_name,
                                 contents=full_prompt,
-                                config=types.GenerateContentConfig(response_mime_type="application/json"),
+                                config=types.GenerateContentConfig(
+                                    response_mime_type="application/json",
+                                    max_output_tokens=8192,
+                                ),
                             )
                         else:
                             raise
@@ -942,6 +957,37 @@ def classify_entries_with_gemini(journal_name, entries):
                             removed.append(entry)
                             print(f"      🤖❌ [{score}] {title} [{tier}]", file=sys.stderr)
 
+                    # Detect truncated responses: if Gemini returned valid
+                    # JSON but covered far fewer items than we sent, the
+                    # reply was likely cut off by max_output_tokens (or the
+                    # model just gave up partway). Treat as a failure for
+                    # this combo so the next (key, model) gets a chance.
+                    # Threshold: at least 60% coverage. Below that, retry.
+                    coverage = len(used_norms) / max(1, len(batch_entries))
+                    min_coverage = 0.6
+                    if coverage < min_coverage:
+                        # Don't promote anything from this partial response
+                        # — roll back. We'll try next combo.
+                        for d in decisions:
+                            link_to_drop = None
+                            for e_check in batch_entries:
+                                if norm_title(e_check.get('title','')) == norm_title(d.get('title','')):
+                                    link_to_drop = get_entry_link(e_check)
+                                    break
+                            if link_to_drop and link_to_drop in metadata:
+                                metadata.pop(link_to_drop, None)
+                        # Drop any entries we appended this round.
+                        # Rebuild passed/removed by stripping batch members we just added.
+                        batch_links = {get_entry_link(e) for e in batch_entries}
+                        passed[:] = [p for p in passed if get_entry_link(p) not in batch_links]
+                        removed[:] = [r for r in removed if get_entry_link(r) not in batch_links]
+                        raise ValueError(
+                            f"truncated response: matched {len(used_norms)}/{len(batch_entries)} "
+                            f"items (<{int(min_coverage*100)}% coverage)"
+                        )
+
+                    # Successful coverage: anything still unmatched is a
+                    # genuine miss (Gemini deliberately omitted) — defer it.
                     for entry in batch_entries:
                         if norm_title(entry.get('title','')) not in used_norms:
                             pending.append(entry)
