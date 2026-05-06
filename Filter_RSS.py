@@ -548,6 +548,65 @@ def coerce_decisions_list(parsed_json):
     return []
 
 
+def clean_title_for_display(s):
+    """Convert a title with HTML tags / LaTeX markup into plain readable text.
+
+    This is the human-facing version of norm_title. norm_title throws away
+    spaces and punctuation to make a fingerprint; this preserves them so
+    Reeder can show e.g. 'Ta2CS2' or '(Bi,Sb)2Te3' instead of raw markup.
+
+    Handles:
+        Ta$_2$CS$_2$               → Ta2CS2
+        KTaO<sub>3</sub>           → KTaO3
+        $\\mathrm{Λ}$              → Λ
+        ${(\\mathrm{Bi})}_{2}$     → (Bi)2
+        $^{58}\\mathrm{Ni}$        → 58Ni
+        α-RuCl₃                   → α-RuCl3
+        $\\mathcal{N}=4$           → N=4
+    """
+    if not s:
+        return ""
+    t = str(s)
+    # 1. Strip HTML tags WITHOUT inserting whitespace.
+    t = re.sub(r'<[^>]+>', '', t)
+    # 2. Decode HTML entities (&lt;, &amp;, etc.).
+    t = html.unescape(t)
+    # 3. Remove the dollar-wrapping of inline math: $...$ → ...
+    #    (Run multiple times to handle nested or adjacent groups.)
+    for _ in range(3):
+        new_t = re.sub(r'\$([^$]+)\$', r'\1', t)
+        if new_t == t:
+            break
+        t = new_t
+    # 4. Replace common font/style LaTeX commands with their content.
+    #    \mathrm{Bi} → Bi, \text{ce} → ce, \mathbf{X} → X, etc.
+    for _ in range(3):
+        new_t = re.sub(
+            r'\\(?:mathrm|mathbf|mathit|mathsf|mathtt|mathcal|mathfrak|mathbb|text|textrm|textbf|textit|rm|bf|it|tt|sf|cal|frak|bb)\s*\{([^{}]*)\}',
+            r'\1', t,
+        )
+        if new_t == t:
+            break
+        t = new_t
+    # 5. Convert subscripts/superscripts whose argument is wrapped in braces.
+    t = re.sub(r'_\{([^{}]*)\}', r'\1', t)
+    t = re.sub(r'\^\{([^{}]*)\}', r'\1', t)
+    # 6. Bare subscripts/superscripts on a single token: _2 → 2, ^3 → 3.
+    t = re.sub(r'_([A-Za-z0-9])', r'\1', t)
+    t = re.sub(r'\^([A-Za-z0-9])', r'\1', t)
+    # 7. Drop remaining backslash commands that have no braces (e.g. \alpha,
+    #    \prime). Most of these are Greek letters; we strip rather than try
+    #    to map to Unicode (titles rarely depend on these for readability).
+    t = re.sub(r'\\[a-zA-Z]+\*?', '', t)
+    # 8. Drop leftover braces.
+    t = t.replace('{', '').replace('}', '')
+    # 9. Unicode subscripts/superscripts → ASCII.
+    t = t.translate(str.maketrans('₀₁₂₃₄₅₆₇₈₉⁰¹²³⁴⁵⁶⁷⁸⁹', '01234567890123456789'))
+    # 10. Collapse runs of whitespace.
+    t = re.sub(r'\s+', ' ', t).strip()
+    return t
+
+
 def norm_title(s):
     """Aggressive title fingerprint for round-tripping titles through Gemini.
 
@@ -1158,19 +1217,19 @@ def ensure_description_prefix(xml_item, feed_type, entry, meta, journal_name):
             # atom:title for the entry and force type='text'.
             title_els = xml_item.findall(f'{{{ns_atom}}}title')
             for title_el in title_els:
-                if title_el.text and not re.match(r'^\[\d{1,2}\]', strip_html(title_el.text)):
-                    title_el.text = f"[{score}] {strip_html(title_el.text)}"
+                if title_el.text and not re.match(r'^\[\d{1,2}\]', clean_title_for_display(title_el.text)):
+                    title_el.text = f"[{score}] {clean_title_for_display(title_el.text)}"
                     title_el.set('type', 'text')
         elif feed_type == 'rss1':
             # APS PRB exposes both <title> and <dc:title>. Reeder and some
             # other readers prefer <dc:title> for display, so prefix BOTH.
             for title_el in xml_item.findall(f'{{{ns_rss1}}}title') + xml_item.findall(f'{{{ns_dc}}}title'):
-                if title_el.text and not re.match(r'^\[\d{1,2}\]', strip_html(title_el.text)):
-                    title_el.text = f"[{score}] {strip_html(title_el.text)}"
+                if title_el.text and not re.match(r'^\[\d{1,2}\]', clean_title_for_display(title_el.text)):
+                    title_el.text = f"[{score}] {clean_title_for_display(title_el.text)}"
         else:
             title_el = xml_item.find('title')
-            if title_el is not None and title_el.text and not re.match(r'^\[\d{1,2}\]', strip_html(title_el.text)):
-                title_el.text = f"[{score}] {strip_html(title_el.text)}"
+            if title_el is not None and title_el.text and not re.match(r'^\[\d{1,2}\]', clean_title_for_display(title_el.text)):
+                title_el.text = f"[{score}] {clean_title_for_display(title_el.text)}"
 
 
 def append_synthetic_rss_item(root, entry, meta, journal_name):
@@ -1179,7 +1238,7 @@ def append_synthetic_rss_item(root, entry, meta, journal_name):
     Gemini classified successfully this run). Supports rss2, atom, and rss1.
     """
     tag = root.tag
-    title_text = strip_html(entry.get('title', 'No title'))
+    title_text = clean_title_for_display(entry.get('title', 'No title'))
     score = meta.get('score', '')
     titled = f"[{score}] {title_text}" if score != '' else title_text
     link = get_entry_link(entry)
