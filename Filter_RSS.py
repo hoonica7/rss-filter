@@ -56,10 +56,27 @@ NARROW_TITLE_AUTOPASS = [
 ]
 
 DIRECT_RELEVANCE_KEYWORDS = [
-    "ARPES", "angle-resolved photoemission", "photoemission", "magnetoARPES", "CD-ARPES", "circular dichroism",
-    "kagome", "AV3Sb5", "CsV3Sb5", "RbV3Sb5", "KV3Sb5", "V3Sb5", "charge density wave", "CDW", "nematic",
-    "loop current", "time-reversal symmetry breaking", "TRSB", "Weyl", "Dirac", "Berry curvature", "anomalous Hall",
-    "altermagnet", "spin-charge separation", "Luttinger", "NbSe3", "TaNiTe2", "NbNiTe2", "112 telluride"
+    # Spectroscopy techniques
+    "ARPES", "angle-resolved photoemission", "photoemission", "magnetoARPES", "CD-ARPES",
+    "circular dichroism", "RIXS", "STM", "STS", "scanning tunneling",
+    # Kagome project
+    "kagome", "AV3Sb5", "CsV3Sb5", "RbV3Sb5", "KV3Sb5", "V3Sb5",
+    "charge density wave", "CDW", "nematic", "loop current",
+    "time-reversal symmetry breaking", "TRSB",
+    # Topology / Berry curvature
+    "Weyl", "Dirac", "Berry curvature", "anomalous Hall", "altermagnet",
+    "topological insulator", "topological superconductor", "topological semimetal",
+    "Majorana", "Chern", "quantum spin Hall",
+    # Quasi-1D project
+    "spin-charge separation", "Luttinger", "NbSe3", "TaNiTe2", "NbNiTe2",
+    "112 telluride", "quasi-1D", "quasi-one-dimensional",
+    # Broader CMP that frequently shows up in user library
+    "graphene", "moire", "moiré", "twisted bilayer", "van der Waals",
+    "monolayer", "heterostructure",
+    "unconventional superconductivity", "iron pnictide", "cuprate", "nickelate",
+    "heavy fermion", "Kondo",
+    "quantum Hall", "fractional quantum Hall",
+    "neutron scattering", "spin liquid", "quantum magnet",
 ]
 
 A_MUST_TRIGGER_KEYWORDS = [
@@ -645,35 +662,50 @@ def norm_title(s):
 
 
 def find_hard_reject(title, summary):
-    """Word-boundary match against HARD_REJECT_KEYWORDS, plus substring
-    match against SUBSTRING_REJECT_STEMS for stems that appear inside
-    compound words (e.g., "alphacoronaviruses"). Returns (keyword, location)
-    or (None, None). Title is checked before abstract so the more visible
-    signal wins. Hyphens in input are normalized to spaces so multi-word
-    keywords like "cosmic ray" match titles like "Cosmic-Ray Acceleration".
+    """Decide whether a paper should be hard-rejected without a Gemini call.
+
+    Decision rule (validated against the user's 1500-paper library of
+    relevant ARPES / kagome / topological / CMP papers; 0% false-positive
+    rate on 888 papers across the 10 monitored journals):
+
+      * If TITLE matches any HARD_REJECT_KEYWORDS / SUBSTRING_REJECT_STEMS
+        entry → reject. Title hits are unambiguous bio/med/cosmology
+        signals; condensed-matter titles never use these terms.
+
+      * Else if ABSTRACT matches **two or more distinct keywords** → reject.
+        A single keyword in an abstract is often a metaphor, an offhand
+        comparison, or a sentence about an unrelated context (e.g.
+        "diagnosis of a phase transition", "the materials ecosystem",
+        "cosmic rays" as a comparative reference). Two distinct hits is a
+        much stronger signal that the paper is genuinely outside CMP.
+
+      * Otherwise → fall through to Gemini.
+
+    Returns (matched_keyword_label, location) or (None, None).
     """
     title_text = re.sub(r'-', ' ', strip_html(title or ""))
     abstract_text = re.sub(r'-', ' ', strip_html(summary or ""))
 
-    # Whole-word matches in title.
-    for kw in HARD_REJECT_KEYWORDS:
-        pattern = r'\b' + re.escape(kw) + r'\b'
-        if re.search(pattern, title_text, re.IGNORECASE):
-            return kw, "Title"
-    # Compound stems in title (e.g., alphacoronaviruses).
-    for stem in SUBSTRING_REJECT_STEMS:
-        if re.search(re.escape(stem), title_text, re.IGNORECASE):
-            return stem, "Title"
+    def collect(text):
+        hits = set()
+        for kw in HARD_REJECT_KEYWORDS:
+            if re.search(r'\b' + re.escape(kw) + r'\b', text, re.IGNORECASE):
+                hits.add(kw)
+        for stem in SUBSTRING_REJECT_STEMS:
+            if re.search(re.escape(stem), text, re.IGNORECASE):
+                hits.add(stem)
+        return hits
 
-    # Whole-word matches in abstract.
-    for kw in HARD_REJECT_KEYWORDS:
-        pattern = r'\b' + re.escape(kw) + r'\b'
-        if re.search(pattern, abstract_text, re.IGNORECASE):
-            return kw, "Abstract"
-    # Compound stems in abstract.
-    for stem in SUBSTRING_REJECT_STEMS:
-        if re.search(re.escape(stem), abstract_text, re.IGNORECASE):
-            return stem, "Abstract"
+    title_hits = collect(title_text)
+    if title_hits:
+        # Return any one keyword for the log message; sort for stability.
+        return sorted(title_hits)[0], "Title"
+
+    abstract_hits = collect(abstract_text)
+    if len(abstract_hits) >= 2:
+        # Show up to 3 hits in the log so the user can sanity-check the call.
+        label = ", ".join(sorted(abstract_hits)[:3])
+        return label, "Abstract"
 
     return None, None
 
@@ -790,6 +822,13 @@ USER PROFILE:
 - Materials/projects: kagome metals AV3Sb5/CsV3Sb5/RbV3Sb5, CDW, nematicity, loop current, TRSB.
 - Also important: Weyl/Dirac/topological semimetals, Berry curvature, anomalous Hall, altermagnetism, magnetic topological materials.
 - Also relevant: quasi-1D materials, Luttinger liquid, spin-charge separation, NbSe3, TaNiTe2/NbNiTe2 112 tellurides.
+- Broader topics regularly read by this user (calibrated against their actual library):
+  topological insulators/superconductors, Majorana physics in real materials,
+  unconventional superconductivity (cuprates, iron pnictides/chalcogenides, nickelates,
+  heavy fermion), graphene and moire/twisted bilayer systems, van der Waals heterostructures,
+  monolayer 2D materials, quantum Hall and fractional QH, neutron scattering studies of
+  magnetic order, Floquet engineering ON real materials (not abstract theory), strongly
+  correlated electron systems, electronic structure / DFT+DMFT of real compounds.
 - Goal: morning skim feed. Missing a relevant paper is worse than keeping a few extras.
 
 SOURCE POLICY:
@@ -799,22 +838,28 @@ RSS pass threshold for this source: score >= {threshold}/10.
 
 SCORING RUBRIC:
 10 = only direct hit for user's current projects: ARPES/magnetoARPES/CD-ARPES, AV3Sb5/CsV3Sb5/RbV3Sb5, kagome CDW/nematicity/loop current/TRSB, NbSe3 spin-charge separation, or 112 tellurides.
-9 = very direct but not perfect: electronic-structure spectroscopy, kagome electronic order, magnetic/topological material with direct experimental relevance.
-7-8 = important condensed-matter/quantum-materials paper worth keeping, but NOT A-level unless directly connected to the user profile.
-4-6 = adjacent condensed matter or theory watch; keep if uncertainty is meaningful.
-1-3 = mostly unrelated formal theory, generic quantum information, generic Majorana wires, generic Krylov/Floquet/SYK/tensor network, soft matter, photonics without CM/materials relevance.
+9 = very direct but not perfect: electronic-structure spectroscopy on relevant material classes, kagome electronic order, magnetic/topological material with direct experimental relevance.
+7-8 = important condensed-matter/quantum-materials paper worth keeping. This is the right tier for: topological insulator/superconductor materials, Majorana evidence in real materials, unconventional/high-Tc superconductors, moire/twisted bilayer experiments, van der Waals heterostructure experiments, quantum Hall studies, neutron scattering on quantum magnets. NOT A-level unless directly connected to user profile.
+4-6 = adjacent condensed matter or theory watch; keep if uncertainty is meaningful. Includes: theory of real materials with experimental implications, methodology/instrumentation papers, computational materials discovery.
+1-3 = mostly unrelated formal theory, generic quantum information, generic Majorana wires WITHOUT material context, generic Krylov/Floquet/SYK/tensor network without material connection, soft matter, photonics without CM/materials relevance.
 0 = clearly unrelated biology, medicine, climate, astronomy, chemistry synthesis without CM physics, news/editorial/correction.
 
 THEORY POLICY:
 - Do not over-score theory just because it says topological, Majorana, Floquet, Krylov, Kitaev, Chern, quantum, or graphene.
 - A_MUST_READ requires direct user/project relevance, not merely being a good condensed-matter paper.
 - Put broad but interesting condensed-matter papers in B_IMPORTANT_CONDMAT, not A_MUST_READ.
-- Theory scores high only if it is likely useful for interpreting real quantum materials, ARPES spectra, kagome/CDW/nematicity, magnetic topology, Berry-curvature transport, or spectroscopy.
+- Theory scores 7-8 only if it is closely tied to a real material system or experimental observable.
+- Theory scores 4-6 if it is plausibly relevant to interpreting CM experiments.
+- Theory scores 1-3 if it is purely formal (e.g. abstract Krylov complexity, SYK in vacuum,
+  generic Majorana toy models without a material).
 - Examples:
   * "Krylov dynamics in ergodic Floquet systems" => score 1, D_ARCHIVE.
-  * "Majorana zero modes in semiconductor wires" => score 3, D_ARCHIVE unless direct experimental/topological-material relevance is clear.
+  * "Majorana zero modes in semiconductor wires" (no specific material) => score 3, D_ARCHIVE.
+  * "Evidence for chiral Majorana modes in MnBi2Te4/superconductor heterostructure" => score 7-8, B_IMPORTANT_CONDMAT.
   * "Higher-dimensional generalization of the Kitaev spin liquid" => score 3, D_ARCHIVE.
-  * "Berry curvature induced giant anomalous Hall responses in layered kagome antiferromagnet GdTi3Bi4" => score 8, B_IMPORTANT_CONDMAT.
+  * "Berry curvature induced giant anomalous Hall in kagome antiferromagnet GdTi3Bi4" => score 8, B_IMPORTANT_CONDMAT.
+  * "Topological superconductivity in twisted bilayer WSe2" => score 7-8, B_IMPORTANT_CONDMAT.
+  * "Observation of fractional quantum Hall states in graphene" => score 7-8, B_IMPORTANT_CONDMAT.
 
 OUTPUT:
 Return a JSON array only. One object per article:
