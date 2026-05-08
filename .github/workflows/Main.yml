@@ -6,9 +6,9 @@ name: Filter RSS Feed everyday + Scored Briefing + Email audit
 # actual scheduler still runs, but the red warning is annoying).
 "on":
   schedule:
-    # 오전 8시 CDT = 13:00 UTC + 17분 (CST 기간엔 7:17 AM이 됨; cron은 UTC 고정)
+    # 11:00 UTC + 17분 
     - cron: '17 11 * * *'
-    # 7PM Texas (CDT) = 00:00 UTC + 17 min
+    # 22:00 UTC + 17 min
     - cron: '17 22 * * *'
   workflow_dispatch:
 
