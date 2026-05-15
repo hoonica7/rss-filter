@@ -1,5 +1,5 @@
-# Filter_RSS v11
-# Builds on v10 with seven correctness/perf fixes:
+# Filter_RSS v12
+# Builds on v10 with correctness/perf fixes:
 #   1. Curated HARD_REJECT_KEYWORDS pre-filter restored (saves Gemini calls).
 #   2. postprocess_score_and_tier demotes tier only — never the score —
 #      so above-threshold papers stay in RSS (recall preserved) while the
@@ -17,6 +17,10 @@
 #      no-namespace <description> that readers ignored.
 #   7. Pending queue is preserved across resume runs (was being clobbered
 #      on a successful resume that did not re-process all journals).
+#   8. Last-author signal is written to all feed bodies/content fields and
+#      author metadata, so non-arXiv journals show the last two authors too.
+#   9. arXiv entries with a non-arXiv DOI / journal-ref get a title suffix
+#      like "(Phys. Rev. B)" to flag already-published papers directly.
 
 import feedparser
 import lxml.etree as ET
@@ -34,6 +38,15 @@ import math
 import html
 from functools import lru_cache
 from urllib.parse import urljoin
+
+NS_ATOM = 'http://www.w3.org/2005/Atom'
+NS_DC = 'http://purl.org/dc/elements/1.1/'
+NS_RSS1 = 'http://purl.org/rss/1.0/'
+NS_RDF = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+NS_CONTENT = 'http://purl.org/rss/1.0/modules/content/'
+
+ET.register_namespace('dc', NS_DC)
+ET.register_namespace('content', NS_CONTENT)
 
 COLOR_GREEN = '\033[92m'
 COLOR_RED = '\033[91m'
@@ -441,6 +454,22 @@ def last_authors_text(authors):
     return ", ".join(authors[-2:]) if len(authors) >= 2 else authors[0]
 
 
+def author_metadata_text(authors):
+    """Author string for RSS/Atom metadata fields that readers often show.
+
+    The HTML body has separate Last authors / Authors lines. Some readers,
+    however, prefer dc:creator or atom:author over the body preview, so put
+    the last-author signal there too for all journals/feed types.
+    """
+    compact = compact_authors(authors)
+    last_authors = last_authors_text(authors)
+    if not last_authors:
+        return compact
+    if compact == last_authors:
+        return compact
+    return f"Last authors: {last_authors}; Authors: {compact}"
+
+
 
 def score_to_tier(score):
     try:
@@ -720,6 +749,16 @@ def arxiv_html_url(link):
     return f"https://arxiv.org/html/{arxiv_id}"
 
 
+def arxiv_abs_url(link):
+    if not link:
+        return None
+    m = re.search(r'arxiv\.org/(?:abs|pdf|html)/([^?#]+)', link)
+    if not m:
+        return None
+    arxiv_id = m.group(1).replace('.pdf', '')
+    return f"https://arxiv.org/abs/{arxiv_id}"
+
+
 _BROWSER_HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -729,6 +768,180 @@ _BROWSER_HEADERS = {
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
 }
+
+
+def normalize_doi(text):
+    if not text:
+        return ""
+    text = html.unescape(strip_html(str(text)))
+    m = re.search(r'(10\.\d{4,9}/[^\s<>"\']+)', text, flags=re.I)
+    if not m:
+        return ""
+    doi = m.group(1).strip()
+    doi = re.sub(r'^(?:doi:\s*)', '', doi, flags=re.I)
+    return doi.rstrip('.,;)]}')
+
+
+def is_non_arxiv_doi(doi):
+    doi = (doi or "").strip()
+    if not doi:
+        return False
+    return not re.match(r'10\.48550/arxiv\.', doi, flags=re.I)
+
+
+JOURNAL_NAME_OVERRIDES = [
+    (r'\bPhysical Review Letters\b|\bPhys\.?\s*Rev\.?\s*Lett\.?', 'Phys. Rev. Lett.'),
+    (r'\bPhysical Review B\b|\bPhys\.?\s*Rev\.?\s*B\b', 'Phys. Rev. B'),
+    (r'\bPhysical Review Materials\b|\bPhys\.?\s*Rev\.?\s*Mater\.?', 'Phys. Rev. Mater.'),
+    (r'\bPhysical Review X\b|\bPhys\.?\s*Rev\.?\s*X\b', 'Phys. Rev. X'),
+    (r'\bPhysical Review Research\b|\bPhys\.?\s*Rev\.?\s*Research\b', 'Phys. Rev. Research'),
+    (r'\bReview of Scientific Instruments\b|\bRev\.?\s*Sci\.?\s*Instrum\.?', 'Rev. Sci. Instrum.'),
+    (r'\bNature Physics\b|\bNat\.?\s*Phys\.?', 'Nat. Phys.'),
+    (r'\bNature Materials\b|\bNat\.?\s*Mater\.?', 'Nat. Mater.'),
+    (r'\bNature Communications\b|\bNat\.?\s*Commun\.?', 'Nat. Commun.'),
+    (r'\bNature\b', 'Nature'),
+    (r'\bScience Advances\b|\bSci\.?\s*Adv\.?', 'Sci. Adv.'),
+    (r'\bScience\b', 'Science'),
+    (r'\bnpj Quantum Materials\b|\bnpj\s*Quantum\s*Mater\.?', 'npj Quantum Mater.'),
+    (r'\bCommunications Physics\b|\bCommun\.?\s*Phys\.?', 'Commun. Phys.'),
+    (r'\bProceedings of the National Academy of Sciences\b|\bPNAS\b', 'PNAS'),
+]
+
+
+DOI_JOURNAL_PATTERNS = [
+    (r'10\.1103/physrevlett', 'Phys. Rev. Lett.'),
+    (r'10\.1103/physrevb', 'Phys. Rev. B'),
+    (r'10\.1103/physrevmaterials', 'Phys. Rev. Mater.'),
+    (r'10\.1103/physrevx', 'Phys. Rev. X'),
+    (r'10\.1103/physrevresearch', 'Phys. Rev. Research'),
+    (r'10\.1038/s41586', 'Nature'),
+    (r'10\.1038/s41567', 'Nat. Phys.'),
+    (r'10\.1038/s41563', 'Nat. Mater.'),
+    (r'10\.1038/s41467', 'Nat. Commun.'),
+    (r'10\.1038/s41535', 'npj Quantum Mater.'),
+    (r'10\.1038/s42005', 'Commun. Phys.'),
+    (r'10\.1126/science\.', 'Science'),
+    (r'10\.1126/sciadv\.', 'Sci. Adv.'),
+]
+
+
+def canonical_journal_abbrev(name):
+    name = strip_html(name or "")
+    name = re.sub(r'\s+', ' ', name).strip(' ,;')
+    if not name:
+        return ""
+    for pattern, abbrev in JOURNAL_NAME_OVERRIDES:
+        if re.search(pattern, name, flags=re.I):
+            return abbrev
+    return name
+
+
+def journal_abbrev_from_ref(journal_ref):
+    ref = strip_html(journal_ref or "")
+    ref = re.sub(r'\s+', ' ', ref).strip(' ,;')
+    if not ref:
+        return ""
+    # Keep the journal part and drop volume/page/year tails:
+    # "Phys. Rev. B 110, 123456 (2024)" -> "Phys. Rev. B"
+    candidate = re.sub(r'\s+(?:vol(?:ume)?\.?\s*)?\d[\w.:-]*.*$', '', ref, flags=re.I).strip(' ,;')
+    candidate = canonical_journal_abbrev(candidate)
+    return candidate if candidate and len(candidate) >= 3 else ""
+
+
+def journal_abbrev_from_doi(doi):
+    doi = (doi or "").strip()
+    if not is_non_arxiv_doi(doi):
+        return ""
+    for pattern, abbrev in DOI_JOURNAL_PATTERNS:
+        if re.search(pattern, doi, flags=re.I):
+            return abbrev
+    return ""
+
+
+def _first_text_for_class(html_tree, class_name):
+    if html_tree is None:
+        return ""
+    nodes = html_tree.xpath(
+        "//*[contains(concat(' ', normalize-space(@class), ' '), "
+        f"' {class_name} ')]"
+    )
+    if not nodes:
+        return ""
+    return strip_html(" ".join(nodes[0].itertext()))
+
+
+@lru_cache(maxsize=512)
+def fetch_arxiv_publication_info(link, timeout=15):
+    """Return non-arXiv DOI / journal-ref metadata from an arXiv abs page."""
+    url = arxiv_abs_url(link)
+    info = {"doi": "", "journal_ref": "", "journal_abbrev": ""}
+    if not url:
+        return info
+    try:
+        resp = requests.get(url, timeout=timeout, headers=_BROWSER_HEADERS, allow_redirects=True)
+        if resp.status_code >= 400:
+            return info
+        html_text = resp.text
+        html_tree = ET.HTML(html_text)
+
+        journal_ref = _first_text_for_class(html_tree, 'jref')
+        doi_text = _first_text_for_class(html_tree, 'arxivdoi')
+        doi_candidates = [normalize_doi(doi_text)]
+        doi_candidates.extend(normalize_doi(m.group(0)) for m in re.finditer(r'10\.\d{4,9}/[^\s<>"\']+', html_text, flags=re.I))
+        doi = next((d for d in doi_candidates if is_non_arxiv_doi(d)), "")
+
+        journal_abbrev = journal_abbrev_from_ref(journal_ref) or journal_abbrev_from_doi(doi)
+        return {"doi": doi, "journal_ref": journal_ref, "journal_abbrev": journal_abbrev}
+    except Exception as e:
+        print(f"      {COLOR_YELLOW}arXiv publication lookup skipped for {url}: {e}{COLOR_END}", file=sys.stderr)
+        return info
+
+
+def entry_publication_info(entry, journal_name):
+    """Publication metadata used only as a display signal for arXiv papers."""
+    if journal_name != "arXiv_CondMat":
+        return {"doi": "", "journal_ref": "", "journal_abbrev": ""}
+
+    link = get_entry_link(entry)
+    info = dict(fetch_arxiv_publication_info(link))
+
+    # Feedparser may expose these fields directly; prefer them if arXiv's
+    # page fetch fails, but still ignore arXiv's own 10.48550 DOI.
+    for key in ("arxiv_doi", "doi", "prism_doi", "dc_identifier"):
+        doi = normalize_doi(entry.get(key, ""))
+        if is_non_arxiv_doi(doi):
+            info["doi"] = info.get("doi") or doi
+            break
+    for key in ("arxiv_journal_ref", "journal_ref", "prism_publicationname"):
+        journal_ref = strip_html(entry.get(key, ""))
+        if journal_ref:
+            info["journal_ref"] = info.get("journal_ref") or journal_ref
+            break
+
+    info["journal_abbrev"] = (
+        info.get("journal_abbrev")
+        or journal_abbrev_from_ref(info.get("journal_ref", ""))
+        or journal_abbrev_from_doi(info.get("doi", ""))
+    )
+
+    if not is_non_arxiv_doi(info.get("doi", "")):
+        info["doi"] = ""
+    if not info.get("doi") and not info.get("journal_ref"):
+        info["journal_abbrev"] = ""
+    return info
+
+
+def display_title_for_entry(entry, journal_name, fallback_title=None):
+    title = clean_title_for_display(entry.get('title', '') if entry else '')
+    if not title:
+        title = clean_title_for_display(fallback_title or 'No title')
+    title = re.sub(r'^\[\d{1,2}\]\s*', '', title).strip()
+
+    pub = entry_publication_info(entry or {}, journal_name)
+    journal_abbrev = pub.get("journal_abbrev", "")
+    if journal_abbrev and not re.search(r'\(' + re.escape(journal_abbrev) + r'\)\s*$', title):
+        title = f"{title} ({journal_abbrev})"
+    return title
 
 
 @lru_cache(maxsize=512)
@@ -1177,16 +1390,29 @@ def entry_by_link(parsed_entries):
     return {get_entry_link(e): e for e in parsed_entries if get_entry_link(e)}
 
 
+def set_child_text(parent, tag_name, text, cdata=False, attrs=None):
+    child = parent.find(tag_name)
+    if child is None:
+        child = ET.SubElement(parent, tag_name)
+    if attrs:
+        for key, value in attrs.items():
+            child.set(key, value)
+    child.text = ET.CDATA(text) if cdata else text
+    return child
+
+
 def ensure_description_prefix(xml_item, feed_type, entry, meta, journal_name):
     authors = get_authors(entry)
     author_compact = compact_authors(authors)
     last_authors = last_authors_text(authors)
+    author_metadata = author_metadata_text(authors)
     tier = meta.get('tier', '')
     score = meta.get('score', '')
     reason = meta.get('reason', '')
     tags = meta.get('tags', []) or tag_keywords(entry.get('title',''), entry.get('summary',''))
     abstract = strip_html(entry.get('summary', ''))
     image_url = get_article_image(entry, journal_name)
+    publication = entry_publication_info(entry, journal_name)
 
     tag_html = " ".join([f"<span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#{safe_text(t)}</span>" for t in tags])
     score_badge = f"<span style='display:inline-block;padding:4px 9px;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:700;'>Score {safe_text(str(score))}/10</span>" if score != '' else ""
@@ -1199,6 +1425,10 @@ def ensure_description_prefix(xml_item, feed_type, entry, meta, journal_name):
         prefix_html += f"<p><b>Last authors:</b> {safe_text(last_authors)}</p>"
     if author_compact and author_compact != last_authors:
         prefix_html += f"<p><b>Authors:</b> {safe_text(author_compact)}</p>"
+    if publication.get("journal_abbrev"):
+        doi = publication.get("doi", "")
+        doi_link = f" <a href='https://doi.org/{html.escape(doi, quote=True)}'>DOI</a>" if doi else ""
+        prefix_html += f"<p><b>Published as:</b> {safe_text(publication.get('journal_abbrev', ''))}{doi_link}</p>"
     if score_badge:
         prefix_html += f"<p>{score_badge} <b>{safe_text(tier)}</b></p>"
     elif tier:
@@ -1212,46 +1442,30 @@ def ensure_description_prefix(xml_item, feed_type, entry, meta, journal_name):
     if abstract:
         prefix_html += f"<hr/><p><b>Abstract:</b> {safe_text(abstract)}</p>"
 
-    ns_atom = 'http://www.w3.org/2005/Atom'
-    ns_dc = 'http://purl.org/dc/elements/1.1/'
-    ns_rss1 = 'http://purl.org/rss/1.0/'
     if feed_type == 'atom':
-        summary_el = xml_item.find(f'{{{ns_atom}}}summary')
-        if summary_el is None:
-            summary_el = ET.SubElement(xml_item, f'{{{ns_atom}}}summary')
-        summary_el.set('type', 'html')
-        summary_el.text = prefix_html
+        set_child_text(xml_item, f'{{{NS_ATOM}}}summary', prefix_html, attrs={'type': 'html'})
+        set_child_text(xml_item, f'{{{NS_ATOM}}}content', prefix_html, attrs={'type': 'html'})
         if authors:
-            for old in xml_item.findall(f'{{{ns_atom}}}author'):
+            for old in xml_item.findall(f'{{{NS_ATOM}}}author'):
                 xml_item.remove(old)
-            author_el = ET.SubElement(xml_item, f'{{{ns_atom}}}author')
-            name_el = ET.SubElement(author_el, f'{{{ns_atom}}}name')
-            name_el.text = author_compact
+            author_el = ET.SubElement(xml_item, f'{{{NS_ATOM}}}author')
+            name_el = ET.SubElement(author_el, f'{{{NS_ATOM}}}name')
+            name_el.text = author_metadata
     elif feed_type == 'rss1':
         # RSS 1.0 (arXiv): description lives in the rss1 default namespace.
         # Without this fix v10 wrote a dangling no-namespace <description>
         # while the original (namespaced) description stayed unchanged,
         # so readers showed the un-enriched abstract.
-        desc_el = xml_item.find(f'{{{ns_rss1}}}description')
-        if desc_el is None:
-            desc_el = ET.SubElement(xml_item, f'{{{ns_rss1}}}description')
-        desc_el.text = prefix_html  # CDATA inside namespaced element is iffy; plain HTML escaped via safe_text is fine
+        set_child_text(xml_item, f'{{{NS_RSS1}}}description', prefix_html)
+        set_child_text(xml_item, f'{{{NS_CONTENT}}}encoded', prefix_html, cdata=True)
         if authors:
-            dc_el = xml_item.find(f'{{{ns_dc}}}creator')
-            if dc_el is None:
-                dc_el = ET.SubElement(xml_item, f'{{{ns_dc}}}creator')
-            dc_el.text = author_compact
+            set_child_text(xml_item, f'{{{NS_DC}}}creator', author_metadata)
     else:
         # rss2
-        desc_el = xml_item.find('description')
-        if desc_el is None:
-            desc_el = ET.SubElement(xml_item, 'description')
-        desc_el.text = ET.CDATA(prefix_html)
+        set_child_text(xml_item, 'description', prefix_html, cdata=True)
+        set_child_text(xml_item, f'{{{NS_CONTENT}}}encoded', prefix_html, cdata=True)
         if authors:
-            dc_el = xml_item.find(f'{{{ns_dc}}}creator')
-            if dc_el is None:
-                dc_el = ET.SubElement(xml_item, f'{{{ns_dc}}}creator')
-            dc_el.text = author_compact
+            set_child_text(xml_item, f'{{{NS_DC}}}creator', author_metadata)
 
     # Prefix title with score for fast Reeder list triage.
     if score != '':
@@ -1260,21 +1474,21 @@ def ensure_description_prefix(xml_item, feed_type, entry, meta, journal_name):
             # multiple <title> nodes per entry, or set type='html' which
             # makes some readers ignore prefix-as-text. We rewrite EVERY
             # atom:title for the entry and force type='text'.
-            title_els = xml_item.findall(f'{{{ns_atom}}}title')
+            title_els = xml_item.findall(f'{{{NS_ATOM}}}title')
             for title_el in title_els:
                 if title_el.text and not re.match(r'^\[\d{1,2}\]', clean_title_for_display(title_el.text)):
-                    title_el.text = f"[{score}] {clean_title_for_display(title_el.text)}"
+                    title_el.text = f"[{score}] {display_title_for_entry(entry, journal_name, title_el.text)}"
                     title_el.set('type', 'text')
         elif feed_type == 'rss1':
             # APS PRB exposes both <title> and <dc:title>. Reeder and some
             # other readers prefer <dc:title> for display, so prefix BOTH.
-            for title_el in xml_item.findall(f'{{{ns_rss1}}}title') + xml_item.findall(f'{{{ns_dc}}}title'):
+            for title_el in xml_item.findall(f'{{{NS_RSS1}}}title') + xml_item.findall(f'{{{NS_DC}}}title'):
                 if title_el.text and not re.match(r'^\[\d{1,2}\]', clean_title_for_display(title_el.text)):
-                    title_el.text = f"[{score}] {clean_title_for_display(title_el.text)}"
+                    title_el.text = f"[{score}] {display_title_for_entry(entry, journal_name, title_el.text)}"
         else:
             title_el = xml_item.find('title')
             if title_el is not None and title_el.text and not re.match(r'^\[\d{1,2}\]', clean_title_for_display(title_el.text)):
-                title_el.text = f"[{score}] {clean_title_for_display(title_el.text)}"
+                title_el.text = f"[{score}] {display_title_for_entry(entry, journal_name, title_el.text)}"
 
 
 def append_synthetic_rss_item(root, entry, meta, journal_name):
@@ -1283,7 +1497,7 @@ def append_synthetic_rss_item(root, entry, meta, journal_name):
     Gemini classified successfully this run). Supports rss2, atom, and rss1.
     """
     tag = root.tag
-    title_text = clean_title_for_display(entry.get('title', 'No title'))
+    title_text = display_title_for_entry(entry, journal_name)
     score = meta.get('score', '')
     titled = f"[{score}] {title_text}" if score != '' else title_text
     link = get_entry_link(entry)
@@ -1459,7 +1673,7 @@ def paper_record(entry, journal, source, meta):
     return {
         "journal": journal,
         "source": source,
-        "title": entry.get('title', 'No title'),
+        "title": display_title_for_entry(entry, journal),
         "link": get_entry_link(entry),
         "authors": compact_authors(authors),
         "last_authors": last_authors_text(authors),
@@ -1705,10 +1919,10 @@ if __name__ == '__main__':
                     email_content += 'No papers found matching your filters.\n\n'
                 else:
                     for entry in keyword_passed:
-                        email_content += f"  ✅ {entry.get('title', 'No title')} ({get_entry_link(entry) or 'No link'})\n"
+                        email_content += f"  ✅ {display_title_for_entry(entry, journal_name)} ({get_entry_link(entry) or 'No link'})\n"
                         briefing_records.append(paper_record(entry, journal_name, 'keyword', meta))
                     for entry in gemini_passed:
-                        email_content += f"  🤖✅ {entry.get('title', 'No title')} ({get_entry_link(entry) or 'No link'})\n"
+                        email_content += f"  🤖✅ {display_title_for_entry(entry, journal_name)} ({get_entry_link(entry) or 'No link'})\n"
                         briefing_records.append(paper_record(entry, journal_name, 'Gemini', meta))
                     email_content += '\n'
 
