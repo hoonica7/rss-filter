@@ -6,7 +6,7 @@ name: Filter RSS Feed everyday + Scored Briefing + Email audit
 # actual scheduler still runs, but the red warning is annoying).
 "on":
   schedule:
-    # 11:00 UTC + 17분 
+    # 11:00 UTC + 17분
     - cron: '17 11 * * *'
     # 22:00 UTC + 17 min
     - cron: '17 22 * * *'
@@ -20,13 +20,13 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       # Restore checkpoint from the most recent previous run.
       # Artifacts are scoped to the current run, so they cannot reliably resume the next run.
       - name: Restore RSS checkpoint cache
         id: restore-checkpoint
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: |
             last_failed_journal.txt
@@ -51,7 +51,7 @@ jobs:
           cat last_failed_journal.txt || true
 
       - name: Set up Python with caching
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
           cache: 'pip'
@@ -65,7 +65,7 @@ jobs:
       - name: Run Python script to filter RSS and create files
         env:
           # Three Gemini API keys for rotation. Filter_RSS.py tries every model
-          # on KEY1; if all fail it switches to KEY2; etc. After all 3 keys ×
+          # on KEY1; if all fail it switches to KEY2; etc. After all 3 keys x
           # all models fail it defers the batch to the pending queue.
           GOOGLE_API_KEY1: ${{ secrets.GOOGLE_API_KEY1 }}
           GOOGLE_API_KEY2: ${{ secrets.GOOGLE_API_KEY2 }}
@@ -80,7 +80,7 @@ jobs:
 
       - name: Upload output artifacts
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: filtered-files
           if-no-files-found: warn
@@ -100,7 +100,7 @@ jobs:
       # Use a unique key because GitHub cache entries are immutable.
       - name: Save RSS checkpoint cache
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           path: |
             last_failed_journal.txt
@@ -147,7 +147,7 @@ jobs:
 
     steps:
       - name: Download error log artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: filtered-files
         continue-on-error: true
