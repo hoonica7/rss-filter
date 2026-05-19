@@ -336,12 +336,25 @@ except Exception as e:
 def strip_html(text):
     if not text:
         return ""
+    text = xml_compatible_text(text)
     text = re.sub(r'<[^>]+>', ' ', text)
-    return html.unescape(re.sub(r'\s+', ' ', text)).strip()
+    return xml_compatible_text(html.unescape(re.sub(r'\s+', ' ', text))).strip()
 
 
 def safe_text(text):
     return html.escape(strip_html(text or ""), quote=False)
+
+
+def xml_compatible_text(text):
+    """Remove characters forbidden by XML 1.0 text / CDATA nodes."""
+    if text is None:
+        return ""
+    out = []
+    for ch in str(text):
+        code = ord(ch)
+        if ch in "\t\n\r" or 0x20 <= code <= 0xD7FF or 0xE000 <= code <= 0xFFFD or 0x10000 <= code <= 0x10FFFF:
+            out.append(ch)
+    return "".join(out)
 
 
 def get_entry_link(entry):
@@ -941,7 +954,7 @@ def display_title_for_entry(entry, journal_name, fallback_title=None):
     journal_abbrev = pub.get("journal_abbrev", "")
     if journal_abbrev and not re.search(r'\(' + re.escape(journal_abbrev) + r'\)\s*$', title):
         title = f"{title} ({journal_abbrev})"
-    return title
+    return xml_compatible_text(title)
 
 
 @lru_cache(maxsize=512)
@@ -1397,6 +1410,7 @@ def set_child_text(parent, tag_name, text, cdata=False, attrs=None):
     if attrs:
         for key, value in attrs.items():
             child.set(key, value)
+    text = xml_compatible_text(text)
     child.text = ET.CDATA(text) if cdata else text
     return child
 
@@ -1450,7 +1464,7 @@ def ensure_description_prefix(xml_item, feed_type, entry, meta, journal_name):
                 xml_item.remove(old)
             author_el = ET.SubElement(xml_item, f'{{{NS_ATOM}}}author')
             name_el = ET.SubElement(author_el, f'{{{NS_ATOM}}}name')
-            name_el.text = author_metadata
+            name_el.text = xml_compatible_text(author_metadata)
     elif feed_type == 'rss1':
         # RSS 1.0 (arXiv): description lives in the rss1 default namespace.
         # Without this fix v10 wrote a dangling no-namespace <description>
@@ -1477,18 +1491,18 @@ def ensure_description_prefix(xml_item, feed_type, entry, meta, journal_name):
             title_els = xml_item.findall(f'{{{NS_ATOM}}}title')
             for title_el in title_els:
                 if title_el.text and not re.match(r'^\[\d{1,2}\]', clean_title_for_display(title_el.text)):
-                    title_el.text = f"[{score}] {display_title_for_entry(entry, journal_name, title_el.text)}"
+                    title_el.text = xml_compatible_text(f"[{score}] {display_title_for_entry(entry, journal_name, title_el.text)}")
                     title_el.set('type', 'text')
         elif feed_type == 'rss1':
             # APS PRB exposes both <title> and <dc:title>. Reeder and some
             # other readers prefer <dc:title> for display, so prefix BOTH.
             for title_el in xml_item.findall(f'{{{NS_RSS1}}}title') + xml_item.findall(f'{{{NS_DC}}}title'):
                 if title_el.text and not re.match(r'^\[\d{1,2}\]', clean_title_for_display(title_el.text)):
-                    title_el.text = f"[{score}] {display_title_for_entry(entry, journal_name, title_el.text)}"
+                    title_el.text = xml_compatible_text(f"[{score}] {display_title_for_entry(entry, journal_name, title_el.text)}")
         else:
             title_el = xml_item.find('title')
             if title_el is not None and title_el.text and not re.match(r'^\[\d{1,2}\]', clean_title_for_display(title_el.text)):
-                title_el.text = f"[{score}] {display_title_for_entry(entry, journal_name, title_el.text)}"
+                title_el.text = xml_compatible_text(f"[{score}] {display_title_for_entry(entry, journal_name, title_el.text)}")
 
 
 def append_synthetic_rss_item(root, entry, meta, journal_name):
@@ -1499,9 +1513,9 @@ def append_synthetic_rss_item(root, entry, meta, journal_name):
     tag = root.tag
     title_text = display_title_for_entry(entry, journal_name)
     score = meta.get('score', '')
-    titled = f"[{score}] {title_text}" if score != '' else title_text
-    link = get_entry_link(entry)
-    pub = entry.get('published', '') or entry.get('updated', '')
+    titled = xml_compatible_text(f"[{score}] {title_text}" if score != '' else title_text)
+    link = xml_compatible_text(get_entry_link(entry))
+    pub = xml_compatible_text(entry.get('published', '') or entry.get('updated', ''))
 
     if tag == 'rss':
         channel = root.find('channel')
@@ -1512,7 +1526,7 @@ def append_synthetic_rss_item(root, entry, meta, journal_name):
         ET.SubElement(item, 'link').text = link
         guid = ET.SubElement(item, 'guid')
         guid.set('isPermaLink', 'true')
-        guid.text = link or entry.get('id', '') or title_text
+        guid.text = xml_compatible_text(link or entry.get('id', '') or title_text)
         if pub:
             ET.SubElement(item, 'pubDate').text = pub
         ensure_description_prefix(item, 'rss2', entry, meta, journal_name)
@@ -1527,7 +1541,7 @@ def append_synthetic_rss_item(root, entry, meta, journal_name):
         if link:
             link_el.set('href', link)
         id_el = ET.SubElement(new_entry, f'{{{ns_atom}}}id')
-        id_el.text = entry.get('id', '') or link or title_text
+        id_el.text = xml_compatible_text(entry.get('id', '') or link or title_text)
         if pub:
             pub_el = ET.SubElement(new_entry, f'{{{ns_atom}}}published')
             pub_el.text = pub
