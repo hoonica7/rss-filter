@@ -78,6 +78,14 @@ jobs:
         run: |
           python Filter_RSS.py
 
+      - name: Add favicon to generated HTML
+        run: |
+          for file in index.html briefing.html filtered_results.html; do
+            if [ -f "$file" ] && ! grep -q "favicon.svg" "$file"; then
+              perl -0pi -e "s#</head>#<link rel='icon' href='favicon.svg' type='image/svg+xml'></head>#" "$file"
+            fi
+          done
+
       - name: Upload output artifacts
         if: always()
         uses: actions/upload-artifact@v6
@@ -91,6 +99,7 @@ jobs:
             briefing.html
             filtered_results.html
             index.html
+            favicon.svg
             pending_classification_queue.json
             last_failed_journal.txt
             partial_email_content.txt
