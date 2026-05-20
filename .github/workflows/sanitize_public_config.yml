@@ -1,0 +1,35 @@
+name: Sanitize public RSS config
+
+"on":
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - apply_private_config_patch.py
+      - .github/workflows/sanitize_public_config.yml
+
+permissions:
+  contents: write
+
+jobs:
+  sanitize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Apply private config hooks
+        run: python apply_private_config_patch.py
+
+      - name: Commit sanitized Filter_RSS.py
+        run: |
+          if git diff --quiet -- Filter_RSS.py; then
+            echo "Filter_RSS.py is already sanitized."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Filter_RSS.py
+          git commit -m "Sanitize public RSS profile config"
+          git push
