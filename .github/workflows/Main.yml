@@ -63,6 +63,9 @@ jobs:
           pip install -r requirements.txt
           pip install --upgrade google-genai
 
+      - name: Apply RSS profile patch
+        run: python apply_rss_profile_patch.py
+
       - name: Run Python script to filter RSS and create files
         env:
           # Three Gemini API keys for rotation. Filter_RSS.py tries every model
