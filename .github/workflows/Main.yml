@@ -63,8 +63,8 @@ jobs:
           pip install -r requirements.txt
           pip install --upgrade google-genai
 
-      - name: Apply RSS profile patch
-        run: python apply_rss_profile_patch.py
+      - name: Apply private config hooks
+        run: python apply_private_config_patch.py
 
       - name: Run Python script to filter RSS and create files
         env:
@@ -78,6 +78,16 @@ jobs:
           #   gemini-3-flash-preview,gemini-3.1-flash-lite-preview,gemini-2.5-flash
           GEMINI_MODELS: ${{ secrets.GEMINI_MODELS }}
           GEMINI_BATCH_SIZE: "25"
+          # Private ranking profile. These keep personal research interests
+          # and author preferences out of the public repository.
+          RSS_CLASSIFIER_ROLE: ${{ secrets.RSS_CLASSIFIER_ROLE }}
+          RSS_USER_PROFILE: ${{ secrets.RSS_USER_PROFILE }}
+          RSS_SCORING_POLICY: ${{ secrets.RSS_SCORING_POLICY }}
+          RSS_AUTHOR_WHITELIST: ${{ secrets.RSS_AUTHOR_WHITELIST }}
+          RSS_NARROW_TITLE_AUTOPASS: ${{ secrets.RSS_NARROW_TITLE_AUTOPASS }}
+          RSS_DIRECT_RELEVANCE_KEYWORDS: ${{ secrets.RSS_DIRECT_RELEVANCE_KEYWORDS }}
+          RSS_A_MUST_TRIGGER_KEYWORDS: ${{ secrets.RSS_A_MUST_TRIGGER_KEYWORDS }}
+          RSS_A_MUST_COMBO_RULES_JSON: ${{ secrets.RSS_A_MUST_COMBO_RULES_JSON }}
           GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           python Filter_RSS.py
