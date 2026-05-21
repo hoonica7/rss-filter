@@ -436,6 +436,8 @@ def render_html(slides):
   .badge {{ border-radius: 999px; padding: 6px 10px; background: #eef2ff; color: #3730a3; font-size: 13px; font-weight: 800; }}
   .score {{ background: #fee2e2; color: #991b1b; }}
   h1 {{ margin: 0; font-size: 36px; line-height: 1.12; letter-spacing: 0; overflow-wrap: anywhere; }}
+  h1 a {{ color: inherit; text-decoration-color: rgba(23, 107, 135, 0.35); text-decoration-thickness: 3px; text-underline-offset: 5px; }}
+  h1 a:hover {{ color: var(--accent); text-decoration-color: var(--accent); }}
   .meta, .authors, .why, .abstract {{ font-size: 16px; line-height: 1.58; }}
   .meta, .authors {{ color: var(--muted); }}
   .why strong, .abstract strong, .authors strong {{ color: var(--ink); }}
@@ -509,7 +511,10 @@ function render() {{
   if (r.journal) badges.appendChild(textEl('span', 'badge', r.journal));
   if (r.source) badges.appendChild(textEl('span', 'badge', r.source));
   headText.appendChild(badges);
-  headText.appendChild(textEl('h1', '', r.title));
+  const title = document.createElement('h1');
+  if (r.link) {{ const titleLink = document.createElement('a'); titleLink.href = r.link; titleLink.target = '_blank'; titleLink.rel = 'noopener noreferrer'; titleLink.textContent = r.title || ''; title.appendChild(titleLink); }}
+  else {{ title.textContent = r.title || ''; }}
+  headText.appendChild(title);
   headText.appendChild(textEl('p', 'meta', [r.journal, r.source].filter(Boolean).join(' | ')));
   if (r.last_authors || r.authors) {{ const authors = document.createElement('p'); authors.className = 'authors'; if (r.last_authors) authors.append('Last authors: ' + r.last_authors); if (r.authors) authors.append((r.last_authors ? ' | ' : '') + 'Authors: ' + r.authors); headText.appendChild(authors); }}
   appendLabeledText(headText, 'why', 'Filter reason: ', r.reason);
