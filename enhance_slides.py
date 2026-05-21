@@ -419,61 +419,68 @@ def render_html(slides):
     --accent-2: #9a3412;
   }}
   * {{ box-sizing: border-box; }}
-  body {{ margin: 0; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--ink); }}
-  .shell {{ max-width: 1320px; margin: 0 auto; padding: 24px; }}
+  body {{ margin: 0; height: 100vh; overflow: hidden; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--ink); }}
+  .shell {{ max-width: 1500px; height: 100vh; margin: 0 auto; padding: 14px 18px; display: flex; flex-direction: column; }}
   .topbar {{ display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }}
+  .top-actions {{ display: flex; align-items: center; gap: 10px; }}
   .topbar a, button {{ border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--ink); padding: 10px 14px; font-weight: 700; text-decoration: none; cursor: pointer; }}
   button.primary {{ background: var(--accent); border-color: var(--accent); color: white; }}
   button:disabled {{ opacity: 0.45; cursor: not-allowed; }}
   .counter {{ color: var(--muted); font-weight: 700; }}
-  .slide {{ min-height: calc(100vh - 154px); background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 28px; box-shadow: 0 20px 50px rgba(15, 23, 42, 0.10); display: flex; flex-direction: column; gap: 20px; }}
-  .paper-head {{ display: grid; grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.35fr); gap: 28px; align-items: start; }}
+  .slide {{ height: calc(100vh - 82px); background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 18px; box-shadow: 0 18px 42px rgba(15, 23, 42, 0.10); display: grid; grid-template-columns: minmax(310px, 0.86fr) minmax(0, 1.55fr); gap: 18px; overflow: hidden; }}
+  .paper-head {{ min-width: 0; overflow: hidden; display: flex; flex-direction: column; gap: 12px; }}
   .figure {{ margin: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #f8fafc; }}
-  .figure img {{ display: block; width: 100%; max-height: 440px; object-fit: contain; background: white; }}
-  .figure figcaption {{ padding: 10px 12px; color: var(--muted); font-size: 13px; line-height: 1.4; }}
-  .head-text {{ display: flex; flex-direction: column; gap: 13px; min-width: 0; }}
+  .figure img {{ display: block; width: 100%; max-height: 41vh; object-fit: contain; background: white; }}
+  .figure figcaption {{ padding: 7px 10px; color: var(--muted); font-size: 12px; line-height: 1.3; }}
+  .head-text {{ display: flex; flex-direction: column; gap: 9px; min-width: 0; }}
   .badges {{ display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }}
-  .badge {{ border-radius: 999px; padding: 6px 10px; background: #eef2ff; color: #3730a3; font-size: 13px; font-weight: 800; }}
+  .badge {{ border-radius: 999px; padding: 5px 9px; background: #eef2ff; color: #3730a3; font-size: 12px; font-weight: 800; }}
   .score {{ background: #fee2e2; color: #991b1b; }}
-  h1 {{ margin: 0; font-size: 36px; line-height: 1.12; letter-spacing: 0; overflow-wrap: anywhere; }}
-  h1 a {{ color: inherit; text-decoration-color: rgba(23, 107, 135, 0.35); text-decoration-thickness: 3px; text-underline-offset: 5px; }}
+  h1 {{ margin: 0; font-size: 25px; line-height: 1.15; letter-spacing: 0; overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }}
+  h1 a {{ color: inherit; text-decoration-color: rgba(23, 107, 135, 0.35); text-decoration-thickness: 2px; text-underline-offset: 4px; }}
   h1 a:hover {{ color: var(--accent); text-decoration-color: var(--accent); }}
-  .meta, .authors, .why, .abstract {{ font-size: 16px; line-height: 1.58; }}
+  .meta, .authors, .why, .abstract {{ font-size: 13px; line-height: 1.45; }}
   .meta, .authors {{ color: var(--muted); }}
   .why strong, .abstract strong, .authors strong {{ color: var(--ink); }}
-  .why {{ border-left: 4px solid var(--accent-2); padding-left: 12px; color: #374151; }}
+  .authors {{ display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }}
+  .why {{ border-left: 4px solid var(--accent-2); padding-left: 10px; color: #374151; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }}
   .abstract {{ border-top: 1px solid var(--line); padding-top: 14px; color: #374151; }}
+  details.abstract-details {{ display: none; }}
   details.abstract-details summary {{ cursor: pointer; color: var(--accent); font-weight: 800; margin-bottom: 8px; }}
   .tags {{ display: flex; flex-wrap: wrap; gap: 8px; }}
-  .tag {{ border-radius: 999px; padding: 5px 9px; background: #f1f5f9; color: #475569; font-size: 13px; font-weight: 700; }}
-  .briefing {{ display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 24px; border-top: 1px solid var(--line); padding-top: 22px; }}
+  .tag {{ border-radius: 999px; padding: 4px 8px; background: #f1f5f9; color: #475569; font-size: 12px; font-weight: 700; }}
+  .head-text > .link {{ display: none; }}
+  .briefing {{ min-width: 0; min-height: 0; overflow: hidden; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(0, auto); gap: 11px 18px; border-top: 0; padding-top: 0; }}
   .brief-section {{ min-width: 0; }}
   .brief-section.wide {{ grid-column: 1 / -1; }}
-  .brief-section h2 {{ margin: 0 0 7px; font-size: 17px; line-height: 1.3; color: #0f766e; letter-spacing: 0; }}
-  .brief-section p, .brief-section li {{ margin: 0; font-size: 15px; line-height: 1.62; color: #1f2937; }}
+  .brief-section h2 {{ margin: 0 0 4px; font-size: 14px; line-height: 1.22; color: #0f766e; letter-spacing: 0; }}
+  .brief-section p, .brief-section li {{ margin: 0; font-size: 12.5px; line-height: 1.42; color: #1f2937; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }}
   .brief-section ul {{ margin: 0; padding-left: 20px; }}
-  .concepts {{ display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }}
-  .concept {{ border-top: 1px solid var(--line); padding-top: 11px; }}
-  .concept h3 {{ margin: 0 0 6px; font-size: 16px; color: #7c2d12; letter-spacing: 0; }}
-  .concept p {{ margin: 4px 0 0; font-size: 14px; line-height: 1.56; color: #374151; }}
+  .concepts {{ display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px 14px; }}
+  .concept {{ border-top: 1px solid var(--line); padding-top: 7px; }}
+  .concept h3 {{ margin: 0 0 4px; font-size: 13px; color: #7c2d12; letter-spacing: 0; }}
+  .concept p {{ margin: 2px 0 0; font-size: 11.5px; line-height: 1.35; color: #374151; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }}
   .concept b {{ color: #111827; }}
   .link {{ color: var(--accent); font-weight: 800; text-decoration: none; }}
-  .controls {{ display: flex; justify-content: space-between; gap: 12px; margin-top: 16px; }}
   .empty {{ padding: 48px; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; color: var(--muted); }}
   @media (max-width: 860px) {{
+    body {{ height: auto; overflow: auto; }}
     .shell {{ padding: 14px; }}
-    .topbar, .controls {{ align-items: stretch; flex-direction: column; }}
-    .paper-head, .briefing, .concepts {{ grid-template-columns: 1fr; }}
-    .slide {{ min-height: auto; }}
+    .topbar, .top-actions {{ align-items: stretch; flex-direction: column; }}
+    .slide, .briefing, .concepts {{ grid-template-columns: 1fr; }}
+    .slide {{ height: auto; overflow: visible; display: grid; }}
+    details.abstract-details {{ display: block; }}
     h1 {{ font-size: 28px; }}
   }}
 </style>
 </head>
 <body>
 <main class='shell'>
-  <div class='topbar'><a href='briefing.html'>Back to Briefing</a><div class='counter' id='counter'></div></div>
+  <div class='topbar'>
+    <a href='briefing.html'>Back to Briefing</a>
+    <div class='top-actions'><button id='prev'>Prev</button><div class='counter' id='counter'></div><button class='primary' id='next'>Next</button></div>
+  </div>
   <section class='slide' id='slide' aria-live='polite'></section>
-  <div class='controls'><button id='prev'>Prev</button><button class='primary' id='next'>Next</button></div>
 </main>
 <script>
 const slides = {slides_json};
