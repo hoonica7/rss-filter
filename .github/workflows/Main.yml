@@ -88,9 +88,12 @@ jobs:
           RSS_DIRECT_RELEVANCE_KEYWORDS: ${{ secrets.RSS_DIRECT_RELEVANCE_KEYWORDS }}
           RSS_A_MUST_TRIGGER_KEYWORDS: ${{ secrets.RSS_A_MUST_TRIGGER_KEYWORDS }}
           RSS_A_MUST_COMBO_RULES_JSON: ${{ secrets.RSS_A_MUST_COMBO_RULES_JSON }}
+          RSS_SLIDE_BRIEFING_LIMIT: "40"
+          RSS_SLIDE_BRIEFING_BATCH_SIZE: "3"
           GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           python Filter_RSS.py
+          python enhance_slides.py
 
       - name: Add favicon to generated HTML
         run: |
