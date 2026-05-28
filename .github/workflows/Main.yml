@@ -92,7 +92,7 @@ jobs:
           RSS_SLIDE_BRIEFING_BATCH_SIZE: "3"
           GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          python Filter_RSS.py
+          python run_filter_resilient.py
           python enhance_slides.py
 
       - name: Add favicon to generated HTML
