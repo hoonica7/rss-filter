@@ -7,12 +7,19 @@ workflow. Cached filtered_feed_*.xml files restored by actions/cache are kept.
 """
 
 import os
+import datetime
+import email.utils
 import requests
+import xml.etree.ElementTree as ET
 
 import Filter_RSS as rss
 
 
 FEED_URLS = {url.strip("<> ") for url in rss.JOURNAL_URLS.values()}
+SCIENCE_CROSSREF_FALLBACKS = {
+    rss.JOURNAL_URLS["Science"].strip("<> "): ("Science", "0036-8075"),
+    rss.JOURNAL_URLS["Science_Advances"].strip("<> "): ("Science Advances", "2375-2548"),
+}
 ORIGINAL_REQUESTS_GET = rss.requests.get
 BROWSER_HEADERS = {
     "User-Agent": (
@@ -23,6 +30,92 @@ BROWSER_HEADERS = {
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
 }
+
+
+def crossref_author_text(authors):
+    names = []
+    for author in authors or []:
+        given = rss.strip_html(author.get("given", ""))
+        family = rss.strip_html(author.get("family", ""))
+        name = " ".join(part for part in (given, family) if part).strip()
+        if name:
+            names.append(name)
+    return "; ".join(names)
+
+
+def crossref_date(item):
+    for key in ("published-online", "published-print", "issued", "created"):
+        parts = (item.get(key) or {}).get("date-parts") or []
+        if parts and parts[0]:
+            year, month, day = (list(parts[0]) + [1, 1])[:3]
+            try:
+                return datetime.datetime(int(year), int(month), int(day), tzinfo=datetime.timezone.utc)
+            except Exception:
+                continue
+    return datetime.datetime.now(datetime.timezone.utc)
+
+
+def crossref_science_response(feed_url):
+    fallback = SCIENCE_CROSSREF_FALLBACKS.get(feed_url)
+    if not fallback:
+        return None
+    journal, issn = fallback
+    from_date = (datetime.date.today() - datetime.timedelta(days=45)).isoformat()
+    api_url = (
+        f"https://api.crossref.org/journals/{issn}/works"
+        f"?filter=from-pub-date:{from_date}"
+        "&sort=published&order=desc&rows=80"
+    )
+    try:
+        resp = ORIGINAL_REQUESTS_GET(
+            api_url,
+            timeout=30,
+            headers={"User-Agent": "hoonica-rss-filter/1.0 (Crossref fallback; mailto:actions@github.com)"},
+        )
+        resp.raise_for_status()
+        items = resp.json().get("message", {}).get("items", [])
+    except Exception as error:
+        print(f"Crossref fallback failed for {journal}: {error}")
+        return None
+    if not items:
+        return None
+
+    rss_el = ET.Element("rss", {"version": "2.0", "xmlns:dc": "http://purl.org/dc/elements/1.1/"})
+    channel = ET.SubElement(rss_el, "channel")
+    ET.SubElement(channel, "title").text = f"{journal} Crossref fallback"
+    ET.SubElement(channel, "link").text = "https://www.science.org/"
+    ET.SubElement(channel, "description").text = f"{journal} metadata from Crossref because direct RSS fetch failed."
+
+    for item in items:
+        titles = item.get("title") or []
+        title = rss.strip_html(titles[0] if titles else "")
+        doi = rss.strip_html(item.get("DOI", ""))
+        if not title or not doi:
+            continue
+        article_url = item.get("URL") or f"https://www.science.org/doi/abs/{doi}?af=R"
+        article_dt = crossref_date(item)
+        abstract = rss.strip_html(item.get("abstract", ""))
+        description = abstract or f"{journal}. DOI: {doi}. Crossref fallback metadata; original RSS was unavailable."
+        authors = crossref_author_text(item.get("author"))
+
+        item_el = ET.SubElement(channel, "item")
+        ET.SubElement(item_el, "title").text = title
+        ET.SubElement(item_el, "link").text = article_url
+        guid = ET.SubElement(item_el, "guid", {"isPermaLink": "false"})
+        guid.text = doi
+        ET.SubElement(item_el, "description").text = description
+        ET.SubElement(item_el, "pubDate").text = email.utils.format_datetime(article_dt)
+        if authors:
+            ET.SubElement(item_el, "{http://purl.org/dc/elements/1.1/}creator").text = authors
+
+    content = ET.tostring(rss_el, encoding="utf-8", xml_declaration=True)
+    response = requests.Response()
+    response.status_code = 200
+    response.url = api_url
+    response._content = content
+    response.headers["content-type"] = "application/rss+xml; charset=utf-8"
+    print(f"RSS fetch recovered using Crossref fallback: {journal}")
+    return response
 
 
 def install_resilient_feed_fetch():
@@ -67,6 +160,10 @@ def install_resilient_feed_fetch():
                 print(f"RSS fetch retry with {label} got HTTP {response.status_code}: {clean_url}")
             except requests.exceptions.RequestException as error:
                 print(f"RSS fetch retry with {label} failed for {clean_url}: {error}")
+
+        crossref_response = crossref_science_response(clean_url)
+        if crossref_response is not None:
+            return crossref_response
 
         if last_response is not None:
             return last_response
