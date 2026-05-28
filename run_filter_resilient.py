@@ -12,6 +12,69 @@ import requests
 import Filter_RSS as rss
 
 
+FEED_URLS = {url.strip("<> ") for url in rss.JOURNAL_URLS.values()}
+ORIGINAL_REQUESTS_GET = rss.requests.get
+BROWSER_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/124.0.0.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+}
+
+
+def install_resilient_feed_fetch():
+    """Retry journal RSS fetches with browser-like headers before giving up."""
+
+    def resilient_get(url, *args, **kwargs):
+        clean_url = str(url).strip("<> ")
+        if clean_url not in FEED_URLS:
+            return ORIGINAL_REQUESTS_GET(url, *args, **kwargs)
+
+        timeout = kwargs.get("timeout", 30)
+        try:
+            response = ORIGINAL_REQUESTS_GET(url, *args, **kwargs)
+            if response.status_code < 400:
+                return response
+            print(f"RSS fetch plain request got HTTP {response.status_code} for {clean_url}; retrying.")
+        except requests.exceptions.RequestException as error:
+            print(f"RSS fetch plain request failed for {clean_url}: {error}; retrying.")
+
+        retry_attempts = [
+            ("browser headers", {"headers": BROWSER_HEADERS, "allow_redirects": True}),
+            (
+                "browser headers + Science cookie",
+                {
+                    "headers": {
+                        **BROWSER_HEADERS,
+                        "Referer": "https://www.science.org/",
+                        "Cookie": "cookiePolicy=iaccept",
+                    },
+                    "allow_redirects": True,
+                },
+            ),
+        ]
+        last_response = None
+        for label, retry_kwargs in retry_attempts:
+            try:
+                response = ORIGINAL_REQUESTS_GET(clean_url, timeout=timeout, **retry_kwargs)
+                if response.status_code < 400:
+                    print(f"RSS fetch recovered using {label}: {clean_url}")
+                    return response
+                last_response = response
+                print(f"RSS fetch retry with {label} got HTTP {response.status_code}: {clean_url}")
+            except requests.exceptions.RequestException as error:
+                print(f"RSS fetch retry with {label} failed for {clean_url}: {error}")
+
+        if last_response is not None:
+            return last_response
+        return ORIGINAL_REQUESTS_GET(url, *args, **kwargs)
+
+    rss.requests.get = resilient_get
+
+
 def persist_partial(email_content, briefing_records, pending_queue, new_pending_queue, journal_name):
     with open("partial_email_content.txt", "w", encoding="utf-8") as handle:
         handle.write(email_content)
@@ -36,6 +99,8 @@ def minimal_fallback_feed(journal_name, error):
 
 
 def run():
+    install_resilient_feed_fetch()
+
     output_file_base = "filtered_feed"
     state_file = "last_failed_journal.txt"
     pending_file = "pending_classification_queue.json"
