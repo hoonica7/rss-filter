@@ -246,12 +246,12 @@ def run():
                     email_content += "No papers found matching your filters.\n\n"
                 else:
                     for entry in keyword_passed:
-                        email_content += f"  OK {rss.display_title_for_entry(entry, journal_name)} ({rss.get_entry_link(entry) or 'No link'})\n"
+                        email_content += f"  ✅ {rss.display_title_for_entry(entry, journal_name)} ({rss.get_entry_link(entry) or 'No link'})\n"
                         reason = (meta.get(rss.get_entry_link(entry), {}) or {}).get("reason", "")
                         source = "author whitelist" if reason.startswith("author whitelist:") else "keyword"
                         briefing_records.append(rss.paper_record(entry, journal_name, source, meta))
                     for entry in gemini_passed:
-                        email_content += f"  GEMINI OK {rss.display_title_for_entry(entry, journal_name)} ({rss.get_entry_link(entry) or 'No link'})\n"
+                        email_content += f"  🤖✅ {rss.display_title_for_entry(entry, journal_name)} ({rss.get_entry_link(entry) or 'No link'})\n"
                         briefing_records.append(rss.paper_record(entry, journal_name, "Gemini", meta))
                     email_content += "\n"
 
@@ -260,9 +260,9 @@ def run():
                     email_content += "No papers were filtered out.\n\n"
                 else:
                     for entry in keyword_removed:
-                        email_content += f"  REMOVED {entry.get('title', 'No title')} ({rss.get_entry_link(entry) or 'No link'})\n"
+                        email_content += f"  ❌ {entry.get('title', 'No title')} ({rss.get_entry_link(entry) or 'No link'})\n"
                     for entry in gemini_removed:
-                        email_content += f"  GEMINI REMOVED {entry.get('title', 'No title')} ({rss.get_entry_link(entry) or 'No link'})\n"
+                        email_content += f"  🤖❌ {entry.get('title', 'No title')} ({rss.get_entry_link(entry) or 'No link'})\n"
                     email_content += "\n"
 
                 email_content += "PENDING RETRY PAPERS:\n"
@@ -270,7 +270,7 @@ def run():
                     email_content += "No papers pending retry.\n\n"
                 else:
                     for entry in gemini_pending:
-                        email_content += f"  PENDING {entry.get('title', 'No title')} ({rss.get_entry_link(entry) or 'No link'})\n"
+                        email_content += f"  ⏸ {entry.get('title', 'No title')} ({rss.get_entry_link(entry) or 'No link'})\n"
                     email_content += "\n"
 
                 persist_partial(email_content, briefing_records, pending_queue, new_pending_queue, journal_name)
