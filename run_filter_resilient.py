@@ -21,6 +21,8 @@ SCIENCE_CROSSREF_FALLBACKS = {
     rss.JOURNAL_URLS["Science_Advances"].strip("<> "): ("Science Advances", "2375-2548"),
 }
 ORIGINAL_REQUESTS_GET = rss.requests.get
+DC_NAMESPACE = "http://purl.org/dc/elements/1.1/"
+ET.register_namespace("dc", DC_NAMESPACE)
 BROWSER_HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -80,7 +82,7 @@ def crossref_science_response(feed_url):
     if not items:
         return None
 
-    rss_el = ET.Element("rss", {"version": "2.0", "xmlns:dc": "http://purl.org/dc/elements/1.1/"})
+    rss_el = ET.Element("rss", {"version": "2.0"})
     channel = ET.SubElement(rss_el, "channel")
     ET.SubElement(channel, "title").text = f"{journal} Crossref fallback"
     ET.SubElement(channel, "link").text = "https://www.science.org/"
@@ -106,7 +108,7 @@ def crossref_science_response(feed_url):
         ET.SubElement(item_el, "description").text = description
         ET.SubElement(item_el, "pubDate").text = email.utils.format_datetime(article_dt)
         if authors:
-            ET.SubElement(item_el, "{http://purl.org/dc/elements/1.1/}creator").text = authors
+            ET.SubElement(item_el, f"{{{DC_NAMESPACE}}}creator").text = authors
 
     content = ET.tostring(rss_el, encoding="utf-8", xml_declaration=True)
     response = requests.Response()
