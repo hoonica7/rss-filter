@@ -428,7 +428,7 @@ def render_html(slides):
   button:disabled {{ opacity: 0.45; cursor: not-allowed; }}
   .counter {{ color: var(--muted); font-weight: 700; }}
   .slide {{ height: calc(100vh - 82px); background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 18px; box-shadow: 0 18px 42px rgba(15, 23, 42, 0.10); display: grid; grid-template-columns: minmax(310px, 0.86fr) minmax(0, 1.55fr); gap: 18px; overflow: hidden; }}
-  .paper-head {{ min-width: 0; overflow: hidden; display: flex; flex-direction: column; gap: 12px; }}
+  .paper-head {{ min-width: 0; min-height: 0; overflow: hidden; display: flex; flex-direction: column; gap: 12px; }}
   .figure {{ margin: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #f8fafc; }}
   .figure img {{ display: block; width: 100%; max-height: 41vh; object-fit: contain; background: white; }}
   .figure figcaption {{ padding: 7px 10px; color: var(--muted); font-size: 12px; line-height: 1.3; }}
@@ -445,21 +445,21 @@ def render_html(slides):
   .authors {{ display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }}
   .why {{ border-left: 4px solid var(--accent-2); padding-left: 10px; color: #374151; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }}
   .abstract {{ border-top: 1px solid var(--line); padding-top: 14px; color: #374151; }}
-  details.abstract-details {{ display: none; }}
-  details.abstract-details summary {{ cursor: pointer; color: var(--accent); font-weight: 800; margin-bottom: 8px; }}
+  .original-abstract {{ margin-top: auto; border-top: 1px solid var(--line); padding-top: 10px; color: #374151; font-size: 11.5px; line-height: 1.35; max-height: 20vh; overflow: auto; }}
+  .original-abstract strong {{ display: block; margin-bottom: 4px; color: var(--ink); }}
   .tags {{ display: flex; flex-wrap: wrap; gap: 8px; }}
   .tag {{ border-radius: 999px; padding: 4px 8px; background: #f1f5f9; color: #475569; font-size: 12px; font-weight: 700; }}
   .head-text > .link {{ display: none; }}
-  .briefing {{ min-width: 0; min-height: 0; overflow: hidden; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(0, auto); gap: 11px 18px; border-top: 0; padding-top: 0; }}
+  .briefing {{ min-width: 0; min-height: 0; overflow: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(0, auto); align-content: start; gap: 11px 18px; border-top: 0; padding-top: 0; }}
   .brief-section {{ min-width: 0; }}
   .brief-section.wide {{ grid-column: 1 / -1; }}
   .brief-section h2 {{ margin: 0 0 4px; font-size: 14px; line-height: 1.22; color: #0f766e; letter-spacing: 0; }}
-  .brief-section p, .brief-section li {{ margin: 0; font-size: 12.5px; line-height: 1.42; color: #1f2937; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }}
+  .brief-section p, .brief-section li {{ margin: 0; font-size: 12.5px; line-height: 1.42; color: #1f2937; overflow-wrap: anywhere; }}
   .brief-section ul {{ margin: 0; padding-left: 20px; }}
   .concepts {{ display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px 14px; }}
   .concept {{ border-top: 1px solid var(--line); padding-top: 7px; }}
   .concept h3 {{ margin: 0 0 4px; font-size: 13px; color: #7c2d12; letter-spacing: 0; }}
-  .concept p {{ margin: 2px 0 0; font-size: 11.5px; line-height: 1.35; color: #374151; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }}
+  .concept p {{ margin: 2px 0 0; font-size: 11.5px; line-height: 1.35; color: #374151; overflow-wrap: anywhere; }}
   .concept b {{ color: #111827; }}
   .link {{ color: var(--accent); font-weight: 800; text-decoration: none; }}
   .empty {{ padding: 48px; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; color: var(--muted); }}
@@ -469,7 +469,6 @@ def render_html(slides):
     .topbar, .top-actions {{ align-items: stretch; flex-direction: column; }}
     .slide, .briefing, .concepts {{ grid-template-columns: 1fr; }}
     .slide {{ height: auto; overflow: visible; display: grid; }}
-    details.abstract-details {{ display: block; }}
     h1 {{ font-size: 28px; }}
   }}
 </style>
@@ -528,6 +527,7 @@ function render() {{
   if (r.tags && r.tags.length) {{ const tags = document.createElement('div'); tags.className = 'tags'; r.tags.forEach(tag => tags.appendChild(textEl('span', 'tag', '#' + tag))); headText.appendChild(tags); }}
   if (r.link) {{ const link = document.createElement('a'); link.className = 'link'; link.href = r.link; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.textContent = 'Open paper'; headText.appendChild(link); }}
   head.appendChild(headText);
+  if (r.summary) {{ const abstract = document.createElement('p'); abstract.className = 'original-abstract'; const strong = textEl('strong', '', 'Original abstract'); abstract.appendChild(strong); abstract.append(r.summary); head.appendChild(abstract); }}
   slideEl.appendChild(head);
   const briefing = document.createElement('div');
   briefing.className = 'briefing';
@@ -555,7 +555,6 @@ function render() {{
     briefing.appendChild(section);
   }}
   if (b.english_summary && b.english_summary.length) {{ const section = document.createElement('section'); section.className = 'brief-section wide'; section.appendChild(textEl('h2', '', 'English Summary')); const ul = document.createElement('ul'); b.english_summary.slice(0, 5).forEach(line => ul.appendChild(textEl('li', '', line))); section.appendChild(ul); briefing.appendChild(section); }}
-  if (r.summary) {{ const details = document.createElement('details'); details.className = 'abstract-details brief-section wide'; details.appendChild(textEl('summary', '', 'Original abstract')); details.appendChild(textEl('p', 'abstract', r.summary)); briefing.appendChild(details); }}
   slideEl.appendChild(briefing);
   counterEl.textContent = `${{index + 1}} / ${{slides.length}}`;
   prevBtn.disabled = index === 0;
