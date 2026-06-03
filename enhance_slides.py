@@ -7,7 +7,7 @@ keeps personal ranking values in GitHub Actions secrets rather than source code.
 """
 
 from functools import lru_cache
-from urllib.parse import urljoin
+from urllib.parse import quote, urljoin
 import html
 import json
 import math
@@ -115,6 +115,143 @@ def fetch_first_image_from_html(url, timeout=15):
     except Exception as exc:
         print(f"{COLOR_YELLOW}Slide image skipped for {url}: {exc}{COLOR_END}", file=sys.stderr)
     return ""
+
+
+def meta_contents(html_text):
+    values = []
+    patterns = [
+        r"<meta[^>]+(?:name|property)=[\"']([^\"']+)[\"'][^>]+content=[\"']([^\"']*)[\"']",
+        r"<meta[^>]+content=[\"']([^\"']*)[\"'][^>]+(?:name|property)=[\"']([^\"']+)[\"']",
+    ]
+    for pattern in patterns:
+        for match in re.finditer(pattern, html_text, flags=re.I | re.S):
+            if len(match.groups()) != 2:
+                continue
+            first, second = match.group(1), match.group(2)
+            if " " in first or len(first) > 80:
+                name, content = second, first
+            else:
+                name, content = first, second
+            values.append((html.unescape(name).strip().lower(), html.unescape(content).strip()))
+    return values
+
+
+def abstract_candidates_from_html(html_text):
+    candidates = []
+    for name, content in meta_contents(html_text):
+        if name in {
+            "citation_abstract",
+            "dc.description",
+            "dcterms.description",
+            "description",
+            "og:description",
+            "twitter:description",
+        }:
+            cleaned = strip_html(content)
+            if cleaned:
+                candidates.append(cleaned)
+
+    html_patterns = [
+        r"<blockquote[^>]+class=[\"'][^\"']*abstract[^\"']*[\"'][^>]*>.*?(?:<span[^>]*>Abstract:\s*</span>)?(.*?)</blockquote>",
+        r"<section[^>]+class=[\"'][^\"']*abstract[^\"']*[\"'][^>]*>(.*?)</section>",
+        r"<div[^>]+class=[\"'][^\"']*abstract[^\"']*[\"'][^>]*>(.*?)</div>",
+        r"<h2[^>]*>\s*Abstract\s*</h2>\s*<p[^>]*>(.*?)</p>",
+    ]
+    for pattern in html_patterns:
+        for match in re.finditer(pattern, html_text, flags=re.I | re.S):
+            cleaned = strip_html(match.group(1))
+            cleaned = re.sub(r"^Abstract\s*:?\s*", "", cleaned, flags=re.I).strip()
+            if cleaned:
+                candidates.append(cleaned)
+    return candidates
+
+
+def doi_from_link(link):
+    if not link:
+        return ""
+    match = re.search(r"(10\.\d{4,9}/[^?#\s]+)", link, flags=re.I)
+    if not match:
+        return ""
+    return html.unescape(match.group(1)).rstrip(".")
+
+
+def looks_truncated_summary(summary):
+    text = (summary or "").strip()
+    if not text:
+        return True
+    return bool(re.search(r"(\.\.\.|…)\s*(?:\[[^\]]+\])?(?:Published\s+\w+.*)?$", text, flags=re.I))
+
+
+def choose_better_abstract(current, candidates):
+    current = strip_html(current)
+    best = current
+    for candidate in candidates:
+        candidate = strip_html(candidate)
+        if not candidate:
+            continue
+        low = candidate.lower()
+        if low.startswith(("author(s):", "published ", "doi:", "abstracts are invited")):
+            continue
+        if len(candidate) > len(best) + 60 or (looks_truncated_summary(best) and len(candidate) > len(best)):
+            best = candidate
+    return best
+
+
+@lru_cache(maxsize=512)
+def fetch_full_abstract_from_url(url, timeout=15):
+    if not url:
+        return ""
+    try:
+        resp = requests.get(url, timeout=timeout, headers=_BROWSER_HEADERS, allow_redirects=True)
+        if resp.status_code >= 400:
+            return ""
+        return choose_better_abstract("", abstract_candidates_from_html(resp.text))
+    except Exception as exc:
+        print(f"{COLOR_YELLOW}Slide abstract fetch skipped for {url}: {exc}{COLOR_END}", file=sys.stderr)
+    return ""
+
+
+@lru_cache(maxsize=512)
+def fetch_crossref_abstract(doi, timeout=15):
+    if not doi:
+        return ""
+    url = f"https://api.crossref.org/works/{quote(doi, safe='')}"
+    try:
+        resp = requests.get(
+            url,
+            timeout=timeout,
+            headers={"User-Agent": "hoonica-rss-filter/1.0 (slide abstract lookup; mailto:actions@github.com)"},
+        )
+        if resp.status_code >= 400:
+            return ""
+        abstract = ((resp.json() or {}).get("message") or {}).get("abstract", "")
+        return strip_html(abstract)
+    except Exception as exc:
+        print(f"{COLOR_YELLOW}Crossref abstract fetch skipped for {doi}: {exc}{COLOR_END}", file=sys.stderr)
+    return ""
+
+
+def full_abstract_for_slide(slide):
+    current = strip_html(slide.get("summary", ""))
+    link = slide.get("link", "")
+    should_try = (
+        looks_truncated_summary(current)
+        or "journals.aps.org" in link
+        or "doi.org/10.1103" in link.lower()
+        or bool(arxiv_html_url(link))
+    )
+    if not should_try:
+        return current
+
+    candidates = []
+    arxiv_html = arxiv_html_url(link)
+    if arxiv_html:
+        candidates.append(fetch_full_abstract_from_url(arxiv_html))
+    candidates.append(fetch_full_abstract_from_url(link))
+    doi = doi_from_link(link)
+    if doi:
+        candidates.append(fetch_crossref_abstract(doi))
+    return choose_better_abstract(current, candidates)
 
 
 def image_for_slide(slide):
@@ -419,16 +556,16 @@ def render_html(slides):
     --accent-2: #9a3412;
   }}
   * {{ box-sizing: border-box; }}
-  body {{ margin: 0; height: 100vh; overflow: hidden; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--ink); }}
-  .shell {{ max-width: 1500px; height: 100vh; margin: 0 auto; padding: 14px 18px; display: flex; flex-direction: column; }}
+  body {{ margin: 0; min-height: 100vh; overflow: auto; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--ink); }}
+  .shell {{ max-width: 1500px; min-height: 100vh; margin: 0 auto; padding: 14px 18px; display: flex; flex-direction: column; }}
   .topbar {{ display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }}
   .top-actions {{ display: flex; align-items: center; gap: 10px; }}
   .topbar a, button {{ border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--ink); padding: 10px 14px; font-weight: 700; text-decoration: none; cursor: pointer; }}
   button.primary {{ background: var(--accent); border-color: var(--accent); color: white; }}
   button:disabled {{ opacity: 0.45; cursor: not-allowed; }}
   .counter {{ color: var(--muted); font-weight: 700; }}
-  .slide {{ height: calc(100vh - 82px); background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 18px; box-shadow: 0 18px 42px rgba(15, 23, 42, 0.10); display: grid; grid-template-columns: minmax(310px, 0.86fr) minmax(0, 1.55fr); gap: 18px; overflow: hidden; }}
-  .paper-head {{ min-width: 0; min-height: 0; overflow: hidden; display: flex; flex-direction: column; gap: 12px; }}
+  .slide {{ min-height: calc(100vh - 82px); background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 18px; box-shadow: 0 18px 42px rgba(15, 23, 42, 0.10); display: grid; grid-template-columns: minmax(310px, 0.86fr) minmax(0, 1.55fr); gap: 18px; overflow: visible; }}
+  .paper-head {{ min-width: 0; min-height: 0; overflow: visible; display: flex; flex-direction: column; gap: 12px; }}
   .figure {{ margin: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #f8fafc; }}
   .figure img {{ display: block; width: 100%; max-height: 41vh; object-fit: contain; background: white; }}
   .figure figcaption {{ padding: 7px 10px; color: var(--muted); font-size: 12px; line-height: 1.3; }}
@@ -445,12 +582,12 @@ def render_html(slides):
   .authors {{ display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }}
   .why {{ border-left: 4px solid var(--accent-2); padding-left: 10px; color: #374151; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }}
   .abstract {{ border-top: 1px solid var(--line); padding-top: 14px; color: #374151; }}
-  .original-abstract {{ margin-top: auto; border-top: 1px solid var(--line); padding-top: 10px; color: #374151; font-size: 11.5px; line-height: 1.35; max-height: 20vh; overflow: auto; }}
+  .original-abstract {{ border-top: 1px solid var(--line); padding-top: 10px; color: #374151; font-size: 11.5px; line-height: 1.35; overflow-wrap: anywhere; }}
   .original-abstract strong {{ display: block; margin-bottom: 4px; color: var(--ink); }}
   .tags {{ display: flex; flex-wrap: wrap; gap: 8px; }}
   .tag {{ border-radius: 999px; padding: 4px 8px; background: #f1f5f9; color: #475569; font-size: 12px; font-weight: 700; }}
   .head-text > .link {{ display: none; }}
-  .briefing {{ min-width: 0; min-height: 0; overflow: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(0, auto); align-content: start; gap: 11px 18px; border-top: 0; padding-top: 0; }}
+  .briefing {{ min-width: 0; min-height: 0; overflow: visible; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(0, auto); align-content: start; gap: 11px 18px; border-top: 0; padding-top: 0; }}
   .brief-section {{ min-width: 0; }}
   .brief-section.wide {{ grid-column: 1 / -1; }}
   .brief-section h2 {{ margin: 0 0 4px; font-size: 14px; line-height: 1.22; color: #0f766e; letter-spacing: 0; }}
@@ -464,11 +601,10 @@ def render_html(slides):
   .link {{ color: var(--accent); font-weight: 800; text-decoration: none; }}
   .empty {{ padding: 48px; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; color: var(--muted); }}
   @media (max-width: 860px) {{
-    body {{ height: auto; overflow: auto; }}
     .shell {{ padding: 14px; }}
     .topbar, .top-actions {{ align-items: stretch; flex-direction: column; }}
     .slide, .briefing, .concepts {{ grid-template-columns: 1fr; }}
-    .slide {{ height: auto; overflow: visible; display: grid; }}
+    .slide {{ min-height: auto; overflow: visible; display: grid; }}
     h1 {{ font-size: 28px; }}
   }}
 </style>
@@ -575,6 +711,7 @@ def main():
         print("No generated slides.html found to enhance.")
         return
     for slide in slides:
+        slide["summary"] = full_abstract_for_slide(slide)
         slide["image"] = image_for_slide(slide)
     briefings = generate_briefings(slides)
     for slide in slides:
