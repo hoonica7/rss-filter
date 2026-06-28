@@ -1112,6 +1112,7 @@ SCORING RUBRIC AND POLICY:
 OUTPUT:
 Return a JSON array only. One object per article:
 {{
+  "id": "exact input id",
   "title": "exact input title",
   "score": integer 0-10,
   "decision": "YES" or "NO",
@@ -1158,7 +1159,7 @@ def dedupe_entries_by_link_or_title(entries):
     out = []
     seen = set()
     for e in entries:
-        key = get_entry_link(e) or strip_html(e.get('title', '')).lower()
+        key = entry_identity_key(e)
         if not key or key in seen:
             continue
         seen.add(key)
@@ -1166,7 +1167,32 @@ def dedupe_entries_by_link_or_title(entries):
     return out
 
 
-def classify_entries_with_gemini(journal_name, entries):
+def entry_identity_key(entry):
+    """Stable per-entry key used for Gemini coverage accounting."""
+    link = get_entry_link(entry)
+    if link:
+        return f"link:{link.strip()}"
+    entry_id = strip_html(entry.get('id', '')).strip()
+    if entry_id:
+        return f"id:{entry_id}"
+    title_norm = norm_title(entry.get('title', '')) or strip_html(entry.get('title', '')).lower()
+    return f"title:{title_norm}"
+
+
+def entry_key_set(entries):
+    return {entry_identity_key(e) for e in entries if entry_identity_key(e)}
+
+
+def extend_unique_entries(target, entries):
+    seen = entry_key_set(target)
+    for entry in entries:
+        key = entry_identity_key(entry)
+        if key and key not in seen:
+            target.append(entry)
+            seen.add(key)
+
+
+def classify_entries_with_gemini(journal_name, entries, _recheck_depth=0):
     global current_model_name, current_model_index, current_api_index
     passed, removed, pending, metadata = [], [], [], {}
     if not entries:
@@ -1181,7 +1207,9 @@ def classify_entries_with_gemini(journal_name, entries):
     # of Gemini truncating its JSON reply, which silently dumps unmatched
     # papers into the pending queue. 15 papers per batch with a 4500-char
     # cap on each abstract fits well under our 8192 max_output_tokens.
-    batch_size = int(os.getenv("GEMINI_BATCH_SIZE", "15"))
+    batch_env = "GEMINI_RECHECK_BATCH_SIZE" if _recheck_depth else "GEMINI_BATCH_SIZE"
+    batch_default = "1" if _recheck_depth else "15"
+    batch_size = max(1, int(os.getenv(batch_env, batch_default)))
     n_apis = len(gemini_clients)
     n_models = len(MODEL_CANDIDATES)
 
@@ -1189,13 +1217,20 @@ def classify_entries_with_gemini(journal_name, entries):
         batch_entries = entries[start:start+batch_size]
         batch_num = start//batch_size + 1
         total_batches = math.ceil(len(entries) / batch_size)
-        print(f"    {COLOR_BLUE}📦 Gemini scoring batch {batch_num}/{total_batches}{COLOR_END}", file=sys.stderr)
+        batch_label = "Gemini recheck batch" if _recheck_depth else "Gemini scoring batch"
+        print(f"    {COLOR_BLUE}📦 {batch_label} {batch_num}/{total_batches}{COLOR_END}", file=sys.stderr)
 
         payload = []
-        for e in batch_entries:
+        id_to_entry = {}
+        title_to_entries = {}
+        for i, e in enumerate(batch_entries):
             title = e.get('title','')
             summary = strip_html(e.get('summary',''))
+            input_id = f"B{batch_num:03d}-I{i:03d}"
+            id_to_entry[input_id] = e
+            title_to_entries.setdefault(norm_title(title), []).append(e)
             payload.append({
+                "id": input_id,
                 "title": title,
                 "summary": summary[:4500],
                 "keyword_hints": tag_keywords(title, summary),
@@ -1226,6 +1261,7 @@ def classify_entries_with_gemini(journal_name, entries):
                     "items": {
                         "type": "OBJECT",
                         "properties": {
+                            "id":       {"type": "STRING"},
                             "title":    {"type": "STRING"},
                             "score":    {"type": "INTEGER"},
                             "decision": {"type": "STRING"},
@@ -1276,19 +1312,22 @@ def classify_entries_with_gemini(journal_name, entries):
                         # decisions in any expected shape. Treat as a real
                         # failure for this combo so we move to the next.
                         raise ValueError(f"Gemini returned JSON with no parseable decisions; got top-level type={type(parsed).__name__}, keys={list(parsed)[:5] if isinstance(parsed, dict) else 'N/A'}")
-                    # Normalize titles when matching Gemini's reply against
-                    # the original batch — Gemini may strip HTML entities or
-                    # whitespace, which would otherwise leave items unmatched
-                    # and they would loop in the pending queue forever.
-                    by_title = {norm_title(e.get('title','')): e for e in batch_entries}
-                    used_norms = set()
+                    # Match by the synthetic input id first. Title matching is
+                    # kept only as a fallback for models that omit the id.
+                    used_keys = set()
                     for d in decisions:
                         title = d.get('title','')
-                        nt = norm_title(title)
-                        entry = by_title.get(nt)
+                        input_id = strip_html(d.get('id', '')).strip()
+                        entry = id_to_entry.get(input_id)
+                        if entry and entry_identity_key(entry) in used_keys:
+                            entry = None
                         if not entry:
+                            candidates = title_to_entries.get(norm_title(title), [])
+                            entry = next((e for e in candidates if entry_identity_key(e) not in used_keys), None)
+                        if not entry:
+                            print(f"      {COLOR_YELLOW}⚠ Gemini returned unmatched item: {title}{COLOR_END}", file=sys.stderr)
                             continue
-                        used_norms.add(nt)
+                        used_keys.add(entry_identity_key(entry))
                         try:
                             score = int(d.get('score', 0))
                         except Exception:
@@ -1316,35 +1355,37 @@ def classify_entries_with_gemini(journal_name, entries):
                     # model just gave up partway). Treat as a failure for
                     # this combo so the next (key, model) gets a chance.
                     # Threshold: at least 60% coverage. Below that, retry.
-                    coverage = len(used_norms) / max(1, len(batch_entries))
+                    coverage = len(used_keys) / max(1, len(batch_entries))
                     min_coverage = 0.6
                     if coverage < min_coverage:
                         # Don't promote anything from this partial response
                         # — roll back. We'll try next combo.
-                        for d in decisions:
-                            link_to_drop = None
-                            for e_check in batch_entries:
-                                if norm_title(e_check.get('title','')) == norm_title(d.get('title','')):
-                                    link_to_drop = get_entry_link(e_check)
-                                    break
-                            if link_to_drop and link_to_drop in metadata:
-                                metadata.pop(link_to_drop, None)
+                        for e_check in batch_entries:
+                            metadata.pop(get_entry_link(e_check), None)
                         # Drop any entries we appended this round.
                         # Rebuild passed/removed by stripping batch members we just added.
-                        batch_links = {get_entry_link(e) for e in batch_entries}
-                        passed[:] = [p for p in passed if get_entry_link(p) not in batch_links]
-                        removed[:] = [r for r in removed if get_entry_link(r) not in batch_links]
+                        batch_keys = entry_key_set(batch_entries)
+                        passed[:] = [p for p in passed if entry_identity_key(p) not in batch_keys]
+                        removed[:] = [r for r in removed if entry_identity_key(r) not in batch_keys]
                         raise ValueError(
-                            f"truncated response: matched {len(used_norms)}/{len(batch_entries)} "
+                            f"truncated response: matched {len(used_keys)}/{len(batch_entries)} "
                             f"items (<{int(min_coverage*100)}% coverage)"
                         )
 
-                    # Successful coverage: anything still unmatched is a
-                    # genuine miss (Gemini deliberately omitted) — defer it.
-                    for entry in batch_entries:
-                        if norm_title(entry.get('title','')) not in used_norms:
+                    # Successful coverage: immediately recheck any omitted
+                    # items once in tiny batches before deferring to pending.
+                    missing_entries = [entry for entry in batch_entries if entry_identity_key(entry) not in used_keys]
+                    if missing_entries and _recheck_depth < 1:
+                        print(f"      {COLOR_ORANGE}🔎 Gemini omitted {len(missing_entries)} item(s); rechecking individually.{COLOR_END}", file=sys.stderr)
+                        rp, rr, rpend, rmeta = classify_entries_with_gemini(journal_name, missing_entries, _recheck_depth=_recheck_depth + 1)
+                        extend_unique_entries(passed, rp)
+                        extend_unique_entries(removed, rr)
+                        extend_unique_entries(pending, rpend)
+                        metadata.update(rmeta)
+                    else:
+                        for entry in missing_entries:
                             pending.append(entry)
-                            print(f"      ⏸ Gemini response missing item. Pending retry: {entry.get('title','')}", file=sys.stderr)
+                            print(f"      ⏸ Gemini response missing item after recheck. Pending retry: {entry.get('title','')}", file=sys.stderr)
 
                     # Success — persist this (key, model) combo for next batches.
                     current_api_index = api_idx
@@ -1668,6 +1709,41 @@ def filter_rss_for_journal(journal_name, feed_url, pending_records=None):
 
     gemini_passed_entries, gemini_removed_entries, gemini_retry_entries, gemini_meta = classify_entries_with_gemini(journal_name, gemini_pending_entries)
     meta_by_link.update(gemini_meta)
+
+    classified_keys = entry_key_set(
+        keyword_passed_entries
+        + keyword_removed_entries
+        + gemini_passed_entries
+        + gemini_removed_entries
+        + gemini_retry_entries
+    )
+    missing_after_first_pass = [e for e in entries_to_classify if entry_identity_key(e) not in classified_keys]
+    if missing_after_first_pass:
+        print(
+            f"  {COLOR_ORANGE}🔎 Coverage audit found {len(missing_after_first_pass)} unclassified paper(s); rechecking with Gemini.{COLOR_END}",
+            file=sys.stderr,
+        )
+        retry_passed, retry_removed, retry_pending, retry_meta = classify_entries_with_gemini(
+            journal_name,
+            missing_after_first_pass,
+            _recheck_depth=1,
+        )
+        extend_unique_entries(gemini_passed_entries, retry_passed)
+        extend_unique_entries(gemini_removed_entries, retry_removed)
+        extend_unique_entries(gemini_retry_entries, retry_pending)
+        meta_by_link.update(retry_meta)
+
+    final_classified_keys = entry_key_set(
+        keyword_passed_entries
+        + keyword_removed_entries
+        + gemini_passed_entries
+        + gemini_removed_entries
+        + gemini_retry_entries
+    )
+    still_missing = [e for e in entries_to_classify if entry_identity_key(e) not in final_classified_keys]
+    for entry in still_missing:
+        gemini_retry_entries.append(entry)
+        print(f"  {COLOR_YELLOW}⏸ Coverage audit forced pending retry: {entry.get('title', '')}{COLOR_END}", file=sys.stderr)
 
     passed_entries = keyword_passed_entries + gemini_passed_entries
     passed_links = set(get_entry_link(e) for e in passed_entries)
