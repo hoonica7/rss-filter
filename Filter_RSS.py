@@ -335,8 +335,78 @@ def strip_html(text):
     if not text:
         return ""
     text = xml_compatible_text(text)
-    text = re.sub(r'<[^>]+>', ' ', text)
-    return xml_compatible_text(html.unescape(re.sub(r'\s+', ' ', text))).strip()
+    text = html.unescape(text)
+    text = re.sub(r'</?[A-Za-z][^>]*>', ' ', text)
+    return xml_compatible_text(re.sub(r'\s+', ' ', text)).strip()
+
+
+def clean_abstract_text(text):
+    """Return the readable abstract, without RSS boilerplate/citation text."""
+    raw = html.unescape(xml_compatible_text(text or ""))
+    if not raw.strip():
+        return ""
+
+    paragraphs = [strip_html(p) for p in re.findall(r'<p[^>]*>(.*?)</p>', raw, flags=re.I | re.S)]
+    for para in paragraphs:
+        para = para.strip()
+        if not para:
+            continue
+        if re.match(r'^(?:Author\(s\)|\[[^\]]+\]\s*Published\b)', para, flags=re.I):
+            continue
+        if re.match(r'^[A-Za-z .&]+,\s*(?:Volume|Published online)\b', para, flags=re.I):
+            continue
+        if len(para.split()) >= 6:
+            return para
+
+    cleaned = strip_html(raw)
+    if not cleaned:
+        return ""
+
+    # arXiv RSS summaries often start with:
+    #   arXiv:2607.05548v1 Announce Type: new Abstract: ...
+    had_arxiv_header = bool(re.match(r'^\s*arxiv:\s*\S+', cleaned, flags=re.I))
+    cleaned = re.sub(
+        r'^\s*(?:arxiv:\s*\S+\s*)?(?:announce\s+type\s*:\s*\S+\s*)?(?:abstract\s*:?\s*)?',
+        '',
+        cleaned,
+        flags=re.I,
+    ).strip()
+
+    # Some arXiv-derived summaries append metadata after the abstract.
+    if had_arxiv_header:
+        cleaned = re.split(
+            r'\s+(?:comments?|subjects?|categories?|journal-ref|doi|msc\s+class|acm\s+class)\s*:\s+',
+            cleaned,
+            maxsplit=1,
+            flags=re.I,
+        )[0].strip()
+
+    # APS RSS: "Author(s): ... Abstract text [Phys. Rev. B ...] Published ..."
+    cleaned = re.sub(r'^\s*Author\(s\)\s*:\s*.+?\s+(?=(?:In|We|Here|This|The|Our|Using|By|A|An)\b)', '', cleaned, flags=re.I)
+    cleaned = re.sub(r'\s+\[[^\]]+\]\s+Published\b.*$', '', cleaned, flags=re.I).strip()
+
+    # Nature/Springer RSS content starts with a citation/DOI sentence.
+    cleaned = re.sub(
+        r'^[A-Za-z0-9 .&-]+,\s*Published online:\s*[^;]+;\s*doi:\s*10\.\S+\s*',
+        '',
+        cleaned,
+        flags=re.I,
+    ).strip()
+
+    # Science RSS descriptions can be citation-only. Do not show those as abstracts.
+    if re.fullmatch(
+        r'[A-Za-z .&-]+,\s*Volume\s+\d+,\s*Issue\s+\d+(?:,\s*Page\s+[\w-]+)?(?:,\s*[A-Za-z]+\s+\d{4})?\.?',
+        cleaned,
+        flags=re.I,
+    ):
+        return ""
+
+    cleaned = re.sub(r'^\s*Abstract\s*:?\s*', '', cleaned, flags=re.I).strip()
+    return cleaned
+
+
+def entry_summary_text(entry):
+    return clean_abstract_text(entry.get('summary', ''))
 
 
 def safe_text(text):
@@ -538,7 +608,7 @@ def get_threshold(journal_name):
 
 
 def text_for_entry(entry):
-    return (strip_html(entry.get('title', '')) + " " + strip_html(entry.get('summary', ''))).lower()
+    return (strip_html(entry.get('title', '')) + " " + entry_summary_text(entry)).lower()
 
 
 def has_a_must_trigger(entry):
@@ -1049,7 +1119,7 @@ def find_and_highlight_keyword(title, summary, keywords, color_code):
 
 
 def keyword_score(entry):
-    text = (entry.get('title', '') + ' ' + strip_html(entry.get('summary', ''))).lower()
+    text = (entry.get('title', '') + ' ' + entry_summary_text(entry)).lower()
     direct = [kw for kw in DIRECT_RELEVANCE_KEYWORDS if kw.lower() in text]
     broad = [kw for kw in BROAD_CONDMAT_KEYWORDS if kw.lower() in text]
     if direct:
@@ -1133,7 +1203,7 @@ def serialize_entry_for_pending(entry):
     return {
         "title": entry.get('title', ''),
         "link": get_entry_link(entry),
-        "summary": strip_html(entry.get('summary', '')),
+        "summary": entry_summary_text(entry),
         "authors": get_authors(entry),
         "published": entry.get('published', '') or entry.get('updated', ''),
         "id": entry.get('id', '') or get_entry_link(entry),
@@ -1226,7 +1296,7 @@ def classify_entries_with_gemini(journal_name, entries, _recheck_depth=0):
         title_to_entries = {}
         for i, e in enumerate(batch_entries):
             title = e.get('title','')
-            summary = strip_html(e.get('summary',''))
+            summary = entry_summary_text(e)
             input_id = f"B{batch_num:03d}-I{i:03d}"
             id_to_entry[input_id] = e
             title_to_entries.setdefault(norm_title(title), []).append(e)
@@ -1336,9 +1406,10 @@ def classify_entries_with_gemini(journal_name, entries, _recheck_depth=0):
                         score = max(0, min(10, score))
                         tier = d.get('tier') or score_to_tier(score)
                         reason = strip_html(d.get('reason',''))[:180]
-                        tags = d.get('tags') or tag_keywords(entry.get('title',''), entry.get('summary',''))
+                        entry_summary = entry_summary_text(entry)
+                        tags = d.get('tags') or tag_keywords(entry.get('title',''), entry_summary)
                         if not isinstance(tags, list):
-                            tags = tag_keywords(entry.get('title',''), entry.get('summary',''))
+                            tags = tag_keywords(entry.get('title',''), entry_summary)
                         tags = [strip_html(str(t)).replace(" ", "") for t in tags if strip_html(str(t))][:8]
                         score, tier, reason = postprocess_score_and_tier(journal_name, entry, score, tier, reason)
                         link = get_entry_link(entry)
@@ -1488,8 +1559,9 @@ def ensure_description_prefix(xml_item, feed_type, entry, meta, journal_name):
     tier = meta.get('tier', '')
     score = meta.get('score', '')
     reason = meta.get('reason', '')
-    tags = meta.get('tags', []) or tag_keywords(entry.get('title',''), entry.get('summary',''))
-    abstract = strip_html(entry.get('summary', ''))
+    summary_text = entry_summary_text(entry)
+    tags = meta.get('tags', []) or tag_keywords(entry.get('title',''), summary_text)
+    abstract = summary_text
     image_url = get_article_image(entry, journal_name)
     publication = entry_publication_info(entry, journal_name)
 
@@ -1660,7 +1732,7 @@ def filter_rss_for_journal(journal_name, feed_url, pending_records=None):
 
     for entry in entries_to_classify:
         title = entry.get('title', '')
-        summary = entry.get('summary', '')
+        summary = entry_summary_text(entry)
         link = get_entry_link(entry)
         autopass_kw = find_title_autopass(title)
         if autopass_kw:
@@ -1806,7 +1878,7 @@ def paper_record(entry, journal, source, meta):
         "link": get_entry_link(entry),
         "authors": compact_authors(authors),
         "last_authors": last_authors_text(authors),
-        "summary": strip_html(entry.get('summary', '')),
+        "summary": entry_summary_text(entry),
         "tier": m.get('tier', ''),
         "score": m.get('score', ''),
         "reason": m.get('reason', ''),
