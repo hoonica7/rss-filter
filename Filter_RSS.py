@@ -850,7 +850,7 @@ JOURNAL_NAME_OVERRIDES = [
     (r'\bScience\b', 'Science'),
     (r'\bnpj Quantum Materials\b|\bnpj\s*Quantum\s*Mater\.?', 'npj Quantum Mater.'),
     (r'\bCommunications Physics\b|\bCommun\.?\s*Phys\.?', 'Commun. Phys.'),
-    (r'\bProceedings of the National Academy of Sciences\b|\bPNAS\b', 'PNAS'),
+    (r'\bProceedings of the National Academy of Sciences\b|\bProc\.?\s*Natl\.?\s*Acad\.?\s*Sci\.?\s*(?:U\.?\s*S\.?\s*A\.?)?|\bPNAS\b', 'PNAS'),
 ]
 
 
@@ -866,6 +866,7 @@ DOI_JOURNAL_PATTERNS = [
     (r'10\.1038/s41467', 'Nat. Commun.'),
     (r'10\.1038/s41535', 'npj Quantum Mater.'),
     (r'10\.1038/s42005', 'Commun. Phys.'),
+    (r'10\.1073/pnas', 'PNAS'),
     (r'10\.1126/science\.', 'Science'),
     (r'10\.1126/sciadv\.', 'Sci. Adv.'),
 ]
