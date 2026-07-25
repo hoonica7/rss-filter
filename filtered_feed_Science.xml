@@ -1,64 +1,26 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/" xmlns:cc="http://web.resource.org/cc/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:enc="http://purl.oclc.org/net/rss_2.0/enc/" xmlns:prism="http://prismstandard.org/namespaces/basic/2.0/">
-   <channel rdf:about="https://www.science.org/loi/science?af=R">
-      <title>AAAS: Science: Table of Contents</title>
-      <description>Table of Contents for Science. List of articles from both the latest and ahead of print issues.</description>
-      <link>https://www.science.org/loi/science?af=R</link>
-      <dc:publisher>AAAS</dc:publisher>
-      <dc:language>en-US</dc:language>
-      <prism:publicationName>Science</prism:publicationName>
-      <items>
-         <rdf:Seq>
-            <rdf:li rdf:resource="https://www.science.org/doi/abs/10.1126/science.adt9347?af=R"/>
-            <rdf:li rdf:resource="https://www.science.org/doi/abs/10.1126/science.aed9202?af=R"/>
-            </rdf:Seq>
-      </items>
-   </channel>
-   <image rdf:about="https://www.science.org/cms/asset/66915cc2-d78c-440c-bfde-711a97f5a502/default_cover.png">
-      <title>Science</title>
-      <url>https://www.science.org/cms/asset/66915cc2-d78c-440c-bfde-711a97f5a502/default_cover.png</url>
-      <link>https://www.science.org/loi/science?af=R</link>
-   </image>
-   <item rdf:about="https://www.science.org/doi/abs/10.1126/science.adt9347?af=R">
-      <title>[6] Dynamic asymmetric strain imprinted into substrates by an oxide thin film</title>
-      <link>https://www.science.org/doi/abs/10.1126/science.adt9347?af=R</link>
-      <content:encoded><![CDATA[<p><b>Last authors:</b> Zahir Islam, Alex Frano</p><p><b>Authors:</b> Elliot Kisiel, Alexandre Pofelski, Pavel Salev, et al.</p><p><span style='display:inline-block;padding:4px 9px;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:700;'>Score 6/10</span> <b>C_MAYBE</b></p><p><b>Why:</b> Materials science study on strain engineering in oxides, which can influence symmetry-breaking phases.</p><p><b>Tags:</b> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#experiment</span> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#oxide</span> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#strainengineering</span></p>]]></content:encoded>
-      <description>&lt;p&gt;&lt;b&gt;Last authors:&lt;/b&gt; Zahir Islam, Alex Frano&lt;/p&gt;&lt;p&gt;&lt;b&gt;Authors:&lt;/b&gt; Elliot Kisiel, Alexandre Pofelski, Pavel Salev, et al.&lt;/p&gt;&lt;p&gt;&lt;span style='display:inline-block;padding:4px 9px;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:700;'&gt;Score 6/10&lt;/span&gt; &lt;b&gt;C_MAYBE&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; Materials science study on strain engineering in oxides, which can influence symmetry-breaking phases.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tags:&lt;/b&gt; &lt;span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'&gt;#experiment&lt;/span&gt; &lt;span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'&gt;#oxide&lt;/span&gt; &lt;span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'&gt;#strainengineering&lt;/span&gt;&lt;/p&gt;</description>
-      <dc:identifier>doi:10.1126/science.adt9347</dc:identifier>
-      <dc:source>Science</dc:source>
-      <dc:date>2026-06-18T05:59:05Z</dc:date>
-      <dc:type>Research Article</dc:type>
-      <dc:creator>Last authors: Zahir Islam, Alex Frano; Authors: Elliot Kisiel, Alexandre Pofelski, Pavel Salev, et al.</dc:creator>
-      <prism:publicationName>Science</prism:publicationName>
-      <prism:volume>393</prism:volume>
-      <prism:number>6809</prism:number>
-      <prism:startingPage>392</prism:startingPage>
-      <prism:endingPage>397</prism:endingPage>
-      <prism:coverDate>2026-07-23T07:00:00Z</prism:coverDate>
-      <prism:coverDisplayDate>2026-07-23T07:00:00Z</prism:coverDisplayDate>
-      <prism:doi>10.1126/science.adt9347</prism:doi>
-      <prism:url>https://www.science.org/doi/abs/10.1126/science.adt9347?af=R</prism:url>
-      <prism:copyright/>
-   </item>
-   <item rdf:about="https://www.science.org/doi/abs/10.1126/science.aed9202?af=R">
-      <title>[7] Step geometry–guided growth of rhombohedral graphene</title>
-      <link>https://www.science.org/doi/abs/10.1126/science.aed9202?af=R</link>
-      <content:encoded><![CDATA[<p><b>Last authors:</b> Xiaobo Lu, Kaihui Liu</p><p><b>Authors:</b> Mengze Zhao, Zhibin Zhang, Xin Sui, et al.</p><p><span style='display:inline-block;padding:4px 9px;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:700;'>Score 7/10</span> <b>B_IMPORTANT_CONDMAT</b></p><p><b>Why:</b> Rhombohedral graphene is a high-interest material for correlated electronic phases and topology studies.</p><p><b>Tags:</b> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#material</span> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#graphene</span> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#topology</span></p>]]></content:encoded>
-      <description>&lt;p&gt;&lt;b&gt;Last authors:&lt;/b&gt; Xiaobo Lu, Kaihui Liu&lt;/p&gt;&lt;p&gt;&lt;b&gt;Authors:&lt;/b&gt; Mengze Zhao, Zhibin Zhang, Xin Sui, et al.&lt;/p&gt;&lt;p&gt;&lt;span style='display:inline-block;padding:4px 9px;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:700;'&gt;Score 7/10&lt;/span&gt; &lt;b&gt;B_IMPORTANT_CONDMAT&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; Rhombohedral graphene is a high-interest material for correlated electronic phases and topology studies.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tags:&lt;/b&gt; &lt;span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'&gt;#material&lt;/span&gt; &lt;span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'&gt;#graphene&lt;/span&gt; &lt;span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'&gt;#topology&lt;/span&gt;&lt;/p&gt;</description>
-      <dc:identifier>doi:10.1126/science.aed9202</dc:identifier>
-      <dc:source>Science</dc:source>
-      <dc:date>2026-07-23T06:00:11Z</dc:date>
-      <dc:type>Research Article</dc:type>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Science Crossref fallback</title>
+    <link>https://www.science.org/</link>
+    <description>Science metadata from Crossref because direct RSS fetch failed.</description>
+    <item>
+      <title>[8] Step geometry–guided growth of rhombohedral graphene</title>
+      <link>https://doi.org/10.1126/science.aed9202</link>
+      <guid isPermaLink="false">10.1126/science.aed9202</guid>
+      <description><![CDATA[<p><b>Last authors:</b> Xiaobo Lu, Kaihui Liu</p><p><b>Authors:</b> Mengze Zhao, Zhibin Zhang, Xin Sui, et al.</p><p><span style='display:inline-block;padding:4px 9px;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:700;'>Score 8/10</span> <b>B_IMPORTANT_CONDMAT</b></p><p><b>Why:</b> Synthesis and transport of rhombohedral graphene showing quantum anomalous Hall effect and correlated states.</p><p><b>Tags:</b> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#material</span> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#graphene</span> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#QAHE</span> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#topology</span></p><hr/><p><b>Abstract:</b> Rhombohedral (ABC)–stacked graphene has emerged as a platform for exploring correlated and topological physics. However, its large-scale, pure-phase synthesis has been hindered by intrinsic thermodynamic metastability and kinetic instability. In this work, we introduce a step geometry–guided epitaxial strategy to deterministically control interlayer slip, enabling the synthesis of pure-phase rhombohedral graphene. Using this approach, we obtained pure (phase purity &gt; 99%) rhombohedral graphene with an area reaching 160 micrometers by 80 micrometers and thickness ranging from ~15 layers to ~120 nanometers. The resulting samples establish the first comprehensive reference dataset of Raman fingerprints and intrinsic band structures from few-layer films to ~200-layer bulk. Electronic transport measurements reveal a layer-antiferromagnetic state and the quantum anomalous Hall effect, enabling scalable exploration of next-generation quantum science and technology applications.</p>]]></description>
+      <pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate>
       <dc:creator>Last authors: Xiaobo Lu, Kaihui Liu; Authors: Mengze Zhao, Zhibin Zhang, Xin Sui, et al.</dc:creator>
-      <prism:publicationName>Science</prism:publicationName>
-      <prism:volume>393</prism:volume>
-      <prism:number>6809</prism:number>
-      <prism:startingPage>422</prism:startingPage>
-      <prism:endingPage>427</prism:endingPage>
-      <prism:coverDate>2026-07-23T07:00:00Z</prism:coverDate>
-      <prism:coverDisplayDate>2026-07-23T07:00:00Z</prism:coverDisplayDate>
-      <prism:doi>10.1126/science.aed9202</prism:doi>
-      <prism:url>https://www.science.org/doi/abs/10.1126/science.aed9202?af=R</prism:url>
-      <prism:copyright/>
-   </item>
-   </rdf:RDF>
+      <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p><b>Last authors:</b> Xiaobo Lu, Kaihui Liu</p><p><b>Authors:</b> Mengze Zhao, Zhibin Zhang, Xin Sui, et al.</p><p><span style='display:inline-block;padding:4px 9px;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:700;'>Score 8/10</span> <b>B_IMPORTANT_CONDMAT</b></p><p><b>Why:</b> Synthesis and transport of rhombohedral graphene showing quantum anomalous Hall effect and correlated states.</p><p><b>Tags:</b> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#material</span> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#graphene</span> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#QAHE</span> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#topology</span></p><hr/><p><b>Abstract:</b> Rhombohedral (ABC)–stacked graphene has emerged as a platform for exploring correlated and topological physics. However, its large-scale, pure-phase synthesis has been hindered by intrinsic thermodynamic metastability and kinetic instability. In this work, we introduce a step geometry–guided epitaxial strategy to deterministically control interlayer slip, enabling the synthesis of pure-phase rhombohedral graphene. Using this approach, we obtained pure (phase purity &gt; 99%) rhombohedral graphene with an area reaching 160 micrometers by 80 micrometers and thickness ranging from ~15 layers to ~120 nanometers. The resulting samples establish the first comprehensive reference dataset of Raman fingerprints and intrinsic band structures from few-layer films to ~200-layer bulk. Electronic transport measurements reveal a layer-antiferromagnetic state and the quantum anomalous Hall effect, enabling scalable exploration of next-generation quantum science and technology applications.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>[8] Surface-dominant transport in Weyl semimetal NbAs nanowires for next-generation interconnects</title>
+      <link>https://doi.org/10.1126/science.adx3027</link>
+      <guid isPermaLink="false">10.1126/science.adx3027</guid>
+      <description><![CDATA[<p><b>Last authors:</b> Ching-Tzu Chen, Judy J. Cha</p><p><b>Authors:</b> Yeryun Cheon, Mehrdad T. Kiani, Yi-Hsin Tu, et al.</p><p><span style='display:inline-block;padding:4px 9px;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:700;'>Score 8/10</span> <b>B_IMPORTANT_CONDMAT</b></p><p><b>Why:</b> Explores surface states of a Weyl semimetal, highly relevant to topological electronic structure.</p><p><b>Tags:</b> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#transport</span> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#NbAs</span> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#Weylsemimetal</span></p><hr/><p><b>Abstract:</b> Ongoing demands for smaller and more energy-efficient electronic devices necessitate alternative interconnect materials with lower electrical resistivity at reduced dimensions. We report the synthesis of Weyl semimetal niobium arsenide (NbAs) nanowires through thermomechanical nanomolding with single crystallinity and controlled diameters down to 40 nanometers. The resistivity of NbAs nanowires decreases with decreasing diameter, and 40-nanometer-diameter nanowires exhibited a room-temperature resistivity of 10.5 ± 1.9 microhm·centimeters, which is ~70% lower than their bulk counterpart. Calculations attribute this resistivity reduction to surface-dominant conduction with a long carrier lifetime at finite temperatures. Further characterization of nanowires and bulk crystals revealed high breakdown current density, stability, and thermal conductivity. These properties highlight the potential of NbAs nanowires as next-generation interconnects that could surpass the limitations of current copper-based interconnects.</p>]]></description>
+      <pubDate>Thu, 16 Jul 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Last authors: Ching-Tzu Chen, Judy J. Cha; Authors: Yeryun Cheon, Mehrdad T. Kiani, Yi-Hsin Tu, et al.</dc:creator>
+      <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p><b>Last authors:</b> Ching-Tzu Chen, Judy J. Cha</p><p><b>Authors:</b> Yeryun Cheon, Mehrdad T. Kiani, Yi-Hsin Tu, et al.</p><p><span style='display:inline-block;padding:4px 9px;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:700;'>Score 8/10</span> <b>B_IMPORTANT_CONDMAT</b></p><p><b>Why:</b> Explores surface states of a Weyl semimetal, highly relevant to topological electronic structure.</p><p><b>Tags:</b> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#transport</span> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#NbAs</span> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#Weylsemimetal</span></p><hr/><p><b>Abstract:</b> Ongoing demands for smaller and more energy-efficient electronic devices necessitate alternative interconnect materials with lower electrical resistivity at reduced dimensions. We report the synthesis of Weyl semimetal niobium arsenide (NbAs) nanowires through thermomechanical nanomolding with single crystallinity and controlled diameters down to 40 nanometers. The resistivity of NbAs nanowires decreases with decreasing diameter, and 40-nanometer-diameter nanowires exhibited a room-temperature resistivity of 10.5 ± 1.9 microhm·centimeters, which is ~70% lower than their bulk counterpart. Calculations attribute this resistivity reduction to surface-dominant conduction with a long carrier lifetime at finite temperatures. Further characterization of nanowires and bulk crystals revealed high breakdown current density, stability, and thermal conductivity. These properties highlight the potential of NbAs nanowires as next-generation interconnects that could surpass the limitations of current copper-based interconnects.</p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>

@@ -1,20 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/" xmlns:cc="http://web.resource.org/cc/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:enc="http://purl.oclc.org/net/rss_2.0/enc/" xmlns:prism="http://prismstandard.org/namespaces/basic/2.0/">
-   <channel rdf:about="https://www.science.org/loi/sciadv?af=R">
-      <title>AAAS: Science Advances: Table of Contents</title>
-      <description>Table of Contents for Science Advances. List of articles from both the latest and ahead of print issues.</description>
-      <link>https://www.science.org/loi/sciadv?af=R</link>
-      <dc:publisher>AAAS</dc:publisher>
-      <dc:language>en-US</dc:language>
-      <prism:publicationName>Science Advances</prism:publicationName>
-      <items>
-         <rdf:Seq>
-            </rdf:Seq>
-      </items>
-   </channel>
-   <image rdf:about="https://www.science.org/cms/asset/36fa11cb-ec84-40b7-952e-4332fe474ba2/default_cover.png">
-      <title>Science Advances</title>
-      <url>https://www.science.org/cms/asset/36fa11cb-ec84-40b7-952e-4332fe474ba2/default_cover.png</url>
-      <link>https://www.science.org/loi/sciadv?af=R</link>
-   </image>
-   </rdf:RDF>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Science Advances Crossref fallback</title>
+    <link>https://www.science.org/</link>
+    <description>Science Advances metadata from Crossref because direct RSS fetch failed.</description>
+    <item>
+      <title>[8] Van der Waals template–encoded soft epitaxy of tellurium enabled by atomic layer deposition</title>
+      <link>https://doi.org/10.1126/sciadv.aef1430</link>
+      <guid isPermaLink="false">10.1126/sciadv.aef1430</guid>
+      <description><![CDATA[<p><b>Last authors:</b> Bonggeun Shong, Joonki Suh</p><p><b>Authors:</b> Changhwan Kim, Hyeon Cho, Chuqiao Shi, et al.</p><p><span style='display:inline-block;padding:4px 9px;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:700;'>Score 8/10</span> <b>B_IMPORTANT_CONDMAT</b></p><p><b>Why:</b> VdW epitaxy of Tellurium with chiral anomaly signatures, relevant to topological physics.</p><p><b>Tags:</b> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#tellurium</span> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#vanderWaals</span> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#chiral-anomaly</span> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#thin-films</span></p><hr/><p><b>Abstract:</b> Van der Waals (vdW) epitaxy can integrate lattice-mismatched crystals with atomically sharp, pristine interfaces. However, translating this concept to atomic layer deposition (ALD), a standard for low-temperature, layer-by-layer growth, remains challenging because precursors adsorb transiently on chemically inert vdW basal planes, leading to physisorption-limited nucleation and poor crystalline ordering. Here, we introduce diffusion-steered epitaxial ALD (Epi-ALD), redefining vdW surfaces as programmable kinetic-thermodynamic landscapes and demonstrate highly crystalline tellurium at 150°C. Epi-ALD couples surface-potential-encoded physisorption with long-range diffusion to promote ordered nucleation and epitaxial alignment. This “soft” pathway enables strain-free tellurium epitaxy with a pristine vdW gap (∼1.4 angstrom) despite lattice mismatch (&gt;3.6%) and generalizes across multiple vdW templates. Retaining hallmark advantages of ALD including scalability and uniformity, we further program in-plane orientation through vdW symmetry engineering to achieve quasi-single-crystalline tellurium films with pronounced anisotropy and a chiral anomaly signature. Our work establishes a universal, low-thermal-budget approach for integrating vdW materials and expands the scope of epitaxy within the ALD paradigm.</p>]]></description>
+      <pubDate>Fri, 24 Jul 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Last authors: Bonggeun Shong, Joonki Suh; Authors: Changhwan Kim, Hyeon Cho, Chuqiao Shi, et al.</dc:creator>
+      <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p><b>Last authors:</b> Bonggeun Shong, Joonki Suh</p><p><b>Authors:</b> Changhwan Kim, Hyeon Cho, Chuqiao Shi, et al.</p><p><span style='display:inline-block;padding:4px 9px;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:700;'>Score 8/10</span> <b>B_IMPORTANT_CONDMAT</b></p><p><b>Why:</b> VdW epitaxy of Tellurium with chiral anomaly signatures, relevant to topological physics.</p><p><b>Tags:</b> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#tellurium</span> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#vanderWaals</span> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#chiral-anomaly</span> <span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#thin-films</span></p><hr/><p><b>Abstract:</b> Van der Waals (vdW) epitaxy can integrate lattice-mismatched crystals with atomically sharp, pristine interfaces. However, translating this concept to atomic layer deposition (ALD), a standard for low-temperature, layer-by-layer growth, remains challenging because precursors adsorb transiently on chemically inert vdW basal planes, leading to physisorption-limited nucleation and poor crystalline ordering. Here, we introduce diffusion-steered epitaxial ALD (Epi-ALD), redefining vdW surfaces as programmable kinetic-thermodynamic landscapes and demonstrate highly crystalline tellurium at 150°C. Epi-ALD couples surface-potential-encoded physisorption with long-range diffusion to promote ordered nucleation and epitaxial alignment. This “soft” pathway enables strain-free tellurium epitaxy with a pristine vdW gap (∼1.4 angstrom) despite lattice mismatch (&gt;3.6%) and generalizes across multiple vdW templates. Retaining hallmark advantages of ALD including scalability and uniformity, we further program in-plane orientation through vdW symmetry engineering to achieve quasi-single-crystalline tellurium films with pronounced anisotropy and a chiral anomaly signature. Our work establishes a universal, low-thermal-budget approach for integrating vdW materials and expands the scope of epitaxy within the ALD paradigm.</p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>
