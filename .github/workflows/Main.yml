@@ -32,6 +32,7 @@ jobs:
             last_failed_journal.txt
             partial_email_content.txt
             partial_briefing_records.json
+            partial_classification_count.json
             filtered_feed_*.xml
             filtered_titles.txt
             briefing.html
@@ -61,7 +62,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install --upgrade google-genai
 
       - name: Apply private config hooks
         run: python apply_private_config_patch.py
@@ -77,7 +77,9 @@ jobs:
           # Optional: override model order. Default if empty/unset:
           #   gemini-3-flash-preview,gemini-3.1-flash-lite-preview,gemini-2.5-flash
           GEMINI_MODELS: ${{ secrets.GEMINI_MODELS }}
-          GEMINI_BATCH_SIZE: "25"
+          # Explicitly retain JSON/schema support across SDK upgrades.
+          GEMINI_API_VERSION: "v1beta"
+          GEMINI_BATCH_SIZE: "15"
           # Private ranking profile. These keep personal research interests
           # and author preferences out of the public repository.
           RSS_CLASSIFIER_ROLE: ${{ secrets.RSS_CLASSIFIER_ROLE }}
@@ -122,6 +124,7 @@ jobs:
             last_failed_journal.txt
             partial_email_content.txt
             partial_briefing_records.json
+            partial_classification_count.json
 
       # Save checkpoint for the next run, even on failure.
       # Use a unique key because GitHub cache entries are immutable.
@@ -133,6 +136,7 @@ jobs:
             last_failed_journal.txt
             partial_email_content.txt
             partial_briefing_records.json
+            partial_classification_count.json
             filtered_feed_*.xml
             filtered_titles.txt
             briefing.html

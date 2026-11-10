@@ -174,10 +174,11 @@ def install_resilient_feed_fetch():
     rss.requests.get = resilient_get
 
 
-def persist_partial(email_content, briefing_records, pending_queue, new_pending_queue, journal_name):
+def persist_partial(email_content, briefing_records, pending_queue, new_pending_queue, journal_name, classified_count):
     with open("partial_email_content.txt", "w", encoding="utf-8") as handle:
         handle.write(email_content)
     rss.save_json_file("partial_briefing_records.json", briefing_records)
+    rss.save_json_file("partial_classification_count.json", classified_count)
 
     merged_pending = dict(pending_queue)
     processed = list(rss.JOURNAL_URLS.keys())[:list(rss.JOURNAL_URLS.keys()).index(journal_name) + 1]
@@ -205,6 +206,7 @@ def run():
     pending_file = "pending_classification_queue.json"
     email_content = ""
     briefing_records = []
+    classified_count = 0
     pending_queue = rss.load_json_file(pending_file, {})
     new_pending_queue = {}
     journals_to_process = list(rss.JOURNAL_URLS.items())
@@ -225,6 +227,7 @@ def run():
             with open("partial_email_content.txt", "r", encoding="utf-8") as handle:
                 email_content = handle.read()
         briefing_records = rss.load_json_file("partial_briefing_records.json", [])
+        classified_count = rss.restore_classified_count(email_content)
         email_content += f"\n\n--- RESUME ---\nResuming from journal: {journals_to_process[start_index][0]}\n\n"
     else:
         rss.clear_partial_state()
@@ -236,6 +239,7 @@ def run():
                 pending_records_for_journal = pending_queue.get(journal_name, [])
                 result = rss.filter_rss_for_journal(journal_name, feed_url, pending_records_for_journal)
                 filtered_xml, keyword_passed, gemini_passed, keyword_removed, gemini_removed, gemini_pending, meta = result
+                classified_count += len(gemini_passed) + len(gemini_removed)
                 if gemini_pending:
                     new_pending_queue[journal_name] = [rss.serialize_entry_for_pending(e) for e in gemini_pending]
                 with open(output_filename, "wb") as handle:
@@ -273,7 +277,7 @@ def run():
                         email_content += f"  ⏸ {entry.get('title', 'No title')} ({rss.get_entry_link(entry) or 'No link'})\n"
                     email_content += "\n"
 
-                persist_partial(email_content, briefing_records, pending_queue, new_pending_queue, journal_name)
+                persist_partial(email_content, briefing_records, pending_queue, new_pending_queue, journal_name, classified_count)
 
             except requests.exceptions.RequestException as error:
                 pending_records_for_journal = pending_queue.get(journal_name, [])
@@ -291,7 +295,7 @@ def run():
                     email_content += f"  Wrote minimal fallback RSS output: {output_filename}\n\n"
                     print(f"Source fetch failed for {journal_name}; wrote minimal fallback feed.")
 
-                persist_partial(email_content, briefing_records, pending_queue, new_pending_queue, journal_name)
+                persist_partial(email_content, briefing_records, pending_queue, new_pending_queue, journal_name, classified_count)
                 continue
 
             except Exception as error:
@@ -309,11 +313,14 @@ def run():
             final_pending.pop(journal_name, None)
         final_pending.update(new_pending_queue)
         rss.save_json_file(pending_file, final_pending)
+        pending_count = sum(len(items) for items in final_pending.values())
+        email_content = rss.classification_status(classified_count, pending_count) + "\n\n" + email_content
         rss.create_index_html(rss.JOURNAL_URLS, output_file_base)
         rss.create_results_html_file(email_content)
         rss.create_briefing_html(briefing_records, email_content)
         rss.create_slideshow_html(briefing_records)
         rss.clear_partial_state()
+        rss.check_classification_health(classified_count, pending_count)
     finally:
         github_server_url = os.getenv("GITHUB_SERVER_URL")
         github_repository = os.getenv("GITHUB_REPOSITORY")
