@@ -31,8 +31,10 @@ import sys
 import os
 import time
 import json
-from google import genai
 from google.genai import types
+from gemini_runtime import (create_client, FailureTracker, safe_error_summary,
+                            schema_is_unsupported, classification_status,
+                            check_classification_health)
 import datetime
 import re
 import math
@@ -295,8 +297,8 @@ current_model_name = MODEL_CANDIDATES[0]
 #   2. If they all fail, switch to the next key (wraparound) and try every
 #      model again.
 #   3. If all keys × all models fail, defer the batch to the pending queue
-#      and reset to API1 for the next batch (quota errors usually clear by
-#      then).
+#      and reset to API1 for the next batch. Failed pairs are skipped until
+#      their cooldown expires; unavailable/auth-failed pairs stay disabled.
 # Once a (key, model) combo succeeds, both indices stick for the next batch
 # so we don't waste calls re-checking dead endpoints.
 # =============================================================================
@@ -316,19 +318,20 @@ if not GOOGLE_API_KEYS:
 
 gemini_clients = []           # parallel list of (label, genai.Client) tuples
 current_api_index = 0          # persists across batches
+gemini_failures = FailureTracker()
 try:
     for label, key in GOOGLE_API_KEYS:
         try:
-            gemini_clients.append((label, genai.Client(api_key=key)))
+            gemini_clients.append((label, create_client(key)))
         except Exception as e:
-            print(f"{COLOR_RED}✗ Failed to init Gemini client for {label}: {e}{COLOR_END}", file=sys.stderr)
+            print(f"{COLOR_RED}✗ Failed to init Gemini client for {label}: {safe_error_summary(e)}{COLOR_END}", file=sys.stderr)
     if gemini_clients:
         labels = ",".join(lab for lab, _ in gemini_clients)
         print(f"{COLOR_GREEN}{COLOR_BOLD}✓ Gemini API configured: keys=[{labels}], models={MODEL_CANDIDATES}{COLOR_END}", file=sys.stderr)
     else:
         print(f"{COLOR_YELLOW}⚠ No Gemini API keys found (set GOOGLE_API_KEY1/2/3). Filter will skip Gemini.{COLOR_END}", file=sys.stderr)
 except Exception as e:
-    print(f"{COLOR_RED}✗ Error configuring Gemini API: {e}{COLOR_END}", file=sys.stderr)
+    print(f"{COLOR_RED}✗ Error configuring Gemini API: {safe_error_summary(e)}{COLOR_END}", file=sys.stderr)
 
 
 def strip_html(text):
@@ -1325,6 +1328,9 @@ def classify_entries_with_gemini(journal_name, entries, _recheck_depth=0):
 
             for model_idx in model_attempts:
                 model_name = MODEL_CANDIDATES[model_idx]
+                if not gemini_failures.can_try(key_label, model_name):
+                    attempts_log.append(f"{key_label}+{model_name}:cooldown/disabled")
+                    continue
                 print(f"      🤖 Trying {key_label} + {model_name}", file=sys.stderr)
                 # Build config with response_json_schema as best-effort. Some
                 # preview models reject schema, so we retry without it on
@@ -1365,8 +1371,7 @@ def classify_entries_with_gemini(journal_name, entries, _recheck_depth=0):
                         )
                     except Exception as schema_err:
                         # Fall back if the model doesn't support response_schema.
-                        msg = str(schema_err).lower()
-                        if "schema" in msg or "response_schema" in msg or "not supported" in msg:
+                        if schema_is_unsupported(schema_err):
                             print(f"      {COLOR_ORANGE}↳ {model_name} doesn't support schema; retrying without it.{COLOR_END}", file=sys.stderr)
                             response = client.models.generate_content(
                                 model=model_name,
@@ -1471,14 +1476,9 @@ def classify_entries_with_gemini(journal_name, entries, _recheck_depth=0):
 
                 except Exception as e:
                     last_error = (key_label, model_name, e)
-                    msg = str(e).lower()
-                    is_quota = ("429" in msg) or ("resource_exhausted" in msg) or ("quota" in msg) or ("rate limit" in msg)
-                    is_unavailable = ("503" in msg) or ("unavailable" in msg) or ("overloaded" in msg)
-                    is_model_error = ("404" in msg) or ("not found" in msg) or ("unsupported" in msg)
-                    is_auth = ("401" in msg) or ("403" in msg) or ("permission" in msg) or ("api key" in msg)
-                    cat = "quota" if is_quota else "unavailable" if is_unavailable else "auth" if is_auth else "model" if is_model_error else "other"
+                    cat = gemini_failures.record(key_label, model_name, e)
                     attempts_log.append(f"{key_label}+{model_name}:{cat}")
-                    print(f"      {COLOR_RED}✗ {key_label} + {model_name} failed [{cat}]: {e}{COLOR_END}", file=sys.stderr)
+                    print(f"      {COLOR_RED}✗ {key_label} + {model_name} failed: {safe_error_summary(e)}{COLOR_END}", file=sys.stderr)
                     # Don't retry the same combo — try the next model on this key,
                     # or the next key once all models on this key have been tried.
                     continue
@@ -1496,10 +1496,10 @@ def classify_entries_with_gemini(journal_name, entries, _recheck_depth=0):
             print(f"      {COLOR_YELLOW}   Attempts: {' → '.join(attempts_log)}{COLOR_END}", file=sys.stderr)
             if last_error:
                 lk, lm, le = last_error
-                print(f"      {COLOR_YELLOW}   Last error ({lk} + {lm}): {le}{COLOR_END}", file=sys.stderr)
+                print(f"      {COLOR_YELLOW}   Last error ({lk} + {lm}): {safe_error_summary(le)}{COLOR_END}", file=sys.stderr)
             pending.extend(batch_entries)
             # All keys exhausted — for the next batch, restart rotation from API1.
-            # Quota windows are typically minute-level so a fresh start is sane.
+            # Failed pairs remain disabled or cooling down across batches.
             current_api_index = 0
 
     return passed, removed, pending, metadata
@@ -2286,8 +2286,18 @@ def save_json_file(path, obj):
         json.dump(obj, f, ensure_ascii=False, indent=2)
 
 
+def restore_classified_count(email_content):
+    count = load_json_file('partial_classification_count.json', None)
+    if isinstance(count, int) and count >= 0:
+        return count
+    # Migrate checkpoints written before decision totals were persisted. The
+    # audit includes passed AND removed Gemini decisions; briefing records don't.
+    return len(re.findall(r'^  🤖[✅❌] ', email_content, flags=re.M))
+
+
 def clear_partial_state():
-    for path in ['partial_briefing_records.json', 'partial_email_content.txt']:
+    for path in ['partial_briefing_records.json', 'partial_email_content.txt',
+                 'partial_classification_count.json']:
         try:
             if os.path.exists(path):
                 os.remove(path)
@@ -2300,6 +2310,7 @@ if __name__ == '__main__':
     STATE_FILE = 'last_failed_journal.txt'
     email_content = ''
     briefing_records = []
+    classified_count = 0
     PENDING_FILE = 'pending_classification_queue.json'
     pending_queue = load_json_file(PENDING_FILE, {})
     new_pending_queue = {}
@@ -2323,6 +2334,7 @@ if __name__ == '__main__':
             with open('partial_email_content.txt', 'r', encoding='utf-8') as f:
                 email_content = f.read()
         briefing_records = load_json_file('partial_briefing_records.json', [])
+        classified_count = restore_classified_count(email_content)
         email_content += f"\n\n--- RESUME ---\nResuming from journal: {journals_to_process[start_index][0]}\n\n"
     else:
         clear_partial_state()
@@ -2332,6 +2344,7 @@ if __name__ == '__main__':
             try:
                 pending_records_for_journal = pending_queue.get(journal_name, [])
                 filtered_xml, keyword_passed, gemini_passed, keyword_removed, gemini_removed, gemini_pending, meta = filter_rss_for_journal(journal_name, feed_url, pending_records_for_journal)
+                classified_count += len(gemini_passed) + len(gemini_removed)
                 if gemini_pending:
                     new_pending_queue[journal_name] = [serialize_entry_for_pending(e) for e in gemini_pending]
                 output_filename = f"{OUTPUT_FILE_BASE}_{journal_name}.xml"
@@ -2375,6 +2388,7 @@ if __name__ == '__main__':
                 with open('partial_email_content.txt', 'w', encoding='utf-8') as f:
                     f.write(email_content)
                 save_json_file('partial_briefing_records.json', briefing_records)
+                save_json_file('partial_classification_count.json', classified_count)
                 # Preserve unprocessed old pending journals plus newly pending items.
                 merged_pending = dict(pending_queue)
                 for done_journal in list(JOURNAL_URLS.keys())[:list(JOURNAL_URLS.keys()).index(journal_name)+1]:
@@ -2399,11 +2413,14 @@ if __name__ == '__main__':
             final_pending.pop(j, None)
         final_pending.update(new_pending_queue)
         save_json_file(PENDING_FILE, final_pending)
+        pending_count = sum(len(items) for items in final_pending.values())
+        email_content = classification_status(classified_count, pending_count) + "\n\n" + email_content
         create_index_html(JOURNAL_URLS, OUTPUT_FILE_BASE)
         create_results_html_file(email_content)
         create_briefing_html(briefing_records, email_content)
         create_slideshow_html(briefing_records)
         clear_partial_state()
+        check_classification_health(classified_count, pending_count)
     finally:
         github_server_url = os.getenv('GITHUB_SERVER_URL')
         github_repository = os.getenv('GITHUB_REPOSITORY')

@@ -16,8 +16,8 @@ import re
 import sys
 
 import requests
-from google import genai
 from google.genai import types
+from gemini_runtime import create_client, FailureTracker, safe_error_summary, schema_is_unsupported
 
 
 COLOR_YELLOW = "\033[93m"
@@ -41,12 +41,13 @@ if not GOOGLE_API_KEYS and os.getenv("GOOGLE_API_KEY"):
 gemini_clients = []
 for label, key in GOOGLE_API_KEYS:
     try:
-        gemini_clients.append((label, genai.Client(api_key=key)))
+        gemini_clients.append((label, create_client(key)))
     except Exception as exc:
-        print(f"{COLOR_YELLOW}Slide briefing Gemini init failed for {label}: {exc}{COLOR_END}", file=sys.stderr)
+        print(f"{COLOR_YELLOW}Slide briefing Gemini init failed for {label}: {safe_error_summary(exc)}{COLOR_END}", file=sys.stderr)
 
 current_api_index = 0
 current_model_index = 0
+gemini_failures = FailureTracker()
 
 _BROWSER_HEADERS = {
     "User-Agent": (
@@ -296,6 +297,8 @@ def generate_json_with_gemini(prompt, schema=None, max_output_tokens=8192, task_
         key_label, client = gemini_clients[api_idx]
         for model_idx in model_attempts:
             model_name = MODEL_CANDIDATES[model_idx]
+            if not gemini_failures.can_try(key_label, model_name):
+                continue
             try:
                 kwargs = {
                     "response_mime_type": "application/json",
@@ -310,8 +313,7 @@ def generate_json_with_gemini(prompt, schema=None, max_output_tokens=8192, task_
                         config=types.GenerateContentConfig(**kwargs),
                     )
                 except Exception as schema_exc:
-                    msg = str(schema_exc).lower()
-                    if schema and ("schema" in msg or "response_schema" in msg or "not supported" in msg):
+                    if schema and schema_is_unsupported(schema_exc):
                         kwargs.pop("response_schema", None)
                         response = client.models.generate_content(
                             model=model_name,
@@ -325,7 +327,8 @@ def generate_json_with_gemini(prompt, schema=None, max_output_tokens=8192, task_
                 current_model_index = model_idx
                 return parsed
             except Exception as exc:
-                print(f"{COLOR_YELLOW}{task_label} failed on {key_label} + {model_name}: {exc}{COLOR_END}", file=sys.stderr)
+                gemini_failures.record(key_label, model_name, exc)
+                print(f"{COLOR_YELLOW}{task_label} failed on {key_label} + {model_name}: {safe_error_summary(exc)}{COLOR_END}", file=sys.stderr)
     current_api_index = 0
     return None
 
