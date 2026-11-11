@@ -18,7 +18,7 @@ jobs:
           cache: 'pip'
       - run: pip install -r requirements-dev.txt
       - run: python -m pytest -q
-      - run: python -m compileall -q Filter_RSS.py enhance_slides.py run_filter_resilient.py gemini_runtime.py smoke_test_gemini.py
+      - run: python -m compileall -q Filter_RSS.py enhance_slides.py run_filter_resilient.py gemini_runtime.py smoke_test_gemini.py restore_checkpoint.py
 
   synthetic-live-smoke:
     if: github.event_name == 'workflow_dispatch'
