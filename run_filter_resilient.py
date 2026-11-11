@@ -174,14 +174,16 @@ def install_resilient_feed_fetch():
     rss.requests.get = resilient_get
 
 
-def persist_partial(email_content, briefing_records, pending_queue, new_pending_queue, journal_name, classified_count):
+def persist_partial(email_content, briefing_records, pending_queue, new_pending_queue, journal_name, classified_count, processed_journals=None):
     with open("partial_email_content.txt", "w", encoding="utf-8") as handle:
         handle.write(email_content)
     rss.save_json_file("partial_briefing_records.json", briefing_records)
     rss.save_json_file("partial_classification_count.json", classified_count)
 
     merged_pending = dict(pending_queue)
-    processed = list(rss.JOURNAL_URLS.keys())[:list(rss.JOURNAL_URLS.keys()).index(journal_name) + 1]
+    # A resumed invocation may have newly recovered pending articles in an
+    # earlier journal. Only remove journals actually processed in this run.
+    processed = processed_journals if processed_journals is not None else [journal_name]
     for done_journal in processed:
         merged_pending.pop(done_journal, None)
     merged_pending.update(new_pending_queue)
@@ -212,6 +214,7 @@ def run():
     journals_to_process = list(rss.JOURNAL_URLS.items())
     start_index = 0
     resume_mode = False
+    processed_journals = []
 
     if os.path.exists(state_file):
         with open(state_file, "r", encoding="utf-8") as handle:
@@ -277,7 +280,8 @@ def run():
                         email_content += f"  ⏸ {entry.get('title', 'No title')} ({rss.get_entry_link(entry) or 'No link'})\n"
                     email_content += "\n"
 
-                persist_partial(email_content, briefing_records, pending_queue, new_pending_queue, journal_name, classified_count)
+                processed_journals.append(journal_name)
+                persist_partial(email_content, briefing_records, pending_queue, new_pending_queue, journal_name, classified_count, processed_journals)
 
             except requests.exceptions.RequestException as error:
                 pending_records_for_journal = pending_queue.get(journal_name, [])
@@ -295,7 +299,8 @@ def run():
                     email_content += f"  Wrote minimal fallback RSS output: {output_filename}\n\n"
                     print(f"Source fetch failed for {journal_name}; wrote minimal fallback feed.")
 
-                persist_partial(email_content, briefing_records, pending_queue, new_pending_queue, journal_name, classified_count)
+                processed_journals.append(journal_name)
+                persist_partial(email_content, briefing_records, pending_queue, new_pending_queue, journal_name, classified_count, processed_journals)
                 continue
 
             except Exception as error:
