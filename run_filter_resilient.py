@@ -320,6 +320,9 @@ def run():
         rss.save_json_file(pending_file, final_pending)
         pending_count = sum(len(items) for items in final_pending.values())
         email_content = rss.classification_status(classified_count, pending_count) + "\n\n" + email_content
+        # Preserve the explicitly requested recovery across scheduled refreshes.
+        from restore_requested_feed_item import restore_requested_item
+        restore_requested_item()
         rss.create_index_html(rss.JOURNAL_URLS, output_file_base)
         rss.create_results_html_file(email_content)
         rss.create_briefing_html(briefing_records, email_content)
