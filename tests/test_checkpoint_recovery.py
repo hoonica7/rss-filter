@@ -107,11 +107,11 @@ def test_cache_miss_restores_only_checkpoint_data_and_removes_stale_partial(tmp_
     Path('Filter_RSS.py').write_text('current code')
     snapshot = {recovery.QUEUE_FILE: json.dumps({'A': [paper(1)]}).encode(),
                 'last_failed_journal.txt': b'SUCCESS',
-                'filtered_feed_A.xml': b'<rss/>', 'Filter_RSS.py': b'untrusted old code'}
+                'filtered_feed_A.xml': b'<rss><channel/></rss>', 'Filter_RSS.py': b'untrusted old code'}
     fake_git(monkeypatch, snapshot)
     recovery.restore()
     assert json.loads(Path(recovery.QUEUE_FILE).read_text()) == {'A': [paper(1)]}
-    assert Path('filtered_feed_A.xml').read_text() == '<rss/>'
+    assert Path('filtered_feed_A.xml').read_text() == '<rss><channel/></rss>'
     assert Path('Filter_RSS.py').read_text() == 'current code'
     assert not Path('partial_email_content.txt').exists()
 

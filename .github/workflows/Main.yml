@@ -51,6 +51,7 @@ jobs:
             index.html
             pending_classification_queue.json
             recovered_backlog_refs.json
+            rss_publication_history.json
           key: rss-checkpoint-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: |
             rss-checkpoint-
@@ -140,6 +141,7 @@ jobs:
             backlog_recovery_report.json
             pending_classification_queue.json
             recovered_backlog_refs.json
+            rss_publication_history.json
             last_failed_journal.txt
             partial_email_content.txt
             partial_briefing_records.json
@@ -164,6 +166,7 @@ jobs:
             index.html
             pending_classification_queue.json
             recovered_backlog_refs.json
+            rss_publication_history.json
           key: rss-checkpoint-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Deploy to GitHub Pages

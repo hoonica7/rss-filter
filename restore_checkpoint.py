@@ -18,7 +18,7 @@ CHECKPOINT_FILES = {
     'partial_briefing_records.json', 'partial_classification_count.json',
     'filtered_titles.txt', 'briefing.html', 'slides.html',
     'filtered_results.html', 'index.html', 'pending_classification_queue.json',
-    'recovered_backlog_refs.json',
+    'recovered_backlog_refs.json', 'rss_publication_history.json',
 }
 QUEUE_FILE = 'pending_classification_queue.json'
 MARKER_FILE = 'recovered_backlog_refs.json'
@@ -148,6 +148,9 @@ def read_snapshot(ref):
     validate_queue(json.loads(snapshot[QUEUE_FILE]))
     if MARKER_FILE in snapshot:
         validate_markers(json.loads(snapshot[MARKER_FILE]))
+    if 'rss_publication_history.json' in snapshot:
+        from rss_publication import validate_history
+        validate_history(json.loads(snapshot['rss_publication_history.json']))
     return snapshot
 
 
@@ -183,6 +186,12 @@ def restore(cache_restored='', historical_ref=''):
         for name, content in snapshot.items():
             Path(name).write_bytes(content)
         print(f'Restored published checkpoint from {published_ref}.')
+    from rss_publication import empty_history, merge_histories, validate_history, bootstrap_history
+    # The published ledger is authoritative when a restored cache is older.
+    local_history = validate_history(load_json('rss_publication_history.json', empty_history()))
+    published_history = validate_history(json.loads(snapshot.get('rss_publication_history.json', b'{"version":1,"journals":{}}')))
+    published_history = bootstrap_history(published_history, snapshot)
+    atomic_json('rss_publication_history.json', merge_histories(local_history, published_history))
     current = validate_queue(load_json(QUEUE_FILE, {}))
     markers = validate_markers(load_json(MARKER_FILE, []))
     published_markers = validate_markers(json.loads(snapshot.get(MARKER_FILE, b'[]')))

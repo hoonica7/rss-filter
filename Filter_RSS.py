@@ -1867,7 +1867,10 @@ def filter_rss_for_journal(journal_name, feed_url, pending_records=None):
 
     buffer = BytesIO()
     ET.ElementTree(root).write(buffer, encoding='utf-8', xml_declaration=True, pretty_print=True)
-    return buffer.getvalue(), keyword_passed_entries, gemini_passed_entries, keyword_removed_entries, gemini_removed_entries, gemini_retry_entries, meta_by_link
+    from rss_publication import stabilize_feed
+    published_xml = stabilize_feed(buffer.getvalue(), journal_name, pending_records or [],
+                                   f'filtered_feed_{journal_name}.xml')
+    return published_xml, keyword_passed_entries, gemini_passed_entries, keyword_removed_entries, gemini_removed_entries, gemini_retry_entries, meta_by_link
 
 
 def paper_record(entry, journal, source, meta):
