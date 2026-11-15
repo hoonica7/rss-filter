@@ -86,3 +86,28 @@ Limit: the `gh-pages` fallback is the last successful publication, not an
 always-written durable checkpoint for later failed runs. If a newer failed
 run's cache is lost, recover its retained `filtered-files` artifact before
 proceeding. This change does not claim to recover state that no longer exists.
+
+## Reader publication stability
+
+`rss_publication.py` freezes the first accepted reader-facing title, score,
+content, identity and source date separately from the mutable classification
+and web briefing. It retains accepted items for 30 days from first observation,
+not 30 days from an old paper's publication date. This gives delayed reader
+syncs a reasonable window. The publication ledger is restored from gh-pages
+and included in caches/artifacts; the published ledger wins over stale cache
+identities. No already published items are automatically reissued on score or
+text changes. arXiv version-only URL changes preserve the existing feed identity.
+
+A pending-queue item without a known publication snapshot gets a one-time
+`[RSS recovery]` label, fixed fresh ID and recovery feed date. Its original
+source publication/announcement date stays explicit in the body; it is not
+represented as a new paper version. Retries, source reappearance and the next
+scheduled run reuse the snapshot, rather than minting daily duplicates. This
+cannot prove whether a reader already fetched an article before ledger tracking
+began, nor edit/delete copies already held by Reeder. The previously requested
+2611.09857 reissue retains its working ID when bootstrapped from the current feed.
+
+Unknown source dates remain unknown, not guessed. A malformed ledger/feed or
+format change fails closed rather than overwriting it with an empty history.
+Snapshots are retained in the ledger beyond the 30-day feed window so future
+reappearances retain identity. The ledger grows with published articles.

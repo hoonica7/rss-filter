@@ -35,6 +35,8 @@ def restore_requested_item(feed_path=FEED_PATH, now=None):
     if now >= EXPIRES_AT:
         return False
     path = Path(feed_path)
+    if not path.exists():
+        return False
     original = path.read_text(encoding="utf-8")
     root = ET.fromstring(original)
     channel = root.find("channel")
