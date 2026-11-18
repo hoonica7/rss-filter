@@ -475,9 +475,9 @@ def generate_briefings(slides):
     if (os.getenv("RSS_ENABLE_SLIDE_BRIEFINGS") or "1").strip().lower() in ("0", "false", "no"):
         return {}
     try:
-        limit = int(os.getenv("RSS_SLIDE_BRIEFING_LIMIT", "40"))
+        limit = int(os.getenv("RSS_SLIDE_BRIEFING_LIMIT", str(len(slides))))
     except Exception:
-        limit = 40
+        limit = len(slides)
     try:
         batch_size = max(1, min(5, int(os.getenv("RSS_SLIDE_BRIEFING_BATCH_SIZE", "3"))))
     except Exception:
@@ -530,12 +530,9 @@ def generate_briefings(slides):
         by_id = {f"S{i}": slide for i, slide in enumerate(batch, start=1)}
         for item in items:
             slide = by_id.get(str(item.get("id", "")).strip())
-            if slide:
+            if slide and all(isinstance(item.get(k), str) and item[k].strip() for k in
+                             ("background", "motivation", "result", "implication", "novelty", "unresolved", "future_work")):
                 out[slide.get("link") or slide.get("title", "")] = normalize_briefing(item, slide)
-        for slide in batch:
-            key = slide.get("link") or slide.get("title", "")
-            if key not in out:
-                out[key] = fallback_briefing(slide)
     return out
 
 
@@ -722,7 +719,8 @@ def main():
         slide["briefing"] = briefings.get(key) or fallback_briefing(slide)
     with open("slides.html", "w", encoding="utf-8") as handle:
         handle.write(render_html(slides))
-    print(f"Enhanced slides.html with {len(slides)} paper briefings.")
+    detailed = sum((s.get("link") or s.get("title", "")) in briefings for s in slides)
+    print(f"Slide briefings: {detailed} detailed, {len(slides) - detailed} fallback, {len(slides)} total.")
 
 
 if __name__ == "__main__":

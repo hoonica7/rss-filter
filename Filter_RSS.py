@@ -349,17 +349,17 @@ def clean_abstract_text(text):
     if not raw.strip():
         return ""
 
-    paragraphs = [strip_html(p) for p in re.findall(r'<p[^>]*>(.*?)</p>', raw, flags=re.I | re.S)]
-    for para in paragraphs:
-        para = para.strip()
-        if not para:
-            continue
-        if re.match(r'^(?:Author\(s\)|\[[^\]]+\]\s*Published\b)', para, flags=re.I):
-            continue
-        if re.match(r'^[A-Za-z .&]+,\s*(?:Volume|Published online)\b', para, flags=re.I):
-            continue
-        if len(para.split()) >= 6:
-            return para
+    def remove_metadata(match):
+        para = strip_html(match[1])
+        if re.match(r'^\[[^\]]+\]\s*Published\b', para, re.I):
+            return ' '
+        if re.match(r'^Author\(s\):', para, re.I) and not re.search(r'\b(?:We|Here|This|Our|Using)\b', para):
+            return ' '
+        if re.fullmatch(r'[\w .&-]+,\s*Published online:.*?;\s*doi:\s*10\.\S+', para, re.I):
+            return ' '
+        return match[0]
+
+    raw = re.sub(r'<p\b[^>]*>(.*?)</p\s*>', remove_metadata, raw, flags=re.I | re.S)
 
     cleaned = strip_html(raw)
     if not cleaned:
@@ -466,7 +466,7 @@ def _split_author_string(raw):
     looks_like_lastfirst = (
         len(pieces) >= 2
         and len(pieces) % 2 == 0
-        and all('.' in p or len(p) <= 4 for p in pieces[1::2])  # every other piece looks like initials
+        and all(re.fullmatch(r"(?:[A-Z]\.?[ -]?){1,4}", p) for p in pieces[1::2])
     )
     if looks_like_lastfirst:
         out = []
@@ -580,6 +580,10 @@ def important_author_lookup():
     for name in IMPORTANT_AUTHOR_WHITELIST:
         for key in author_name_keys(name):
             lookup[key] = name
+        ordered = ' '.join(reversed(name.split(', ', 1))) if ', ' in name else name
+        parts = ordered.replace('-', ' ').split()
+        if len(parts) >= 3:
+            lookup[normalize_author_name(''.join(p[0] for p in parts[:-1]) + parts[-1])] = name
     return lookup
 
 
@@ -2141,6 +2145,28 @@ def tier_rank(tier):
     return order.get(tier, 4)
 
 
+MUST_READ_FILE = 'must_read.xml'
+
+
+def write_must_read_feed(records):
+    channel = ET.Element("channel")
+    root = ET.Element("rss", version="2.0")
+    root.append(channel)
+    def field(parent, name, value):
+        ET.SubElement(parent, name).text = xml_compatible_text(str(value or ''))
+    field(channel, 'title', 'Morning Paper Briefing: Must Read')
+    field(channel, 'link', 'https://hoonica7.github.io/rss-filter/briefing.html')
+    field(channel, 'description', 'A. MUST READ from the morning paper briefing.')
+    for record in records:
+        item = ET.SubElement(channel, 'item')
+        field(item, 'title', record['title'])
+        field(item, 'link', record['link'])
+        field(item, 'guid', record['link'])
+        field(item, 'category', record.get('journal'))
+        field(item, 'description', html.escape(record.get('summary') or record.get('reason') or ''))
+    ET.ElementTree(root).write(MUST_READ_FILE, encoding='UTF-8', xml_declaration=True)
+
+
 def create_briefing_html(records, email_body_content=''):
     """Create a fast morning briefing, not a full journal-by-journal browser.
 
@@ -2165,6 +2191,7 @@ def create_briefing_html(records, email_body_content=''):
     b_items = sorted([r for r in records if r.get('tier') == 'B_IMPORTANT_CONDMAT' or (r.get('tier') == 'A_MUST_READ' and not record_has_a_trigger(r))], key=lambda r: (-score_value(r), r.get('journal', ''), r.get('title', '')))
     c_items = [r for r in records if str(r.get('tier', '')).startswith('C_') or not r.get('tier')]
 
+    write_must_read_feed(a_items)
     archived_count = sum(1 for line in email_body_content.splitlines() if '❌' in line) if email_body_content else 0
 
     journal_c_counts = {}
@@ -2259,6 +2286,7 @@ def create_index_html(journal_urls, rss_base_filename):
 <p class='text-gray-600 mb-8'>Journal-specific RSS feeds filtered for private research relevance.</p>
 <div class='space-y-4'>
 <a href='briefing.html' target='_blank' class='block w-full px-6 py-4 bg-rose-600 text-white font-semibold rounded-lg shadow-md hover:bg-rose-700'>Daily Briefing</a>
+<a href='{MUST_READ_FILE}' type='application/rss+xml' class='block w-full px-6 py-4 bg-indigo-600 text-white font-semibold rounded-lg'>Must Read RSS</a>
 <a href='slides.html' target='_blank' class='block w-full px-6 py-4 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700'>Daily Slideshow</a>
 """
     for journal_name in journal_urls.keys():

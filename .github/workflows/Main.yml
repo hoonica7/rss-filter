@@ -108,7 +108,6 @@ jobs:
           RSS_DIRECT_RELEVANCE_KEYWORDS: ${{ secrets.RSS_DIRECT_RELEVANCE_KEYWORDS }}
           RSS_A_MUST_TRIGGER_KEYWORDS: ${{ secrets.RSS_A_MUST_TRIGGER_KEYWORDS }}
           RSS_A_MUST_COMBO_RULES_JSON: ${{ secrets.RSS_A_MUST_COMBO_RULES_JSON }}
-          RSS_SLIDE_BRIEFING_LIMIT: "40"
           RSS_SLIDE_BRIEFING_BATCH_SIZE: "3"
           GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
@@ -133,6 +132,7 @@ jobs:
           path: |
             filtered_titles.txt
             filtered_feed_*.xml
+            must_read.xml
             briefing.html
             slides.html
             filtered_results.html
