@@ -30,7 +30,7 @@ def test_must_read_matches_visible_section(monkeypatch, tmp_path):
                     summary="A & B", journal="Journal") for i, t in enumerate(["direct one", "other", "direct two"])]
     rss.create_briefing_html(records)
     root = ET.parse(rss.MUST_READ_FILE)
-    assert root.xpath("//item/title/text()") == ["direct two", "direct one"]
+    assert root.xpath("//item/title/text()") == ["[2] direct two", "[0] direct one"]
     assert root.xpath("//item/guid/text()") == root.xpath("//item/link/text()")
     rss.create_briefing_html([])
     assert not ET.parse(rss.MUST_READ_FILE).xpath("//item")
@@ -43,3 +43,24 @@ def test_slide_41_gets_an_attempt(monkeypatch):
     papers = [{"title": str(i)} for i in range(41)]
     assert slides.generate_briefings(papers) == {}
     assert seen == papers
+
+
+def test_must_read_uses_journal_rss_body(tmp_path, monkeypatch):
+    import feedparser
+    monkeypatch.chdir(tmp_path)
+    entry = dict(title="Test paper", link="https://example.org/paper",
+                 authors=[{"name": name} for name in ("A. Smith", "B. Lee", "C. Park")],
+                 summary="Experimental result & interpretation.",
+                 media_thumbnail=[{"url": "https://example.org/figure.jpg"}])
+    meta = dict(score=9, tier="A_MUST_READ", reason="Direct match", tags=["ARPES"])
+    record = rss.paper_record(entry, "Nature", "keyword", {entry["link"]: meta})
+    rss.write_must_read_feed([record])
+    actual = feedparser.parse(rss.MUST_READ_FILE).entries[0]
+    journal_item = ET.Element("item")
+    rss.ensure_description_prefix(journal_item, 'rss2', entry, meta, "Nature")
+    assert actual.content[0].value == actual.summary
+    xml = ET.parse(rss.MUST_READ_FILE).find("channel/item")
+    assert xml.findtext("description") == journal_item.findtext("description")
+    assert xml.findtext(f"{{{rss.NS_DC}}}creator") == journal_item.findtext(f"{{{rss.NS_DC}}}creator")
+    assert actual.title == "[9] Test paper" and actual.id == actual.link == entry["link"]
+    assert all(s in actual.summary for s in ("Last authors:", "figure.jpg", "Score 9/10", "Direct match", "#ARPES", "Abstract:"))

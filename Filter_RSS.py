@@ -27,6 +27,8 @@ import feedparser
 import lxml.etree as ET
 import requests
 from io import BytesIO
+from email.utils import formatdate
+from calendar import timegm
 import sys
 import os
 import time
@@ -547,6 +549,10 @@ def author_metadata_text(authors):
     """
     compact = compact_authors(authors)
     last_authors = last_authors_text(authors)
+    return formatted_author_metadata(compact, last_authors)
+
+
+def formatted_author_metadata(compact, last_authors):
     if not last_authors:
         return compact
     if compact == last_authors:
@@ -1557,19 +1563,10 @@ def set_child_text(parent, tag_name, text, cdata=False, attrs=None):
     return child
 
 
-def ensure_description_prefix(xml_item, feed_type, entry, meta, journal_name):
-    authors = get_authors(entry)
-    author_compact = compact_authors(authors)
-    last_authors = last_authors_text(authors)
-    author_metadata = author_metadata_text(authors)
+def article_body_html(author_compact, last_authors, meta, abstract, image_url, publication, tags):
     tier = meta.get('tier', '')
     score = meta.get('score', '')
     reason = meta.get('reason', '')
-    summary_text = entry_summary_text(entry)
-    tags = meta.get('tags', []) or tag_keywords(entry.get('title',''), summary_text)
-    abstract = summary_text
-    image_url = get_article_image(entry, journal_name)
-    publication = entry_publication_info(entry, journal_name)
 
     tag_html = " ".join([f"<span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#{safe_text(t)}</span>" for t in tags])
     score_badge = f"<span style='display:inline-block;padding:4px 9px;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:700;'>Score {safe_text(str(score))}/10</span>" if score != '' else ""
@@ -1598,6 +1595,24 @@ def ensure_description_prefix(xml_item, feed_type, entry, meta, journal_name):
         prefix_html += f"<p><img src='{html.escape(image_url, quote=True)}' style='max-width:100%;height:auto;border-radius:10px;' /></p>"
     if abstract:
         prefix_html += f"<hr/><p><b>Abstract:</b> {safe_text(abstract)}</p>"
+    return prefix_html
+
+
+def write_rss2_body(item, body, author):
+    set_child_text(item, 'description', body, cdata=True)
+    set_child_text(item, f'{{{NS_CONTENT}}}encoded', body, cdata=True)
+    if author:
+        set_child_text(item, f'{{{NS_DC}}}creator', author)
+
+
+def ensure_description_prefix(xml_item, feed_type, entry, meta, journal_name):
+    authors = get_authors(entry)
+    author_metadata = author_metadata_text(authors)
+    summary = entry_summary_text(entry)
+    score = meta.get('score', '')
+    prefix_html = article_body_html(compact_authors(authors), last_authors_text(authors), meta, summary,
+                                    get_article_image(entry, journal_name), entry_publication_info(entry, journal_name),
+                                    meta.get('tags') or tag_keywords(entry.get('title', ''), summary))
 
     if feed_type == 'atom':
         set_child_text(xml_item, f'{{{NS_ATOM}}}summary', prefix_html, attrs={'type': 'html'})
@@ -1619,10 +1634,7 @@ def ensure_description_prefix(xml_item, feed_type, entry, meta, journal_name):
             set_child_text(xml_item, f'{{{NS_DC}}}creator', author_metadata)
     else:
         # rss2
-        set_child_text(xml_item, 'description', prefix_html, cdata=True)
-        set_child_text(xml_item, f'{{{NS_CONTENT}}}encoded', prefix_html, cdata=True)
-        if authors:
-            set_child_text(xml_item, f'{{{NS_DC}}}creator', author_metadata)
+        write_rss2_body(xml_item, prefix_html, author_metadata if authors else '')
 
     # Prefix title with score for fast Reeder list triage.
     if score != '':
@@ -1881,6 +1893,7 @@ def filter_rss_for_journal(journal_name, feed_url, pending_records=None):
 
 def paper_record(entry, journal, source, meta):
     authors = get_authors(entry)
+    date = entry.get('published_parsed') or entry.get('updated_parsed')
     m = meta.get(get_entry_link(entry), {})
     return {
         "journal": journal,
@@ -1895,6 +1908,8 @@ def paper_record(entry, journal, source, meta):
         "reason": m.get('reason', ''),
         "tags": m.get('tags', []),
         "image": get_article_image(entry, journal),
+        "publication": entry_publication_info(entry, journal),
+        "rss_date": formatdate(timegm(date), usegmt=True) if date else '',
     }
 
 
@@ -2161,11 +2176,24 @@ def write_must_read_feed(records):
     field(channel, 'description', 'A. MUST READ from the morning paper briefing.')
     for record in records:
         item = ET.SubElement(channel, 'item')
-        field(item, 'title', record['title'])
+        score = record.get('score', '')
+        title = record['title']
+        if score != '' and not re.match(r'^\[\d{1,2}\]', title):
+            title = f"[{score}] {title}"
+        field(item, 'title', title)
         field(item, 'link', record['link'])
         field(item, 'guid', record['link'])
         field(item, 'category', record.get('journal'))
-        field(item, 'description', html.escape(record.get('summary') or record.get('reason') or ''))
+        if record.get('rss_date'):
+            field(item, 'pubDate', record['rss_date'])
+        compact = record.get('authors', '')
+        last = record.get('last_authors', '')
+        summary = record.get('summary', '')
+        body = article_body_html(compact, last, record, summary, record.get('image'),
+                                 record.get('publication') or {},
+                                 record.get('tags') or tag_keywords(record['title'], summary))
+        author = formatted_author_metadata(compact, last) if last else ''
+        write_rss2_body(item, body, author)
     ET.ElementTree(root).write(MUST_READ_FILE, encoding='UTF-8', xml_declaration=True)
 
 
