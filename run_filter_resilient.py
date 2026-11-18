@@ -282,9 +282,16 @@ def run():
 
                 processed_journals.append(journal_name)
                 persist_partial(email_content, briefing_records, pending_queue, new_pending_queue, journal_name, classified_count, processed_journals)
+                from source_reconcile import acknowledge
+                acknowledge(journal_name, keyword_passed + gemini_passed + keyword_removed + gemini_removed)
 
             except requests.exceptions.RequestException as error:
                 pending_records_for_journal = pending_queue.get(journal_name, [])
+                from source_reconcile import LISTS, supplement
+                if journal_name in LISTS:
+                    extras = supplement(journal_name, pending_records_for_journal)
+                    pending_records_for_journal = pending_records_for_journal + [
+                        rss.serialize_entry_for_pending(e) for e in extras]
                 if pending_records_for_journal:
                     new_pending_queue[journal_name] = pending_records_for_journal
 

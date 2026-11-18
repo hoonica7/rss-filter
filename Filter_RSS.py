@@ -1726,9 +1726,11 @@ def filter_rss_for_journal(journal_name, feed_url, pending_records=None):
     parsed_feed = feedparser.parse(raw_xml)
     source_entries = list(parsed_feed.entries)
     retry_entries = [entry_from_pending_record(r) for r in (pending_records or [])]
+    from source_reconcile import supplement
+    extra_entries = supplement(journal_name, source_entries + retry_entries)
     if retry_entries:
         print(f"  ⏸ Retrying {len(retry_entries)} pending papers from previous runs", file=sys.stderr)
-    entries_to_classify = dedupe_entries_by_link_or_title(retry_entries + source_entries)
+    entries_to_classify = dedupe_entries_by_link_or_title(retry_entries + source_entries + extra_entries)
 
     threshold = get_threshold(journal_name)
 
