@@ -27,6 +27,8 @@ import feedparser
 import lxml.etree as ET
 import requests
 from io import BytesIO
+from email.utils import formatdate
+from calendar import timegm
 import sys
 import os
 import time
@@ -40,13 +42,14 @@ import re
 import math
 import html
 from functools import lru_cache
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlsplit
 
 NS_ATOM = 'http://www.w3.org/2005/Atom'
 NS_DC = 'http://purl.org/dc/elements/1.1/'
 NS_RSS1 = 'http://purl.org/rss/1.0/'
 NS_RDF = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'
 NS_CONTENT = 'http://purl.org/rss/1.0/modules/content/'
+NS_MEDIA = 'http://search.yahoo.com/mrss/'
 
 ET.register_namespace('dc', NS_DC)
 ET.register_namespace('content', NS_CONTENT)
@@ -349,17 +352,17 @@ def clean_abstract_text(text):
     if not raw.strip():
         return ""
 
-    paragraphs = [strip_html(p) for p in re.findall(r'<p[^>]*>(.*?)</p>', raw, flags=re.I | re.S)]
-    for para in paragraphs:
-        para = para.strip()
-        if not para:
-            continue
-        if re.match(r'^(?:Author\(s\)|\[[^\]]+\]\s*Published\b)', para, flags=re.I):
-            continue
-        if re.match(r'^[A-Za-z .&]+,\s*(?:Volume|Published online)\b', para, flags=re.I):
-            continue
-        if len(para.split()) >= 6:
-            return para
+    def remove_metadata(match):
+        para = strip_html(match[1])
+        if re.match(r'^\[[^\]]+\]\s*Published\b', para, re.I):
+            return ' '
+        if re.match(r'^Author\(s\):', para, re.I) and not re.search(r'\b(?:We|Here|This|Our|Using)\b', para):
+            return ' '
+        if re.fullmatch(r'[\w .&-]+,\s*Published online:.*?;\s*doi:\s*10\.\S+', para, re.I):
+            return ' '
+        return match[0]
+
+    raw = re.sub(r'<p\b[^>]*>(.*?)</p\s*>', remove_metadata, raw, flags=re.I | re.S)
 
     cleaned = strip_html(raw)
     if not cleaned:
@@ -466,7 +469,7 @@ def _split_author_string(raw):
     looks_like_lastfirst = (
         len(pieces) >= 2
         and len(pieces) % 2 == 0
-        and all('.' in p or len(p) <= 4 for p in pieces[1::2])  # every other piece looks like initials
+        and all(re.fullmatch(r"(?:[A-Z]\.?[ -]?){1,4}", p) for p in pieces[1::2])
     )
     if looks_like_lastfirst:
         out = []
@@ -547,6 +550,10 @@ def author_metadata_text(authors):
     """
     compact = compact_authors(authors)
     last_authors = last_authors_text(authors)
+    return formatted_author_metadata(compact, last_authors)
+
+
+def formatted_author_metadata(compact, last_authors):
     if not last_authors:
         return compact
     if compact == last_authors:
@@ -580,6 +587,10 @@ def important_author_lookup():
     for name in IMPORTANT_AUTHOR_WHITELIST:
         for key in author_name_keys(name):
             lookup[key] = name
+        ordered = ' '.join(reversed(name.split(', ', 1))) if ', ' in name else name
+        parts = ordered.replace('-', ' ').split()
+        if len(parts) >= 3:
+            lookup[normalize_author_name(''.join(p[0] for p in parts[:-1]) + parts[-1])] = name
     return lookup
 
 
@@ -1553,19 +1564,10 @@ def set_child_text(parent, tag_name, text, cdata=False, attrs=None):
     return child
 
 
-def ensure_description_prefix(xml_item, feed_type, entry, meta, journal_name):
-    authors = get_authors(entry)
-    author_compact = compact_authors(authors)
-    last_authors = last_authors_text(authors)
-    author_metadata = author_metadata_text(authors)
+def article_body_html(author_compact, last_authors, meta, abstract, image_url, publication, tags):
     tier = meta.get('tier', '')
     score = meta.get('score', '')
     reason = meta.get('reason', '')
-    summary_text = entry_summary_text(entry)
-    tags = meta.get('tags', []) or tag_keywords(entry.get('title',''), summary_text)
-    abstract = summary_text
-    image_url = get_article_image(entry, journal_name)
-    publication = entry_publication_info(entry, journal_name)
 
     tag_html = " ".join([f"<span style='display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;'>#{safe_text(t)}</span>" for t in tags])
     score_badge = f"<span style='display:inline-block;padding:4px 9px;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:700;'>Score {safe_text(str(score))}/10</span>" if score != '' else ""
@@ -1594,6 +1596,24 @@ def ensure_description_prefix(xml_item, feed_type, entry, meta, journal_name):
         prefix_html += f"<p><img src='{html.escape(image_url, quote=True)}' style='max-width:100%;height:auto;border-radius:10px;' /></p>"
     if abstract:
         prefix_html += f"<hr/><p><b>Abstract:</b> {safe_text(abstract)}</p>"
+    return prefix_html
+
+
+def write_rss2_body(item, body, author):
+    set_child_text(item, 'description', body, cdata=True)
+    set_child_text(item, f'{{{NS_CONTENT}}}encoded', body, cdata=True)
+    if author:
+        set_child_text(item, f'{{{NS_DC}}}creator', author)
+
+
+def ensure_description_prefix(xml_item, feed_type, entry, meta, journal_name):
+    authors = get_authors(entry)
+    author_metadata = author_metadata_text(authors)
+    summary = entry_summary_text(entry)
+    score = meta.get('score', '')
+    prefix_html = article_body_html(compact_authors(authors), last_authors_text(authors), meta, summary,
+                                    get_article_image(entry, journal_name), entry_publication_info(entry, journal_name),
+                                    meta.get('tags') or tag_keywords(entry.get('title', ''), summary))
 
     if feed_type == 'atom':
         set_child_text(xml_item, f'{{{NS_ATOM}}}summary', prefix_html, attrs={'type': 'html'})
@@ -1615,10 +1635,7 @@ def ensure_description_prefix(xml_item, feed_type, entry, meta, journal_name):
             set_child_text(xml_item, f'{{{NS_DC}}}creator', author_metadata)
     else:
         # rss2
-        set_child_text(xml_item, 'description', prefix_html, cdata=True)
-        set_child_text(xml_item, f'{{{NS_CONTENT}}}encoded', prefix_html, cdata=True)
-        if authors:
-            set_child_text(xml_item, f'{{{NS_DC}}}creator', author_metadata)
+        write_rss2_body(xml_item, prefix_html, author_metadata if authors else '')
 
     # Prefix title with score for fast Reeder list triage.
     if score != '':
@@ -1722,9 +1739,11 @@ def filter_rss_for_journal(journal_name, feed_url, pending_records=None):
     parsed_feed = feedparser.parse(raw_xml)
     source_entries = list(parsed_feed.entries)
     retry_entries = [entry_from_pending_record(r) for r in (pending_records or [])]
+    from source_reconcile import supplement
+    extra_entries = supplement(journal_name, source_entries + retry_entries)
     if retry_entries:
         print(f"  ⏸ Retrying {len(retry_entries)} pending papers from previous runs", file=sys.stderr)
-    entries_to_classify = dedupe_entries_by_link_or_title(retry_entries + source_entries)
+    entries_to_classify = dedupe_entries_by_link_or_title(retry_entries + source_entries + extra_entries)
 
     threshold = get_threshold(journal_name)
 
@@ -1875,6 +1894,7 @@ def filter_rss_for_journal(journal_name, feed_url, pending_records=None):
 
 def paper_record(entry, journal, source, meta):
     authors = get_authors(entry)
+    date = entry.get('published_parsed') or entry.get('updated_parsed')
     m = meta.get(get_entry_link(entry), {})
     return {
         "journal": journal,
@@ -1889,6 +1909,8 @@ def paper_record(entry, journal, source, meta):
         "reason": m.get('reason', ''),
         "tags": m.get('tags', []),
         "image": get_article_image(entry, journal),
+        "publication": entry_publication_info(entry, journal),
+        "rss_date": formatdate(timegm(date), usegmt=True) if date else '',
     }
 
 
@@ -2141,6 +2163,56 @@ def tier_rank(tier):
     return order.get(tier, 4)
 
 
+MUST_READ_FILE = 'must_read.xml'
+
+
+def add_list_thumbnail(item, article_url, image_url):
+    if not image_url:
+        return
+    try:
+        url = urljoin(article_url, image_url.strip())
+        parts = urlsplit(url)
+        if parts.scheme not in ('http', 'https') or not parts.hostname:
+            return
+    except ValueError:
+        return
+    ET.SubElement(item, f'{{{NS_MEDIA}}}thumbnail', url=xml_compatible_text(url))
+    ET.SubElement(item, f'{{{NS_MEDIA}}}content', url=xml_compatible_text(url), medium='image')
+
+
+def write_must_read_feed(records):
+    channel = ET.Element("channel")
+    root = ET.Element("rss", version="2.0", nsmap={'media': NS_MEDIA})
+    root.append(channel)
+    def field(parent, name, value):
+        ET.SubElement(parent, name).text = xml_compatible_text(str(value or ''))
+    field(channel, 'title', 'Morning Paper Briefing: Must Read')
+    field(channel, 'link', 'https://hoonica7.github.io/rss-filter/briefing.html')
+    field(channel, 'description', 'A. MUST READ from the morning paper briefing.')
+    for record in records:
+        item = ET.SubElement(channel, 'item')
+        score = record.get('score', '')
+        title = record['title']
+        if score != '' and not re.match(r'^\[\d{1,2}\]', title):
+            title = f"[{score}] {title}"
+        field(item, 'title', title)
+        field(item, 'link', record['link'])
+        field(item, 'guid', record['link'])
+        field(item, 'category', record.get('journal'))
+        if record.get('rss_date'):
+            field(item, 'pubDate', record['rss_date'])
+        compact = record.get('authors', '')
+        last = record.get('last_authors', '')
+        summary = record.get('summary', '')
+        body = article_body_html(compact, last, record, summary, record.get('image'),
+                                 record.get('publication') or {},
+                                 record.get('tags') or tag_keywords(record['title'], summary))
+        author = formatted_author_metadata(compact, last) if last else ''
+        write_rss2_body(item, body, author)
+        add_list_thumbnail(item, record['link'], record.get('image'))
+    ET.ElementTree(root).write(MUST_READ_FILE, encoding='UTF-8', xml_declaration=True)
+
+
 def create_briefing_html(records, email_body_content=''):
     """Create a fast morning briefing, not a full journal-by-journal browser.
 
@@ -2165,6 +2237,7 @@ def create_briefing_html(records, email_body_content=''):
     b_items = sorted([r for r in records if r.get('tier') == 'B_IMPORTANT_CONDMAT' or (r.get('tier') == 'A_MUST_READ' and not record_has_a_trigger(r))], key=lambda r: (-score_value(r), r.get('journal', ''), r.get('title', '')))
     c_items = [r for r in records if str(r.get('tier', '')).startswith('C_') or not r.get('tier')]
 
+    write_must_read_feed(a_items)
     archived_count = sum(1 for line in email_body_content.splitlines() if '❌' in line) if email_body_content else 0
 
     journal_c_counts = {}
@@ -2259,6 +2332,7 @@ def create_index_html(journal_urls, rss_base_filename):
 <p class='text-gray-600 mb-8'>Journal-specific RSS feeds filtered for private research relevance.</p>
 <div class='space-y-4'>
 <a href='briefing.html' target='_blank' class='block w-full px-6 py-4 bg-rose-600 text-white font-semibold rounded-lg shadow-md hover:bg-rose-700'>Daily Briefing</a>
+<a href='{MUST_READ_FILE}' type='application/rss+xml' class='block w-full px-6 py-4 bg-indigo-600 text-white font-semibold rounded-lg'>Must Read RSS</a>
 <a href='slides.html' target='_blank' class='block w-full px-6 py-4 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700'>Daily Slideshow</a>
 """
     for journal_name in journal_urls.keys():
