@@ -42,13 +42,14 @@ import re
 import math
 import html
 from functools import lru_cache
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlsplit
 
 NS_ATOM = 'http://www.w3.org/2005/Atom'
 NS_DC = 'http://purl.org/dc/elements/1.1/'
 NS_RSS1 = 'http://purl.org/rss/1.0/'
 NS_RDF = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'
 NS_CONTENT = 'http://purl.org/rss/1.0/modules/content/'
+NS_MEDIA = 'http://search.yahoo.com/mrss/'
 
 ET.register_namespace('dc', NS_DC)
 ET.register_namespace('content', NS_CONTENT)
@@ -2165,9 +2166,23 @@ def tier_rank(tier):
 MUST_READ_FILE = 'must_read.xml'
 
 
+def add_list_thumbnail(item, article_url, image_url):
+    if not image_url:
+        return
+    try:
+        url = urljoin(article_url, image_url.strip())
+        parts = urlsplit(url)
+        if parts.scheme not in ('http', 'https') or not parts.hostname:
+            return
+    except ValueError:
+        return
+    ET.SubElement(item, f'{{{NS_MEDIA}}}thumbnail', url=xml_compatible_text(url))
+    ET.SubElement(item, f'{{{NS_MEDIA}}}content', url=xml_compatible_text(url), medium='image')
+
+
 def write_must_read_feed(records):
     channel = ET.Element("channel")
-    root = ET.Element("rss", version="2.0")
+    root = ET.Element("rss", version="2.0", nsmap={'media': NS_MEDIA})
     root.append(channel)
     def field(parent, name, value):
         ET.SubElement(parent, name).text = xml_compatible_text(str(value or ''))
@@ -2194,6 +2209,7 @@ def write_must_read_feed(records):
                                  record.get('tags') or tag_keywords(record['title'], summary))
         author = formatted_author_metadata(compact, last) if last else ''
         write_rss2_body(item, body, author)
+        add_list_thumbnail(item, record['link'], record.get('image'))
     ET.ElementTree(root).write(MUST_READ_FILE, encoding='UTF-8', xml_declaration=True)
 
 

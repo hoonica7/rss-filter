@@ -63,4 +63,15 @@ def test_must_read_uses_journal_rss_body(tmp_path, monkeypatch):
     assert xml.findtext("description") == journal_item.findtext("description")
     assert xml.findtext(f"{{{rss.NS_DC}}}creator") == journal_item.findtext(f"{{{rss.NS_DC}}}creator")
     assert actual.title == "[9] Test paper" and actual.id == actual.link == entry["link"]
+    assert actual.media_thumbnail == [{"url": entry["media_thumbnail"][0]["url"]}]
+    assert actual.media_content == [{"url": actual.media_thumbnail[0]["url"], "medium": "image"}]
     assert all(s in actual.summary for s in ("Last authors:", "figure.jpg", "Score 9/10", "Direct match", "#ARPES", "Abstract:"))
+
+
+def test_list_thumbnail_resolves_relative_and_skips_unusable_images():
+    item = ET.Element("item")
+    for value in (None, "", "data:image/png;base64,aaaa"):
+        rss.add_list_thumbnail(item, "https://example.org/paper/", value)
+    assert len(item) == 0
+    rss.add_list_thumbnail(item, "https://example.org/paper/", "fig.png?w=80&v=1")
+    assert item.find(f"{{{rss.NS_MEDIA}}}thumbnail").get("url") == "https://example.org/paper/fig.png?w=80&v=1"
