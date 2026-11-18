@@ -114,19 +114,13 @@ reappearances retain identity. The ledger grows with published articles.
 
 ## Publication-list coverage and briefing output
 
-In addition to the source RSS, compare each journal's latest publisher list
-by DOI (announcement ID for arXiv). Nature and APS start at the current page
-and on later runs follow pagination toward the previous snapshot. Science uses
-the current issue; arXiv uses the current announcement. These checks do not
-constitute a complete retrospective index or APS Accepted coverage. If a
-journal webpage fails, log a warning and try its Crossref ISSN, using a
-three-day online-publication window or the latest 50 works for an empty window.
-Do not interpret a registry fallback as verification of a blocked publisher page.
-
-`source_coverage.json` stores unresolved links and completed IDs. Do not mark
-pending decisions complete. Ordinary RSS entries still follow the existing
-classification policy. If the raw feed fails, save independently discovered
-candidates for the next run. Test fixtures do not call publishers or Gemini.
+The daily filter uses journal RSS and its existing pending retries. Only Science
+and Science Advances retain the earlier Crossref fallback when RSS retries fail.
+The daily job never compares publisher listings or imports website-only works.
+The separate weekly workflow compares each raw RSS to the current publisher
+listing and writes a GitHub Actions job summary. A listing-only ID is not proof
+of a historical miss. Blocked sources are not verified. This read-only audit
+has no Gemini keys, classification queue, deployment, or email steps.
 
 `must_read.xml` is the current A section of the briefing, not a rolling
 30-day archive or a score-only filter. Slide enrichment attempts every slide

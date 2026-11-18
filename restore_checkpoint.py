@@ -18,7 +18,7 @@ CHECKPOINT_FILES = {
     'partial_briefing_records.json', 'partial_classification_count.json',
     'filtered_titles.txt', 'briefing.html', 'slides.html',
     'filtered_results.html', 'index.html', 'pending_classification_queue.json',
-    'recovered_backlog_refs.json', 'rss_publication_history.json', 'source_coverage.json',
+    'recovered_backlog_refs.json', 'rss_publication_history.json',
 }
 QUEUE_FILE = 'pending_classification_queue.json'
 MARKER_FILE = 'recovered_backlog_refs.json'
@@ -186,14 +186,6 @@ def restore(cache_restored='', historical_ref=''):
         for name, content in snapshot.items():
             Path(name).write_bytes(content)
         print(f'Restored published checkpoint from {published_ref}.')
-    if 'source_coverage.json' in snapshot:
-        coverage = load_json('source_coverage.json', {})
-        for journal, entries in json.loads(snapshot['source_coverage.json']).items():
-            local = coverage.setdefault(journal, {})
-            for key, value in entries.items():
-                if value is True or key not in local:
-                    local[key] = value
-        atomic_json('source_coverage.json', coverage)
     from rss_publication import empty_history, merge_histories, validate_history, bootstrap_history
     # The published ledger is authoritative when a restored cache is older.
     local_history = validate_history(load_json('rss_publication_history.json', empty_history()))

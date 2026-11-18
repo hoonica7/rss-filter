@@ -264,18 +264,7 @@ JOURNAL_THRESHOLDS = {
     "arXiv_CondMat": 7,
 }
 
-JOURNAL_URLS = {
-    "Nature": "https://www.nature.com/nature.rss",
-    "Nature_Physics": "https://feeds.nature.com/nphys/rss/current",
-    "Nature_Materials": "https://feeds.nature.com/nmat/rss/current",
-    "Nature_Communications": "https://www.nature.com/ncomms.rss",
-    "npj_QuantumMaterials": "https://www.nature.com/npjquantmats.rss",
-    "Science": "https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=science",
-    "Science_Advances": "https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=sciadv",
-    "PRL_Recent": "https://feeds.aps.org/rss/recent/prl.xml",
-    "PRB_Recent": "https://feeds.aps.org/rss/recent/prb.xml",
-    "arXiv_CondMat": "https://rss.arxiv.org/rss/cond-mat",
-}
+from journal_sources import JOURNAL_URLS
 
 # Model order requested by user. Override with repo secret if desired:
 #   GEMINI_MODELS=gemini-3-flash-preview,gemini-3.1-flash-lite-preview,gemini-2.5-flash
@@ -1739,11 +1728,9 @@ def filter_rss_for_journal(journal_name, feed_url, pending_records=None):
     parsed_feed = feedparser.parse(raw_xml)
     source_entries = list(parsed_feed.entries)
     retry_entries = [entry_from_pending_record(r) for r in (pending_records or [])]
-    from source_reconcile import supplement
-    extra_entries = supplement(journal_name, source_entries + retry_entries)
     if retry_entries:
         print(f"  ⏸ Retrying {len(retry_entries)} pending papers from previous runs", file=sys.stderr)
-    entries_to_classify = dedupe_entries_by_link_or_title(retry_entries + source_entries + extra_entries)
+    entries_to_classify = dedupe_entries_by_link_or_title(retry_entries + source_entries)
 
     threshold = get_threshold(journal_name)
 
