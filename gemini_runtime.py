@@ -15,6 +15,11 @@ from google import genai
 from google.genai import types
 
 
+def configured_models():
+    override = (os.getenv('GEMINI_MODELS') or '').split(',')
+    return [m.strip() for m in override if m.strip()] or ['gemini-4-hydrogen', 'gemini-3.8-flash']
+
+
 def create_client(api_key):
     # SDK 3 defaults to v1, which does not support our JSON response options.
     # Set the transport version explicitly for both classification and slides.

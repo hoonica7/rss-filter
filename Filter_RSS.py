@@ -34,7 +34,8 @@ import os
 import time
 import json
 from google.genai import types
-from gemini_runtime import (create_client, FailureTracker, safe_error_summary,
+from reference_read import is_reference_read
+from gemini_runtime import (configured_models, create_client, FailureTracker, safe_error_summary,
                             schema_is_unsupported, classification_status,
                             check_classification_health)
 import datetime
@@ -266,16 +267,8 @@ JOURNAL_THRESHOLDS = {
 
 from journal_sources import JOURNAL_URLS
 
-# Model order requested by user. Override with repo secret if desired:
-#   GEMINI_MODELS=gemini-3-flash-preview,gemini-3.1-flash-lite-preview,gemini-2.5-flash
-# NOTE: os.getenv("GEMINI_MODELS", default) returns "" (not the default) if
-# the secret exists but is empty, which produced models=[] in earlier runs.
-# Treat empty/whitespace explicitly as "use default."
-_DEFAULT_MODELS = "gemini-3-flash-preview,gemini-3.1-flash-lite-preview,gemini-2.5-flash"
-_models_env = (os.getenv("GEMINI_MODELS") or "").strip()
-MODEL_CANDIDATES = [m.strip() for m in (_models_env or _DEFAULT_MODELS).split(',') if m.strip()]
-if not MODEL_CANDIDATES:
-    MODEL_CANDIDATES = ["gemini-2.5-flash"]
+# Both classification and slide generation use the same model priority.
+MODEL_CANDIDATES = configured_models()
 
 current_model_index = 0
 current_model_name = MODEL_CANDIDATES[0]
@@ -291,8 +284,7 @@ current_model_name = MODEL_CANDIDATES[0]
 #   3. If all keys × all models fail, defer the batch to the pending queue
 #      and reset to API1 for the next batch. Failed pairs are skipped until
 #      their cooldown expires; unavailable/auth-failed pairs stay disabled.
-# Once a (key, model) combo succeeds, both indices stick for the next batch
-# so we don't waste calls re-checking dead endpoints.
+# Keep the last successful key; cooldowns suppress unavailable models.
 # =============================================================================
 GOOGLE_API_KEYS = []
 for _i in (1, 2, 3):
@@ -1320,8 +1312,8 @@ def classify_entries_with_gemini(journal_name, entries, _recheck_depth=0):
 
         # Build the rotation order: start at current API key, wrap around.
         api_attempts = [(current_api_index + i) % n_apis for i in range(n_apis)]
-        # Build the model rotation order: start at current model, wrap around.
-        model_attempts = [(current_model_index + j) % n_models for j in range(n_models)]
+        # Return to the preferred model when its cooldown has elapsed.
+        model_attempts = range(n_models)
 
         for api_idx in api_attempts:
             key_label, client = gemini_clients[api_idx]
@@ -1901,6 +1893,14 @@ def paper_record(entry, journal, source, meta):
     }
 
 
+def rescued_reference_records(removed, journal, meta):
+    for entry in removed:
+        if is_reference_read(entry.get('title'), entry_summary_text(entry)):
+            record = paper_record(entry, journal, 'Gemini', meta)
+            record['reference_only'] = True
+            yield record
+
+
 def create_email_body_file(content):
     with open('filtered_titles.txt', 'w', encoding='utf-8') as f:
         f.write(content)
@@ -1938,7 +1938,7 @@ def create_slideshow_html(records):
             return 0
 
     sorted_records = sorted(
-        records,
+        (r for r in records if not r.get('reference_only')),
         key=lambda r: (tier_rank(r.get('tier', '')), -score_value(r), r.get('journal', ''), r.get('title', '')),
     )
     slides = []
@@ -2151,6 +2151,7 @@ def tier_rank(tier):
 
 
 MUST_READ_FILE = 'must_read.xml'
+REFERENCE_READ_FILE = 'reference_read.xml'
 
 
 def add_list_thumbnail(item, article_url, image_url):
@@ -2168,14 +2169,18 @@ def add_list_thumbnail(item, article_url, image_url):
 
 
 def write_must_read_feed(records):
+    write_briefing_feed(records, MUST_READ_FILE, 'Must Read', 'A. MUST READ from the morning paper briefing.')
+
+
+def write_briefing_feed(records, filename, label, description):
     channel = ET.Element("channel")
     root = ET.Element("rss", version="2.0", nsmap={'media': NS_MEDIA})
     root.append(channel)
     def field(parent, name, value):
         ET.SubElement(parent, name).text = xml_compatible_text(str(value or ''))
-    field(channel, 'title', 'Morning Paper Briefing: Must Read')
+    field(channel, 'title', f'Morning Paper Briefing: {label}')
     field(channel, 'link', 'https://hoonica7.github.io/rss-filter/briefing.html')
-    field(channel, 'description', 'A. MUST READ from the morning paper briefing.')
+    field(channel, 'description', description)
     for record in records:
         item = ET.SubElement(channel, 'item')
         score = record.get('score', '')
@@ -2197,7 +2202,7 @@ def write_must_read_feed(records):
         author = formatted_author_metadata(compact, last) if last else ''
         write_rss2_body(item, body, author)
         add_list_thumbnail(item, record['link'], record.get('image'))
-    ET.ElementTree(root).write(MUST_READ_FILE, encoding='UTF-8', xml_declaration=True)
+    ET.ElementTree(root).write(filename, encoding='UTF-8', xml_declaration=True)
 
 
 def create_briefing_html(records, email_body_content=''):
@@ -2220,6 +2225,13 @@ def create_briefing_html(records, email_body_content=''):
         fake_entry = {'title': r.get('title', ''), 'summary': r.get('summary', '')}
         return has_a_must_trigger(fake_entry)
 
+    reference_by_link = {}
+    for record in records:
+        if record.get('link') and (record.get('reference_only') or is_reference_read(record.get('title'), record.get('summary'))):
+            reference_by_link.setdefault(record['link'], record)
+    reference_items = sorted(reference_by_link.values(), key=lambda r: (-score_value(r), r.get('title', '')))
+    write_briefing_feed(reference_items, REFERENCE_READ_FILE, 'Reference Read', 'Reviews, perspectives and tutorials from the morning paper briefing.')
+    records = [r for r in records if not r.get('reference_only')]
     a_items = sorted([r for r in records if r.get('tier') == 'A_MUST_READ' and record_has_a_trigger(r)], key=lambda r: (-score_value(r), r.get('journal', ''), r.get('title', '')))
     b_items = sorted([r for r in records if r.get('tier') == 'B_IMPORTANT_CONDMAT' or (r.get('tier') == 'A_MUST_READ' and not record_has_a_trigger(r))], key=lambda r: (-score_value(r), r.get('journal', ''), r.get('title', '')))
     c_items = [r for r in records if str(r.get('tier', '')).startswith('C_') or not r.get('tier')]
@@ -2302,6 +2314,11 @@ def create_briefing_html(records, email_body_content=''):
       <p class='text-slate-700 mt-2'>{archived_count} clearly unrelated or below-threshold papers archived/removed from the filtered RSS feeds.</p>
       <p class='mt-2'><a href='filtered_results.html' target='_blank' class='text-blue-600 hover:underline'>Audit page →</a></p>
     </section>
+    <section id='reference-read' class='mt-10'>
+      <h2 class='text-2xl font-bold text-teal-800 border-b pb-2'>Reference Read</h2>
+      <a href='{REFERENCE_READ_FILE}' type='application/rss+xml' class='text-blue-600 hover:underline'>Reference Read RSS</a>
+      <div class='mt-4'>{render_paper_list(reference_items, 'No reference papers in this run.')}</div>
+    </section>
   </div>
 </div>
 </body></html>"""
@@ -2320,6 +2337,7 @@ def create_index_html(journal_urls, rss_base_filename):
 <div class='space-y-4'>
 <a href='briefing.html' target='_blank' class='block w-full px-6 py-4 bg-rose-600 text-white font-semibold rounded-lg shadow-md hover:bg-rose-700'>Daily Briefing</a>
 <a href='{MUST_READ_FILE}' type='application/rss+xml' class='block w-full px-6 py-4 bg-indigo-600 text-white font-semibold rounded-lg'>Must Read RSS</a>
+<a href='{REFERENCE_READ_FILE}' type='application/rss+xml' class='block w-full px-6 py-4 bg-teal-700 text-white font-semibold rounded-lg'>Reference Read RSS</a>
 <a href='slides.html' target='_blank' class='block w-full px-6 py-4 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700'>Daily Slideshow</a>
 """
     for journal_name in journal_urls.keys():
@@ -2429,6 +2447,7 @@ if __name__ == '__main__':
                         briefing_records.append(paper_record(entry, journal_name, 'Gemini', meta))
                     email_content += '\n'
 
+                briefing_records.extend(rescued_reference_records(gemini_removed, journal_name, meta))
                 email_content += 'REMOVED PAPERS:\n'
                 if not keyword_removed and not gemini_removed:
                     email_content += 'No papers were filtered out.\n\n'
