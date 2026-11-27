@@ -1,44 +1,38 @@
-name: Gemini regression and safe smoke test
-
-"on":
-  pull_request:
+name: One-off free model comparison
+on:
   workflow_dispatch:
-
+    inputs:
+      sample:
+        type: string
+        required: true
+        description: Public source IDs only
 permissions:
   contents: read
-
 jobs:
-  regression:
+  probe:
     runs-on: ubuntu-latest
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@v6
         with:
           python-version: '3.11'
-          cache: 'pip'
-      - run: pip install -r requirements-dev.txt
-      - run: python -m pytest -q
-      - run: python -m compileall -q Filter_RSS.py enhance_slides.py run_filter_resilient.py gemini_runtime.py smoke_test_gemini.py restore_checkpoint.py
-
-  synthetic-live-smoke:
-    if: github.event_name == 'workflow_dispatch'
-    needs: regression
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-python@v6
-        with:
-          python-version: '3.11'
-          cache: 'pip'
       - run: pip install -r requirements.txt
-      # A single synthetic paper only. No feeds, private ranking profile,
-      # generated production files, Pages deployment, or email transmission.
-      - run: python smoke_test_gemini.py
+      - run: python apply_private_config_patch.py
+      - run: python compare_free_model.py
         env:
+          SAMPLE: ${{ inputs.sample }}
           GOOGLE_API_KEY1: ${{ secrets.GOOGLE_API_KEY1 }}
-          GOOGLE_API_KEY2: ${{ secrets.GOOGLE_API_KEY2 }}
-          GOOGLE_API_KEY3: ${{ secrets.GOOGLE_API_KEY3 }}
-          GEMINI_MODELS: ${{ secrets.GEMINI_MODELS }}
-          GEMINI_API_VERSION: "v1beta"
-          GEMINI_BATCH_SIZE: "1"
+          RSS_CLASSIFIER_ROLE: ${{ secrets.RSS_CLASSIFIER_ROLE }}
+          RSS_USER_PROFILE: ${{ secrets.RSS_USER_PROFILE }}
+          RSS_SCORING_POLICY: ${{ secrets.RSS_SCORING_POLICY }}
+          RSS_AUTHOR_WHITELIST: ${{ secrets.RSS_AUTHOR_WHITELIST }}
+          RSS_NARROW_TITLE_AUTOPASS: ${{ secrets.RSS_NARROW_TITLE_AUTOPASS }}
+          RSS_DIRECT_RELEVANCE_KEYWORDS: ${{ secrets.RSS_DIRECT_RELEVANCE_KEYWORDS }}
+          RSS_A_MUST_TRIGGER_KEYWORDS: ${{ secrets.RSS_A_MUST_TRIGGER_KEYWORDS }}
+          RSS_A_MUST_COMBO_RULES_JSON: ${{ secrets.RSS_A_MUST_COMBO_RULES_JSON }}
+          GEMINI_MODELS: gemini-4-hydrogen
+          GEMINI_API_VERSION: v1beta
+          GEMINI_BATCH_SIZE: '15'
