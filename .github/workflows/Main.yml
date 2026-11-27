@@ -93,7 +93,7 @@ jobs:
           GOOGLE_API_KEY2: ${{ secrets.GOOGLE_API_KEY2 }}
           GOOGLE_API_KEY3: ${{ secrets.GOOGLE_API_KEY3 }}
           # Optional: override model order. Default if empty/unset:
-          #   gemini-3-flash-preview,gemini-3.1-flash-lite-preview,gemini-2.5-flash
+          #   gemini-4-hydrogen,gemini-3.8-flash
           GEMINI_MODELS: ${{ secrets.GEMINI_MODELS }}
           # Explicitly retain JSON/schema support across SDK upgrades.
           GEMINI_API_VERSION: "v1beta"
@@ -108,6 +108,7 @@ jobs:
           RSS_DIRECT_RELEVANCE_KEYWORDS: ${{ secrets.RSS_DIRECT_RELEVANCE_KEYWORDS }}
           RSS_A_MUST_TRIGGER_KEYWORDS: ${{ secrets.RSS_A_MUST_TRIGGER_KEYWORDS }}
           RSS_A_MUST_COMBO_RULES_JSON: ${{ secrets.RSS_A_MUST_COMBO_RULES_JSON }}
+          RSS_REFERENCE_RULES_JSON: ${{ secrets.RSS_REFERENCE_RULES_JSON }}
           RSS_SLIDE_BRIEFING_BATCH_SIZE: "3"
           GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
@@ -133,6 +134,7 @@ jobs:
             filtered_titles.txt
             filtered_feed_*.xml
             must_read.xml
+            reference_read.xml
             briefing.html
             slides.html
             filtered_results.html

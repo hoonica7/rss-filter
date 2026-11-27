@@ -3,6 +3,15 @@ name: Gemini regression and safe smoke test
 "on":
   pull_request:
   workflow_dispatch:
+    inputs:
+      smoke_model:
+        description: Model to verify on the synthetic fixture
+        type: choice
+        default: configured
+        options:
+          - configured
+          - gemini-4-hydrogen
+          - gemini-3.8-flash
 
 permissions:
   contents: read
@@ -39,6 +48,6 @@ jobs:
           GOOGLE_API_KEY1: ${{ secrets.GOOGLE_API_KEY1 }}
           GOOGLE_API_KEY2: ${{ secrets.GOOGLE_API_KEY2 }}
           GOOGLE_API_KEY3: ${{ secrets.GOOGLE_API_KEY3 }}
-          GEMINI_MODELS: ${{ secrets.GEMINI_MODELS }}
+          GEMINI_MODELS: ${{ inputs.smoke_model != 'configured' && inputs.smoke_model || secrets.GEMINI_MODELS }}
           GEMINI_API_VERSION: "v1beta"
           GEMINI_BATCH_SIZE: "1"

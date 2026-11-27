@@ -17,18 +17,14 @@ import sys
 
 import requests
 from google.genai import types
-from gemini_runtime import create_client, FailureTracker, safe_error_summary, schema_is_unsupported
+from gemini_runtime import configured_models, create_client, FailureTracker, safe_error_summary, schema_is_unsupported
 
 
 COLOR_YELLOW = "\033[93m"
 COLOR_BLUE = "\033[94m"
 COLOR_END = "\033[0m"
 
-_DEFAULT_MODELS = "gemini-3-flash-preview,gemini-3.1-flash-lite-preview,gemini-2.5-flash"
-_models_env = (os.getenv("GEMINI_MODELS") or "").strip()
-MODEL_CANDIDATES = [m.strip() for m in (_models_env or _DEFAULT_MODELS).split(",") if m.strip()]
-if not MODEL_CANDIDATES:
-    MODEL_CANDIDATES = ["gemini-2.5-flash"]
+MODEL_CANDIDATES = configured_models()
 
 GOOGLE_API_KEYS = []
 for _i in (1, 2, 3):
@@ -291,7 +287,7 @@ def generate_json_with_gemini(prompt, schema=None, max_output_tokens=8192, task_
     n_apis = len(gemini_clients)
     n_models = len(MODEL_CANDIDATES)
     api_attempts = [(current_api_index + i) % n_apis for i in range(n_apis)]
-    model_attempts = [(current_model_index + j) % n_models for j in range(n_models)]
+    model_attempts = range(n_models)
 
     for api_idx in api_attempts:
         key_label, client = gemini_clients[api_idx]

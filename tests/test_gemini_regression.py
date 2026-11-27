@@ -156,6 +156,22 @@ def test_bad_model_falls_back_and_does_not_repeat(monkeypatch):
     assert [c.kwargs['model'] for c in calls[0].call_args_list] == ['preview', 'stable', 'stable']
 
 
+@pytest.mark.parametrize('module', [rss, slides])
+def test_primary_returns_after_service_cooldown(monkeypatch, module):
+    now = [0]
+    item = entry(1)
+    ok = response([decision(item)])
+    calls = setup_clients(monkeypatch, module, [[APIError(503, 'unavailable'), ok, ok, ok]])
+    monkeypatch.setattr(module, 'gemini_failures', runtime.FailureTracker(clock=lambda: now[0]))
+    for tick in (0, 5, 61):
+        now[0] = tick
+        if module is rss:
+            assert rss.classify_entries_with_gemini('Nature', [item])[0] == [item]
+        else:
+            assert slides.generate_json_with_gemini('test')
+    assert [c.kwargs['model'] for c in calls[0].call_args_list] == ['preview', 'stable', 'stable', 'preview']
+
+
 def test_schema_fallback_only_for_schema_errors(monkeypatch):
     item = entry(1)
     calls = setup_clients(monkeypatch, rss, [[APIError(400, 'response_schema is not supported'),

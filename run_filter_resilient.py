@@ -262,6 +262,7 @@ def run():
                         briefing_records.append(rss.paper_record(entry, journal_name, "Gemini", meta))
                     email_content += "\n"
 
+                briefing_records.extend(rss.rescued_reference_records(gemini_removed, journal_name, meta))
                 email_content += "REMOVED PAPERS:\n"
                 if not keyword_removed and not gemini_removed:
                     email_content += "No papers were filtered out.\n\n"
